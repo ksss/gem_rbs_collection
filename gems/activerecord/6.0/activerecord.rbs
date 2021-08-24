@@ -55,6 +55,9 @@ end
 
 interface _ActiveRecord_Relation[Model, PrimaryKey]
   def all: () -> self
+  def count: (?untyped column_name) -> Integer
+           | (?untyped column_name) -> Hash[untyped, Integer]
+           | () { (Model) -> boolish } -> Integer
   def ids: () -> Array[PrimaryKey]
   def none: () -> self
   def pluck: (Symbol | String column) -> Array[untyped]
@@ -101,6 +104,9 @@ end
 
 interface _ActiveRecord_Relation_ClassMethods[Model, Relation, PrimaryKey]
   def all: () -> Relation
+  def count: (?untyped column_name) -> Integer
+           | (?untyped column_name) -> Hash[untyped, Integer]
+           | () { (Model) -> boolish } -> Integer
   def ids: () -> Array[PrimaryKey]
   def none: () -> Relation
   def pluck: (Symbol | String column) -> Array[untyped]

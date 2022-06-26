@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::EnumerableCoreExt::Constants
+  private def const_missing: (untyped name) -> untyped
+end

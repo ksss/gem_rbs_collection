@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::SimpleStubs
+  def initialize: () -> void
+  # Stubs object.method_name with the given block
+  # If the method is already stubbed, remove that stub
+  # so that removing this stub will restore the original implementation.
+  #   Time.current # => Sat, 09 Nov 2013 15:34:49 EST -05:00
+  #   target = Time.zone.local(2004, 11, 24, 1, 4, 44)
+  #   simple_stubs.stub_object(Time, :now) { at(target.to_i) }
+  #   Time.current # => Wed, 24 Nov 2004 01:04:44 EST -05:00
+  def stub_object: (untyped object, untyped method_name) ?{ () -> untyped } -> untyped
+  # Remove all object-method stubs held by this instance
+  def unstub_all!: () -> untyped
+  # Returns the Stub for object#method_name
+  # (nil if it is not stubbed)
+  def stubbing: (untyped object, untyped method_name) -> untyped
+  # Returns true if any stubs are set, false if there are none
+  def stubbed?: () -> untyped
+  # Restores the original object.method described by the Stub
+  private def unstub_object: (untyped stub) -> untyped
+end

@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Configurable
+  # Reads and writes attributes from a configuration OrderedOptions.
+  #
+  #   require "active_support/configurable"
+  #
+  #   class User
+  #     include ActiveSupport::Configurable
+  #   end
+  #
+  #   user = User.new
+  #
+  #   user.config.allowed_access = true
+  #   user.config.level = 1
+  #
+  #   user.config.allowed_access # => true
+  #   user.config.level          # => 1
+  def config: () -> untyped
+
+  extend ActiveSupport::Concern
+end

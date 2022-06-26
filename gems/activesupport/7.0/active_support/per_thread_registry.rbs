@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::PerThreadRegistry
+  def self.extended: (untyped object) -> untyped
+
+  def instance: () -> untyped
+
+  private def method_missing: (untyped name, *untyped args) ?{ () -> untyped } -> untyped
+end

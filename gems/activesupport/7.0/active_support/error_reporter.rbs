@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ErrorReporter
+  def initialize: (*untyped subscribers, ?logger: untyped?) -> void
+  # Report any unhandled exception, and swallow it.
+  #
+  #   Rails.error.handle do
+  #     1 + '1'
+  #   end
+  #
+  def handle: (?untyped error_class, ?severity: ::Symbol, ?context: ::Hash[untyped, untyped], ?fallback: untyped?) { () -> untyped } -> untyped
+  def record: (?untyped error_class, ?severity: ::Symbol, ?context: ::Hash[untyped, untyped]) { () -> untyped } -> untyped
+  # Register a new error subscriber. The subscriber must respond to
+  #
+  #   report(Exception, handled: Boolean, context: Hash)
+  #
+  # The +report+ method +should+ never raise an error.
+  def subscribe: (untyped subscriber) -> untyped
+  # Update the execution context that is accessible to error subscribers
+  #
+  #   Rails.error.set_context(section: "checkout", user_id: @user.id)
+  #
+  # See +ActiveSupport::ExecutionContext.set+
+  def set_context: (*untyped) ?{ () -> untyped } -> untyped
+  # When the block based +handle+ and +record+ methods are not suitable, you can directly use +report+
+  #
+  #   Rails.error.report(error, handled: true)
+  def report: (untyped error, handled: untyped, ?severity: untyped, ?context: ::Hash[untyped, untyped]) -> nil
+  attr_accessor logger: untyped
+  SEVERITIES: Array[Symbol]
+end

@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Deprecation::Disallowed
+  # Returns the configured criteria used to identify deprecation messages
+  # which should be treated as disallowed.
+  def disallowed_warnings: () -> untyped
+
+  private def deprecation_disallowed?: (untyped message) -> (false | true | untyped)
+
+  private def explicitly_allowed?: (untyped message) -> (false | true | untyped)
+
+  attr_writer disallowed_warnings: untyped
+end

@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::Callback
+  def self.build: (untyped chain, untyped filter, untyped kind, untyped options) -> untyped
+  def initialize: (untyped name, untyped filter, untyped kind, untyped options, untyped chain_config) -> void
+  def merge_conditional_options: (untyped chain, if_option: untyped, unless_option: untyped) -> untyped
+  def matches?: (untyped _kind, untyped _filter) -> untyped
+  def duplicates?: (untyped other) -> untyped
+  # Wraps code with filter
+  def apply: (untyped callback_sequence) -> untyped
+  def current_scopes: () -> untyped
+  private def check_conditionals: (untyped conditionals) -> untyped
+  private def conditions_lambdas: () -> untyped
+  attr_accessor kind: untyped
+  attr_accessor name: untyped
+  attr_reader chain_config: untyped
+  attr_reader filter: untyped
+end

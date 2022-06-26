@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    orthoses (0.10.0)
+      rbs (~> 2.0)
+    orthoses-rails (0.5.0)
+      orthoses (>= 0.10)
+    rake (13.0.6)
+    rbs (2.6.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  orthoses
+  orthoses-rails
+  rake
+  rbs
+
+BUNDLED WITH
+   2.3.9

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module DateAndTime::Zones
+  def in_time_zone: (?ActiveSupport::TimeZone | String zone) -> ::ActiveSupport::TimeWithZone
+                  | (false? zone) -> ::Time
+
+  private def time_with_zone: (untyped time, untyped zone) -> untyped
+end

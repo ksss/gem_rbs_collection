@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::MemCacheStore::Coders::Loader
+  def load: (untyped payload) -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::RubyFeatures
+  CLASS_SUBCLASSES: true
+end

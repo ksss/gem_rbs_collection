@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Rescuable
+  # Delegates to the class method, but uses the instance as the subject for
+  # rescue_from handlers (method calls, +instance_exec+ blocks).
+  def rescue_with_handler: (untyped exception) -> untyped
+
+  # Internal handler lookup. Delegates to class method. Some libraries call
+  # this directly, so keeping it around for compatibility.
+  def handler_for_rescue: (untyped exception) -> untyped
+
+  extend ActiveSupport::Concern
+end

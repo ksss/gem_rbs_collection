@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberConverter
+  def self.convert: (untyped number, untyped options) -> untyped
+  def initialize: (untyped number, untyped options) -> void
+  def execute: () -> (nil | untyped)
+  private def options: () -> untyped
+  private def format_options: () -> untyped
+  private def default_format_options: () -> untyped
+  private def i18n_format_options: () -> untyped
+  private def translate_number_value_with_default: (untyped key, **untyped i18n_options) -> untyped
+  private def translate_in_locale: (untyped key, **untyped i18n_options) -> untyped
+  private def default_value: (untyped key) -> untyped
+  private def valid_float?: () -> untyped
+  attr_reader number: untyped
+  attr_reader opts: untyped
+  def self.namespace: () -> untyped
+  def self.namespace?: () -> bool
+  def self.namespace=: (untyped value) -> untyped
+  def namespace: () -> untyped
+  def namespace?: () -> bool
+  def namespace=: (untyped value) -> untyped
+  def self.validate_float: () -> untyped
+  def self.validate_float?: () -> bool
+  def self.validate_float=: (untyped value) -> untyped
+  def validate_float: () -> untyped
+  def validate_float?: () -> bool
+  def validate_float=: (untyped value) -> untyped
+  DEFAULTS: Hash[Symbol, Hash[Symbol, String | Integer | false] | Hash[Symbol, Hash[Symbol, String | Integer | false]] | Hash[Symbol, Hash[Symbol, String]] | Hash[Symbol, Hash[Symbol, String | Integer | true] | Hash[Symbol, String | Hash[Symbol, String]]]]
+end

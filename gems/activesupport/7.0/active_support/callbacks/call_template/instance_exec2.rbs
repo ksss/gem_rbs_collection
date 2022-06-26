@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::CallTemplate::InstanceExec2
+  def initialize: (untyped block) -> void
+  def expand: (untyped target, untyped value, untyped block) -> ::Array[untyped | :instance_exec]
+  def make_lambda: () -> untyped
+  def inverted_lambda: () -> untyped
+end

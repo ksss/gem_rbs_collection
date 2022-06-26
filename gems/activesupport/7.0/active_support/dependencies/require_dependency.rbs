@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::RequireDependency : BasicObject
+  # <b>Warning:</b> This method is obsolete. The semantics of the autoloader
+  # match Ruby's and you do not need to be defensive with load order anymore.
+  # Just refer to classes and modules normally.
+  #
+  # Engines that do not control the mode in which their parent application runs
+  # should call +require_dependency+ where needed in case the runtime mode is
+  # +:classic+.
+  def require_dependency: (untyped filename) -> untyped
+end

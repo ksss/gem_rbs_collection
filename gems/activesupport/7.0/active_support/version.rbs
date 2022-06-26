@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::VERSION
+  MAJOR: Integer
+
+  MINOR: Integer
+
+  STRING: String
+
+  TINY: Integer
+end

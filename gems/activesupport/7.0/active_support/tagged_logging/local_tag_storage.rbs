@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::TaggedLogging::LocalTagStorage
+  def self.extended: (untyped base) -> untyped
+
+  attr_accessor current_tags: untyped
+end

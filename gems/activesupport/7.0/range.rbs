@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Range[out Elem]
+  # Optimize range sum to use arithmetic progression if a block is not given and
+  # we have a range of numeric values.
+  def sum: (?untyped? identity) -> untyped
+
+  # Compare two ranges and see if they overlap each other
+  #  (1..5).overlaps?(4..6) # => true
+  #  (1..5).overlaps?(7..9) # => false
+  def overlaps?: (untyped other) -> untyped
+  prepend ActiveSupport::RangeWithFormat
+  prepend ActiveSupport::DeprecatedRangeWithFormat
+  prepend ActiveSupport::CompareWithRange
+  prepend ActiveSupport::EachTimeWithZone
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::MessageEncryptor::NullSerializer
+  def self.load: (untyped value) -> untyped
+
+  def self.dump: (untyped value) -> untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini::FileLike
+  def original_filename: () -> untyped
+
+  def content_type: () -> untyped
+
+  attr_writer original_filename: untyped
+
+  attr_writer content_type: untyped
+end

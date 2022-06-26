@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::Strategy::LocalCache::LocalStore
+  def initialize: () -> void
+  def clear: (?untyped? options) -> untyped
+  def read_entry: (untyped key) -> untyped
+  def read_multi_entries: (untyped keys) -> untyped
+  def write_entry: (untyped key, untyped entry) -> true
+  def delete_entry: (untyped key) -> untyped
+  def fetch_entry: (untyped key) { () -> untyped } -> untyped
+end

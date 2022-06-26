@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::LoggerSilence
+  # Silences the logger for the duration of the block.
+  def silence: (?untyped severity) { (untyped) -> untyped } -> untyped
+
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,166 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class DateTime < ::Date
+  # Duck-types as a Date-like class. See Object#acts_like?.
+  def acts_like_date?: () -> true
+  # Duck-types as a Time-like class. See Object#acts_like?.
+  def acts_like_time?: () -> true
+  # No DateTime is ever blank:
+  #
+  #   DateTime.now.blank? # => false
+  #
+  # @return [false]
+  def blank?: () -> false
+  # Returns <tt>Time.zone.now.to_datetime</tt> when <tt>Time.zone</tt> or
+  # <tt>config.time_zone</tt> are set, otherwise returns
+  # <tt>Time.now.to_datetime</tt>.
+  def self.current: () -> untyped
+  # Returns the number of seconds since 00:00:00.
+  #
+  #   DateTime.new(2012, 8, 29,  0,  0,  0).seconds_since_midnight # => 0
+  #   DateTime.new(2012, 8, 29, 12, 34, 56).seconds_since_midnight # => 45296
+  #   DateTime.new(2012, 8, 29, 23, 59, 59).seconds_since_midnight # => 86399
+  def seconds_since_midnight: () -> untyped
+  # Returns the number of seconds until 23:59:59.
+  #
+  #   DateTime.new(2012, 8, 29,  0,  0,  0).seconds_until_end_of_day # => 86399
+  #   DateTime.new(2012, 8, 29, 12, 34, 56).seconds_until_end_of_day # => 41103
+  #   DateTime.new(2012, 8, 29, 23, 59, 59).seconds_until_end_of_day # => 0
+  def seconds_until_end_of_day: () -> untyped
+  # Returns the fraction of a second as a +Rational+
+  #
+  #   DateTime.new(2012, 8, 29, 0, 0, 0.5).subsec # => (1/2)
+  def subsec: () -> untyped
+  # Returns a new DateTime where one or more of the elements have been changed
+  # according to the +options+ parameter. The time options (<tt>:hour</tt>,
+  # <tt>:min</tt>, <tt>:sec</tt>) reset cascadingly, so if only the hour is
+  # passed, then minute and sec is set to 0. If the hour and minute is passed,
+  # then sec is set to 0. The +options+ parameter takes a hash with any of these
+  # keys: <tt>:year</tt>, <tt>:month</tt>, <tt>:day</tt>, <tt>:hour</tt>,
+  # <tt>:min</tt>, <tt>:sec</tt>, <tt>:offset</tt>, <tt>:start</tt>.
+  #
+  #   DateTime.new(2012, 8, 29, 22, 35, 0).change(day: 1)              # => DateTime.new(2012, 8, 1, 22, 35, 0)
+  #   DateTime.new(2012, 8, 29, 22, 35, 0).change(year: 1981, day: 1)  # => DateTime.new(1981, 8, 1, 22, 35, 0)
+  #   DateTime.new(2012, 8, 29, 22, 35, 0).change(year: 1981, hour: 0) # => DateTime.new(1981, 8, 29, 0, 0, 0)
+  def change: (untyped options) -> untyped
+  # Uses Date to provide precise Time calculations for years, months, and days.
+  # The +options+ parameter takes a hash with any of these keys: <tt>:years</tt>,
+  # <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>, <tt>:hours</tt>,
+  # <tt>:minutes</tt>, <tt>:seconds</tt>.
+  def advance: (untyped options) -> untyped
+  # Returns a new DateTime representing the time a number of seconds ago.
+  # Do not use this method in combination with x.months, use months_ago instead!
+  def ago: (untyped seconds) -> untyped
+  # Returns a new DateTime representing the time a number of seconds since the
+  # instance time. Do not use this method in combination with x.months, use
+  # months_since instead!
+  def since: (untyped seconds) -> untyped
+  alias in since
+  # Returns a new DateTime representing the start of the day (0:00).
+  def beginning_of_day: () -> untyped
+  alias midnight beginning_of_day
+  alias at_midnight beginning_of_day
+  alias at_beginning_of_day beginning_of_day
+  # Returns a new DateTime representing the middle of the day (12:00)
+  def middle_of_day: () -> untyped
+  alias midday middle_of_day
+  alias noon middle_of_day
+  alias at_midday middle_of_day
+  alias at_noon middle_of_day
+  alias at_middle_of_day middle_of_day
+  # Returns a new DateTime representing the end of the day (23:59:59).
+  def end_of_day: () -> untyped
+  alias at_end_of_day end_of_day
+  # Returns a new DateTime representing the start of the hour (hh:00:00).
+  def beginning_of_hour: () -> untyped
+  alias at_beginning_of_hour beginning_of_hour
+  # Returns a new DateTime representing the end of the hour (hh:59:59).
+  def end_of_hour: () -> untyped
+  alias at_end_of_hour end_of_hour
+  # Returns a new DateTime representing the start of the minute (hh:mm:00).
+  def beginning_of_minute: () -> untyped
+  alias at_beginning_of_minute beginning_of_minute
+  # Returns a new DateTime representing the end of the minute (hh:mm:59).
+  def end_of_minute: () -> untyped
+  alias at_end_of_minute end_of_minute
+  # Returns a <tt>Time</tt> instance of the simultaneous time in the system timezone.
+  def localtime: (?untyped? utc_offset) -> untyped
+  alias getlocal localtime
+  # Returns a <tt>Time</tt> instance of the simultaneous time in the UTC timezone.
+  #
+  #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24))     # => Mon, 21 Feb 2005 10:11:12 -0600
+  #   DateTime.civil(2005, 2, 21, 10, 11, 12, Rational(-6, 24)).utc # => Mon, 21 Feb 2005 16:11:12 UTC
+  def utc: () -> untyped
+  alias getgm utc
+  alias getutc utc
+  alias gmtime utc
+  # Returns +true+ if <tt>offset == 0</tt>.
+  def utc?: () -> untyped
+  # Returns the offset value in seconds.
+  def utc_offset: () -> untyped
+  # Layers additional behavior on DateTime#<=> so that Time and
+  # ActiveSupport::TimeWithZone instances can be compared with a DateTime.
+  def <=>: (untyped other) -> untyped
+
+  # Convert to a formatted string. See Time::DATE_FORMATS for predefined formats.
+  #
+  # This method is aliased to <tt>to_formatted_s</tt>.
+  #
+  # === Examples
+  #   datetime = DateTime.civil(2007, 12, 4, 0, 0, 0, 0)   # => Tue, 04 Dec 2007 00:00:00 +0000
+  #
+  #   datetime.to_fs(:db)            # => "2007-12-04 00:00:00"
+  #   datetime.to_formatted_s(:db)   # => "2007-12-04 00:00:00"
+  #   datetime.to_fs(:number)        # => "20071204000000"
+  #   datetime.to_fs(:short)         # => "04 Dec 00:00"
+  #   datetime.to_fs(:long)          # => "December 04, 2007 00:00"
+  #   datetime.to_fs(:long_ordinal)  # => "December 4th, 2007 00:00"
+  #   datetime.to_fs(:rfc822)        # => "Tue, 04 Dec 2007 00:00:00 +0000"
+  #   datetime.to_fs(:iso8601)       # => "2007-12-04T00:00:00+00:00"
+  #
+  # == Adding your own datetime formats to to_fs
+  # DateTime formats are shared with Time. You can add your own to the
+  # Time::DATE_FORMATS hash. Use the format name as the hash key and
+  # either a strftime string or Proc instance that takes a time or
+  # datetime argument as the value.
+  #
+  #   # config/initializers/time_formats.rb
+  #   Time::DATE_FORMATS[:month_and_year] = '%B %Y'
+  #   Time::DATE_FORMATS[:short_ordinal] = lambda { |time| time.strftime("%B #{time.day.ordinalize}") }
+  def to_fs: (?::Symbol format) -> untyped
+  alias to_formatted_s to_fs
+  alias to_default_s to_s
+  # Returns a formatted string of the offset from UTC, or an alternative
+  # string if the time zone is already UTC.
+  #
+  #   datetime = DateTime.civil(2000, 1, 1, 0, 0, 0, Rational(-6, 24))
+  #   datetime.formatted_offset         # => "-06:00"
+  #   datetime.formatted_offset(false)  # => "-0600"
+  def formatted_offset: (?bool colon, ?untyped? alternate_utc_string) -> untyped
+  # Overrides the default inspect method with a human readable one, e.g., "Mon, 21 Feb 2005 14:30:00 +0000".
+  def readable_inspect: () -> untyped
+  alias default_inspect inspect
+  alias inspect readable_inspect
+  # Returns DateTime with local offset for given year if format is local else
+  # offset is zero.
+  #
+  #   DateTime.civil_from_format :local, 2012
+  #   # => Sun, 01 Jan 2012 00:00:00 +0300
+  #   DateTime.civil_from_format :local, 2012, 12, 17
+  #   # => Mon, 17 Dec 2012 00:00:00 +0000
+  def self.civil_from_format: (untyped utc_or_local, untyped year, ?::Integer month, ?::Integer day, ?::Integer hour, ?::Integer min, ?::Integer sec) -> untyped
+  # Converts +self+ to a floating-point number of seconds, including fractional microseconds, since the Unix epoch.
+  def to_f: () -> untyped
+  # Converts +self+ to an integer number of seconds since the Unix epoch.
+  def to_i: () -> untyped
+  # Returns the fraction of a second as microseconds
+  def usec: () -> untyped
+  # Returns the fraction of a second as nanoseconds
+  def nsec: () -> untyped
+  private def offset_in_seconds: () -> untyped
+  private def seconds_since_unix_epoch: () -> untyped
+
+  include DateAndTime::Compatibility
+  NOT_SET: Object
+end

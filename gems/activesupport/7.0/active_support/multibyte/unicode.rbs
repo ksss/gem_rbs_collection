@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Multibyte::Unicode
+  # Decompose composed characters to the decomposed form.
+  def decompose: (untyped `type`, untyped codepoints) -> untyped
+
+  # Compose decomposed characters to the composed form.
+  def compose: (untyped codepoints) -> untyped
+
+  # Replaces all ISO-8859-1 or CP1252 characters by their UTF-8 equivalent
+  # resulting in a valid UTF-8 string.
+  #
+  # Passing +true+ will forcibly tidy all bytes, assuming that the string's
+  # encoding is entirely CP1252 or ISO-8859-1.
+  def tidy_bytes: (untyped string, ?bool force) -> untyped
+
+  private def recode_windows1252_chars: (untyped string) -> untyped
+
+  extend ActiveSupport::Multibyte::Unicode
+
+  UNICODE_VERSION: String
+end

@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+D = Steep::Diagnostic
+
+target :test do
+  signature "."
+  check "."
+
+  repo_path "../../../"
+
+  library "benchmark"
+  library "date"
+  library "digest"
+  library "json"
+  library "logger"
+  library "monitor"
+  library "mutex_m"
+  library "pathname"
+  library "singleton"
+  library "time"
+  library "minitest"
+  library "nokogiri"
+
+  library "activesupport:7.0"
+
+  configure_code_diagnostics(D::Ruby.all_error)
+end

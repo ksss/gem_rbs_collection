@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ExecutionContext
+  def self.after_change: () ?{ () -> untyped } -> untyped
+
+  # Updates the execution context. If a block is given, it resets the provided keys to their
+  # previous value once the block exits.
+  def self.set: (**untyped options) { () -> untyped } -> untyped
+
+  def self.[]=: (untyped key, untyped value) -> untyped
+
+  def self.to_h: () -> untyped
+
+  def self.clear: () -> untyped
+
+  private def self.store: () -> untyped
+end

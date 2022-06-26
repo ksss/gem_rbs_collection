@@ -1,0 +1,64 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Numeric
+  # Enables the use of byte calculations and declarations, like 45.bytes + 2.6.megabytes
+  #
+  #   2.bytes # => 2
+  def bytes: () -> self
+  alias byte bytes
+
+  def kilobytes: () -> self
+  alias kilobyte kilobytes
+
+  def megabytes: () -> self
+  alias megabyte megabytes
+
+  def gigabytes: () -> self
+  alias gigabyte gigabytes
+
+  def terabytes: () -> self
+  alias terabyte terabytes
+
+  def petabytes: () -> self
+  alias petabyte petabytes
+
+  def exabytes: () -> self
+  alias exabyte exabytes
+
+  def seconds: () -> ActiveSupport::Duration
+  alias second seconds
+
+  def minutes: () -> ActiveSupport::Duration
+  alias minute minutes
+
+  def hours: () -> ActiveSupport::Duration
+  alias hour hours
+
+  def days: () -> ActiveSupport::Duration
+  alias day days
+
+  def weeks: () -> ActiveSupport::Duration
+  alias week weeks
+
+  def fortnights: () -> ActiveSupport::Duration
+  alias fortnight fortnights
+
+  def in_milliseconds: () -> self
+  # No number is blank:
+  #
+  #   1.blank? # => false
+  #   0.blank? # => false
+  #
+  # @return [false]
+  def blank?: () -> false
+  def as_json: (?untyped? options) -> self
+  def html_safe?: () -> true
+
+  EXABYTE: Integer
+  GIGABYTE: Integer
+  KILOBYTE: Integer
+  MEGABYTE: Integer
+  PETABYTE: Integer
+  TERABYTE: Integer
+end

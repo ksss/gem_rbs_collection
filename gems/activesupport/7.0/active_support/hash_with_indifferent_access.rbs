@@ -1,0 +1,177 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::HashWithIndifferentAccess[K, V] < ::Hash[K, V]
+  # Returns +true+ so that <tt>Array#extract_options!</tt> finds members of
+  # this class.
+  def extractable_options?: () -> true
+  def with_indifferent_access: () -> untyped
+  def nested_under_indifferent_access: () -> self
+  def initialize: (?untyped? constructor) -> void
+  def self.[]: (*untyped args) -> untyped
+  alias regular_writer []=
+  alias regular_update update
+
+  def []=: (K key, V value) -> untyped
+  alias store []=
+  # Updates the receiver in-place, merging in the hashes passed as arguments:
+  #
+  #   hash_1 = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash_1[:key] = 'value'
+  #
+  #   hash_2 = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash_2[:key] = 'New Value!'
+  #
+  #   hash_1.update(hash_2) # => {"key"=>"New Value!"}
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash.update({ "a" => 1 }, { "b" => 2 }) # => { "a" => 1, "b" => 2 }
+  #
+  # The arguments can be either an
+  # <tt>ActiveSupport::HashWithIndifferentAccess</tt> or a regular +Hash+.
+  # In either case the merge respects the semantics of indifferent access.
+  #
+  # If the argument is a regular hash with keys +:key+ and <tt>"key"</tt> only one
+  # of the values end up in the receiver, but which one is unspecified.
+  #
+  # When given a block, the value for duplicated keys will be determined
+  # by the result of invoking the block with the duplicated key, the value
+  # in the receiver, and the value in +other_hash+. The rules for duplicated
+  # keys follow the semantics of indifferent access:
+  #
+  #   hash_1[:key] = 10
+  #   hash_2['key'] = 12
+  #   hash_1.update(hash_2) { |key, old, new| old + new } # => {"key"=>22}
+  def update: (*untyped other_hashes) ?{ () -> untyped } -> self
+  alias merge! update
+  # Checks the hash for a key matching the argument passed in:
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash['key'] = 'value'
+  #   hash.key?(:key)  # => true
+  #   hash.key?('key') # => true
+  def key?: (untyped key) -> untyped
+  alias include? key?
+  alias has_key? key?
+  alias member? key?
+
+  def []: (K key) -> V
+  # Same as <tt>Hash#assoc</tt> where the key passed as argument can be
+  # either a string or a symbol:
+  #
+  #   counters = ActiveSupport::HashWithIndifferentAccess.new
+  #   counters[:foo] = 1
+  #
+  #   counters.assoc('foo') # => ["foo", 1]
+  #   counters.assoc(:foo)  # => ["foo", 1]
+  #   counters.assoc(:zoo)  # => nil
+  def assoc: (untyped key) -> untyped
+  # Same as <tt>Hash#fetch</tt> where the key passed as argument can be
+  # either a string or a symbol:
+  #
+  #   counters = ActiveSupport::HashWithIndifferentAccess.new
+  #   counters[:foo] = 1
+  #
+  #   counters.fetch('foo')          # => 1
+  #   counters.fetch(:bar, 0)        # => 0
+  #   counters.fetch(:bar) { |key| 0 } # => 0
+  #   counters.fetch(:zoo)           # => KeyError: key not found: "zoo"
+  def fetch: (untyped key, *untyped extras) -> untyped
+  # Same as <tt>Hash#dig</tt> where the key passed as argument can be
+  # either a string or a symbol:
+  #
+  #   counters = ActiveSupport::HashWithIndifferentAccess.new
+  #   counters[:foo] = { bar: 1 }
+  #
+  #   counters.dig('foo', 'bar')     # => 1
+  #   counters.dig(:foo, :bar)       # => 1
+  #   counters.dig(:zoo)             # => nil
+  def dig: (*untyped args) -> untyped
+  # Same as <tt>Hash#default</tt> where the key passed as argument can be
+  # either a string or a symbol:
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new(1)
+  #   hash.default                   # => 1
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new { |hash, key| key }
+  #   hash.default                   # => nil
+  #   hash.default('foo')            # => 'foo'
+  #   hash.default(:foo)             # => 'foo'
+  def default: (*untyped args) -> untyped
+  # Returns an array of the values at the specified indices:
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash[:a] = 'x'
+  #   hash[:b] = 'y'
+  #   hash.values_at('a', 'b') # => ["x", "y"]
+  def values_at: (*untyped keys) -> untyped
+  # Returns an array of the values at the specified indices, but also
+  # raises an exception when one of the keys can't be found.
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash[:a] = 'x'
+  #   hash[:b] = 'y'
+  #   hash.fetch_values('a', 'b') # => ["x", "y"]
+  #   hash.fetch_values('a', 'c') { |key| 'z' } # => ["x", "z"]
+  #   hash.fetch_values('a', 'c') # => KeyError: key not found: "c"
+  def fetch_values: (*untyped indices) ?{ () -> untyped } -> untyped
+  # Returns a shallow copy of the hash.
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new({ a: { b: 'b' } })
+  #   dup  = hash.dup
+  #   dup[:a][:c] = 'c'
+  #
+  #   hash[:a][:c] # => "c"
+  #   dup[:a][:c]  # => "c"
+  def dup: () -> untyped
+  # This method has the same semantics of +update+, except it does not
+  # modify the receiver but rather returns a new hash with indifferent
+  # access with the result of the merge.
+  def merge: (*untyped hashes) ?{ () -> untyped } -> untyped
+  # Like +merge+ but the other way around: Merges the receiver into the
+  # argument and returns a new hash with indifferent access as result:
+  #
+  #   hash = ActiveSupport::HashWithIndifferentAccess.new
+  #   hash['a'] = nil
+  #   hash.reverse_merge(a: 0, b: 1) # => {"a"=>nil, "b"=>1}
+  def reverse_merge: (untyped other_hash) -> untyped
+  alias with_defaults reverse_merge
+  # Same semantics as +reverse_merge+ but modifies the receiver in-place.
+  def reverse_merge!: (untyped other_hash) -> untyped
+  alias with_defaults! reverse_merge!
+  # Replaces the contents of this hash with other_hash.
+  #
+  #   h = { "a" => 100, "b" => 200 }
+  #   h.replace({ "c" => 300, "d" => 400 }) # => {"c"=>300, "d"=>400}
+  def replace: (untyped other_hash) -> untyped
+  # Removes the specified key from the hash.
+  def delete: (untyped key) -> untyped
+  # Returns a hash with indifferent access that includes everything except given keys.
+  #   hash = { a: "x", b: "y", c: 10 }.with_indifferent_access
+  #   hash.except(:a, "b") # => {c: 10}.with_indifferent_access
+  #   hash                 # => { a: "x", b: "y", c: 10 }.with_indifferent_access
+  def except: (*untyped keys) -> untyped
+  alias without except
+  def stringify_keys!: () -> self
+  def deep_stringify_keys!: () -> self
+  def stringify_keys: () -> untyped
+  def deep_stringify_keys: () -> untyped
+  def symbolize_keys: () -> untyped
+  alias to_options symbolize_keys
+  def deep_symbolize_keys: () -> untyped
+  def to_options!: () -> self
+  def select: (*untyped args) ?{ () -> untyped } -> untyped
+  def reject: (*untyped args) ?{ () -> untyped } -> untyped
+  def transform_values: (*untyped args) ?{ () -> untyped } -> untyped
+  def transform_keys: (*untyped args) ?{ () -> untyped } -> untyped
+  def transform_keys!: () { (untyped) -> untyped } -> (untyped | self)
+  def slice: (*untyped keys) -> untyped
+  def slice!: (*untyped keys) -> untyped
+  def compact: () -> untyped
+  # Convert to a regular hash with string keys.
+  def to_hash: () -> untyped
+  private def convert_key: (untyped key) -> untyped
+  private def convert_value: (untyped value, ?conversion: untyped?) -> untyped
+  private def set_defaults: (untyped target) -> untyped
+  private def update_with_single_argument: (untyped other_hash, untyped block) -> untyped
+end

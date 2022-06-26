@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::DeprecatedNumericWithFormat
+  def to_s: (?untyped? format, ?untyped? options) -> untyped
+end

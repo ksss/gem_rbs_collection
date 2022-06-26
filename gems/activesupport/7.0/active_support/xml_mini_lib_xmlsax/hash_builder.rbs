@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::XmlMini_LibXMLSAX::HashBuilder
+  def current_hash: () -> untyped
+  def on_start_document: () -> untyped
+  def on_end_document: () -> untyped
+  def on_start_element: (untyped name, ?::Hash[untyped, untyped] attrs) -> untyped
+  def on_end_element: (untyped name) -> untyped
+  def on_characters: (untyped string) -> untyped
+  alias on_cdata_block on_characters
+end

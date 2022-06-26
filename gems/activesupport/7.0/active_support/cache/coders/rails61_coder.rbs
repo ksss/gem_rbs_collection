@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::Coders::Rails61Coder
+  def dump: (untyped entry) -> untyped
+
+  def dump_compressed: (untyped entry, untyped threshold) -> untyped
+
+  include ActiveSupport::Cache::Coders::Loader
+
+  extend ActiveSupport::Cache::Coders::Rails61Coder
+end

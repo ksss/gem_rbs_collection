@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Deprecation::InstanceDelegator::OverrideDelegators
+  def warn: (?untyped? message, ?untyped? callstack) -> untyped
+
+  def deprecation_warning: (untyped deprecated_method_name, ?untyped? message, ?untyped? caller_backtrace) -> untyped
+end

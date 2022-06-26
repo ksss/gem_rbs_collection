@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::TaggedLogging
+  def self.new: (untyped logger) -> untyped
+
+  def broadcast_to: (untyped other_logger) -> untyped
+
+  def tagged: (*untyped tags) { (untyped) -> untyped } -> untyped
+
+  def flush: () -> untyped
+end

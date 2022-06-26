@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::CallbackChain
+  def initialize: (untyped name, untyped config) -> void
+
+  def each: () -> Enumerator[::ActiveSupport::Callbacks::Callback, Array[::ActiveSupport::Callbacks::Callback]]
+          | () { (::ActiveSupport::Callbacks::Callback) -> void } -> Array[::ActiveSupport::Callbacks::Callback]
+  def index: (untyped o) -> untyped
+  def empty?: () -> untyped
+  def insert: (untyped index, untyped o) -> untyped
+  def delete: (untyped o) -> untyped
+  def clear: () -> self
+  def initialize_copy: (untyped other) -> untyped
+  def compile: () -> untyped
+  def append: (*untyped callbacks) -> untyped
+  def prepend: (*untyped callbacks) -> untyped
+  private def append_one: (untyped callback) -> untyped
+  private def prepend_one: (untyped callback) -> untyped
+  private def remove_duplicates: (untyped callback) -> untyped
+  private def default_terminator: () -> untyped
+  attr_reader name: untyped
+  attr_reader config: untyped
+  attr_reader chain: untyped
+  include Enumerable[::ActiveSupport::Callbacks::Callback]
+end

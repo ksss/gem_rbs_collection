@@ -1,0 +1,65 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini_JDOM
+  # Parse an XML Document string or IO into a simple hash using Java's jdom.
+  # data::
+  #   XML Document string or IO to parse
+  def parse: (untyped data) -> untyped
+
+  # Convert an XML element and merge into the hash
+  #
+  # hash::
+  #   Hash to merge the converted element into.
+  # element::
+  #   XML element to merge into hash
+  private def merge_element!: (untyped hash, untyped element, untyped depth) -> untyped
+
+  private def delete_empty: (untyped hash) -> (untyped | nil)
+
+  # Actually converts an XML document element into a data structure.
+  #
+  # element::
+  #   The document element to be collapsed.
+  private def collapse: (untyped element, untyped depth) -> untyped
+
+  # Merge all the texts of an element into the hash
+  #
+  # hash::
+  #   Hash to add the converted element to.
+  # element::
+  #   XML element whose texts are to me merged into the hash
+  private def merge_texts!: (untyped hash, untyped element) -> untyped
+
+  # Adds a new key/value pair to an existing Hash. If the key to be added
+  # already exists and the existing value associated with key is not
+  # an Array, it will be wrapped in an Array. Then the new value is
+  # appended to that Array.
+  #
+  # hash::
+  #   Hash to add key/value pair to.
+  # key::
+  #   Key to be added.
+  # value::
+  #   Value to be associated with key.
+  private def merge!: (untyped hash, untyped key, untyped value) -> untyped
+
+  # Converts the attributes array of an XML element into a hash.
+  # Returns an empty Hash if node has no attributes.
+  #
+  # element::
+  #   XML element to extract attributes from.
+  private def get_attributes: (untyped element) -> untyped
+
+  # Determines if a document element has text content
+  #
+  # element::
+  #   XML element to be checked.
+  private def texts: (untyped element) -> untyped
+
+  # Determines if a document element has text content
+  #
+  # element::
+  #   XML element to be checked.
+  private def empty_content?: (untyped element) -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Notifications::Fanout::Subscribers
+  def self.new: (untyped pattern, untyped listener, untyped monotonic) -> untyped
+end

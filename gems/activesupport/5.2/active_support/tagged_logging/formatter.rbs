@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::TaggedLogging::Formatter
+  # This method is invoked when a log event occurs.
+  def call: (untyped severity, untyped timestamp, untyped progname, untyped msg) -> untyped
+
+  def tagged: (*untyped tags) { (untyped) -> untyped } -> untyped
+
+  def push_tags: (*untyped tags) -> untyped
+
+  def pop_tags: (?::Integer size) -> untyped
+
+  def clear_tags!: () -> untyped
+
+  def current_tags: () -> untyped
+
+  def tags_text: () -> untyped
+end

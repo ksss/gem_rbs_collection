@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::LogSubscriber < ::ActiveSupport::Subscriber
+  def self.logger: () -> untyped
+  def self.log_subscribers: () -> untyped
+  # Flush all log_subscribers' logger.
+  def self.flush_all!: () -> (untyped | nil)
+  def logger: () -> untyped
+  def start: (untyped name, untyped id, untyped payload) -> (untyped | nil)
+  def finish: (untyped name, untyped id, untyped payload) -> untyped
+  # Set color by using a symbol or one of the defined constants. If a third
+  # option is set to +true+, it also adds bold to the string. This is based
+  # on the Highline implementation and will automatically append CLEAR to the
+  # end of the returned String.
+  private def color: (untyped text, untyped color, ?bool bold) -> (untyped | ::String)
+  attr_writer self.logger: untyped
+  def self.colorize_logging: () -> untyped
+  def colorize_logging: () -> untyped
+  def self.colorize_logging=: (untyped val) -> untyped
+  def colorize_logging=: (untyped val) -> untyped
+  BLACK: String
+  BLUE: String
+  BOLD: String
+  CLEAR: String
+  CYAN: String
+  GREEN: String
+  MAGENTA: String
+  RED: String
+  WHITE: String
+  YELLOW: String
+end

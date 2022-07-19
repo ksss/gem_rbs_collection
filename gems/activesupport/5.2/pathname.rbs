@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Pathname
+  def as_json: (?untyped? options) -> untyped
+end

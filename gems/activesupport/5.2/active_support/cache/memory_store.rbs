@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::MemoryStore < ::ActiveSupport::Cache::Store
+  def initialize: (?untyped? options) -> void
+  # Delete all data stored in a given cache store.
+  def clear: (?untyped? options) -> untyped
+  # Preemptively iterates through all stored keys and removes the ones which have expired.
+  def cleanup: (?untyped? options) -> untyped
+  # To ensure entries fit within the specified memory prune the cache by removing the least
+  # recently accessed entries.
+  def prune: (untyped target_size, ?untyped? max_time) -> (nil | untyped)
+  # Returns true if the cache is currently being pruned.
+  def pruning?: () -> untyped
+  # Increment an integer value in the cache.
+  def increment: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Decrement an integer value in the cache.
+  def decrement: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Deletes cache entries if the cache key matches a given pattern.
+  def delete_matched: (untyped matcher, ?untyped? options) -> untyped
+  def inspect: () -> ::String
+  # Synchronize calls to the cache. This should be called wherever the underlying cache implementation
+  # is not thread safe.
+  def synchronize: () ?{ () -> untyped } -> untyped
+  private def cached_size: (untyped key, untyped entry) -> untyped
+  private def read_entry: (untyped key, untyped options) -> untyped
+  private def write_entry: (untyped key, untyped entry, untyped options) -> (false | untyped)
+  private def delete_entry: (untyped key, untyped options) -> untyped
+  private def modify_value: (untyped name, untyped amount, untyped options) -> untyped
+  PER_ENTRY_OVERHEAD: Integer
+end

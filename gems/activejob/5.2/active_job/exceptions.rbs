@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Exceptions
+  # Reschedules the job to be re-executed. This is useful in combination
+  # with the +rescue_from+ option. When you rescue an exception from your job
+  # you can ask Active Job to retry performing your job.
+  #
+  # ==== Options
+  # * <tt>:wait</tt> - Enqueues the job with the specified delay in seconds
+  # * <tt>:wait_until</tt> - Enqueues the job at the time specified
+  # * <tt>:queue</tt> - Enqueues the job on the specified queue
+  # * <tt>:priority</tt> - Enqueues the job with the specified priority
+  #
+  # ==== Examples
+  #
+  #  class SiteScraperJob < ActiveJob::Base
+  #    rescue_from(ErrorLoadingSite) do
+  #      retry_job queue: :low_priority
+  #    end
+  #
+  #    def perform(*args)
+  #      # raise ErrorLoadingSite if cannot scrape
+  #    end
+  #  end
+  def retry_job: (?::Hash[untyped, untyped] options) -> untyped
+
+  private def determine_delay: (untyped seconds_or_duration_or_algorithm) -> untyped
+
+  extend ActiveSupport::Concern
+end

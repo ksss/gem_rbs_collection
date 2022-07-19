@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Event
+  def initialize: (untyped name, untyped start, untyped ending, untyped transaction_id, untyped payload) -> void
+  # Returns the difference in milliseconds between when the execution of the
+  # event started and when it ended.
+  #
+  #   ActiveSupport::Notifications.subscribe('wait') do |*args|
+  #     @event = ActiveSupport::Notifications::Event.new(*args)
+  #   end
+  #
+  #   ActiveSupport::Notifications.instrument('wait') do
+  #     sleep 1
+  #   end
+  #
+  #   @event.duration # => 1000.138
+  def duration: () -> untyped
+  def <<: (untyped event) -> untyped
+  def parent_of?: (untyped event) -> untyped
+  attr_accessor end: untyped
+  attr_reader name: untyped
+  attr_reader time: untyped
+  attr_reader transaction_id: untyped
+  attr_reader payload: untyped
+  attr_reader children: untyped
+end

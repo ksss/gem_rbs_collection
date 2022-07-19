@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AttributeDecorators::TypeDecorator
+  def initialize: (?::Hash[untyped, untyped] decorations) -> void
+  def merge: (*untyped args) -> untyped
+  def apply: (untyped name, untyped `type`) -> untyped
+  private def decorators_for: (untyped name, untyped `type`) -> untyped
+  private def matching: (untyped name, untyped `type`) -> untyped
+  # defined by `delegate` to: #@decorations
+  def clear: (*untyped, **untyped) -> untyped
+end

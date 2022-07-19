@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport
+  # Returns the version of the currently loaded Active Support as a <tt>Gem::Version</tt>.
+  def self.gem_version: () -> untyped
+
+  # Returns the version of the currently loaded ActiveSupport as a <tt>Gem::Version</tt>
+  def self.version: () -> untyped
+
+  def self.eager_load!: () -> untyped
+
+  def self.to_time_preserves_timezone: () -> untyped
+
+  def self.to_time_preserves_timezone=: (untyped value) -> untyped
+
+  extend ActiveSupport::LazyLoadHooks
+
+  extend ActiveSupport::Autoload
+
+  def self.test_order: () -> untyped
+
+  def test_order: () -> untyped
+
+  def self.parse_json_times: () -> untyped
+
+  def parse_json_times: () -> untyped
+
+  def self.test_order=: (untyped val) -> untyped
+
+  def test_order=: (untyped val) -> untyped
+
+  def self.parse_json_times=: (untyped val) -> untyped
+
+  def parse_json_times=: (untyped val) -> untyped
+end

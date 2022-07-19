@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Enum::EnumType < ::ActiveModel::Type::Value
+  def initialize: (untyped name, untyped mapping, untyped subtype) -> void
+  def cast: (untyped value) -> (nil | untyped)
+  def deserialize: (untyped value) -> (nil | untyped)
+  def serialize: (untyped value) -> untyped
+  def assert_valid_value: (untyped value) -> (untyped | nil)
+  attr_reader name: untyped
+  attr_reader mapping: untyped
+  attr_reader subtype: untyped
+  # defined by `delegate` to: untyped#subtype
+  def type: (*untyped, **untyped) -> untyped
+end

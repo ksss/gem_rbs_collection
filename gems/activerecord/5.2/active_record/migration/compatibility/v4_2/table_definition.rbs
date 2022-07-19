@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Migration::Compatibility::V4_2::TableDefinition
+  def references: (**untyped options) -> untyped
+
+  alias belongs_to references
+
+  def timestamps: (**untyped options) -> untyped
+end

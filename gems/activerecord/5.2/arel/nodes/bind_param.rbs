@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::BindParam < ::Arel::Nodes::Node
+  attr_accessor value: untyped
+end

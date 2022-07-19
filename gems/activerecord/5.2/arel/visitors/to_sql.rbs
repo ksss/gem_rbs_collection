@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::ToSql < ::Arel::Visitors::Reduce
+  AND: String
+  COMMA: String
+  DISTINCT: String
+  GROUP_BY: String
+  ORDER_BY: String
+  SPACE: String
+  WHERE: String
+  WINDOW: String
+end

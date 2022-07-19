@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::JoinDependency::JoinBase < ::ActiveRecord::Associations::JoinDependency::JoinPart
+  def initialize: (untyped base_klass, untyped table, untyped children) -> void
+  def match?: (untyped other) -> (true | untyped)
+  attr_reader table: untyped
+end

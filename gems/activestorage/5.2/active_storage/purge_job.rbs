@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::PurgeJob < ::ActiveStorage::BaseJob
+  def perform: (untyped blob) -> untyped
+end

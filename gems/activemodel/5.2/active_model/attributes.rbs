@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Attributes
+  def initialize: () -> void
+
+  def attributes: () -> untyped
+
+  private def write_attribute: (untyped attr_name, untyped value) -> untyped
+
+  private def attribute: (untyped attr_name) -> untyped
+
+  # Handle *= for method_missing.
+  private def attribute=: (untyped attribute_name, untyped value) -> untyped
+
+  include ActiveModel::AttributeMethods
+
+  extend ActiveSupport::Concern
+end

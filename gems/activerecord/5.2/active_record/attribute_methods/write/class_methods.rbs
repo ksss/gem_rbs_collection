@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Write::ClassMethods
+  private def define_method_attribute=: (untyped name) -> untyped
+end

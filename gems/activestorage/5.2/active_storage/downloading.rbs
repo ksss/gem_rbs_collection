@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::Downloading
+  # Opens a new tempfile in #tempdir and copies blob data into it. Yields the tempfile.
+  private def download_blob_to_tempfile: () { (untyped) -> untyped } -> untyped
+
+  private def open_tempfile_for_blob: () { (untyped) -> untyped } -> untyped
+
+  # Efficiently downloads blob data into the given file.
+  private def download_blob_to: (untyped file) -> untyped
+
+  # Returns the directory in which tempfiles should be opened. Defaults to +Dir.tmpdir+.
+  private def tempdir: () -> untyped
+end

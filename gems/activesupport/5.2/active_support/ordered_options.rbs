@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::OrderedOptions < ::Hash[untyped, untyped]
+  alias _get []
+  def []=: (untyped key, untyped value) -> untyped
+  def []: (untyped key) -> untyped
+  def method_missing: (untyped name, *untyped args) -> untyped
+  def respond_to_missing?: (untyped name, untyped include_private) -> true
+end

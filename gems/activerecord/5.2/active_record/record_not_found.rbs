@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::RecordNotFound < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? message, ?untyped? model, ?untyped? primary_key, ?untyped? id) -> void
+  attr_reader model: untyped
+  attr_reader primary_key: untyped
+  attr_reader id: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::MarshalWithAutoloading
+  def load: (untyped source, ?untyped? proc) -> untyped
+end

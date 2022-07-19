@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::QueryMethods::WhereChain
+  def initialize: (untyped scope) -> void
+  # Returns a new relation expressing WHERE + NOT condition according to
+  # the conditions in the arguments.
+  #
+  # #not accepts conditions as a string, array, or hash. See QueryMethods#where for
+  # more details on each format.
+  #
+  #    User.where.not("name = 'Jon'")
+  #    # SELECT * FROM users WHERE NOT (name = 'Jon')
+  #
+  #    User.where.not(["name = ?", "Jon"])
+  #    # SELECT * FROM users WHERE NOT (name = 'Jon')
+  #
+  #    User.where.not(name: "Jon")
+  #    # SELECT * FROM users WHERE name != 'Jon'
+  #
+  #    User.where.not(name: nil)
+  #    # SELECT * FROM users WHERE name IS NOT NULL
+  #
+  #    User.where.not(name: %w(Ko1 Nobu))
+  #    # SELECT * FROM users WHERE name NOT IN ('Ko1', 'Nobu')
+  #
+  #    User.where.not(name: "Jon", role: "admin")
+  #    # SELECT * FROM users WHERE name != 'Jon' AND role != 'admin'
+  def not: (untyped opts, *untyped rest) -> untyped
+  include ActiveModel::ForbiddenAttributesProtection
+end

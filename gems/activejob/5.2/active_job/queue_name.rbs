@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::QueueName
+  # Returns the name of the queue the job will be run on.
+  def queue_name: () -> untyped
+
+  extend ActiveSupport::Concern
+end

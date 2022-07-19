@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Callbacks
+  include ActiveSupport::Callbacks
+
+  extend ActiveSupport::Concern
+end

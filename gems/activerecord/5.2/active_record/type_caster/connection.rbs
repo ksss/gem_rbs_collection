@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::TypeCaster::Connection
+  def initialize: (untyped klass, untyped table_name) -> void
+  def type_cast_for_database: (untyped attribute_name, untyped value) -> untyped
+  private def column_for: (untyped attribute_name) -> (untyped | nil)
+  attr_reader table_name: untyped
+  # defined by `delegate` to: #@klass
+  def connection: (*untyped, **untyped) -> untyped
+end

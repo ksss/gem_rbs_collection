@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::SchemaMigration < ::ActiveRecord::Base
+  def self.primary_key: () -> "version"
+  def self.table_name: () -> ::String
+  def self.table_exists?: () -> untyped
+  def self.create_table: () -> (untyped | nil)
+  def self.drop_table: () -> untyped
+  def self.normalize_migration_number: (untyped number) -> untyped
+  def self.normalized_versions: () -> untyped
+  def self.all_versions: () -> untyped
+  def version: () -> untyped
+  include ActiveRecord::SchemaMigration::GeneratedAssociationMethods
+end

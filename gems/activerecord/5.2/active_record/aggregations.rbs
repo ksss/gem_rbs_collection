@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Aggregations
+  def initialize_dup: () -> untyped
+
+  def reload: () -> untyped
+
+  private def clear_aggregation_cache: () -> (untyped | nil)
+
+  private def init_internals: () -> untyped
+
+  extend ActiveSupport::Concern
+end

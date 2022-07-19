@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class NameError[T] < ::StandardError
+  # Extract the name of the missing constant from the exception message.
+  #
+  #   begin
+  #     HelloWorld
+  #   rescue NameError => e
+  #     e.missing_name
+  #   end
+  #   # => "HelloWorld"
+  def missing_name: () -> untyped
+  # Was this exception raised because the given name was missing?
+  #
+  #   begin
+  #     HelloWorld
+  #   rescue NameError => e
+  #     e.missing_name?("HelloWorld")
+  #   end
+  #   # => true
+  def missing_name?: (untyped name) -> untyped
+end

@@ -1,0 +1,16 @@
+source "https://rubygems.org"
+
+ruby "~> 2.7.0"
+
+gem "rails", "5.2.8.1"
+gem "sqlite3"
+gem "orthoses"# , path: "../../../../orthoses"
+gem "orthoses-rails"# , path: "../../../../orthoses-rails"
+gem "rbs"# , path: "../../../../rbs"
+
+if RUBY_VERSION >= "3.1"
+  gem "net-smtp", require: false
+  gem "net-imap", require: false
+  gem "net-pop", require: false
+  gem "psych", "~> 3"
+end

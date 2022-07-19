@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::TestFixtures
+  def before_setup: () -> untyped
+
+  def after_teardown: () -> untyped
+
+  def run_in_transaction?: () -> untyped
+
+  def setup_fixtures: (?untyped config) -> untyped
+
+  def teardown_fixtures: () -> untyped
+
+  def enlist_fixture_connections: () -> untyped
+
+  private def load_fixtures: (untyped config) -> untyped
+
+  private def instantiate_fixtures: () -> untyped
+
+  private def load_instances?: () -> untyped
+
+  extend ActiveSupport::Concern
+end

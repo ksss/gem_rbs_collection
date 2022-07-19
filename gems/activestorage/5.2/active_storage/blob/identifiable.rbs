@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::Blob::Identifiable
+  def identify: () -> (untyped | nil)
+
+  def identified?: () -> untyped
+
+  private def identify_content_type: () -> untyped
+
+  private def download_identifiable_chunk: () -> (untyped | "")
+
+  private def update_service_metadata: () -> (untyped | nil)
+end

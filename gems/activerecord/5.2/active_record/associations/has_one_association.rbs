@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::HasOneAssociation < ::ActiveRecord::Associations::SingularAssociation
+  def handle_dependency: () -> untyped
+  def replace: (untyped record, ?bool save) -> untyped
+  def delete: (?untyped method) -> (untyped | nil)
+  # The reason that the save param for replace is false, if for create (not just build),
+  # is because the setting of the foreign keys is actually handled by the scoping when
+  # the record is instantiated, and so they are set straight away and do not need to be
+  # updated within replace.
+  private def set_new_record: (untyped record) -> untyped
+  private def remove_target!: (untyped method) -> untyped
+  private def nullify_owner_attributes: (untyped record) -> untyped
+  private def transaction_if: (untyped value) { () -> untyped } -> untyped
+  private def _create_record: (untyped attributes, ?bool raise_error) ?{ () -> untyped } -> untyped
+  include ActiveRecord::Associations::ForeignAssociation
+end

@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Duration::ISO8601Parser
+  def initialize: (untyped string) -> void
+  def parse!: () -> untyped
+  private def finished?: () -> untyped
+  # Parses number which can be a float with either comma or period.
+  private def number: () -> untyped
+  private def scan: (untyped pattern) -> untyped
+  private def raise_parsing_error: (?untyped? reason) -> untyped
+  # Checks for various semantic errors as stated in ISO 8601 standard.
+  private def validate!: () -> true
+  attr_accessor mode: untyped
+  attr_accessor sign: untyped
+  attr_reader parts: untyped
+  attr_reader scanner: untyped
+  COMMA: String
+  DATE_COMPONENT: Regexp
+  DATE_COMPONENTS: Array[Symbol]
+  DATE_MARKER: Regexp
+  DATE_TO_PART: Hash[String, Symbol]
+  PERIOD: String
+  PERIOD_OR_COMMA: Regexp
+  SIGN_MARKER: Regexp
+  TIME_COMPONENT: Regexp
+  TIME_COMPONENTS: Array[Symbol]
+  TIME_MARKER: Regexp
+  TIME_TO_PART: Hash[String, Symbol]
+end

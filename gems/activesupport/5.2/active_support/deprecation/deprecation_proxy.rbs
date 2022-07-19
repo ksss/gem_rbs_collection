@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Deprecation::DeprecationProxy
+  def self.new: (*untyped args) ?{ () -> untyped } -> untyped
+  # Don't give a deprecation warning on inspect since test/unit and error
+  # logs rely on it for diagnostics.
+  def inspect: () -> untyped
+  private def method_missing: (untyped called, *untyped args) ?{ () -> untyped } -> untyped
+end

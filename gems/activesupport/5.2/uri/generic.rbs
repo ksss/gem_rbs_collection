@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class URI::Generic
+  def as_json: (?untyped? options) -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::DeleteStatement < ::Arel::Nodes::Binary
+  attr_accessor limit: untyped
+end

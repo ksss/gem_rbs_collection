@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Filename::Parameters
+  def initialize: (untyped filename) -> void
+  def combined: () -> ::String
+  def ascii: () -> untyped
+  def utf8: () -> untyped
+  def to_s: () -> untyped
+  private def percent_escape: (untyped string, untyped pattern) -> untyped
+  RFC_5987_ESCAPED_CHAR: Regexp
+  TRADITIONAL_ESCAPED_CHAR: Regexp
+end

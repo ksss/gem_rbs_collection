@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Binary < ::Arel::Nodes::Node
+  attr_accessor left: untyped
+  attr_accessor right: untyped
+end

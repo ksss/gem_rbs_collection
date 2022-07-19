@@ -1,0 +1,69 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Conversion
+  # If your object is already designed to implement all of the \Active \Model
+  # you can use the default <tt>:to_model</tt> implementation, which simply
+  # returns +self+.
+  #
+  #   class Person
+  #     include ActiveModel::Conversion
+  #   end
+  #
+  #   person = Person.new
+  #   person.to_model == person # => true
+  #
+  # If your model does not act like an \Active \Model object, then you should
+  # define <tt>:to_model</tt> yourself returning a proxy object that wraps
+  # your object with \Active \Model compliant methods.
+  def to_model: () -> self
+
+  # Returns an Array of all key attributes if any of the attributes is set, whether or not
+  # the object is persisted. Returns +nil+ if there are no key attributes.
+  #
+  #   class Person
+  #     include ActiveModel::Conversion
+  #     attr_accessor :id
+  #
+  #     def initialize(id)
+  #       @id = id
+  #     end
+  #   end
+  #
+  #   person = Person.new(1)
+  #   person.to_key # => [1]
+  def to_key: () -> untyped
+
+  # Returns a +string+ representing the object's key suitable for use in URLs,
+  # or +nil+ if <tt>persisted?</tt> is +false+.
+  #
+  #   class Person
+  #     include ActiveModel::Conversion
+  #     attr_accessor :id
+  #
+  #     def initialize(id)
+  #       @id = id
+  #     end
+  #
+  #     def persisted?
+  #       true
+  #     end
+  #   end
+  #
+  #   person = Person.new(1)
+  #   person.to_param # => "1"
+  def to_param: () -> (untyped | nil)
+
+  # Returns a +string+ identifying the path associated with the object.
+  # ActionPack uses this to find a suitable partial to represent the object.
+  #
+  #   class Person
+  #     include ActiveModel::Conversion
+  #   end
+  #
+  #   person = Person.new
+  #   person.to_partial_path # => "people/person"
+  def to_partial_path: () -> untyped
+
+  extend ActiveSupport::Concern
+end

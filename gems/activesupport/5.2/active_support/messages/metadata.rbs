@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Messages::Metadata
+  def initialize: (untyped message, ?untyped? expires_at, ?untyped? purpose) -> void
+  def as_json: (?::Hash[untyped, untyped] options) -> { _rails: { message: untyped, exp: untyped, pur: untyped } }
+  def self.wrap: (untyped message, ?expires_at: untyped?, ?expires_in: untyped?, ?purpose: untyped?) -> untyped
+  def self.verify: (untyped message, untyped purpose) -> untyped
+  private def self.pick_expiry: (untyped expires_at, untyped expires_in) -> (untyped | untyped | nil)
+  private def self.extract_metadata: (untyped message) -> untyped
+  private def self.encode: (untyped message) -> untyped
+  private def self.decode: (untyped message) -> untyped
+  def verify: (untyped purpose) -> (untyped | nil)
+  private def match?: (untyped purpose) -> untyped
+  private def fresh?: () -> untyped
+end

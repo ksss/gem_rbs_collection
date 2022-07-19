@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Instrumenter
+  def initialize: (untyped notifier) -> void
+  # Instrument the given block by measuring the time taken to execute it
+  # and publish it. Notice that events get sent even if an error occurs
+  # in the passed-in block.
+  def instrument: (untyped name, ?::Hash[untyped, untyped] payload) { (untyped) -> untyped } -> untyped
+  # Send a start notification with +name+ and +payload+.
+  def start: (untyped name, untyped payload) -> untyped
+  # Send a finish notification with +name+ and +payload+.
+  def finish: (untyped name, untyped payload) -> untyped
+  def finish_with_state: (untyped listeners_state, untyped name, untyped payload) -> untyped
+  private def unique_id: () -> untyped
+  attr_reader id: untyped
+end

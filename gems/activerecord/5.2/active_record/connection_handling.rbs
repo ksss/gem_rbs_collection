@@ -1,0 +1,100 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::ConnectionHandling
+  # Establishes the connection to the database. Accepts a hash as input where
+  # the <tt>:adapter</tt> key must be specified with the name of a database adapter (in lower-case)
+  # example for regular databases (MySQL, PostgreSQL, etc):
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     adapter:  "mysql2",
+  #     host:     "localhost",
+  #     username: "myuser",
+  #     password: "mypass",
+  #     database: "somedatabase"
+  #   )
+  #
+  # Example for SQLite database:
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     adapter:  "sqlite3",
+  #     database: "path/to/dbfile"
+  #   )
+  #
+  # Also accepts keys as strings (for parsing from YAML for example):
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     "adapter"  => "sqlite3",
+  #     "database" => "path/to/dbfile"
+  #   )
+  #
+  # Or a URL:
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     "postgres://myuser:mypass@localhost/somedatabase"
+  #   )
+  #
+  # In case {ActiveRecord::Base.configurations}[rdoc-ref:Core.configurations]
+  # is set (Rails automatically loads the contents of config/database.yml into it),
+  # a symbol can also be given as argument, representing a key in the
+  # configuration hash:
+  #
+  #   ActiveRecord::Base.establish_connection(:production)
+  #
+  # The exceptions AdapterNotSpecified, AdapterNotFound and +ArgumentError+
+  # may be returned on an error.
+  def establish_connection: (?untyped? config) -> untyped
+
+  # Returns the connection currently associated with the class. This can
+  # also be used to "borrow" the connection to do database work unrelated
+  # to any of the specific Active Records.
+  def connection: () -> untyped
+
+  # Return the specification name from the current class or its parent.
+  def connection_specification_name: () -> untyped
+
+  # Returns the configuration of the associated connection as a hash:
+  #
+  #  ActiveRecord::Base.connection_config
+  #  # => {pool: 5, timeout: 5000, database: "db/development.sqlite3", adapter: "sqlite3"}
+  #
+  # Please use only for reading.
+  def connection_config: () -> untyped
+
+  def connection_pool: () -> untyped
+
+  def retrieve_connection: () -> untyped
+
+  # Returns +true+ if Active Record is connected.
+  def connected?: () -> untyped
+
+  def remove_connection: (?untyped? name) -> untyped
+
+  def clear_cache!: () -> untyped
+
+  def sqlite3_connection: (untyped config) -> untyped
+
+  # Establishes a connection to the database that's used by all Active Record objects.
+  def mysql2_connection: (untyped config) -> untyped
+
+  # Establishes a connection to the database that's used by all Active Record objects
+  def postgresql_connection: (untyped config) -> untyped
+
+  attr_writer connection_specification_name: untyped
+
+  # defined by `delegate` to: #connection_handler
+  def clear_active_connections!: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #connection_handler
+  def clear_reloadable_connections!: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #connection_handler
+  def clear_all_connections!: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #connection_handler
+  def flush_idle_connections!: (*untyped, **untyped) -> untyped
+
+  DEFAULT_ENV: Proc
+
+  RAILS_ENV: Proc
+end

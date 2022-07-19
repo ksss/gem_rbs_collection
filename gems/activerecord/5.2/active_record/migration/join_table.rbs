@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Migration::JoinTable
+  private def find_join_table_name: (untyped table_1, untyped table_2, ?::Hash[untyped, untyped] options) -> untyped
+
+  private def join_table_name: (untyped table_1, untyped table_2) -> untyped
+end

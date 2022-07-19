@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Module::Concerning
+  # Define a new concern and mix it in.
+  def concerning: (untyped topic) ?{ () -> untyped } -> untyped
+
+  # A low-cruft shortcut to define a concern.
+  #
+  #   concern :EventTracking do
+  #     ...
+  #   end
+  #
+  # is equivalent to
+  #
+  #   module EventTracking
+  #     extend ActiveSupport::Concern
+  #
+  #     ...
+  #   end
+  def concern: (untyped topic) ?{ () -> untyped } -> untyped
+end

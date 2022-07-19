@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Multibyte::Unicode::Codepoint
+  # Initializing Codepoint object with default values
+  def initialize: () -> void
+  def swapcase_mapping: () -> untyped
+  attr_accessor code: untyped
+  attr_accessor combining_class: untyped
+  attr_accessor decomp_type: untyped
+  attr_accessor decomp_mapping: untyped
+  attr_accessor uppercase_mapping: untyped
+  attr_accessor lowercase_mapping: untyped
+end

@@ -1,0 +1,29 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Digest::UUID
+  # Generates a v5 non-random UUID (Universally Unique IDentifier).
+  #
+  # Using Digest::MD5 generates version 3 UUIDs; Digest::SHA1 generates version 5 UUIDs.
+  # uuid_from_hash always generates the same UUID for a given name and namespace combination.
+  #
+  # See RFC 4122 for details of UUID at: https://www.ietf.org/rfc/rfc4122.txt
+  def self.uuid_from_hash: (untyped hash_class, untyped uuid_namespace, untyped name) -> untyped
+
+  # Convenience method for uuid_from_hash using Digest::MD5.
+  def self.uuid_v3: (untyped uuid_namespace, untyped name) -> untyped
+
+  # Convenience method for uuid_from_hash using Digest::SHA1.
+  def self.uuid_v5: (untyped uuid_namespace, untyped name) -> untyped
+
+  # Convenience method for SecureRandom.uuid.
+  def self.uuid_v4: () -> untyped
+
+  DNS_NAMESPACE: String
+
+  OID_NAMESPACE: String
+
+  URL_NAMESPACE: String
+
+  X500_NAMESPACE: String
+end

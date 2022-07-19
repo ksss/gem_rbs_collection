@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeMutationTracker
+  def initialize: (untyped attributes) -> void
+  def changed_attribute_names: () -> untyped
+  def changed_values: () -> untyped
+  def changes: () -> untyped
+  def change_to_attribute: (untyped attr_name) -> untyped
+  def any_changes?: () -> untyped
+  def changed?: (untyped attr_name, ?from: untyped, ?to: untyped) -> untyped
+  def changed_in_place?: (untyped attr_name) -> untyped
+  def forget_change: (untyped attr_name) -> untyped
+  def original_value: (untyped attr_name) -> untyped
+  def force_change: (untyped attr_name) -> untyped
+  private def attr_names: () -> untyped
+  attr_reader attributes: untyped
+  attr_reader forced_changes: untyped
+  OPTION_NOT_GIVEN: Object
+end

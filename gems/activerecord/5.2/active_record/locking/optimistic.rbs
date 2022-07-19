@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Locking::Optimistic
+  def locking_enabled?: () -> untyped
+
+  private def _create_record: (?untyped attribute_names) -> untyped
+
+  private def _touch_row: (untyped attribute_names, untyped time) -> untyped
+
+  private def _update_row: (untyped attribute_names, ?::String attempted_action) -> untyped
+
+  private def destroy_row: () -> untyped
+
+  extend ActiveSupport::Concern
+end

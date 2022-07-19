@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::FileFixtures
+  # Returns a +Pathname+ to the fixture file named +fixture_name+.
+  #
+  # Raises +ArgumentError+ if +fixture_name+ can't be found.
+  def file_fixture: (untyped fixture_name) -> untyped
+
+  extend ActiveSupport::Concern
+end

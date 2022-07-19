@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached
+  def initialize: (untyped name, untyped record, dependent: untyped) -> void
+  private def create_blob_from: (untyped attachable) -> untyped
+  attr_reader name: untyped
+  attr_reader record: untyped
+  attr_reader dependent: untyped
+end

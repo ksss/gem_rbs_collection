@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ConnectionHandling::MergeAndResolveDefaultUrlConfig
+  def initialize: (untyped raw_configurations) -> void
+  # Returns fully resolved connection hashes.
+  # Merges connection information from `ENV['DATABASE_URL']` if available.
+  def resolve: () -> untyped
+  private def config: () -> untyped
+end

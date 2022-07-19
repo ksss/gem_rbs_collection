@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Deprecation::DeprecatedConstantProxy < ::ActiveSupport::Deprecation::DeprecationProxy
+  def initialize: (untyped old_const, untyped new_const, ?untyped deprecator, ?message: ::String) -> void
+  # Returns the class of the new constant.
+  #
+  #   PLANETS_POST_2006 = %w(mercury venus earth mars jupiter saturn uranus neptune)
+  #   PLANETS = ActiveSupport::Deprecation::DeprecatedConstantProxy.new('PLANETS', 'PLANETS_POST_2006')
+  #   PLANETS.class # => Array
+  def class: () -> untyped
+  private def target: () -> untyped
+  private def warn: (untyped callstack, untyped called, untyped args) -> untyped
+end

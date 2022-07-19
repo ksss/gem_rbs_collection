@@ -1,0 +1,45 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::FileStore < ::ActiveSupport::Cache::Store
+  def initialize: (untyped cache_path, ?untyped? options) -> void
+  # Deletes all items from the cache. In this case it deletes all the entries in the specified
+  # file store directory except for .keep or .gitkeep. Be careful which directory is specified in your
+  # config file when using +FileStore+ because everything in that directory will be deleted.
+  def clear: (?untyped? options) -> untyped
+  # Preemptively iterates through all stored keys and removes the ones which have expired.
+  def cleanup: (?untyped? options) -> untyped
+  # Increments an already existing integer value that is stored in the cache.
+  # If the key is not found nothing is done.
+  def increment: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Decrements an already existing integer value that is stored in the cache.
+  # If the key is not found nothing is done.
+  def decrement: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  def delete_matched: (untyped matcher, ?untyped? options) -> untyped
+  private def read_entry: (untyped key, untyped options) -> untyped
+  private def write_entry: (untyped key, untyped entry, untyped options) -> (false | true)
+  private def delete_entry: (untyped key, untyped options) -> (untyped | nil)
+  # Lock a file for a block so only one process can modify it at a time.
+  private def lock_file: (untyped file_name) { () -> untyped } -> untyped
+  # Translate a key into a file path.
+  private def normalize_key: (untyped key, untyped options) -> untyped
+  # Translate a file path into a key.
+  private def file_path_key: (untyped path) -> untyped
+  # Delete empty directories in the cache.
+  private def delete_empty_directories: (untyped dir) -> (nil | untyped)
+  # Make sure a file path's directories exist.
+  private def ensure_cache_path: (untyped path) -> (untyped | nil)
+  private def search_dir: (untyped dir) ?{ () -> untyped } -> (nil | untyped)
+  # Modifies the amount of an already existing integer value that is stored in the cache.
+  # If the key is not found nothing is done.
+  private def modify_value: (untyped name, untyped amount, untyped options) -> untyped
+  # Exclude entries from source directory
+  private def exclude_from: (untyped source, untyped excludes) -> untyped
+  prepend ActiveSupport::Cache::Strategy::LocalCache
+  attr_reader cache_path: untyped
+  DIR_FORMATTER: String
+  EXCLUDED_DIRS: Array[String]
+  FILENAME_MAX_SIZE: Integer
+  FILEPATH_MAX_SIZE: Integer
+  GITKEEP_FILES: Array[String]
+end

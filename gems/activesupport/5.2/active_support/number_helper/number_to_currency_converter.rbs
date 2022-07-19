@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToCurrencyConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def absolute_value: (untyped number) -> untyped
+  private def options: () -> untyped
+  private def i18n_opts: () -> untyped
+end

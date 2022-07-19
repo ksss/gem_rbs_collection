@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::JoinDependency::JoinAssociation < ::ActiveRecord::Associations::JoinDependency::JoinPart
+  def initialize: (untyped reflection, untyped children) -> void
+  def match?: (untyped other) -> (true | untyped)
+  def join_constraints: (untyped foreign_table, untyped foreign_klass, untyped join_type, untyped alias_tracker) -> untyped
+  def tables=: (untyped tables) -> untyped
+  private def fetch_arel_attribute: (untyped value) { (untyped) -> untyped } -> untyped
+  private def append_constraints: (untyped join, untyped constraints) -> untyped
+  attr_accessor table: untyped
+  attr_reader reflection: untyped
+  attr_reader tables: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+  def name: () -> untyped
+
+  def delegate_to_scoped_klass: (untyped method) -> untyped
+end

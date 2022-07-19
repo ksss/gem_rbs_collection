@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def self.runtime=: (untyped value) -> untyped
+  def self.runtime: () -> untyped
+  def self.reset_runtime: () -> untyped
+  def sql: (untyped event) -> (nil | untyped)
+  private def type_casted_binds: (untyped casted_binds) -> untyped
+  private def render_bind: (untyped attr, untyped value) -> ::Array[untyped]
+  private def colorize_payload_name: (untyped name, untyped payload_name) -> untyped
+  private def sql_color: (untyped sql) -> untyped
+  private def logger: () -> untyped
+  private def debug: (?untyped? progname) ?{ () -> untyped } -> (nil | untyped)
+  private def log_query_source: () -> untyped
+  private def extract_callstack: (untyped callstack) -> ::Array[untyped]
+  private def ignored_callstack: (untyped path) -> untyped
+  IGNORE_PAYLOAD_NAMES: Array[String]
+  RAILS_GEM_ROOT: String
+end

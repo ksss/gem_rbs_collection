@@ -1,0 +1,5 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::Compatibility::V5_2 < ActiveRecord::Migration::Current
+end

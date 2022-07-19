@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Variation
+  # Returns a Variation instance based on the given variator. If the variator is a Variation, it is
+  # returned unmodified. If it is a String, it is passed to ActiveStorage::Variation.decode. Otherwise,
+  # it is assumed to be a transformations Hash and is passed directly to the constructor.
+  def self.wrap: (untyped variator) -> untyped
+  # Returns a Variation instance with the transformations that were encoded by +encode+.
+  def self.decode: (untyped key) -> untyped
+  # Returns a signed key for the +transformations+, which can be used to refer to a specific
+  # variation in a URL or combined key (like <tt>ActiveStorage::Variant#key</tt>).
+  def self.encode: (untyped transformations) -> untyped
+  def initialize: (untyped transformations) -> void
+  # Accepts an open MiniMagick image instance, like what's returned by <tt>MiniMagick::Image.read(io)</tt>,
+  # and performs the +transformations+ against it. The transformed image instance is then returned.
+  def transform: (untyped image) -> untyped
+  # Returns a signed key for all the +transformations+ that this variation was instantiated with.
+  def key: () -> untyped
+  private def pass_transform_argument: (untyped command, untyped method, untyped argument) -> untyped
+  private def eligible_argument?: (untyped argument) -> untyped
+  private def validate_transformation: (untyped name, untyped argument) -> untyped
+  private def validate_arg_string: (untyped argument) -> (untyped | nil)
+  private def validate_arg_array: (untyped argument) -> untyped
+  private def validate_arg_hash: (untyped argument) -> untyped
+end

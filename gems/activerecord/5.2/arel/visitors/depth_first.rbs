@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::DepthFirst < ::Arel::Visitors::Visitor
+  DISPATCH: Hash[untyped, untyped]
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Logging
+  private def tag_logger: (*untyped tags) { () -> untyped } -> untyped
+
+  private def logger_tagged_by_active_job?: () -> untyped
+
+  extend ActiveSupport::Concern
+end

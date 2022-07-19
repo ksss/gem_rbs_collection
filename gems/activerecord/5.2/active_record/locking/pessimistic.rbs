@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Locking::Pessimistic
+  # Obtain a row lock on this record. Reloads the record to obtain the requested
+  # lock. Pass an SQL locking clause to append the end of the SELECT statement
+  # or pass true for "FOR UPDATE" (the default, an exclusive row lock). Returns
+  # the locked record.
+  def lock!: (?bool lock) -> self
+
+  # Wraps the passed block in a transaction, locking the object
+  # before yielding. You can pass the SQL locking clause
+  # as argument (see <tt>lock!</tt>).
+  def with_lock: (?bool lock) { () -> untyped } -> untyped
+end

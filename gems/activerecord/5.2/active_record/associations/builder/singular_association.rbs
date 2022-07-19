@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::SingularAssociation < ::ActiveRecord::Associations::Builder::Association
+  def self.valid_options: (untyped options) -> untyped
+  def self.define_accessors: (untyped model, untyped reflection) -> untyped
+  # Defines the (build|create)_association methods for belongs_to or has_one association
+  def self.define_constructors: (untyped mixin, untyped name) -> untyped
+end

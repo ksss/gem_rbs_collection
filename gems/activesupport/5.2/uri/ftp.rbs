@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class URI::FTP < ::URI::Generic
+  COMPONENT: Array[Symbol]
+  DEFAULT_PORT: Integer
+  TYPECODE: Array[String]
+  TYPECODE_PREFIX: String
+end

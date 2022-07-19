@@ -24,6 +24,10 @@ VERSIONS.each do |version|
             class Job
             end
           end
+          module Qu
+            class Job
+            end
+          end
         RBS
 
         generate_test_script(

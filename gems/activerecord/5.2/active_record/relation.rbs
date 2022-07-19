@@ -1,0 +1,295 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation
+  alias model klass
+  alias loaded? loaded
+  alias locked? lock_value
+  def initialize: (untyped klass, ?table: untyped, ?predicate_builder: untyped, ?values: ::Hash[untyped, untyped]) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def arel_attribute: (untyped name) -> untyped
+  # Initializes new record from relation while maintaining the current
+  # scope.
+  #
+  # Expects arguments in the same format as {ActiveRecord::Base.new}[rdoc-ref:Core.new].
+  #
+  #   users = User.where(name: 'DHH')
+  #   user = users.new # => #<User id: nil, name: "DHH", created_at: nil, updated_at: nil>
+  #
+  # You can also pass a block to new with the new record as argument:
+  #
+  #   user = users.new { |user| user.name = 'Oscar' }
+  #   user.name # => Oscar
+  def new: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  alias build new
+  # Tries to create a new record with the same scoped attributes
+  # defined in the relation. Returns the initialized object if validation fails.
+  #
+  # Expects arguments in the same format as
+  # {ActiveRecord::Base.create}[rdoc-ref:Persistence::ClassMethods#create].
+  #
+  # ==== Examples
+  #
+  #   users = User.where(name: 'Oscar')
+  #   users.create # => #<User id: 3, name: "Oscar", ...>
+  #
+  #   users.create(name: 'fxn')
+  #   users.create # => #<User id: 4, name: "fxn", ...>
+  #
+  #   users.create { |user| user.name = 'tenderlove' }
+  #   # => #<User id: 5, name: "tenderlove", ...>
+  #
+  #   users.create(name: nil) # validation on name
+  #   # => #<User id: nil, name: nil, ...>
+  def create: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  # Similar to #create, but calls
+  # {create!}[rdoc-ref:Persistence::ClassMethods#create!]
+  # on the base class. Raises an exception if a validation error occurs.
+  #
+  # Expects arguments in the same format as
+  # {ActiveRecord::Base.create!}[rdoc-ref:Persistence::ClassMethods#create!].
+  def create!: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  def first_or_create: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  def first_or_create!: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  def first_or_initialize: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  # Finds the first record with the given attributes, or creates a record
+  # with the attributes if one is not found:
+  #
+  #   # Find the first user named "Penélope" or create a new one.
+  #   User.find_or_create_by(first_name: 'Penélope')
+  #   # => #<User id: 1, first_name: "Penélope", last_name: nil>
+  #
+  #   # Find the first user named "Penélope" or create a new one.
+  #   # We already have one so the existing record will be returned.
+  #   User.find_or_create_by(first_name: 'Penélope')
+  #   # => #<User id: 1, first_name: "Penélope", last_name: nil>
+  #
+  #   # Find the first user named "Scarlett" or create a new one with
+  #   # a particular last name.
+  #   User.create_with(last_name: 'Johansson').find_or_create_by(first_name: 'Scarlett')
+  #   # => #<User id: 2, first_name: "Scarlett", last_name: "Johansson">
+  #
+  # This method accepts a block, which is passed down to #create. The last example
+  # above can be alternatively written this way:
+  #
+  #   # Find the first user named "Scarlett" or create a new one with a
+  #   # different last name.
+  #   User.find_or_create_by(first_name: 'Scarlett') do |user|
+  #     user.last_name = 'Johansson'
+  #   end
+  #   # => #<User id: 2, first_name: "Scarlett", last_name: "Johansson">
+  #
+  # This method always returns a record, but if creation was attempted and
+  # failed due to validation errors it won't be persisted, you get what
+  # #create returns in such situation.
+  #
+  # Please note *this method is not atomic*, it runs first a SELECT, and if
+  # there are no results an INSERT is attempted. If there are other threads
+  # or processes there is a race condition between both calls and it could
+  # be the case that you end up with two similar records.
+  #
+  # Whether that is a problem or not depends on the logic of the
+  # application, but in the particular case in which rows have a UNIQUE
+  # constraint an exception may be raised, just retry:
+  #
+  #  begin
+  #    CreditAccount.transaction(requires_new: true) do
+  #      CreditAccount.find_or_create_by(user_id: user.id)
+  #    end
+  #  rescue ActiveRecord::RecordNotUnique
+  #    retry
+  #  end
+  #
+  def find_or_create_by: (untyped attributes) ?{ () -> untyped } -> untyped
+  # Like #find_or_create_by, but calls
+  # {create!}[rdoc-ref:Persistence::ClassMethods#create!] so an exception
+  # is raised if the created record is invalid.
+  def find_or_create_by!: (untyped attributes) ?{ () -> untyped } -> untyped
+  # Like #find_or_create_by, but calls {new}[rdoc-ref:Core#new]
+  # instead of {create}[rdoc-ref:Persistence::ClassMethods#create].
+  def find_or_initialize_by: (untyped attributes) ?{ () -> untyped } -> untyped
+  # Runs EXPLAIN on the query or queries triggered by this relation and
+  # returns the result as a string. The string is formatted imitating the
+  # ones printed by the database shell.
+  #
+  # Note that this method actually runs the queries, since the results of some
+  # are needed by the next ones when eager loading is going on.
+  #
+  # Please see further details in the
+  # {Active Record Query Interface guide}[http://guides.rubyonrails.org/active_record_querying.html#running-explain].
+  def explain: () -> untyped
+  # Converts relation objects to Array.
+  def to_ary: () -> untyped
+  alias to_a to_ary
+  def records: () -> untyped
+  # Serializes the relation objects Array.
+  def encode_with: (untyped coder) -> untyped
+  # Returns size of the records.
+  def size: () -> untyped
+  # Returns true if there are no records.
+  def empty?: () -> untyped
+  # Returns true if there are no records.
+  def none?: () -> untyped
+  # Returns true if there are any records.
+  def any?: () -> untyped
+  # Returns true if there is exactly one record.
+  def one?: () -> untyped
+  # Returns true if there is more than one record.
+  def many?: () -> untyped
+  # Returns a cache key that can be used to identify the records fetched by
+  # this query. The cache key is built with a fingerprint of the sql query,
+  # the number of records matched by the query and a timestamp of the last
+  # updated record. When a new record comes to match the query, or any of
+  # the existing records is updated or deleted, the cache key changes.
+  #
+  #   Product.where("name like ?", "%Cosmic Encounter%").cache_key
+  #   # => "products/query-1850ab3d302391b85b8693e941286659-1-20150714212553907087000"
+  #
+  # If the collection is loaded, the method will iterate through the records
+  # to generate the timestamp, otherwise it will trigger one SQL query like:
+  #
+  #    SELECT COUNT(*), MAX("products"."updated_at") FROM "products" WHERE (name like '%Cosmic Encounter%')
+  #
+  # You can also pass a custom timestamp column to fetch the timestamp of the
+  # last updated record.
+  #
+  #   Product.where("name like ?", "%Game%").cache_key(:last_reviewed_at)
+  #
+  # You can customize the strategy to generate the key on a per model basis
+  # overriding ActiveRecord::Base#collection_cache_key.
+  def cache_key: (?::Symbol timestamp_column) -> untyped
+  # Scope all queries to the current scope.
+  #
+  #   Comment.where(post_id: 1).scoping do
+  #     Comment.first
+  #   end
+  #   # => SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = 1 ORDER BY "comments"."id" ASC LIMIT 1
+  #
+  # Please check unscoped if you want to remove all previous scopes (including
+  # the default_scope) during the execution of a block.
+  def scoping: () { () -> untyped } -> untyped
+  def _exec_scope: (*untyped args) ?{ () -> untyped } -> untyped
+  # Updates all records in the current relation with details given. This method constructs a single SQL UPDATE
+  # statement and sends it straight to the database. It does not instantiate the involved models and it does not
+  # trigger Active Record callbacks or validations. However, values passed to #update_all will still go through
+  # Active Record's normal type casting and serialization.
+  #
+  # ==== Parameters
+  #
+  # * +updates+ - A string, array, or hash representing the SET part of an SQL statement.
+  #
+  # ==== Examples
+  #
+  #   # Update all customers with the given attributes
+  #   Customer.update_all wants_email: true
+  #
+  #   # Update all books with 'Rails' in their title
+  #   Book.where('title LIKE ?', '%Rails%').update_all(author: 'David')
+  #
+  #   # Update all books that match conditions, but limit it to 5 ordered by date
+  #   Book.where('title LIKE ?', '%Rails%').order(:created_at).limit(5).update_all(author: 'David')
+  #
+  #   # Update all invoices and set the number column to its id value.
+  #   Invoice.update_all('number = id')
+  def update_all: (untyped updates) -> untyped
+  def update: (?::Symbol id, untyped attributes) -> untyped
+  # Destroys the records by instantiating each
+  # record and calling its {#destroy}[rdoc-ref:Persistence#destroy] method.
+  # Each object's callbacks are executed (including <tt>:dependent</tt> association options).
+  # Returns the collection of objects that were destroyed; each will be frozen, to
+  # reflect that no changes should be made (since they can't be persisted).
+  #
+  # Note: Instantiation, callback execution, and deletion of each
+  # record can be time consuming when you're removing many records at
+  # once. It generates at least one SQL +DELETE+ query per record (or
+  # possibly more, to enforce your callbacks). If you want to delete many
+  # rows quickly, without concern for their associations or callbacks, use
+  # #delete_all instead.
+  #
+  # ==== Examples
+  #
+  #   Person.where(age: 0..18).destroy_all
+  def destroy_all: () -> untyped
+  # Deletes the records without instantiating the records
+  # first, and hence not calling the {#destroy}[rdoc-ref:Persistence#destroy]
+  # method nor invoking callbacks.
+  # This is a single SQL DELETE statement that goes straight to the database, much more
+  # efficient than #destroy_all. Be careful with relations though, in particular
+  # <tt>:dependent</tt> rules defined on associations are not honored. Returns the
+  # number of rows affected.
+  #
+  #   Post.where(person_id: 5).where(category: ['Something', 'Else']).delete_all
+  #
+  # Both calls delete the affected posts all at once with a single DELETE statement.
+  # If you need to destroy dependent associations or call your <tt>before_*</tt> or
+  # +after_destroy+ callbacks, use the #destroy_all method instead.
+  #
+  # If an invalid method is supplied, #delete_all raises an ActiveRecordError:
+  #
+  #   Post.distinct.delete_all
+  #   # => ActiveRecord::ActiveRecordError: delete_all doesn't support distinct
+  def delete_all: () -> untyped
+  # Causes the records to be loaded from the database if they have not
+  # been loaded already. You can use this if for some reason you need
+  # to explicitly load some records before actually using them. The
+  # return value is the relation itself, not the records.
+  #
+  #   Post.where(published: true).load # => #<ActiveRecord::Relation>
+  def load: () ?{ () -> untyped } -> self
+  # Forces reloading of relation.
+  def reload: () -> untyped
+  def reset: () -> self
+  # Returns sql statement for the relation.
+  #
+  #   User.where(name: 'Oscar').to_sql
+  #   # => SELECT "users".* FROM "users"  WHERE "users"."name" = 'Oscar'
+  def to_sql: () -> untyped
+  # Returns a hash of where conditions.
+  #
+  #   User.where(name: 'Oscar').where_values_hash
+  #   # => {name: "Oscar"}
+  def where_values_hash: (?untyped relation_table_name) -> untyped
+  def scope_for_create: () -> untyped
+  # Returns true if relation needs eager loading.
+  def eager_loading?: () -> untyped
+  # Joins that are also marked for preloading. In which case we should just eager load them.
+  # Note that this is a naive implementation because we could have strings and symbols which
+  # represent the same association, but that aren't matched by this. Also, we could have
+  # nested hashes which partially match, e.g. { a: :b } & { a: [:b, :c] }
+  def joined_includes_values: () -> untyped
+  # Compares two relations for equality.
+  def ==: (untyped other) -> untyped
+  def pretty_print: (untyped q) -> untyped
+  # Returns true if relation is blank.
+  def blank?: () -> untyped
+  def values: () -> untyped
+  def inspect: () -> ::String
+  def empty_scope?: () -> untyped
+  def has_limit_or_offset?: () -> untyped
+  def alias_tracker: (?untyped joins, ?untyped? aliases) -> untyped
+  def load_records: (untyped records) -> untyped
+  private def has_join_values?: () -> untyped
+  private def exec_queries: () ?{ () -> untyped } -> untyped
+  private def skip_query_cache_if_necessary: () { () -> untyped } -> untyped
+  private def build_preloader: () -> untyped
+  private def references_eager_loaded_tables?: () -> untyped
+  private def tables_in_string: (untyped string) -> (::Array[untyped] | untyped)
+  private def values_for_create: (?untyped? attributes) -> untyped
+  include ActiveRecord::FinderMethods
+  include ActiveRecord::Calculations
+  include ActiveRecord::SpawnMethods
+  include ActiveRecord::QueryMethods
+  include ActiveRecord::Batches
+  include ActiveRecord::Explain
+  include ActiveRecord::Delegation
+  extend ActiveRecord::Delegation::ClassMethods
+  attr_reader table: untyped
+  attr_reader klass: untyped
+  attr_reader loaded: untyped
+  attr_reader predicate_builder: untyped
+  CLAUSE_METHODS: Array[Symbol]
+  INVALID_METHODS_FOR_DELETE_ALL: Array[Symbol]
+  MULTI_VALUE_METHODS: Array[Symbol]
+  SINGLE_VALUE_METHODS: Array[Symbol]
+  VALUE_METHODS: Array[Symbol]
+end

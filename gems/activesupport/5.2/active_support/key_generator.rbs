@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::KeyGenerator
+  def initialize: (untyped secret, ?::Hash[untyped, untyped] options) -> void
+  # Returns a derived key suitable for use.  The default key_size is chosen
+  # to be compatible with the default settings of ActiveSupport::MessageVerifier.
+  # i.e. OpenSSL::Digest::SHA1#block_length
+  def generate_key: (untyped salt, ?::Integer key_size) -> untyped
+end

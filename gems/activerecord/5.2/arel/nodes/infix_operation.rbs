@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::InfixOperation < ::Arel::Nodes::Binary
+  include Arel::Expressions
+  include Arel::Predications
+  include Arel::OrderPredications
+  include Arel::AliasPredication
+  include Arel::Math
+  attr_reader operator: untyped
+end

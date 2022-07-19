@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::Blamable
+  def blame_file!: (untyped file) -> untyped
+
+  def blamed_files: () -> untyped
+
+  def describe_blame: () -> (nil | ::String)
+
+  def copy_blame!: (untyped exc) -> self
+end

@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Notifications
+  def self.publish: (untyped name, *untyped args) -> untyped
+
+  def self.instrument: (untyped name, ?::Hash[untyped, untyped] payload) { (untyped) -> untyped } -> (untyped | untyped | nil)
+
+  def self.subscribe: (*untyped args) ?{ () -> untyped } -> untyped
+
+  def self.subscribed: (untyped callback, *untyped args) { () -> untyped } -> untyped
+
+  def self.unsubscribe: (untyped subscriber_or_name) -> untyped
+
+  def self.instrumenter: () -> untyped
+
+  attr_accessor self.notifier: untyped
+end

@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Casted < ::Arel::Nodes::Node
+  attr_reader val: untyped
+  attr_reader attribute: untyped
+end

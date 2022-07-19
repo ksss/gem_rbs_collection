@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::HasManyThroughProxy < ::ActiveRecord::FixtureSet::ReflectionProxy
+  def rhs_key: () -> untyped
+  def lhs_key: () -> untyped
+  def join_table: () -> untyped
+end

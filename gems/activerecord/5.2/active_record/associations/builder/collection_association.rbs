@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::CollectionAssociation < ::ActiveRecord::Associations::Builder::Association
+  def self.valid_options: (untyped options) -> untyped
+  def self.define_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.define_extensions: (untyped model, untyped name) ?{ () -> untyped } -> (untyped | nil)
+  def self.define_callback: (untyped model, untyped callback_name, untyped name, untyped options) -> untyped
+  # Defines the setter and getter methods for the collection_singular_ids.
+  def self.define_readers: (untyped mixin, untyped name) -> untyped
+  def self.define_writers: (untyped mixin, untyped name) -> untyped
+  def self.wrap_scope: (untyped scope, untyped mod) -> untyped
+  CALLBACKS: Array[Symbol]
+end

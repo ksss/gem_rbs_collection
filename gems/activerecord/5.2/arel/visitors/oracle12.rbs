@@ -1,0 +1,5 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Oracle12 < ::Arel::Visitors::ToSql
+end

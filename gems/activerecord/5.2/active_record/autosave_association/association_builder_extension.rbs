@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AutosaveAssociation::AssociationBuilderExtension
+  def self.build: (untyped model, untyped reflection) -> untyped
+
+  def self.valid_options: () -> ::Array[:autosave]
+end

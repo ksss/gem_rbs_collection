@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Validations::PresenceValidator < ::ActiveModel::Validations::PresenceValidator
+  def validate_each: (untyped record, untyped attribute, untyped association_or_value) -> untyped
+end

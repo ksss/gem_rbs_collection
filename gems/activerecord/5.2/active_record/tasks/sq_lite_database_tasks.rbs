@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Tasks::SQLiteDatabaseTasks
+  def initialize: (untyped configuration, ?untyped root) -> void
+  def create: () -> untyped
+  def drop: () -> untyped
+  def purge: () -> untyped
+  def charset: () -> untyped
+  def structure_dump: (untyped filename, untyped extra_flags) -> untyped
+  def structure_load: (untyped filename, untyped extra_flags) -> untyped
+  private def configuration: () -> untyped
+  private def root: () -> untyped
+  private def run_cmd: (untyped cmd, untyped args, untyped `out`) -> (untyped | nil)
+  private def run_cmd_error: (untyped cmd, untyped args) -> untyped
+end

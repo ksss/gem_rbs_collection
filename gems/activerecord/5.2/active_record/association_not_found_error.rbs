@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AssociationNotFoundError < ::ActiveRecord::ConfigurationError
+  def initialize: (?untyped? record, ?untyped? association_name) -> void
+end

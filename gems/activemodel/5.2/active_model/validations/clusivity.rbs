@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Validations::Clusivity
+  def check_validity!: () -> (untyped | nil)
+
+  private def include?: (untyped record, untyped value) -> untyped
+
+  private def delimiter: () -> untyped
+
+  # In Ruby 2.2 <tt>Range#include?</tt> on non-number-or-time-ish ranges checks all
+  # possible values in the range for equality, which is slower but more accurate.
+  # <tt>Range#cover?</tt> uses the previous logic of comparing a value with the range
+  # endpoints, which is fast but is only accurate on Numeric, Time, Date,
+  # or DateTime ranges.
+  private def inclusion_method: (untyped enumerable) -> (untyped | :include?)
+
+  ERROR_MESSAGE: String
+end

@@ -1,0 +1,44 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migrator
+  def self.migrations_path=: (untyped path) -> untyped
+  # For cases where a table doesn't exist like loading from schema cache
+  def self.current_version: () -> untyped
+  def initialize: (untyped direction, untyped migrations, ?untyped? target_version) -> void
+  def current_version: () -> untyped
+  def current_migration: () -> untyped
+  alias current current_migration
+  def run: () -> untyped
+  def migrate: () -> untyped
+  def runnable: () -> untyped
+  def migrations: () -> untyped
+  def pending_migrations: () -> untyped
+  def migrated: () -> untyped
+  def load_migrated: () -> untyped
+  # Used for running a specific migration.
+  private def run_without_lock: () -> untyped
+  # Used for running multiple migrations up to or down to a certain value.
+  private def migrate_without_lock: () -> untyped
+  # Stores the current environment in the database.
+  private def record_environment: () -> (nil | untyped)
+  private def ran?: (untyped migration) -> untyped
+  # Return true if a valid version is not provided.
+  private def invalid_target?: () -> untyped
+  private def execute_migration_in_transaction: (untyped migration, untyped direction) -> untyped
+  private def target: () -> untyped
+  private def finish: () -> untyped
+  private def start: () -> (0 | untyped)
+  private def validate: (untyped migrations) -> untyped
+  private def record_version_state_after_migrating: (untyped version) -> untyped
+  private def up?: () -> untyped
+  private def down?: () -> untyped
+  # Wrap the migration in a transaction only if supported by the adapter.
+  private def ddl_transaction: (untyped migration) { () -> untyped } -> untyped
+  private def use_transaction?: (untyped migration) -> untyped
+  private def use_advisory_lock?: () -> untyped
+  private def with_advisory_lock: () { () -> untyped } -> untyped
+  private def generate_migrator_advisory_lock_id: () -> untyped
+  attr_accessor self.migrations_paths: untyped
+  MIGRATOR_SALT: Integer
+end

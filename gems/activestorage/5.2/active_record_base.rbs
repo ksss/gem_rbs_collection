@@ -1,0 +1,3 @@
+class ActiveRecord::Base
+  extend ActiveStorage::Attached::Macros
+end

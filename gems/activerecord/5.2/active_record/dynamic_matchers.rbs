@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::DynamicMatchers
+  private def respond_to_missing?: (untyped name, untyped _) -> untyped
+
+  private def method_missing: (untyped name, *untyped arguments) ?{ () -> untyped } -> untyped
+end

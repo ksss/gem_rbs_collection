@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Gzip
+  # Decompresses a gzipped string.
+  def self.decompress: (untyped source) -> untyped
+
+  # Compresses a string using gzip.
+  def self.compress: (untyped source, ?untyped level, ?untyped strategy) -> untyped
+end

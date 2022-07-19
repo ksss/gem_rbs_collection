@@ -1,0 +1,45 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Reflection::ClassMethods
+  # Returns an array of AggregateReflection objects for all the aggregations in the class.
+  def reflect_on_all_aggregations: () -> untyped
+
+  # Returns the AggregateReflection object for the named +aggregation+ (use the symbol).
+  #
+  #   Account.reflect_on_aggregation(:balance) # => the balance AggregateReflection
+  #
+  def reflect_on_aggregation: (untyped aggregation) -> untyped
+
+  # Returns a Hash of name of the reflection as the key and an AssociationReflection as the value.
+  #
+  #   Account.reflections # => {"balance" => AggregateReflection}
+  #
+  def reflections: () -> untyped
+
+  # Returns an array of AssociationReflection objects for all the
+  # associations in the class. If you only want to reflect on a certain
+  # association type, pass in the symbol (<tt>:has_many</tt>, <tt>:has_one</tt>,
+  # <tt>:belongs_to</tt>) as the first parameter.
+  #
+  # Example:
+  #
+  #   Account.reflect_on_all_associations             # returns an array of all associations
+  #   Account.reflect_on_all_associations(:has_many)  # returns an array of all has_many associations
+  #
+  def reflect_on_all_associations: (?untyped? macro) -> untyped
+
+  # Returns the AssociationReflection object for the +association+ (use the symbol).
+  #
+  #   Account.reflect_on_association(:owner)             # returns the owner AssociationReflection
+  #   Invoice.reflect_on_association(:line_items).macro  # returns :has_many
+  #
+  def reflect_on_association: (untyped association) -> untyped
+
+  def _reflect_on_association: (untyped association) -> untyped
+
+  # Returns an array of AssociationReflection objects for all associations which have <tt>:autosave</tt> enabled.
+  def reflect_on_all_autosave_associations: () -> untyped
+
+  def clear_reflections_cache: () -> untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Concern
+  def self.extended: (untyped base) -> untyped
+
+  def append_features: (untyped base) -> (false | false | untyped)
+
+  def included: (?untyped? base) ?{ () -> untyped } -> (untyped | nil | untyped | untyped)
+
+  def class_methods: () ?{ () -> untyped } -> untyped
+end

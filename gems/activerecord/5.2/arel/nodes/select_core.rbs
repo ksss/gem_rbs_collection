@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::SelectCore < ::Arel::Nodes::Node
+  attr_accessor top: untyped
+  attr_accessor projections: untyped
+  attr_accessor wheres: untyped
+  attr_accessor groups: untyped
+  attr_accessor windows: untyped
+  attr_accessor havings: untyped
+  attr_accessor source: untyped
+  attr_accessor set_quantifier: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::HasAndBelongsToMany::JoinTableResolver::KnownClass
+  def initialize: (untyped lhs_class, untyped rhs_class_name) -> void
+  def join_table: () -> untyped
+  private def klass: () -> untyped
+end

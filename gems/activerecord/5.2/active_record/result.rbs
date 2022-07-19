@@ -1,0 +1,34 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Result
+  def initialize: (untyped columns, untyped rows, ?::Hash[untyped, untyped] column_types) -> void
+  # Returns the number of elements in the rows array.
+  def length: () -> untyped
+
+  def each: () -> Enumerator[Hash[String, untyped], Array[Hash[String, untyped]]]
+          | () { (Hash[String, untyped]) -> void } -> Array[Hash[String, untyped]]
+  # Returns an array of hashes representing each row record.
+  def to_hash: () -> untyped
+  alias map! map
+  alias collect! map
+  # Returns true if there are no records, otherwise false.
+  def empty?: () -> untyped
+  # Returns an array of hashes representing each row record.
+  def to_ary: () -> untyped
+  def []: (untyped idx) -> untyped
+  # Returns the first record from the rows collection.
+  # If the rows collection is empty, returns +nil+.
+  def first: () -> (nil | untyped)
+  # Returns the last record from the rows collection.
+  # If the rows collection is empty, returns +nil+.
+  def last: () -> (nil | untyped)
+  def cast_values: (?::Hash[untyped, untyped] type_overrides) -> untyped
+  def initialize_copy: (untyped other) -> untyped
+  private def column_type: (untyped name, ?::Hash[untyped, untyped] type_overrides) -> untyped
+  private def hash_rows: () -> untyped
+  attr_reader columns: untyped
+  attr_reader rows: untyped
+  attr_reader column_types: untyped
+  include Enumerable[Hash[String, untyped]]
+end

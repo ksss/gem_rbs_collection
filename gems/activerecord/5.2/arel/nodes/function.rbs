@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Function < ::Arel::Nodes::Node
+  include Arel::Predications
+  include Arel::WindowPredications
+  include Arel::OrderPredications
+  attr_accessor expressions: untyped
+  attr_accessor alias: untyped
+  attr_accessor distinct: untyped
+end

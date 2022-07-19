@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PredicateBuilder::RangeHandler::RangeWithBinds
+  def exclude_end?: () -> false
+end

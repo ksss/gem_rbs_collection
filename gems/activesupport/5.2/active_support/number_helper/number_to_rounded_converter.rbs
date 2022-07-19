@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToRoundedConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def strip_insignificant_zeros: () -> untyped
+  private def format_number: (untyped number) -> untyped
+end

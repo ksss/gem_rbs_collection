@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::Compatibility::V5_0 < ::ActiveRecord::Migration::Compatibility::V5_1
+  def create_table: (untyped table_name, ?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
+  def change_table: (untyped table_name, ?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
+  def create_join_table: (untyped table_1, untyped table_2, ?column_options: ::Hash[untyped, untyped], **untyped options) { (untyped) -> untyped } -> untyped
+  def add_column: (untyped table_name, untyped column_name, untyped `type`, ?::Hash[untyped, untyped] options) -> untyped
+  def add_reference: (untyped table_name, untyped ref_name, **untyped options) -> untyped
+  alias add_belongs_to add_reference
+  private def compatible_table_definition: (untyped t) -> untyped
+end

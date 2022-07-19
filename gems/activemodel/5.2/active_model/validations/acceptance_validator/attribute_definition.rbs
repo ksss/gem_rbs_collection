@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::AcceptanceValidator::AttributeDefinition
+  def initialize: (untyped attributes) -> void
+  def matches?: (untyped method_name) -> untyped
+  def define_on: (untyped klass) -> untyped
+  private def convert_to_reader_name: (untyped method_name) -> untyped
+  attr_reader attributes: untyped
+end

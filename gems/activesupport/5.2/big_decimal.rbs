@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class BigDecimal < ::Numeric
+  # BigDecimals are duplicable:
+  #
+  #   BigDecimal("1.2").duplicable? # => true
+  #   BigDecimal("1.2").dup         # => #<BigDecimal:...,'0.12E1',18(18)>
+  def duplicable?: () -> true
+  prepend ActiveSupport::BigDecimalWithDefaultFormat
+  prepend ActiveSupport::NumericWithFormat
+end

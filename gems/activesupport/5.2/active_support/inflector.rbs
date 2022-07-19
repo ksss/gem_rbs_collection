@@ -1,0 +1,344 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Inflector
+  # Replaces non-ASCII characters with an ASCII approximation, or if none
+  # exists, a replacement character which defaults to "?".
+  #
+  #    transliterate('Ærøskøbing')
+  #    # => "AEroskobing"
+  #
+  # Default approximations are provided for Western/Latin characters,
+  # e.g, "ø", "ñ", "é", "ß", etc.
+  #
+  # This method is I18n aware, so you can set up custom approximations for a
+  # locale. This can be useful, for example, to transliterate German's "ü"
+  # and "ö" to "ue" and "oe", or to add support for transliterating Russian
+  # to ASCII.
+  #
+  # In order to make your custom transliterations available, you must set
+  # them as the <tt>i18n.transliterate.rule</tt> i18n key:
+  #
+  #   # Store the transliterations in locales/de.yml
+  #   i18n:
+  #     transliterate:
+  #       rule:
+  #         ü: "ue"
+  #         ö: "oe"
+  #
+  #   # Or set them using Ruby
+  #   I18n.backend.store_translations(:de, i18n: {
+  #     transliterate: {
+  #       rule: {
+  #         'ü' => 'ue',
+  #         'ö' => 'oe'
+  #       }
+  #     }
+  #   })
+  #
+  # The value for <tt>i18n.transliterate.rule</tt> can be a simple Hash that
+  # maps characters to ASCII approximations as shown above, or, for more
+  # complex requirements, a Proc:
+  #
+  #   I18n.backend.store_translations(:de, i18n: {
+  #     transliterate: {
+  #       rule: ->(string) { MyTransliterator.transliterate(string) }
+  #     }
+  #   })
+  #
+  # Now you can have different transliterations for each locale:
+  #
+  #   I18n.locale = :en
+  #   transliterate('Jürgen')
+  #   # => "Jurgen"
+  #
+  #   I18n.locale = :de
+  #   transliterate('Jürgen')
+  #   # => "Juergen"
+  def transliterate: (untyped string, ?untyped replacement) -> untyped
+
+  # Replaces special characters in a string so that it may be used as part of
+  # a 'pretty' URL.
+  #
+  #   parameterize("Donald E. Knuth") # => "donald-e-knuth"
+  #   parameterize("^très|Jolie-- ")  # => "tres-jolie"
+  #
+  # To use a custom separator, override the +separator+ argument.
+  #
+  #  parameterize("Donald E. Knuth", separator: '_') # => "donald_e_knuth"
+  #  parameterize("^très|Jolie__ ", separator: '_')  # => "tres_jolie"
+  #
+  # To preserve the case of the characters in a string, use the +preserve_case+ argument.
+  #
+  #   parameterize("Donald E. Knuth", preserve_case: true) # => "Donald-E-Knuth"
+  #   parameterize("^très|Jolie-- ", preserve_case: true) # => "tres-Jolie"
+  #
+  # It preserves dashes and underscores unless they are used as separators:
+  #
+  #  parameterize("^très|Jolie__ ")                 # => "tres-jolie__"
+  #  parameterize("^très|Jolie-- ", separator: "_") # => "tres_jolie--"
+  #  parameterize("^très_Jolie-- ", separator: ".") # => "tres_jolie--"
+  #
+  def parameterize: (untyped string, ?separator: ::String, ?preserve_case: bool) -> untyped
+
+  # Returns the plural form of the word in the string.
+  #
+  # If passed an optional +locale+ parameter, the word will be
+  # pluralized using rules defined for that language. By default,
+  # this parameter is set to <tt>:en</tt>.
+  #
+  #   pluralize('post')             # => "posts"
+  #   pluralize('octopus')          # => "octopi"
+  #   pluralize('sheep')            # => "sheep"
+  #   pluralize('words')            # => "words"
+  #   pluralize('CamelOctopus')     # => "CamelOctopi"
+  #   pluralize('ley', :es)         # => "leyes"
+  def pluralize: (untyped word, ?::Symbol locale) -> untyped
+
+  # The reverse of #pluralize, returns the singular form of a word in a
+  # string.
+  #
+  # If passed an optional +locale+ parameter, the word will be
+  # singularized using rules defined for that language. By default,
+  # this parameter is set to <tt>:en</tt>.
+  #
+  #   singularize('posts')            # => "post"
+  #   singularize('octopi')           # => "octopus"
+  #   singularize('sheep')            # => "sheep"
+  #   singularize('word')             # => "word"
+  #   singularize('CamelOctopi')      # => "CamelOctopus"
+  #   singularize('leyes', :es)       # => "ley"
+  def singularize: (untyped word, ?::Symbol locale) -> untyped
+
+  # Converts strings to UpperCamelCase.
+  # If the +uppercase_first_letter+ parameter is set to false, then produces
+  # lowerCamelCase.
+  #
+  # Also converts '/' to '::' which is useful for converting
+  # paths to namespaces.
+  #
+  #   camelize('active_model')                # => "ActiveModel"
+  #   camelize('active_model', false)         # => "activeModel"
+  #   camelize('active_model/errors')         # => "ActiveModel::Errors"
+  #   camelize('active_model/errors', false)  # => "activeModel::Errors"
+  #
+  # As a rule of thumb you can think of +camelize+ as the inverse of
+  # #underscore, though there are cases where that does not hold:
+  #
+  #   camelize(underscore('SSLError'))        # => "SslError"
+  def camelize: (untyped term, ?bool uppercase_first_letter) -> untyped
+
+  # Makes an underscored, lowercase form from the expression in the string.
+  #
+  # Changes '::' to '/' to convert namespaces to paths.
+  #
+  #   underscore('ActiveModel')         # => "active_model"
+  #   underscore('ActiveModel::Errors') # => "active_model/errors"
+  #
+  # As a rule of thumb you can think of +underscore+ as the inverse of
+  # #camelize, though there are cases where that does not hold:
+  #
+  #   camelize(underscore('SSLError'))  # => "SslError"
+  def underscore: (untyped camel_cased_word) -> untyped
+
+  # Tweaks an attribute name for display to end users.
+  #
+  # Specifically, performs these transformations:
+  #
+  # * Applies human inflection rules to the argument.
+  # * Deletes leading underscores, if any.
+  # * Removes a "_id" suffix if present.
+  # * Replaces underscores with spaces, if any.
+  # * Downcases all words except acronyms.
+  # * Capitalizes the first word.
+  # The capitalization of the first word can be turned off by setting the
+  # +:capitalize+ option to false (default is true).
+  #
+  # The trailing '_id' can be kept and capitalized by setting the
+  # optional parameter +keep_id_suffix+ to true (default is false).
+  #
+  #   humanize('employee_salary')                  # => "Employee salary"
+  #   humanize('author_id')                        # => "Author"
+  #   humanize('author_id', capitalize: false)     # => "author"
+  #   humanize('_id')                              # => "Id"
+  #   humanize('author_id', keep_id_suffix: true)  # => "Author Id"
+  #
+  # If "SSL" was defined to be an acronym:
+  #
+  #   humanize('ssl_error') # => "SSL error"
+  #
+  def humanize: (untyped lower_case_and_underscored_word, ?capitalize: bool, ?keep_id_suffix: bool) -> untyped
+
+  # Converts just the first character to uppercase.
+  #
+  #   upcase_first('what a Lovely Day') # => "What a Lovely Day"
+  #   upcase_first('w')                 # => "W"
+  #   upcase_first('')                  # => ""
+  def upcase_first: (untyped string) -> (untyped | "")
+
+  # Capitalizes all the words and replaces some characters in the string to
+  # create a nicer looking title. +titleize+ is meant for creating pretty
+  # output. It is not used in the Rails internals.
+  #
+  # The trailing '_id','Id'.. can be kept and capitalized by setting the
+  # optional parameter +keep_id_suffix+ to true.
+  # By default, this parameter is false.
+  #
+  # +titleize+ is also aliased as +titlecase+.
+  #
+  #   titleize('man from the boondocks')                       # => "Man From The Boondocks"
+  #   titleize('x-men: the last stand')                        # => "X Men: The Last Stand"
+  #   titleize('TheManWithoutAPast')                           # => "The Man Without A Past"
+  #   titleize('raiders_of_the_lost_ark')                      # => "Raiders Of The Lost Ark"
+  #   titleize('string_ending_with_id', keep_id_suffix: true)  # => "String Ending With Id"
+  def titleize: (untyped word, ?keep_id_suffix: bool) -> untyped
+
+  # Creates the name of a table like Rails does for models to table names.
+  # This method uses the #pluralize method on the last word in the string.
+  #
+  #   tableize('RawScaledScorer') # => "raw_scaled_scorers"
+  #   tableize('ham_and_egg')     # => "ham_and_eggs"
+  #   tableize('fancyCategory')   # => "fancy_categories"
+  def tableize: (untyped class_name) -> untyped
+
+  # Creates a class name from a plural table name like Rails does for table
+  # names to models. Note that this returns a string and not a Class (To
+  # convert to an actual class follow +classify+ with #constantize).
+  #
+  #   classify('ham_and_eggs') # => "HamAndEgg"
+  #   classify('posts')        # => "Post"
+  #
+  # Singular names are not handled correctly:
+  #
+  #   classify('calculus')     # => "Calculus"
+  def classify: (untyped table_name) -> untyped
+
+  # Replaces underscores with dashes in the string.
+  #
+  #   dasherize('puni_puni') # => "puni-puni"
+  def dasherize: (untyped underscored_word) -> untyped
+
+  # Removes the module part from the expression in the string.
+  #
+  #   demodulize('ActiveSupport::Inflector::Inflections') # => "Inflections"
+  #   demodulize('Inflections')                           # => "Inflections"
+  #   demodulize('::Inflections')                         # => "Inflections"
+  #   demodulize('')                                      # => ""
+  #
+  # See also #deconstantize.
+  def demodulize: (untyped path) -> untyped
+
+  # Removes the rightmost segment from the constant expression in the string.
+  #
+  #   deconstantize('Net::HTTP')   # => "Net"
+  #   deconstantize('::Net::HTTP') # => "::Net"
+  #   deconstantize('String')      # => ""
+  #   deconstantize('::String')    # => ""
+  #   deconstantize('')            # => ""
+  #
+  # See also #demodulize.
+  def deconstantize: (untyped path) -> untyped
+
+  # Creates a foreign key name from a class name.
+  # +separate_class_name_and_id_with_underscore+ sets whether
+  # the method should put '_' between the name and 'id'.
+  #
+  #   foreign_key('Message')        # => "message_id"
+  #   foreign_key('Message', false) # => "messageid"
+  #   foreign_key('Admin::Post')    # => "post_id"
+  def foreign_key: (untyped class_name, ?bool separate_class_name_and_id_with_underscore) -> untyped
+
+  # Tries to find a constant with the name specified in the argument string.
+  #
+  #   constantize('Module')   # => Module
+  #   constantize('Foo::Bar') # => Foo::Bar
+  #
+  # The name is assumed to be the one of a top-level constant, no matter
+  # whether it starts with "::" or not. No lexical context is taken into
+  # account:
+  #
+  #   C = 'outside'
+  #   module M
+  #     C = 'inside'
+  #     C                # => 'inside'
+  #     constantize('C') # => 'outside', same as ::C
+  #   end
+  #
+  # NameError is raised when the name is not in CamelCase or the constant is
+  # unknown.
+  def constantize: (untyped camel_cased_word) -> untyped
+
+  # Tries to find a constant with the name specified in the argument string.
+  #
+  #   safe_constantize('Module')   # => Module
+  #   safe_constantize('Foo::Bar') # => Foo::Bar
+  #
+  # The name is assumed to be the one of a top-level constant, no matter
+  # whether it starts with "::" or not. No lexical context is taken into
+  # account:
+  #
+  #   C = 'outside'
+  #   module M
+  #     C = 'inside'
+  #     C                     # => 'inside'
+  #     safe_constantize('C') # => 'outside', same as ::C
+  #   end
+  #
+  # +nil+ is returned when the name is not in CamelCase or the constant (or
+  # part of it) is unknown.
+  #
+  #   safe_constantize('blargle')                  # => nil
+  #   safe_constantize('UnknownModule')            # => nil
+  #   safe_constantize('UnknownModule::Foo::Bar')  # => nil
+  def safe_constantize: (untyped camel_cased_word) -> untyped
+
+  # Returns the suffix that should be added to a number to denote the position
+  # in an ordered sequence such as 1st, 2nd, 3rd, 4th.
+  #
+  #   ordinal(1)     # => "st"
+  #   ordinal(2)     # => "nd"
+  #   ordinal(1002)  # => "nd"
+  #   ordinal(1003)  # => "rd"
+  #   ordinal(-11)   # => "th"
+  #   ordinal(-1021) # => "st"
+  def ordinal: (untyped number) -> untyped
+
+  # Turns a number into an ordinal string used to denote the position in an
+  # ordered sequence such as 1st, 2nd, 3rd, 4th.
+  #
+  #   ordinalize(1)     # => "1st"
+  #   ordinalize(2)     # => "2nd"
+  #   ordinalize(1002)  # => "1002nd"
+  #   ordinalize(1003)  # => "1003rd"
+  #   ordinalize(-11)   # => "-11th"
+  #   ordinalize(-1021) # => "-1021st"
+  def ordinalize: (untyped number) -> ::String
+
+  # Mounts a regular expression, returned as a string to ease interpolation,
+  # that will match part by part the given constant.
+  #
+  #   const_regexp("Foo::Bar::Baz") # => "Foo(::Bar(::Baz)?)?"
+  #   const_regexp("::")            # => "::"
+  private def const_regexp: (untyped camel_cased_word) -> untyped
+
+  # Applies inflection rules for +singularize+ and +pluralize+.
+  #
+  # If passed an optional +locale+ parameter, the uncountables will be
+  # found for that locale.
+  #
+  #  apply_inflections('post', inflections.plurals, :en)    # => "posts"
+  #  apply_inflections('posts', inflections.singulars, :en) # => "post"
+  private def apply_inflections: (untyped word, untyped rules, ?::Symbol locale) -> untyped
+
+  # Yields a singleton instance of Inflector::Inflections so you can specify
+  # additional inflector rules. If passed an optional locale, rules for other
+  # languages can be specified. If not specified, defaults to <tt>:en</tt>.
+  # Only rules for English are provided.
+  #
+  #   ActiveSupport::Inflector.inflections(:en) do |inflect|
+  #     inflect.uncountable 'rails'
+  #   end
+  def inflections: (?::Symbol locale) { (untyped) -> untyped } -> untyped
+
+  extend ActiveSupport::Inflector
+end

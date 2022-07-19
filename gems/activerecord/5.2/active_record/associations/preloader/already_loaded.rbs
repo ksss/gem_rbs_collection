@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::AlreadyLoaded
+  def initialize: (untyped klass, untyped owners, untyped reflection, untyped preload_scope) -> void
+  def run: (untyped preloader) -> nil
+  def preloaded_records: () -> untyped
+  attr_reader owners: untyped
+  attr_reader reflection: untyped
+end

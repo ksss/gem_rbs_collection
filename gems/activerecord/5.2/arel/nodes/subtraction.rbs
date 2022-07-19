@@ -1,0 +1,5 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Subtraction < ::Arel::Nodes::InfixOperation
+end

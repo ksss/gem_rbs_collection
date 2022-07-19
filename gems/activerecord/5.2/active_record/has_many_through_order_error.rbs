@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::HasManyThroughOrderError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? owner_class_name, ?untyped? reflection, ?untyped? through_reflection) -> void
+end

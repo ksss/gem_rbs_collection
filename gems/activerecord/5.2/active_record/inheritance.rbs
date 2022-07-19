@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Inheritance
+  def initialize_dup: (untyped other) -> untyped
+
+  private def initialize_internals_callback: () -> untyped
+
+  # Sets the attribute used for single table inheritance to this class name if this is not the
+  # ActiveRecord::Base descendant.
+  # Considering the hierarchy Reply < Message < ActiveRecord::Base, this makes it possible to
+  # do Reply.new without having to set <tt>Reply[Reply.inheritance_column] = "Reply"</tt> yourself.
+  # No such attribute would be set for objects of the Message class in that example.
+  private def ensure_proper_type: () -> untyped
+
+  extend ActiveSupport::Concern
+end

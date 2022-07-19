@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::ModuleConstMissing
+  def self.append_features: (untyped base) -> (nil | untyped)
+
+  def self.exclude_from: (untyped base) -> untyped
+
+  def const_missing: (untyped const_name) -> untyped
+
+  # We assume that the name of the module reflects the nesting
+  # (unless it can be proven that is not the case) and the path to the file
+  # that defines the constant. Anonymous modules cannot follow these
+  # conventions and therefore we assume that the user wants to refer to a
+  # top-level constant.
+  def guess_for_anonymous: (untyped const_name) -> untyped
+
+  def unloadable: (?untyped const_desc) -> untyped
+end

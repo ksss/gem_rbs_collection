@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Associations::ForeignAssociation
+  def foreign_key_present?: () -> (untyped | false)
+end

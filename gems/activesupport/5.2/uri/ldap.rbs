@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class URI::LDAP < ::URI::Generic
+  SCOPE_BASE: String
+  SCOPE_ONE: String
+  SCOPE_SUB: String
+end

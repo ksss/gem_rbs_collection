@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::QueuePriority::ClassMethods
+  # Specifies the priority of the queue to create the job with.
+  #
+  #   class PublishToFeedJob < ActiveJob::Base
+  #     queue_with_priority 50
+  #
+  #     def perform(post)
+  #       post.to_feed!
+  #     end
+  #   end
+  #
+  # Specify either an argument or a block.
+  def queue_with_priority: (?untyped? priority) ?{ () -> untyped } -> untyped
+
+  def self.default_priority: () -> untyped
+
+  def default_priority: () -> untyped
+
+  def self.default_priority=: (untyped val) -> untyped
+
+  def default_priority=: (untyped val) -> untyped
+end

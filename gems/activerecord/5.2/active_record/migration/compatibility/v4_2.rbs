@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::Compatibility::V4_2 < ::ActiveRecord::Migration::Compatibility::V5_0
+  def create_table: (untyped table_name, ?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
+  def change_table: (untyped table_name, ?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
+  def add_reference: (**untyped options) -> untyped
+  alias add_belongs_to add_reference
+  def add_timestamps: (untyped _, **untyped options) -> untyped
+  def index_exists?: (untyped table_name, untyped column_name, ?::Hash[untyped, untyped] options) -> untyped
+  def remove_index: (untyped table_name, ?::Hash[untyped, untyped] options) -> untyped
+  private def compatible_table_definition: (untyped t) -> untyped
+  private def index_name_for_remove: (untyped table_name, ?::Hash[untyped, untyped] options) -> untyped
+end

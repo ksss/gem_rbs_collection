@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::AbsenceValidator < ::ActiveModel::EachValidator
+  def validate_each: (untyped record, untyped attr_name, untyped value) -> (untyped | nil)
+end

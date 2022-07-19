@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::CachingKeyGenerator
+  def initialize: (untyped key_generator) -> void
+  # Returns a derived key suitable for use.
+  def generate_key: (*untyped args) -> untyped
+end

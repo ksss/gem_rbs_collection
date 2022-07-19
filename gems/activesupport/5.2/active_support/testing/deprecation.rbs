@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::Deprecation
+  def assert_deprecated: (?untyped? match, ?untyped? deprecator) ?{ () -> untyped } -> untyped
+
+  def assert_not_deprecated: (?untyped? deprecator) ?{ () -> untyped } -> untyped
+
+  def collect_deprecations: (?untyped? deprecator) { () -> untyped } -> untyped
+end

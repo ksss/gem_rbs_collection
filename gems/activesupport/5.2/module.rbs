@@ -1,0 +1,553 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Module
+  # Defines a per-thread class attribute and creates class and instance reader methods.
+  # The underlying per-thread class variable is set to +nil+, if it is not previously defined.
+  #
+  #   module Current
+  #     thread_mattr_reader :user
+  #   end
+  #
+  #   Current.user # => nil
+  #   Thread.current[:attr_Current_user] = "DHH"
+  #   Current.user # => "DHH"
+  #
+  # The attribute name must be a valid method name in Ruby.
+  #
+  #   module Foo
+  #     thread_mattr_reader :"1_Badname"
+  #   end
+  #   # => NameError: invalid attribute name: 1_Badname
+  #
+  # If you want to opt out of the creation of the instance reader method, pass
+  # <tt>instance_reader: false</tt> or <tt>instance_accessor: false</tt>.
+  #
+  #   class Current
+  #     thread_mattr_reader :user, instance_reader: false
+  #   end
+  #
+  #   Current.new.user # => NoMethodError
+  def thread_mattr_reader: (*untyped syms) -> untyped
+  alias thread_cattr_reader thread_mattr_reader
+  # Defines a per-thread class attribute and creates a class and instance writer methods to
+  # allow assignment to the attribute.
+  #
+  #   module Current
+  #     thread_mattr_writer :user
+  #   end
+  #
+  #   Current.user = "DHH"
+  #   Thread.current[:attr_Current_user] # => "DHH"
+  #
+  # If you want to opt out of the creation of the instance writer method, pass
+  # <tt>instance_writer: false</tt> or <tt>instance_accessor: false</tt>.
+  #
+  #   class Current
+  #     thread_mattr_writer :user, instance_writer: false
+  #   end
+  #
+  #   Current.new.user = "DHH" # => NoMethodError
+  def thread_mattr_writer: (*untyped syms) -> untyped
+  alias thread_cattr_writer thread_mattr_writer
+  # Defines both class and instance accessors for class attributes.
+  #
+  #   class Account
+  #     thread_mattr_accessor :user
+  #   end
+  #
+  #   Account.user = "DHH"
+  #   Account.user     # => "DHH"
+  #   Account.new.user # => "DHH"
+  #
+  # If a subclass changes the value, the parent class' value is not changed.
+  # Similarly, if the parent class changes the value, the value of subclasses
+  # is not changed.
+  #
+  #   class Customer < Account
+  #   end
+  #
+  #   Customer.user = "Rafael"
+  #   Customer.user # => "Rafael"
+  #   Account.user  # => "DHH"
+  #
+  # To opt out of the instance writer method, pass <tt>instance_writer: false</tt>.
+  # To opt out of the instance reader method, pass <tt>instance_reader: false</tt>.
+  #
+  #   class Current
+  #     thread_mattr_accessor :user, instance_writer: false, instance_reader: false
+  #   end
+  #
+  #   Current.new.user = "DHH"  # => NoMethodError
+  #   Current.new.user          # => NoMethodError
+  #
+  # Or pass <tt>instance_accessor: false</tt>, to opt out both instance methods.
+  #
+  #   class Current
+  #     mattr_accessor :user, instance_accessor: false
+  #   end
+  #
+  #   Current.new.user = "DHH"  # => NoMethodError
+  #   Current.new.user          # => NoMethodError
+  def thread_mattr_accessor: (*untyped syms) -> untyped
+  alias thread_cattr_accessor thread_mattr_accessor
+  # Declares an attribute reader backed by an internally-named instance variable.
+  def attr_internal_reader: (*untyped attrs) -> untyped
+  # Declares an attribute writer backed by an internally-named instance variable.
+  def attr_internal_writer: (*untyped attrs) -> untyped
+  # Declares an attribute reader and writer backed by an internally-named instance
+  # variable.
+  def attr_internal_accessor: (*untyped attrs) -> untyped
+  alias attr_internal attr_internal_accessor
+  private def attr_internal_ivar_name: (untyped attr) -> untyped
+  private def attr_internal_define: (untyped attr_name, untyped `type`) -> untyped
+  # Provides a +delegate+ class method to easily expose contained objects'
+  # public methods as your own.
+  #
+  # ==== Options
+  # * <tt>:to</tt> - Specifies the target object
+  # * <tt>:prefix</tt> - Prefixes the new method with the target name or a custom prefix
+  # * <tt>:allow_nil</tt> - if set to true, prevents a +Module::DelegationError+
+  #   from being raised
+  #
+  # The macro receives one or more method names (specified as symbols or
+  # strings) and the name of the target object via the <tt>:to</tt> option
+  # (also a symbol or string).
+  #
+  # Delegation is particularly useful with Active Record associations:
+  #
+  #   class Greeter < ActiveRecord::Base
+  #     def hello
+  #       'hello'
+  #     end
+  #
+  #     def goodbye
+  #       'goodbye'
+  #     end
+  #   end
+  #
+  #   class Foo < ActiveRecord::Base
+  #     belongs_to :greeter
+  #     delegate :hello, to: :greeter
+  #   end
+  #
+  #   Foo.new.hello   # => "hello"
+  #   Foo.new.goodbye # => NoMethodError: undefined method `goodbye' for #<Foo:0x1af30c>
+  #
+  # Multiple delegates to the same target are allowed:
+  #
+  #   class Foo < ActiveRecord::Base
+  #     belongs_to :greeter
+  #     delegate :hello, :goodbye, to: :greeter
+  #   end
+  #
+  #   Foo.new.goodbye # => "goodbye"
+  #
+  # Methods can be delegated to instance variables, class variables, or constants
+  # by providing them as a symbols:
+  #
+  #   class Foo
+  #     CONSTANT_ARRAY = [0,1,2,3]
+  #     @@class_array  = [4,5,6,7]
+  #
+  #     def initialize
+  #       @instance_array = [8,9,10,11]
+  #     end
+  #     delegate :sum, to: :CONSTANT_ARRAY
+  #     delegate :min, to: :@@class_array
+  #     delegate :max, to: :@instance_array
+  #   end
+  #
+  #   Foo.new.sum # => 6
+  #   Foo.new.min # => 4
+  #   Foo.new.max # => 11
+  #
+  # It's also possible to delegate a method to the class by using +:class+:
+  #
+  #   class Foo
+  #     def self.hello
+  #       "world"
+  #     end
+  #
+  #     delegate :hello, to: :class
+  #   end
+  #
+  #   Foo.new.hello # => "world"
+  #
+  # Delegates can optionally be prefixed using the <tt>:prefix</tt> option. If the value
+  # is <tt>true</tt>, the delegate methods are prefixed with the name of the object being
+  # delegated to.
+  #
+  #   Person = Struct.new(:name, :address)
+  #
+  #   class Invoice < Struct.new(:client)
+  #     delegate :name, :address, to: :client, prefix: true
+  #   end
+  #
+  #   john_doe = Person.new('John Doe', 'Vimmersvej 13')
+  #   invoice = Invoice.new(john_doe)
+  #   invoice.client_name    # => "John Doe"
+  #   invoice.client_address # => "Vimmersvej 13"
+  #
+  # It is also possible to supply a custom prefix.
+  #
+  #   class Invoice < Struct.new(:client)
+  #     delegate :name, :address, to: :client, prefix: :customer
+  #   end
+  #
+  #   invoice = Invoice.new(john_doe)
+  #   invoice.customer_name    # => 'John Doe'
+  #   invoice.customer_address # => 'Vimmersvej 13'
+  #
+  # If the target is +nil+ and does not respond to the delegated method a
+  # +Module::DelegationError+ is raised. If you wish to instead return +nil+,
+  # use the <tt>:allow_nil</tt> option.
+  #
+  #   class User < ActiveRecord::Base
+  #     has_one :profile
+  #     delegate :age, to: :profile
+  #   end
+  #
+  #   User.new.age
+  #   # => Module::DelegationError: User#age delegated to profile.age, but profile is nil
+  #
+  # But if not having a profile yet is fine and should not be an error
+  # condition:
+  #
+  #   class User < ActiveRecord::Base
+  #     has_one :profile
+  #     delegate :age, to: :profile, allow_nil: true
+  #   end
+  #
+  #   User.new.age # nil
+  #
+  # Note that if the target is not +nil+ then the call is attempted regardless of the
+  # <tt>:allow_nil</tt> option, and thus an exception is still raised if said object
+  # does not respond to the method:
+  #
+  #   class Foo
+  #     def initialize(bar)
+  #       @bar = bar
+  #     end
+  #
+  #     delegate :name, to: :@bar, allow_nil: true
+  #   end
+  #
+  #   Foo.new("Bar").name # raises NoMethodError: undefined method `name'
+  #
+  # The target method must be public, otherwise it will raise +NoMethodError+.
+  def delegate: (*untyped methods, ?to: untyped?, ?prefix: untyped?, ?allow_nil: untyped?) -> untyped
+  # When building decorators, a common pattern may emerge:
+  #
+  #   class Partition
+  #     def initialize(event)
+  #       @event = event
+  #     end
+  #
+  #     def person
+  #       @event.detail.person || @event.creator
+  #     end
+  #
+  #     private
+  #       def respond_to_missing?(name, include_private = false)
+  #         @event.respond_to?(name, include_private)
+  #       end
+  #
+  #       def method_missing(method, *args, &block)
+  #         @event.send(method, *args, &block)
+  #       end
+  #   end
+  #
+  # With <tt>Module#delegate_missing_to</tt>, the above is condensed to:
+  #
+  #   class Partition
+  #     delegate_missing_to :@event
+  #
+  #     def initialize(event)
+  #       @event = event
+  #     end
+  #
+  #     def person
+  #       @event.detail.person || @event.creator
+  #     end
+  #   end
+  #
+  # The target can be anything callable within the object, e.g. instance
+  # variables, methods, constants, etc.
+  #
+  # The delegated method must be public on the target, otherwise it will
+  # raise +NoMethodError+.
+  def delegate_missing_to: (untyped target) -> untyped
+  # Returns the name of the module containing this one.
+  #
+  #   M::N.parent_name # => "M"
+  def parent_name: () -> untyped
+  # Returns the module which contains this one according to its name.
+  #
+  #   module M
+  #     module N
+  #     end
+  #   end
+  #   X = M::N
+  #
+  #   M::N.parent # => M
+  #   X.parent    # => M
+  #
+  # The parent of top-level and anonymous modules is Object.
+  #
+  #   M.parent          # => Object
+  #   Module.new.parent # => Object
+  def parent: () -> untyped
+  # Returns all the parents of this module according to its name, ordered from
+  # nested outwards. The receiver is not contained within the result.
+  #
+  #   module M
+  #     module N
+  #     end
+  #   end
+  #   X = M::N
+  #
+  #   M.parents    # => [Object]
+  #   M::N.parents # => [M, Object]
+  #   X.parents    # => [M, Object]
+  def parents: () -> untyped
+  # Allows you to make aliases for attributes, which includes
+  # getter, setter, and a predicate.
+  #
+  #   class Content < ActiveRecord::Base
+  #     # has a title attribute
+  #   end
+  #
+  #   class Email < Content
+  #     alias_attribute :subject, :title
+  #   end
+  #
+  #   e = Email.find(1)
+  #   e.title    # => "Superstars"
+  #   e.subject  # => "Superstars"
+  #   e.subject? # => true
+  #   e.subject = "Megastars"
+  #   e.title    # => "Megastars"
+  def alias_attribute: (untyped new_name, untyped old_name) -> untyped
+  # Marks the named method as intended to be redefined, if it exists.
+  # Suppresses the Ruby method redefinition warning. Prefer
+  # #redefine_method where possible.
+  def silence_redefinition_of_method: (untyped method) -> (untyped | nil)
+  # Replaces the existing method definition, if there is one, with the passed
+  # block as its body.
+  def redefine_method: (untyped method) ?{ () -> untyped } -> untyped
+  # Replaces the existing singleton method definition, if there is one, with
+  # the passed block as its body.
+  def redefine_singleton_method: (untyped method) ?{ () -> untyped } -> untyped
+  def method_visibility: (untyped method) -> untyped
+  def reachable?: () -> untyped
+  #   deprecate :foo
+  #   deprecate bar: 'message'
+  #   deprecate :foo, :bar, baz: 'warning!', qux: 'gone!'
+  #
+  # You can also use custom deprecator instance:
+  #
+  #   deprecate :foo, deprecator: MyLib::Deprecator.new
+  #   deprecate :foo, bar: "warning!", deprecator: MyLib::Deprecator.new
+  #
+  # \Custom deprecators must respond to <tt>deprecation_warning(deprecated_method_name, message, caller_backtrace)</tt>
+  # method where you can implement your custom warning behavior.
+  #
+  #   class MyLib::Deprecator
+  #     def deprecation_warning(deprecated_method_name, message, caller_backtrace = nil)
+  #       message = "#{deprecated_method_name} is deprecated and will be removed from MyLibrary | #{message}"
+  #       Kernel.warn message
+  #     end
+  #   end
+  def deprecate: (*untyped method_names) -> untyped
+  # A module may or may not have a name.
+  #
+  #   module M; end
+  #   M.name # => "M"
+  #
+  #   m = Module.new
+  #   m.name # => nil
+  #
+  # +anonymous?+ method returns true if module does not have a name, false otherwise:
+  #
+  #   Module.new.anonymous? # => true
+  #
+  #   module M; end
+  #   M.anonymous?          # => false
+  #
+  # A module gets a name when it is first assigned to a constant. Either
+  # via the +module+ or +class+ keyword or by an explicit assignment:
+  #
+  #   m = Module.new # creates an anonymous module
+  #   m.anonymous?   # => true
+  #   M = m          # m gets a name here as a side-effect
+  #   m.name         # => "M"
+  #   m.anonymous?   # => false
+  def anonymous?: () -> untyped
+  # Removes the named method, if it exists.
+  def remove_possible_method: (untyped method) -> (untyped | nil)
+  # Removes the named singleton method, if it exists.
+  def remove_possible_singleton_method: (untyped method) -> untyped
+  # Defines a class attribute and creates a class and instance reader methods.
+  # The underlying class variable is set to +nil+, if it is not previously
+  # defined. All class and instance methods created will be public, even if
+  # this method is called with a private or protected access modifier.
+  #
+  #   module HairColors
+  #     mattr_reader :hair_colors
+  #   end
+  #
+  #   HairColors.hair_colors # => nil
+  #   HairColors.class_variable_set("@@hair_colors", [:brown, :black])
+  #   HairColors.hair_colors # => [:brown, :black]
+  #
+  # The attribute name must be a valid method name in Ruby.
+  #
+  #   module Foo
+  #     mattr_reader :"1_Badname"
+  #   end
+  #   # => NameError: invalid attribute name: 1_Badname
+  #
+  # If you want to opt out the creation on the instance reader method, pass
+  # <tt>instance_reader: false</tt> or <tt>instance_accessor: false</tt>.
+  #
+  #   module HairColors
+  #     mattr_reader :hair_colors, instance_reader: false
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.new.hair_colors # => NoMethodError
+  #
+  # You can set a default value for the attribute.
+  #
+  #   module HairColors
+  #     mattr_reader :hair_colors, default: [:brown, :black, :blonde, :red]
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.new.hair_colors # => [:brown, :black, :blonde, :red]
+  def mattr_reader: (*untyped syms, ?instance_reader: bool, ?instance_accessor: bool, ?default: untyped?) { () -> untyped } -> untyped
+  alias cattr_reader mattr_reader
+  # Defines a class attribute and creates a class and instance writer methods to
+  # allow assignment to the attribute. All class and instance methods created
+  # will be public, even if this method is called with a private or protected
+  # access modifier.
+  #
+  #   module HairColors
+  #     mattr_writer :hair_colors
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   HairColors.hair_colors = [:brown, :black]
+  #   Person.class_variable_get("@@hair_colors") # => [:brown, :black]
+  #   Person.new.hair_colors = [:blonde, :red]
+  #   HairColors.class_variable_get("@@hair_colors") # => [:blonde, :red]
+  #
+  # If you want to opt out the instance writer method, pass
+  # <tt>instance_writer: false</tt> or <tt>instance_accessor: false</tt>.
+  #
+  #   module HairColors
+  #     mattr_writer :hair_colors, instance_writer: false
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.new.hair_colors = [:blonde, :red] # => NoMethodError
+  #
+  # You can set a default value for the attribute.
+  #
+  #   module HairColors
+  #     mattr_writer :hair_colors, default: [:brown, :black, :blonde, :red]
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.class_variable_get("@@hair_colors") # => [:brown, :black, :blonde, :red]
+  def mattr_writer: (*untyped syms, ?instance_writer: bool, ?instance_accessor: bool, ?default: untyped?) { () -> untyped } -> untyped
+  alias cattr_writer mattr_writer
+  # Defines both class and instance accessors for class attributes.
+  # All class and instance methods created will be public, even if
+  # this method is called with a private or protected access modifier.
+  #
+  #   module HairColors
+  #     mattr_accessor :hair_colors
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   HairColors.hair_colors = [:brown, :black, :blonde, :red]
+  #   HairColors.hair_colors # => [:brown, :black, :blonde, :red]
+  #   Person.new.hair_colors # => [:brown, :black, :blonde, :red]
+  #
+  # If a subclass changes the value then that would also change the value for
+  # parent class. Similarly if parent class changes the value then that would
+  # change the value of subclasses too.
+  #
+  #   class Male < Person
+  #   end
+  #
+  #   Male.new.hair_colors << :blue
+  #   Person.new.hair_colors # => [:brown, :black, :blonde, :red, :blue]
+  #
+  # To opt out of the instance writer method, pass <tt>instance_writer: false</tt>.
+  # To opt out of the instance reader method, pass <tt>instance_reader: false</tt>.
+  #
+  #   module HairColors
+  #     mattr_accessor :hair_colors, instance_writer: false, instance_reader: false
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.new.hair_colors = [:brown]  # => NoMethodError
+  #   Person.new.hair_colors             # => NoMethodError
+  #
+  # Or pass <tt>instance_accessor: false</tt>, to opt out both instance methods.
+  #
+  #   module HairColors
+  #     mattr_accessor :hair_colors, instance_accessor: false
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.new.hair_colors = [:brown]  # => NoMethodError
+  #   Person.new.hair_colors             # => NoMethodError
+  #
+  # You can set a default value for the attribute.
+  #
+  #   module HairColors
+  #     mattr_accessor :hair_colors, default: [:brown, :black, :blonde, :red]
+  #   end
+  #
+  #   class Person
+  #     include HairColors
+  #   end
+  #
+  #   Person.class_variable_get("@@hair_colors") # => [:brown, :black, :blonde, :red]
+  def mattr_accessor: (*untyped syms, ?instance_reader: bool, ?instance_writer: bool, ?instance_accessor: bool, ?default: untyped?) ?{ () -> untyped } -> untyped
+  alias cattr_accessor mattr_accessor
+  include Module::Concerning
+  include ActiveSupport::Dependencies::ModuleConstMissing
+  attr_accessor self.attr_internal_naming_format: untyped
+  DELEGATION_RESERVED_KEYWORDS: Array[String]
+  DELEGATION_RESERVED_METHOD_NAMES: Set[String]
+  RUBY_RESERVED_KEYWORDS: Array[String]
+end

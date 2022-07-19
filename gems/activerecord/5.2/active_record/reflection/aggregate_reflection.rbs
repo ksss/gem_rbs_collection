@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::AggregateReflection < ::ActiveRecord::Reflection::MacroReflection
+  def mapping: () -> untyped
+end

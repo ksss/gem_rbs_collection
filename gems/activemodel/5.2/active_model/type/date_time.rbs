@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::DateTime < ::ActiveModel::Type::Value
+  def type: () -> :datetime
+  def serialize: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> (untyped | nil)
+  # '0.123456' -> 123456
+  # '1.123456' -> 123456
+  private def microseconds: (untyped time) -> (untyped | 0)
+  private def fallback_string_to_time: (untyped string) -> untyped
+  private def value_from_multiparameter_assignment: (untyped values_hash) -> untyped
+  include ActiveModel::Type::Helpers::Timezone
+  include ActiveModel::Type::Helpers::TimeValue
+end

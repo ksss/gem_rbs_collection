@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::BigDecimalWithDefaultFormat
+  def to_s: (?::String format) -> untyped
+end

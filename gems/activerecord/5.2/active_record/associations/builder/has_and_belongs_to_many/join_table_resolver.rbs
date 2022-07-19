@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::HasAndBelongsToMany::JoinTableResolver
+  def self.build: (untyped lhs_class, untyped name, untyped options) -> untyped
+end

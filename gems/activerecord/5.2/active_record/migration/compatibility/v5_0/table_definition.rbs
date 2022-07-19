@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Migration::Compatibility::V5_0::TableDefinition
+  def primary_key: (untyped name, ?::Symbol `type`, **untyped options) -> untyped
+
+  def references: (*untyped args, **untyped options) -> untyped
+
+  alias belongs_to references
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Regexp < ::Arel::Nodes::Binary
+  attr_accessor case_sensitive: untyped
+end

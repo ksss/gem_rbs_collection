@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EncryptedConfiguration < ::ActiveSupport::EncryptedFile
+  def initialize: (config_path: untyped, key_path: untyped, env_key: untyped, raise_if_missing_key: untyped) -> void
+  # Allow a config to be started without a file present
+  def read: () -> untyped
+  def write: (untyped contents) -> untyped
+  def config: () -> untyped
+  private def options: () -> untyped
+  private def serialize: (untyped config) -> (untyped | "")
+  private def deserialize: (untyped config) -> untyped
+  # defined by `delegate` to: untyped#config
+  def []: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#config
+  def fetch: (*untyped, **untyped) -> untyped
+end

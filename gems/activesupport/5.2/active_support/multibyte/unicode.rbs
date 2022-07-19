@@ -1,0 +1,90 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Multibyte::Unicode
+  # Detect whether the codepoint is in a certain character class. Returns
+  # +true+ when it's in the specified character class and +false+ otherwise.
+  # Valid character classes are: <tt>:cr</tt>, <tt>:lf</tt>, <tt>:l</tt>,
+  # <tt>:v</tt>, <tt>:lv</tt>, <tt>:lvt</tt> and <tt>:t</tt>.
+  #
+  # Primarily used by the grapheme cluster support.
+  def in_char_class?: (untyped codepoint, untyped classes) -> (true | false)
+
+  # Unpack the string at grapheme boundaries. Returns a list of character
+  # lists.
+  #
+  #   Unicode.unpack_graphemes('क्षि') # => [[2325, 2381], [2359], [2367]]
+  #   Unicode.unpack_graphemes('Café') # => [[67], [97], [102], [233]]
+  def unpack_graphemes: (untyped string) -> untyped
+
+  # Reverse operation of unpack_graphemes.
+  #
+  #   Unicode.pack_graphemes(Unicode.unpack_graphemes('क्षि')) # => 'क्षि'
+  def pack_graphemes: (untyped unpacked) -> untyped
+
+  # Re-order codepoints so the string becomes canonical.
+  def reorder_characters: (untyped codepoints) -> untyped
+
+  # Decompose composed characters to the decomposed form.
+  def decompose: (untyped `type`, untyped codepoints) -> untyped
+
+  # Compose decomposed characters to the composed form.
+  def compose: (untyped codepoints) -> untyped
+
+  # Replaces all ISO-8859-1 or CP1252 characters by their UTF-8 equivalent
+  # resulting in a valid UTF-8 string.
+  #
+  # Passing +true+ will forcibly tidy all bytes, assuming that the string's
+  # encoding is entirely CP1252 or ISO-8859-1.
+  def tidy_bytes: (untyped string, ?bool force) -> untyped
+
+  # Returns the KC normalization of the string by default. NFKC is
+  # considered the best normalization form for passing strings to databases
+  # and validations.
+  #
+  # * <tt>string</tt> - The string to perform normalization on.
+  # * <tt>form</tt> - The form you want to normalize in. Should be one of
+  #   the following: <tt>:c</tt>, <tt>:kc</tt>, <tt>:d</tt>, or <tt>:kd</tt>.
+  #   Default is ActiveSupport::Multibyte::Unicode.default_normalization_form.
+  def normalize: (untyped string, ?untyped? form) -> untyped
+
+  def downcase: (untyped string) -> untyped
+
+  def upcase: (untyped string) -> untyped
+
+  def swapcase: (untyped string) -> untyped
+
+  private def apply_mapping: (untyped string, untyped mapping) -> untyped
+
+  private def recode_windows1252_chars: (untyped string) -> untyped
+
+  private def database: () -> untyped
+
+  extend ActiveSupport::Multibyte::Unicode
+
+  attr_accessor default_normalization_form: untyped
+
+  HANGUL_LBASE: Integer
+
+  HANGUL_LCOUNT: Integer
+
+  HANGUL_NCOUNT: Integer
+
+  HANGUL_SBASE: Integer
+
+  HANGUL_SCOUNT: Integer
+
+  HANGUL_SLAST: Integer
+
+  HANGUL_TBASE: Integer
+
+  HANGUL_TCOUNT: Integer
+
+  HANGUL_VBASE: Integer
+
+  HANGUL_VCOUNT: Integer
+
+  NORMALIZATION_FORMS: Array[Symbol]
+
+  UNICODE_VERSION: String
+end

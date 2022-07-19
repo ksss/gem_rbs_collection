@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Concurrency::LoadInterlockAwareMonitor < ::Monitor
+  # Enters an exclusive section, but allows dependency loading while blocked
+  def mon_enter: () -> untyped
+  def synchronize: () { () -> untyped } -> untyped
+end

@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::BelongsToAssociation < ::ActiveRecord::Associations::SingularAssociation
+  def handle_dependency: () -> (nil | untyped)
+  def replace: (untyped record) -> untyped
+  def inversed_from: (untyped record) -> untyped
+  def default: () ?{ () -> untyped } -> (untyped | nil)
+  def reset: () -> untyped
+  def updated?: () -> untyped
+  def decrement_counters: () -> untyped
+  def increment_counters: () -> untyped
+  def target_changed?: () -> untyped
+  private def update_counters: (untyped by) -> (untyped | nil)
+  private def find_target?: () -> untyped
+  private def require_counter_update?: () -> untyped
+  private def update_counters_on_replace: (untyped record) -> (untyped | nil)
+  # Checks whether record is different to the current target, without loading it
+  private def different_target?: (untyped record) -> untyped
+  private def replace_keys: (untyped record) -> untyped
+  private def primary_key: (untyped record) -> untyped
+  private def foreign_key_present?: () -> untyped
+  # NOTE - for now, we're only supporting inverse setting from belongs_to back onto
+  # has_one associations.
+  private def invertible_for?: (untyped record) -> untyped
+  private def target_id: () -> untyped
+  private def stale_state: () -> untyped
+end

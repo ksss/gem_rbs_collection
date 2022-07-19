@@ -1,0 +1,89 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Delegation
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+
+  extend ActiveSupport::Concern
+
+  # defined by `delegate` to: #records
+  def to_xml: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def encode_with: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def length: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def each: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def uniq: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def join: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def []: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def &: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def |: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def +: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def -: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def sample: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def reverse: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def rotate: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def compact: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def in_groups: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def in_groups_of: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def to_sentence: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def to_formatted_s: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def as_json: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def shuffle: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def split: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def slice: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def index: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #records
+  def rindex: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #klass
+  def primary_key: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: #klass
+  def connection: (*untyped, **untyped) -> untyped
+end

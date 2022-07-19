@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::HasOneThroughAssociation < ::ActiveRecord::Associations::HasOneAssociation
+  def replace: (untyped record, ?bool save) -> untyped
+  private def create_through_record: (untyped record, untyped save) -> untyped
+  include ActiveRecord::Associations::ThroughAssociation
+end

@@ -1,0 +1,110 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Tasks::DatabaseTasks
+  def check_protected_environments!: () -> untyped
+
+  def register_task: (untyped pattern, untyped task) -> untyped
+
+  def db_dir: () -> untyped
+
+  def migrations_paths: () -> untyped
+
+  def fixtures_path: () -> untyped
+
+  def root: () -> untyped
+
+  def env: () -> untyped
+
+  def seed_loader: () -> untyped
+
+  def current_config: (?::Hash[untyped, untyped] options) -> untyped
+
+  def create: (*untyped arguments) -> untyped
+
+  def create_all: () -> untyped
+
+  def create_current: (?untyped environment) -> untyped
+
+  def drop: (*untyped arguments) -> untyped
+
+  def drop_all: () -> untyped
+
+  def drop_current: (?untyped environment) -> untyped
+
+  def migrate: () -> untyped
+
+  def check_target_version: () -> (untyped | nil)
+
+  def target_version: () -> (untyped | nil)
+
+  def charset_current: (?untyped environment) -> untyped
+
+  def charset: (*untyped arguments) -> untyped
+
+  def collation_current: (?untyped environment) -> untyped
+
+  def collation: (*untyped arguments) -> untyped
+
+  def purge: (untyped configuration) -> untyped
+
+  def purge_all: () -> untyped
+
+  def purge_current: (?untyped environment) -> untyped
+
+  def structure_dump: (*untyped arguments) -> untyped
+
+  def structure_load: (*untyped arguments) -> untyped
+
+  def load_schema: (untyped configuration, ?untyped format, ?untyped? file, ?untyped environment) -> untyped
+
+  def schema_file: (?untyped format) -> untyped
+
+  def load_schema_current: (?untyped format, ?untyped? file, ?untyped environment) -> untyped
+
+  def check_schema_file: (untyped filename) -> (untyped | nil)
+
+  def load_seed: () -> untyped
+
+  # Dumps the schema cache in YAML format for the connection into the file
+  #
+  # ==== Examples:
+  #   ActiveRecord::Tasks::DatabaseTasks.dump_schema_cache(ActiveRecord::Base.connection, "tmp/schema_dump.yaml")
+  def dump_schema_cache: (untyped conn, untyped filename) -> untyped
+
+  private def class_for_adapter: (untyped adapter) -> untyped
+
+  private def each_current_configuration: (untyped environment) { (untyped, untyped) -> untyped } -> untyped
+
+  private def each_local_configuration: () { (untyped) -> untyped } -> untyped
+
+  private def local_database?: (untyped configuration) -> untyped
+
+  extend ActiveRecord::Tasks::DatabaseTasks
+
+  attr_accessor database_configuration: untyped
+
+  attr_writer current_config: untyped
+
+  attr_writer db_dir: untyped
+
+  attr_writer migrations_paths: untyped
+
+  attr_writer fixtures_path: untyped
+
+  attr_writer root: untyped
+
+  attr_writer env: untyped
+
+  attr_writer seed_loader: untyped
+
+  def self.structure_dump_flags: () -> untyped
+
+  def self.structure_load_flags: () -> untyped
+
+  def self.structure_dump_flags=: (untyped val) -> untyped
+
+  def self.structure_load_flags=: (untyped val) -> untyped
+
+  LOCAL_HOSTS: Array[String]
+end

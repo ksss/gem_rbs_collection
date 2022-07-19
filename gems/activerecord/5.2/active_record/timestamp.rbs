@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Timestamp
+  def initialize_dup: (untyped other) -> untyped
+
+  private def _create_record: () -> untyped
+
+  private def _update_record: (*untyped args, ?touch: bool, **untyped options) -> untyped
+
+  private def should_record_timestamps?: () -> untyped
+
+  private def timestamp_attributes_for_create_in_model: () -> untyped
+
+  private def timestamp_attributes_for_update_in_model: () -> untyped
+
+  private def all_timestamp_attributes_in_model: () -> untyped
+
+  private def current_time_from_proper_timezone: () -> untyped
+
+  private def max_updated_column_timestamp: (?untyped timestamp_names) -> untyped
+
+  # Clear attributes and changed_attributes
+  private def clear_timestamp_attributes: () -> untyped
+
+  extend ActiveSupport::Concern
+end

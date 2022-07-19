@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::HasOne < ::ActiveRecord::Associations::Builder::SingularAssociation
+  def self.macro: () -> :has_one
+  def self.valid_options: (untyped options) -> untyped
+  def self.valid_dependent_options: () -> ::Array[:destroy | :delete | :nullify | :restrict_with_error | :restrict_with_exception]
+  def self.add_destroy_callbacks: (untyped model, untyped reflection) -> (untyped | nil)
+  def self.define_validations: (untyped model, untyped reflection) -> untyped
+end

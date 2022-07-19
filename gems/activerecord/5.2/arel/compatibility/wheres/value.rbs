@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Compatibility::Wheres::Value
+  attr_accessor visitor: untyped
+end

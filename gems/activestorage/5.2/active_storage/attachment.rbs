@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attachment < ::ActiveRecord::Base
+  # Synchronously purges the blob (deletes it from the configured service) and destroys the attachment.
+  def purge: () -> untyped
+  # Destroys the attachment and asynchronously purges the blob (deletes it from the configured service).
+  def purge_later: () -> untyped
+  private def identify_blob: () -> untyped
+  private def analyze_blob_later: () -> (untyped | nil)
+end

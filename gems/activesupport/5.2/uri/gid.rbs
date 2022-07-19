@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class URI::GID < ::URI::Generic
+  attr_reader model_name: untyped
+  attr_reader model_id: untyped
+  attr_reader params: untyped
+  COMPONENT: Array[Symbol]
+  PATH_REGEXP: Regexp
+end

@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::AttributeAssignment
+  # Allows you to set all the attributes by passing in a hash of attributes with
+  # keys matching the attribute names.
+  #
+  # If the passed hash responds to <tt>permitted?</tt> method and the return value
+  # of this method is +false+ an <tt>ActiveModel::ForbiddenAttributesError</tt>
+  # exception is raised.
+  #
+  #   class Cat
+  #     include ActiveModel::AttributeAssignment
+  #     attr_accessor :name, :status
+  #   end
+  #
+  #   cat = Cat.new
+  #   cat.assign_attributes(name: "Gorby", status: "yawning")
+  #   cat.name # => 'Gorby'
+  #   cat.status # => 'yawning'
+  #   cat.assign_attributes(status: "sleeping")
+  #   cat.name # => 'Gorby'
+  #   cat.status # => 'sleeping'
+  def assign_attributes: (untyped new_attributes) -> (nil | untyped)
+
+  alias attributes= assign_attributes
+
+  private def _assign_attributes: (untyped attributes) -> untyped
+
+  private def _assign_attribute: (untyped k, untyped v) -> untyped
+
+  include ActiveModel::ForbiddenAttributesProtection
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob
+  # Returns the version of the currently loaded Active Job as a <tt>Gem::Version</tt>
+  def self.gem_version: () -> untyped
+
+  # Returns the version of the currently loaded Active Job as a <tt>Gem::Version</tt>
+  def self.version: () -> untyped
+
+  extend ActiveSupport::Autoload
+end

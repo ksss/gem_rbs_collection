@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Multibyte::Unicode::UnicodeDatabase
+  def initialize: () -> void
+  # Loads the Unicode database and returns all the internal objects of
+  # UnicodeDatabase.
+  def load: () -> untyped
+  # Returns the directory in which the data files are stored.
+  def self.dirname: () -> untyped
+  # Returns the filename for the data file for this version.
+  def self.filename: () -> untyped
+  attr_writer codepoints: untyped
+  attr_writer composition_exclusion: untyped
+  attr_writer composition_map: untyped
+  attr_writer boundary: untyped
+  attr_writer cp1252: untyped
+  ATTRIBUTES: Array[Symbol]
+end

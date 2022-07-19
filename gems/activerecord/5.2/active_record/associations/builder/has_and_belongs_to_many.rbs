@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::HasAndBelongsToMany
+  def initialize: (untyped association_name, untyped lhs_model, untyped options) -> void
+  def through_model: () -> untyped
+  def middle_reflection: (untyped join_model) -> untyped
+  private def middle_options: (untyped join_model) -> untyped
+  private def belongs_to_options: (untyped options) -> untyped
+  attr_reader lhs_model: untyped
+  attr_reader association_name: untyped
+  attr_reader options: untyped
+end

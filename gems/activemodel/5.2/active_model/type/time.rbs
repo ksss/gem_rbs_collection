@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Time < ::ActiveModel::Type::Value
+  def type: () -> :time
+  def serialize: (untyped value) -> untyped
+  def user_input_in_time_zone: (untyped value) -> (nil | untyped)
+  private def cast_value: (untyped value) -> (untyped | nil)
+  include ActiveModel::Type::Helpers::Timezone
+  include ActiveModel::Type::Helpers::TimeValue
+end

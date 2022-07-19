@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::LogSubscriber::TestHelper
+  def setup: () -> untyped
+
+  def teardown: () -> untyped
+
+  # Wait notifications to be published.
+  def wait: () -> untyped
+
+  # Overwrite if you use another logger in your log subscriber.
+  #
+  #   def logger
+  #     ActiveRecord::Base.logger = @logger
+  #   end
+  def set_logger: (untyped logger) -> untyped
+end

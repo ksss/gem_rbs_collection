@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Attribute::Uninitialized < ::ActiveModel::Attribute
+  def initialize: (untyped name, untyped `type`) -> void
+  def value: () { (untyped) -> untyped } -> (untyped | nil)
+  def original_value: () -> untyped
+  def value_for_database: () -> nil
+  def initialized?: () -> false
+  def forgetting_assignment: () -> untyped
+  def with_type: (untyped `type`) -> untyped
+  UNINITIALIZED_ORIGINAL_VALUE: Object
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class URI::MailTo < ::URI::Generic
+  COMPONENT: Array[Symbol]
+  DEFAULT_PORT: nil
+  EMAIL_REGEXP: Regexp
+  HEADER_REGEXP: Regexp
+end

@@ -1,0 +1,40 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ExecutionWrapper
+  def self.complete!: () -> nil
+  def self.to_run: (*untyped args) ?{ () -> untyped } -> untyped
+  def self.to_complete: (*untyped args) ?{ () -> untyped } -> untyped
+  # Register an object to be invoked during both the +run+ and
+  # +complete+ steps.
+  #
+  # +hook.complete+ will be passed the value returned from +hook.run+,
+  # and will only be invoked if +run+ has previously been called.
+  # (Mostly, this means it won't be invoked if an exception occurs in
+  # a preceding +to_run+ block; all ordinary +to_complete+ blocks are
+  # invoked in that situation.)
+  def self.register_hook: (untyped hook, ?outer: bool) -> untyped
+  # Run this execution.
+  #
+  # Returns an instance, whose +complete!+ method *must* be invoked
+  # after the work has been performed.
+  #
+  # Where possible, prefer +wrap+.
+  def self.run!: (?reset: bool) -> untyped
+  # Perform the work in the supplied block as an execution.
+  def self.wrap: () { () -> untyped } -> untyped
+  def self.inherited: (untyped other) -> untyped
+  def self.active?: () -> untyped
+  def run!: () -> untyped
+  # Complete this in-flight execution. This method *must* be called
+  # exactly once on the result of any call to +run!+.
+  #
+  # Where possible, prefer +wrap+.
+  def complete!: () -> untyped
+  private def hook_state: () -> untyped
+  include ActiveSupport::Callbacks
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+  attr_accessor self.active: untyped
+  Null: Object
+end

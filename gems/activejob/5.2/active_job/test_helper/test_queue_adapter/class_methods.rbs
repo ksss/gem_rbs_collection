@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::TestHelper::TestQueueAdapter::ClassMethods
+  def queue_adapter: () -> untyped
+
+  def disable_test_adapter: () -> untyped
+
+  def enable_test_adapter: (untyped test_adapter) -> untyped
+end

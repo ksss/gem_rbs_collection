@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::StatementCache
+  def self.query: (untyped sql) -> untyped
+  def self.partial_query: (untyped values) -> untyped
+  def self.create: (untyped connection, ?untyped? callable) ?{ () -> untyped } -> untyped
+  def initialize: (untyped query_builder, untyped bind_map, untyped klass) -> void
+  def execute: (untyped params, untyped connection) ?{ () -> untyped } -> untyped
+  def self.unsupported_value?: (untyped value) -> untyped
+  attr_reader query_builder: untyped
+  attr_reader bind_map: untyped
+  attr_reader klass: untyped
+end

@@ -1,0 +1,99 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AutosaveAssociation
+  # Reloads the attributes of the object as usual and clears <tt>marked_for_destruction</tt> flag.
+  def reload: (?untyped? options) -> untyped
+
+  # Marks this record to be destroyed as part of the parent's save transaction.
+  # This does _not_ actually destroy the record instantly, rather child record will be destroyed
+  # when <tt>parent.save</tt> is called.
+  #
+  # Only useful if the <tt>:autosave</tt> option on the parent is enabled for this associated model.
+  def mark_for_destruction: () -> untyped
+
+  # Returns whether or not this record will be destroyed as part of the parent's save transaction.
+  #
+  # Only useful if the <tt>:autosave</tt> option on the parent is enabled for this associated model.
+  def marked_for_destruction?: () -> untyped
+
+  # Records the association that is being destroyed and destroying this
+  # record in the process.
+  def destroyed_by_association=: (untyped reflection) -> untyped
+
+  # Returns the association for the parent being destroyed.
+  #
+  # Used to avoid updating the counter cache unnecessarily.
+  def destroyed_by_association: () -> untyped
+
+  # Returns whether or not this record has been changed in any way (including whether
+  # any of its nested autosave associations are likewise changed)
+  def changed_for_autosave?: () -> untyped
+
+  # Returns the record for an association collection that should be validated
+  # or saved. If +autosave+ is +false+ only new records will be returned,
+  # unless the parent is/was a new record itself.
+  private def associated_records_to_validate_or_save: (untyped association, untyped new_record, untyped autosave) -> untyped
+
+  # go through nested autosave associations that are loaded in memory (without loading
+  # any new ones), and return true if is changed for autosave
+  private def nested_records_changed_for_autosave?: () -> (false | untyped)
+
+  # Validate the association if <tt>:validate</tt> or <tt>:autosave</tt> is
+  # turned on for the association.
+  private def validate_single_association: (untyped reflection) -> untyped
+
+  # Validate the associated records if <tt>:validate</tt> or
+  # <tt>:autosave</tt> is turned on for the association specified by
+  # +reflection+.
+  private def validate_collection_association: (untyped reflection) -> (untyped | nil | nil)
+
+  # Returns whether or not the association is valid and applies any errors to
+  # the parent, <tt>self</tt>, if it wasn't. Skips any <tt>:autosave</tt>
+  # enabled records if they're marked_for_destruction? or destroyed.
+  private def association_valid?: (untyped reflection, untyped record, ?untyped? index) -> (true | untyped)
+
+  private def normalize_reflection_attribute: (untyped indexed_attribute, untyped reflection, untyped index, untyped attribute) -> ::String
+
+  # Is used as a before_save callback to check while saving a collection
+  # association whether or not the parent was a new record before saving.
+  private def before_save_collection_association: () -> untyped
+
+  private def after_save_collection_association: () -> untyped
+
+  # Saves any new associated records, or all loaded autosave associations if
+  # <tt>:autosave</tt> is enabled on the association.
+  #
+  # In addition, it destroys all children that were marked for destruction
+  # with #mark_for_destruction.
+  #
+  # This all happens inside a transaction, _if_ the Transactions module is included into
+  # ActiveRecord::Base after the AutosaveAssociation module, which it does by default.
+  private def save_collection_association: (untyped reflection) -> (untyped | nil)
+
+  # Saves the associated record if it's new or <tt>:autosave</tt> is enabled
+  # on the association.
+  #
+  # In addition, it will destroy the association if it was marked for
+  # destruction with #mark_for_destruction.
+  #
+  # This all happens inside a transaction, _if_ the Transactions module is included into
+  # ActiveRecord::Base after the AutosaveAssociation module, which it does by default.
+  private def save_has_one_association: (untyped reflection) -> untyped
+
+  # If the record is new or it has changed, returns true.
+  private def record_changed?: (untyped reflection, untyped record, untyped key) -> untyped
+
+  private def association_foreign_key_changed?: (untyped reflection, untyped record, untyped key) -> (false | untyped)
+
+  # Saves the associated record if it's new or <tt>:autosave</tt> is enabled.
+  #
+  # In addition, it will destroy the association if it was marked for destruction.
+  private def save_belongs_to_association: (untyped reflection) -> (nil | untyped)
+
+  private def custom_validation_context?: () -> untyped
+
+  private def _ensure_no_duplicate_errors: () -> untyped
+
+  extend ActiveSupport::Concern
+end

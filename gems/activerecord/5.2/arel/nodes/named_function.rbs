@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::NamedFunction < ::Arel::Nodes::Function
+  attr_accessor name: untyped
+end

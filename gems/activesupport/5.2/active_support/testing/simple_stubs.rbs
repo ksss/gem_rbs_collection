@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::SimpleStubs
+  def initialize: () -> void
+  def stub_object: (untyped object, untyped method_name) ?{ () -> untyped } -> untyped
+  def unstub_all!: () -> untyped
+  def stubbing: (untyped object, untyped method_name) -> untyped
+  private def unstub_object: (untyped stub) -> untyped
+end

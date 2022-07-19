@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::LegacyYamlAdapter
+  def self.convert: (untyped klass, untyped coder) -> untyped
+end

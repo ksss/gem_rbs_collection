@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AttributeMethods::TimeZoneConversion::TimeZoneConverter < ::ActiveModel::Type::Value
+  def deserialize: (untyped value) -> untyped
+  def cast: (untyped value) -> (nil | untyped)
+  private def convert_time_to_time_zone: (untyped value) -> (nil | untyped)
+  private def set_time_zone_without_conversion: (untyped value) -> (untyped | nil)
+  private def map_avoiding_infinite_recursion: (untyped value) { (untyped) -> untyped } -> untyped
+end

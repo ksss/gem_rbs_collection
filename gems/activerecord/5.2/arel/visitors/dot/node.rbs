@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Dot::Node
+  attr_accessor name: untyped
+  attr_accessor id: untyped
+  attr_accessor fields: untyped
+end

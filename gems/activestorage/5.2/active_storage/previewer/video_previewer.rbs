@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Previewer::VideoPreviewer < ::ActiveStorage::Previewer
+  def self.accept?: (untyped blob) -> untyped
+  def preview: () { (io: untyped, filename: untyped, content_type: untyped) -> untyped } -> untyped
+  private def draw_relevant_frame_from: (untyped file) ?{ () -> untyped } -> untyped
+  private def ffmpeg_path: () -> untyped
+end

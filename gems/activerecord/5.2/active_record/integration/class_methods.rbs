@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Integration::ClassMethods
+  # Defines your model's +to_param+ method to generate "pretty" URLs
+  # using +method_name+, which can be any attribute or method that
+  # responds to +to_s+.
+  #
+  #   class User < ActiveRecord::Base
+  #     to_param :name
+  #   end
+  #
+  #   user = User.find_by(name: 'Fancy Pants')
+  #   user.id         # => 123
+  #   user_path(user) # => "/users/123-fancy-pants"
+  #
+  # Values longer than 20 characters will be truncated. The value
+  # is truncated word by word.
+  #
+  #   user = User.find_by(name: 'David Heinemeier Hansson')
+  #   user.id         # => 125
+  #   user_path(user) # => "/users/125-david-heinemeier"
+  #
+  # Because the generated param begins with the record's +id+, it is
+  # suitable for passing to +find+. In a controller, for example:
+  #
+  #   params[:id]               # => "123-fancy-pants"
+  #   User.find(params[:id]).id # => 123
+  def to_param: (?untyped? method_name) -> untyped
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Query
+  def query_attribute: (untyped attr_name) -> (false | untyped)
+
+  # Handle *? for method_missing.
+  private def attribute?: (untyped attribute_name) -> untyped
+
+  extend ActiveSupport::Concern
+end

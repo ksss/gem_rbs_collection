@@ -1,0 +1,255 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::Store
+  alias silence? silence
+  private def self.retrieve_pool_options: (untyped options) -> untyped
+  private def self.ensure_connection_pool_added!: () -> untyped
+  # Creates a new cache. The options will be passed to any write method calls
+  # except for <tt>:namespace</tt> which can be used to set the global
+  # namespace for the cache.
+  def initialize: (?untyped? options) -> void
+  # Silences the logger.
+  def silence!: () -> self
+  # Silences the logger within a block.
+  def mute: () { () -> untyped } -> untyped
+  # Fetches data from the cache, using the given key. If there is data in
+  # the cache with the given key, then that data is returned.
+  #
+  # If there is no such data in the cache (a cache miss), then +nil+ will be
+  # returned. However, if a block has been passed, that block will be passed
+  # the key and executed in the event of a cache miss. The return value of the
+  # block will be written to the cache under the given cache key, and that
+  # return value will be returned.
+  #
+  #   cache.write('today', 'Monday')
+  #   cache.fetch('today')  # => "Monday"
+  #
+  #   cache.fetch('city')   # => nil
+  #   cache.fetch('city') do
+  #     'Duckburgh'
+  #   end
+  #   cache.fetch('city')   # => "Duckburgh"
+  #
+  # You may also specify additional options via the +options+ argument.
+  # Setting <tt>force: true</tt> forces a cache "miss," meaning we treat
+  # the cache value as missing even if it's present. Passing a block is
+  # required when +force+ is true so this always results in a cache write.
+  #
+  #   cache.write('today', 'Monday')
+  #   cache.fetch('today', force: true) { 'Tuesday' } # => 'Tuesday'
+  #   cache.fetch('today', force: true) # => ArgumentError
+  #
+  # The +:force+ option is useful when you're calling some other method to
+  # ask whether you should force a cache write. Otherwise, it's clearer to
+  # just call <tt>Cache#write</tt>.
+  #
+  # Setting <tt>compress: false</tt> disables compression of the cache entry.
+  #
+  # Setting <tt>:expires_in</tt> will set an expiration time on the cache.
+  # All caches support auto-expiring content after a specified number of
+  # seconds. This value can be specified as an option to the constructor
+  # (in which case all entries will be affected), or it can be supplied to
+  # the +fetch+ or +write+ method to effect just one entry.
+  #
+  #   cache = ActiveSupport::Cache::MemoryStore.new(expires_in: 5.minutes)
+  #   cache.write(key, value, expires_in: 1.minute) # Set a lower value for one entry
+  #
+  # Setting <tt>:version</tt> verifies the cache stored under <tt>name</tt>
+  # is of the same version. nil is returned on mismatches despite contents.
+  # This feature is used to support recyclable cache keys.
+  #
+  # Setting <tt>:race_condition_ttl</tt> is very useful in situations where
+  # a cache entry is used very frequently and is under heavy load. If a
+  # cache expires and due to heavy load several different processes will try
+  # to read data natively and then they all will try to write to cache. To
+  # avoid that case the first process to find an expired cache entry will
+  # bump the cache expiration time by the value set in <tt>:race_condition_ttl</tt>.
+  # Yes, this process is extending the time for a stale value by another few
+  # seconds. Because of extended life of the previous cache, other processes
+  # will continue to use slightly stale data for a just a bit longer. In the
+  # meantime that first process will go ahead and will write into cache the
+  # new value. After that all the processes will start getting the new value.
+  # The key is to keep <tt>:race_condition_ttl</tt> small.
+  #
+  # If the process regenerating the entry errors out, the entry will be
+  # regenerated after the specified number of seconds. Also note that the
+  # life of stale cache is extended only if it expired recently. Otherwise
+  # a new value is generated and <tt>:race_condition_ttl</tt> does not play
+  # any role.
+  #
+  #   # Set all values to expire after one minute.
+  #   cache = ActiveSupport::Cache::MemoryStore.new(expires_in: 1.minute)
+  #
+  #   cache.write('foo', 'original value')
+  #   val_1 = nil
+  #   val_2 = nil
+  #   sleep 60
+  #
+  #   Thread.new do
+  #     val_1 = cache.fetch('foo', race_condition_ttl: 10.seconds) do
+  #       sleep 1
+  #       'new value 1'
+  #     end
+  #   end
+  #
+  #   Thread.new do
+  #     val_2 = cache.fetch('foo', race_condition_ttl: 10.seconds) do
+  #       'new value 2'
+  #     end
+  #   end
+  #
+  #   cache.fetch('foo') # => "original value"
+  #   sleep 10 # First thread extended the life of cache by another 10 seconds
+  #   cache.fetch('foo') # => "new value 1"
+  #   val_1 # => "new value 1"
+  #   val_2 # => "original value"
+  #
+  # Other options will be handled by the specific cache store implementation.
+  # Internally, #fetch calls #read_entry, and calls #write_entry on a cache
+  # miss. +options+ will be passed to the #read and #write calls.
+  #
+  # For example, MemCacheStore's #write method supports the +:raw+
+  # option, which tells the memcached server to store all values as strings.
+  # We can use this option with #fetch too:
+  #
+  #   cache = ActiveSupport::Cache::MemCacheStore.new
+  #   cache.fetch("foo", force: true, raw: true) do
+  #     :bar
+  #   end
+  #   cache.fetch('foo') # => "bar"
+  def fetch: (untyped name, ?untyped? options) { (untyped) -> untyped } -> untyped
+  # Reads data from the cache, using the given key. If there is data in
+  # the cache with the given key, then that data is returned. Otherwise,
+  # +nil+ is returned.
+  #
+  # Note, if data was written with the <tt>:expires_in<tt> or <tt>:version</tt> options,
+  # both of these conditions are applied before the data is returned.
+  #
+  # Options are passed to the underlying cache implementation.
+  def read: (untyped name, ?untyped? options) -> untyped
+  # Reads multiple values at once from the cache. Options can be passed
+  # in the last argument.
+  #
+  # Some cache implementation may optimize this method.
+  #
+  # Returns a hash mapping the names provided to the values found.
+  def read_multi: (*untyped names) -> untyped
+  # Cache Storage API to write multiple values at once.
+  def write_multi: (untyped hash, ?untyped? options) -> untyped
+  # Fetches data from the cache, using the given keys. If there is data in
+  # the cache with the given keys, then that data is returned. Otherwise,
+  # the supplied block is called for each key for which there was no data,
+  # and the result will be written to the cache and returned.
+  # Therefore, you need to pass a block that returns the data to be written
+  # to the cache. If you do not want to write the cache when the cache is
+  # not found, use #read_multi.
+  #
+  # Options are passed to the underlying cache implementation.
+  #
+  # Returns a hash with the data for each of the names. For example:
+  #
+  #   cache.write("bim", "bam")
+  #   cache.fetch_multi("bim", "unknown_key") do |key|
+  #     "Fallback value for key: #{key}"
+  #   end
+  #   # => { "bim" => "bam",
+  #   #      "unknown_key" => "Fallback value for key: unknown_key" }
+  #
+  def fetch_multi: (*untyped names) { (untyped) -> untyped } -> untyped
+  # Writes the value to the cache, with the key.
+  #
+  # Options are passed to the underlying cache implementation.
+  def write: (untyped name, untyped value, ?untyped? options) -> untyped
+  # Deletes an entry in the cache. Returns +true+ if an entry is deleted.
+  #
+  # Options are passed to the underlying cache implementation.
+  def delete: (untyped name, ?untyped? options) -> untyped
+  # Returns +true+ if the cache contains an entry for the given key.
+  #
+  # Options are passed to the underlying cache implementation.
+  def exist?: (untyped name, ?untyped? options) -> untyped
+  # Deletes all entries with keys matching the pattern.
+  #
+  # Options are passed to the underlying cache implementation.
+  #
+  # All implementations may not support this method.
+  def delete_matched: (untyped matcher, ?untyped? options) -> untyped
+  # Increments an integer value in the cache.
+  #
+  # Options are passed to the underlying cache implementation.
+  #
+  # All implementations may not support this method.
+  def increment: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Decrements an integer value in the cache.
+  #
+  # Options are passed to the underlying cache implementation.
+  #
+  # All implementations may not support this method.
+  def decrement: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Cleanups the cache by removing expired entries.
+  #
+  # Options are passed to the underlying cache implementation.
+  #
+  # All implementations may not support this method.
+  def cleanup: (?untyped? options) -> untyped
+  # Clears the entire cache. Be careful with this method since it could
+  # affect other processes if shared cache is being used.
+  #
+  # The options hash is passed to the underlying cache implementation.
+  #
+  # All implementations may not support this method.
+  def clear: (?untyped? options) -> untyped
+  # Adds the namespace defined in the options to a pattern designed to
+  # match keys. Implementations that support delete_matched should call
+  # this method to translate a pattern that matches names into one that
+  # matches namespaced keys.
+  private def key_matcher: (untyped pattern, untyped options) -> untyped
+  # Reads an entry from the cache implementation. Subclasses must implement
+  # this method.
+  private def read_entry: (untyped key, untyped options) -> untyped
+  # Writes an entry to the cache implementation. Subclasses must implement
+  # this method.
+  private def write_entry: (untyped key, untyped entry, untyped options) -> untyped
+  # Reads multiple entries from the cache implementation. Subclasses MAY
+  # implement this method.
+  private def read_multi_entries: (untyped names, untyped options) -> untyped
+  # Writes multiple entries to the cache implementation. Subclasses MAY
+  # implement this method.
+  private def write_multi_entries: (untyped hash, untyped options) -> untyped
+  # Deletes an entry from the cache implementation. Subclasses must
+  # implement this method.
+  private def delete_entry: (untyped key, untyped options) -> untyped
+  # Merges the default options with ones specific to a method call.
+  private def merged_options: (untyped call_options) -> untyped
+  # Expands and namespaces the cache key. May be overridden by
+  # cache stores to do additional normalization.
+  private def normalize_key: (untyped key, ?untyped? options) -> untyped
+  # Prefix the key with a namespace string:
+  #
+  #   namespace_key 'foo', namespace: 'cache'
+  #   # => 'cache:foo'
+  #
+  # With a namespace block:
+  #
+  #   namespace_key 'foo', namespace: -> { 'cache' }
+  #   # => 'cache:foo'
+  private def namespace_key: (untyped key, ?untyped? options) -> untyped
+  # Expands key to be a consistent string value. Invokes +cache_key+ if
+  # object responds to +cache_key+. Otherwise, +to_param+ method will be
+  # called. If the key is a Hash, then keys will be sorted alphabetically.
+  private def expanded_key: (untyped key) -> untyped
+  private def normalize_version: (untyped key, ?untyped? options) -> untyped
+  private def expanded_version: (untyped key) -> untyped
+  private def instrument: (untyped operation, untyped key, ?untyped? options) { (untyped) -> untyped } -> untyped
+  private def log: () { () -> untyped } -> (nil | untyped)
+  private def handle_expired_entry: (untyped entry, untyped key, untyped options) -> untyped
+  private def get_entry_value: (untyped entry, untyped name, untyped options) -> untyped
+  private def save_block_result_to_cache: (untyped name, untyped options) { (untyped) -> untyped } -> untyped
+  attr_reader silence: untyped
+  attr_reader options: untyped
+  def self.logger: () -> untyped
+  def logger: () -> untyped
+  def self.logger=: (untyped val) -> untyped
+  def logger=: (untyped val) -> untyped
+end

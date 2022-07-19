@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Delegation::ClassMethods
+  def create: (untyped klass, *untyped args) -> untyped
+
+  private def relation_class_for: (untyped klass) -> untyped
+end

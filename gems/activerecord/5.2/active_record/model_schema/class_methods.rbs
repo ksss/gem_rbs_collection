@@ -1,0 +1,209 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::ModelSchema::ClassMethods
+  # Guesses the table name (in forced lower-case) based on the name of the class in the
+  # inheritance hierarchy descending directly from ActiveRecord::Base. So if the hierarchy
+  # looks like: Reply < Message < ActiveRecord::Base, then Message is used
+  # to guess the table name even when called on Reply. The rules used to do the guess
+  # are handled by the Inflector class in Active Support, which knows almost all common
+  # English inflections. You can add new inflections in config/initializers/inflections.rb.
+  #
+  # Nested classes are given table names prefixed by the singular form of
+  # the parent's table name. Enclosing modules are not considered.
+  #
+  # ==== Examples
+  #
+  #   class Invoice < ActiveRecord::Base
+  #   end
+  #
+  #   file                  class               table_name
+  #   invoice.rb            Invoice             invoices
+  #
+  #   class Invoice < ActiveRecord::Base
+  #     class Lineitem < ActiveRecord::Base
+  #     end
+  #   end
+  #
+  #   file                  class               table_name
+  #   invoice.rb            Invoice::Lineitem   invoice_lineitems
+  #
+  #   module Invoice
+  #     class Lineitem < ActiveRecord::Base
+  #     end
+  #   end
+  #
+  #   file                  class               table_name
+  #   invoice/lineitem.rb   Invoice::Lineitem   lineitems
+  #
+  # Additionally, the class-level +table_name_prefix+ is prepended and the
+  # +table_name_suffix+ is appended. So if you have "myapp_" as a prefix,
+  # the table name guess for an Invoice class becomes "myapp_invoices".
+  # Invoice::Lineitem becomes "myapp_invoice_lineitems".
+  #
+  # You can also set your own table name explicitly:
+  #
+  #   class Mouse < ActiveRecord::Base
+  #     self.table_name = "mice"
+  #   end
+  def table_name: () -> untyped
+
+  # Sets the table name explicitly. Example:
+  #
+  #   class Project < ActiveRecord::Base
+  #     self.table_name = "project"
+  #   end
+  def table_name=: (untyped value) -> (nil | untyped)
+
+  # Returns a quoted version of the table name, used to construct SQL statements.
+  def quoted_table_name: () -> untyped
+
+  # Computes the table name, (re)sets it internally, and returns it.
+  def reset_table_name: () -> untyped
+
+  def full_table_name_prefix: () -> untyped
+
+  def full_table_name_suffix: () -> untyped
+
+  # The array of names of environments where destructive actions should be prohibited. By default,
+  # the value is <tt>["production"]</tt>.
+  def protected_environments: () -> untyped
+
+  # Sets an array of names of environments where destructive actions should be prohibited.
+  def protected_environments=: (untyped environments) -> untyped
+
+  # Defines the name of the table column which will store the class name on single-table
+  # inheritance situations.
+  #
+  # The default inheritance column name is +type+, which means it's a
+  # reserved word inside Active Record. To be able to use single-table
+  # inheritance with another column name, or to use the column +type+ in
+  # your own model for something else, you can set +inheritance_column+:
+  #
+  #     self.inheritance_column = 'zoink'
+  def inheritance_column: () -> untyped
+
+  # Sets the value of inheritance_column
+  def inheritance_column=: (untyped value) -> untyped
+
+  # The list of columns names the model should ignore. Ignored columns won't have attribute
+  # accessors defined, and won't be referenced in SQL queries.
+  def ignored_columns: () -> untyped
+
+  # Sets the columns names the model should ignore. Ignored columns won't have attribute
+  # accessors defined, and won't be referenced in SQL queries.
+  def ignored_columns=: (untyped columns) -> untyped
+
+  def sequence_name: () -> untyped
+
+  def reset_sequence_name: () -> untyped
+
+  # Sets the name of the sequence to use when generating ids to the given
+  # value, or (if the value is +nil+ or +false+) to the value returned by the
+  # given block. This is required for Oracle and is useful for any
+  # database which relies on sequences for primary key generation.
+  #
+  # If a sequence name is not explicitly set when using Oracle,
+  # it will default to the commonly used pattern of: #{table_name}_seq
+  #
+  # If a sequence name is not explicitly set when using PostgreSQL, it
+  # will discover the sequence corresponding to your primary key for you.
+  #
+  #   class Project < ActiveRecord::Base
+  #     self.sequence_name = "projectseq"   # default would have been "project_seq"
+  #   end
+  def sequence_name=: (untyped value) -> untyped
+
+  # Determines if the primary key values should be selected from their
+  # corresponding sequence before the insert statement.
+  def prefetch_primary_key?: () -> untyped
+
+  # Returns the next value that will be used as the primary key on
+  # an insert statement.
+  def next_sequence_value: () -> untyped
+
+  # Indicates whether the table associated with this class exists
+  def table_exists?: () -> untyped
+
+  def attributes_builder: () -> untyped
+
+  def columns_hash: () -> untyped
+
+  def columns: () -> untyped
+
+  def attribute_types: () -> untyped
+
+  def yaml_encoder: () -> untyped
+
+  # Returns the type of the attribute with the given name, after applying
+  # all modifiers. This method is the only valid source of information for
+  # anything related to the types of a model's attributes. This method will
+  # access the database and load the model's schema if it is required.
+  #
+  # The return value of this method will implement the interface described
+  # by ActiveModel::Type::Value (though the object itself may not subclass
+  # it).
+  #
+  # +attr_name+ The name of the attribute to retrieve the type for. Must be
+  # a string or a symbol.
+  def type_for_attribute: (untyped attr_name) ?{ () -> untyped } -> untyped
+
+  # Returns a hash where the keys are column names and the values are
+  # default values when instantiating the Active Record object for this table.
+  def column_defaults: () -> untyped
+
+  def _default_attributes: () -> untyped
+
+  # Returns an array of column names as strings.
+  def column_names: () -> untyped
+
+  # Returns an array of column objects where the primary id, all columns ending in "_id" or "_count",
+  # and columns used for single table inheritance have been removed.
+  def content_columns: () -> untyped
+
+  # Resets all the cached information about columns, which will cause them
+  # to be reloaded on the next request.
+  #
+  # The most common usage pattern for this method is probably in a migration,
+  # when just after creating a table you want to populate it with some default
+  # values, eg:
+  #
+  #  class CreateJobLevels < ActiveRecord::Migration[5.0]
+  #    def up
+  #      create_table :job_levels do |t|
+  #        t.integer :id
+  #        t.string :name
+  #
+  #        t.timestamps
+  #      end
+  #
+  #      JobLevel.reset_column_information
+  #      %w{assistant executive manager director}.each do |type|
+  #        JobLevel.create(name: type)
+  #      end
+  #    end
+  #
+  #    def down
+  #      drop_table :job_levels
+  #    end
+  #  end
+  def reset_column_information: () -> untyped
+
+  def initialize_load_schema_monitor: () -> untyped
+
+  private def inherited: (untyped child_class) -> untyped
+
+  private def schema_loaded?: () -> untyped
+
+  private def load_schema: () -> (nil | untyped)
+
+  private def load_schema!: () -> untyped
+
+  private def reload_schema_from_cache: () -> untyped
+
+  # Guesses the table name, but does not decorate it with prefix and suffix information.
+  private def undecorated_table_name: (?untyped class_name) -> untyped
+
+  # Computes and returns a table name according to default conventions.
+  private def compute_table_name: () -> untyped
+end

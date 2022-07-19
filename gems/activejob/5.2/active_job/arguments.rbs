@@ -1,0 +1,38 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Arguments
+  # Serializes a set of arguments. Whitelisted types are returned
+  # as-is. Arrays/Hashes are serialized element by element.
+  # All other types are serialized using GlobalID.
+  def serialize: (untyped arguments) -> untyped
+
+  # Deserializes a set of arguments. Whitelisted types are returned
+  # as-is. Arrays/Hashes are deserialized element by element.
+  # All other types are deserialized using GlobalID.
+  def deserialize: (untyped arguments) -> untyped
+
+  private def serialize_argument: (untyped argument) -> untyped
+
+  private def deserialize_argument: (untyped argument) -> untyped
+
+  private def serialized_global_id?: (untyped hash) -> untyped
+
+  private def deserialize_global_id: (untyped hash) -> untyped
+
+  private def serialize_hash: (untyped argument) -> untyped
+
+  private def deserialize_hash: (untyped serialized_hash) -> untyped
+
+  private def serialize_hash_key: (untyped key) -> untyped
+
+  private def serialize_indifferent_hash: (untyped indifferent_hash) -> untyped
+
+  private def transform_symbol_keys: (untyped hash, untyped symbol_keys) -> untyped
+
+  private def convert_to_global_id_hash: (untyped argument) -> untyped
+
+  extend ActiveJob::Arguments
+
+  TYPE_WHITELIST: Array[singleton(NilClass) | singleton(String) | singleton(Integer) | singleton(Float) | singleton(BigDecimal) | singleton(TrueClass) | singleton(FalseClass)]
+end

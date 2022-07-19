@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::NamedWindow < ::Arel::Nodes::Window
+  attr_accessor name: untyped
+end

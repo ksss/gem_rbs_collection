@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::JSON
+  # Parses a JSON string (JavaScript Object Notation) into a hash.
+  # See http://www.json.org for more info.
+  #
+  #   ActiveSupport::JSON.decode("{\"team\":\"rails\",\"players\":\"36\"}")
+  #   => {"team" => "rails", "players" => "36"}
+  def self.decode: (untyped json) -> untyped
+
+  # Returns the class of the error that will be raised when there is an
+  # error in decoding JSON. Using this method means you won't directly
+  # depend on the ActiveSupport's JSON implementation, in case it changes
+  # in the future.
+  #
+  #   begin
+  #     obj = ActiveSupport::JSON.decode(some_string)
+  #   rescue ActiveSupport::JSON.parse_error
+  #     Rails.logger.warn("Attempted to decode invalid JSON: #{some_string}")
+  #   end
+  def self.parse_error: () -> untyped
+
+  private def self.convert_dates_from: (untyped data) -> untyped
+
+  # Dumps objects in JSON (JavaScript Object Notation).
+  # See http://www.json.org for more info.
+  #
+  #   ActiveSupport::JSON.encode({ team: 'rails', players: '36' })
+  #   # => "{\"team\":\"rails\",\"players\":\"36\"}"
+  def self.encode: (untyped value, ?untyped? options) -> untyped
+
+  DATETIME_REGEX: Regexp
+
+  DATE_REGEX: Regexp
+end

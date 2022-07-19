@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Table
+  include Arel::Crud
+  include Arel::FactoryMethods
+  attr_accessor self.engine: untyped
+  attr_accessor name: untyped
+  attr_accessor table_alias: untyped
+  attr_reader type_caster: untyped
+end

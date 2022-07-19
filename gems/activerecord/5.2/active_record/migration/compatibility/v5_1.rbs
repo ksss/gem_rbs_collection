@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::Compatibility::V5_1 < ::ActiveRecord::Migration::Current
+  def change_column: (untyped table_name, untyped column_name, untyped `type`, ?::Hash[untyped, untyped] options) -> untyped
+  def create_table: (untyped table_name, ?::Hash[untyped, untyped] options) -> untyped
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::ThroughAssociation < ::ActiveRecord::Associations::Association
+  def run: (untyped preloader) -> untyped
+  private def through_reflection: () -> untyped
+  private def source_reflection: () -> untyped
+  private def preload_index: () -> untyped
+  private def through_scope: () -> untyped
+  private def target_reflection_scope: () -> (untyped | untyped | nil)
+end

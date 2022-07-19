@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer
+  # Implement this method in a concrete subclass. Have it return true when given a blob from which
+  # the analyzer can extract metadata.
+  def self.accept?: (untyped blob) -> false
+  def initialize: (untyped blob) -> void
+  # Override this method in a concrete subclass. Have it return a Hash of metadata.
+  def metadata: () -> untyped
+  private def logger: () -> untyped
+  include ActiveStorage::Downloading
+  attr_reader blob: untyped
+end

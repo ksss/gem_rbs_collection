@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached::One < ::ActiveStorage::Attached
+  # Returns the associated attachment record.
+  #
+  # You don't have to call this method to access the attachment's methods as
+  # they are all available at the model level.
+  def attachment: () -> untyped
+  # Associates a given attachment with the current record, saving it to the database.
+  #
+  #   person.avatar.attach(params[:avatar]) # ActionDispatch::Http::UploadedFile object
+  #   person.avatar.attach(params[:signed_blob_id]) # Signed reference to blob from direct upload
+  #   person.avatar.attach(io: File.open("/path/to/face.jpg"), filename: "face.jpg", content_type: "image/jpg")
+  #   person.avatar.attach(avatar_blob) # ActiveStorage::Blob object
+  def attach: (untyped attachable) -> untyped
+  # Returns +true+ if an attachment has been made.
+  #
+  #   class User < ActiveRecord::Base
+  #     has_one_attached :avatar
+  #   end
+  #
+  #   User.new.avatar.attached? # => false
+  def attached?: () -> untyped
+  # Deletes the attachment without purging it, leaving its blob in place.
+  def detach: () -> (untyped | nil)
+  # Directly purges the attachment (i.e. destroys the blob and
+  # attachment and deletes the file on the service).
+  def purge: () -> (untyped | nil)
+  # Purges the attachment through the queuing system.
+  def purge_later: () -> (untyped | nil)
+  private def build_attachment: (blob: untyped) -> untyped
+  private def write_attachment: (untyped attachment) -> untyped
+  # defined by `delegate` to: #record
+  def transaction: (*untyped, **untyped) -> untyped
+end

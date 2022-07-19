@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Que
+  class Job
+  end
+end
+module Qu
+  class Job
+  end
+end

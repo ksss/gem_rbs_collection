@@ -1,0 +1,309 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::TestHelper
+  def before_setup: () -> untyped
+
+  def after_teardown: () -> untyped
+
+  # Specifies the queue adapter to use with all active job test helpers.
+  #
+  # Returns an instance of the queue adapter and defaults to
+  # <tt>ActiveJob::QueueAdapters::TestAdapter</tt>.
+  #
+  # Note: The adapter provided by this method must provide some additional
+  # methods from those expected of a standard <tt>ActiveJob::QueueAdapter</tt>
+  # in order to be used with the active job test helpers. Refer to
+  # <tt>ActiveJob::QueueAdapters::TestAdapter</tt>.
+  def queue_adapter_for_test: () -> untyped
+
+  # Asserts that the number of enqueued jobs matches the given number.
+  #
+  #   def test_jobs
+  #     assert_enqueued_jobs 0
+  #     HelloJob.perform_later('david')
+  #     assert_enqueued_jobs 1
+  #     HelloJob.perform_later('abdelkader')
+  #     assert_enqueued_jobs 2
+  #   end
+  #
+  # If a block is passed, that block will cause the specified number of
+  # jobs to be enqueued.
+  #
+  #   def test_jobs_again
+  #     assert_enqueued_jobs 1 do
+  #       HelloJob.perform_later('cristian')
+  #     end
+  #
+  #     assert_enqueued_jobs 2 do
+  #       HelloJob.perform_later('aaron')
+  #       HelloJob.perform_later('rafael')
+  #     end
+  #   end
+  #
+  # The number of times a specific job was enqueued can be asserted.
+  #
+  #   def test_logging_job
+  #     assert_enqueued_jobs 1, only: LoggingJob do
+  #       LoggingJob.perform_later
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # The number of times a job except specific class was enqueued can be asserted.
+  #
+  #   def test_logging_job
+  #     assert_enqueued_jobs 1, except: HelloJob do
+  #       LoggingJob.perform_later
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # The number of times a job is enqueued to a specific queue can also be asserted.
+  #
+  #   def test_logging_job
+  #     assert_enqueued_jobs 2, queue: 'default' do
+  #       LoggingJob.perform_later
+  #       HelloJob.perform_later('elfassy')
+  #     end
+  #   end
+  def assert_enqueued_jobs: (untyped number, ?only: untyped?, ?except: untyped?, ?queue: untyped?) { () -> untyped } -> untyped
+
+  # Asserts that no jobs have been enqueued.
+  #
+  #   def test_jobs
+  #     assert_no_enqueued_jobs
+  #     HelloJob.perform_later('jeremy')
+  #     assert_enqueued_jobs 1
+  #   end
+  #
+  # If a block is passed, that block should not cause any job to be enqueued.
+  #
+  #   def test_jobs_again
+  #     assert_no_enqueued_jobs do
+  #       # No job should be enqueued from this block
+  #     end
+  #   end
+  #
+  # It can be asserted that no jobs of a specific kind are enqueued:
+  #
+  #   def test_no_logging
+  #     assert_no_enqueued_jobs only: LoggingJob do
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # It can be asserted that no jobs except specific class are enqueued:
+  #
+  #   def test_no_logging
+  #     assert_no_enqueued_jobs except: HelloJob do
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # Note: This assertion is simply a shortcut for:
+  #
+  #   assert_enqueued_jobs 0, &block
+  def assert_no_enqueued_jobs: (?only: untyped?, ?except: untyped?) ?{ () -> untyped } -> untyped
+
+  # Asserts that the number of performed jobs matches the given number.
+  # If no block is passed, <tt>perform_enqueued_jobs</tt>
+  # must be called around the job call.
+  #
+  #   def test_jobs
+  #     assert_performed_jobs 0
+  #
+  #     perform_enqueued_jobs do
+  #       HelloJob.perform_later('xavier')
+  #     end
+  #     assert_performed_jobs 1
+  #
+  #     perform_enqueued_jobs do
+  #       HelloJob.perform_later('yves')
+  #       assert_performed_jobs 2
+  #     end
+  #   end
+  #
+  # If a block is passed, that block should cause the specified number of
+  # jobs to be performed.
+  #
+  #   def test_jobs_again
+  #     assert_performed_jobs 1 do
+  #       HelloJob.perform_later('robin')
+  #     end
+  #
+  #     assert_performed_jobs 2 do
+  #       HelloJob.perform_later('carlos')
+  #       HelloJob.perform_later('sean')
+  #     end
+  #   end
+  #
+  # The block form supports filtering. If the :only option is specified,
+  # then only the listed job(s) will be performed.
+  #
+  #     def test_hello_job
+  #       assert_performed_jobs 1, only: HelloJob do
+  #         HelloJob.perform_later('jeremy')
+  #         LoggingJob.perform_later
+  #       end
+  #     end
+  #
+  # Also if the :except option is specified,
+  # then the job(s) except specific class will be performed.
+  #
+  #     def test_hello_job
+  #       assert_performed_jobs 1, except: LoggingJob do
+  #         HelloJob.perform_later('jeremy')
+  #         LoggingJob.perform_later
+  #       end
+  #     end
+  #
+  # An array may also be specified, to support testing multiple jobs.
+  #
+  #     def test_hello_and_logging_jobs
+  #       assert_nothing_raised do
+  #         assert_performed_jobs 2, only: [HelloJob, LoggingJob] do
+  #           HelloJob.perform_later('jeremy')
+  #           LoggingJob.perform_later('stewie')
+  #           RescueJob.perform_later('david')
+  #         end
+  #       end
+  #     end
+  def assert_performed_jobs: (untyped number, ?only: untyped?, ?except: untyped?) { () -> untyped } -> untyped
+
+  # Asserts that no jobs have been performed.
+  #
+  #   def test_jobs
+  #     assert_no_performed_jobs
+  #
+  #     perform_enqueued_jobs do
+  #       HelloJob.perform_later('matthew')
+  #       assert_performed_jobs 1
+  #     end
+  #   end
+  #
+  # If a block is passed, that block should not cause any job to be performed.
+  #
+  #   def test_jobs_again
+  #     assert_no_performed_jobs do
+  #       # No job should be performed from this block
+  #     end
+  #   end
+  #
+  # The block form supports filtering. If the :only option is specified,
+  # then only the listed job(s) will not be performed.
+  #
+  #   def test_no_logging
+  #     assert_no_performed_jobs only: LoggingJob do
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # Also if the :except option is specified,
+  # then the job(s) except specific class will not be performed.
+  #
+  #   def test_no_logging
+  #     assert_no_performed_jobs except: HelloJob do
+  #       HelloJob.perform_later('jeremy')
+  #     end
+  #   end
+  #
+  # Note: This assertion is simply a shortcut for:
+  #
+  #   assert_performed_jobs 0, &block
+  def assert_no_performed_jobs: (?only: untyped?, ?except: untyped?) ?{ () -> untyped } -> untyped
+
+  # Asserts that the job passed in the block has been enqueued with the given arguments.
+  #
+  #   def test_assert_enqueued_with
+  #     assert_enqueued_with(job: MyJob, args: [1,2,3], queue: 'low') do
+  #       MyJob.perform_later(1,2,3)
+  #     end
+  #
+  #     assert_enqueued_with(job: MyJob, at: Date.tomorrow.noon) do
+  #       MyJob.set(wait_until: Date.tomorrow.noon).perform_later
+  #     end
+  #   end
+  def assert_enqueued_with: (?job: untyped?, ?args: untyped?, ?at: untyped?, ?queue: untyped?) { () -> untyped } -> untyped
+
+  # Asserts that the job passed in the block has been performed with the given arguments.
+  #
+  #   def test_assert_performed_with
+  #     assert_performed_with(job: MyJob, args: [1,2,3], queue: 'high') do
+  #       MyJob.perform_later(1,2,3)
+  #     end
+  #
+  #     assert_performed_with(job: MyJob, at: Date.tomorrow.noon) do
+  #       MyJob.set(wait_until: Date.tomorrow.noon).perform_later
+  #     end
+  #   end
+  def assert_performed_with: (?job: untyped?, ?args: untyped?, ?at: untyped?, ?queue: untyped?) { () -> untyped } -> untyped
+
+  # Performs all enqueued jobs in the duration of the block.
+  #
+  #   def test_perform_enqueued_jobs
+  #     perform_enqueued_jobs do
+  #       MyJob.perform_later(1, 2, 3)
+  #     end
+  #     assert_performed_jobs 1
+  #   end
+  #
+  # This method also supports filtering. If the +:only+ option is specified,
+  # then only the listed job(s) will be performed.
+  #
+  #   def test_perform_enqueued_jobs_with_only
+  #     perform_enqueued_jobs(only: MyJob) do
+  #       MyJob.perform_later(1, 2, 3) # will be performed
+  #       HelloJob.perform_later(1, 2, 3) # will not be performed
+  #     end
+  #     assert_performed_jobs 1
+  #   end
+  #
+  # Also if the +:except+ option is specified,
+  # then the job(s) except specific class will be performed.
+  #
+  #   def test_perform_enqueued_jobs_with_except
+  #     perform_enqueued_jobs(except: HelloJob) do
+  #       MyJob.perform_later(1, 2, 3) # will be performed
+  #       HelloJob.perform_later(1, 2, 3) # will not be performed
+  #     end
+  #     assert_performed_jobs 1
+  #   end
+  #
+  def perform_enqueued_jobs: (?only: untyped?, ?except: untyped?) { () -> untyped } -> untyped
+
+  # Accesses the queue_adapter set by ActiveJob::Base.
+  #
+  #   def test_assert_job_has_custom_queue_adapter_set
+  #     assert_instance_of CustomQueueAdapter, HelloJob.queue_adapter
+  #   end
+  def queue_adapter: () -> untyped
+
+  private def clear_enqueued_jobs: () -> untyped
+
+  private def clear_performed_jobs: () -> untyped
+
+  private def enqueued_jobs_size: (?only: untyped?, ?except: untyped?, ?queue: untyped?) -> untyped
+
+  private def prepare_args_for_assertion: (untyped args) -> untyped
+
+  private def deserialize_args_for_assertion: (untyped job) -> untyped
+
+  private def instantiate_job: (untyped payload) -> untyped
+
+  private def queue_adapter_changed_jobs: () -> untyped
+
+  private def validate_option: (?only: untyped?, ?except: untyped?) -> (untyped | nil)
+
+  # defined by `delegate` to: untyped#queue_adapter
+  def enqueued_jobs: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: untyped#queue_adapter
+  def enqueued_jobs=: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: untyped#queue_adapter
+  def performed_jobs: (*untyped, **untyped) -> untyped
+
+  # defined by `delegate` to: untyped#queue_adapter
+  def performed_jobs=: (*untyped, **untyped) -> untyped
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::JoinDependency::Aliases
+  def initialize: (untyped tables) -> void
+  def columns: () -> untyped
+  # An array of [column_name, alias] pairs for the table
+  def column_aliases: (untyped node) -> untyped
+  def column_alias: (untyped node, untyped column) -> untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Store
+  private def read_store_attribute: (untyped store_attribute, untyped key) -> untyped
+
+  private def write_store_attribute: (untyped store_attribute, untyped key, untyped value) -> untyped
+
+  private def store_accessor_for: (untyped store_attribute) -> untyped
+
+  extend ActiveSupport::Concern
+end

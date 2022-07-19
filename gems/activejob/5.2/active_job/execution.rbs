@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Execution
+  # Performs the job immediately. The job is not sent to the queueing adapter
+  # but directly executed by blocking the execution of others until it's finished.
+  #
+  #   MyJob.new(*args).perform_now
+  def perform_now: () -> untyped
+
+  def perform: () -> untyped
+
+  include ActiveSupport::Rescuable
+
+  extend ActiveSupport::Concern
+end

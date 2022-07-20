@@ -67,7 +67,6 @@ def generate(out_dir, version)
     use Orthoses::CreateFileByName,
       base_dir: "#{out_dir}/#{version}",
       header: "# !!! GENERATED CODE !!!\n# Please see generators/rails-generator"
-    use Orthoses::AvoidRecursiveAncestorError
     use Orthoses::Filter,
       if: -> (name, content) {
         # OMG, both ERB and Erb are exist...
@@ -257,6 +256,13 @@ def generate_test_script(gem:, version:, export:, stdlib_dependencies:, gem_depe
       configure_code_diagnostics(D::Ruby.all_error)
     end
   RUBY
+end
+
+def generate_manifest(export:, stdlib_dependencies:)
+  Pathname(export).join('manifest.yaml').write(<<~YAML)
+    dependencies:
+      #{stdlib_dependencies.map{"- name: #{_1}"}.join("\n  ")}
+  YAML
 end
 
 VERSIONS = %w[

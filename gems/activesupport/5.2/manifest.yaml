@@ -1,0 +1,12 @@
+dependencies:
+  - name: benchmark
+  - name: date
+  - name: digest
+  - name: json
+  - name: logger
+  - name: monitor
+  - name: mutex_m
+  - name: pathname
+  - name: singleton
+  - name: time
+  - name: minitest

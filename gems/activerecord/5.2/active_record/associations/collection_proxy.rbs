@@ -628,15 +628,19 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   private def find_from_target?: () -> untyped
   private def exec_queries: () -> untyped
   # defined by `delegate` to: untyped#scope
+  def reordering_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def unscope!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
   def unscope_values: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def left_joins: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
+  def none: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
   def rewhere: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def or!: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
-  def none: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def having!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
@@ -670,11 +674,11 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   # defined by `delegate` to: untyped#scope
   def extending: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
-  def unscope: (*untyped, **untyped) -> untyped
+  def extensions: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def readonly: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
-  def extensions: (*untyped, **untyped) -> untyped
+  def unscope: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def reverse_order: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
@@ -698,13 +702,13 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   # defined by `delegate` to: untyped#scope
   def where: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
-  def having: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
   def order: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def order!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def limit_value: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
-  def order!: (*untyped, **untyped) -> untyped
+  def having: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def offset_value: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
@@ -740,6 +744,8 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   # defined by `delegate` to: untyped#scope
   def reverse_order!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
+  def offset: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
   def distinct_value: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def limit!: (*untyped, **untyped) -> untyped
@@ -747,8 +753,6 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   def _select!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def where!: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
-  def offset: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def group_values: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
@@ -782,9 +786,9 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   # defined by `delegate` to: untyped#scope
   def or: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
-  def extending_values: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
   def limit: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extending_values: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def lock: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
@@ -821,10 +825,6 @@ class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
   def group!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def reorder: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
-  def reordering_value=: (*untyped, **untyped) -> untyped
-  # defined by `delegate` to: untyped#scope
-  def unscope!: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope
   def except: (*untyped, **untyped) -> untyped
   # defined by `delegate` to: untyped#scope

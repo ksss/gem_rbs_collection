@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::LazyLoadHooks
+  def self.extended: (untyped base) -> untyped
+  # Declares a block that will be executed when a Rails component is fully
+  # loaded.
+  #
+  # Options:
+  #
+  # * <tt>:yield</tt> - Yields the object that run_load_hooks to +block+.
+  # * <tt>:run_once</tt> - Given +block+ will run only once.
+  def on_load: (untyped name, ?::Hash[untyped, untyped] options) ?{ () -> untyped } -> untyped
+  def run_load_hooks: (untyped name, ?untyped base) -> untyped
+  private def with_execution_control: (untyped name, untyped block, untyped once) { () -> untyped } -> (untyped | nil)
+  private def execute_hook: (untyped name, untyped base, untyped options, untyped block) -> untyped
+end

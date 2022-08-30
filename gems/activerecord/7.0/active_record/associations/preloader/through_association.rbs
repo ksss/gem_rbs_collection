@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::ThroughAssociation < ::ActiveRecord::Associations::Association
+  def preloaded_records: () -> untyped
+  def records_by_owner: () -> untyped
+  def runnable_loaders: () -> (::Array[self] | untyped)
+  def future_classes: () -> (::Array[untyped] | untyped)
+  private def data_available?: () -> untyped
+  private def source_preloaders: () -> untyped
+  private def middle_records: () -> untyped
+  private def through_preloaders: () -> untyped
+  private def through_reflection: () -> untyped
+  private def source_reflection: () -> untyped
+  private def source_records_by_owner: () -> untyped
+  private def through_records_by_owner: () -> untyped
+  private def preload_index: () -> untyped
+  private def through_scope: () -> untyped
+end

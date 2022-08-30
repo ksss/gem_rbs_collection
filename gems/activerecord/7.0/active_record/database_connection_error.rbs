@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConnectionError < ::ActiveRecord::ConnectionNotEstablished
+  def initialize: (?untyped? message) -> void
+  def self.hostname_error: (untyped hostname) -> untyped
+  def self.username_error: (untyped username) -> untyped
+end

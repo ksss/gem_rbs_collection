@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PathResolver < ::ActionView::Resolver
+  def initialize: (?untyped? pattern) -> void
+  def clear_cache: () -> untyped
+  private def _find_all: (untyped name, untyped prefix, untyped partial, untyped details, untyped key, untyped locals) -> untyped
+  private def query: (untyped path, untyped details, untyped formats, untyped locals, cache: untyped) -> untyped
+  private def build_unbound_template: (untyped template, untyped virtual_path) -> untyped
+  private def reject_files_external_to_app: (untyped files) -> untyped
+  private def find_template_paths_from_details: (untyped path, untyped details) -> untyped
+  private def find_template_paths: (untyped query) -> untyped
+  private def inside_path?: (untyped path, untyped filename) -> untyped
+  # Helper for building query glob string based on resolver's pattern.
+  private def build_query: (untyped path, untyped details) -> untyped
+  private def escape_entry: (untyped entry) -> untyped
+  # Extract handler, formats and variant from path. If a format cannot be found neither
+  # from the path, or the handler, we should return the array of formats given
+  # to the resolver.
+  private def extract_handler_and_format_and_variant: (untyped path) -> ::Array[untyped]
+  DEFAULT_PATTERN: String
+  EXTENSIONS: Hash[Symbol, String]
+end

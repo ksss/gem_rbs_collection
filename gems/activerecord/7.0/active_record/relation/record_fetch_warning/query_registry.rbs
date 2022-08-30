@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Relation::RecordFetchWarning::QueryRegistry
+  def queries: () -> untyped
+  def reset: () -> untyped
+end

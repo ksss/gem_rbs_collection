@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionPack
+  # Returns the version of the currently loaded Action Pack as a <tt>Gem::Version</tt>
+  def self.gem_version: () -> untyped
+  # Returns the version of the currently loaded ActionPack as a <tt>Gem::Version</tt>
+  def self.version: () -> untyped
+end

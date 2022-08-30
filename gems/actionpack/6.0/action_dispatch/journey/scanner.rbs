@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Scanner
+  def initialize: () -> void
+  def scan_setup: (untyped str) -> untyped
+  def eos?: () -> untyped
+  def pos: () -> untyped
+  def pre_match: () -> untyped
+  def next_token: () -> (nil | untyped)
+  # takes advantage of String @- deduping capabilities in Ruby 2.5 upwards
+  # see: https://bugs.ruby-lang.org/issues/13077
+  private def dedup_scan: (untyped regex) -> untyped
+  private def scan: () -> untyped
+end

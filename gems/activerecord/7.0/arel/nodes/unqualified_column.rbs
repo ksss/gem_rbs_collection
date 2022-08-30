@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::UnqualifiedColumn < ::Arel::Nodes::Unary
+  alias attribute expr
+  alias attribute= expr=
+  def relation: () -> untyped
+  def column: () -> untyped
+  def name: () -> untyped
+end

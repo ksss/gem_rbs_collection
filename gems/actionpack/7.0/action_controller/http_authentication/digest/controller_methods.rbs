@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Digest::ControllerMethods
+  # Authenticate using an HTTP \Digest, or otherwise render an HTTP header
+  # requesting the client to send a \Digest.
+  #
+  # See ActionController::HttpAuthentication::Digest for example usage.
+  def authenticate_or_request_with_http_digest: (?::String realm, ?untyped? message) ?{ () -> untyped } -> untyped
+  # Authenticate using an HTTP \Digest. Returns true if authentication is
+  # successful, false otherwise.
+  def authenticate_with_http_digest: (?::String realm) ?{ () -> untyped } -> untyped
+  # Render an HTTP header requesting the client to send a \Digest for
+  # authentication.
+  def request_http_digest_authentication: (?::String realm, ?untyped? message) -> untyped
+end

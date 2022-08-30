@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InternalMetadata::ActiveRecord_Relation < ::ActiveRecord::Relation
+  include ActiveRecord::Delegation::ClassSpecificRelation
+  include ActiveRecord::InternalMetadata::GeneratedRelationMethods
+  extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+end

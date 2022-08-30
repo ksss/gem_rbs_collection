@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::TimeZoneConversion::ClassMethods
+  private def inherited: (untyped subclass) -> untyped
+  private def create_time_zone_conversion_attribute?: (untyped name, untyped cast_type) -> untyped
+end

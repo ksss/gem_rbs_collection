@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::TemplatePath
+  alias partial? partial
+  alias virtual_path virtual
+  # Convert name, prefix, and partial into a virtual path string
+  def self.virtual: (untyped name, untyped prefix, untyped partial) -> ::String
+  # Build a TemplatePath form a virtual path
+  def self.parse: (untyped virtual) -> untyped
+  # Convert name, prefix, and partial into a TemplatePath
+  def self.build: (untyped name, untyped prefix, untyped partial) -> untyped
+  def initialize: (untyped name, untyped prefix, untyped partial, untyped virtual) -> void
+  alias to_str virtual
+  alias to_s virtual
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_reader name: untyped
+  attr_reader prefix: untyped
+  attr_reader partial: untyped
+  attr_reader virtual: untyped
+end

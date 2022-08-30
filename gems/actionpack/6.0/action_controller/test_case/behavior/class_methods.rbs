@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::TestCase::Behavior::ClassMethods
+  # Sets the controller class name. Useful if the name can't be inferred from test class.
+  # Normalizes +controller_class+ before using.
+  #
+  #   tests WidgetController
+  #   tests :widget
+  #   tests 'widget'
+  def tests: (untyped controller_class) -> untyped
+  def controller_class=: (untyped new_class) -> untyped
+  def controller_class: () -> untyped
+  def determine_default_controller_class: (untyped name) -> untyped
+end

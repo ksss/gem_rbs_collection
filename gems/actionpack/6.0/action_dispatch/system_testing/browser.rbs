@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::SystemTesting::Browser
+  def initialize: (untyped name) -> void
+  def type: () -> untyped
+  def options: () -> untyped
+  def capabilities: () -> untyped
+  # driver_path can be configured as a proc. The webdrivers gem uses this
+  # proc to update web drivers. Running this proc early allows us to only
+  # update the webdriver once and avoid race conditions when using
+  # parallel tests.
+  def preload: () -> untyped
+  private def headless_chrome_browser_options: () -> untyped
+  private def headless_firefox_browser_options: () -> untyped
+end

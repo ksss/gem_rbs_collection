@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::Branch
+  def initialize: (association: untyped, children: untyped, parent: untyped, associate_by_default: untyped, scope: untyped) -> void
+  def future_classes: () -> untyped
+  def immediate_future_classes: () -> untyped
+  def target_classes: () -> untyped
+  def likely_reflections: () -> untyped
+  def root?: () -> untyped
+  def source_records: () -> untyped
+  def preloaded_records: () -> untyped
+  def done?: () -> untyped
+  def runnable_loaders: () -> untyped
+  def grouped_records: () -> untyped
+  def preloaders_for_reflection: (untyped reflection, untyped reflection_records) -> untyped
+  def polymorphic?: () -> (false | untyped)
+  def loaders: () -> untyped
+  private def build_children: (untyped children) -> untyped
+  # Returns a class containing the logic needed to load preload the data
+  # and attach it to a relation. The class returned implements a `run` method
+  # that accepts a preloader.
+  private def preloader_for: (untyped reflection) -> untyped
+  attr_reader association: untyped
+  attr_reader children: untyped
+  attr_reader parent: untyped
+  attr_reader scope: untyped
+  attr_reader associate_by_default: untyped
+  attr_writer preloaded_records: untyped
+end

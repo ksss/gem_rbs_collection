@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch
+  extend ActiveSupport::Autoload
+  def self.test_app: () -> untyped
+  def test_app: () -> untyped
+  def self.test_app=: (untyped val) -> untyped
+  def test_app=: (untyped val) -> untyped
+end

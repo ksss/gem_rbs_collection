@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Formatter::RouteWithParams
+  def initialize: (untyped route, untyped parameterized_parts, untyped params) -> void
+  def path: (untyped _) -> untyped
+  attr_reader params: untyped
+end

@@ -4,10 +4,8 @@
 module ActiveSupport::Deprecation::Behavior
   # Returns the current behavior or if one isn't set, defaults to +:stderr+.
   def behavior: () -> untyped
-
   # Returns the current behavior for disallowed deprecations or if one isn't set, defaults to +:raise+.
   def disallowed_behavior: () -> untyped
-
   # Sets the behavior to the specified value. Can be a single value, array,
   # or an object that responds to +call+.
   #
@@ -33,14 +31,11 @@ module ActiveSupport::Deprecation::Behavior
   # If you are using Rails, you can set <tt>config.active_support.report_deprecations = false</tt> to disable
   # all deprecation behaviors. This is similar to the +silence+ option but more performant.
   def behavior=: (untyped behavior) -> untyped
-
   # Sets the behavior for disallowed deprecations (those configured by
   # ActiveSupport::Deprecation.disallowed_warnings=) to the specified
   # value. As with +behavior=+, this can be a single value, array, or an
   # object that responds to +call+.
   def disallowed_behavior=: (untyped behavior) -> untyped
-
   private def arity_coerce: (untyped behavior) -> untyped
-
   attr_accessor debug: untyped
 end

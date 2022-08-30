@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::True < ::Arel::Nodes::NodeExpression
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+end

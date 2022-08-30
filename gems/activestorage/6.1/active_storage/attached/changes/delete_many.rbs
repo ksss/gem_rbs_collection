@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached::Changes::DeleteMany
+  def initialize: (untyped name, untyped record) -> void
+  def attachables: () -> ::Array[untyped]
+  def attachments: () -> untyped
+  def blobs: () -> untyped
+  def save: () -> untyped
+  attr_reader name: untyped
+  attr_reader record: untyped
+end

@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PredicateBuilder
+  def initialize: (untyped table) -> void
+  def build_from_hash: (untyped attributes) -> untyped
+  def self.references: (untyped attributes) -> untyped
+  # Define how a class is converted to Arel nodes when passed to +where+.
+  # The handler can be any object that responds to +call+, and will be used
+  # for any value that +===+ the class given. For example:
+  #
+  #     MyCustomDateRange = Struct.new(:start, :end)
+  #     handler = proc do |column, range|
+  #       Arel::Nodes::Between.new(column,
+  #         Arel::Nodes::And.new([range.start, range.end])
+  #       )
+  #     end
+  #     ActiveRecord::PredicateBuilder.new("users").register_handler(MyCustomDateRange, handler)
+  def register_handler: (untyped klass, untyped handler) -> untyped
+  def build: (untyped attribute, untyped value) -> untyped
+  def build_bind_attribute: (untyped column_name, untyped value) -> untyped
+  def expand_from_hash: (untyped attributes) -> (::Array["1=0"] | untyped)
+  private def convert_dot_notation_to_hash: (untyped attributes) -> untyped
+  private def handler_for: (untyped object) -> untyped
+  attr_reader table: untyped
+  # defined by `delegate` to: untyped#table
+  def resolve_column_aliases: (*untyped, **untyped) -> untyped
+end

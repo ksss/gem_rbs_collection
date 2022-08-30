@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::TestCase < ::ActiveSupport::TestCase
+  include ActionController::TestCase::Behavior
+  include ActiveSupport::Testing::ConstantLookup
+  include Rails::Dom::Testing::Assertions
+  include ActionController::TemplateAssertions
+  include ActionDispatch::Assertions
+  extend ActiveSupport::Testing::ConstantLookup::ClassMethods
+  extend ActionController::TestCase::Behavior::ClassMethods
+  attr_writer _controller_class: untyped
+end

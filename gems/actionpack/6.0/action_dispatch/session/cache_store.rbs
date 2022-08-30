@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::CacheStore < ::ActionDispatch::Session::AbstractSecureStore
+  def initialize: (untyped app, ?::Hash[untyped, untyped] options) -> void
+  # Get a session from the cache.
+  def find_session: (untyped env, untyped sid) -> ::Array[untyped]
+  # Set a session in the cache.
+  def write_session: (untyped env, untyped sid, untyped session, untyped options) -> untyped
+  # Remove a session from the cache.
+  def delete_session: (untyped env, untyped sid, untyped options) -> untyped
+  # Turn the session id into a cache key.
+  private def cache_key: (untyped id) -> ::String
+  private def get_session_with_fallback: (untyped sid) -> untyped
+end

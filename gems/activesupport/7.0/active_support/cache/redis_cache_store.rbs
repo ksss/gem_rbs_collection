@@ -17,7 +17,7 @@ class ActiveSupport::Cache::RedisCacheStore < ::ActiveSupport::Cache::Store
   #
   def self.build_redis: (?redis: untyped?, ?url: untyped?, **untyped redis_options) -> untyped
   private def self.build_redis_distributed_client: (urls: untyped, **untyped redis_options) -> untyped
-  private def self.build_redis_client: (url: untyped, **untyped redis_options) -> untyped
+  private def self.build_redis_client: (**untyped redis_options) -> untyped
   # Creates a new Redis cache store.
   #
   # Handles four options: :redis block, :redis instance, single :url

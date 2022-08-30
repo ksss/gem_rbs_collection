@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::UnknownAttributeError < ::NoMethodError[untyped]
+  def initialize: (untyped record, untyped attribute) -> void
+  attr_reader record: untyped
+  attr_reader attribute: untyped
+end

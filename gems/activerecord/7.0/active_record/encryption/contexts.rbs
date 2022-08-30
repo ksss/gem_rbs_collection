@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::Contexts
+  # Configures a custom encryption context to use when running the provided block of code.
+  #
+  # It supports overriding all the properties defined in +Context+.
+  #
+  # Example:
+  #
+  #     ActiveRecord::Encryption.with_encryption_context(encryptor: ActiveRecord::Encryption::NullEncryptor.new) do
+  #       ...
+  #     end
+  #
+  # Encryption contexts can be nested.
+  def with_encryption_context: (untyped properties) { () -> untyped } -> untyped
+  # Runs the provided block in an encryption context where encryption is disabled:
+  #
+  # * Reading encrypted content will return its ciphertexts.
+  # * Writing encrypted content will write its clear text.
+  def without_encryption: () ?{ () -> untyped } -> untyped
+  # Runs the provided block in an encryption context where:
+  #
+  # * Reading encrypted content will return its ciphertext.
+  # * Writing encrypted content will fail.
+  def protecting_encrypted_data: () ?{ () -> untyped } -> untyped
+  # Returns the current context. By default it will return the current context.
+  def context: () -> untyped
+  def current_custom_context: () -> untyped
+  extend ActiveSupport::Concern
+end

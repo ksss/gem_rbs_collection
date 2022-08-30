@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::ExtendedDeterministicQueries
+  def self.install_support: () -> untyped
+end

@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::SSL
+  def self.default_hsts_options: () -> { expires: untyped, subdomains: true, preload: false }
+  def initialize: (untyped app, ?redirect: ::Hash[untyped, untyped], ?hsts: ::Hash[untyped, untyped], ?secure_cookies: bool, ?ssl_default_redirect_status: untyped?) -> void
+  def call: (untyped env) -> untyped
+  private def set_hsts_header!: (untyped headers) -> untyped
+  private def normalize_hsts_options: (untyped options) -> untyped
+  # https://tools.ietf.org/html/rfc6797#section-6.1
+  private def build_hsts_header: (untyped hsts) -> untyped
+  private def flag_cookies_as_secure!: (untyped headers) -> (untyped | nil)
+  private def redirect_to_https: (untyped request) -> ::Array[untyped | ::Hash[::String, "text/html" | untyped]]
+  private def redirection_status: (untyped request) -> (301 | untyped | 307)
+  private def https_location_for: (untyped request) -> untyped
+  HSTS_EXPIRES_IN: Integer
+  PERMANENT_REDIRECT_REQUEST_METHODS: Array[String]
+end

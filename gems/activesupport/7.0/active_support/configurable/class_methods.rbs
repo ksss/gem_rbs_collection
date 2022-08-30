@@ -3,9 +3,7 @@
 
 module ActiveSupport::Configurable::ClassMethods
   def config: () -> untyped
-
   def configure: () { (untyped) -> untyped } -> untyped
-
   # Allows you to add shortcut so that you don't have to refer to attribute
   # through config. Also look at the example for config to contrast.
   #

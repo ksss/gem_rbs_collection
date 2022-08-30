@@ -1,4 +1,4 @@
-stdlib_dependencies = %w[time monitor singleton logger mutex_m json date benchmark digest]
+stdlib_dependencies = %w[time monitor singleton logger mutex_m json date benchmark digest minitest]
 gem_dependencies = %w[nokogiri]
 rails_dependencies = %w[activesupport]
 
@@ -82,10 +82,13 @@ VERSIONS.each do |version|
 
       desc "validate version=#{version} gem=active_job"
       task :validate do
-        stdlib_opt = stdlib_dependencies.map{"-r #{_1}"}.join(" ")
-        gem_opt = gem_dependencies.map{"-I ../../.gem_rbs_collection/#{_1}"}.join(" ")
-        rails_opt = rails_dependencies.map{"-I export/#{_1}/#{version}"}.join(" ")
-        sh "rbs #{stdlib_opt} #{gem_opt} #{rails_opt} -I #{export} validate --silent"
+        validate(
+          export: export,
+          version: version,
+          stdlib_dependencies: stdlib_dependencies,
+          gem_dependencies: gem_dependencies,
+          rails_dependencies: rails_dependencies,
+        )
       end
 
       desc "install to ../../../gems/activejob/#{version}"

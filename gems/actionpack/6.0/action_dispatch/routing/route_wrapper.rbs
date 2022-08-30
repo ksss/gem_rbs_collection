@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteWrapper < SimpleDelegator
+  def endpoint: () -> (::String | untyped)
+  def constraints: () -> untyped
+  def rack_app: () -> untyped
+  def path: () -> untyped
+  def name: () -> untyped
+  def reqs: () -> untyped
+  def controller: () -> (":controller" | untyped)
+  def action: () -> (":action" | untyped)
+  def internal?: () -> untyped
+  def engine?: () -> untyped
+end

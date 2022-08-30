@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::ParamsWrapper
+  # Performs parameters wrapping upon the request. Called automatically
+  # by the metal call stack.
+  def process_action: () -> untyped
+  # Returns the wrapper key which will be used to store wrapped parameters.
+  private def _wrapper_key: () -> untyped
+  # Returns the list of enabled formats.
+  private def _wrapper_formats: () -> untyped
+  # Returns the list of parameters which will be selected for wrapped.
+  private def _wrap_parameters: (untyped parameters) -> ::Hash[untyped, untyped]
+  private def _extract_parameters: (untyped parameters) -> untyped
+  # Checks if we should perform parameters wrapping.
+  private def _wrapper_enabled?: () -> untyped
+  private def _perform_parameter_wrapping: () -> untyped
+  extend ActiveSupport::Concern
+  EXCLUDE_PARAMETERS: Array[String]
+end

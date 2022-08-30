@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::ExtendedDeterministicQueries::CoreQueries::ClassMethods
+  include ActiveRecord::Encryption::ExtendedDeterministicQueries::EncryptedQueryArgumentProcessor
+end

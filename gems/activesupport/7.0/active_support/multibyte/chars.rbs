@@ -68,7 +68,6 @@ class ActiveSupport::Multibyte::Chars
   def as_json: (?untyped? options) -> untyped
   private def chars: (untyped string) -> untyped
   include Comparable
-
   attr_reader wrapped_string: ::String
   # defined by `delegate` to ::String#wrapped_string
   def <=>: (::string other) -> ::Integer

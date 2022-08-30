@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Query
+  def query_attribute: (untyped attr_name) -> (false | untyped)
+  alias attribute? query_attribute
+  extend ActiveSupport::Concern
+end

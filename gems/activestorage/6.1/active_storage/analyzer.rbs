@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer
+  # Implement this method in a concrete subclass. Have it return true when given a blob from which
+  # the analyzer can extract metadata.
+  def self.accept?: (untyped blob) -> false
+  # Implement this method in concrete subclasses. It will determine if blob analysis
+  # should be done in a job or performed inline. By default, analysis is enqueued in a job.
+  def self.analyze_later?: () -> true
+  def initialize: (untyped blob) -> void
+  # Override this method in a concrete subclass. Have it return a Hash of metadata.
+  def metadata: () -> untyped
+  # Downloads the blob to a tempfile on disk. Yields the tempfile.
+  private def download_blob_to_tempfile: () ?{ () -> untyped } -> untyped
+  private def logger: () -> untyped
+  private def tmpdir: () -> untyped
+  attr_reader blob: untyped
+end

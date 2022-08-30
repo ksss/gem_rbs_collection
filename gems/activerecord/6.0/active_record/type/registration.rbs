@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Registration
+  def initialize: (untyped name, untyped block, ?adapter: untyped?, ?override: untyped?) -> void
+  def call: (untyped _registry, *untyped args, ?adapter: untyped?, **untyped kwargs) -> untyped
+  def matches?: (untyped type_name, *untyped args, **untyped kwargs) -> untyped
+  def <=>: (untyped other) -> untyped
+  def priority: () -> untyped
+  def priority_except_adapter: () -> untyped
+  private def matches_adapter?: (?adapter: untyped?) -> untyped
+  private def conflicts_with?: (untyped other) -> untyped
+  private def same_priority_except_adapter?: (untyped other) -> untyped
+  private def has_adapter_conflict?: (untyped other) -> untyped
+  attr_reader name: untyped
+  attr_reader block: untyped
+  attr_reader adapter: untyped
+  attr_reader override: untyped
+end

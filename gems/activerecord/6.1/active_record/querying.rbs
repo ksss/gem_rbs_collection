@@ -1,0 +1,218 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Querying
+  # Executes a custom SQL query against your database and returns all the results. The results will
+  # be returned as an array, with the requested columns encapsulated as attributes of the model you call
+  # this method from. For example, if you call <tt>Product.find_by_sql</tt>, then the results will be returned in
+  # a +Product+ object with the attributes you specified in the SQL query.
+  #
+  # If you call a complicated SQL query which spans multiple tables, the columns specified by the
+  # SELECT will be attributes of the model, whether or not they are columns of the corresponding
+  # table.
+  #
+  # The +sql+ parameter is a full SQL query as a string. It will be called as is; there will be
+  # no database agnostic conversions performed. This should be a last resort because using
+  # database-specific terms will lock you into using that particular database engine, or require you to
+  # change your call if you switch engines.
+  #
+  #   # A simple SQL query spanning multiple tables
+  #   Post.find_by_sql "SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id"
+  #   # => [#<Post:0x36bff9c @attributes={"title"=>"Ruby Meetup", "author"=>"Quentin"}>, ...]
+  #
+  # You can use the same string replacement techniques as you can with <tt>ActiveRecord::QueryMethods#where</tt>:
+  #
+  #   Post.find_by_sql ["SELECT title FROM posts WHERE author = ? AND created > ?", author_id, start_date]
+  #   Post.find_by_sql ["SELECT body FROM comments WHERE author = :user_id OR approved_by = :user_id", { :user_id => user_id }]
+  def find_by_sql: (untyped sql, ?untyped binds, ?preparable: untyped?) ?{ () -> untyped } -> untyped
+  # Returns the result of an SQL statement that should only include a COUNT(*) in the SELECT part.
+  # The use of this method should be restricted to complicated SQL queries that can't be executed
+  # using the ActiveRecord::Calculations class methods. Look into those before using this method,
+  # as it could lock you into a specific database engine or require a code change to switch
+  # database engines.
+  #
+  #   Product.count_by_sql "SELECT COUNT(*) FROM sales s, customers c WHERE s.customer_id = c.id"
+  #   # => 12
+  #
+  # ==== Parameters
+  #
+  # * +sql+ - An SQL statement which should return a count query from the database, see the example above.
+  def count_by_sql: (untyped sql) -> untyped
+  # defined by `delegate` to: #all
+  def find: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_by!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def take: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def take!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def first: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def first!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def last: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def last!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def second: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def second!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def third: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def third!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def fourth: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def fourth!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def fifth: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def fifth!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def forty_two: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def forty_two!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def third_to_last: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def third_to_last!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def second_to_last: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def second_to_last!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def exists?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def any?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def many?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def none?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def one?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def first_or_create: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def first_or_create!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def first_or_initialize: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_or_create_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_or_create_by!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_or_initialize_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def create_or_find_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def create_or_find_by!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def destroy_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def delete_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def update_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def touch_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def destroy_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def delete_by: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_each: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def find_in_batches: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def in_batches: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def select: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def reselect: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def order: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def reorder: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def group: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def limit: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def offset: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def left_joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def left_outer_joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def where: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def rewhere: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def preload: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def extract_associated: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def eager_load: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def includes: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def from: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def lock: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def readonly: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def and: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def or: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def annotate: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def optimizer_hints: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def extending: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def having: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def create_with: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def distinct: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def references: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def none: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def unscope: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def merge: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def except: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def only: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def count: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def average: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def minimum: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def maximum: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def sum: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def calculate: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def pluck: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def pick: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def ids: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #all
+  def strict_loading: (*untyped, **untyped) -> untyped
+  QUERYING_METHODS: Array[Symbol]
+end

@@ -3,11 +3,9 @@
 
 module ActiveSupport::Callbacks::ClassMethods
   def normalize_callback_params: (untyped filters, untyped block) -> ::Array[untyped]
-
   # This is used internally to append, prepend and skip callbacks to the
   # CallbackChain.
   def __update_callbacks: (untyped name) { (untyped, untyped) -> untyped } -> untyped
-
   # Install a callback for the given event.
   #
   #   set_callback :save, :before, :before_method
@@ -53,7 +51,6 @@ module ActiveSupport::Callbacks::ClassMethods
   # * <tt>:prepend</tt> - If +true+, the callback will be prepended to the
   #   existing chain rather than appended.
   def set_callback: (untyped name, *untyped filter_list) ?{ () -> untyped } -> untyped
-
   # Skip a previously set callback. Like +set_callback+, <tt>:if</tt> or
   # <tt>:unless</tt> options may be passed in order to control when the
   # callback is skipped.
@@ -87,10 +84,8 @@ module ActiveSupport::Callbacks::ClassMethods
   # An <tt>ArgumentError</tt> will be raised if the callback has not
   # already been set (unless the <tt>:raise</tt> option is set to <tt>false</tt>).
   def skip_callback: (untyped name, *untyped filter_list) ?{ () -> untyped } -> untyped
-
   # Remove all set callbacks for the given event.
   def reset_callbacks: (untyped name) -> untyped
-
   # Define sets of events in the object life cycle that support callbacks.
   #
   #   define_callbacks :validate
@@ -170,8 +165,6 @@ module ActiveSupport::Callbacks::ClassMethods
   # Calling +define_callbacks+ multiple times with the same +names+ will
   # overwrite previous callbacks registered with +set_callback+.
   def define_callbacks: (*untyped names) -> untyped
-
   def get_callbacks: (untyped name) -> untyped
-
   def set_callbacks: (untyped name, untyped callbacks) -> untyped
 end

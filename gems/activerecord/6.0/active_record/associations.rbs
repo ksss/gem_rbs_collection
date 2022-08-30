@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Associations
+  def self.eager_load!: () -> untyped
+  # Returns the association instance for the given name, instantiating it if it doesn't already exist
+  def association: (untyped name) -> untyped
+  def association_cached?: (untyped name) -> untyped
+  def initialize_dup: () -> untyped
+  def reload: () -> untyped
+  # Clears out the association cache.
+  private def clear_association_cache: () -> (untyped | nil)
+  private def init_internals: () -> untyped
+  # Returns the specified association instance if it exists, +nil+ otherwise.
+  private def association_instance_get: (untyped name) -> untyped
+  # Set the specified association instance.
+  private def association_instance_set: (untyped name, untyped association) -> untyped
+  extend ActiveSupport::Autoload
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Resolver::Cache
+  def initialize: () -> void
+  def inspect: () -> ::String
+  # Cache the templates returned by the block
+  def cache: (untyped key, untyped name, untyped prefix, untyped partial, untyped locals) { () -> untyped } -> untyped
+  def cache_query: (untyped query) { () -> untyped } -> untyped
+  def clear: () -> untyped
+  # Get the cache size. Do not call this
+  # method. This method is not guaranteed to be here ever.
+  def size: () -> untyped
+  private def canonical_no_templates: (untyped templates) -> untyped
+  KEY_BLOCK: Proc
+  NAME_BLOCK: Proc
+  NO_TEMPLATES: Array[untyped]
+  PARTIAL_BLOCK: Proc
+  PREFIX_BLOCK: Proc
+end

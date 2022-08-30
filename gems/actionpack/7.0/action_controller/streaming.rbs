@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Streaming
+  # Set proper cache control and transfer encoding when streaming
+  private def _process_options: (untyped options) -> untyped
+  # Call render_body if we are streaming instead of usual +render+.
+  private def _render_template: (untyped options) -> untyped
+end

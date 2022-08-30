@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::MiddlewareStack::InstrumentationProxy
+  def initialize: (untyped middleware, untyped class_name) -> void
+  def call: (untyped env) -> untyped
+  EVENT_NAME: String
+end

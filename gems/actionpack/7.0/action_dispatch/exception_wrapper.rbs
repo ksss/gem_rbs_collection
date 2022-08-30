@@ -1,0 +1,47 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::ExceptionWrapper
+  def initialize: (untyped backtrace_cleaner, untyped exception) -> void
+  def unwrapped_exception: () -> untyped
+  def rescue_template: () -> untyped
+  def status_code: () -> untyped
+  def exception_trace: () -> untyped
+  def application_trace: () -> untyped
+  def framework_trace: () -> untyped
+  def full_trace: () -> untyped
+  def traces: () -> ::Hash[::String, untyped]
+  def self.status_code_for_exception: (untyped class_name) -> untyped
+  def rescue_response?: () -> untyped
+  def source_extracts: () -> untyped
+  def trace_to_show: () -> ("Full Trace" | "Application Trace")
+  def source_to_show_id: () -> untyped
+  private def backtrace: () -> untyped
+  private def causes_for: (untyped exception) { (untyped) -> untyped } -> untyped
+  private def wrapped_causes_for: (untyped exception, untyped backtrace_cleaner) -> untyped
+  private def clean_backtrace: (*untyped args) -> untyped
+  private def source_fragment: (untyped path, untyped line) -> (nil | untyped)
+  private def extract_file_and_line_number: (untyped trace) -> ::Array[untyped]
+  private def expand_backtrace: () -> untyped
+  attr_reader backtrace_cleaner: untyped
+  attr_reader exception: untyped
+  attr_reader wrapped_causes: untyped
+  attr_reader line_number: untyped
+  attr_reader file: untyped
+  def self.rescue_responses: () -> untyped
+  def rescue_responses: () -> untyped
+  def self.rescue_templates: () -> untyped
+  def rescue_templates: () -> untyped
+  def self.wrapper_exceptions: () -> untyped
+  def wrapper_exceptions: () -> untyped
+  def self.silent_exceptions: () -> untyped
+  def silent_exceptions: () -> untyped
+  def self.rescue_responses=: (untyped val) -> untyped
+  def rescue_responses=: (untyped val) -> untyped
+  def self.rescue_templates=: (untyped val) -> untyped
+  def rescue_templates=: (untyped val) -> untyped
+  def self.wrapper_exceptions=: (untyped val) -> untyped
+  def wrapper_exceptions=: (untyped val) -> untyped
+  def self.silent_exceptions=: (untyped val) -> untyped
+  def silent_exceptions=: (untyped val) -> untyped
+end

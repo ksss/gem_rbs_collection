@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToDelimitedConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def parts: () -> untyped
+  private def delimiter_pattern: () -> untyped
+  DEFAULT_DELIMITER_REGEX: Regexp
+end

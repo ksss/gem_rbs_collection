@@ -28,11 +28,9 @@ class Integer < ::Numeric
   #   6.multiple_of?(5)  # => false
   #   10.multiple_of?(2) # => true
   def multiple_of?: (untyped number) -> untyped
-
   #   2.months # => 2 months
   def months: () -> ActiveSupport::Duration
   alias month months
-
   # Returns a Duration instance matching the number of years provided.
   #
   #   2.years # => 2 years

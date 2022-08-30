@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::CacheExpiry::Executor
+  def initialize: (watcher: untyped) -> void
+  def run: () -> untyped
+  def complete: (untyped _) -> untyped
+  private def clear_cache: () -> untyped
+end

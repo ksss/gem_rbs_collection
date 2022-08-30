@@ -1,0 +1,34 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Core::ClassMethods
+  def initialize_find_by_cache: () -> untyped
+  def inherited: (untyped child_class) -> untyped
+  def find: (*untyped ids) -> untyped
+  def find_by: (*untyped args) -> untyped
+  def find_by!: (*untyped args) -> untyped
+  def initialize_generated_modules: () -> untyped
+  def generated_association_methods: () -> untyped
+  # Returns columns which shouldn't be exposed while calling +#inspect+.
+  def filter_attributes: () -> untyped
+  # Specifies columns which shouldn't be exposed while calling +#inspect+.
+  def filter_attributes=: (untyped filter_attributes) -> untyped
+  def inspection_filter: () -> untyped
+  # Returns a string like 'Post(id:integer, title:string, body:text)'
+  def inspect: () -> (untyped | ::String)
+  # Overwrite the default class equality method to provide support for decorated models.
+  def ===: (untyped object) -> untyped
+  # Returns an instance of <tt>Arel::Table</tt> loaded with the current table name.
+  #
+  #   class Post < ActiveRecord::Base
+  #     scope :published_and_commented, -> { published.and(arel_table[:comments_count].gt(0)) }
+  #   end
+  def arel_table: () -> untyped
+  def arel_attribute: (untyped name, ?untyped table) -> untyped
+  def predicate_builder: () -> untyped
+  def type_caster: () -> untyped
+  def _internal?: () -> false
+  def cached_find_by_statement: (untyped key) ?{ () -> untyped } -> untyped
+  private def relation: () -> untyped
+  private def table_metadata: () -> untyped
+end

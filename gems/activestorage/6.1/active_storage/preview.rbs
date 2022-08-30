@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Preview
+  def initialize: (untyped blob, untyped variation_or_variation_key) -> void
+  # Processes the preview if it has not been processed yet. Returns the receiving Preview instance for convenience:
+  #
+  #   blob.preview(resize_to_limit: [100, 100]).processed.url
+  #
+  # Processing a preview generates an image from its blob and attaches the preview image to the blob. Because the preview
+  # image is stored with the blob, it is only generated once.
+  def processed: () -> self
+  # Returns the blob's attached preview image.
+  def image: () -> untyped
+  # Returns the URL of the preview's variant on the service. Raises ActiveStorage::Preview::UnprocessedError if the
+  # preview has not been processed yet.
+  #
+  # This method synchronously processes a variant of the preview image, so do not call it in views. Instead, generate
+  # a stable URL that redirects to the URL returned by this method.
+  def url: (**untyped options) -> untyped
+  alias service_url url
+  # Returns a combination key of the blob and the variation that together identifies a specific variant.
+  def key: () -> untyped
+  def download: () ?{ () -> untyped } -> untyped
+  private def processed?: () -> untyped
+  private def process: () -> untyped
+  private def variant: () -> untyped
+  private def previewer: () -> untyped
+  private def previewer_class: () -> untyped
+  attr_reader blob: untyped
+  attr_reader variation: untyped
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::AbstractSecureStore < ::Rack::Session::Abstract::PersistedSecure
+  def generate_sid: () -> untyped
+  private def set_cookie: (untyped request, untyped session_id, untyped cookie) -> untyped
+  include ActionDispatch::Session::Compatibility
+  include ActionDispatch::Session::StaleSessionCheck
+  include ActionDispatch::Session::SessionObject
+end

@@ -1,0 +1,129 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Helpers::DateTimeSelector
+  def initialize: (untyped datetime, ?::Hash[untyped, untyped] options, ?::Hash[untyped, untyped] html_options) -> void
+  def select_datetime: () -> untyped
+  def select_date: () -> untyped
+  def select_time: () -> untyped
+  def select_second: () -> (untyped | nil | untyped)
+  def select_minute: () -> untyped
+  def select_hour: () -> untyped
+  def select_day: () -> untyped
+  def select_month: () -> untyped
+  def select_year: () -> untyped
+  # If the day is hidden, the day should be set to the 1st so all month and year choices are
+  # valid. Otherwise, February 31st or February 29th, 2011 can be selected, which are invalid.
+  private def set_day_if_discarded: () -> (untyped | nil)
+  # Returns translated month names, but also ensures that a custom month
+  # name array has a leading +nil+ element.
+  private def month_names: () -> untyped
+  # Returns translated month names.
+  #  => [nil, "January", "February", "March",
+  #           "April", "May", "June", "July",
+  #           "August", "September", "October",
+  #           "November", "December"]
+  #
+  # If <tt>:use_short_month</tt> option is set
+  #  => [nil, "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  #           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  private def translated_month_names: () -> untyped
+  # Looks up month names by number (1-based):
+  #
+  #   month_name(1) # => "January"
+  #
+  # If the <tt>:use_month_numbers</tt> option is passed:
+  #
+  #   month_name(1) # => 1
+  #
+  # If the <tt>:use_two_month_numbers</tt> option is passed:
+  #
+  #   month_name(1) # => '01'
+  #
+  # If the <tt>:add_month_numbers</tt> option is passed:
+  #
+  #   month_name(1) # => "1 - January"
+  #
+  # If the <tt>:month_format_string</tt> option is passed:
+  #
+  #   month_name(1) # => "January (01)"
+  #
+  # depending on the format string.
+  private def month_name: (untyped number) -> (untyped | untyped | ::String | untyped)
+  # Looks up year names by number.
+  #
+  #   year_name(1998) # => 1998
+  #
+  # If the <tt>:year_format</tt> option is passed:
+  #
+  #   year_name(1998) # => "Heisei 10"
+  private def year_name: (untyped number) -> untyped
+  private def date_order: () -> untyped
+  private def translated_date_order: () -> untyped
+  # Build full select tag from date type and options.
+  private def build_options_and_select: (untyped `type`, untyped selected, ?::Hash[untyped, untyped] options) -> untyped
+  # Build select option HTML from date value and options.
+  #  build_options(15, start: 1, end: 31)
+  #  => "<option value="1">1</option>
+  #      <option value="2">2</option>
+  #      <option value="3">3</option>..."
+  #
+  # If <tt>use_two_digit_numbers: true</tt> option is passed
+  #  build_options(15, start: 1, end: 31, use_two_digit_numbers: true)
+  #  => "<option value="1">01</option>
+  #      <option value="2">02</option>
+  #      <option value="3">03</option>..."
+  #
+  # If <tt>:step</tt> options is passed
+  #  build_options(15, start: 1, end: 31, step: 2)
+  #  => "<option value="1">1</option>
+  #      <option value="3">3</option>
+  #      <option value="5">5</option>..."
+  private def build_options: (untyped selected, ?::Hash[untyped, untyped] options) -> untyped
+  # Build select option HTML for year.
+  # If <tt>year_format</tt> option is not passed
+  #  build_year_options(1998, start: 1998, end: 2000)
+  #  => "<option value="1998" selected="selected">1998</option>
+  #      <option value="1999">1999</option>
+  #      <option value="2000">2000</option>"
+  #
+  # If <tt>year_format</tt> option is passed
+  #  build_year_options(1998, start: 1998, end: 2000, year_format: ->year { "Heisei #{ year - 1988 }" })
+  #  => "<option value="1998" selected="selected">Heisei 10</option>
+  #      <option value="1999">Heisei 11</option>
+  #      <option value="2000">Heisei 12</option>"
+  private def build_year_options: (untyped selected, ?::Hash[untyped, untyped] options) -> untyped
+  # Builds select tag from date type and HTML select options.
+  #  build_select(:month, "<option value="1">January</option>...")
+  #  => "<select id="post_written_on_2i" name="post[written_on(2i)]">
+  #        <option value="1">January</option>...
+  #      </select>"
+  private def build_select: (untyped `type`, untyped select_options_as_html) -> untyped
+  # Builds the css class value for the select element
+  #  css_class_attribute(:year, 'date optional', { year: 'my-year' })
+  #  => "date optional my-year"
+  private def css_class_attribute: (untyped `type`, untyped html_options_class, untyped options) -> untyped
+  # Builds a prompt option tag with supplied options or from default options.
+  #  prompt_option_tag(:month, prompt: 'Select month')
+  #  => "<option value="">Select month</option>"
+  private def prompt_option_tag: (untyped `type`, untyped options) -> untyped
+  # Builds hidden input tag for date part and value.
+  #  build_hidden(:year, 2008)
+  #  => "<input id="post_written_on_1i" name="post[written_on(1i)]" type="hidden" value="2008" />"
+  private def build_hidden: (untyped `type`, untyped value) -> untyped
+  # Returns the name attribute for the input tag.
+  #  => post[written_on(1i)]
+  private def input_name_from_type: (untyped `type`) -> untyped
+  # Returns the id attribute for the input tag.
+  #  => "post_written_on_1i"
+  private def input_id_from_type: (untyped `type`) -> untyped
+  # Given an ordering of datetime components, create the selection HTML
+  # and join them with their appropriate separators.
+  private def build_selects_from_types: (untyped order) -> untyped
+  # Returns the separator for a given datetime component.
+  private def separator: (untyped `type`) -> ("" | untyped)
+  include ActionView::Helpers::TagHelper
+  AMPM_TRANSLATION: Hash[Integer, String]
+  DEFAULT_PREFIX: String
+  POSITION: Hash[Symbol, Integer]
+end

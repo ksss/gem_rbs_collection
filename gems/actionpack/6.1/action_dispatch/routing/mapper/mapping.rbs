@@ -1,0 +1,45 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper::Mapping
+  def self.build: (untyped scope, untyped set, untyped ast, untyped controller, untyped default_action, untyped to, untyped via, untyped formatted, untyped options_constraints, untyped anchor, untyped options) -> untyped
+  def self.check_via: (untyped via) -> untyped
+  def self.normalize_path: (untyped path, untyped format) -> untyped
+  def self.optional_format?: (untyped path, untyped format) -> untyped
+  def initialize: (set: untyped, ast: untyped, controller: untyped, default_action: untyped, to: untyped, formatted: untyped, via: untyped, options_constraints: untyped, anchor: untyped, scope_params: untyped, options: untyped) -> void
+  def make_route: (untyped name, untyped precedence) -> untyped
+  def application: () -> untyped
+  def path: () -> untyped
+  def conditions: () -> untyped
+  private def build_conditions: (untyped current_conditions, untyped request_class) -> untyped
+  private def request_method: () -> untyped
+  # Find all the symbol nodes that are adjacent to literal nodes and alter
+  # the regexp so that Journey will partition them into custom routes.
+  private def alter_regex_for_custom_routes: (untyped node) -> untyped
+  private def intern: (untyped object) -> untyped
+  private def normalize_options!: (untyped options, untyped path_params, untyped modyoule) -> untyped
+  private def split_constraints: (untyped path_params, untyped constraints) -> untyped
+  private def normalize_format: (untyped formatted) -> untyped
+  private def verify_regexp_requirements: (untyped requirements) -> untyped
+  private def normalize_defaults: (untyped options) -> untyped
+  private def app: (untyped blocks) -> untyped
+  private def check_controller_and_action: (untyped path_params, untyped controller, untyped action) -> untyped
+  private def check_part: (untyped name, untyped part, untyped path_params, untyped hash) { (untyped) -> untyped } -> untyped
+  private def split_to: (untyped to) -> (untyped | ::Array[untyped])
+  private def add_controller_module: (untyped controller, untyped modyoule) -> untyped
+  private def translate_controller: (untyped controller) { () -> untyped } -> untyped
+  private def blocks: (untyped callable_constraint) -> ::Array[untyped]
+  private def constraints: (untyped options, untyped path_params) -> untyped
+  private def dispatcher: (untyped raise_on_name_error) -> untyped
+  attr_reader requirements: untyped
+  attr_reader defaults: untyped
+  attr_reader to: untyped
+  attr_reader default_controller: untyped
+  attr_reader default_action: untyped
+  attr_reader required_defaults: untyped
+  attr_reader ast: untyped
+  attr_reader scope_options: untyped
+  ANCHOR_CHARACTERS_REGEX: Regexp
+  JOINED_SEPARATORS: String
+  OPTIONAL_FORMAT_REGEX: Regexp
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Caching
+  def view_cache_dependencies: () -> untyped
+  # Convenience accessor.
+  private def cache: (untyped key, ?::Hash[untyped, untyped] options) { () -> untyped } -> untyped
+  include AbstractController::Caching::ConfigMethods
+  include AbstractController::Caching::Fragments
+  extend ActiveSupport::Concern
+  extend ActiveSupport::Autoload
+end

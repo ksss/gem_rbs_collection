@@ -1,0 +1,37 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Helpers::ClassMethods
+  # Declares helper accessors for controller attributes. For example, the
+  # following adds new +name+ and <tt>name=</tt> instance methods to a
+  # controller and makes them available to the view:
+  #   attr_accessor :name
+  #   helper_attr :name
+  #
+  # ==== Parameters
+  # * <tt>attrs</tt> - Names of attributes to be converted into helpers.
+  def helper_attr: (*untyped attrs) -> untyped
+  # Provides a proxy to access helper methods from outside the view.
+  #
+  # Note that the proxy is rendered under a different view context.
+  # This may cause incorrect behaviour with capture methods. Consider
+  # using {helper}[rdoc-ref:AbstractController::Helpers::ClassMethods#helper]
+  # instead when using +capture+.
+  def helpers: () -> untyped
+  # Override modules_for_helpers to accept +:all+ as argument, which loads
+  # all helpers in helpers_path.
+  #
+  # ==== Parameters
+  # * <tt>args</tt> - A list of helpers
+  #
+  # ==== Returns
+  # * <tt>array</tt> - A normalized list of modules for the list of helpers provided.
+  def modules_for_helpers: (untyped args) -> untyped
+  # Returns a list of helper names in a given path.
+  #
+  #   ActionController::Base.all_helpers_from_path 'app/helpers'
+  #   # => ["application", "chart", "rubygems"]
+  def all_helpers_from_path: (untyped path) -> untyped
+  # Extract helper names from files in <tt>app/helpers/**/*_helper.rb</tt>
+  private def all_application_helpers: () -> untyped
+end

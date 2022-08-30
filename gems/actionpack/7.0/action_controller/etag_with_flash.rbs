@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::EtagWithFlash
+  include ActionController::ConditionalGet
+  extend ActiveSupport::Concern
+end

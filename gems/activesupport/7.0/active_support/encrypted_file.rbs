@@ -5,7 +5,19 @@ class ActiveSupport::EncryptedFile
   def self.generate_key: () -> untyped
   def self.expected_key_length: () -> untyped
   def initialize: (content_path: untyped, key_path: untyped, env_key: untyped, raise_if_missing_key: untyped) -> void
+  # Returns the encryption key, first trying the environment variable
+  # specified by +env_key+, then trying the key file specified by +key_path+.
+  # If +raise_if_missing_key+ is true, raises MissingKeyError if the
+  # environment variable is not set and the key file does not exist.
   def key: () -> untyped
+  # Reads the file and returns the decrypted content.
+  #
+  # Raises:
+  # - MissingKeyError if the key is missing and +raise_if_missing_key+ is true.
+  # - MissingContentError if the encrypted file does not exist or otherwise
+  #   if the key is missing.
+  # - ActiveSupport::MessageEncryptor::InvalidMessage if the content cannot be
+  #   decrypted or verified.
   def read: () -> untyped
   def write: (untyped contents) -> untyped
   def change: () ?{ () -> untyped } -> untyped

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class AbstractController::ActionNotFound < ::StandardError
+  def initialize: (?untyped? message, ?untyped? controller, ?untyped? action) -> void
+  prepend DidYouMean::Correctable
+  attr_reader controller: untyped
+  attr_reader action: untyped
+end

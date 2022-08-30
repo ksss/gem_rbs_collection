@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Associations::ForeignAssociation
+  def foreign_key_present?: () -> (untyped | false)
+  def nullified_owner_attributes: () -> untyped
+  # Sets the owner attributes on the given record
+  private def set_owner_attributes: (untyped record) -> (nil | untyped)
+end

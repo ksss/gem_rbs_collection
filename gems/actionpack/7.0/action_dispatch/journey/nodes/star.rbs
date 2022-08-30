@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Star < ::ActionDispatch::Journey::Nodes::Unary
+  def initialize: (untyped left) -> void
+  def star?: () -> true
+  def type: () -> :STAR
+  def name: () -> untyped
+  attr_accessor regexp: untyped
+end

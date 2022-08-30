@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::WindowPredications
+  def over: (?untyped? expr) -> untyped
+end

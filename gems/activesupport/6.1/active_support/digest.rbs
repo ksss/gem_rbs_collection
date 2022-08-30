@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Digest
+  def self.hash_digest_class: () -> untyped
+  def self.hash_digest_class=: (untyped klass) -> untyped
+  def self.hexdigest: (untyped arg) -> untyped
+end

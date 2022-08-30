@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Token::ControllerMethods
+  def authenticate_or_request_with_http_token: (?::String realm, ?untyped? message) ?{ () -> untyped } -> untyped
+  def authenticate_with_http_token: () ?{ () -> untyped } -> untyped
+  def request_http_token_authentication: (?::String realm, ?untyped? message) -> untyped
+end

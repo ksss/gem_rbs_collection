@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Messages::Rotator
+  def initialize: (**untyped options) -> void
+  def rotate: (*untyped secrets, **untyped options) -> untyped
+  private def run_rotations: (untyped on_rotation) { (untyped) -> untyped } -> untyped
+end

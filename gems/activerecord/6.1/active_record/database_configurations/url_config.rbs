@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::UrlConfig < ::ActiveRecord::DatabaseConfigurations::HashConfig
+  def initialize: (untyped env_name, untyped name, untyped url, ?::Hash[untyped, untyped] configuration_hash) -> void
+  # Return a Hash that can be merged into the main config that represents
+  # the passed in url
+  private def build_url_hash: () -> ({ url: untyped } | untyped)
+  attr_reader url: untyped
+end

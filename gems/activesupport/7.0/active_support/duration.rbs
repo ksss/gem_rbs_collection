@@ -107,11 +107,9 @@ class ActiveSupport::Duration
   # same parts as this one.
   def eql?: (untyped other) -> untyped
   def hash: () -> untyped
-
   def since: (?untyped time) -> ::ActiveSupport::TimeWithZone
   alias from_now since
   alias after since
-
   def ago: (?untyped time) -> ::ActiveSupport::TimeWithZone
   alias until ago
   alias before ago
@@ -129,7 +127,6 @@ class ActiveSupport::Duration
   private def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
   private def raise_type_error: (untyped other) -> untyped
   attr_reader value: untyped
-
   PARTS: Array[Symbol]
   PARTS_IN_SECONDS: Hash[Symbol, Integer]
   SECONDS_PER_DAY: Integer

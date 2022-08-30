@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::CustomUrlHelper
+  def initialize: (untyped name, untyped defaults) ?{ () -> untyped } -> void
+  def call: (untyped t, untyped args, ?bool only_path) -> untyped
+  private def eval_block: (untyped t, untyped args, untyped options) -> untyped
+  private def merge_defaults: (untyped options) -> untyped
+  attr_reader name: untyped
+  attr_reader defaults: untyped
+  attr_reader block: untyped
+end

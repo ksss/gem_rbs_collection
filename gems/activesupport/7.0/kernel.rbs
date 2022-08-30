@@ -6,7 +6,6 @@ module Kernel : ::BasicObject
   #
   # See Module::Concerning for more.
   def self?.concern: (untyped topic) ?{ () -> untyped } -> untyped
-
   # Sets $VERBOSE to +nil+ for the duration of the block and back to its original
   # value afterwards.
   #
@@ -16,15 +15,12 @@ module Kernel : ::BasicObject
   #
   #   noisy_call # warning voiced
   def self?.silence_warnings: () ?{ () -> untyped } -> untyped
-
   # Sets $VERBOSE to +true+ for the duration of the block and back to its
   # original value afterwards.
   def self?.enable_warnings: () ?{ () -> untyped } -> untyped
-
   # Sets $VERBOSE for the duration of the block and back to its original
   # value afterwards.
   def self?.with_warnings: (untyped flag) { () -> untyped } -> untyped
-
   # Blocks and ignores any exception passed as argument if raised within the block.
   #
   #   suppress(ZeroDivisionError) do
@@ -34,7 +30,6 @@ module Kernel : ::BasicObject
   #
   #   puts 'This code gets executed and nothing related to ZeroDivisionError was seen'
   def self?.suppress: (*untyped exception_classes) { () -> untyped } -> untyped
-
   # class_eval on an object acts like +singleton_class.class_eval+.
   def class_eval: (*untyped args) ?{ () -> untyped } -> untyped
 end

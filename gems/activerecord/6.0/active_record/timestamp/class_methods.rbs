@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Timestamp::ClassMethods
+  def touch_attributes_with_time: (*untyped names, ?time: untyped?) -> untyped
+  def timestamp_attributes_for_create_in_model: () -> untyped
+  def timestamp_attributes_for_update_in_model: () -> untyped
+  def all_timestamp_attributes_in_model: () -> untyped
+  def current_time_from_proper_timezone: () -> untyped
+  private def timestamp_attributes_for_create: () -> ::Array["created_at" | "created_on"]
+  private def timestamp_attributes_for_update: () -> ::Array["updated_at" | "updated_on"]
+  private def reload_schema_from_cache: () -> untyped
+end

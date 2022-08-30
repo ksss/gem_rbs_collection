@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Session::Compatibility
+  def initialize: (untyped app, ?::Hash[untyped, untyped] options) -> void
+  def generate_sid: () -> untyped
+  private def initialize_sid: () -> untyped
+  private def make_request: (untyped env) -> untyped
+end

@@ -1,0 +1,108 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Dot < ::Arel::Visitors::Visitor
+  def initialize: () -> void
+  def accept: (untyped object, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Ordering: (untyped o) -> untyped
+  private def visit_Arel_Nodes_TableAlias: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Count: (untyped o) -> untyped
+  private def visit_Arel_Nodes_ValuesList: (untyped o) -> untyped
+  private def visit_Arel_Nodes_StringJoin: (untyped o) -> untyped
+  private def visit_Arel_Nodes_InnerJoin: (untyped o) -> untyped
+  alias visit_Arel_Nodes_FullOuterJoin visit_Arel_Nodes_InnerJoin
+  alias visit_Arel_Nodes_OuterJoin visit_Arel_Nodes_InnerJoin
+  alias visit_Arel_Nodes_RightOuterJoin visit_Arel_Nodes_InnerJoin
+  private def visit_Arel_Nodes_DeleteStatement: (untyped o) -> untyped
+  private def unary: (untyped o) -> untyped
+  alias visit_Arel_Nodes_Group unary
+  alias visit_Arel_Nodes_Cube unary
+  alias visit_Arel_Nodes_RollUp unary
+  alias visit_Arel_Nodes_GroupingSet unary
+  alias visit_Arel_Nodes_GroupingElement unary
+  alias visit_Arel_Nodes_Grouping unary
+  alias visit_Arel_Nodes_Having unary
+  alias visit_Arel_Nodes_Limit unary
+  alias visit_Arel_Nodes_Not unary
+  alias visit_Arel_Nodes_Offset unary
+  alias visit_Arel_Nodes_On unary
+  alias visit_Arel_Nodes_UnqualifiedColumn unary
+  alias visit_Arel_Nodes_OptimizerHints unary
+  alias visit_Arel_Nodes_Preceding unary
+  alias visit_Arel_Nodes_Following unary
+  alias visit_Arel_Nodes_Rows unary
+  alias visit_Arel_Nodes_Range unary
+  private def window: (untyped o) -> untyped
+  alias visit_Arel_Nodes_Window window
+  private def named_window: (untyped o) -> untyped
+  alias visit_Arel_Nodes_NamedWindow named_window
+  private def function: (untyped o) -> untyped
+  alias visit_Arel_Nodes_Exists function
+  alias visit_Arel_Nodes_Min function
+  alias visit_Arel_Nodes_Max function
+  alias visit_Arel_Nodes_Avg function
+  alias visit_Arel_Nodes_Sum function
+  private def extract: (untyped o) -> untyped
+  alias visit_Arel_Nodes_Extract extract
+  private def visit_Arel_Nodes_NamedFunction: (untyped o) -> untyped
+  private def visit_Arel_Nodes_InsertStatement: (untyped o) -> untyped
+  private def visit_Arel_Nodes_SelectCore: (untyped o) -> untyped
+  private def visit_Arel_Nodes_SelectStatement: (untyped o) -> untyped
+  private def visit_Arel_Nodes_UpdateStatement: (untyped o) -> untyped
+  private def visit_Arel_Table: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Casted: (untyped o) -> untyped
+  private def visit_Arel_Nodes_HomogeneousIn: (untyped o) -> untyped
+  private def visit_Arel_Attribute: (untyped o) -> untyped
+  alias visit_Arel_Attributes_Integer visit_Arel_Attribute
+  alias visit_Arel_Attributes_Float visit_Arel_Attribute
+  alias visit_Arel_Attributes_String visit_Arel_Attribute
+  alias visit_Arel_Attributes_Time visit_Arel_Attribute
+  alias visit_Arel_Attributes_Boolean visit_Arel_Attribute
+  alias visit_Arel_Attributes_Attribute visit_Arel_Attribute
+  private def nary: (untyped o) -> untyped
+  alias visit_Arel_Nodes_And nary
+  private def binary: (untyped o) -> untyped
+  alias visit_Arel_Nodes_As binary
+  alias visit_Arel_Nodes_Assignment binary
+  alias visit_Arel_Nodes_Between binary
+  alias visit_Arel_Nodes_Concat binary
+  alias visit_Arel_Nodes_DoesNotMatch binary
+  alias visit_Arel_Nodes_Equality binary
+  alias visit_Arel_Nodes_GreaterThan binary
+  alias visit_Arel_Nodes_GreaterThanOrEqual binary
+  alias visit_Arel_Nodes_In binary
+  alias visit_Arel_Nodes_JoinSource binary
+  alias visit_Arel_Nodes_LessThan binary
+  alias visit_Arel_Nodes_LessThanOrEqual binary
+  alias visit_Arel_Nodes_IsNotDistinctFrom binary
+  alias visit_Arel_Nodes_IsDistinctFrom binary
+  alias visit_Arel_Nodes_Matches binary
+  alias visit_Arel_Nodes_NotEqual binary
+  alias visit_Arel_Nodes_NotIn binary
+  alias visit_Arel_Nodes_Or binary
+  alias visit_Arel_Nodes_Over binary
+  private def visit_String: (untyped o) -> untyped
+  alias visit_Time visit_String
+  alias visit_Date visit_String
+  alias visit_DateTime visit_String
+  alias visit_NilClass visit_String
+  alias visit_TrueClass visit_String
+  alias visit_FalseClass visit_String
+  alias visit_Integer visit_String
+  alias visit_BigDecimal visit_String
+  alias visit_Float visit_String
+  alias visit_Symbol visit_String
+  alias visit_Arel_Nodes_SqlLiteral visit_String
+  private def visit_Arel_Nodes_BindParam: (untyped o) -> untyped
+  private def visit_ActiveModel_Attribute: (untyped o) -> untyped
+  private def visit_Hash: (untyped o) -> untyped
+  private def visit_Array: (untyped o) -> untyped
+  alias visit_Set visit_Array
+  private def visit_Arel_Nodes_Comment: (untyped o) -> untyped
+  private def visit_edge: (untyped o, untyped method) -> untyped
+  private def visit: (untyped o) -> (nil | untyped)
+  private def edge: (untyped name) { () -> untyped } -> untyped
+  private def with_node: (untyped node) { () -> untyped } -> untyped
+  private def quote: (untyped string) -> untyped
+  private def to_dot: () -> untyped
+end

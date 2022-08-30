@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Layouts::ClassMethods::LayoutConditions
+  # Determines whether the current action has a layout definition by
+  # checking the action name against the :only and :except conditions
+  # set by the <tt>layout</tt> method.
+  #
+  # ==== Returns
+  # * <tt>Boolean</tt> - True if the action has a layout definition, false otherwise.
+  private def _conditional_layout?: () -> (nil | untyped)
+end

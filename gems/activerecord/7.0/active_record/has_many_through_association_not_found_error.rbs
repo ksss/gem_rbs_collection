@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::HasManyThroughAssociationNotFoundError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? owner_class, ?untyped? reflection) -> void
+  def corrections: () -> (untyped | ::Array[untyped])
+  include DidYouMean::Correctable
+  attr_reader owner_class: untyped
+  attr_reader reflection: untyped
+end

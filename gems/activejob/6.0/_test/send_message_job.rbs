@@ -1,3 +1,0 @@
-class SendMessageJob < ActiveJob::Base
-  def perform: (*untyped) -> void
-end

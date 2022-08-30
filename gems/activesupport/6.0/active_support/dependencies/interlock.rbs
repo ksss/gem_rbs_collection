@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Dependencies::Interlock
+  def initialize: () -> void
+  def loading: () { () -> untyped } -> untyped
+  def unloading: () { () -> untyped } -> untyped
+  def start_unloading: () -> untyped
+  def done_unloading: () -> untyped
+  def start_running: () -> untyped
+  def done_running: () -> untyped
+  def running: () { () -> untyped } -> untyped
+  def permit_concurrent_loads: () { () -> untyped } -> untyped
+  def raw_state: () ?{ () -> untyped } -> untyped
+end

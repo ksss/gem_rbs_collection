@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::I18nProxy < ::I18n::Config
+  def initialize: (untyped original_config, untyped lookup_context) -> void
+  def locale: () -> untyped
+  def locale=: (untyped value) -> untyped
+  attr_reader original_config: untyped
+  attr_reader lookup_context: untyped
+end

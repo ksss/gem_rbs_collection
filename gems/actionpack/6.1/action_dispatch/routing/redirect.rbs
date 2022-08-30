@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Redirect < ::ActionDispatch::Routing::Endpoint
+  def initialize: (untyped status, untyped block) -> void
+  def redirect?: () -> true
+  def call: (untyped env) -> untyped
+  def serve: (untyped req) -> ::Array[untyped | ::Array[untyped]]
+  def path: (untyped params, untyped request) -> untyped
+  def inspect: () -> ::String
+  private def relative_path?: (untyped path) -> untyped
+  private def escape: (untyped params) -> untyped
+  private def escape_fragment: (untyped params) -> untyped
+  private def escape_path: (untyped params) -> untyped
+  attr_reader status: untyped
+  attr_reader block: untyped
+end

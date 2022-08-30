@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Http::Cache::Request
+  def if_modified_since: () -> (untyped | nil)
+  def if_none_match: () -> untyped
+  def if_none_match_etags: () -> (untyped | ::Array[untyped])
+  def not_modified?: (untyped modified_at) -> untyped
+  def etag_matches?: (untyped etag) -> (untyped | nil)
+  # Check response freshness (Last-Modified and ETag) against request
+  # If-Modified-Since and If-None-Match conditions. If both headers are
+  # supplied, both must match, or the request is not considered fresh.
+  def fresh?: (untyped response) -> (false | untyped)
+  HTTP_IF_MODIFIED_SINCE: String
+  HTTP_IF_NONE_MATCH: String
+end

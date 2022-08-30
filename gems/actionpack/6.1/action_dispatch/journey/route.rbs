@@ -1,0 +1,47 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Route
+  alias conditions constraints
+  def self.verb_matcher: (untyped verb) -> untyped
+  #
+  # +path+ is a path constraint.
+  # +constraints+ is a hash of constraints to be applied to this route.
+  def initialize: (name: untyped, path: untyped, ?app: untyped?, ?constraints: ::Hash[untyped, untyped], ?required_defaults: untyped, ?defaults: ::Hash[untyped, untyped], ?request_method_match: untyped?, ?precedence: ::Integer, ?scope_options: ::Hash[untyped, untyped], ?internal: bool) -> void
+  def eager_load!: () -> nil
+  def ast: () -> untyped
+  # Needed for `bin/rails routes`. Picks up succinctly defined requirements
+  # for a route, for example route
+  #
+  #   get 'photo/:id', :controller => 'photos', :action => 'show',
+  #     :id => /[A-Z]\d{5}/
+  #
+  # will have {:controller=>"photos", :action=>"show", :id=>/[A-Z]\d{5}/}
+  # as requirements.
+  def requirements: () -> untyped
+  def segments: () -> untyped
+  def required_keys: () -> untyped
+  def score: (untyped supplied_keys) -> (-1 | untyped)
+  def parts: () -> untyped
+  alias segment_keys parts
+  def format: (untyped path_options) -> untyped
+  def required_parts: () -> untyped
+  def required_default?: (untyped key) -> untyped
+  def required_defaults: () -> untyped
+  def glob?: () -> untyped
+  def dispatcher?: () -> untyped
+  def matches?: (untyped request) -> untyped
+  def ip: () -> untyped
+  def requires_matching_verb?: () -> untyped
+  def verb: () -> untyped
+  private def verbs: () -> untyped
+  private def match_verb: (untyped request) -> untyped
+  attr_reader app: untyped
+  attr_reader path: untyped
+  attr_reader defaults: untyped
+  attr_reader name: untyped
+  attr_reader precedence: untyped
+  attr_reader constraints: untyped
+  attr_reader internal: untyped
+  attr_reader scope_options: untyped
+end

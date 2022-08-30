@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::LookupContext::ViewPaths
+  def find: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, ?::Hash[untyped, untyped] options) -> untyped
+  alias find_template find
+  def find_all: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, ?::Hash[untyped, untyped] options) -> untyped
+  def exists?: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, **untyped options) -> untyped
+  alias template_exists? exists?
+  def any?: (untyped name, ?untyped prefixes, ?bool partial) -> untyped
+  alias any_templates? any?
+  # Whenever setting view paths, makes a copy so that we can manipulate them in
+  # instance objects as we wish.
+  private def build_view_paths: (untyped paths) -> untyped
+  # Compute details hash and key according to user options (e.g. passed from #render).
+  private def detail_args_for: (untyped options) -> (untyped | ::Array[untyped])
+  private def detail_args_for_any: () -> untyped
+  # Fix when prefix is specified as part of the template name
+  private def normalize_name: (untyped name, untyped prefixes) -> untyped
+  attr_reader view_paths: untyped
+  attr_reader html_fallback_for_js: untyped
+end

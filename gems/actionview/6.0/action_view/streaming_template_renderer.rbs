@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::StreamingTemplateRenderer < ::ActionView::TemplateRenderer
+  # For streaming, instead of rendering a given a template, we return a Body
+  # object that responds to each. This object is initialized with a block
+  # that knows how to render the template.
+  def render_template: (untyped view, untyped template, ?untyped? layout_name, ?::Hash[untyped, untyped] locals) -> (::Array[untyped] | untyped)
+  private def delayed_render: (untyped buffer, untyped template, untyped layout, untyped view, untyped locals) -> untyped
+end

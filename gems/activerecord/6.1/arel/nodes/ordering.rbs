@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Ordering < ::Arel::Nodes::Unary
+  def nulls_first: () -> untyped
+  def nulls_last: () -> untyped
+end

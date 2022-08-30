@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Logger
+  extend ActiveSupport::Concern
+end

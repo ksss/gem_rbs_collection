@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::OrderPredications
+  def asc: () -> untyped
+  def desc: () -> untyped
+end

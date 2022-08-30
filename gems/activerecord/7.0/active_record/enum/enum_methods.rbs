@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Enum::EnumMethods < ::Module
+  def initialize: (untyped klass) -> void
+  private def define_enum_methods: (untyped name, untyped value_method_name, untyped value, untyped scopes) -> untyped
+  attr_reader klass: untyped
+end

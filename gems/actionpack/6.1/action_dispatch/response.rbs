@@ -1,0 +1,128 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Response
+  alias headers header
+  def each: () ?{ () -> untyped } -> untyped
+  def self.return_only_media_type_on_content_type=: () -> untyped
+  def self.return_only_media_type_on_content_type: () -> untyped
+  # Aliasing these off because AD::Http::Cache::Response defines them.
+  alias _cache_control cache_control
+  alias _cache_control= cache_control=
+  def self.create: (?::Integer status, ?::Hash[untyped, untyped] header, ?untyped body, ?default_headers: untyped) -> untyped
+  def self.merge_default_headers: (untyped original, untyped default) -> untyped
+  def initialize: (?::Integer status, ?::Hash[untyped, untyped] header, ?untyped body) { (untyped) -> untyped } -> void
+  def has_header?: (untyped key) -> untyped
+  def get_header: (untyped key) -> untyped
+  def set_header: (untyped key, untyped v) -> untyped
+  def delete_header: (untyped key) -> untyped
+  def await_commit: () -> untyped
+  def await_sent: () -> untyped
+  def commit!: () -> untyped
+  def sending!: () -> untyped
+  def sent!: () -> untyped
+  def sending?: () -> untyped
+  def committed?: () -> untyped
+  def sent?: () -> untyped
+  # Sets the HTTP status code.
+  def status=: (untyped status) -> untyped
+  # Sets the HTTP response's content MIME type. For example, in the controller
+  # you could write this:
+  #
+  #  response.content_type = "text/plain"
+  #
+  # If a character set has been defined for this response (see charset=) then
+  # the character set information will also be included in the content type
+  # information.
+  def content_type=: (untyped content_type) -> (nil | untyped)
+  # Content type of response.
+  def content_type: () -> untyped
+  # Media type of response.
+  def media_type: () -> untyped
+  def sending_file=: (untyped v) -> (untyped | nil)
+  # Sets the HTTP character set. In case of +nil+ parameter
+  # it sets the charset to +default_charset+.
+  #
+  #   response.charset = 'utf-16' # => 'utf-16'
+  #   response.charset = nil      # => 'utf-8'
+  def charset=: (untyped charset) -> untyped
+  # The charset of the response. HTML wants to know the encoding of the
+  # content you're giving them, so we need to send that along.
+  def charset: () -> untyped
+  # The response code of the request.
+  def response_code: () -> untyped
+  # Returns a string to ensure compatibility with <tt>Net::HTTPResponse</tt>.
+  def code: () -> untyped
+  # Returns the corresponding message for the current HTTP status code:
+  #
+  #   response.status = 200
+  #   response.message # => "OK"
+  #
+  #   response.status = 404
+  #   response.message # => "Not Found"
+  #
+  def message: () -> untyped
+  alias status_message message
+  # Returns the content of the response as a string. This contains the contents
+  # of any calls to <tt>render</tt>.
+  def body: () -> untyped
+  def write: (untyped string) -> untyped
+  # Allows you to manually set or override the response body.
+  def body=: (untyped body) -> untyped
+  # Send the file stored at +path+ as the response body.
+  def send_file: (untyped path) -> untyped
+  def reset_body!: () -> untyped
+  def body_parts: () -> untyped
+  # The location header we'll be responding with.
+  alias redirect_url location
+  def close: () -> (untyped | nil)
+  def abort: () -> (untyped | untyped | nil)
+  # Turns the Response into a Rack-compatible array of the status, headers,
+  # and body. Allows explicit splatting:
+  #
+  #   status, headers, body = *response
+  def to_a: () -> untyped
+  alias prepare! to_a
+  # Returns the response cookies, converted to a Hash of (name => value) pairs
+  #
+  #   assert_equal 'AuthorOfNewPage', r.cookies['author']
+  def cookies: () -> untyped
+  private def parse_content_type: (untyped content_type) -> untyped
+  # Small internal convenience method to get the parsed version of the current
+  # content type header.
+  private def parsed_content_type_header: () -> untyped
+  private def set_content_type: (untyped content_type, untyped charset) -> untyped
+  private def before_committed: () -> (nil | untyped)
+  private def before_sending: () -> untyped
+  private def build_buffer: (untyped response, untyped body) -> untyped
+  private def munge_body_object: (untyped body) -> (untyped | ::Array[untyped])
+  private def assign_default_content_type_and_charset!: () -> (nil | untyped)
+  private def handle_no_content!: () -> (untyped | nil)
+  private def rack_response: (untyped status, untyped header) -> (::Array[untyped | ::Array[untyped]] | ::Array[untyped])
+  include Rack::Response::Helpers
+  include ActionDispatch::Http::FilterRedirect
+  include ActionDispatch::Http::Cache::Response
+  include MonitorMixin
+  attr_accessor request: untyped
+  attr_reader status: untyped
+  attr_reader header: untyped
+  attr_reader stream: untyped
+  def self.default_charset: () -> untyped
+  def default_charset: () -> untyped
+  def self.default_headers: () -> untyped
+  def default_headers: () -> untyped
+  def self.default_charset=: (untyped val) -> untyped
+  def default_charset=: (untyped val) -> untyped
+  def self.default_headers=: (untyped val) -> untyped
+  def default_headers=: (untyped val) -> untyped
+  # defined by `delegate` to: #@header
+  def []: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@header
+  def []=: (*untyped, **untyped) -> untyped
+  CONTENT_TYPE_PARSER: Regexp
+  LOCATION: String
+  NO_CONTENT_CODES: Array[Integer]
+  NullContentTypeHeader: ActionDispatch::Response::ContentTypeHeader
+  SET_COOKIE: String
+  CONTENT_TYPE: String
+end

@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::Reflection::ReflectionExtension
+  def add_attachment_reflection: (untyped model, untyped name, untyped reflection) -> untyped
+  private def reflection_class_for: (untyped macro) -> untyped
+end

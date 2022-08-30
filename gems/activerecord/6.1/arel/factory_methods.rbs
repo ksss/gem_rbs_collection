@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::FactoryMethods
+  def create_true: () -> untyped
+  def create_false: () -> untyped
+  def create_table_alias: (untyped relation, untyped name) -> untyped
+  def create_join: (untyped to, ?untyped? constraint, ?untyped klass) -> untyped
+  def create_string_join: (untyped to) -> untyped
+  def create_and: (untyped clauses) -> untyped
+  def create_on: (untyped expr) -> untyped
+  def grouping: (untyped expr) -> untyped
+  # #
+  # Create a LOWER() function
+  def lower: (untyped column) -> untyped
+  def coalesce: (*untyped exprs) -> untyped
+end

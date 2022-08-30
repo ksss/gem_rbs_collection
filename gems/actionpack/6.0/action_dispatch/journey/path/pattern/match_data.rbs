@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Path::Pattern::MatchData
+  def initialize: (untyped names, untyped offsets, untyped match) -> void
+  def captures: () -> untyped
+  def named_captures: () -> untyped
+  def []: (untyped x) -> untyped
+  def length: () -> untyped
+  def post_match: () -> untyped
+  def to_s: () -> untyped
+  attr_reader names: untyped
+end

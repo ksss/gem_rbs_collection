@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Dependencies::ClassCache
+  def initialize: () -> void
+  def empty?: () -> untyped
+  def key?: (untyped key) -> untyped
+  def get: (untyped key) -> untyped
+  alias [] get
+  def safe_get: (untyped key) -> untyped
+  def store: (untyped klass) -> self
+  def clear!: () -> untyped
+end

@@ -91,9 +91,10 @@ def generate(out_dir, version)
       on_error: -> (e) {
         Orthoses.logger.warn "[Orthoses::Constant] skip load const by #{e.root}[::#{e.const}] (#{e.error.class}) #{e.error.message}"
       }
-    Orthoses::ActiveSupport.each do |middleware, **args|
-      use middleware, **args
-    end
+    use Orthoses::ActiveSupport::ClassAttribute
+    use Orthoses::ActiveSupport::Delegation
+    use Orthoses::ActiveSupport::MattrAccessor
+    use Orthoses::ActiveSupport::TimeWithZone
     use Orthoses::ActiveRecord::QueryMethods
     use Orthoses::LoadRBS,
       paths: -> { Orthoses::PathHelper.best_version_paths(::ActiveRecord::VERSION::STRING, "known_sig/activerecord") }
@@ -189,6 +190,13 @@ def generate(out_dir, version)
     end
     use Orthoses::DelegateClass
     use Orthoses::Attribute
+    use Orthoses::Railties::Mixin, callback: -> (railties_mixin) {
+      Orthoses::CreateFileByName.new(
+        ->{ railties_mixin },
+        base_dir: "#{out_dir}/#{version}/railties_mixin",
+        header: "# !!! GENERATED CODE !!!\n# Please see generators/rails-generator"
+      ).call
+    }
     use Orthoses::Mixin,
       if: -> (base_mod, how, mod) {
         mod != Enumerable # TODO
@@ -252,6 +260,7 @@ def generate_test_script(gem:, version:, export:, stdlib_dependencies:, gem_depe
     #{gem_dependencies.map{"  library \"#{_1}\""}.join("\n")}
 
       library "#{gem}:#{version}"
+    #{rails_dependencies.map{"  library \"#{_1}:#{version}\""}.join("\n")}
 
       configure_code_diagnostics(D::Ruby.all_error)
     end
@@ -265,30 +274,29 @@ def generate_manifest(export:, stdlib_dependencies:)
   YAML
 end
 
+def validate(export:, version:, stdlib_dependencies:, gem_dependencies:, rails_dependencies:)
+  stdlib_opt = stdlib_dependencies.map{"-r #{_1}"}.join(" ")
+  gem_opt = gem_dependencies.map{"-I ../../gems/#{_1}"}.join(" ")
+  rails_opt = rails_dependencies.map{"-I export/#{_1}/#{version}"}.join(" ")
+  sh "rbs --no-collection #{stdlib_opt} #{gem_opt} #{rails_opt} -I #{export} validate --silent"
+end
+
 VERSIONS = %w[
-  5.2
+  6.0
+  6.1
+  7.0
 ]
 Object.private_constant :VERSIONS
 
-GEMS = %w[
-  active_support
-  active_model
-  active_record
-  active_job
-  active_storage
-]
+tasks = Dir["tasks/*"]
+tasks.each do |task|
+  load task
+end
+GEMS = tasks.map { File.basename(_1).sub(/\.rake/, '') }
 Object.private_constant :GEMS
 
 task :clean do
   FileUtils.rm_rf("out")
-end
-
-namespace :bundle do
-  task :update do
-    VERSIONS.each do |version|
-      sh "BUNDLE_GEMFILE=gemfiles/Gemfile_#{version.tr('.', '_')} bundle update"
-    end
-  end
 end
 
 VERSIONS.each do |version|
@@ -312,23 +320,16 @@ VERSIONS.each do |version|
 
     desc "generate version=#{version}"
     task :generate do |t|
-      gemfile = File.expand_path("gemfiles/Gemfile_#{version.tr('.', '_')}")
-      sh "BUNDLE_GEMFILE=#{gemfile} bundle install"
-      sh "BUNDLE_GEMFILE=#{gemfile} bundle exec rake #{t.name}_exec"
+      switch_branch("#{version.tr('.', '-')}-stable")
+      sh "bundle install"
+      sh "bundle exec rake #{t.name}_exec"
     end
 
     task :generate_exec do
-      switch_branch("#{version.tr('.', '-')}-stable")
       generate("out", version)
     end
   end
 end
-
-load 'tasks/active_job.rake'
-load 'tasks/active_model.rake'
-load 'tasks/active_record.rake'
-load 'tasks/active_storage.rake'
-load 'tasks/active_support.rake'
 
 task default: [
   :clean,

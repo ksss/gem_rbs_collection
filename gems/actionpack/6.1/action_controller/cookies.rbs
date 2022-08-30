@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Cookies
+  # The cookies for the current request. See ActionDispatch::Cookies for
+  # more information.
+  private def cookies: () -> untyped
+  extend ActiveSupport::Concern
+end

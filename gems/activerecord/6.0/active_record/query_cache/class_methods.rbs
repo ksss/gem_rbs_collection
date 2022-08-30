@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::QueryCache::ClassMethods
+  # Enable the query cache within the block if Active Record is configured.
+  # If it's not, it will execute the given block.
+  def cache: () { () -> untyped } -> untyped
+  # Disable the query cache within the block if Active Record is configured.
+  # If it's not, it will execute the given block.
+  def uncached: () { () -> untyped } -> untyped
+end

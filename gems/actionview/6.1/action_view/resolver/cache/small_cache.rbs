@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Resolver::Cache::SmallCache < Concurrent::Map
+  def initialize: (?::Hash[untyped, untyped] options) -> void
+end

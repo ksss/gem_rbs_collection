@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Digestor
+  # Supported options:
+  #
+  # * <tt>name</tt>         - Template name
+  # * <tt>format</tt>       - Template format
+  # * <tt>finder</tt>       - An instance of <tt>ActionView::LookupContext</tt>
+  # * <tt>dependencies</tt> - An array of dependent views
+  def self.digest: (name: untyped, finder: untyped, ?format: untyped?, ?dependencies: untyped?) -> untyped
+  def self.logger: () -> untyped
+  # Create a dependency tree for template named +name+.
+  def self.tree: (untyped name, untyped finder, ?bool partial, ?::Hash[untyped, untyped] seen) -> untyped
+  private def self.find_template: (untyped finder, untyped name, untyped prefixes, untyped partial, untyped keys) -> untyped
+end

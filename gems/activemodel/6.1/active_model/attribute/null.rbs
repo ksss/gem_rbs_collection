@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Attribute::Null < ::ActiveModel::Attribute
+  def initialize: (untyped name) -> void
+  def type_cast: () -> nil
+  def with_type: (untyped `type`) -> untyped
+  def with_value_from_database: (untyped value) -> untyped
+  alias with_value_from_user with_value_from_database
+  alias with_cast_value with_value_from_database
+end

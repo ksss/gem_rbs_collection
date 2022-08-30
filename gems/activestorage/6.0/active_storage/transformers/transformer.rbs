@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Transformers::Transformer
+  def initialize: (untyped transformations) -> void
+  # Applies the transformations to the source image in +file+, producing a target image in the
+  # specified +format+. Yields an open Tempfile containing the target image. Closes and unlinks
+  # the output tempfile after yielding to the given block. Returns the result of the block.
+  def transform: (untyped file, format: untyped) { (untyped) -> untyped } -> untyped
+  # Returns an open Tempfile containing a transformed image in the given +format+.
+  # All subclasses implement this method.
+  private def process: (untyped file, format: untyped) -> untyped
+  attr_reader transformations: untyped
+end

@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Serializers::ObjectSerializer
+  # Determines if an argument should be serialized by a serializer.
+  def serialize?: (untyped argument) -> untyped
+  # Serializes an argument to a JSON primitive type.
+  def serialize: (untyped hash) -> untyped
+  # Deserializes an argument from a JSON primitive type.
+  def deserialize: (untyped json) -> untyped
+  # The class of the object that will be serialized.
+  private def klass: () -> untyped
+  include Singleton
+  extend Singleton::SingletonClassMethods
+end

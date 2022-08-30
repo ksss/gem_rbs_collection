@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::TestSession < ::Rack::Session::Abstract::PersistedSecure::SecureSessionHash
+  def initialize: (?::Hash[untyped, untyped] session) -> void
+  def exists?: () -> true
+  def keys: () -> untyped
+  def values: () -> untyped
+  def destroy: () -> untyped
+  def dig: (*untyped keys) -> untyped
+  def fetch: (untyped key, *untyped args) ?{ () -> untyped } -> untyped
+  def enabled?: () -> true
+  private def load!: () -> untyped
+  DEFAULT_OPTIONS: Hash[Symbol, String | nil | false | true | Integer | singleton(SecureRandom)]
+end

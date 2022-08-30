@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::MemCacheStore::LocalCacheWithRaw
+  private def write_entry: (untyped key, untyped entry, **untyped options) -> untyped
+end

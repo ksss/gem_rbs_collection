@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::Tags
+  extend ActiveSupport::Autoload
+end

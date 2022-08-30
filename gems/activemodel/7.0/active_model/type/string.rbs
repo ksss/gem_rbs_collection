@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::String < ::ActiveModel::Type::ImmutableString
+  def changed_in_place?: (untyped raw_old_value, untyped new_value) -> (untyped | nil)
+  def to_immutable_string: () -> untyped
+  private def cast_value: (untyped value) -> untyped
+end

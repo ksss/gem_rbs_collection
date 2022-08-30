@@ -1,0 +1,82 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Tasks::DatabaseTasks
+  def check_protected_environments!: () -> untyped
+  def register_task: (untyped pattern, untyped task) -> untyped
+  def db_dir: () -> untyped
+  def migrations_paths: () -> untyped
+  def fixtures_path: () -> untyped
+  def root: () -> untyped
+  def env: () -> untyped
+  def spec: () -> untyped
+  def name: () -> untyped
+  def seed_loader: () -> untyped
+  def current_config: (?::Hash[untyped, untyped] options) -> untyped
+  def create: (untyped configuration, *untyped arguments) -> untyped
+  def create_all: () -> untyped
+  def setup_initial_database_yaml: () -> (::Hash[untyped, untyped] | untyped)
+  def for_each: (untyped databases) { (untyped) -> untyped } -> (::Hash[untyped, untyped] | nil | untyped)
+  def raise_for_multi_db: (?untyped environment, command: untyped) -> untyped
+  def create_current: (?untyped environment, ?untyped? name) -> untyped
+  def drop: (untyped configuration, *untyped arguments) -> untyped
+  def drop_all: () -> untyped
+  def drop_current: (?untyped environment) -> untyped
+  private def truncate_tables: (untyped db_config) -> untyped
+  def truncate_all: (?untyped environment) -> untyped
+  def migrate: () -> untyped
+  def migrate_status: () -> untyped
+  def check_target_version: () -> (untyped | nil)
+  def target_version: () -> (untyped | nil)
+  def charset_current: (?untyped env_name, ?untyped db_name) -> untyped
+  def charset: (untyped configuration, *untyped arguments) -> untyped
+  def collation_current: (?untyped env_name, ?untyped db_name) -> untyped
+  def collation: (untyped configuration, *untyped arguments) -> untyped
+  def purge: (untyped configuration) -> untyped
+  def purge_all: () -> untyped
+  def purge_current: (?untyped environment) -> untyped
+  def structure_dump: (untyped configuration, *untyped arguments) -> untyped
+  def structure_load: (untyped configuration, *untyped arguments) -> untyped
+  def load_schema: (untyped db_config, ?untyped format, ?untyped? file) -> untyped
+  def schema_up_to_date?: (untyped configuration, ?untyped format, ?untyped? file, ?untyped? environment, ?untyped? name) -> (true | false | untyped)
+  def reconstruct_from_schema: (untyped db_config, ?untyped format, ?untyped? file) -> untyped
+  def dump_schema: (untyped db_config, ?untyped format) -> untyped
+  def schema_file: (?untyped format) -> untyped
+  def schema_file_type: (?untyped format) -> untyped
+  def dump_filename: (untyped db_config_name, ?untyped format) -> untyped
+  def cache_dump_filename: (untyped db_config_name, ?schema_cache_path: untyped?) -> untyped
+  def load_schema_current: (?untyped format, ?untyped? file, ?untyped environment) -> untyped
+  def check_schema_file: (untyped filename) -> (untyped | nil)
+  def load_seed: () -> untyped
+  # Dumps the schema cache in YAML format for the connection into the file
+  #
+  # ==== Examples:
+  #   ActiveRecord::Tasks::DatabaseTasks.dump_schema_cache(ActiveRecord::Base.connection, "tmp/schema_dump.yaml")
+  def dump_schema_cache: (untyped conn, untyped filename) -> untyped
+  def clear_schema_cache: (untyped filename) -> untyped
+  private def resolve_configuration: (untyped configuration) -> untyped
+  private def verbose?: () -> (untyped | true)
+  # Create a new instance for the specified db configuration object
+  # For classes that have been converted to use db_config objects, pass a
+  # `DatabaseConfig`, otherwise pass a `Hash`
+  private def database_adapter_for: (untyped db_config, *untyped arguments) -> untyped
+  private def class_for_adapter: (untyped adapter) -> untyped
+  private def each_current_configuration: (untyped environment, ?untyped? name) { (untyped) -> untyped } -> untyped
+  private def each_local_configuration: () { (untyped) -> untyped } -> untyped
+  private def local_database?: (untyped db_config) -> untyped
+  private def schema_sha1: (untyped file) -> untyped
+  extend ActiveRecord::Tasks::DatabaseTasks
+  attr_accessor database_configuration: untyped
+  attr_writer current_config: untyped
+  attr_writer db_dir: untyped
+  attr_writer migrations_paths: untyped
+  attr_writer fixtures_path: untyped
+  attr_writer root: untyped
+  attr_writer env: untyped
+  attr_writer seed_loader: untyped
+  def self.structure_dump_flags: () -> untyped
+  def self.structure_load_flags: () -> untyped
+  def self.structure_dump_flags=: (untyped val) -> untyped
+  def self.structure_load_flags=: (untyped val) -> untyped
+  LOCAL_HOSTS: Array[String]
+end

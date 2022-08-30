@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Validations::Comparability
+  def option_value: (untyped record, untyped option_value) -> untyped
+  def error_options: (untyped value, untyped option_value) -> untyped
+  COMPARE_CHECKS: Hash[Symbol, Symbol]
+end

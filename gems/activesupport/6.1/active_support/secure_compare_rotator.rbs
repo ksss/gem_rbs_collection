@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::SecureCompareRotator
+  def initialize: (untyped value, **untyped _options) -> void
+  def secure_compare!: (untyped other_value, ?on_rotation: untyped) -> untyped
+  private def build_rotation: (untyped previous_value, untyped _options) -> untyped
+  include ActiveSupport::SecurityUtils
+  prepend ActiveSupport::Messages::Rotator
+end

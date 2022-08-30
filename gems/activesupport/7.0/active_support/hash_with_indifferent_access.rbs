@@ -11,7 +11,6 @@ class ActiveSupport::HashWithIndifferentAccess[K, V] < ::Hash[K, V]
   def self.[]: (*untyped args) -> untyped
   alias regular_writer []=
   alias regular_update update
-
   def []=: (K key, V value) -> untyped
   alias store []=
   # Updates the receiver in-place, merging in the hashes passed as arguments:
@@ -54,7 +53,6 @@ class ActiveSupport::HashWithIndifferentAccess[K, V] < ::Hash[K, V]
   alias include? key?
   alias has_key? key?
   alias member? key?
-
   def []: (K key) -> V
   # Same as <tt>Hash#assoc</tt> where the key passed as argument can be
   # either a string or a symbol:

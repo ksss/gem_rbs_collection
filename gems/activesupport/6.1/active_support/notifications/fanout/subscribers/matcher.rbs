@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Fanout::Subscribers::Matcher
+  def self.wrap: (untyped pattern) -> untyped
+  def initialize: (untyped pattern) -> void
+  def unsubscribe!: (untyped name) -> (untyped | nil)
+  def ===: (untyped name) -> untyped
+  attr_reader pattern: untyped
+  attr_reader exclusions: untyped
+end

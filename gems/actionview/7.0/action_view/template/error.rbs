@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Error < ::ActionView::ActionViewError
+  def initialize: (untyped template) -> void
+  def file_name: () -> untyped
+  def sub_template_message: () -> (untyped | "")
+  def source_extract: (?::Integer indentation) -> (::Array[untyped] | untyped)
+  def sub_template_of: (untyped template_path) -> untyped
+  def line_number: () -> untyped
+  def annotated_source_code: () -> untyped
+  private def source_location: () -> untyped
+  private def formatted_code_for: (untyped source_code, untyped line_counter, untyped indent) -> untyped
+  attr_reader cause: untyped
+  SOURCE_CODE_RADIUS: Integer
+end

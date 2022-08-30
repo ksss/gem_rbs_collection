@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::ForceSSL::ClassMethods
+  def force_ssl: (?::Hash[untyped, untyped] options) -> untyped
+end

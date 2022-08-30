@@ -1,6 +1,6 @@
-stdlib_dependencies = %w[time monitor singleton logger mutex_m json date benchmark digest forwardable did_you_mean openssl socket]
+stdlib_dependencies = %w[time monitor singleton logger mutex_m json date benchmark digest forwardable did_you_mean openssl socket minitest]
 gem_dependencies = %w[nokogiri]
-rails_dependencies = %w[activesupport activemodel activejob]
+rails_dependencies = %w[activesupport activemodel]
 
 VERSIONS.each do |version|
   namespace version do
@@ -17,8 +17,12 @@ VERSIONS.each do |version|
         sh "cp -a out/#{version}/arel #{export}"
         sh "cp -a out/#{version}/arel.rbs #{export}"
         sh "cp -a out/#{version}/_active_record_relation.rbs #{export}"
+
         sh "rm #{export}/active_record/railtie.rbs"
         sh "rm -fr #{export}/active_record/connection_adapters" # FIXME
+        sh "rm -fr #{export}/active_record/migration/compatibility" # FIXME
+        sh "rm -f #{export}/active_record/destroy_association_async_job.rbs" # move to railties
+
         sh "cat out/#{version}/active_record/base.rbs | grep -v ActiveStorage > #{export}/active_record/base.rbs"
 
         Pathname(export).join("EXTERNAL_TODO.rbs").write(<<~RBS)
@@ -67,10 +71,13 @@ VERSIONS.each do |version|
 
       desc "validate version=#{version} gem=active_record"
       task :validate do
-        stdlib_opt = stdlib_dependencies.map{"-r #{_1}"}.join(" ")
-        gem_opt = gem_dependencies.map{"-I ../../.gem_rbs_collection/#{_1}"}.join(" ")
-        rails_opt = rails_dependencies.map{"-I export/#{_1}/#{version}"}.join(" ")
-        sh "rbs #{stdlib_opt} #{gem_opt} #{rails_opt} -I #{export} validate --silent"
+        validate(
+          export: export,
+          version: version,
+          stdlib_dependencies: stdlib_dependencies,
+          gem_dependencies: gem_dependencies,
+          rails_dependencies: rails_dependencies,
+        )
       end
 
       desc "install to ../../../gems/activerecord/#{version}"

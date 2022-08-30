@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::AbstractStore < ::Rack::Session::Abstract::Persisted
+  private def set_cookie: (untyped request, untyped session_id, untyped cookie) -> untyped
+  include ActionDispatch::Session::Compatibility
+  include ActionDispatch::Session::StaleSessionCheck
+  include ActionDispatch::Session::SessionObject
+end

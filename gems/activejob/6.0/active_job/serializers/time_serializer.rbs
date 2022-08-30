@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Serializers::TimeSerializer < ::ActiveJob::Serializers::ObjectSerializer
+  def serialize: (untyped time) -> untyped
+  def deserialize: (untyped hash) -> untyped
+  private def klass: () -> untyped
+end

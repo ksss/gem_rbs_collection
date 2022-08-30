@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::StreamingTemplateRenderer::Body
+  def initialize: () ?{ () -> untyped } -> void
+  def each: () ?{ () -> untyped } -> self
+  # This is the same logging logic as in ShowExceptions middleware.
+  private def log_error: (untyped exception) -> (nil | untyped)
+end

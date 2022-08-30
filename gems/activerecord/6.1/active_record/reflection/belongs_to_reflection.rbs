@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::BelongsToReflection < ::ActiveRecord::Reflection::AssociationReflection
+  def macro: () -> :belongs_to
+  def belongs_to?: () -> true
+  def association_class: () -> untyped
+  # klass option is necessary to support loading polymorphic associations
+  def association_primary_key: (?untyped? klass) -> untyped
+  def join_primary_key: (?untyped? klass) -> untyped
+  def join_foreign_key: () -> untyped
+  def join_foreign_type: () -> untyped
+  private def can_find_inverse_of_automatically?: (untyped _) -> untyped
+  private def calculate_constructable: (untyped macro, untyped options) -> untyped
+end

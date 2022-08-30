@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::QueAdapter
+  def enqueue: (untyped job) -> untyped
+  def enqueue_at: (untyped job, untyped timestamp) -> untyped
+  private def require_job_options_kwarg?: () -> untyped
+end

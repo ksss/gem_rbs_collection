@@ -1,0 +1,225 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::AttributeMethods::ClassMethods
+  # Declares a method available for all attributes with the given prefix.
+  # Uses +method_missing+ and <tt>respond_to?</tt> to rewrite the method.
+  #
+  #   #{prefix}#{attr}(*args, &block)
+  #
+  # to
+  #
+  #   #{prefix}attribute(#{attr}, *args, &block)
+  #
+  # An instance method <tt>#{prefix}attribute</tt> must exist and accept
+  # at least the +attr+ argument.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_prefix 'clear_'
+  #     define_attribute_methods :name
+  #
+  #     private
+  #
+  #     def clear_attribute(attr)
+  #       send("#{attr}=", nil)
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'Bob'
+  #   person.name          # => "Bob"
+  #   person.clear_name
+  #   person.name          # => nil
+  def attribute_method_prefix: (*untyped prefixes, ?parameters: untyped?) -> untyped
+  # Declares a method available for all attributes with the given suffix.
+  # Uses +method_missing+ and <tt>respond_to?</tt> to rewrite the method.
+  #
+  #   #{attr}#{suffix}(*args, &block)
+  #
+  # to
+  #
+  #   attribute#{suffix}(#{attr}, *args, &block)
+  #
+  # An <tt>attribute#{suffix}</tt> instance method must exist and accept at
+  # least the +attr+ argument.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_suffix '_short?'
+  #     define_attribute_methods :name
+  #
+  #     private
+  #
+  #     def attribute_short?(attr)
+  #       send(attr).length < 5
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'Bob'
+  #   person.name          # => "Bob"
+  #   person.name_short?   # => true
+  def attribute_method_suffix: (*untyped suffixes, ?parameters: untyped?) -> untyped
+  # Declares a method available for all attributes with the given prefix
+  # and suffix. Uses +method_missing+ and <tt>respond_to?</tt> to rewrite
+  # the method.
+  #
+  #   #{prefix}#{attr}#{suffix}(*args, &block)
+  #
+  # to
+  #
+  #   #{prefix}attribute#{suffix}(#{attr}, *args, &block)
+  #
+  # An <tt>#{prefix}attribute#{suffix}</tt> instance method must exist and
+  # accept at least the +attr+ argument.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_affix prefix: 'reset_', suffix: '_to_default!'
+  #     define_attribute_methods :name
+  #
+  #     private
+  #
+  #     def reset_attribute_to_default!(attr)
+  #       send("#{attr}=", 'Default Name')
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name                         # => 'Gem'
+  #   person.reset_name_to_default!
+  #   person.name                         # => 'Default Name'
+  def attribute_method_affix: (*untyped affixes) -> untyped
+  # Allows you to make aliases for attributes.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_suffix '_short?'
+  #     define_attribute_methods :name
+  #
+  #     alias_attribute :nickname, :name
+  #
+  #     private
+  #
+  #     def attribute_short?(attr)
+  #       send(attr).length < 5
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'Bob'
+  #   person.name            # => "Bob"
+  #   person.nickname        # => "Bob"
+  #   person.name_short?     # => true
+  #   person.nickname_short? # => true
+  def alias_attribute: (untyped new_name, untyped old_name) -> untyped
+  # Is +new_name+ an alias?
+  def attribute_alias?: (untyped new_name) -> untyped
+  # Returns the original name for the alias +name+
+  def attribute_alias: (untyped name) -> untyped
+  # Declares the attributes that should be prefixed and suffixed by
+  # <tt>ActiveModel::AttributeMethods</tt>.
+  #
+  # To use, pass attribute names (as strings or symbols). Be sure to declare
+  # +define_attribute_methods+ after you define any prefix, suffix, or affix
+  # methods, or they will not hook in.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name, :age, :address
+  #     attribute_method_prefix 'clear_'
+  #
+  #     # Call to define_attribute_methods must appear after the
+  #     # attribute_method_prefix, attribute_method_suffix or
+  #     # attribute_method_affix declarations.
+  #     define_attribute_methods :name, :age, :address
+  #
+  #     private
+  #
+  #     def clear_attribute(attr)
+  #       send("#{attr}=", nil)
+  #     end
+  #   end
+  def define_attribute_methods: (*untyped attr_names) -> untyped
+  # Declares an attribute that should be prefixed and suffixed by
+  # <tt>ActiveModel::AttributeMethods</tt>.
+  #
+  # To use, pass an attribute name (as string or symbol). Be sure to declare
+  # +define_attribute_method+ after you define any prefix, suffix or affix
+  # method, or they will not hook in.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_suffix '_short?'
+  #
+  #     # Call to define_attribute_method must appear after the
+  #     # attribute_method_prefix, attribute_method_suffix or
+  #     # attribute_method_affix declarations.
+  #     define_attribute_method :name
+  #
+  #     private
+  #
+  #     def attribute_short?(attr)
+  #       send(attr).length < 5
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'Bob'
+  #   person.name        # => "Bob"
+  #   person.name_short? # => true
+  def define_attribute_method: (untyped attr_name, ?_owner: untyped) -> untyped
+  # Removes all the previously dynamically defined methods from the class.
+  #
+  #   class Person
+  #     include ActiveModel::AttributeMethods
+  #
+  #     attr_accessor :name
+  #     attribute_method_suffix '_short?'
+  #     define_attribute_method :name
+  #
+  #     private
+  #
+  #     def attribute_short?(attr)
+  #       send(attr).length < 5
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'Bob'
+  #   person.name_short? # => true
+  #
+  #   Person.undefine_attribute_methods
+  #
+  #   person.name_short? # => NoMethodError
+  def undefine_attribute_methods: () -> untyped
+  private def generated_attribute_methods: () -> untyped
+  private def instance_method_already_implemented?: (untyped method_name) -> untyped
+  # The methods +method_missing+ and +respond_to?+ of this module are
+  # invoked often in a typical rails, both of which invoke the method
+  # +matched_attribute_method+. The latter method iterates through an
+  # array doing regular expression matches, which results in a lot of
+  # object creations. Most of the time it returns a +nil+ match. As the
+  # match result is always the same given a +method_name+, this cache is
+  # used to alleviate the GC, which ultimately also speeds up the app
+  # significantly (in our case our test suite finishes 10% faster with
+  # this cache).
+  private def attribute_method_matchers_cache: () -> untyped
+  private def attribute_method_matchers_matching: (untyped method_name) -> untyped
+  # Define a method `name` in `mod` that dispatches to `send`
+  # using the given `extra` args. This falls back on `send`
+  # if the called name cannot be compiled.
+  private def define_proxy_call: (untyped code_generator, untyped name, untyped target, untyped parameters, *untyped call_args, namespace: untyped) -> untyped
+end

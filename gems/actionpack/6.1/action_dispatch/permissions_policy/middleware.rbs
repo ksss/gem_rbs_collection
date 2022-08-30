@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::PermissionsPolicy::Middleware
+  def initialize: (untyped app) -> void
+  def call: (untyped env) -> untyped
+  private def html_response?: (untyped headers) -> (untyped | nil)
+  private def policy_present?: (untyped headers) -> untyped
+  private def policy_empty?: (untyped policy) -> untyped
+  POLICY: String
+  CONTENT_TYPE: String
+end

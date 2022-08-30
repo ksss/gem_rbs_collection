@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Utils::ParamEncoder
+  # Convert nested Hash to HashWithIndifferentAccess.
+  def self.normalize_encode_params: (untyped params) -> untyped
+  def self.handle_array: (untyped params) -> untyped
+end

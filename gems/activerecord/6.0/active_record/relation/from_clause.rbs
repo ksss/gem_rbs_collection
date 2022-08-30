@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::FromClause
+  def initialize: (untyped value, untyped name) -> void
+  def merge: (untyped other) -> self
+  def empty?: () -> untyped
+  def ==: (untyped other) -> untyped
+  def self.empty: () -> untyped
+  attr_reader value: untyped
+  attr_reader name: untyped
+end

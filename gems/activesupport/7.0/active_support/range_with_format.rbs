@@ -18,8 +18,6 @@ module ActiveSupport::RangeWithFormat
   #   # config/initializers/range_formats.rb
   #   Range::RANGE_FORMATS[:short] = ->(start, stop) { "Between #{start.to_fs(:db)} and #{stop.to_fs(:db)}" }
   def to_fs: (?::Symbol format) -> untyped
-
   alias to_formatted_s to_fs
-
   RANGE_FORMATS: Hash[Symbol, Proc]
 end

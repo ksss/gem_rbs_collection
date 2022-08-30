@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::KeyGenerator
+  # Returns a random key. The key will have a size in bytes of +:length+ (configured +Cipher+'s length by default)
+  def generate_random_key: (?length: untyped) -> untyped
+  # Returns a random key in hexadecimal format. The key will have a size in bytes of +:length+ (configured +Cipher+'s
+  # length by default)
+  #
+  # Hexadecimal format is handy for representing keys as printable text. To maximize the space of characters used, it is
+  # good practice including not printable characters. Hexadecimal format ensures that generated keys are representable with
+  # plain text
+  #
+  # To convert back to the original string with the desired length:
+  #
+  #   [ value ].pack("H*")
+  def generate_random_hex_key: (?length: untyped) -> untyped
+  # Derives a key from the given password. The key will have a size in bytes of +:length+ (configured +Cipher+'s length
+  # by default)
+  #
+  # The generated key will be salted with the value of +ActiveRecord::Encryption.key_derivation_salt+
+  def derive_key_from: (untyped password, ?length: untyped) -> untyped
+  private def key_length: () -> untyped
+end

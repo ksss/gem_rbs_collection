@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ParameterFilter::CompiledFilter
+  def self.compile: (untyped filters, mask: untyped) -> untyped
+  def initialize: (untyped regexps, untyped deep_regexps, untyped blocks, mask: untyped) -> void
+  def call: (untyped params, ?untyped parents, ?untyped original_params) -> untyped
+  def value_for_key: (untyped key, untyped value, ?untyped parents, ?untyped? original_params) -> untyped
+  attr_reader regexps: untyped
+  attr_reader deep_regexps: untyped
+  attr_reader blocks: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Handlers::Html < ::ActionView::Template::Handlers::Raw
+  def call: (untyped template, untyped source) -> ::String
+end

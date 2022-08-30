@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::OptionRedirect < ::ActionDispatch::Routing::Redirect
+  alias options block
+  def path: (untyped params, untyped request) -> untyped
+  def inspect: () -> ::String
+end

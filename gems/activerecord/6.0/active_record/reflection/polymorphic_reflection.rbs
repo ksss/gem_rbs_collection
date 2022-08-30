@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::PolymorphicReflection < ::ActiveRecord::Reflection::AbstractReflection
+  def initialize: (untyped reflection, untyped previous_reflection) -> void
+  def join_scopes: (untyped table, untyped predicate_builder, ?untyped klass) -> untyped
+  def constraints: () -> untyped
+  private def source_type_scope: () -> untyped
+  # defined by `delegate` to: #@reflection
+  def klass: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def scope: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def plural_name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def get_join_keys: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def scope_for: (*untyped, **untyped) -> untyped
+end

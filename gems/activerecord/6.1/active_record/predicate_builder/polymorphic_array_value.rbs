@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PredicateBuilder::PolymorphicArrayValue
+  def initialize: (untyped associated_table, untyped values) -> void
+  def queries: () -> (::Array[::Hash[untyped, untyped]] | untyped)
+  private def type_to_ids_mapping: () -> untyped
+  private def primary_key: (untyped value) -> untyped
+  private def klass: (untyped value) -> untyped
+  private def convert_to_id: (untyped value) -> untyped
+  attr_reader associated_table: untyped
+  attr_reader values: untyped
+end

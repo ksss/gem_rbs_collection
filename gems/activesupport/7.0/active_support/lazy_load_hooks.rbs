@@ -3,16 +3,15 @@
 
 module ActiveSupport::LazyLoadHooks
   def self.extended: (untyped base) -> untyped
-
   # Declares a block that will be executed when a Rails component is fully
-  # loaded.
+  # loaded. If the component has already loaded, the block is executed
+  # immediately.
   #
   # Options:
   #
   # * <tt>:yield</tt> - Yields the object that run_load_hooks to +block+.
   # * <tt>:run_once</tt> - Given +block+ will run only once.
   def on_load: (untyped name, ?::Hash[untyped, untyped] options) ?{ () -> untyped } -> untyped
-
   # Executes all blocks registered to +name+ via on_load, using +base+ as the
   # evaluation context.
   #
@@ -21,8 +20,6 @@ module ActiveSupport::LazyLoadHooks
   # In the case of the above example, it will execute all hooks registered
   # for +:active_record+ within the class +ActiveRecord::Base+.
   def run_load_hooks: (untyped name, ?untyped base) -> untyped
-
   private def with_execution_control: (untyped name, untyped block, untyped once) { () -> untyped } -> (untyped | nil)
-
   private def execute_hook: (untyped name, untyped base, untyped options, untyped block) -> untyped
 end

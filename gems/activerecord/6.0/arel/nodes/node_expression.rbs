@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::NodeExpression < ::Arel::Nodes::Node
+  include Arel::Expressions
+  include Arel::Predications
+  include Arel::AliasPredication
+  include Arel::OrderPredications
+  include Arel::Math
+end

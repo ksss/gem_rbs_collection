@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::ShowExceptions
+  def initialize: (untyped app, untyped exceptions_app) -> void
+  def call: (untyped env) -> untyped
+  private def render_exception: (untyped request, untyped exception) -> untyped
+  private def fallback_to_html_format_if_invalid_mime_type: (untyped request) -> untyped
+  private def pass_response: (untyped status) -> ::Array[untyped | ::Hash[::String, ::String | "0"] | ::Array[untyped]]
+  FAILSAFE_RESPONSE: Array[Integer | Hash[String, String] | Array[String]]
+end

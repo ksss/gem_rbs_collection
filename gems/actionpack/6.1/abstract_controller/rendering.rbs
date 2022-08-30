@@ -1,0 +1,46 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Rendering
+  # Normalizes arguments, options and then delegates render_to_body and
+  # sticks the result in <tt>self.response_body</tt>.
+  def render: (*untyped args) ?{ () -> untyped } -> untyped
+  # Raw rendering of a template to a string.
+  #
+  # It is similar to render, except that it does not
+  # set the +response_body+ and it should be guaranteed
+  # to always return a string.
+  #
+  # If a component extends the semantics of +response_body+
+  # (as ActionController extends it to be anything that
+  # responds to the method each), this method needs to be
+  # overridden in order to still return a string.
+  def render_to_string: (*untyped args) ?{ () -> untyped } -> untyped
+  # Performs the actual template rendering.
+  def render_to_body: (?::Hash[untyped, untyped] options) -> nil
+  # Returns Content-Type of rendered content.
+  def rendered_format: () -> untyped
+  # This method should return a hash with assigns.
+  # You can overwrite this configuration per controller.
+  def view_assigns: () -> untyped
+  # Normalize args by converting <tt>render "foo"</tt> to
+  # <tt>render :action => "foo"</tt> and <tt>render "foo/bar"</tt> to
+  # <tt>render :file => "foo/bar"</tt>.
+  private def _normalize_args: (?untyped? action, ?::Hash[untyped, untyped] options) -> untyped
+  # Normalize options.
+  private def _normalize_options: (untyped options) -> untyped
+  # Process extra options.
+  private def _process_options: (untyped options) -> untyped
+  # Process the rendered format.
+  private def _process_format: (untyped format) -> nil
+  private def _process_variant: (untyped options) -> nil
+  private def _set_html_content_type: () -> nil
+  private def _set_vary_header: () -> nil
+  private def _set_rendered_content_type: (untyped format) -> nil
+  # Normalize args and options.
+  private def _normalize_render: (*untyped args) ?{ () -> untyped } -> untyped
+  private def _protected_ivars: () -> untyped
+  include ActionView::ViewPaths
+  extend ActiveSupport::Concern
+  DEFAULT_PROTECTED_INSTANCE_VARIABLES: Array[Symbol]
+end

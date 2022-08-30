@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::DeleteManager < ::Arel::TreeManager
+  def initialize: (?untyped? table) -> void
+  def from: (untyped relation) -> self
+  def group: (untyped columns) -> self
+  def having: (untyped expr) -> self
+  include Arel::TreeManager::StatementMethods
+end

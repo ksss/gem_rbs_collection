@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::Association::LoaderQuery
+  def initialize: (untyped scope, untyped association_key_name) -> void
+  def eql?: (untyped other) -> untyped
+  def hash: () -> untyped
+  def records_for: (untyped loaders) -> untyped
+  def load_records_in_batch: (untyped loaders) -> untyped
+  def load_records_for_keys: (untyped keys) ?{ () -> untyped } -> untyped
+  attr_reader scope: untyped
+  attr_reader association_key_name: untyped
+end

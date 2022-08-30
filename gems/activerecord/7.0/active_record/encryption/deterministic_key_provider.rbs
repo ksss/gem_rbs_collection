@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::DeterministicKeyProvider < ::ActiveRecord::Encryption::DerivedSecretKeyProvider
+  def initialize: (untyped password) -> void
+end

@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::AbstractRenderer
+  def initialize: (untyped lookup_context) -> void
+  def render: () -> untyped
+  private def extract_details: (untyped options) -> untyped
+  private def prepend_formats: (untyped formats) -> (nil | untyped)
+  private def build_rendered_template: (untyped content, untyped template) -> untyped
+  private def build_rendered_collection: (untyped templates, untyped spacer) -> untyped
+  # defined by `delegate` to: #@lookup_context
+  def template_exists?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@lookup_context
+  def any_templates?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@lookup_context
+  def formats: (*untyped, **untyped) -> untyped
+  NO_DETAILS: Hash[untyped, untyped]
+end

@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RemoteIp::GetIp
+  def initialize: (untyped req, untyped check_ip, untyped proxies) -> void
+  # Sort through the various IP address headers, looking for the IP most
+  # likely to be the address of the actual remote client making this
+  # request.
+  #
+  # REMOTE_ADDR will be correct if the request is made directly against the
+  # Ruby process, on e.g. Heroku. When the request is proxied by another
+  # server like HAProxy or NGINX, the IP address that made the original
+  # request will be put in an X-Forwarded-For header. If there are multiple
+  # proxies, that header may contain a list of IPs. Other proxy services
+  # set the Client-Ip header instead, so we check that too.
+  #
+  # As discussed in {this post about Rails IP Spoofing}[https://blog.gingerlime.com/2012/rails-ip-spoofing-vulnerabilities-and-protection/],
+  # while the first IP in the list is likely to be the "originating" IP,
+  # it could also have been set by the client maliciously.
+  #
+  # In order to find the first address that is (probably) accurate, we
+  # take the list of IPs, remove known and trusted proxies, and then take
+  # the last address left, which was presumably set by one of those proxies.
+  def calculate_ip: () -> untyped
+  # Memoizes the value returned by #calculate_ip and returns it for
+  # ActionDispatch::Request to use.
+  def to_s: () -> untyped
+  private def ips_from: (untyped header) -> (::Array[untyped] | untyped)
+  private def filter_proxies: (untyped ips) -> untyped
+end

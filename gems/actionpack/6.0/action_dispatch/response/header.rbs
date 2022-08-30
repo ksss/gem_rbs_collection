@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Response::Header < ::Hash[untyped, untyped]
+  def initialize: (untyped response, untyped header) -> void
+  def []=: (untyped k, untyped v) -> untyped
+  def merge: (untyped other) -> untyped
+  def to_hash: () -> untyped
+end

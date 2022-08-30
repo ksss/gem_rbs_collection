@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::JoinSource < ::Arel::Nodes::Binary
+  def initialize: (untyped single_source, ?untyped joinop) -> void
+  def empty?: () -> untyped
+end

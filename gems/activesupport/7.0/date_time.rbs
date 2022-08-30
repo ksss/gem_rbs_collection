@@ -102,7 +102,6 @@ class DateTime < ::Date
   # Layers additional behavior on DateTime#<=> so that Time and
   # ActiveSupport::TimeWithZone instances can be compared with a DateTime.
   def <=>: (untyped other) -> untyped
-
   # Convert to a formatted string. See Time::DATE_FORMATS for predefined formats.
   #
   # This method is aliased to <tt>to_formatted_s</tt>.
@@ -160,7 +159,6 @@ class DateTime < ::Date
   def nsec: () -> untyped
   private def offset_in_seconds: () -> untyped
   private def seconds_since_unix_epoch: () -> untyped
-
   include DateAndTime::Compatibility
   NOT_SET: Object
 end

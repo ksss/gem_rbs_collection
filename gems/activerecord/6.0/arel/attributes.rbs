@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Attributes
+  # #
+  # Factory method to wrap a raw database +column+ to an Arel Attribute.
+  def self.for: (untyped column) -> untyped
+end

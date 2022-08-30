@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini_Nokogiri::Conversions::Node
+  # Convert XML document to hash.
+  #
+  # hash::
+  #   Hash to merge the converted element into.
+  def to_hash: (?::Hash[untyped, untyped] hash) -> untyped
+end

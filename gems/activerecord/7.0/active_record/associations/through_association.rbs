@@ -1,0 +1,34 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Associations::ThroughAssociation
+  private def through_reflection: () -> untyped
+  private def through_association: () -> untyped
+  # We merge in these scopes for two reasons:
+  #
+  #   1. To get the default_scope conditions for any of the other reflections in the chain
+  #   2. To get the type conditions for any STI models in the chain
+  private def target_scope: () -> untyped
+  # Construct attributes for :through pointing to owner and associate. This is used by the
+  # methods which create and delete records on the association.
+  #
+  # We only support indirectly modifying through associations which have a belongs_to source.
+  # This is the "has_many :tags, through: :taggings" situation, where the join model
+  # typically has a belongs_to on both side. In other words, associations which could also
+  # be represented as has_and_belongs_to_many associations.
+  #
+  # We do not support creating/deleting records on the association where the source has
+  # some other type, because this opens up a whole can of worms, and in basically any
+  # situation it is more natural for the user to just create or modify their join records
+  # directly as required.
+  private def construct_join_attributes: (*untyped records) -> untyped
+  # Note: this does not capture all cases, for example it would be impractical
+  # to try to properly support stale-checking for nested associations.
+  private def stale_state: () -> (untyped | nil)
+  private def foreign_key_present?: () -> untyped
+  private def ensure_mutable: () -> (untyped | nil)
+  private def ensure_not_nested: () -> (untyped | nil)
+  private def build_record: (untyped attributes) -> untyped
+  # defined by `delegate` to: #reflection
+  def source_reflection: (*untyped, **untyped) -> untyped
+end

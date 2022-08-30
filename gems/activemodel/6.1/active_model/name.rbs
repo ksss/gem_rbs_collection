@@ -1,0 +1,60 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Name
+  alias cache_key collection
+  # Returns a new ActiveModel::Name instance. By default, the +namespace+
+  # and +name+ option will take the namespace and name of the given class
+  # respectively.
+  #
+  #   module Foo
+  #     class Bar
+  #     end
+  #   end
+  #
+  #   ActiveModel::Name.new(Foo::Bar).to_s
+  #   # => "Foo::Bar"
+  def initialize: (untyped klass, ?untyped? namespace, ?untyped? name) -> void
+  # Transform the model name into a more human format, using I18n. By default,
+  # it will underscore then humanize the class name.
+  #
+  #   class BlogPost
+  #     extend ActiveModel::Naming
+  #   end
+  #
+  #   BlogPost.model_name.human # => "Blog post"
+  #
+  # Specify +options+ with additional translating options.
+  def human: (?::Hash[untyped, untyped] options) -> untyped
+  private def _singularize: (untyped string) -> untyped
+  include Comparable
+  attr_accessor singular: untyped
+  attr_accessor plural: untyped
+  attr_accessor element: untyped
+  attr_accessor collection: untyped
+  attr_accessor singular_route_key: untyped
+  attr_accessor route_key: untyped
+  attr_accessor param_key: untyped
+  attr_accessor i18n_key: untyped
+  attr_accessor name: untyped
+  # defined by `delegate` to: untyped#name
+  def ==: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def ===: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def <=>: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def =~: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def !~: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def eql?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def match?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def to_s: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def to_str: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#name
+  def as_json: (*untyped, **untyped) -> untyped
+end

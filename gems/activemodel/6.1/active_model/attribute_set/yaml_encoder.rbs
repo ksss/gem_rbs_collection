@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeSet::YAMLEncoder
+  def initialize: (untyped default_types) -> void
+  def encode: (untyped attribute_set, untyped coder) -> untyped
+  def decode: (untyped coder) -> untyped
+  attr_reader default_types: untyped
+end

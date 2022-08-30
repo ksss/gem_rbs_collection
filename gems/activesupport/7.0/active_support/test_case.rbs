@@ -97,13 +97,13 @@ class ActiveSupport::TestCase < ::Minitest::Test
   alias assert_not_predicate refute_predicate
   alias assert_not_respond_to refute_respond_to
   alias assert_not_same refute_same
+  def inspect: () -> untyped
   include ActiveSupport::Testing::TaggedLogging
   include ActiveSupport::Callbacks
   include ActiveSupport::Testing::Assertions
   include ActiveSupport::Testing::Deprecation
   include ActiveSupport::Testing::TimeHelpers
   include ActiveSupport::Testing::FileFixtures
-  include ActiveSupport::Executor::TestHelper
   extend ActiveSupport::Callbacks::ClassMethods
   extend ActiveSupport::DescendantsTracker
   extend ActiveSupport::Testing::SetupAndTeardown::ClassMethods

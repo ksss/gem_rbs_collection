@@ -3,10 +3,7 @@
 
 module ActiveSupport::Cache::Coders
   def self.[]: (untyped version) -> untyped
-
   MARK_61: String
-
   MARK_70_COMPRESSED: String
-
   MARK_70_UNCOMPRESSED: String
 end

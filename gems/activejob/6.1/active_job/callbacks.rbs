@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Callbacks
+  private def halted_callback_hook: (untyped _filter, untyped name) -> untyped
+  include ActiveSupport::Callbacks
+  extend ActiveSupport::Concern
+end

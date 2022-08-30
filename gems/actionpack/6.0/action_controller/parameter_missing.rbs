@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::ParameterMissing < ::KeyError[untyped, untyped]
+  def initialize: (untyped param) -> void
+  attr_reader param: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::ModelNaming
+  # Converts the given object to an ActiveModel compliant one.
+  def convert_to_model: (untyped object) -> untyped
+  def model_name_from_record_or_class: (untyped record_or_class) -> untyped
+end

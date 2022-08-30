@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::DependencyTracker::RipperTracker
+  def self.call: (untyped name, untyped template, ?untyped? view_paths) -> untyped
+  def dependencies: () -> untyped
+  def self.supports_view_paths?: () -> true
+  def initialize: (untyped name, untyped template, ?untyped? view_paths) -> void
+  private def render_dependencies: () -> (::Array[untyped] | untyped)
+  private def explicit_dependencies: () -> untyped
+  private def resolve_directories: (untyped wildcard_dependencies) -> (::Array[untyped] | untyped)
+  attr_reader template: untyped
+  attr_reader name: untyped
+  attr_reader view_paths: untyped
+  EXPLICIT_DEPENDENCY: Regexp
+end

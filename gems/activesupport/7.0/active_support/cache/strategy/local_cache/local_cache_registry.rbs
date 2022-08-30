@@ -3,8 +3,6 @@
 
 module ActiveSupport::Cache::Strategy::LocalCache::LocalCacheRegistry
   def cache_for: (untyped local_cache_key) -> untyped
-
   def set_cache_for: (untyped local_cache_key, untyped value) -> untyped
-
   extend ActiveSupport::Cache::Strategy::LocalCache::LocalCacheRegistry
 end

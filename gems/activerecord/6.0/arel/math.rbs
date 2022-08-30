@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Math
+  def *: (untyped other) -> untyped
+  def +: (untyped other) -> untyped
+  def -: (untyped other) -> untyped
+  def /: (untyped other) -> untyped
+  def &: (untyped other) -> untyped
+  def |: (untyped other) -> untyped
+  def ^: (untyped other) -> untyped
+  def <<: (untyped other) -> untyped
+  def >>: (untyped other) -> untyped
+  def ~: () -> untyped
+end

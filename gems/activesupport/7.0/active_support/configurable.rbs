@@ -18,6 +18,5 @@ module ActiveSupport::Configurable
   #   user.config.allowed_access # => true
   #   user.config.level          # => 1
   def config: () -> untyped
-
   extend ActiveSupport::Concern
 end

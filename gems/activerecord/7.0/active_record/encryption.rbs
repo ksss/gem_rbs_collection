@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption
+  def self.eager_load!: () -> untyped
+  include ActiveRecord::Encryption::Configurable
+  include ActiveRecord::Encryption::Contexts
+  extend ActiveSupport::Autoload
+  extend ActiveRecord::Encryption::Configurable::ClassMethods
+  extend ActiveRecord::Encryption::Contexts::ClassMethods
+  def self.config: () -> untyped
+  def config: () -> untyped
+  def self.encrypted_attribute_declaration_listeners: () -> untyped
+  def encrypted_attribute_declaration_listeners: () -> untyped
+  def self.default_context: () -> untyped
+  def default_context: () -> untyped
+  def self.encrypted_attribute_declaration_listeners=: (untyped val) -> untyped
+  def encrypted_attribute_declaration_listeners=: (untyped val) -> untyped
+end

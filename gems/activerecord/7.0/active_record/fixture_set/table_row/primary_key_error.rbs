@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::TableRow::PrimaryKeyError < ::StandardError
+  def initialize: (untyped label, untyped association, untyped value) -> void
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+  include ActiveRecord::Delegation::ClassSpecificRelation
+  include ActiveStorage::VariantRecord::GeneratedRelationMethods
+  extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+end

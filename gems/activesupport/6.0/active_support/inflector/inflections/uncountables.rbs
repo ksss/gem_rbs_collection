@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Inflector::Inflections::Uncountables < ::Array[untyped]
+  def initialize: () -> void
+  def delete: (untyped entry) -> untyped
+  def <<: (*untyped word) -> untyped
+  def add: (untyped words) -> self
+  def uncountable?: (untyped str) -> untyped
+  private def to_regex: (untyped string) -> ::Regexp
+end

@@ -7,52 +7,37 @@ class ActiveSupport::TimeWithZone
   def initialize: (untyped utc_time, untyped time_zone, ?untyped? local_time, ?untyped? period) -> void
   # Returns a <tt>Time</tt> instance that represents the time in +time_zone+.
   def time: () -> untyped
-
   def utc: () -> ::Time
   alias comparable_time utc
-
   def getgm: () -> ::Time
-
   def getutc: () -> ::Time
-
   def gmtime: () -> ::Time
   # Returns the underlying <tt>TZInfo::TimezonePeriod</tt>.
   def period: () -> untyped
-
   def in_time_zone: (?::ActiveSupport::TimeZone | ::String new_zone) -> ::ActiveSupport::TimeWithZone
                   | (false? zone) -> self
-
   def localtime: (?::String utc_offset) -> ::Time
   def getlocal: (?::Integer utc_offset) -> self
   def dst?: () -> bool
-
   def isdst: () -> bool
-
   def utc?: () -> bool
   def gmt?: () -> bool
-
   def utc_offset: () -> ::Integer
   def gmt_offset: () -> ::Integer
-
   def gmtoff: () -> ::Integer
-
   def formatted_offset: (?bool colon, ?untyped? alternate_utc_string) -> untyped
   def zone: () -> ::String
   def inspect: () -> ::String
-
   def xmlschema: (?::Integer fraction_digits) -> ::String
   alias iso8601 xmlschema
-
   alias rfc3339 xmlschema
   def as_json: (*untyped) -> ::Hash[::String, ::String | ::Integer]
   def init_with: (untyped coder) -> untyped
   def encode_with: (untyped coder) -> untyped
-
   def httpdate: () -> ::String
   def rfc2822: () -> ::String
   alias rfc822 rfc2822
   def to_s: () -> ::String
-
   def to_fs: (?::Symbol format) -> untyped
   alias to_formatted_s to_fs
   def strftime: (::String arg0) -> ::String
@@ -78,38 +63,30 @@ class ActiveSupport::TimeWithZone
   alias prev_day? yesterday?
   # Returns true if the current object's time is in the future.
   def future?: () -> untyped
-
   def eql?: (untyped arg0) -> bool
   def hash: () -> ::Integer
-
   def +: (::Numeric arg0) -> self
        | (::ActiveSupport::Duration other) -> self
-
   def since: (untyped seconds) -> untyped
   alias in since
   def -: (::Time arg0) -> ::Float
        | (::Numeric arg0) -> self
        | (self other) -> ::Float
        | (::ActiveSupport::Duration other) -> self
-
   def ago: (untyped other) -> self
   def change: (untyped options) -> self
   def advance: (untyped options) -> self
   def to_a: () -> [ ::Integer, ::Integer, ::Integer, ::Integer, ::Integer, ::Integer, ::Integer, ::Integer, bool, ::String ]
   def to_f: () -> ::Float
   def to_i: () -> ::Integer
-
   def tv_sec: () -> ::Integer
   def to_r: () -> ::Rational
-
   def to_datetime: () -> ::DateTime
   def to_time: () -> self
-
   def acts_like_time?: () -> true
   # Say we're a Time to thwart type checking.
   def is_a?: (untyped klass) -> untyped
   alias kind_of? is_a?
-
   def blank?: () -> false
   def freeze: () -> untyped
   def marshal_dump: () -> ::Array[untyped]
@@ -131,26 +108,20 @@ class ActiveSupport::TimeWithZone
   include Comparable
   include DateAndTime::Compatibility
   attr_reader time_zone: untyped
-
   include ::Comparable
   include ::DateAndTime::Zones
   include ::DateAndTime::Calculations
   include ::DateAndTime::Compatibility
-
   def to_json: (?::JSON::State state) -> ::String
   def <: (::Time arg0) -> bool
   def <=: (::Time arg0) -> bool
   def >: (::Time arg0) -> bool
   def >=: (::Time arg0) -> bool
-
   def asctime: () -> ::String
   def ctime: () -> ::String
   def day: () -> ::Integer
-
   def friday?: () -> bool
-
   def hour: () -> ::Integer
-
   def mday: () -> ::Integer
   def min: () -> ::Integer
   def mon: () -> ::Integer
@@ -159,32 +130,24 @@ class ActiveSupport::TimeWithZone
   def round: (?::Integer arg0) -> self
   def saturday?: () -> bool
   def sec: () -> ::Integer
-
   def subsec: () -> (0 | ::Rational)
   def sunday?: () -> bool
   def thursday?: () -> bool
-
   def tuesday?: () -> bool
   def tv_nsec: () -> ::Integer
-
   def tv_usec: () -> ::Integer
   def usec: () -> ::Integer
-
   def wday: () -> ::Integer
   def wednesday?: () -> bool
   def yday: () -> ::Integer
   def year: () -> ::Integer
-
   def month: () -> ::Integer
   def floor: (?::Integer ndigits) -> self
   def ceil: (?::Integer ndigits) -> self
-
   def to_date: () -> ::Date
-
   def seconds_since_midnight: () -> ::Float
   def seconds_until_end_of_day: () -> ::Integer
   def sec_fraction: () -> (::Integer | ::Rational)
-
   def beginning_of_day: () -> self
   alias midnight beginning_of_day
   alias at_midnight beginning_of_day
@@ -226,9 +189,7 @@ class ActiveSupport::TimeWithZone
   def next_month: () -> self
   def prev_year: () -> self
   def next_year: () -> self
-
   def to_default_s: () -> ::String
-
   NOT_SET: Object
   PRECISIONS: Hash[Integer, String]
   SECONDS_PER_DAY: Integer

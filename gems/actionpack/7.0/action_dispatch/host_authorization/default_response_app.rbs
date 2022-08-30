@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::HostAuthorization::DefaultResponseApp
+  def call: (untyped env) -> untyped
+  private def response_body: (untyped request) -> ("" | untyped)
+  private def response: (untyped format, untyped body) -> ::Array[untyped | ::Hash[::String, ::String | untyped] | ::Array[untyped]]
+  private def log_error: (untyped request) -> (nil | untyped)
+  private def available_logger: (untyped request) -> untyped
+  RESPONSE_STATUS: Integer
+end

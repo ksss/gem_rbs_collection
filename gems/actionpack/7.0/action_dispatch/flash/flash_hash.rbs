@@ -1,0 +1,66 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Flash::FlashHash
+  def self.from_session_value: (untyped value) -> untyped
+  # Builds a hash containing the flashes to keep for the next request.
+  # If there are none to keep, returns +nil+.
+  def to_session_value: () -> (nil | ::Hash[::String, ::Array[untyped] | untyped])
+  def initialize: (?::Hash[untyped, untyped] flashes, ?untyped discard) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def []=: (untyped k, untyped v) -> untyped
+  def []: (untyped k) -> untyped
+  def update: (untyped h) -> self
+  def keys: () -> untyped
+  def key?: (untyped name) -> untyped
+  def delete: (untyped key) -> self
+  def to_hash: () -> untyped
+  def empty?: () -> untyped
+  def clear: () -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  alias merge! update
+  def replace: (untyped h) -> self
+  # Sets a flash that will not be available to the next action, only to the current.
+  #
+  #     flash.now[:message] = "Hello current action"
+  #
+  # This method enables you to use the flash as a central messaging system in your app.
+  # When you need to pass an object to the next action, you use the standard flash assign (<tt>[]=</tt>).
+  # When you need to pass an object to the current action, you use <tt>now</tt>, and your object will
+  # vanish when the current action is done.
+  #
+  # Entries set via <tt>now</tt> are accessed the same way as standard entries: <tt>flash['my-key']</tt>.
+  #
+  # Also, brings two convenience accessors:
+  #
+  #   flash.now.alert = "Beware now!"
+  #   # Equivalent to flash.now[:alert] = "Beware now!"
+  #
+  #   flash.now.notice = "Good luck now!"
+  #   # Equivalent to flash.now[:notice] = "Good luck now!"
+  def now: () -> untyped
+  # Keeps either the entire current flash or a specific flash entry available for the next action:
+  #
+  #    flash.keep            # keeps the entire flash
+  #    flash.keep(:notice)   # keeps only the "notice" entry, the rest of the flash is discarded
+  def keep: (?untyped? k) -> untyped
+  # Marks the entire flash or a single flash entry to be discarded by the end of the current action:
+  #
+  #     flash.discard              # discard the entire flash at the end of the current action
+  #     flash.discard(:warning)    # discard only the "warning" entry at the end of the current action
+  def discard: (?untyped? k) -> untyped
+  # Mark for removal entries that were kept, and delete unkept ones.
+  #
+  # This method is called automatically by filters, so you generally don't need to care about it.
+  def sweep: () -> untyped
+  # Convenience accessor for <tt>flash[:alert]</tt>.
+  def alert: () -> untyped
+  # Convenience accessor for <tt>flash[:alert]=</tt>.
+  def alert=: (untyped message) -> untyped
+  # Convenience accessor for <tt>flash[:notice]</tt>.
+  def notice: () -> untyped
+  # Convenience accessor for <tt>flash[:notice]=</tt>.
+  def notice=: (untyped message) -> untyped
+  def now_is_loaded?: () -> untyped
+  private def stringify_array: (untyped array) -> untyped
+end

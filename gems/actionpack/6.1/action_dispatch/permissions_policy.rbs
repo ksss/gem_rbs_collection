@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::PermissionsPolicy
+  def initialize: () { (untyped) -> untyped } -> void
+  def initialize_copy: (untyped other) -> untyped
+  def build: (?untyped? context) -> untyped
+  private def apply_mappings: (untyped sources) -> untyped
+  private def apply_mapping: (untyped source) -> untyped
+  private def build_directives: (untyped context) -> untyped
+  private def build_directive: (untyped sources, untyped context) -> untyped
+  private def resolve_source: (untyped source, untyped context) -> untyped
+  attr_reader directives: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PredicateBuilder::ArrayHandler
+  def initialize: (untyped predicate_builder) -> void
+  def call: (untyped attribute, untyped value) -> untyped
+  attr_reader predicate_builder: untyped
+end

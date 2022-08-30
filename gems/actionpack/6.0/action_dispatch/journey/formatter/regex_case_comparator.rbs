@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Journey::Formatter::RegexCaseComparator
+  def self.===: (untyped regex) -> untyped
+  DEFAULT_INPUT: Regexp
+  DEFAULT_REGEX: Regexp
+end

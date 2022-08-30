@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::NullMutationTracker
+  def changed_attribute_names: () -> ::Array[untyped]
+  def changed_values: () -> ::Hash[untyped, untyped]
+  def changes: () -> ::Hash[untyped, untyped]
+  def change_to_attribute: (untyped attr_name) -> nil
+  def any_changes?: () -> false
+  def changed?: (untyped attr_name) -> false
+  def changed_in_place?: (untyped attr_name) -> false
+  def original_value: (untyped attr_name) -> nil
+  include Singleton
+  extend Singleton::SingletonClassMethods
+end

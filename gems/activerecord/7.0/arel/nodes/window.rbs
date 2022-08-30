@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Window < ::Arel::Nodes::Node
+  def initialize: () -> void
+  def order: (*untyped expr) -> self
+  def partition: (*untyped expr) -> self
+  def frame: (untyped expr) -> untyped
+  def rows: (?untyped? expr) -> untyped
+  def range: (?untyped? expr) -> untyped
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor orders: untyped
+  attr_accessor framing: untyped
+  attr_accessor partitions: untyped
+end

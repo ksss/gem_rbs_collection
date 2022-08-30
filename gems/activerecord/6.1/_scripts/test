@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-# Exit command with non-zero status code, Output logs of every command executed, Treat unset variables as an error when substituting.
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+# set -eou => Exit command with non-zero status code, Output logs of every command executed, Treat unset variables as an error when substituting.
 set -eou pipefail
 # Internal Field Separator - Linux shell variable
-IFS=$'\n\t'
+IFS=$'
+	'
 # Print shell input lines
 set -v
 
@@ -12,10 +16,9 @@ RBS_DIR=$(cd $(dirname $0)/..; pwd)
 # Set REPO_DIR variable to validate RBS files added to the corresponding folder
 REPO_DIR=$(cd $(dirname $0)/../../..; pwd)
 # Validate RBS files, using the bundler environment present
-bundle exec rbs --repo $REPO_DIR -r activerecord:6.1 \
-  -r activesupport:6.1 -r activemodel:6.1 \
-  -rmonitor -rdate -rsingleton -rlogger -rmutex_m -rtime \
-  validate --silent
+bundle exec rbs --repo=$REPO_DIR -r time -r monitor -r singleton -r logger -r mutex_m -r json -r date -r benchmark -r digest -r forwardable -r did_you_mean -r openssl -r socket -r minitest \
+  -r nokogiri \
+  -r activerecord validate --silent
 
 cd ${RBS_DIR}/_test
 # Run type checks

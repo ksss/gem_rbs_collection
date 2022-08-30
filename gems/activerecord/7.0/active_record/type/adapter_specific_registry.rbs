@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::AdapterSpecificRegistry
+  def initialize: () -> void
+  def initialize_copy: (untyped other) -> untyped
+  def add_modifier: (untyped options, untyped klass, **untyped args) -> untyped
+  def register: (untyped type_name, ?untyped? klass, **untyped options) ?{ () -> untyped } -> untyped
+  def lookup: (untyped symbol, *untyped args, **untyped kwargs) -> untyped
+  private def find_registration: (untyped symbol, *untyped args, **untyped kwargs) -> untyped
+  attr_reader registrations: untyped
+end

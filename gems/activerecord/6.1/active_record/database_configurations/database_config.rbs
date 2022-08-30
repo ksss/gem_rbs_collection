@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::DatabaseConfig
+  def initialize: (untyped env_name, untyped name) -> void
+  def spec_name: () -> untyped
+  def config: () -> untyped
+  def adapter_method: () -> ::String
+  def host: () -> untyped
+  def database: () -> untyped
+  def _database=: (untyped database) -> untyped
+  def adapter: () -> untyped
+  def pool: () -> untyped
+  def checkout_timeout: () -> untyped
+  def reaping_frequency: () -> untyped
+  def idle_timeout: () -> untyped
+  def replica?: () -> untyped
+  def migrations_paths: () -> untyped
+  def for_current_env?: () -> untyped
+  def schema_cache_path: () -> untyped
+  attr_accessor owner_name: untyped
+  attr_reader env_name: untyped
+  attr_reader name: untyped
+end

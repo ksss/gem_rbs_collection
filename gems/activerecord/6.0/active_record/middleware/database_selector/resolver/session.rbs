@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  def self.call: (untyped request) -> untyped
+  # Converts time to a timestamp that represents milliseconds since
+  # epoch.
+  def self.convert_time_to_timestamp: (untyped time) -> untyped
+  # Converts milliseconds since epoch timestamp into a time object.
+  def self.convert_timestamp_to_time: (untyped timestamp) -> untyped
+  def initialize: (untyped session) -> void
+  def last_write_timestamp: () -> untyped
+  def update_last_write_timestamp: () -> untyped
+  attr_reader session: untyped
+end

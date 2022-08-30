@@ -3,10 +3,13 @@
 
 module ActiveSupport::TaggedLogging
   def self.new: (untyped logger) -> untyped
-
   def broadcast_to: (untyped other_logger) -> untyped
-
   def tagged: (*untyped tags) { (untyped) -> untyped } -> untyped
-
   def flush: () -> untyped
+  # defined by `delegate` to: #formatter
+  def push_tags: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #formatter
+  def pop_tags: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #formatter
+  def clear_tags!: (*untyped, **untyped) -> untyped
 end

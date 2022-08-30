@@ -1,0 +1,5 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::Config < ::Struct[untyped]
+end

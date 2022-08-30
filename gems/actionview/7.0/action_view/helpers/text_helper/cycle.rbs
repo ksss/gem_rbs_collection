@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Helpers::TextHelper::Cycle
+  def initialize: (untyped first_value, *untyped values) -> void
+  def reset: () -> untyped
+  def current_value: () -> untyped
+  def to_s: () -> untyped
+  private def next_index: () -> untyped
+  private def previous_index: () -> untyped
+  private def step_index: (untyped n) -> untyped
+  attr_reader values: untyped
+end

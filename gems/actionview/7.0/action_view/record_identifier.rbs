@@ -1,0 +1,40 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::RecordIdentifier
+  # The DOM class convention is to use the singular form of an object or class.
+  #
+  #   dom_class(post)   # => "post"
+  #   dom_class(Person) # => "person"
+  #
+  # If you need to address multiple instances of the same class in the same view, you can prefix the dom_class:
+  #
+  #   dom_class(post, :edit)   # => "edit_post"
+  #   dom_class(Person, :edit) # => "edit_person"
+  def dom_class: (untyped record_or_class, ?untyped? prefix) -> untyped
+  # The DOM id convention is to use the singular form of an object or class with the id following an underscore.
+  # If no id is found, prefix with "new_" instead.
+  #
+  #   dom_id(Post.find(45))       # => "post_45"
+  #   dom_id(Post.new)            # => "new_post"
+  #
+  # If you need to address multiple instances of the same class in the same view, you can prefix the dom_id:
+  #
+  #   dom_id(Post.find(45), :edit) # => "edit_post_45"
+  #   dom_id(Post.new, :custom)    # => "custom_post"
+  def dom_id: (untyped record, ?untyped? prefix) -> (::String | untyped)
+  # Returns a string representation of the key attribute(s) that is suitable for use in an HTML DOM id.
+  # This can be overwritten to customize the default generated string representation if desired.
+  # If you need to read back a key from a dom_id in order to query for the underlying database record,
+  # you should write a helper like 'person_record_from_dom_id' that will extract the key either based
+  # on the default implementation (which just joins all key attributes with '_') or on your own
+  # overwritten version of the method. By default, this implementation passes the key string through a
+  # method that replaces all characters that are invalid inside DOM ids, with valid ones. You need to
+  # make sure yourself that your dom ids are valid, in case you override this method.
+  private def record_key_for_dom_id: (untyped record) -> untyped
+  include ActionView::ModelNaming
+  extend ActionView::RecordIdentifier
+  extend ActionView::ModelNaming
+  JOIN: String
+  NEW: String
+end

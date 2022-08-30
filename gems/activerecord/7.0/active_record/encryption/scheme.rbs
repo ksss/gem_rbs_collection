@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Scheme
+  def initialize: (?key_provider: untyped?, ?key: untyped?, ?deterministic: untyped?, ?downcase: untyped?, ?ignore_case: untyped?, ?previous_schemes: untyped?, **untyped context_properties) -> void
+  def ignore_case?: () -> untyped
+  def downcase?: () -> untyped
+  def deterministic?: () -> untyped
+  def fixed?: () -> untyped
+  def key_provider: () -> untyped
+  def merge: (untyped other_scheme) -> untyped
+  def to_h: () -> untyped
+  def with_context: () ?{ () -> untyped } -> untyped
+  private def validate_config!: () -> untyped
+  private def validate_keys!: () -> untyped
+  private def validate_credential: (untyped key, ?::String error_message) -> (untyped | nil)
+  private def build_key_provider: () -> untyped
+  attr_accessor previous_schemes: untyped
+end

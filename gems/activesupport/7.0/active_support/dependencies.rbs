@@ -5,39 +5,28 @@ module ActiveSupport::Dependencies
   # Execute the supplied block without interference from any
   # concurrent loads.
   def self.run_interlock: () ?{ () -> untyped } -> untyped
-
   # Execute the supplied block while holding an exclusive lock,
   # preventing any other thread from being inside a #run_interlock
   # block at the same time.
   def self.load_interlock: () ?{ () -> untyped } -> untyped
-
   # Execute the supplied block while holding an exclusive lock,
   # preventing any other thread from being inside a #run_interlock
   # block at the same time.
   def self.unload_interlock: () ?{ () -> untyped } -> untyped
-
   # Private method that reloads constants autoloaded by the main autoloader.
   #
   # Rails.application.reloader.reload! is the public interface for application
   # reload. That involves more things, like deleting unloaded classes from the
   # internal state of the descendants tracker, or reloading routes.
   def self.clear: () -> untyped
-
   # Private method used by require_dependency.
   def self.search_for_file: (untyped relpath) -> (untyped | nil)
-
   # Private method that helps configuring the autoloaders.
   def self.eager_load?: (untyped path) -> untyped
-
   attr_accessor self.interlock: untyped
-
   attr_accessor self.autoload_paths: untyped
-
   attr_accessor self.autoload_once_paths: untyped
-
   attr_accessor self._eager_load_paths: untyped
-
   attr_accessor self._autoloaded_tracked_classes: untyped
-
   attr_accessor self.autoloader: untyped
 end

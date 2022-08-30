@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::ConsoleFormatter::Sheet < ::ActionDispatch::Routing::ConsoleFormatter::Base
+  def section_title: (untyped title) -> untyped
+  def section: (untyped routes) -> untyped
+  def header: (untyped routes) -> untyped
+  private def draw_section: (untyped routes) -> untyped
+  private def draw_header: (untyped routes) -> ::String
+  private def widths: (untyped routes) -> ::Array[untyped]
+end

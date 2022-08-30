@@ -1,0 +1,112 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::CollectionAssociation < ::ActiveRecord::Associations::Association
+  # Implements the reader method, e.g. foo.items for Foo.has_many :items
+  def reader: () -> untyped
+  # Implements the writer method, e.g. foo.items= for Foo.has_many :items
+  def writer: (untyped records) -> untyped
+  # Implements the ids reader method, e.g. foo.item_ids for Foo.has_many :items
+  def ids_reader: () -> untyped
+  # Implements the ids writer method, e.g. foo.item_ids= for Foo.has_many :items
+  def ids_writer: (untyped ids) -> untyped
+  def reset: () -> untyped
+  def find: (*untyped args) -> untyped
+  def build: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  # Add +records+ to this association. Since +<<+ flattens its argument list
+  # and inserts each record, +push+ and +concat+ behave identically.
+  def concat: (*untyped records) -> untyped
+  # Removes all records from the association without calling callbacks
+  # on the associated records. It honors the +:dependent+ option. However
+  # if the +:dependent+ value is +:destroy+ then in that case the +:delete_all+
+  # deletion strategy for the association is applied.
+  #
+  # You can force a particular deletion strategy by passing a parameter.
+  #
+  # Example:
+  #
+  # @author.books.delete_all(:nullify)
+  # @author.books.delete_all(:delete_all)
+  #
+  # See delete for more info.
+  def delete_all: (?untyped? dependent) -> untyped
+  # Destroy all the records from this association.
+  #
+  # See destroy for more info.
+  def destroy_all: () -> untyped
+  # Removes +records+ from this association calling +before_remove+ and
+  # +after_remove+ callbacks.
+  #
+  # This method is abstract in the sense that +delete_records+ has to be
+  # provided by descendants. Note this method does not imply the records
+  # are actually removed from the database, that depends precisely on
+  # +delete_records+. They are in any case removed from the collection.
+  def delete: (*untyped records) -> untyped
+  # Deletes the +records+ and removes them from this association calling
+  # +before_remove+, +after_remove+, +before_destroy+ and +after_destroy+ callbacks.
+  #
+  # Note that this method removes records from the database ignoring the
+  # +:dependent+ option.
+  def destroy: (*untyped records) -> untyped
+  # Returns the size of the collection by executing a SELECT COUNT(*)
+  # query if the collection hasn't been loaded, and calling
+  # <tt>collection.size</tt> if it has.
+  #
+  # If the collection has been already loaded +size+ and +length+ are
+  # equivalent. If not and you are going to need the records anyway
+  # +length+ will take one less query. Otherwise +size+ is more efficient.
+  #
+  # This method is abstract in the sense that it relies on
+  # +count_records+, which is a method descendants have to provide.
+  def size: () -> untyped
+  # Returns true if the collection is empty.
+  #
+  # If the collection has been loaded
+  # it is equivalent to <tt>collection.size.zero?</tt>. If the
+  # collection has not been loaded, it is equivalent to
+  # <tt>!collection.exists?</tt>. If the collection has not already been
+  # loaded and you are going to fetch the records anyway it is better to
+  # check <tt>collection.length.zero?</tt>.
+  def empty?: () -> untyped
+  # Replace this collection with +other_array+. This will perform a diff
+  # and delete/add only records that have changed.
+  def replace: (untyped other_array) -> untyped
+  def include?: (untyped record) -> (untyped | false)
+  def load_target: () -> untyped
+  def add_to_target: (untyped record, ?skip_callbacks: bool, ?replace: bool) ?{ () -> untyped } -> untyped
+  def target=: (untyped record) -> untyped
+  def scope: () -> untyped
+  def null_scope?: () -> untyped
+  def find_from_target?: () -> untyped
+  private def transaction: () ?{ () -> untyped } -> untyped
+  # We have some records loaded from the database (persisted) and some that are
+  # in-memory (memory). The same record may be represented in the persisted array
+  # and in the memory array.
+  #
+  # So the task of this method is to merge them according to the following rules:
+  #
+  #   * The final array must not have duplicates
+  #   * The order of the persisted array is to be preserved
+  #   * Any changes made to attributes on objects in the memory array are to be preserved
+  #   * Otherwise, attributes should have the value found in the database
+  private def merge_target_lists: (untyped persisted, untyped memory) -> untyped
+  private def _create_record: (untyped attributes, ?bool raise) ?{ () -> untyped } -> untyped
+  # Do the relevant stuff to insert the given record into the association collection.
+  private def insert_record: (untyped record, ?bool validate, ?bool raise) ?{ () -> untyped } -> untyped
+  private def delete_or_destroy: (untyped records, untyped method) -> (nil | untyped)
+  private def remove_records: (untyped existing_records, untyped records, untyped method) -> (nil | untyped)
+  # Delete the given records from the association,
+  # using one of the methods +:destroy+, +:delete_all+
+  # or +:nullify+ (or +nil+, in which case a default is used).
+  private def delete_records: (untyped records, untyped method) -> untyped
+  private def replace_records: (untyped new_target, untyped original_target) -> untyped
+  private def replace_common_records_in_memory: (untyped new_target, untyped original_target) -> untyped
+  private def concat_records: (untyped records, ?bool raise) -> untyped
+  private def replace_on_target: (untyped record, untyped skip_callbacks, replace: untyped, ?inversing: bool) { (untyped) -> untyped } -> untyped
+  private def callback: (untyped method, untyped record) -> untyped
+  private def callbacks_for: (untyped callback_name) -> untyped
+  private def include_in_memory?: (untyped record) -> untyped
+  # If the :inverse_of option has been
+  # specified, then #find scans the entire collection.
+  private def find_by_scan: (*untyped args) -> untyped
+end

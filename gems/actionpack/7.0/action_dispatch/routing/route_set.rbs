@@ -1,0 +1,66 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet
+  # Since the router holds references to many parts of the system
+  # like engines, controllers and the application itself, inspecting
+  # the route set can actually be really slow, therefore we default
+  # alias inspect to to_s.
+  alias inspect to_s
+  alias routes set
+  def self.default_resources_path_names: () -> { new: "new", edit: "edit" }
+  def self.new_with_config: (untyped config) -> untyped
+  def initialize: (?untyped config) -> void
+  def eager_load!: () -> nil
+  def relative_url_root: () -> untyped
+  def api_only?: () -> untyped
+  def request_class: () -> untyped
+  private def make_request: (untyped env) -> untyped
+  def draw: () ?{ () -> untyped } -> nil
+  def append: () ?{ () -> untyped } -> untyped
+  def prepend: () ?{ () -> untyped } -> untyped
+  private def eval_block: (untyped block) -> untyped
+  def finalize!: () -> (nil | untyped)
+  def clear!: () -> untyped
+  # Contains all the mounted helpers across different
+  # engines and the `main_app` helper for the application.
+  # You can include this in your classes if you want to
+  # access routes for other engines.
+  def mounted_helpers: () -> untyped
+  def define_mounted_helper: (untyped name, ?untyped? script_namer) -> (nil | untyped)
+  def url_helpers: (?bool supports_path) -> untyped
+  def generate_url_helpers: (untyped supports_path) -> untyped
+  def empty?: () -> untyped
+  def add_route: (untyped mapping, untyped name) -> untyped
+  def add_polymorphic_mapping: (untyped klass, untyped options) ?{ () -> untyped } -> untyped
+  def add_url_helper: (untyped name, untyped options) ?{ () -> untyped } -> untyped
+  # Generate the path indicated by the arguments, and return an array of
+  # the keys that were not used to generate it.
+  def extra_keys: (untyped options, ?::Hash[untyped, untyped] recall) -> untyped
+  def generate_extras: (untyped options, ?::Hash[untyped, untyped] recall) -> ::Array[untyped]
+  private def generate: (untyped route_name, untyped options, ?::Hash[untyped, untyped] recall, ?untyped? method_name) -> untyped
+  def optimize_routes_generation?: () -> untyped
+  def find_script_name: (untyped options) -> untyped
+  def find_relative_url_root: (untyped options) -> untyped
+  def path_for: (untyped options, ?untyped? route_name, ?untyped reserved) -> untyped
+  # The +options+ argument must be a hash whose keys are *symbols*.
+  def url_for: (untyped options, ?untyped? route_name, ?untyped url_strategy, ?untyped? method_name, ?untyped reserved) -> untyped
+  def call: (untyped env) -> untyped
+  def recognize_path: (untyped path, ?::Hash[untyped, untyped] environment) -> untyped
+  def recognize_path_with_request: (untyped req, untyped path, untyped extras, ?raise_on_missing: bool) -> untyped
+  attr_accessor formatter: untyped
+  attr_accessor set: untyped
+  attr_accessor named_routes: untyped
+  attr_accessor default_scope: untyped
+  attr_accessor router: untyped
+  attr_accessor disable_clear_and_finalize: untyped
+  attr_accessor resources_path_names: untyped
+  attr_accessor default_url_options: untyped
+  attr_accessor draw_paths: untyped
+  attr_reader env_key: untyped
+  attr_reader polymorphic_mappings: untyped
+  DEFAULT_CONFIG: ActionDispatch::Routing::RouteSet::Config
+  PATH: Proc
+  RESERVED_OPTIONS: Array[Symbol]
+  UNKNOWN: Proc
+end

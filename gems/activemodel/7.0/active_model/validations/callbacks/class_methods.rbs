@@ -1,0 +1,57 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Validations::Callbacks::ClassMethods
+  # Defines a callback that will get called right before validation.
+  #
+  #   class Person
+  #     include ActiveModel::Validations
+  #     include ActiveModel::Validations::Callbacks
+  #
+  #     attr_accessor :name
+  #
+  #     validates_length_of :name, maximum: 6
+  #
+  #     before_validation :remove_whitespaces
+  #
+  #     private
+  #
+  #     def remove_whitespaces
+  #       name.strip!
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = '  bob  '
+  #   person.valid? # => true
+  #   person.name   # => "bob"
+  def before_validation: (*untyped args) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called right after validation.
+  #
+  #   class Person
+  #     include ActiveModel::Validations
+  #     include ActiveModel::Validations::Callbacks
+  #
+  #     attr_accessor :name, :status
+  #
+  #     validates_presence_of :name
+  #
+  #     after_validation :set_status
+  #
+  #     private
+  #
+  #     def set_status
+  #       self.status = errors.empty?
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = ''
+  #   person.valid? # => false
+  #   person.status # => false
+  #   person.name = 'bob'
+  #   person.valid? # => true
+  #   person.status # => true
+  def after_validation: (*untyped args) ?{ () -> untyped } -> untyped
+  private def set_options_for_callback: (untyped options) -> (untyped | nil)
+end

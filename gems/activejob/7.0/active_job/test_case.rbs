@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::TestCase < ::ActiveSupport::TestCase
+  include ActiveJob::TestHelper
+end

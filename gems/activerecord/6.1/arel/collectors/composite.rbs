@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Collectors::Composite
+  def initialize: (untyped left, untyped right) -> void
+  def <<: (untyped str) -> self
+  def add_bind: (untyped bind) ?{ () -> untyped } -> self
+  def add_binds: (untyped binds, ?untyped? proc_for_binds) ?{ () -> untyped } -> self
+  def value: () -> ::Array[untyped]
+  attr_accessor preparable: untyped
+  attr_reader left: untyped
+  attr_reader right: untyped
+end

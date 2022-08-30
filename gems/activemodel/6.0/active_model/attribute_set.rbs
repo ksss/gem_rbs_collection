@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeSet
+  def initialize: (untyped attributes) -> void
+  def []: (untyped name) -> untyped
+  def []=: (untyped name, untyped value) -> untyped
+  def values_before_type_cast: () -> untyped
+  def to_hash: () -> untyped
+  alias to_h to_hash
+  def key?: (untyped name) -> untyped
+  def keys: () -> untyped
+  def fetch_value: (untyped name) ?{ () -> untyped } -> untyped
+  def write_from_database: (untyped name, untyped value) -> untyped
+  def write_from_user: (untyped name, untyped value) -> untyped
+  def write_cast_value: (untyped name, untyped value) -> untyped
+  def freeze: () -> untyped
+  def deep_dup: () -> untyped
+  def initialize_dup: (untyped _) -> untyped
+  def initialize_clone: (untyped _) -> untyped
+  def reset: (untyped key) -> (untyped | nil)
+  def accessed: () -> untyped
+  def map: () ?{ () -> untyped } -> untyped
+  def ==: (untyped other) -> untyped
+  private def initialized_attributes: () -> untyped
+  attr_reader attributes: untyped
+  # defined by `delegate` to: untyped#attributes
+  def each_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#attributes
+  def fetch: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#attributes
+  def except: (*untyped, **untyped) -> untyped
+end

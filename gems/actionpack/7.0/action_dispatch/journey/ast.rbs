@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Ast
+  alias root tree
+  def initialize: (untyped tree, untyped formatted) -> void
+  def requirements=: (untyped requirements) -> untyped
+  def route=: (untyped route) -> untyped
+  def glob?: () -> untyped
+  private def visit_tree: (untyped formatted) -> untyped
+  attr_reader names: untyped
+  attr_reader path_params: untyped
+  attr_reader tree: untyped
+  attr_reader wildcard_options: untyped
+  attr_reader terminals: untyped
+  attr_reader symbols: untyped
+  attr_reader stars: untyped
+end

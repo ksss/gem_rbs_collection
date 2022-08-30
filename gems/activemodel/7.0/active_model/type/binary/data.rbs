@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Binary::Data
+  def initialize: (untyped value) -> void
+  def to_s: () -> untyped
+  alias to_str to_s
+  def hex: () -> untyped
+  def ==: (untyped other) -> untyped
+end

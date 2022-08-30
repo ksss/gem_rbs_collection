@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Railties::RoutesHelpers
+  def self.with: (untyped routes, ?bool include_path_helpers) -> untyped
+end

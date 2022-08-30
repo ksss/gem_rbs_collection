@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::ImplicitRender
+  def default_render: () -> untyped
+  def method_for_action: (untyped action_name) -> untyped
+  private def interactive_browser_request?: () -> untyped
+  include ActionController::BasicImplicitRender
+end

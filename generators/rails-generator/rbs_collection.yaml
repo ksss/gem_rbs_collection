@@ -33,6 +33,7 @@ gems:
 
   # load gems
   - name: rack
+  - name: i18n
   - name: nokogiri
 
   # load all stdlib

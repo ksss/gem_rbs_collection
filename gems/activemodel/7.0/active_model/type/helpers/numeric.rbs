@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Type::Helpers::Numeric
+  def serialize: (untyped value) -> untyped
+  def cast: (untyped value) -> untyped
+  def changed?: (untyped old_value, untyped _new_value, untyped new_value_before_type_cast) -> untyped
+  private def equal_nan?: (untyped old_value, untyped new_value) -> untyped
+  private def number_to_non_number?: (untyped old_value, untyped new_value_before_type_cast) -> untyped
+  private def non_numeric_string?: (untyped value) -> untyped
+end

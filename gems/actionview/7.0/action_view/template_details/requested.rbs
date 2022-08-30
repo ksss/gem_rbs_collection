@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::TemplateDetails::Requested
+  def initialize: (locale: untyped, handlers: untyped, formats: untyped, variants: untyped) -> void
+  private def build_idx_hash: (untyped arr) -> untyped
+  attr_reader locale: untyped
+  attr_reader handlers: untyped
+  attr_reader formats: untyped
+  attr_reader variants: untyped
+  attr_reader locale_idx: untyped
+  attr_reader handlers_idx: untyped
+  attr_reader formats_idx: untyped
+  attr_reader variants_idx: untyped
+  ANY_HASH: Hash[nil, Integer]
+end

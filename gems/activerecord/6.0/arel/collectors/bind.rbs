@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Collectors::Bind
+  def initialize: () -> void
+  def <<: (untyped str) -> self
+  def add_bind: (untyped bind) -> self
+  def value: () -> untyped
+end

@@ -1,0 +1,35 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Previewer
+  # Implement this method in a concrete subclass. Have it return true when given a blob from which
+  # the previewer can generate an image.
+  def self.accept?: (untyped blob) -> false
+  def initialize: (untyped blob) -> void
+  # Override this method in a concrete subclass. Have it yield an attachable preview image (i.e.
+  # anything accepted by ActiveStorage::Attached::One#attach).
+  def preview: () -> untyped
+  # Downloads the blob to a tempfile on disk. Yields the tempfile.
+  private def download_blob_to_tempfile: () ?{ () -> untyped } -> untyped
+  # Executes a system command, capturing its binary output in a tempfile. Yields the tempfile.
+  #
+  # Use this method to shell out to a system library (e.g. muPDF or FFmpeg) for preview image
+  # generation. The resulting tempfile can be used as the +:io+ value in an attachable Hash:
+  #
+  #   def preview
+  #     download_blob_to_tempfile do |input|
+  #       draw "my-drawing-command", input.path, "--format", "png", "-" do |output|
+  #         yield io: output, filename: "#{blob.filename.base}.png", content_type: "image/png"
+  #       end
+  #     end
+  #   end
+  #
+  # The output tempfile is opened in the directory returned by #tmpdir.
+  private def draw: (*untyped argv) { (untyped) -> untyped } -> untyped
+  private def open_tempfile: () { (untyped) -> untyped } -> untyped
+  private def instrument: (untyped operation, ?::Hash[untyped, untyped] payload) ?{ () -> untyped } -> untyped
+  private def capture: (*untyped argv, to: untyped) -> untyped
+  private def logger: () -> untyped
+  private def tmpdir: () -> untyped
+  attr_reader blob: untyped
+end

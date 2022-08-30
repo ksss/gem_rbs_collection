@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PartialRenderer < ::ActionView::AbstractRenderer
+  def initialize: (untyped lookup_context, untyped options) -> void
+  def render: (untyped partial, untyped context, untyped block) -> untyped
+  private def template_keys: (untyped _) -> untyped
+  private def render_partial_template: (untyped view, untyped locals, untyped template, untyped layout, untyped block) -> untyped
+  private def find_template: (untyped path, untyped locals) -> untyped
+  include ActionView::CollectionCaching
+  def self.collection_cache: () -> untyped
+  def collection_cache: () -> untyped
+  def self.collection_cache=: (untyped val) -> untyped
+  def collection_cache=: (untyped val) -> untyped
+end

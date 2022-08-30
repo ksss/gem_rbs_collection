@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ExplainRegistry
+  private def self.instance: () -> untyped
+  def initialize: () -> void
+  def collect?: () -> untyped
+  def reset: () -> untyped
+  attr_accessor collect: untyped
+  attr_reader queries: untyped
+end

@@ -14,7 +14,6 @@ module ActiveSupport::Testing::Assertions
   #
   #   assert_not foo, 'foo should be false'
   def assert_not: (untyped object, ?untyped? message) -> untyped
-
   # Assertion that the block should not raise an exception.
   #
   # Passes if evaluated code in the yielded block raises no exception.
@@ -23,7 +22,6 @@ module ActiveSupport::Testing::Assertions
   #     perform_service(param: 'no_exception')
   #   end
   def assert_nothing_raised: () { () -> untyped } -> untyped
-
   # Test numeric difference between the return value of an expression as a
   # result of what is evaluated in the yielded block.
   #
@@ -72,7 +70,6 @@ module ActiveSupport::Testing::Assertions
   #     post :delete, params: { id: ... }
   #   end
   def assert_difference: (untyped expression, *untyped args) ?{ () -> untyped } -> untyped
-
   # Assertion that the numeric result of evaluating an expression is not
   # changed before and after invoking the passed in block.
   #
@@ -98,7 +95,6 @@ module ActiveSupport::Testing::Assertions
   #     post :create, params: { article: invalid_attributes }
   #   end
   def assert_no_difference: (untyped expression, ?untyped? message) ?{ () -> untyped } -> untyped
-
   # Assertion that the result of evaluating an expression is changed before
   # and after invoking the passed in block.
   #
@@ -134,7 +130,6 @@ module ActiveSupport::Testing::Assertions
   #     post :create, params: { status: { incident: true } }
   #   end
   def assert_changes: (untyped expression, ?untyped? message, ?from: untyped, ?to: untyped) ?{ () -> untyped } -> untyped
-
   # Assertion that the result of evaluating an expression is not changed before
   # and after invoking the passed in block.
   #
@@ -155,8 +150,6 @@ module ActiveSupport::Testing::Assertions
   #     post :create, params: { status: { ok: false } }
   #   end
   def assert_no_changes: (untyped expression, ?untyped? message, ?from: untyped) ?{ () -> untyped } -> untyped
-
   private def _assert_nothing_raised_or_warn: (untyped assertion) ?{ () -> untyped } -> untyped
-
   UNTRACKED: Object
 end

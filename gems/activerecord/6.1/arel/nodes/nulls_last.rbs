@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::NullsLast < ::Arel::Nodes::Ordering
+  def reverse: () -> untyped
+end

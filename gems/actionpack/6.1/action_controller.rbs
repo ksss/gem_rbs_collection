@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController
+  # See <tt>Renderers.add</tt>
+  def self.add_renderer: (untyped key) ?{ () -> untyped } -> untyped
+  # See <tt>Renderers.remove</tt>
+  def self.remove_renderer: (untyped key) -> untyped
+  extend ActiveSupport::Autoload
+end

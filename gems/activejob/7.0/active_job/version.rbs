@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::VERSION
+  MAJOR: Integer
+  MINOR: Integer
+  PRE: String
+  STRING: String
+  TINY: Integer
+end

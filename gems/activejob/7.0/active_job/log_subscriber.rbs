@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def enqueue: (untyped event) -> untyped
+  def enqueue_at: (untyped event) -> untyped
+  def perform_start: (untyped event) -> untyped
+  def perform: (untyped event) -> untyped
+  def enqueue_retry: (untyped event) -> untyped
+  def retry_stopped: (untyped event) -> untyped
+  def discard: (untyped event) -> untyped
+  private def queue_name: (untyped event) -> untyped
+  private def args_info: (untyped job) -> (untyped | "")
+  private def format: (untyped arg) -> untyped
+  private def scheduled_at: (untyped event) -> untyped
+  private def logger: () -> untyped
+end

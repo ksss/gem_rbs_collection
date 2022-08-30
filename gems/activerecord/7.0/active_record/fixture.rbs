@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Fixture
+  def initialize: (untyped fixture, untyped model_class) -> void
+  def class_name: () -> (untyped | nil)
+  def each: () ?{ () -> untyped } -> untyped
+  def []: (untyped key) -> untyped
+  alias to_hash fixture
+  def find: () -> untyped
+  attr_reader model_class: untyped
+  attr_reader fixture: untyped
+end

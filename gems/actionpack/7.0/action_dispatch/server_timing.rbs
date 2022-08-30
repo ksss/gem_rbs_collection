@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::ServerTiming
+  def initialize: (untyped app) -> void
+  def call: (untyped env) -> ::Array[untyped]
+  SERVER_TIMING_HEADER: String
+end

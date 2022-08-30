@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Expressions
+  def count: (?bool distinct) -> untyped
+  def sum: () -> untyped
+  def maximum: () -> untyped
+  def minimum: () -> untyped
+  def average: () -> untyped
+  def extract: (untyped field) -> untyped
+end

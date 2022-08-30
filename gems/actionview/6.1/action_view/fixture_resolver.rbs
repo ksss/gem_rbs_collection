@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::FixtureResolver < ::ActionView::OptimizedFileSystemResolver
+  def initialize: (?::Hash[untyped, untyped] hash) -> void
+  def data: () -> untyped
+  def to_s: () -> untyped
+  private def find_candidate_template_paths: (untyped path) -> untyped
+  private def source_for_template: (untyped template) -> untyped
+end

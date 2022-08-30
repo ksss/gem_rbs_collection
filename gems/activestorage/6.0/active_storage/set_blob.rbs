@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::SetBlob
+  private def set_blob: () -> untyped
+  extend ActiveSupport::Concern
+end

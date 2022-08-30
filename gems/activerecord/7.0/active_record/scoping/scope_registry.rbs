@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Scoping::ScopeRegistry
+  def self.instance: () -> untyped
+  def initialize: () -> void
+  def current_scope: (untyped model, ?bool skip_inherited_scope) -> untyped
+  def set_current_scope: (untyped model, untyped value) -> untyped
+  def ignore_default_scope: (untyped model, ?bool skip_inherited_scope) -> untyped
+  def set_ignore_default_scope: (untyped model, untyped value) -> untyped
+  def global_current_scope: (untyped model, ?bool skip_inherited_scope) -> untyped
+  def set_global_current_scope: (untyped model, untyped value) -> untyped
+  # Obtains the value for a given +scope_type+ and +model+.
+  private def value_for: (untyped scope_type, untyped model, ?bool skip_inherited_scope) -> untyped
+  # Sets the +value+ for a given +scope_type+ and +model+.
+  private def set_value_for: (untyped scope_type, untyped model, untyped value) -> untyped
+end

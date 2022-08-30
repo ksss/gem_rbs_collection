@@ -1,0 +1,39 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Layouts::ClassMethods
+  def inherited: (untyped klass) -> untyped
+  # Specify the layout to use for this class.
+  #
+  # If the specified layout is a:
+  # String:: the String is the template name
+  # Symbol:: call the method specified by the symbol
+  # Proc::   call the passed Proc
+  # false::  There is no layout
+  # true::   raise an ArgumentError
+  # nil::    Force default layout behavior with inheritance
+  #
+  # Return value of +Proc+ and +Symbol+ arguments should be +String+, +false+, +true+, or +nil+
+  # with the same meaning as described above.
+  #
+  # ==== Parameters
+  #
+  # * <tt>layout</tt> - The layout to use.
+  #
+  # ==== Options (conditions)
+  #
+  # * +:only+   - A list of actions to apply this layout to.
+  # * +:except+ - Apply this layout to all actions but this one.
+  def layout: (untyped layout, ?::Hash[untyped, untyped] conditions) -> untyped
+  # Creates a _layout method to be called by _default_layout .
+  #
+  # If a layout is not explicitly mentioned then look for a layout with the controller's name.
+  # if nothing is found then try same procedure to find super class's layout.
+  def _write_layout_method: () -> untyped
+  # If no layout is supplied, look for a template named the return
+  # value of this method.
+  #
+  # ==== Returns
+  # * <tt>String</tt> - A template name
+  private def _implied_layout_name: () -> untyped
+end

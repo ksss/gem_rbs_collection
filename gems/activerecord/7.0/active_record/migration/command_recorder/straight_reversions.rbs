@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Migration::CommandRecorder::StraightReversions
+  def invert_execute_block: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_drop_table: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_create_table: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_drop_join_table: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_create_join_table: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_column: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_column: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_index: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_index: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_timestamps: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_timestamps: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_reference: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_reference: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_foreign_key: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_foreign_key: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_remove_check_constraint: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_add_check_constraint: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_disable_extension: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+  def invert_enable_extension: (untyped args) ?{ () -> void } -> [ Symbol, untyped, Proc ]
+end

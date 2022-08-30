@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Type::Helpers::AcceptsMultiparameterTime::InstanceMethods
+  def serialize: (untyped value) -> untyped
+  def cast: (untyped value) -> untyped
+  def assert_valid_value: (untyped value) -> untyped
+  def value_constructed_by_mass_assignment?: (untyped value) -> untyped
+end

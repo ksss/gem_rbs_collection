@@ -1,0 +1,158 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::ThroughReflection < ::ActiveRecord::Reflection::AbstractReflection
+  def initialize: (untyped delegate_reflection) -> void
+  def through_reflection?: () -> true
+  def klass: () -> untyped
+  # Returns the source of the through reflection. It checks both a singularized
+  # and pluralized form for <tt>:belongs_to</tt> or <tt>:has_many</tt>.
+  #
+  #   class Post < ActiveRecord::Base
+  #     has_many :taggings
+  #     has_many :tags, through: :taggings
+  #   end
+  #
+  #   class Tagging < ActiveRecord::Base
+  #     belongs_to :post
+  #     belongs_to :tag
+  #   end
+  #
+  #   tags_reflection = Post.reflect_on_association(:tags)
+  #   tags_reflection.source_reflection
+  #   # => <ActiveRecord::Reflection::BelongsToReflection: @name=:tag, @active_record=Tagging, @plural_name="tags">
+  #
+  def source_reflection: () -> untyped
+  # Returns the AssociationReflection object specified in the <tt>:through</tt> option
+  # of a HasManyThrough or HasOneThrough association.
+  #
+  #   class Post < ActiveRecord::Base
+  #     has_many :taggings
+  #     has_many :tags, through: :taggings
+  #   end
+  #
+  #   tags_reflection = Post.reflect_on_association(:tags)
+  #   tags_reflection.through_reflection
+  #   # => <ActiveRecord::Reflection::HasManyReflection: @name=:taggings, @active_record=Post, @plural_name="taggings">
+  #
+  def through_reflection: () -> untyped
+  # Returns an array of reflections which are involved in this association. Each item in the
+  # array corresponds to a table which will be part of the query for this association.
+  #
+  # The chain is built by recursively calling #chain on the source reflection and the through
+  # reflection. The base case for the recursion is a normal association, which just returns
+  # [self] as its #chain.
+  #
+  #   class Post < ActiveRecord::Base
+  #     has_many :taggings
+  #     has_many :tags, through: :taggings
+  #   end
+  #
+  #   tags_reflection = Post.reflect_on_association(:tags)
+  #   tags_reflection.chain
+  #   # => [<ActiveRecord::Reflection::ThroughReflection: @delegate_reflection=#<ActiveRecord::Reflection::HasManyReflection: @name=:tags...>,
+  #         <ActiveRecord::Reflection::HasManyReflection: @name=:taggings, @options={}, @active_record=Post>]
+  #
+  def collect_join_chain: () -> untyped
+  # This is for clearing cache on the reflection. Useful for tests that need to compare
+  # SQL queries on associations.
+  def clear_association_scope_cache: () -> untyped
+  def scopes: () -> untyped
+  def join_scopes: (untyped table, untyped predicate_builder, ?untyped klass) -> untyped
+  def has_scope?: () -> untyped
+  # A through association is nested if there would be more than one join table
+  def nested?: () -> untyped
+  # We want to use the klass from this reflection, rather than just delegate straight to
+  # the source_reflection, because the source_reflection may be polymorphic. We still
+  # need to respect the source_reflection's :primary_key option, though.
+  def association_primary_key: (?untyped? klass) -> untyped
+  # Gets an array of possible <tt>:through</tt> source reflection names in both singular and plural form.
+  #
+  #   class Post < ActiveRecord::Base
+  #     has_many :taggings
+  #     has_many :tags, through: :taggings
+  #   end
+  #
+  #   tags_reflection = Post.reflect_on_association(:tags)
+  #   tags_reflection.source_reflection_names
+  #   # => [:tag, :tags]
+  #
+  def source_reflection_names: () -> (::Array[untyped] | untyped)
+  def source_reflection_name: () -> untyped
+  def source_options: () -> untyped
+  def through_options: () -> untyped
+  def check_validity!: () -> untyped
+  def constraints: () -> untyped
+  def add_as_source: (untyped seed) -> untyped
+  def add_as_polymorphic_through: (untyped reflection, untyped seed) -> untyped
+  def add_as_through: (untyped seed) -> untyped
+  def actual_source_reflection: () -> untyped
+  private def collect_join_reflections: (untyped seed) -> untyped
+  private def inverse_name: () -> untyped
+  private def derive_class_name: () -> untyped
+  attr_reader delegate_reflection: untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def foreign_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def foreign_type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def association_foreign_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def join_id_for: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def active_record_primary_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#source_reflection
+  def get_join_keys: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def parent_reflection=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def has_inverse?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def belongs_to?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def compute_class: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def extensions: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def association_scope_cache: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def constructable?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def join_table: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def check_preloadable!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def check_eager_loadable!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def polymorphic_inverse_of: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def polymorphic?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def collection?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def validate?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def has_one?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def association_class: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def macro: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def parent_reflection: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def plural_name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def active_record: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def autosave=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def scope_for: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def options: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#delegate_reflection
+  def scope: (*untyped, **untyped) -> untyped
+end

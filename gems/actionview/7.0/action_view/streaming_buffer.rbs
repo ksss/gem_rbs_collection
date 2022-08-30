@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::StreamingBuffer
+  def initialize: (untyped block) -> void
+  def <<: (untyped value) -> untyped
+  alias concat <<
+  alias append= <<
+  def safe_concat: (untyped value) -> untyped
+  alias safe_append= safe_concat
+  def html_safe?: () -> true
+  def html_safe: () -> self
+end

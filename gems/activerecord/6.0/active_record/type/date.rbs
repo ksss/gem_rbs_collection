@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Date < ::ActiveModel::Type::Date
+  include ActiveRecord::Type::Internal::Timezone
+end

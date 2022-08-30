@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::ForbiddenAttributesProtection
+  private def sanitize_for_mass_assignment: (untyped attributes) -> untyped
+  alias sanitize_forbidden_attributes sanitize_for_mass_assignment
+end

@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Visitors::Each < ::ActionDispatch::Journey::Visitors::FunctionalVisitor
+  def visit: (untyped node, untyped block) -> untyped
+  INSTANCE: ActionDispatch::Journey::Visitors::Each
+end

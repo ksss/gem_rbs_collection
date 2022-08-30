@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Resolver::PathParser
+  def build_path_regex: () -> ::Regexp
+  def parse: (untyped path) -> { prefix: untyped, action: untyped, partial: untyped, locale: untyped, handler: untyped, format: untyped, variant: untyped }
+end

@@ -51,10 +51,8 @@ class Date
   alias at_end_of_day end_of_day
   def plus_with_duration: (untyped other) -> untyped
   alias plus_without_duration +
-
   def minus_with_duration: (untyped other) -> untyped
   alias minus_without_duration -
-
   # Provides precise Date calculations for years, months, and days. The +options+ parameter takes a hash with
   # any of these keys: <tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>.
   def advance: (untyped options) -> untyped
@@ -67,7 +65,6 @@ class Date
   # Allow Date to be compared with Time by converting to DateTime and relying on the <=> from there.
   def compare_with_coercion: (untyped other) -> untyped
   alias compare_without_coercion <=>
-
   # Convert to a formatted string. See DATE_FORMATS for predefined formats.
   #
   # This method is aliased to <tt>to_formatted_s</tt>.
@@ -98,11 +95,9 @@ class Date
   # Overrides the default inspect method with a human readable one, e.g., "Mon, 21 Feb 2005"
   def readable_inspect: () -> untyped
   alias default_inspect inspect
-
   include DateAndTime::Zones
   include DateAndTime::Calculations
   attr_accessor self.beginning_of_week_default: untyped
-
   DATE_FORMATS: Hash[Symbol, String | Proc]
   NOT_SET: Object
   VERSION: String

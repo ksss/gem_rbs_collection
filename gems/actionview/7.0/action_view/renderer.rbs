@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Renderer
+  def initialize: (untyped lookup_context) -> void
+  # Main render entry point shared by Action View and Action Controller.
+  def render: (untyped context, untyped options) -> untyped
+  def render_to_object: (untyped context, untyped options) -> untyped
+  # Render but returns a valid Rack body. If fibers are defined, we return
+  # a streaming body that renders the template piece by piece.
+  #
+  # Note that partials are not supported to be rendered with streaming,
+  # so in such cases, we just wrap them in an array.
+  def render_body: (untyped context, untyped options) -> (::Array[untyped] | untyped)
+  # Direct access to template rendering.
+  def render_template: (untyped context, untyped options) -> untyped
+  # Direct access to partial rendering.
+  def render_partial: (untyped context, untyped options) ?{ () -> untyped } -> untyped
+  def cache_hits: () -> untyped
+  def render_template_to_object: (untyped context, untyped options) -> untyped
+  def render_partial_to_object: (untyped context, untyped options) ?{ () -> untyped } -> untyped
+  private def collection_from_options: (untyped options) -> (untyped | nil)
+  private def collection_from_object: (untyped object) -> (untyped | nil)
+  attr_accessor lookup_context: untyped
+end

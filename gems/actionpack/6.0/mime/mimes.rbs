@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Mime::Mimes
+  def initialize: () -> void
+  def each: () { (untyped) -> untyped } -> untyped
+  def <<: (untyped `type`) -> untyped
+  def delete_if: () { (untyped) -> untyped } -> untyped
+  def symbols: () -> untyped
+end

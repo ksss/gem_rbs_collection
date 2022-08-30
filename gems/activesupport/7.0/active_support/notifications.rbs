@@ -3,11 +3,8 @@
 
 module ActiveSupport::Notifications
   def self.publish: (untyped name, *untyped args) -> untyped
-
   def self.publish_event: (untyped event) -> untyped
-
   def self.instrument: (untyped name, ?::Hash[untyped, untyped] payload) { (untyped) -> untyped } -> (untyped | untyped | nil)
-
   # Subscribe to a given event name with the passed +block+.
   #
   # You can subscribe to events by passing a String to match exact event
@@ -40,16 +37,16 @@ module ActiveSupport::Notifications
   #  #=> ArgumentError (pattern must be specified as a String, Regexp or empty)
   #
   def self.subscribe: (?untyped? pattern, ?untyped? callback) ?{ () -> untyped } -> untyped
-
+  # Performs the same functionality as #subscribe, but the +start+ and
+  # +finish+ block arguments are in monotonic time instead of wall-clock
+  # time. Monotonic time will not jump forward or backward (due to NTP or
+  # Daylights Savings). Use +monotonic_subscribe+ when accuracy of time
+  # duration is important. For example, computing elapsed time between
+  # two events.
   def self.monotonic_subscribe: (?untyped? pattern, ?untyped? callback) ?{ () -> untyped } -> untyped
-
   def self.subscribed: (untyped callback, ?untyped? pattern, ?monotonic: bool) { () -> untyped } -> untyped
-
   def self.unsubscribe: (untyped subscriber_or_name) -> untyped
-
   def self.instrumenter: () -> untyped
-
   private def self.registry: () -> untyped
-
   attr_accessor self.notifier: untyped
 end

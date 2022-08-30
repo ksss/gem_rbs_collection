@@ -1,0 +1,391 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Persistence::ClassMethods
+  # Creates an object (or multiple objects) and saves it to the database, if validations pass.
+  # The resulting object is returned whether the object was saved successfully to the database or not.
+  #
+  # The +attributes+ parameter can be either a Hash or an Array of Hashes. These Hashes describe the
+  # attributes on the objects that are to be created.
+  #
+  # ==== Examples
+  #   # Create a single new object
+  #   User.create(first_name: 'Jamie')
+  #
+  #   # Create an Array of new objects
+  #   User.create([{ first_name: 'Jamie' }, { first_name: 'Jeremy' }])
+  #
+  #   # Create a single object and pass it into a block to set other attributes.
+  #   User.create(first_name: 'Jamie') do |u|
+  #     u.is_admin = false
+  #   end
+  #
+  #   # Creating an Array of new objects using a block, where the block is executed for each object:
+  #   User.create([{ first_name: 'Jamie' }, { first_name: 'Jeremy' }]) do |u|
+  #     u.is_admin = false
+  #   end
+  def create: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  # Creates an object (or multiple objects) and saves it to the database,
+  # if validations pass. Raises a RecordInvalid error if validations fail,
+  # unlike Base#create.
+  #
+  # The +attributes+ parameter can be either a Hash or an Array of Hashes.
+  # These describe which attributes to be created on the object, or
+  # multiple objects when given an Array of Hashes.
+  def create!: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  # Inserts a single record into the database in a single SQL INSERT
+  # statement. It does not instantiate any models nor does it trigger
+  # Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # See #insert_all for documentation.
+  def insert: (untyped attributes, ?returning: untyped?, ?unique_by: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Inserts multiple records into the database in a single SQL INSERT
+  # statement. It does not instantiate any models nor does it trigger
+  # Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # The +attributes+ parameter is an Array of Hashes. Every Hash determines
+  # the attributes for a single row and must have the same keys.
+  #
+  # Rows are considered to be unique by every unique index on the table. Any
+  # duplicate rows are skipped.
+  # Override with <tt>:unique_by</tt> (see below).
+  #
+  # Returns an ActiveRecord::Result with its contents based on
+  # <tt>:returning</tt> (see below).
+  #
+  # ==== Options
+  #
+  # [:returning]
+  #   (PostgreSQL only) An array of attributes to return for all successfully
+  #   inserted records, which by default is the primary key.
+  #   Pass <tt>returning: %w[ id name ]</tt> for both id and name
+  #   or <tt>returning: false</tt> to omit the underlying <tt>RETURNING</tt> SQL
+  #   clause entirely.
+  #
+  #   You can also pass an SQL string if you need more control on the return values
+  #   (for example, <tt>returning: "id, name as new_name"</tt>).
+  #
+  # [:unique_by]
+  #   (PostgreSQL and SQLite only) By default rows are considered to be unique
+  #   by every unique index on the table. Any duplicate rows are skipped.
+  #
+  #   To skip rows according to just one unique index pass <tt>:unique_by</tt>.
+  #
+  #   Consider a Book model where no duplicate ISBNs make sense, but if any
+  #   row has an existing id, or is not unique by another unique index,
+  #   <tt>ActiveRecord::RecordNotUnique</tt> is raised.
+  #
+  #   Unique indexes can be identified by columns or name:
+  #
+  #     unique_by: :isbn
+  #     unique_by: %i[ author_id name ]
+  #     unique_by: :index_books_on_isbn
+  #
+  # [:record_timestamps]
+  #   By default, automatic setting of timestamp columns is controlled by
+  #   the model's <tt>record_timestamps</tt> config, matching typical
+  #   behavior.
+  #
+  #   To override this and force automatic setting of timestamp columns one
+  #   way or the other, pass <tt>:record_timestamps</tt>:
+  #
+  #     record_timestamps: true  # Always set timestamps automatically
+  #     record_timestamps: false # Never set timestamps automatically
+  #
+  # Because it relies on the index information from the database
+  # <tt>:unique_by</tt> is recommended to be paired with
+  # Active Record's schema_cache.
+  #
+  # ==== Example
+  #
+  #   # Insert records and skip inserting any duplicates.
+  #   # Here "Eloquent Ruby" is skipped because its id is not unique.
+  #
+  #   Book.insert_all([
+  #     { id: 1, title: "Rework", author: "David" },
+  #     { id: 1, title: "Eloquent Ruby", author: "Russ" }
+  #   ])
+  #
+  #   # insert_all works on chained scopes, and you can use create_with
+  #   # to set default attributes for all inserted records.
+  #
+  #   author.books.create_with(created_at: Time.now).insert_all([
+  #     { id: 1, title: "Rework" },
+  #     { id: 2, title: "Eloquent Ruby" }
+  #   ])
+  def insert_all: (untyped attributes, ?returning: untyped?, ?unique_by: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Inserts a single record into the database in a single SQL INSERT
+  # statement. It does not instantiate any models nor does it trigger
+  # Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # See #insert_all! for more.
+  def insert!: (untyped attributes, ?returning: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Inserts multiple records into the database in a single SQL INSERT
+  # statement. It does not instantiate any models nor does it trigger
+  # Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # The +attributes+ parameter is an Array of Hashes. Every Hash determines
+  # the attributes for a single row and must have the same keys.
+  #
+  # Raises <tt>ActiveRecord::RecordNotUnique</tt> if any rows violate a
+  # unique index on the table. In that case, no rows are inserted.
+  #
+  # To skip duplicate rows, see #insert_all. To replace them, see #upsert_all.
+  #
+  # Returns an ActiveRecord::Result with its contents based on
+  # <tt>:returning</tt> (see below).
+  #
+  # ==== Options
+  #
+  # [:returning]
+  #   (PostgreSQL only) An array of attributes to return for all successfully
+  #   inserted records, which by default is the primary key.
+  #   Pass <tt>returning: %w[ id name ]</tt> for both id and name
+  #   or <tt>returning: false</tt> to omit the underlying <tt>RETURNING</tt> SQL
+  #   clause entirely.
+  #
+  #   You can also pass an SQL string if you need more control on the return values
+  #   (for example, <tt>returning: "id, name as new_name"</tt>).
+  #
+  # [:record_timestamps]
+  #   By default, automatic setting of timestamp columns is controlled by
+  #   the model's <tt>record_timestamps</tt> config, matching typical
+  #   behavior.
+  #
+  #   To override this and force automatic setting of timestamp columns one
+  #   way or the other, pass <tt>:record_timestamps</tt>:
+  #
+  #     record_timestamps: true  # Always set timestamps automatically
+  #     record_timestamps: false # Never set timestamps automatically
+  #
+  # ==== Examples
+  #
+  #   # Insert multiple records
+  #   Book.insert_all!([
+  #     { title: "Rework", author: "David" },
+  #     { title: "Eloquent Ruby", author: "Russ" }
+  #   ])
+  #
+  #   # Raises ActiveRecord::RecordNotUnique because "Eloquent Ruby"
+  #   # does not have a unique id.
+  #   Book.insert_all!([
+  #     { id: 1, title: "Rework", author: "David" },
+  #     { id: 1, title: "Eloquent Ruby", author: "Russ" }
+  #   ])
+  def insert_all!: (untyped attributes, ?returning: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Updates or inserts (upserts) a single record into the database in a
+  # single SQL INSERT statement. It does not instantiate any models nor does
+  # it trigger Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # See #upsert_all for documentation.
+  def upsert: (untyped attributes, ?on_duplicate: ::Symbol, ?returning: untyped?, ?unique_by: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Updates or inserts (upserts) multiple records into the database in a
+  # single SQL INSERT statement. It does not instantiate any models nor does
+  # it trigger Active Record callbacks or validations. Though passed values
+  # go through Active Record's type casting and serialization.
+  #
+  # The +attributes+ parameter is an Array of Hashes. Every Hash determines
+  # the attributes for a single row and must have the same keys.
+  #
+  # Returns an ActiveRecord::Result with its contents based on
+  # <tt>:returning</tt> (see below).
+  #
+  # By default, +upsert_all+ will update all the columns that can be updated when
+  # there is a conflict. These are all the columns except primary keys, read-only
+  # columns, and columns covered by the optional +unique_by+.
+  #
+  # ==== Options
+  #
+  # [:returning]
+  #   (PostgreSQL only) An array of attributes to return for all successfully
+  #   inserted records, which by default is the primary key.
+  #   Pass <tt>returning: %w[ id name ]</tt> for both id and name
+  #   or <tt>returning: false</tt> to omit the underlying <tt>RETURNING</tt> SQL
+  #   clause entirely.
+  #
+  #   You can also pass an SQL string if you need more control on the return values
+  #   (for example, <tt>returning: "id, name as new_name"</tt>).
+  #
+  # [:unique_by]
+  #   (PostgreSQL and SQLite only) By default rows are considered to be unique
+  #   by every unique index on the table. Any duplicate rows are skipped.
+  #
+  #   To skip rows according to just one unique index pass <tt>:unique_by</tt>.
+  #
+  #   Consider a Book model where no duplicate ISBNs make sense, but if any
+  #   row has an existing id, or is not unique by another unique index,
+  #   <tt>ActiveRecord::RecordNotUnique</tt> is raised.
+  #
+  #   Unique indexes can be identified by columns or name:
+  #
+  #     unique_by: :isbn
+  #     unique_by: %i[ author_id name ]
+  #     unique_by: :index_books_on_isbn
+  #
+  # Because it relies on the index information from the database
+  # <tt>:unique_by</tt> is recommended to be paired with
+  # Active Record's schema_cache.
+  #
+  # [:on_duplicate]
+  #   Configure the SQL update sentence that will be used in case of conflict.
+  #
+  #   NOTE: If you use this option you must provide all the columns you want to update
+  #   by yourself.
+  #
+  #   Example:
+  #
+  #     Commodity.upsert_all(
+  #       [
+  #         { id: 2, name: "Copper", price: 4.84 },
+  #         { id: 4, name: "Gold", price: 1380.87 },
+  #         { id: 6, name: "Aluminium", price: 0.35 }
+  #       ],
+  #       on_duplicate: Arel.sql("price = GREATEST(commodities.price, EXCLUDED.price)")
+  #     )
+  #
+  #   See the related +:update_only+ option. Both options can't be used at the same time.
+  #
+  # [:update_only]
+  #   Provide a list of column names that will be updated in case of conflict. If not provided,
+  #   +upsert_all+ will update all the columns that can be updated. These are all the columns
+  #   except primary keys, read-only columns, and columns covered by the optional +unique_by+
+  #
+  #   Example:
+  #
+  #     Commodity.upsert_all(
+  #       [
+  #         { id: 2, name: "Copper", price: 4.84 },
+  #         { id: 4, name: "Gold", price: 1380.87 },
+  #         { id: 6, name: "Aluminium", price: 0.35 }
+  #       ],
+  #       update_only: [:price] # Only prices will be updated
+  #     )
+  #
+  #   See the related +:on_duplicate+ option. Both options can't be used at the same time.
+  #
+  # [:record_timestamps]
+  #   By default, automatic setting of timestamp columns is controlled by
+  #   the model's <tt>record_timestamps</tt> config, matching typical
+  #   behavior.
+  #
+  #   To override this and force automatic setting of timestamp columns one
+  #   way or the other, pass <tt>:record_timestamps</tt>:
+  #
+  #     record_timestamps: true  # Always set timestamps automatically
+  #     record_timestamps: false # Never set timestamps automatically
+  #
+  # ==== Examples
+  #
+  #   # Inserts multiple records, performing an upsert when records have duplicate ISBNs.
+  #   # Here "Eloquent Ruby" overwrites "Rework" because its ISBN is duplicate.
+  #
+  #   Book.upsert_all([
+  #     { title: "Rework", author: "David", isbn: "1" },
+  #     { title: "Eloquent Ruby", author: "Russ", isbn: "1" }
+  #   ], unique_by: :isbn)
+  #
+  #   Book.find_by(isbn: "1").title # => "Eloquent Ruby"
+  def upsert_all: (untyped attributes, ?on_duplicate: ::Symbol, ?update_only: untyped?, ?returning: untyped?, ?unique_by: untyped?, ?record_timestamps: untyped?) -> untyped
+  # Given an attributes hash, +instantiate+ returns a new instance of
+  # the appropriate class. Accepts only keys as strings.
+  #
+  # For example, +Post.all+ may return Comments, Messages, and Emails
+  # by storing the record's subclass in a +type+ attribute. By calling
+  # +instantiate+ instead of +new+, finder methods ensure they get new
+  # instances of the appropriate class for each record.
+  #
+  # See <tt>ActiveRecord::Inheritance#discriminate_class_for_record</tt> to see
+  # how this "single-table" inheritance mapping is implemented.
+  def instantiate: (untyped attributes, ?::Hash[untyped, untyped] column_types) ?{ () -> untyped } -> untyped
+  # Updates an object (or multiple objects) and saves it to the database, if validations pass.
+  # The resulting object is returned whether the object was saved successfully to the database or not.
+  #
+  # ==== Parameters
+  #
+  # * +id+ - This should be the id or an array of ids to be updated.
+  #   Optional argument, defaults to all records in the relation.
+  # * +attributes+ - This should be a hash of attributes or an array of hashes.
+  #
+  # ==== Examples
+  #
+  #   # Updates one record
+  #   Person.update(15, user_name: "Samuel", group: "expert")
+  #
+  #   # Updates multiple records
+  #   people = { 1 => { "first_name" => "David" }, 2 => { "first_name" => "Jeremy" } }
+  #   Person.update(people.keys, people.values)
+  #
+  #   # Updates multiple records from the result of a relation
+  #   people = Person.where(group: "expert")
+  #   people.update(group: "masters")
+  #
+  # Note: Updating a large number of records will run an UPDATE
+  # query for each record, which may cause a performance issue.
+  # When running callbacks is not needed for each record update,
+  # it is preferred to use {update_all}[rdoc-ref:Relation#update_all]
+  # for updating all records in a single query.
+  def update: (?::Symbol id, untyped attributes) -> untyped
+  # Updates the object (or multiple objects) just like #update but calls #update! instead
+  # of +update+, so an exception is raised if the record is invalid and saving will fail.
+  def update!: (?::Symbol id, untyped attributes) -> untyped
+  # Destroy an object (or multiple objects) that has the given id. The object is instantiated first,
+  # therefore all callbacks and filters are fired off before the object is deleted. This method is
+  # less efficient than #delete but allows cleanup methods and other actions to be run.
+  #
+  # This essentially finds the object (or multiple objects) with the given id, creates a new object
+  # from the attributes, and then calls destroy on it.
+  #
+  # ==== Parameters
+  #
+  # * +id+ - This should be the id or an array of ids to be destroyed.
+  #
+  # ==== Examples
+  #
+  #   # Destroy a single object
+  #   Todo.destroy(1)
+  #
+  #   # Destroy multiple objects
+  #   todos = [1,2,3]
+  #   Todo.destroy(todos)
+  def destroy: (untyped id) -> untyped
+  # Deletes the row with a primary key matching the +id+ argument, using an
+  # SQL +DELETE+ statement, and returns the number of rows deleted. Active
+  # Record objects are not instantiated, so the object's callbacks are not
+  # executed, including any <tt>:dependent</tt> association options.
+  #
+  # You can delete multiple rows at once by passing an Array of <tt>id</tt>s.
+  #
+  # Note: Although it is often much faster than the alternative, #destroy,
+  # skipping callbacks might bypass business logic in your application
+  # that ensures referential integrity or performs other essential jobs.
+  #
+  # ==== Examples
+  #
+  #   # Delete a single row
+  #   Todo.delete(1)
+  #
+  #   # Delete multiple rows
+  #   Todo.delete([2,3,4])
+  def delete: (untyped id_or_array) -> untyped
+  def _insert_record: (untyped values) -> untyped
+  def _update_record: (untyped values, untyped constraints) -> untyped
+  def _delete_record: (untyped constraints) -> untyped
+  # Given a class, an attributes hash, +instantiate_instance_of+ returns a
+  # new instance of the class. Accepts only keys as strings.
+  private def instantiate_instance_of: (untyped klass, untyped attributes, ?::Hash[untyped, untyped] column_types) ?{ () -> untyped } -> untyped
+  # Called by +instantiate+ to decide which class to use for a new
+  # record instance.
+  #
+  # See +ActiveRecord::Inheritance#discriminate_class_for_record+ for
+  # the single-table inheritance discriminator.
+  private def discriminate_class_for_record: (untyped record) -> self
+  # Called by +_update_record+ and +_delete_record+
+  # to build `where` clause from default scopes.
+  # Skips empty scopes.
+  private def build_default_constraint: () -> (nil | untyped)
+end

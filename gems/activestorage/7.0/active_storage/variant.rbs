@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Variant
+  def initialize: (untyped blob, untyped variation_or_variation_key) -> void
+  # Returns the variant instance itself after it's been processed or an existing processing has been found on the service.
+  def processed: () -> self
+  # Returns a combination key of the blob and the variation that together identifies a specific variant.
+  def key: () -> ::String
+  # Returns the URL of the blob variant on the service. See {ActiveStorage::Blob#url} for details.
+  #
+  # Use <tt>url_for(variant)</tt> (or the implied form, like +link_to variant+ or +redirect_to variant+) to get the stable URL
+  # for a variant that points to the ActiveStorage::RepresentationsController, which in turn will use this +service_call+ method
+  # for its redirection.
+  def url: (?expires_in: untyped, ?disposition: ::Symbol) -> untyped
+  # Downloads the file associated with this variant. If no block is given, the entire file is read into memory and returned.
+  # That'll use a lot of RAM for very large files. If a block is given, then the download is streamed and yielded in chunks.
+  def download: () ?{ () -> untyped } -> untyped
+  def filename: () -> untyped
+  alias content_type_for_serving content_type
+  def forced_disposition_for_serving: () -> nil
+  # Returns the receiving variant. Allows ActiveStorage::Variant and ActiveStorage::Preview instances to be used interchangeably.
+  def image: () -> self
+  private def processed?: () -> untyped
+  private def process: () -> untyped
+  attr_reader blob: untyped
+  attr_reader variation: untyped
+  # defined by `delegate` to: untyped#blob
+  def service: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#variation
+  def content_type: (*untyped, **untyped) -> untyped
+end

@@ -1,0 +1,197 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::ConnectionHandling
+  # Establishes a connection to the database that's used by all Active Record objects.
+  def mysql2_connection: (untyped config) -> untyped
+  # Establishes a connection to the database that's used by all Active Record objects
+  def postgresql_connection: (untyped config) -> untyped
+  def sqlite3_connection: (untyped config) -> untyped
+  # Establishes the connection to the database. Accepts a hash as input where
+  # the <tt>:adapter</tt> key must be specified with the name of a database adapter (in lower-case)
+  # example for regular databases (MySQL, PostgreSQL, etc):
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     adapter:  "mysql2",
+  #     host:     "localhost",
+  #     username: "myuser",
+  #     password: "mypass",
+  #     database: "somedatabase"
+  #   )
+  #
+  # Example for SQLite database:
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     adapter:  "sqlite3",
+  #     database: "path/to/dbfile"
+  #   )
+  #
+  # Also accepts keys as strings (for parsing from YAML for example):
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     "adapter"  => "sqlite3",
+  #     "database" => "path/to/dbfile"
+  #   )
+  #
+  # Or a URL:
+  #
+  #   ActiveRecord::Base.establish_connection(
+  #     "postgres://myuser:mypass@localhost/somedatabase"
+  #   )
+  #
+  # In case {ActiveRecord::Base.configurations}[rdoc-ref:Core.configurations]
+  # is set (Rails automatically loads the contents of config/database.yml into it),
+  # a symbol can also be given as argument, representing a key in the
+  # configuration hash:
+  #
+  #   ActiveRecord::Base.establish_connection(:production)
+  #
+  # The exceptions AdapterNotSpecified, AdapterNotFound, and +ArgumentError+
+  # may be returned on an error.
+  def establish_connection: (?untyped? config_or_env) -> untyped
+  # Connects a model to the databases specified. The +database+ keyword
+  # takes a hash consisting of a +role+ and a +database_key+.
+  #
+  # This will create a connection handler for switching between connections,
+  # look up the config hash using the +database_key+ and finally
+  # establishes a connection to that config.
+  #
+  #   class AnimalsModel < ApplicationRecord
+  #     self.abstract_class = true
+  #
+  #     connects_to database: { writing: :primary, reading: :primary_replica }
+  #   end
+  #
+  # +connects_to+ also supports horizontal sharding. The horizontal sharding API
+  # also supports read replicas. Connect a model to a list of shards like this:
+  #
+  #   class AnimalsModel < ApplicationRecord
+  #     self.abstract_class = true
+  #
+  #     connects_to shards: {
+  #       default: { writing: :primary, reading: :primary_replica },
+  #       shard_two: { writing: :primary_shard_two, reading: :primary_shard_replica_two }
+  #     }
+  #   end
+  #
+  # Returns an array of database connections.
+  def connects_to: (?database: ::Hash[untyped, untyped], ?shards: ::Hash[untyped, untyped]) -> untyped
+  # Connects to a role (e.g. writing, reading, or a custom role) and/or
+  # shard for the duration of the block. At the end of the block the
+  # connection will be returned to the original role / shard.
+  #
+  # If only a role is passed, Active Record will look up the connection
+  # based on the requested role. If a non-established role is requested
+  # an +ActiveRecord::ConnectionNotEstablished+ error will be raised:
+  #
+  #   ActiveRecord::Base.connected_to(role: :writing) do
+  #     Dog.create! # creates dog using dog writing connection
+  #   end
+  #
+  #   ActiveRecord::Base.connected_to(role: :reading) do
+  #     Dog.create! # throws exception because we're on a replica
+  #   end
+  #
+  # When swapping to a shard, the role must be passed as well. If a non-existent
+  # shard is passed, an +ActiveRecord::ConnectionNotEstablished+ error will be
+  # raised.
+  #
+  # When a shard and role is passed, Active Record will first lookup the role,
+  # and then look up the connection by shard key.
+  #
+  #   ActiveRecord::Base.connected_to(role: :reading, shard: :shard_one_replica) do
+  #     Dog.first # finds first Dog record stored on the shard one replica
+  #   end
+  def connected_to: (?role: untyped?, ?shard: untyped?, ?prevent_writes: bool) ?{ () -> untyped } -> untyped
+  # Connects a role and/or shard to the provided connection names. Optionally +prevent_writes+
+  # can be passed to block writes on a connection. +reading+ will automatically set
+  # +prevent_writes+ to true.
+  #
+  # +connected_to_many+ is an alternative to deeply nested +connected_to+ blocks.
+  #
+  # Usage:
+  #
+  #   ActiveRecord::Base.connected_to_many(AnimalsRecord, MealsRecord, role: :reading) do
+  #     Dog.first # Read from animals replica
+  #     Dinner.first # Read from meals replica
+  #     Person.first # Read from primary writer
+  #   end
+  def connected_to_many: (*untyped classes, role: untyped, ?shard: untyped?, ?prevent_writes: bool) { () -> untyped } -> untyped
+  # Use a specified connection.
+  #
+  # This method is useful for ensuring that a specific connection is
+  # being used. For example, when booting a console in readonly mode.
+  #
+  # It is not recommended to use this method in a request since it
+  # does not yield to a block like +connected_to+.
+  def connecting_to: (?role: untyped, ?shard: untyped, ?prevent_writes: bool) -> untyped
+  # Prohibit swapping shards while inside of the passed block.
+  #
+  # In some cases you may want to be able to swap shards but not allow a
+  # nested call to connected_to or connected_to_many to swap again. This
+  # is useful in cases you're using sharding to provide per-request
+  # database isolation.
+  def prohibit_shard_swapping: (?bool enabled) { () -> untyped } -> untyped
+  # Determine whether or not shard swapping is currently prohibited
+  def shard_swapping_prohibited?: () -> untyped
+  # Prevent writing to the database regardless of role.
+  #
+  # In some cases you may want to prevent writes to the database
+  # even if you are on a database that can write. +while_preventing_writes+
+  # will prevent writes to the database for the duration of the block.
+  #
+  # This method does not provide the same protection as a readonly
+  # user and is meant to be a safeguard against accidental writes.
+  #
+  # See +READ_QUERY+ for the queries that are blocked by this
+  # method.
+  def while_preventing_writes: (?bool enabled) ?{ () -> untyped } -> untyped
+  # Returns true if role is the current connected role.
+  #
+  #   ActiveRecord::Base.connected_to(role: :writing) do
+  #     ActiveRecord::Base.connected_to?(role: :writing) #=> true
+  #     ActiveRecord::Base.connected_to?(role: :reading) #=> false
+  #   end
+  def connected_to?: (role: untyped, ?shard: untyped) -> untyped
+  def lookup_connection_handler: (untyped handler_key) -> untyped
+  # Clears the query cache for all connections associated with the current thread.
+  def clear_query_caches_for_current_thread: () -> untyped
+  # Returns the connection currently associated with the class. This can
+  # also be used to "borrow" the connection to do database work unrelated
+  # to any of the specific Active Records.
+  def connection: () -> untyped
+  # Return the connection specification name from the current class or its parent.
+  def connection_specification_name: () -> untyped
+  def primary_class?: () -> untyped
+  # Returns the db_config object from the associated connection:
+  #
+  #  ActiveRecord::Base.connection_db_config
+  #    #<ActiveRecord::DatabaseConfigurations::HashConfig:0x00007fd1acbded10 @env_name="development",
+  #      @name="primary", @config={pool: 5, timeout: 5000, database: "db/development.sqlite3", adapter: "sqlite3"}>
+  #
+  # Use only for reading.
+  def connection_db_config: () -> untyped
+  def connection_pool: () -> untyped
+  def retrieve_connection: () -> untyped
+  # Returns +true+ if Active Record is connected.
+  def connected?: () -> untyped
+  def remove_connection: (?untyped? name) -> untyped
+  def clear_cache!: () -> untyped
+  private def clear_on_handler: (untyped handler) -> untyped
+  private def resolve_config_for_connection: (untyped config_or_env) -> ::Array[untyped | self]
+  private def with_handler: (untyped handler_key) ?{ () -> untyped } -> untyped
+  private def with_role_and_shard: (untyped role, untyped shard, untyped prevent_writes) { () -> untyped } -> untyped
+  private def append_to_connected_to_stack: (untyped entry) -> untyped
+  private def swap_connection_handler: (untyped handler) { () -> untyped } -> untyped
+  attr_writer connection_specification_name: untyped
+  # defined by `delegate` to: #connection_handler
+  def clear_active_connections!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #connection_handler
+  def clear_reloadable_connections!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #connection_handler
+  def clear_all_connections!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #connection_handler
+  def flush_idle_connections!: (*untyped, **untyped) -> untyped
+  DEFAULT_ENV: Proc
+  RAILS_ENV: Proc
+end

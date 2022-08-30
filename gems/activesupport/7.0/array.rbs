@@ -201,7 +201,6 @@ class Array[unchecked out Elem]
   #   </messages>
   #
   def to_xml: (?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
-
   # Removes and returns the elements for which the block returns a true value.
   # If no block is given, an Enumerator is returned instead.
   #
@@ -309,7 +308,6 @@ class Array[unchecked out Elem]
   # The differences with <tt>Kernel#Array</tt> explained above
   # apply to the rest of <tt>object</tt>s.
   def self.wrap: (untyped object) -> (::Array[untyped] | untyped | ::Array[untyped])
-
   # Removes all blank elements from the +Array+ in place and returns self.
   # Uses Object#blank? for determining if an item is blank.
   #

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::CounterCache
+  private def _create_record: (?untyped attribute_names) -> untyped
+  private def destroy_row: () -> untyped
+  private def each_counter_cached_associations: () { (untyped) -> untyped } -> untyped
+  extend ActiveSupport::Concern
+end

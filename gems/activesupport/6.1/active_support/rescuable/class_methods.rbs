@@ -1,0 +1,58 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Rescuable::ClassMethods
+  # Registers exception classes with a handler to be called by <tt>rescue_with_handler</tt>.
+  #
+  # <tt>rescue_from</tt> receives a series of exception classes or class
+  # names, and an exception handler specified by a trailing <tt>:with</tt>
+  # option containing the name of a method or a Proc object. Alternatively, a block
+  # can be given as the handler.
+  #
+  # Handlers that take one argument will be called with the exception, so
+  # that the exception can be inspected when dealing with it.
+  #
+  # Handlers are inherited. They are searched from right to left, from
+  # bottom to top, and up the hierarchy. The handler of the first class for
+  # which <tt>exception.is_a?(klass)</tt> holds true is the one invoked, if
+  # any.
+  #
+  #   class ApplicationController < ActionController::Base
+  #     rescue_from User::NotAuthorized, with: :deny_access # self defined exception
+  #     rescue_from ActiveRecord::RecordInvalid, with: :show_errors
+  #
+  #     rescue_from 'MyAppError::Base' do |exception|
+  #       render xml: exception, status: 500
+  #     end
+  #
+  #     private
+  #       def deny_access
+  #         ...
+  #       end
+  #
+  #       def show_errors(exception)
+  #         exception.record.new_record? ? ...
+  #       end
+  #   end
+  #
+  # Exceptions raised inside exception handlers are not propagated up.
+  def rescue_from: (*untyped klasses, ?with: untyped?) ?{ () -> untyped } -> untyped
+  # Matches an exception to a handler based on the exception class.
+  #
+  # If no handler matches the exception, check for a handler matching the
+  # (optional) exception.cause. If no handler matches the exception or its
+  # cause, this returns +nil+, so you can deal with unhandled exceptions.
+  # Be sure to re-raise unhandled exceptions if this is what you expect.
+  #
+  #     begin
+  #       …
+  #     rescue => exception
+  #       rescue_with_handler(exception) || raise
+  #     end
+  #
+  # Returns the exception if it was handled and +nil+ if it was not.
+  def rescue_with_handler: (untyped exception, ?object: untyped, ?visited_exceptions: untyped) -> untyped
+  def handler_for_rescue: (untyped exception, ?object: untyped) -> untyped
+  private def find_rescue_handler: (untyped exception) -> (untyped | nil)
+  private def constantize_rescue_handler_class: (untyped class_or_name) -> untyped
+end

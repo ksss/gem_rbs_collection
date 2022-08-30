@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::GTG::Builder
+  def initialize: (untyped root) -> void
+  def transition_table: () -> untyped
+  def nullable?: (untyped node) -> untyped
+  def firstpos: (untyped node) -> untyped
+  def lastpos: (untyped node) -> untyped
+  private def build_followpos: () -> untyped
+  private def symbol: (untyped edge) -> untyped
+  attr_reader root: untyped
+  attr_reader ast: untyped
+  attr_reader endpoints: untyped
+  DUMMY: ActionDispatch::Journey::Nodes::Dummy
+end

@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::DebugView < ::ActionView::Base
+  def initialize: (untyped assigns) -> void
+  def compiled_method_container: () -> untyped
+  def debug_params: (untyped params) -> untyped
+  def debug_headers: (untyped headers) -> (untyped | "None")
+  def debug_hash: (untyped object) -> untyped
+  def render: () -> untyped
+  def protect_against_forgery?: () -> false
+  def params_valid?: () -> untyped
+  RESCUES_TEMPLATE_PATH: String
+end

@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::Merger
+  def initialize: (untyped relation, untyped other) -> void
+  def normal_values: () -> untyped
+  def merge: () -> untyped
+  private def merge_preloads: () -> (nil | untyped)
+  private def merge_joins: () -> (nil | untyped)
+  private def merge_outer_joins: () -> (nil | untyped)
+  private def merge_multi_values: () -> untyped
+  private def merge_single_values: () -> untyped
+  private def merge_clauses: () -> untyped
+  private def replace_from_clause?: () -> untyped
+  attr_reader relation: untyped
+  attr_reader values: untyped
+  attr_reader other: untyped
+  NORMAL_VALUES: Array[Symbol]
+end

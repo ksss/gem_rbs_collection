@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::HashConfig < ::ActiveRecord::DatabaseConfigurations::DatabaseConfig
+  def initialize: (untyped env_name, untyped name, untyped configuration_hash) -> void
+  def config: () -> untyped
+  # Determines whether a database configuration is for a replica / readonly
+  # connection. If the +replica+ key is present in the config, +replica?+ will
+  # return +true+.
+  def replica?: () -> untyped
+  # The migrations paths for a database configuration. If the
+  # +migrations_paths+ key is present in the config, +migrations_paths+
+  # will return its value.
+  def migrations_paths: () -> untyped
+  def host: () -> untyped
+  def database: () -> untyped
+  def _database=: (untyped database) -> untyped
+  def pool: () -> untyped
+  def checkout_timeout: () -> untyped
+  # +reaping_frequency+ is configurable mostly for historical reasons, but it could
+  # also be useful if someone wants a very low +idle_timeout+.
+  def reaping_frequency: () -> untyped
+  def idle_timeout: () -> untyped
+  def adapter: () -> untyped
+  # The path to the schema cache dump file for a database.
+  # If omitted, the filename will be read from ENV or a
+  # default will be derived.
+  def schema_cache_path: () -> untyped
+  attr_reader configuration_hash: untyped
+end

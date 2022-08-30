@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Equality < ::Arel::Nodes::Binary
+  def operator: () -> :==
+  alias operand1 left
+  alias operand2 right
+end

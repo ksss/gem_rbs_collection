@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::TemplateDetails
+  def initialize: (untyped locale, untyped handler, untyped format, untyped variant) -> void
+  def matches?: (untyped requested) -> untyped
+  def sort_key_for: (untyped requested) -> ::Array[untyped]
+  def handler_class: () -> untyped
+  def format_or_default: () -> untyped
+  attr_reader locale: untyped
+  attr_reader handler: untyped
+  attr_reader format: untyped
+  attr_reader variant: untyped
+end

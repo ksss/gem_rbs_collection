@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def service_upload: (untyped event) -> untyped
+  def service_download: (untyped event) -> untyped
+  alias service_streaming_download service_download
+  def service_delete: (untyped event) -> untyped
+  def service_delete_prefixed: (untyped event) -> untyped
+  def service_exist: (untyped event) -> untyped
+  def service_url: (untyped event) -> untyped
+  def logger: () -> untyped
+  private def info: (untyped event, untyped colored_message) -> untyped
+  private def debug: (untyped event, untyped colored_message) -> untyped
+  private def log_prefix_for_service: (untyped event) -> untyped
+  private def key_in: (untyped event) -> untyped
+end

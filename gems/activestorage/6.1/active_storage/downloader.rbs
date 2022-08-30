@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Downloader
+  def initialize: (untyped service) -> void
+  def open: (untyped key, checksum: untyped, ?name: ::String, ?tmpdir: untyped?) { (untyped) -> untyped } -> untyped
+  private def open_tempfile: (untyped name, ?untyped? tmpdir) { (untyped) -> untyped } -> untyped
+  private def download: (untyped key, untyped file) -> untyped
+  private def verify_integrity_of: (untyped file, checksum: untyped) -> (untyped | nil)
+  attr_reader service: untyped
+end

@@ -150,7 +150,6 @@ class Hash[unchecked out K, unchecked out V]
   # Support methods for deep transforming nested hashes and arrays.
   private def _deep_transform_values_in_object: (untyped object) { (untyped) -> untyped } -> untyped
   private def _deep_transform_values_in_object!: (untyped object) { (untyped) -> untyped } -> untyped
-
   # Removes the given keys from hash and returns it.
   #   hash = { a: true, b: false, c: nil }
   #   hash.except!(:c) # => { a: true, b: false }

@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::SystemTesting::Driver
+  def initialize: (untyped name, **untyped options) ?{ () -> untyped } -> void
+  def use: () -> untyped
+  private def registerable?: () -> untyped
+  private def register: () -> untyped
+  private def define_browser_capabilities: (untyped capabilities) -> (untyped | nil)
+  private def browser_options: () -> untyped
+  private def register_selenium: (untyped app) -> untyped
+  private def register_poltergeist: (untyped app) -> untyped
+  private def register_webkit: (untyped app) -> untyped
+  private def setup: () -> untyped
+end

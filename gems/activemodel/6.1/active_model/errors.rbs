@@ -1,0 +1,300 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Errors
+  alias objects errors
+  # Pass in the instance of the object that is using the errors object.
+  #
+  #   class Person
+  #     def initialize
+  #       @errors = ActiveModel::Errors.new(self)
+  #     end
+  #   end
+  def initialize: (untyped base) -> void
+  def initialize_dup: (untyped other) -> untyped
+  # Copies the errors from <tt>other</tt>.
+  # For copying errors but keep <tt>@base</tt> as is.
+  #
+  # other - The ActiveModel::Errors instance.
+  #
+  # Examples
+  #
+  #   person.errors.copy!(other)
+  def copy!: (untyped other) -> untyped
+  # Imports one error
+  # Imported errors are wrapped as a NestedError,
+  # providing access to original error object.
+  # If attribute or type needs to be overridden, use +override_options+.
+  #
+  # override_options - Hash
+  # @option override_options [Symbol] :attribute Override the attribute the error belongs to
+  # @option override_options [Symbol] :type Override type of the error.
+  def import: (untyped error, ?::Hash[untyped, untyped] override_options) -> untyped
+  # Merges the errors from <tt>other</tt>,
+  # each <tt>Error</tt> wrapped as <tt>NestedError</tt>.
+  #
+  # other - The ActiveModel::Errors instance.
+  #
+  # Examples
+  #
+  #   person.errors.merge!(other)
+  def merge!: (untyped other) -> untyped
+  # Removes all errors except the given keys. Returns a hash containing the removed errors.
+  #
+  #   person.errors.keys                  # => [:name, :age, :gender, :city]
+  #   person.errors.slice!(:age, :gender) # => { :name=>["cannot be nil"], :city=>["cannot be nil"] }
+  #   person.errors.keys                  # => [:age, :gender]
+  def slice!: (*untyped keys) -> untyped
+  # Search for errors matching +attribute+, +type+ or +options+.
+  #
+  # Only supplied params will be matched.
+  #
+  #   person.errors.where(:name) # => all name errors.
+  #   person.errors.where(:name, :too_short) # => all name errors being too short
+  #   person.errors.where(:name, :too_short, minimum: 2) # => all name errors being too short and minimum is 2
+  def where: (untyped attribute, ?untyped? `type`, **untyped options) -> untyped
+  # Returns +true+ if the error messages include an error for the given key
+  # +attribute+, +false+ otherwise.
+  #
+  #   person.errors.messages        # => {:name=>["cannot be nil"]}
+  #   person.errors.include?(:name) # => true
+  #   person.errors.include?(:age)  # => false
+  def include?: (untyped attribute) -> untyped
+  alias has_key? include?
+  alias key? include?
+  # Delete messages for +key+. Returns the deleted messages.
+  #
+  #   person.errors[:name]        # => ["cannot be nil"]
+  #   person.errors.delete(:name) # => ["cannot be nil"]
+  #   person.errors[:name]        # => []
+  def delete: (untyped attribute, ?untyped? `type`, **untyped options) -> untyped
+  # When passed a symbol or a name of a method, returns an array of errors
+  # for the method.
+  #
+  #   person.errors[:name]  # => ["cannot be nil"]
+  #   person.errors['name'] # => ["cannot be nil"]
+  def []: (untyped attribute) -> untyped
+  # Iterates through each error object.
+  #
+  #   person.errors.add(:name, :too_short, count: 2)
+  #   person.errors.each do |error|
+  #     # Will yield <#ActiveModel::Error attribute=name, type=too_short,
+  #                                       options={:count=>3}>
+  #   end
+  #
+  # To be backward compatible with past deprecated hash-like behavior,
+  # when block accepts two parameters instead of one, it
+  # iterates through each error key, value pair in the error messages hash.
+  # Yields the attribute and the error for that attribute. If the attribute
+  # has more than one error message, yields once for each error message.
+  #
+  #   person.errors.add(:name, :blank, message: "can't be blank")
+  #   person.errors.each do |attribute, message|
+  #     # Will yield :name and "can't be blank"
+  #   end
+  #
+  #   person.errors.add(:name, :not_specified, message: "must be specified")
+  #   person.errors.each do |attribute, message|
+  #     # Will yield :name and "can't be blank"
+  #     # then yield :name and "must be specified"
+  #   end
+  def each: () { (untyped, untyped) -> untyped } -> untyped
+  # Returns all message values.
+  #
+  #   person.errors.messages # => {:name=>["cannot be nil", "must be specified"]}
+  #   person.errors.values   # => [["cannot be nil", "must be specified"]]
+  def values: () -> untyped
+  # Returns all message keys.
+  #
+  #   person.errors.messages # => {:name=>["cannot be nil", "must be specified"]}
+  #   person.errors.keys     # => [:name]
+  def keys: () -> untyped
+  # Returns all error attribute names
+  #
+  #   person.errors.messages        # => {:name=>["cannot be nil", "must be specified"]}
+  #   person.errors.attribute_names # => [:name]
+  def attribute_names: () -> untyped
+  # Returns an xml formatted representation of the Errors hash.
+  #
+  #   person.errors.add(:name, :blank, message: "can't be blank")
+  #   person.errors.add(:name, :not_specified, message: "must be specified")
+  #   person.errors.to_xml
+  #   # =>
+  #   #  <?xml version=\"1.0\" encoding=\"UTF-8\"?>
+  #   #  <errors>
+  #   #    <error>name can't be blank</error>
+  #   #    <error>name must be specified</error>
+  #   #  </errors>
+  def to_xml: (?::Hash[untyped, untyped] options) -> untyped
+  # Returns a Hash that can be used as the JSON representation for this
+  # object. You can pass the <tt>:full_messages</tt> option. This determines
+  # if the json object should contain full messages or not (false by default).
+  #
+  #   person.errors.as_json                      # => {:name=>["cannot be nil"]}
+  #   person.errors.as_json(full_messages: true) # => {:name=>["name cannot be nil"]}
+  def as_json: (?untyped? options) -> untyped
+  # Returns a Hash of attributes with their error messages. If +full_messages+
+  # is +true+, it will contain full messages (see +full_message+).
+  #
+  #   person.errors.to_hash       # => {:name=>["cannot be nil"]}
+  #   person.errors.to_hash(true) # => {:name=>["name cannot be nil"]}
+  def to_hash: (?bool full_messages) -> untyped
+  def to_h: () -> untyped
+  # Returns a Hash of attributes with an array of their error messages.
+  #
+  # Updating this hash would still update errors state for backward
+  # compatibility, but this behavior is deprecated.
+  def messages: () -> untyped
+  # Returns a Hash of attributes with an array of their error details.
+  #
+  # Updating this hash would still update errors state for backward
+  # compatibility, but this behavior is deprecated.
+  def details: () -> untyped
+  # Returns a Hash of attributes with an array of their Error objects.
+  #
+  #   person.errors.group_by_attribute
+  #   # => {:name=>[<#ActiveModel::Error>, <#ActiveModel::Error>]}
+  def group_by_attribute: () -> untyped
+  # Adds a new error of +type+ on +attribute+.
+  # More than one error can be added to the same +attribute+.
+  # If no +type+ is supplied, <tt>:invalid</tt> is assumed.
+  #
+  #   person.errors.add(:name)
+  #   # Adds <#ActiveModel::Error attribute=name, type=invalid>
+  #   person.errors.add(:name, :not_implemented, message: "must be implemented")
+  #   # Adds <#ActiveModel::Error attribute=name, type=not_implemented,
+  #                               options={:message=>"must be implemented"}>
+  #
+  #   person.errors.messages
+  #   # => {:name=>["is invalid", "must be implemented"]}
+  #
+  # If +type+ is a string, it will be used as error message.
+  #
+  # If +type+ is a symbol, it will be translated using the appropriate
+  # scope (see +generate_message+).
+  #
+  # If +type+ is a proc, it will be called, allowing for things like
+  # <tt>Time.now</tt> to be used within an error.
+  #
+  # If the <tt>:strict</tt> option is set to +true+, it will raise
+  # ActiveModel::StrictValidationFailed instead of adding the error.
+  # <tt>:strict</tt> option can also be set to any other exception.
+  #
+  #   person.errors.add(:name, :invalid, strict: true)
+  #   # => ActiveModel::StrictValidationFailed: Name is invalid
+  #   person.errors.add(:name, :invalid, strict: NameIsInvalid)
+  #   # => NameIsInvalid: Name is invalid
+  #
+  #   person.errors.messages # => {}
+  #
+  # +attribute+ should be set to <tt>:base</tt> if the error is not
+  # directly associated with a single attribute.
+  #
+  #   person.errors.add(:base, :name_or_email_blank,
+  #     message: "either name or email must be present")
+  #   person.errors.messages
+  #   # => {:base=>["either name or email must be present"]}
+  #   person.errors.details
+  #   # => {:base=>[{error: :name_or_email_blank}]}
+  def add: (untyped attribute, ?::Symbol `type`, **untyped options) -> untyped
+  # Returns +true+ if an error matches provided +attribute+ and +type+,
+  # or +false+ otherwise. +type+ is treated the same as for +add+.
+  #
+  #   person.errors.add :name, :blank
+  #   person.errors.added? :name, :blank           # => true
+  #   person.errors.added? :name, "can't be blank" # => true
+  #
+  # If the error requires options, then it returns +true+ with
+  # the correct options, or +false+ with incorrect or missing options.
+  #
+  #   person.errors.add :name, :too_long, { count: 25 }
+  #   person.errors.added? :name, :too_long, count: 25                     # => true
+  #   person.errors.added? :name, "is too long (maximum is 25 characters)" # => true
+  #   person.errors.added? :name, :too_long, count: 24                     # => false
+  #   person.errors.added? :name, :too_long                                # => false
+  #   person.errors.added? :name, "is too long"                            # => false
+  def added?: (untyped attribute, ?::Symbol `type`, ?::Hash[untyped, untyped] options) -> untyped
+  # Returns +true+ if an error on the attribute with the given type is
+  # present, or +false+ otherwise. +type+ is treated the same as for +add+.
+  #
+  #   person.errors.add :age
+  #   person.errors.add :name, :too_long, { count: 25 }
+  #   person.errors.of_kind? :age                                            # => true
+  #   person.errors.of_kind? :name                                           # => false
+  #   person.errors.of_kind? :name, :too_long                                # => true
+  #   person.errors.of_kind? :name, "is too long (maximum is 25 characters)" # => true
+  #   person.errors.of_kind? :name, :not_too_long                            # => false
+  #   person.errors.of_kind? :name, "is too long"                            # => false
+  def of_kind?: (untyped attribute, ?::Symbol `type`) -> untyped
+  # Returns all the full error messages in an array.
+  #
+  #   class Person
+  #     validates_presence_of :name, :address, :email
+  #     validates_length_of :name, in: 5..30
+  #   end
+  #
+  #   person = Person.create(address: '123 First St.')
+  #   person.errors.full_messages
+  #   # => ["Name is too short (minimum is 5 characters)", "Name can't be blank", "Email can't be blank"]
+  def full_messages: () -> untyped
+  alias to_a full_messages
+  # Returns all the full error messages for a given attribute in an array.
+  #
+  #   class Person
+  #     validates_presence_of :name, :email
+  #     validates_length_of :name, in: 5..30
+  #   end
+  #
+  #   person = Person.create()
+  #   person.errors.full_messages_for(:name)
+  #   # => ["Name is too short (minimum is 5 characters)", "Name can't be blank"]
+  def full_messages_for: (untyped attribute) -> untyped
+  # Returns all the error messages for a given attribute in an array.
+  #
+  #   class Person
+  #     validates_presence_of :name, :email
+  #     validates_length_of :name, in: 5..30
+  #   end
+  #
+  #   person = Person.create()
+  #   person.errors.messages_for(:name)
+  #   # => ["is too short (minimum is 5 characters)", "can't be blank"]
+  def messages_for: (untyped attribute) -> untyped
+  # Returns a full message for a given attribute.
+  #
+  #   person.errors.full_message(:name, 'is invalid') # => "Name is invalid"
+  def full_message: (untyped attribute, untyped message) -> untyped
+  # Translates an error message in its default scope
+  # (<tt>activemodel.errors.messages</tt>).
+  #
+  # Error messages are first looked up in <tt>activemodel.errors.models.MODEL.attributes.ATTRIBUTE.MESSAGE</tt>,
+  # if it's not there, it's looked up in <tt>activemodel.errors.models.MODEL.MESSAGE</tt> and if
+  # that is not there also, it returns the translation of the default message
+  # (e.g. <tt>activemodel.errors.messages.MESSAGE</tt>). The translated model
+  # name, translated attribute name and the value are available for
+  # interpolation.
+  #
+  # When using inheritance in your models, it will check all the inherited
+  # models too, but only if the model itself hasn't been found. Say you have
+  # <tt>class Admin < User; end</tt> and you wanted the translation for
+  # the <tt>:blank</tt> error message for the <tt>title</tt> attribute,
+  # it looks for these translations:
+  #
+  # * <tt>activemodel.errors.models.admin.attributes.title.blank</tt>
+  # * <tt>activemodel.errors.models.admin.blank</tt>
+  # * <tt>activemodel.errors.models.user.attributes.title.blank</tt>
+  # * <tt>activemodel.errors.models.user.blank</tt>
+  # * any default you provided through the +options+ hash (in the <tt>activemodel.errors</tt> scope)
+  # * <tt>activemodel.errors.messages.blank</tt>
+  # * <tt>errors.attributes.title.blank</tt>
+  # * <tt>errors.messages.blank</tt>
+  def generate_message: (untyped attribute, ?::Symbol `type`, ?::Hash[untyped, untyped] options) -> untyped
+  def marshal_load: (untyped array) -> untyped
+  def init_with: (untyped coder) -> untyped
+  private def normalize_arguments: (untyped attribute, untyped `type`, **untyped options) -> ::Array[untyped]
+  private def add_from_legacy_details_hash: (untyped details) -> untyped
+  private def deprecation_removal_warning: (untyped method_name, ?untyped? alternative_message) -> untyped
+  private def deprecation_rename_warning: (untyped old_method_name, untyped new_method_name) -> untyped
+  extend Forwardable
+  attr_reader errors: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Messages::Rotator::Encryptor
+  def decrypt_and_verify: (*untyped args, ?on_rotation: untyped?, **untyped options) -> untyped
+  private def build_rotation: (?untyped secret, ?untyped sign_secret, untyped options) -> untyped
+  include ActiveSupport::Messages::Rotator
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::IllegalMigrationNameError < ::ActiveRecord::MigrationError
+  def initialize: (?untyped? name) -> void
+end

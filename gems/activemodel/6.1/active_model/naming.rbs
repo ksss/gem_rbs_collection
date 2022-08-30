@@ -1,0 +1,65 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Naming
+  def self.extended: (untyped base) -> untyped
+  # Returns an ActiveModel::Name object for module. It can be
+  # used to retrieve all kinds of naming-related information
+  # (See ActiveModel::Name for more information).
+  #
+  #   class Person
+  #     extend ActiveModel::Naming
+  #   end
+  #
+  #   Person.model_name.name     # => "Person"
+  #   Person.model_name.class    # => ActiveModel::Name
+  #   Person.model_name.singular # => "person"
+  #   Person.model_name.plural   # => "people"
+  def model_name: () -> untyped
+  # Returns the plural class name of a record or class.
+  #
+  #   ActiveModel::Naming.plural(post)             # => "posts"
+  #   ActiveModel::Naming.plural(Highrise::Person) # => "highrise_people"
+  def self.plural: (untyped record_or_class) -> untyped
+  # Returns the singular class name of a record or class.
+  #
+  #   ActiveModel::Naming.singular(post)             # => "post"
+  #   ActiveModel::Naming.singular(Highrise::Person) # => "highrise_person"
+  def self.singular: (untyped record_or_class) -> untyped
+  # Identifies whether the class name of a record or class is uncountable.
+  #
+  #   ActiveModel::Naming.uncountable?(Sheep) # => true
+  #   ActiveModel::Naming.uncountable?(Post)  # => false
+  def self.uncountable?: (untyped record_or_class) -> untyped
+  # Returns string to use while generating route names. It differs for
+  # namespaced models regarding whether it's inside isolated engine.
+  #
+  #   # For isolated engine:
+  #   ActiveModel::Naming.singular_route_key(Blog::Post) # => "post"
+  #
+  #   # For shared engine:
+  #   ActiveModel::Naming.singular_route_key(Blog::Post) # => "blog_post"
+  def self.singular_route_key: (untyped record_or_class) -> untyped
+  # Returns string to use while generating route names. It differs for
+  # namespaced models regarding whether it's inside isolated engine.
+  #
+  #   # For isolated engine:
+  #   ActiveModel::Naming.route_key(Blog::Post) # => "posts"
+  #
+  #   # For shared engine:
+  #   ActiveModel::Naming.route_key(Blog::Post) # => "blog_posts"
+  #
+  # The route key also considers if the noun is uncountable and, in
+  # such cases, automatically appends _index.
+  def self.route_key: (untyped record_or_class) -> untyped
+  # Returns string to use for params names. It differs for
+  # namespaced models regarding whether it's inside isolated engine.
+  #
+  #   # For isolated engine:
+  #   ActiveModel::Naming.param_key(Blog::Post) # => "post"
+  #
+  #   # For shared engine:
+  #   ActiveModel::Naming.param_key(Blog::Post) # => "blog_post"
+  def self.param_key: (untyped record_or_class) -> untyped
+  def self.model_name_from_record_or_class: (untyped record_or_class) -> untyped
+end

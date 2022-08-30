@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Response::RackBody
+  def initialize: (untyped response) -> void
+  def each: (*untyped args) ?{ () -> untyped } -> untyped
+  def close: () -> untyped
+  def body: () -> untyped
+  def respond_to?: (untyped method, ?bool include_private) -> untyped
+  def to_path: () -> untyped
+  def to_ary: () -> nil
+end

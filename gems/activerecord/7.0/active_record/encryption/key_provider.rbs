@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::KeyProvider
+  def initialize: (untyped keys) -> void
+  # Returns the first key in the list as the active key to perform encryptions
+  #
+  # When +ActiveRecord::Encryption.config.store_key_references+ is true, the key will include
+  # a public tag referencing the key itself. That key will be stored in the public
+  # headers of the encrypted message
+  def encryption_key: () -> untyped
+  # Returns the list of decryption keys
+  #
+  # When the message holds a reference to its encryption key, it will return an array
+  # with that key. If not, it will return the list of keys.
+  def decryption_keys: (untyped encrypted_message) -> untyped
+  private def keys_grouped_by_id: () -> untyped
+end

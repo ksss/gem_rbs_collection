@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Attribute::UserProvidedDefault < ::ActiveModel::Attribute::FromUser
+  def initialize: (untyped name, untyped value, untyped `type`, untyped database_default) -> void
+  def value_before_type_cast: () -> untyped
+  def with_type: (untyped `type`) -> untyped
+  def marshal_dump: () -> untyped
+  def marshal_load: (untyped values) -> untyped
+  attr_reader user_provided_value: untyped
+end

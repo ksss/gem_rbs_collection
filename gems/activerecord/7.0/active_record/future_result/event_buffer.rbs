@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FutureResult::EventBuffer
+  def initialize: (untyped future_result, untyped instrumenter) -> void
+  def instrument: (untyped name, ?::Hash[untyped, untyped] payload) ?{ () -> untyped } -> untyped
+  def flush: () -> untyped
+end

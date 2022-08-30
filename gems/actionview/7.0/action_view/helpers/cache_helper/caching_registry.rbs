@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::CacheHelper::CachingRegistry
+  def caching?: () -> untyped
+  def track_caching: () { () -> untyped } -> untyped
+  extend ActionView::Helpers::CacheHelper::CachingRegistry
+end

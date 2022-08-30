@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::StreamingFlow < ::ActionView::OutputFlow
+  def initialize: (untyped view, untyped fiber) -> void
+  # Try to get stored content. If the content
+  # is not available and we're inside the layout fiber,
+  # then it will begin waiting for the given key and yield.
+  def get: (untyped key) -> untyped
+  # Appends the contents for the given key. This is called
+  # by providing and resuming back to the fiber,
+  # if that's the key it's waiting for.
+  def append!: (untyped key, untyped value) -> untyped
+  private def inside_fiber?: () -> untyped
+end

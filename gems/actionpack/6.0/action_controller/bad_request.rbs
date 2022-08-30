@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::BadRequest < ::ActionController::ActionControllerError
+  def initialize: (?untyped? msg) -> void
+end

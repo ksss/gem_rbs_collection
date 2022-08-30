@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::UpdateManager < ::Arel::TreeManager
+  def initialize: (?untyped? table) -> void
+  # #
+  # UPDATE +table+
+  def table: (untyped table) -> self
+  def set: (untyped values) -> self
+  def group: (untyped columns) -> self
+  def having: (untyped expr) -> self
+  include Arel::TreeManager::StatementMethods
+end

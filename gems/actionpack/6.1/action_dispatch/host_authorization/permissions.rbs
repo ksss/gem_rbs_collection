@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::HostAuthorization::Permissions
+  def initialize: (untyped hosts) -> void
+  def empty?: () -> untyped
+  def allows?: (untyped host) -> untyped
+  private def sanitize_hosts: (untyped hosts) -> untyped
+  private def sanitize_regexp: (untyped host) -> ::Regexp
+  private def sanitize_string: (untyped host) -> ::Regexp
+  private def extract_hostname: (untyped host) -> untyped
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RequestId
+  def initialize: (untyped app, header: untyped) -> void
+  def call: (untyped env) -> untyped
+  private def make_request_id: (untyped request_id) -> untyped
+  private def internal_request_id: () -> untyped
+end

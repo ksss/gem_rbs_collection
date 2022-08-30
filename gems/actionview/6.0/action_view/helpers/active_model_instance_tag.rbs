@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::ActiveModelInstanceTag
+  def object: () -> untyped
+  def content_tag: (untyped `type`, untyped options) -> untyped
+  def tag: (untyped `type`, untyped options) -> untyped
+  def error_wrapping: (untyped html_tag) -> untyped
+  def error_message: () -> untyped
+  private def object_has_errors?: () -> untyped
+  private def select_markup_helper?: (untyped `type`) -> untyped
+  private def tag_generate_errors?: (untyped options) -> untyped
+end

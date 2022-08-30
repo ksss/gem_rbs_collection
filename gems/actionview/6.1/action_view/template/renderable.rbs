@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Renderable
+  def initialize: (untyped renderable) -> void
+  def identifier: () -> untyped
+  def render: (untyped context, *untyped args) -> untyped
+  def format: () -> untyped
+end

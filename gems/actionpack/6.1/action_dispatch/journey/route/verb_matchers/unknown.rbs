@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Route::VerbMatchers::Unknown
+  def initialize: (untyped verb) -> void
+  def call: (untyped request) -> untyped
+  attr_reader verb: untyped
+end

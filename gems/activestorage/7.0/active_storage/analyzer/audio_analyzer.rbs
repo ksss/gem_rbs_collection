@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer::AudioAnalyzer < ::ActiveStorage::Analyzer
+  def self.accept?: (untyped blob) -> untyped
+  def metadata: () -> untyped
+  private def duration: () -> untyped
+  private def bit_rate: () -> untyped
+  private def audio_stream: () -> untyped
+  private def streams: () -> untyped
+  private def probe: () -> untyped
+  private def probe_from: (untyped file) -> untyped
+  private def ffprobe_path: () -> untyped
+end

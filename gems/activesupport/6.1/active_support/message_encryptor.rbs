@@ -1,0 +1,41 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::MessageEncryptor
+  def self.default_cipher: () -> ("aes-256-gcm" | "aes-256-cbc")
+  # Initialize a new MessageEncryptor. +secret+ must be at least as long as
+  # the cipher key size. For the default 'aes-256-gcm' cipher, this is 256
+  # bits. If you are using a user-entered secret, you can generate a suitable
+  # key by using <tt>ActiveSupport::KeyGenerator</tt> or a similar key
+  # derivation function.
+  #
+  # First additional parameter is used as the signature key for +MessageVerifier+.
+  # This allows you to specify keys to encrypt and sign data.
+  #
+  #    ActiveSupport::MessageEncryptor.new('secret', 'signature_secret')
+  #
+  # Options:
+  # * <tt>:cipher</tt>     - Cipher to use. Can be any cipher returned by
+  #   <tt>OpenSSL::Cipher.ciphers</tt>. Default is 'aes-256-gcm'.
+  # * <tt>:digest</tt> - String of digest to use for signing. Default is
+  #   +SHA1+. Ignored when using an AEAD cipher like 'aes-256-gcm'.
+  # * <tt>:serializer</tt> - Object serializer to use. Default is +Marshal+.
+  def initialize: (untyped secret, ?untyped? sign_secret, ?cipher: untyped?, ?digest: untyped?, ?serializer: untyped?) -> void
+  # Encrypt and sign a message. We need to sign the message in order to avoid
+  # padding attacks. Reference: https://www.limited-entropy.com/padding-oracle-attacks/.
+  def encrypt_and_sign: (untyped value, ?expires_at: untyped?, ?expires_in: untyped?, ?purpose: untyped?) -> untyped
+  # Decrypt and verify a message. We need to verify the message in order to
+  # avoid padding attacks. Reference: https://www.limited-entropy.com/padding-oracle-attacks/.
+  def decrypt_and_verify: (untyped data, ?purpose: untyped?) -> untyped
+  # Given a cipher, returns the key length of the cipher to help generate the key of desired size
+  def self.key_len: (?untyped cipher) -> untyped
+  private def _encrypt: (untyped value, **untyped metadata_options) -> untyped
+  private def _decrypt: (untyped encrypted_message, untyped purpose) -> untyped
+  private def new_cipher: () -> untyped
+  private def aead_mode?: () -> untyped
+  private def resolve_verifier: () -> untyped
+  prepend ActiveSupport::Messages::Rotator::Encryptor
+  attr_reader verifier: untyped
+  def self.use_authenticated_message_encryption: () -> untyped
+  def self.use_authenticated_message_encryption=: (untyped val) -> untyped
+end

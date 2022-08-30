@@ -5,19 +5,16 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   # We can't use Refinements here because Refinements with Module which will be prepended
   # doesn't work well https://bugs.ruby-lang.org/issues/13446
   alias _original_sum_with_required_identity sum
-
   # Calculates the minimum from the extracted elements.
   #
   #   payments = [Payment.new(5), Payment.new(15), Payment.new(10)]
   #   payments.minimum(:price) # => 5
   def minimum: (untyped key) -> untyped
-
   # Calculates the maximum from the extracted elements.
   #
   #   payments = [Payment.new(5), Payment.new(15), Payment.new(10)]
   #   payments.maximum(:price) # => 15
   def maximum: (untyped key) -> untyped
-
   # Convert an enumerable to a hash, using the block result as the key and the
   # element as the value.
   #
@@ -27,7 +24,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   people.index_by { |person| "#{person.first_name} #{person.last_name}" }
   #   # => { "Chade- Fowlersburg-e" => <Person ...>, "David Heinemeier Hansson" => <Person ...>, ...}
   def index_by: () { (untyped) -> untyped } -> untyped
-
   # Convert an enumerable to a hash, using the element as the key and the block
   # result as the value.
   #
@@ -42,13 +38,11 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   %i( created_at updated_at ).index_with(Time.now)
   #   # => { created_at: 2020-03-09 22:31:47, updated_at: 2020-03-09 22:31:47 }
   def index_with: (?untyped default) { (untyped) -> untyped } -> untyped
-
   # Returns +true+ if the enumerable has more than 1 element. Functionally
   # equivalent to <tt>enum.to_a.size > 1</tt>. Can be called with a block too,
   # much like any?, so <tt>people.many? { |p| p.age > 26 }</tt> returns +true+
   # if more than one person is over 26.
   def many?: () { (untyped) -> untyped } -> untyped
-
   # Returns a new array that includes the passed elements.
   #
   #   [ 1, 2, 3 ].including(4, 5)
@@ -57,11 +51,9 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   ["David", "Rafael"].including %w[ Aaron Todd ]
   #   # => ["David", "Rafael", "Aaron", "Todd"]
   def including: (*untyped elements) -> untyped
-
   # The negative of the <tt>Enumerable#include?</tt>. Returns +true+ if the
   # collection does not include the object.
   def exclude?: (untyped object) -> untyped
-
   # Returns a copy of the enumerable excluding the specified elements.
   #
   #   ["David", "Rafael", "Aaron", "Todd"].excluding "Aaron", "Todd"
@@ -73,9 +65,7 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   {foo: 1, bar: 2, baz: 3}.excluding :bar
   #   # => {foo: 1, baz: 3}
   def excluding: (*untyped elements) -> untyped
-
   alias without excluding
-
   # Extract the given key from each element in the enumerable.
   #
   #   [{ name: "David" }, { name: "Rafael" }, { name: "Aaron" }].pluck(:name)
@@ -84,7 +74,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   [{ id: 1, name: "David" }, { id: 2, name: "Rafael" }].pluck(:id, :name)
   #   # => [[1, "David"], [2, "Rafael"]]
   def pluck: (*untyped keys) -> untyped
-
   # Extract the given key from the first element in the enumerable.
   #
   #   [{ name: "David" }, { name: "Rafael" }, { name: "Aaron" }].pick(:name)
@@ -93,7 +82,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   [{ id: 1, name: "David" }, { id: 2, name: "Rafael" }].pick(:id, :name)
   #   # => [1, "David"]
   def pick: (*untyped keys) -> (nil | untyped)
-
   # Returns a new +Array+ without the blank items.
   # Uses Object#blank? for determining if an item is blank.
   #
@@ -108,7 +96,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   { a: "", b: 1, c: nil, d: [], e: false, f: true }.compact_blank
   #   # => { b: 1, f: true }
   def compact_blank: () -> untyped
-
   # Returns a new +Array+ where the order has been set to that provided in the +series+, based on the +key+ of the
   # objects in the original enumerable.
   #
@@ -118,7 +105,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   # If the +series+ include keys that have no corresponding element in the Enumerable, these are ignored.
   # If the Enumerable has additional elements that aren't named in the +series+, these are not included in the result.
   def in_order_of: (untyped key, untyped series) -> untyped
-
   # Returns the sole item in the enumerable. If there are no items, or more
   # than one item, raises +Enumerable::SoleItemExpectedError+.
   #
@@ -126,8 +112,6 @@ module Enumerable[unchecked out Elem] : ::_Each[Elem]
   #   Set.new.sole        # => Enumerable::SoleItemExpectedError: no item found
   #   { a: 1, b: 2 }.sole # => Enumerable::SoleItemExpectedError: multiple items found
   def sole: () -> untyped
-
   def as_json: (?untyped? options) -> untyped
-
   prepend ActiveSupport::ToJsonWithActiveSupportEncoder
 end

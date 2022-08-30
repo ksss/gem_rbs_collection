@@ -3,10 +3,7 @@
 
 module ActiveSupport::Cache::Coders::Rails70Coder
   def dump: (untyped entry) -> untyped
-
   def dump_compressed: (untyped entry, untyped threshold) -> untyped
-
   include ActiveSupport::Cache::Coders::Loader
-
   extend ActiveSupport::Cache::Coders::Rails70Coder
 end

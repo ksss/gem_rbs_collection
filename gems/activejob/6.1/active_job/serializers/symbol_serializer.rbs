@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Serializers::SymbolSerializer < ::ActiveJob::Serializers::ObjectSerializer
+  def serialize: (untyped argument) -> untyped
+  def deserialize: (untyped argument) -> untyped
+  private def klass: () -> untyped
+end

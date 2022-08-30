@@ -3,6 +3,5 @@
 
 module ActiveSupport::ExecutionContext::TestHelper
   def before_setup: () -> untyped
-
   def after_teardown: () -> untyped
 end

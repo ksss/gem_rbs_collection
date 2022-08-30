@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Collectors::SubstituteBinds
+  def initialize: (untyped quoter, untyped delegate_collector) -> void
+  def <<: (untyped str) -> self
+  def add_bind: (untyped bind) -> untyped
+  def add_binds: (untyped binds, ?untyped? proc_for_binds) -> untyped
+  def value: () -> untyped
+  attr_accessor preparable: untyped
+  attr_reader quoter: untyped
+  attr_reader delegate: untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::Declarative
+  # Helper to define a test method using a String. Under the hood, it replaces
+  # spaces with underscores and defines the test method.
+  #
+  #   test "verify something" do
+  #     ...
+  #   end
+  def test: (untyped name) ?{ () -> untyped } -> untyped
+end

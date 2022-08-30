@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Dependencies::WatchStack
+  def initialize: () -> void
+  def each: () ?{ () -> untyped } -> untyped
+  def watching?: () -> untyped
+  # Returns a list of new constants found since the last call to
+  # <tt>watch_namespaces</tt>.
+  def new_constants: () -> untyped
+  # Add a set of modules to the watch stack, remembering the initial
+  # constants.
+  def watch_namespaces: (untyped namespaces) -> untyped
+  private def pop_modules: (untyped modules) -> untyped
+  attr_reader watching: untyped
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RoutesInspector
+  def initialize: (untyped routes) -> void
+  def format: (untyped formatter, ?::Hash[untyped, untyped] filter) -> untyped
+  private def normalize_filter: (untyped filter) -> ({ controller: ::Regexp } | { controller: ::Regexp, action: ::Regexp, verb: ::Regexp, name: ::Regexp, path: ::Regexp } | nil)
+  private def filter_routes: (untyped filter) -> untyped
+  private def collect_routes: (untyped routes) -> untyped
+  private def collect_engine_routes: (untyped route) -> (nil | untyped)
+end

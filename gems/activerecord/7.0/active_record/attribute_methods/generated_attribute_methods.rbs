@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AttributeMethods::GeneratedAttributeMethods < ::Module
+  include Mutex_m
+end

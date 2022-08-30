@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::DescendantsTracker
+  def self.direct_descendants: (untyped klass) -> untyped
+  alias self.subclasses self.direct_descendants
+  def self.descendants: (untyped klass) -> untyped
+  def self.clear: () -> untyped
+  # This is the only method that is not thread safe, but is only ever called
+  # during the eager loading phase.
+  def self.store_inherited: (untyped klass, untyped descendant) -> untyped
+  private def self.accumulate_descendants: (untyped klass, untyped acc) -> (untyped | nil)
+  def inherited: (untyped base) -> untyped
+  def direct_descendants: () -> untyped
+  alias subclasses direct_descendants
+  def descendants: () -> untyped
+end

@@ -106,6 +106,5 @@ module ActiveSupport::NumericWithFormat
   #                   separator: ',',
   #                   significant: false)                             # => "1,2 Million"
   def to_fs: (?untyped? format, ?untyped? options) -> untyped
-
   alias to_formatted_s to_fs
 end

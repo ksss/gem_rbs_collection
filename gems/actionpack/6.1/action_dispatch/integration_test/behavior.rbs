@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::IntegrationTest::Behavior
+  def app: () -> untyped
+  def document_root_element: () -> untyped
+  include ActionDispatch::Integration::Runner
+  include ActionController::TemplateAssertions
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Formatter::MissingRoute
+  def initialize: (untyped constraints, untyped missing_keys, untyped unmatched_keys, untyped routes, untyped name) -> void
+  def path: (untyped method_name) -> untyped
+  def params: () -> untyped
+  def message: () -> untyped
+  attr_reader routes: untyped
+  attr_reader name: untyped
+  attr_reader constraints: untyped
+  attr_reader missing_keys: untyped
+  attr_reader unmatched_keys: untyped
+end

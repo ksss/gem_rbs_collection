@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::MiddlewareStack
+  def initialize: (*untyped args) { (untyped) -> untyped } -> void
+  def each: () { (untyped) -> untyped } -> untyped
+  def size: () -> untyped
+  def last: () -> untyped
+  def []: (untyped i) -> untyped
+  def unshift: (untyped klass, *untyped args) ?{ () -> untyped } -> untyped
+  def initialize_copy: (untyped other) -> untyped
+  def insert: (untyped index, untyped klass, *untyped args) ?{ () -> untyped } -> untyped
+  alias insert_before insert
+  def insert_after: (untyped index, *untyped args) ?{ () -> untyped } -> untyped
+  def swap: (untyped target, *untyped args) ?{ () -> untyped } -> untyped
+  def delete: (untyped target) -> untyped
+  def move: (untyped target, untyped source) -> untyped
+  alias move_before move
+  def move_after: (untyped target, untyped source) -> untyped
+  def use: (untyped klass, *untyped args) ?{ () -> untyped } -> untyped
+  def build: (?untyped? app) ?{ () -> untyped } -> untyped
+  private def assert_index: (untyped index, untyped where) -> untyped
+  private def build_middleware: (untyped klass, untyped args, untyped block) -> untyped
+  attr_accessor middlewares: untyped
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Boolean < ::ActiveModel::Type::Value
+  def type: () -> :boolean
+  def serialize: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> (nil | untyped)
+  FALSE_VALUES: Set[false | Integer | String | Symbol]
+end

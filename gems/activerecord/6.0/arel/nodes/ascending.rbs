@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Ascending < ::Arel::Nodes::Ordering
+  def reverse: () -> untyped
+  def direction: () -> :asc
+  def ascending?: () -> true
+  def descending?: () -> false
+end

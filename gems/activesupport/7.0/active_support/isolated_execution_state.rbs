@@ -3,26 +3,15 @@
 
 module ActiveSupport::IsolatedExecutionState
   def self.isolation_level=: (untyped level) -> untyped
-
   def self.unique_id: () -> untyped
-
   def self.[]: (untyped key) -> untyped
-
   def self.[]=: (untyped key, untyped value) -> untyped
-
   def self.key?: (untyped key) -> untyped
-
   def self.delete: (untyped key) -> untyped
-
   def self.clear: () -> untyped
-
   def self.share_with: (untyped other) -> untyped
-
   private def self.current_thread: () -> untyped
-
   private def self.current_fiber: () -> untyped
-
   alias self.current self.current_thread
-
   attr_reader self.isolation_level: untyped
 end

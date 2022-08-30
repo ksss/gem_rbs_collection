@@ -26,7 +26,6 @@ module ActiveSupport::Testing::Deprecation
   #     ActiveSupport::Deprecation.warn "foo should no longer be used"
   #   end
   def assert_deprecated: (?untyped? match, ?untyped? deprecator) ?{ () -> untyped } -> untyped
-
   # Asserts that no deprecation warnings are emitted by the given deprecator during the execution of the yielded block.
   #
   #   assert_not_deprecated(CustomDeprecator) do
@@ -43,7 +42,6 @@ module ActiveSupport::Testing::Deprecation
   #     CustomDeprecator.warn "message" # passes assertion
   #   end
   def assert_not_deprecated: (?untyped? deprecator) ?{ () -> untyped } -> untyped
-
   # Returns an array of all the deprecation warnings emitted by the given
   # +deprecator+ during the execution of the yielded block.
   #

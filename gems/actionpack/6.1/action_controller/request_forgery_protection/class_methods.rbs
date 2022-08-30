@@ -1,0 +1,42 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::RequestForgeryProtection::ClassMethods
+  # Turn on request forgery protection. Bear in mind that GET and HEAD requests are not checked.
+  #
+  #   class ApplicationController < ActionController::Base
+  #     protect_from_forgery
+  #   end
+  #
+  #   class FooController < ApplicationController
+  #     protect_from_forgery except: :index
+  #   end
+  #
+  # You can disable forgery protection on controller by skipping the verification before_action:
+  #
+  #   skip_before_action :verify_authenticity_token
+  #
+  # Valid Options:
+  #
+  # * <tt>:only/:except</tt> - Only apply forgery protection to a subset of actions. For example <tt>only: [ :create, :create_all ]</tt>.
+  # * <tt>:if/:unless</tt> - Turn off the forgery protection entirely depending on the passed Proc or method reference.
+  # * <tt>:prepend</tt> - By default, the verification of the authentication token will be added at the position of the
+  #   protect_from_forgery call in your application. This means any callbacks added before are run first. This is useful
+  #   when you want your forgery protection to depend on other callbacks, like authentication methods (Oauth vs Cookie auth).
+  #
+  #   If you need to add verification to the beginning of the callback chain, use <tt>prepend: true</tt>.
+  # * <tt>:with</tt> - Set the method to handle unverified request.
+  #
+  # Valid unverified request handling methods are:
+  # * <tt>:exception</tt> - Raises ActionController::InvalidAuthenticityToken exception.
+  # * <tt>:reset_session</tt> - Resets the session.
+  # * <tt>:null_session</tt> - Provides an empty session during request but doesn't reset it completely. Used as default if <tt>:with</tt> option is not specified.
+  def protect_from_forgery: (?::Hash[untyped, untyped] options) -> untyped
+  # Turn off request forgery protection. This is a wrapper for:
+  #
+  #   skip_before_action :verify_authenticity_token
+  #
+  # See +skip_before_action+ for allowed options.
+  def skip_forgery_protection: (?::Hash[untyped, untyped] options) -> untyped
+  private def protection_method_class: (untyped name) -> untyped
+end

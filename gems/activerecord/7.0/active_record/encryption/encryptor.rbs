@@ -1,0 +1,56 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Encryptor
+  # Encrypts +clean_text+ and returns the encrypted result
+  #
+  # Internally, it will:
+  #
+  # 1. Create a new ActiveRecord::Encryption::Message
+  # 2. Compress and encrypt +clean_text+ as the message payload
+  # 3. Serialize it with +ActiveRecord::Encryption.message_serializer+ (+ActiveRecord::Encryption::SafeMarshal+
+  #    by default)
+  # 4. Encode the result with Base 64
+  #
+  # === Options
+  #
+  # [:key_provider]
+  #   Key provider to use for the encryption operation. It will default to
+  #   +ActiveRecord::Encryption.key_provider+ when not provided.
+  #
+  # [:cipher_options]
+  #   Cipher-specific options that will be passed to the Cipher configured in
+  #   +ActiveRecord::Encryption.cipher+
+  def encrypt: (untyped clear_text, ?key_provider: untyped, ?cipher_options: ::Hash[untyped, untyped]) -> untyped
+  # Decrypts a +clean_text+ and returns the result as clean text
+  #
+  # === Options
+  #
+  # [:key_provider]
+  #   Key provider to use for the encryption operation. It will default to
+  #   +ActiveRecord::Encryption.key_provider+ when not provided
+  #
+  # [:cipher_options]
+  #   Cipher-specific options that will be passed to the Cipher configured in
+  #   +ActiveRecord::Encryption.cipher+
+  def decrypt: (untyped encrypted_text, ?key_provider: untyped, ?cipher_options: ::Hash[untyped, untyped]) -> untyped
+  # Returns whether the text is encrypted or not
+  def encrypted?: (untyped text) -> untyped
+  private def default_key_provider: () -> untyped
+  private def validate_payload_type: (untyped clear_text) -> (untyped | nil)
+  private def cipher: () -> untyped
+  private def build_encrypted_message: (untyped clear_text, key_provider: untyped, cipher_options: untyped) -> untyped
+  private def serialize_message: (untyped message) -> untyped
+  private def deserialize_message: (untyped message) -> untyped
+  private def serializer: () -> untyped
+  # Under certain threshold, ZIP compression is actually worse that not compressing
+  private def compress_if_worth_it: (untyped string) -> (::Array[untyped | true] | ::Array[untyped | false])
+  private def compress: (untyped data) -> untyped
+  private def uncompress_if_needed: (untyped data, untyped compressed) -> untyped
+  private def uncompress: (untyped data) -> untyped
+  private def force_encoding_if_needed: (untyped value) -> untyped
+  private def forced_encoding_for_deterministic_encryption: () -> untyped
+  DECRYPT_ERRORS: Array[singleton(OpenSSL::Cipher::CipherError) | singleton(ActiveRecord::Encryption::Errors::EncryptedContentIntegrity) | singleton(ActiveRecord::Encryption::Errors::Decryption)]
+  ENCODING_ERRORS: Array[singleton(EncodingError) | singleton(ActiveRecord::Encryption::Errors::Encoding)]
+  THRESHOLD_TO_JUSTIFY_COMPRESSION: Integer
+end

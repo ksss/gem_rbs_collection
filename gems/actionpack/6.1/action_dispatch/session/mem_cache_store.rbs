@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::MemCacheStore < Rack::Session::Dalli
+  def initialize: (untyped app, ?::Hash[untyped, untyped] options) -> void
+end

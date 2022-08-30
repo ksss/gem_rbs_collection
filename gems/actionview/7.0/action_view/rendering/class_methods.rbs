@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Rendering::ClassMethods
+  def _routes: () -> nil
+  def _helpers: () -> nil
+  def build_view_context_class: (untyped klass, untyped supports_path, untyped routes, untyped helpers) -> untyped
+  def view_context_class: () -> untyped
+end

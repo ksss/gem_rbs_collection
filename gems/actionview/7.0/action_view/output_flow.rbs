@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::OutputFlow
+  def initialize: () -> void
+  # Called by _layout_for to read stored values.
+  def get: (untyped key) -> untyped
+  # Called by each renderer object to set the layout contents.
+  def set: (untyped key, untyped value) -> untyped
+  # Called by content_for
+  def append: (untyped key, untyped value) -> untyped
+  alias append! append
+  attr_reader content: untyped
+end

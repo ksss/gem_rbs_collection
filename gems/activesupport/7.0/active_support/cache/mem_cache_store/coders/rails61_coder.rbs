@@ -3,6 +3,5 @@
 
 module ActiveSupport::Cache::MemCacheStore::Coders::Rails61Coder
   def dump: (untyped entry) -> untyped
-
   def dump_compressed: (untyped entry, untyped threshold) -> untyped
 end

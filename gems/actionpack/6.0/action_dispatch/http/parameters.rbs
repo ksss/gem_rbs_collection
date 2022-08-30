@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Http::Parameters
+  # Returns both GET and POST \parameters in a single hash.
+  def parameters: () -> untyped
+  alias params parameters
+  def path_parameters=: (untyped parameters) -> untyped
+  # Returns a hash with the \parameters used to form the \path of the request.
+  # Returned hash keys are strings:
+  #
+  #   {'action' => 'my_action', 'controller' => 'my_controller'}
+  def path_parameters: () -> untyped
+  private def set_binary_encoding: (untyped params, untyped controller, untyped action) -> untyped
+  private def binary_params_for?: (untyped controller, untyped action) -> untyped
+  private def parse_formatted_parameters: (untyped parsers) { () -> untyped } -> untyped
+  private def log_parse_error_once: () -> untyped
+  private def params_parsers: () -> untyped
+  extend ActiveSupport::Concern
+  DEFAULT_PARSERS: Hash[Symbol, Proc]
+  PARAMETERS_KEY: String
+end

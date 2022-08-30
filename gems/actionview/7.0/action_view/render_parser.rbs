@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::RenderParser
+  def initialize: (untyped name, untyped code) -> void
+  def render_calls: () -> untyped
+  private def directory: () -> untyped
+  private def resolve_path_directory: (untyped path) -> (untyped | ::String)
+  # Convert
+  #   render("foo", ...)
+  # into either
+  #   render(template: "foo", ...)
+  # or
+  #   render(partial: "foo", ...)
+  private def normalize_args: (untyped string, untyped options_hash) -> ({ partial: untyped, locals: untyped } | { partial: untyped })
+  private def parse_render: (untyped node) -> (nil | untyped)
+  private def parse_hash: (untyped node) -> untyped
+  private def parse_hash_to_symbols: (untyped node) -> (nil | untyped)
+  private def parse_render_from_options: (untyped options_hash) -> (nil | untyped)
+  private def parse_str: (untyped node) -> untyped
+  private def parse_sym: (untyped node) -> untyped
+  private def render_template_with_layout?: (untyped render_type, untyped options_hash) -> (untyped | nil)
+  private def render_template_with_spacer?: (untyped options_hash) -> (untyped | nil)
+  private def partial_to_virtual_path: (untyped render_type, untyped partial_path) -> untyped
+  private def layout_to_virtual_path: (untyped layout_path) -> ::String
+  ALL_KNOWN_KEYS: Array[Symbol]
+  RENDER_TYPE_KEYS: Array[Symbol]
+end

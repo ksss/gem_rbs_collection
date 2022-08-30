@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::MissingTemplate::Results
+  def initialize: (untyped size) -> void
+  def to_a: () -> untyped
+  def should_record?: (untyped score) -> (true | untyped)
+  def add: (untyped path, untyped score) -> (untyped | nil)
+end

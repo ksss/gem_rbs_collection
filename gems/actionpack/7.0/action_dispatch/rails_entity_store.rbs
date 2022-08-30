@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RailsEntityStore < Rack::Cache::EntityStore
+  def self.resolve: (untyped uri) -> untyped
+  def initialize: (?untyped store) -> void
+  def exist?: (untyped key) -> untyped
+  def open: (untyped key) -> untyped
+  def read: (untyped key) -> untyped
+  def write: (untyped body) -> ::Array[untyped]
+end

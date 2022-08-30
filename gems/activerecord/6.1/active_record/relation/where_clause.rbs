@@ -1,0 +1,37 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::WhereClause
+  def initialize: (untyped predicates) -> void
+  def +: (untyped other) -> untyped
+  def -: (untyped other) -> untyped
+  def |: (untyped other) -> untyped
+  def merge: (untyped other, ?untyped? rewhere) -> untyped
+  def except: (*untyped columns) -> untyped
+  def or: (untyped other) -> untyped
+  def to_h: (?untyped? table_name, ?equality_only: bool) -> untyped
+  def ast: () -> untyped
+  def ==: (untyped other) -> untyped
+  def invert: () -> untyped
+  def self.empty: () -> untyped
+  def contradiction?: () -> untyped
+  def extract_attributes: () -> untyped
+  def referenced_columns: () -> untyped
+  private def each_attributes: () { (untyped, untyped) -> untyped } -> untyped
+  private def extract_attribute: (untyped node) -> (nil | untyped)
+  private def equalities: (untyped predicates, untyped equality_only) -> untyped
+  private def predicates_unreferenced_by: (untyped other) -> untyped
+  private def equality_node?: (untyped node) -> untyped
+  private def invert_predicate: (untyped node) -> untyped
+  private def except_predicates: (untyped columns) -> untyped
+  private def predicates_with_wrapped_sql_literals: () -> untyped
+  private def non_empty_predicates: () -> untyped
+  private def wrap_sql_literal: (untyped node) -> untyped
+  private def extract_node_value: (untyped node) -> untyped
+  attr_reader predicates: untyped
+  # defined by `delegate` to: untyped#predicates
+  def any?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#predicates
+  def empty?: (*untyped, **untyped) -> untyped
+  ARRAY_WITH_EMPTY_STRING: Array[String]
+end

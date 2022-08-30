@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::BitwiseXor < ::Arel::Nodes::InfixOperation
+  def initialize: (untyped left, untyped right) -> void
+end

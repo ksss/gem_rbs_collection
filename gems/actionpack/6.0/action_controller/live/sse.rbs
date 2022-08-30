@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Live::SSE
+  def initialize: (untyped stream, ?::Hash[untyped, untyped] options) -> void
+  def close: () -> untyped
+  def write: (untyped object, ?::Hash[untyped, untyped] options) -> untyped
+  private def perform_write: (untyped json, untyped options) -> untyped
+  PERMITTED_OPTIONS: Array[String]
+end

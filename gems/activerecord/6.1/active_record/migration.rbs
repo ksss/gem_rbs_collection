@@ -1,0 +1,146 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration
+  def self.inherited: (untyped subclass) -> untyped
+  def self.[]: (untyped version) -> untyped
+  def self.current_version: () -> untyped
+  def self.nearest_delegate: () -> untyped
+  # Raises <tt>ActiveRecord::PendingMigrationError</tt> error if any migrations are pending.
+  def self.check_pending!: (?untyped connection) -> (untyped | nil)
+  def self.load_schema_if_pending!: () -> untyped
+  def self.maintain_test_schema!: () -> (untyped | nil)
+  def self.method_missing: (untyped name, *untyped args) ?{ () -> untyped } -> untyped
+  def self.migrate: (untyped direction) -> untyped
+  # Disable the transaction wrapping this migration.
+  # You can still create your own transactions even after calling #disable_ddl_transaction!
+  #
+  # For more details read the {"Transactional Migrations" section above}[rdoc-ref:Migration].
+  def self.disable_ddl_transaction!: () -> untyped
+  def disable_ddl_transaction: () -> untyped
+  def initialize: (?untyped name, ?untyped? version) -> void
+  # Reverses the migration commands for the given block and
+  # the given migrations.
+  #
+  # The following migration will remove the table 'horses'
+  # and create the table 'apples' on the way up, and the reverse
+  # on the way down.
+  #
+  #   class FixTLMigration < ActiveRecord::Migration[6.0]
+  #     def change
+  #       revert do
+  #         create_table(:horses) do |t|
+  #           t.text :content
+  #           t.datetime :remind_at
+  #         end
+  #       end
+  #       create_table(:apples) do |t|
+  #         t.string :variety
+  #       end
+  #     end
+  #   end
+  #
+  # Or equivalently, if +TenderloveMigration+ is defined as in the
+  # documentation for Migration:
+  #
+  #   require_relative "20121212123456_tenderlove_migration"
+  #
+  #   class FixupTLMigration < ActiveRecord::Migration[6.0]
+  #     def change
+  #       revert TenderloveMigration
+  #
+  #       create_table(:apples) do |t|
+  #         t.string :variety
+  #       end
+  #     end
+  #   end
+  #
+  # This command can be nested.
+  def revert: (*untyped migration_classes) { () -> untyped } -> untyped
+  def reverting?: () -> untyped
+  # Used to specify an operation that can be run in one direction or another.
+  # Call the methods +up+ and +down+ of the yielded object to run a block
+  # only in one given direction.
+  # The whole block will be called in the right order within the migration.
+  #
+  # In the following example, the looping on users will always be done
+  # when the three columns 'first_name', 'last_name' and 'full_name' exist,
+  # even when migrating down:
+  #
+  #    class SplitNameMigration < ActiveRecord::Migration[6.0]
+  #      def change
+  #        add_column :users, :first_name, :string
+  #        add_column :users, :last_name, :string
+  #
+  #        reversible do |dir|
+  #          User.reset_column_information
+  #          User.all.each do |u|
+  #            dir.up   { u.first_name, u.last_name = u.full_name.split(' ') }
+  #            dir.down { u.full_name = "#{u.first_name} #{u.last_name}" }
+  #            u.save
+  #          end
+  #        end
+  #
+  #        revert { add_column :users, :full_name, :string }
+  #      end
+  #    end
+  def reversible: () { (untyped) -> untyped } -> untyped
+  # Used to specify an operation that is only run when migrating up
+  # (for example, populating a new column with its initial values).
+  #
+  # In the following example, the new column +published+ will be given
+  # the value +true+ for all existing records.
+  #
+  #    class AddPublishedToPosts < ActiveRecord::Migration[6.0]
+  #      def change
+  #        add_column :posts, :published, :boolean, default: false
+  #        up_only do
+  #          execute "update posts set published = 'true'"
+  #        end
+  #      end
+  #    end
+  def up_only: () { () -> untyped } -> (untyped | nil)
+  # Runs the given migration classes.
+  # Last argument can specify options:
+  # - :direction (default is :up)
+  # - :revert (default is false)
+  def run: (*untyped migration_classes) -> untyped
+  def up: () -> (nil | untyped)
+  def down: () -> (nil | untyped)
+  # Execute this migration in the named direction
+  def migrate: (untyped direction) -> (nil | untyped)
+  def exec_migration: (untyped conn, untyped direction) -> untyped
+  def write: (?::String text) -> (untyped | nil)
+  def announce: (untyped message) -> untyped
+  # Takes a message argument and outputs it as is.
+  # A second boolean argument can be passed to specify whether to indent or not.
+  def say: (untyped message, ?bool subitem) -> untyped
+  # Outputs text along with how long it took to run its block.
+  # If the block returns an integer it assumes it is the number of rows affected.
+  def say_with_time: (untyped message) { () -> untyped } -> untyped
+  # Takes a block as an argument and suppresses any output generated by the block.
+  def suppress_messages: () { () -> untyped } -> untyped
+  def connection: () -> untyped
+  def method_missing: (untyped method, *untyped arguments) ?{ () -> untyped } -> untyped
+  def copy: (untyped destination, untyped sources, ?::Hash[untyped, untyped] options) -> untyped
+  # Finds the correct table name given an Active Record object.
+  # Uses the Active Record object's own table_name, or pre/suffix from the
+  # options passed in.
+  def proper_table_name: (untyped name, ?::Hash[untyped, untyped] options) -> (untyped | ::String)
+  # Determines the version number of the next migration.
+  def next_migration_number: (untyped number) -> untyped
+  # Builds a hash for use in ActiveRecord::Migration#proper_table_name using
+  # the Active Record object's table_name prefix and suffix
+  def table_name_options: (?untyped config) -> { table_name_prefix: untyped, table_name_suffix: untyped }
+  private def execute_block: () { () -> untyped } -> untyped
+  private def command_recorder: () -> untyped
+  attr_accessor self.delegate: untyped
+  attr_accessor self.disable_ddl_transaction: untyped
+  attr_accessor name: untyped
+  attr_accessor version: untyped
+  def self.verbose: () -> untyped
+  def verbose: () -> untyped
+  def self.verbose=: (untyped val) -> untyped
+  def verbose=: (untyped val) -> untyped
+  MigrationFilenameRegexp: Regexp
+end

@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::CsrfHelper
+  # Returns meta tags "csrf-param" and "csrf-token" with the name of the cross-site
+  # request forgery protection parameter and token, respectively.
+  #
+  #   <head>
+  #     <%= csrf_meta_tags %>
+  #   </head>
+  #
+  # These are used to generate the dynamic forms that implement non-remote links with
+  # <tt>:method</tt>.
+  #
+  # You don't need to use these tags for regular forms as they generate their own hidden fields.
+  #
+  # For AJAX requests other than GETs, extract the "csrf-token" from the meta-tag and send as the
+  # "X-CSRF-Token" HTTP header. If you are using rails-ujs this happens automatically.
+  #
+  def csrf_meta_tags: () -> (untyped | nil)
+  # For backwards compatibility.
+  alias csrf_meta_tag csrf_meta_tags
+end

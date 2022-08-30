@@ -3,8 +3,6 @@
 
 module ActiveSupport::Testing::Stream
   private def silence_stream: (untyped stream) { () -> untyped } -> untyped
-
   private def quietly: () ?{ () -> untyped } -> untyped
-
   private def capture: (untyped stream) { () -> untyped } -> untyped
 end

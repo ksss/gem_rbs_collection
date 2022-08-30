@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Utils::CustomParamEncoder
+  def self.encode: (untyped request, untyped params, untyped controller, untyped action) -> untyped
+  def self.action_encoding_template: (untyped request, untyped controller, untyped action) -> untyped
+end

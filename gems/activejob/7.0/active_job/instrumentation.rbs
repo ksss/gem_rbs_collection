@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Instrumentation
+  def perform_now: () -> untyped
+  private def _perform_job: () -> untyped
+  private def instrument: (untyped operation, ?::Hash[untyped, untyped] payload) ?{ () -> untyped } -> untyped
+  private def halted_callback_hook: () -> untyped
+  extend ActiveSupport::Concern
+end

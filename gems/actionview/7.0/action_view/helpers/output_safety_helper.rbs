@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::OutputSafetyHelper
+  # This method outputs without escaping a string. Since escaping tags is
+  # now default, this can be used when you don't want Rails to automatically
+  # escape tags. This is not recommended if the data is coming from the user's
+  # input.
+  #
+  # For example:
+  #
+  #  raw @user.name
+  #  # => 'Jimmy <alert>Tables</alert>'
+  def raw: (untyped stringish) -> untyped
+  # This method returns an HTML safe string similar to what <tt>Array#join</tt>
+  # would return. The array is flattened, and all items, including
+  # the supplied separator, are HTML escaped unless they are HTML
+  # safe, and the returned string is marked as HTML safe.
+  #
+  #   safe_join([raw("<p>foo</p>"), "<p>bar</p>"], "<br />")
+  #   # => "<p>foo</p>&lt;br /&gt;&lt;p&gt;bar&lt;/p&gt;"
+  #
+  #   safe_join([raw("<p>foo</p>"), raw("<p>bar</p>")], raw("<br />"))
+  #   # => "<p>foo</p><br /><p>bar</p>"
+  #
+  def safe_join: (untyped array, ?untyped sep) -> untyped
+  # Converts the array to a comma-separated sentence where the last element is
+  # joined by the connector word. This is the html_safe-aware version of
+  # ActiveSupport's {Array#to_sentence}[https://api.rubyonrails.org/classes/Array.html#method-i-to_sentence].
+  #
+  def to_sentence: (untyped array, ?::Hash[untyped, untyped] options) -> untyped
+end

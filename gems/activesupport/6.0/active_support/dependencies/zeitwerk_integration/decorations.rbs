@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::ZeitwerkIntegration::Decorations
+  def clear: () -> untyped
+  def constantize: (untyped cpath) -> untyped
+  def safe_constantize: (untyped cpath) -> untyped
+  def autoloaded_constants: () -> untyped
+  def autoloaded?: (untyped object) -> untyped
+  def verbose=: (untyped verbose) -> untyped
+  def unhook!: () -> :no_op
+end

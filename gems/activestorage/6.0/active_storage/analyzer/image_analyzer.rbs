@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer::ImageAnalyzer < ::ActiveStorage::Analyzer
+  def self.accept?: (untyped blob) -> untyped
+  def metadata: () -> untyped
+  private def read_image: () { (untyped) -> untyped } -> untyped
+  private def rotated_image?: (untyped image) -> untyped
+end

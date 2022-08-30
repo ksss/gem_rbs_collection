@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::Association
+  def initialize: (untyped klass, untyped owners, untyped reflection, untyped preload_scope, ?bool associate_by_default) -> void
+  def run: () -> self
+  def records_by_owner: () -> untyped
+  def preloaded_records: () -> untyped
+  private def load_records: () -> untyped
+  # The name of the key on the associated records
+  private def association_key_name: () -> untyped
+  # The name of the key on the model which declares the association
+  private def owner_key_name: () -> untyped
+  private def associate_records_to_owner: (untyped owner, untyped records) -> untyped
+  private def owner_keys: () -> untyped
+  private def owners_by_key: () -> untyped
+  private def key_conversion_required?: () -> untyped
+  private def convert_key: (untyped key) -> untyped
+  private def association_key_type: () -> untyped
+  private def owner_key_type: () -> untyped
+  private def records_for: (untyped ids) -> untyped
+  private def scope: () -> untyped
+  private def reflection_scope: () -> untyped
+  private def build_scope: () -> untyped
+  attr_reader owners: untyped
+  attr_reader reflection: untyped
+  attr_reader preload_scope: untyped
+  attr_reader model: untyped
+  attr_reader klass: untyped
+end

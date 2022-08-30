@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Basic::ControllerMethods
+  def http_basic_authenticate_or_request_with: (name: untyped, password: untyped, ?realm: untyped?, ?message: untyped?) -> untyped
+  def authenticate_or_request_with_http_basic: (?untyped? realm, ?untyped? message) ?{ () -> untyped } -> untyped
+  def authenticate_with_http_basic: () ?{ () -> untyped } -> untyped
+  def request_http_basic_authentication: (?::String realm, ?untyped? message) -> untyped
+  extend ActiveSupport::Concern
+end

@@ -28,7 +28,6 @@ module ActiveSupport::Cache
   #   ActiveSupport::Cache.lookup_store(MyOwnCacheStore.new)
   #   # => returns MyOwnCacheStore.new
   def self.lookup_store: (?untyped? store, *untyped parameters) -> untyped
-
   # Expands out the +key+ argument into a key that can be used for the
   # cache store. Optionally accepts a namespace, and all keys will be
   # scoped within that namespace.
@@ -42,18 +41,12 @@ module ActiveSupport::Cache
   #
   # The +key+ argument can also respond to +cache_key+ or +to_param+.
   def self.expand_cache_key: (untyped key, ?untyped? namespace) -> untyped
-
   private def self.retrieve_cache_key: (untyped key) -> untyped
-
   # Obtains the specified cache store class, given the name of the +store+.
   # Raises an error when the store class cannot be found.
   private def self.retrieve_store_class: (untyped store) -> untyped
-
   attr_accessor self.format_version: untyped
-
   DEFAULT_COMPRESS_LIMIT: Integer
-
   OPTION_ALIASES: Hash[Symbol, Array[Symbol]]
-
   UNIVERSAL_OPTIONS: Array[Symbol]
 end

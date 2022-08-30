@@ -536,11 +536,9 @@ class String
   # Technically, it looks for the least indented non-empty line
   # in the whole string, and removes that amount of leading whitespace.
   def strip_heredoc: () -> untyped
-
   def in_time_zone: (?ActiveSupport::TimeZone | String zone) -> ::ActiveSupport::TimeWithZone
                   | (false? zone) -> ::Time
   prepend ActiveSupport::ToJsonWithActiveSupportEncoder
-
   BLANK_RE: Regexp
   ENCODED_BLANKS: Concurrent::Map
 end

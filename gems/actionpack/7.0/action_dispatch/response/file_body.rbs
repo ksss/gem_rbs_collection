@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Response::FileBody
+  def initialize: (untyped path) -> void
+  def body: () -> untyped
+  # Stream the file's contents if Rack::Sendfile isn't present.
+  def each: () { (untyped) -> untyped } -> untyped
+  attr_reader to_path: untyped
+end

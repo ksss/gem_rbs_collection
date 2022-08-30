@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InsertAll::Builder
+  def initialize: (untyped insert_all) -> void
+  def into: () -> ::String
+  def values_list: () -> untyped
+  def returning: () -> (nil | untyped)
+  def conflict_target: () -> (untyped | ::String | nil)
+  def updatable_columns: () -> untyped
+  def touch_model_timestamps_unless: () ?{ () -> untyped } -> ("" | untyped)
+  def raw_update_sql: () -> untyped
+  alias raw_update_sql? raw_update_sql
+  private def touch_timestamp_attribute?: (untyped column_name) -> untyped
+  private def columns_list: () -> untyped
+  private def extract_types_from_columns_on: (untyped table_name, keys: untyped) -> untyped
+  private def format_columns: (untyped columns) -> untyped
+  private def quote_columns: (untyped columns) -> untyped
+  attr_reader model: untyped
+  attr_reader connection: untyped
+  attr_reader insert_all: untyped
+  # defined by `delegate` to: untyped#insert_all
+  def skip_duplicates?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#insert_all
+  def update_duplicates?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#insert_all
+  def keys: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#insert_all
+  def keys_including_timestamps: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#insert_all
+  def record_timestamps?: (*untyped, **untyped) -> untyped
+end

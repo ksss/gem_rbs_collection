@@ -1,0 +1,141 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Base < ::ActionController::Metal
+  # Shortcut helper that returns all the modules included in
+  # ActionController::Base except the ones passed as arguments:
+  #
+  #   class MyBaseController < ActionController::Metal
+  #     ActionController::Base.without_modules(:ParamsWrapper, :Streaming).each do |left|
+  #       include left
+  #     end
+  #   end
+  #
+  # This gives better control over what you want to exclude and makes it
+  # easier to create a bare controller class, instead of listing the modules
+  # required manually.
+  def self.without_modules: (*untyped modules) -> untyped
+  private def _protected_ivars: () -> untyped
+  include AbstractController::Rendering
+  include ActionView::ViewPaths
+  include AbstractController::Translation
+  include AbstractController::AssetPaths
+  include ActionController::Helpers
+  include AbstractController::Helpers
+  include ActionController::UrlFor
+  include AbstractController::UrlFor
+  include ActionController::Redirecting
+  include AbstractController::Logger
+  include ActiveSupport::Benchmarkable
+  include ActionView::Layouts
+  include ActionView::Rendering
+  include ActionController::Rendering
+  include ActionController::Renderers::All
+  include ActionController::Renderers
+  include ActionController::ConditionalGet
+  include ActionController::EtagWithTemplateDigest
+  include ActionController::EtagWithFlash
+  include ActionController::Caching
+  include AbstractController::Caching
+  include AbstractController::Caching::Fragments
+  include ActionController::MimeResponds
+  include ActionController::ImplicitRender
+  include ActionController::StrongParameters
+  include ActionController::ParameterEncoding
+  include ActionController::Cookies
+  include ActionController::Flash
+  include ActionController::FormBuilder
+  include ActionController::RequestForgeryProtection
+  include AbstractController::Callbacks
+  include ActiveSupport::Callbacks
+  include ActionController::ContentSecurityPolicy
+  include ActionController::PermissionsPolicy
+  include ActionController::Streaming
+  include ActionController::DataStreaming
+  include ActionController::HttpAuthentication::Basic::ControllerMethods
+  include ActionController::HttpAuthentication::Digest::ControllerMethods
+  include ActionController::HttpAuthentication::Token::ControllerMethods
+  include ActionController::DefaultHeaders
+  include ActionController::Logging
+  include ActionController::Rescue
+  include ActiveSupport::Rescuable
+  include ActionController::Instrumentation
+  include ActionController::ParamsWrapper
+  extend ActionView::ViewPaths::ClassMethods
+  extend AbstractController::Helpers::ClassMethods
+  extend ActionController::Helpers::ClassMethods
+  extend AbstractController::UrlFor::ClassMethods
+  extend ActionView::Rendering::ClassMethods
+  extend ActionView::Layouts::ClassMethods
+  extend ActionController::Rendering::ClassMethods
+  extend ActionController::Renderers::ClassMethods
+  extend ActionController::ConditionalGet::ClassMethods
+  extend AbstractController::Caching::Fragments::ClassMethods
+  extend AbstractController::Caching::ClassMethods
+  extend AbstractController::Caching::ConfigMethods
+  extend ActionController::ParameterEncoding::ClassMethods
+  extend ActionController::Flash::ClassMethods
+  extend ActionController::FormBuilder::ClassMethods
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+  extend AbstractController::Callbacks::ClassMethods
+  extend ActionController::RequestForgeryProtection::ClassMethods
+  extend ActionController::ContentSecurityPolicy::ClassMethods
+  extend ActionController::PermissionsPolicy::ClassMethods
+  extend ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods
+  extend ActionController::DefaultHeaders::ClassMethods
+  extend ActionController::Logging::ClassMethods
+  extend ActiveSupport::Rescuable::ClassMethods
+  extend ActionController::Instrumentation::ClassMethods
+  extend ActionController::ParamsWrapper::ClassMethods
+  attr_writer _helper_methods: untyped
+  attr_writer _renderers: untyped
+  attr_writer _view_cache_dependencies: untyped
+  attr_writer _wrapper_options: untyped
+  # defined by `delegate` to: #request
+  def flash: (*untyped, **untyped) -> untyped
+  def self.helpers_path: () -> untyped
+  def self.helpers_path?: () -> bool
+  def self.helpers_path=: (untyped value) -> untyped
+  def helpers_path: () -> untyped
+  def helpers_path?: () -> bool
+  def helpers_path=: (untyped value) -> untyped
+  def self.include_all_helpers: () -> untyped
+  def self.include_all_helpers?: () -> bool
+  def self.include_all_helpers=: (untyped value) -> untyped
+  def include_all_helpers: () -> untyped
+  def include_all_helpers?: () -> bool
+  def include_all_helpers=: (untyped value) -> untyped
+  def self.default_url_options: () -> untyped
+  def self.default_url_options?: () -> bool
+  def self.default_url_options=: (untyped value) -> untyped
+  def default_url_options: () -> untyped
+  def default_url_options?: () -> bool
+  def default_url_options=: (untyped value) -> untyped
+  def self.etaggers: () -> untyped
+  def self.etaggers?: () -> bool
+  def self.etaggers=: (untyped value) -> untyped
+  def etaggers: () -> untyped
+  def etaggers?: () -> bool
+  def etaggers=: (untyped value) -> untyped
+  def self.etag_with_template_digest: () -> untyped
+  def self.etag_with_template_digest?: () -> bool
+  def self.etag_with_template_digest=: (untyped value) -> untyped
+  def etag_with_template_digest: () -> untyped
+  def etag_with_template_digest?: () -> bool
+  def etag_with_template_digest=: (untyped value) -> untyped
+  def self.fragment_cache_keys: () -> untyped
+  def self.fragment_cache_keys?: () -> bool
+  def self.fragment_cache_keys=: (untyped value) -> untyped
+  def fragment_cache_keys: () -> untyped
+  def fragment_cache_keys?: () -> bool
+  def fragment_cache_keys=: (untyped value) -> untyped
+  def self.rescue_handlers: () -> untyped
+  def self.rescue_handlers?: () -> bool
+  def self.rescue_handlers=: (untyped value) -> untyped
+  def rescue_handlers: () -> untyped
+  def rescue_handlers?: () -> bool
+  def rescue_handlers=: (untyped value) -> untyped
+  MODULES: Array[singleton(AbstractController::Rendering) | singleton(AbstractController::Translation) | singleton(AbstractController::AssetPaths) | singleton(ActionController::Helpers) | singleton(ActionController::UrlFor) | singleton(ActionController::Redirecting) | singleton(ActionView::Layouts) | singleton(ActionController::Rendering) | singleton(ActionController::Renderers::All) | singleton(ActionController::ConditionalGet) | singleton(ActionController::EtagWithTemplateDigest) | singleton(ActionController::EtagWithFlash) | singleton(ActionController::Caching) | singleton(ActionController::MimeResponds) | singleton(ActionController::ImplicitRender) | singleton(ActionController::StrongParameters) | singleton(ActionController::ParameterEncoding) | singleton(ActionController::Cookies) | singleton(ActionController::Flash) | singleton(ActionController::FormBuilder) | singleton(ActionController::RequestForgeryProtection) | singleton(ActionController::ContentSecurityPolicy) | singleton(ActionController::PermissionsPolicy) | singleton(ActionController::Streaming) | singleton(ActionController::DataStreaming) | singleton(ActionController::HttpAuthentication::Basic::ControllerMethods) | singleton(ActionController::HttpAuthentication::Digest::ControllerMethods) | singleton(ActionController::HttpAuthentication::Token::ControllerMethods) | singleton(ActionController::DefaultHeaders) | singleton(ActionController::Logging) | singleton(AbstractController::Callbacks) | singleton(ActionController::Rescue) | singleton(ActionController::Instrumentation) | singleton(ActionController::ParamsWrapper)]
+  PROTECTED_IVARS: Array[Symbol]
+end

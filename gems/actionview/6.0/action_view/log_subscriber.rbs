@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def initialize: () -> void
+  def render_template: (untyped event) -> untyped
+  def render_partial: (untyped event) -> untyped
+  def render_collection: (untyped event) -> untyped
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def logger: () -> untyped
+  private def from_rails_root: (untyped string) -> untyped
+  private def rails_root: () -> untyped
+  private def render_count: (untyped payload) -> ::String
+  private def cache_message: (untyped payload) -> untyped
+  private def log_rendering_start: (untyped payload) -> untyped
+  EMPTY: String
+  VIEWS_PATTERN: Regexp
+end

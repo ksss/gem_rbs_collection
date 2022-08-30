@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Json < ::ActiveModel::Type::Value
+  def type: () -> :json
+  def deserialize: (untyped value) -> untyped
+  def serialize: (untyped value) -> (untyped | nil)
+  def changed_in_place?: (untyped raw_old_value, untyped new_value) -> untyped
+  def accessor: () -> untyped
+  include ActiveModel::Type::Helpers::Mutable
+end

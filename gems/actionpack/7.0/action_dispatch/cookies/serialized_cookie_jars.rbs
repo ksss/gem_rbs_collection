@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Cookies::SerializedCookieJars
+  def needs_migration?: (untyped value) -> untyped
+  def serialize: (untyped value) -> untyped
+  def deserialize: (untyped name) { (untyped) -> untyped } -> untyped
+  def serializer: () -> untyped
+  def digest: () -> untyped
+  MARSHAL_SIGNATURE: String
+end

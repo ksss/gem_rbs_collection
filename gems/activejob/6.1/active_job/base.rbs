@@ -1,0 +1,68 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Base
+  include ActiveJob::Core
+  include ActiveJob::QueueAdapter
+  include ActiveJob::QueueName
+  include ActiveJob::QueuePriority
+  include ActiveJob::Enqueuing
+  include ActiveJob::Execution
+  include ActiveSupport::Rescuable
+  include ActiveJob::Callbacks
+  include ActiveSupport::Callbacks
+  include ActiveJob::Exceptions
+  include ActiveJob::Logging
+  include ActiveJob::Instrumentation
+  include ActiveJob::Timezones
+  include ActiveJob::Translation
+  include ActiveJob::TestHelper::TestQueueAdapter
+  extend ActiveJob::Core::ClassMethods
+  extend ActiveJob::QueueAdapter::ClassMethods
+  extend ActiveJob::QueueName::ClassMethods
+  extend ActiveJob::QueuePriority::ClassMethods
+  extend ActiveJob::Enqueuing::ClassMethods
+  extend ActiveSupport::Rescuable::ClassMethods
+  extend ActiveJob::Execution::ClassMethods
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+  extend ActiveJob::Callbacks::ClassMethods
+  extend ActiveJob::Exceptions::ClassMethods
+  extend ActiveJob::TestHelper::TestQueueAdapter::ClassMethods
+  def self.skip_after_callbacks_if_terminated: () -> untyped
+  def self.logger: () -> untyped
+  def logger: () -> untyped
+  def self.skip_after_callbacks_if_terminated=: (untyped val) -> untyped
+  def self.logger=: (untyped val) -> untyped
+  def logger=: (untyped val) -> untyped
+  # defined by `delegate` to: #class
+  def queue_adapter: (*untyped, **untyped) -> untyped
+  def self.queue_name: () -> untyped
+  def self.queue_name?: () -> bool
+  def self.queue_name=: (untyped value) -> untyped
+  def self.queue_name_delimiter: () -> untyped
+  def self.queue_name_delimiter?: () -> bool
+  def self.queue_name_delimiter=: (untyped value) -> untyped
+  def self.queue_name_prefix: () -> untyped
+  def self.queue_name_prefix?: () -> bool
+  def self.queue_name_prefix=: (untyped value) -> untyped
+  def queue_name_prefix: () -> untyped
+  def queue_name_prefix?: () -> bool
+  def queue_name_prefix=: (untyped value) -> untyped
+  def self.priority: () -> untyped
+  def self.priority?: () -> bool
+  def self.priority=: (untyped value) -> untyped
+  def self.rescue_handlers: () -> untyped
+  def self.rescue_handlers?: () -> bool
+  def self.rescue_handlers=: (untyped value) -> untyped
+  def rescue_handlers: () -> untyped
+  def rescue_handlers?: () -> bool
+  def rescue_handlers=: (untyped value) -> untyped
+  def self.return_false_on_aborted_enqueue: () -> untyped
+  def self.return_false_on_aborted_enqueue=: (untyped value) -> untyped
+  def self.retry_jitter: () -> untyped
+  def self.retry_jitter=: (untyped value) -> untyped
+  def self.log_arguments: () -> untyped
+  def self.log_arguments?: () -> bool
+  def self.log_arguments=: (untyped value) -> untyped
+end

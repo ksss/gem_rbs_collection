@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Service::GCSService < ::ActiveStorage::Service
+  def initialize: (**untyped config) -> void
+  def upload: (untyped key, untyped io, ?checksum: untyped?, ?content_type: untyped?, ?disposition: untyped?, ?filename: untyped?) -> untyped
+  def download: (untyped key) ?{ () -> untyped } -> untyped
+  def update_metadata: (untyped key, content_type: untyped, ?disposition: untyped?, ?filename: untyped?) -> untyped
+  def download_chunk: (untyped key, untyped range) -> untyped
+  def delete: (untyped key) -> untyped
+  def delete_prefixed: (untyped prefix) -> untyped
+  def exist?: (untyped key) -> untyped
+  def url: (untyped key, expires_in: untyped, filename: untyped, content_type: untyped, disposition: untyped) -> untyped
+  def url_for_direct_upload: (untyped key, expires_in: untyped, checksum: untyped) -> untyped
+  def headers_for_direct_upload: (untyped key, checksum: untyped) -> ::Hash[::String, untyped]
+  private def file_for: (untyped key, ?skip_lookup: bool) -> untyped
+  # Reads the file for the given key in chunks, yielding each to the block.
+  private def stream: (untyped key) { (untyped) -> untyped } -> untyped
+  private def bucket: () -> untyped
+  private def client: () -> untyped
+end

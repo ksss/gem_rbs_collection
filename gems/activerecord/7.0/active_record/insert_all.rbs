@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InsertAll
+  def initialize: (untyped model, untyped inserts, on_duplicate: untyped, ?update_only: untyped?, ?returning: untyped?, ?unique_by: untyped?, ?record_timestamps: untyped?) -> void
+  def execute: () -> untyped
+  def updatable_columns: () -> untyped
+  def primary_keys: () -> untyped
+  def skip_duplicates?: () -> untyped
+  def update_duplicates?: () -> untyped
+  def map_key_with_value: () { (untyped, untyped) -> untyped } -> untyped
+  def record_timestamps?: () -> untyped
+  # TODO: Consider remaining this method, as it only conditionally extends keys, not always
+  def keys_including_timestamps: () -> untyped
+  private def configure_on_duplicate_update_logic: () -> untyped
+  private def custom_update_sql_provided?: () -> untyped
+  private def find_unique_index_for: (untyped unique_by) -> (nil | untyped)
+  private def unique_indexes: () -> untyped
+  private def ensure_valid_options_for_connection!: () -> untyped
+  private def to_sql: () -> untyped
+  private def readonly_columns: () -> untyped
+  private def unique_by_columns: () -> untyped
+  private def verify_attributes: (untyped attributes) -> (untyped | nil)
+  private def disallow_raw_sql!: (untyped value) -> (nil | untyped)
+  private def timestamps_for_create: () -> untyped
+  attr_reader model: untyped
+  attr_reader connection: untyped
+  attr_reader inserts: untyped
+  attr_reader keys: untyped
+  attr_reader on_duplicate: untyped
+  attr_reader update_only: untyped
+  attr_reader returning: untyped
+  attr_reader unique_by: untyped
+  attr_reader update_sql: untyped
+  attr_reader scope_attributes: untyped
+end

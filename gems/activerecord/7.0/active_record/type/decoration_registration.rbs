@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::DecorationRegistration < ::ActiveRecord::Type::Registration
+  def initialize: (untyped options, untyped klass, ?adapter: untyped?) -> void
+  def call: (untyped registry, *untyped args, **untyped kwargs) -> untyped
+  def matches?: (*untyped args, **untyped kwargs) -> untyped
+  def priority: () -> untyped
+  private def matches_options?: (**untyped kwargs) -> untyped
+  attr_reader options: untyped
+  attr_reader klass: untyped
+end

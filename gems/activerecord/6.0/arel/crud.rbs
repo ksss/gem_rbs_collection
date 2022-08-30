@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Crud
+  def compile_update: (untyped values, untyped pk) -> untyped
+  def compile_insert: (untyped values) -> untyped
+  def create_insert: () -> untyped
+  def compile_delete: () -> untyped
+end

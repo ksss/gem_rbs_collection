@@ -33,9 +33,7 @@ class ActiveSupport::Notifications::Event
   def <<: (untyped event) -> untyped
   def parent_of?: (untyped event) -> untyped
   private def now: () -> untyped
-
   private def now_cpu: () -> ::Float
-
   private def now_allocations: () -> 0
   attr_accessor payload: untyped
   attr_reader name: untyped

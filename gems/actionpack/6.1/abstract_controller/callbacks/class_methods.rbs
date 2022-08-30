@@ -1,0 +1,39 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Callbacks::ClassMethods
+  # If +:only+ or +:except+ are used, convert the options into the
+  # +:if+ and +:unless+ options of ActiveSupport::Callbacks.
+  #
+  # The basic idea is that <tt>:only => :index</tt> gets converted to
+  # <tt>:if => proc {|c| c.action_name == "index" }</tt>.
+  #
+  # Note that <tt>:only</tt> has priority over <tt>:if</tt> in case they
+  # are used together.
+  #
+  #   only: :index, if: -> { true } # the :if option will be ignored.
+  #
+  # Note that <tt>:if</tt> has priority over <tt>:except</tt> in case they
+  # are used together.
+  #
+  #   except: :index, if: -> { true } # the :except option will be ignored.
+  #
+  # ==== Options
+  # * <tt>only</tt>   - The callback should be run only for this action.
+  # * <tt>except</tt>  - The callback should be run for all actions except this action.
+  def _normalize_callback_options: (untyped options) -> untyped
+  def _normalize_callback_option: (untyped options, untyped from, untyped to) -> (untyped | nil)
+  # Take callback names and an optional callback proc, normalize them,
+  # then call the block with each callback. This allows us to abstract
+  # the normalization across several methods that use it.
+  #
+  # ==== Parameters
+  # * <tt>callbacks</tt> - An array of callbacks, with an optional
+  #   options hash as the last parameter.
+  # * <tt>block</tt>    - A proc that should be added to the callbacks.
+  #
+  # ==== Block Parameters
+  # * <tt>name</tt>     - The callback to be added.
+  # * <tt>options</tt>  - A hash of options to be used when adding the callback.
+  def _insert_callbacks: (untyped callbacks, ?untyped? block) { (untyped, untyped) -> untyped } -> untyped
+end

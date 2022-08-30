@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::NullRelation
+  def pluck: (*untyped column_names) -> ::Array[untyped]
+  def delete_all: () -> 0
+  def update_all: (untyped _updates) -> 0
+  def delete: (untyped _id_or_array) -> 0
+  def empty?: () -> true
+  def none?: () -> true
+  def any?: () -> false
+  def one?: () -> false
+  def many?: () -> false
+  def calculate: (untyped operation, untyped _column_name) -> untyped
+  def exists?: (?::Symbol _conditions) -> false
+  def or: (untyped other) -> untyped
+  private def exec_main_query: (?async: bool) -> ::Array[untyped]
+end

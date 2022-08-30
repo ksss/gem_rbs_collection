@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::UpdateStatement < ::Arel::Nodes::Node
+  def initialize: (?untyped? relation) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor relation: untyped
+  attr_accessor wheres: untyped
+  attr_accessor values: untyped
+  attr_accessor groups: untyped
+  attr_accessor havings: untyped
+  attr_accessor orders: untyped
+  attr_accessor limit: untyped
+  attr_accessor offset: untyped
+  attr_accessor key: untyped
+end

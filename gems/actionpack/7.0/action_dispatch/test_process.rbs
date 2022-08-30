@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::TestProcess
+  def assigns: (?untyped? key) -> untyped
+  def session: () -> untyped
+  def flash: () -> untyped
+  def cookies: () -> untyped
+  def redirect_to_url: () -> untyped
+  include ActionDispatch::TestProcess::FixtureFile
+end

@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::SelectCore < ::Arel::Nodes::Node
+  def initialize: () -> void
+  def from: () -> untyped
+  def from=: (untyped value) -> untyped
+  alias froms= from=
+  alias froms from
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor projections: untyped
+  attr_accessor wheres: untyped
+  attr_accessor groups: untyped
+  attr_accessor windows: untyped
+  attr_accessor comment: untyped
+  attr_accessor havings: untyped
+  attr_accessor source: untyped
+  attr_accessor set_quantifier: untyped
+  attr_accessor optimizer_hints: untyped
+end

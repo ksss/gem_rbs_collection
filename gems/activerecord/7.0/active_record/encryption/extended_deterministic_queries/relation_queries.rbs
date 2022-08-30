@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::ExtendedDeterministicQueries::RelationQueries
+  def where: (*untyped args) -> untyped
+  def exists?: (*untyped args) -> untyped
+  def find_or_create_by: (untyped attributes) ?{ () -> untyped } -> untyped
+  def find_or_create_by!: (untyped attributes) ?{ () -> untyped } -> untyped
+  private def process_encrypted_query_arguments_if_needed: (untyped args) -> (untyped | nil)
+  include ActiveRecord::Encryption::ExtendedDeterministicQueries::EncryptedQueryArgumentProcessor
+end

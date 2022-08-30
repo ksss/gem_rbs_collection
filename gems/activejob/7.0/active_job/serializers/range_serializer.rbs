@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Serializers::RangeSerializer < ::ActiveJob::Serializers::ObjectSerializer
+  def serialize: (untyped range) -> untyped
+  def deserialize: (untyped hash) -> untyped
+  private def klass: () -> untyped
+  KEYS: Array[String]
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RequestEncoder
+  def initialize: (untyped mime_name, untyped param_encoder, untyped response_parser) -> void
+  def content_type: () -> untyped
+  def accept_header: () -> untyped
+  def encode_params: (untyped params) -> (untyped | nil)
+  def self.parser: (untyped content_type) -> untyped
+  def self.encoder: (untyped name) -> untyped
+  def self.register_encoder: (untyped mime_name, ?param_encoder: untyped?, ?response_parser: untyped?) -> untyped
+  attr_reader response_parser: untyped
+end

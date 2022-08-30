@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::StatementCache::BindMap
+  def initialize: (untyped bound_attributes) -> void
+  def bind: (untyped values) -> untyped
+end

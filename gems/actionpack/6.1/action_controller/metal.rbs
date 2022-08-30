@@ -1,0 +1,70 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Metal < ::AbstractController::Base
+  # Returns the last part of the controller's name, underscored, without the ending
+  # <tt>Controller</tt>. For instance, PostsController returns <tt>posts</tt>.
+  # Namespaces are left out, so Admin::PostsController returns <tt>posts</tt> as well.
+  #
+  # ==== Returns
+  # * <tt>string</tt>
+  def self.controller_name: () -> untyped
+  def self.make_response!: (untyped request) -> untyped
+  def self.action_encoding_template: (untyped action) -> false
+  # Delegates to the class' <tt>controller_name</tt>.
+  def controller_name: () -> untyped
+  def initialize: () -> void
+  def params: () -> untyped
+  def params=: (untyped val) -> untyped
+  alias response_code status
+  # Basic url_for that can be overridden for more robust functionality.
+  def url_for: (untyped string) -> untyped
+  def response_body=: (untyped body) -> (nil | untyped)
+  # Tests if render or redirect has already happened.
+  def performed?: () -> untyped
+  def dispatch: (untyped name, untyped request, untyped response) -> untyped
+  def set_response!: (untyped response) -> untyped
+  def set_request!: (untyped request) -> untyped
+  def to_a: () -> untyped
+  def reset_session: () -> untyped
+  def self.inherited: (untyped base) -> untyped
+  # Pushes the given Rack middleware and its arguments to the bottom of the
+  # middleware stack.
+  def self.use: (*untyped args) ?{ () -> untyped } -> untyped
+  # Alias for +middleware_stack+.
+  def self.middleware: () -> untyped
+  # Returns a Rack endpoint for the given action name.
+  def self.action: (untyped name) -> untyped
+  # Direct dispatch to the controller. Instantiates the controller, then
+  # executes the action named +name+.
+  def self.dispatch: (untyped name, untyped req, untyped res) -> untyped
+  include ActionController::Testing::Functional
+  attr_reader _response: untyped
+  attr_reader _request: untyped
+  attr_writer _response: untyped
+  attr_writer _request: untyped
+  # defined by `delegate` to: #@_request
+  def session: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def headers: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def status=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def location=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def content_type=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def status: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def location: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def content_type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@_response
+  def media_type: (*untyped, **untyped) -> untyped
+  def self.middleware_stack: () -> untyped
+  def self.middleware_stack?: () -> bool
+  def self.middleware_stack=: (untyped value) -> untyped
+  def middleware_stack: () -> untyped
+  def middleware_stack?: () -> bool
+  def middleware_stack=: (untyped value) -> untyped
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Duration::ISO8601Serializer
+  def initialize: (untyped duration, ?precision: untyped?) -> void
+  # Builds and returns output string.
+  def serialize: () -> ("PT0S" | ::String)
+  # Return pair of duration's parts and whole duration sign.
+  # Parts are summarized (as they can become repetitive due to addition, etc).
+  # Zero parts are removed as not significant.
+  # If all parts are negative it will negate all of them and return minus as a sign.
+  private def normalize: () -> ::Array[untyped]
+end

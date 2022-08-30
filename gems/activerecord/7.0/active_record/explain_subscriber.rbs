@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ExplainSubscriber
+  def start: (untyped name, untyped id, untyped payload) -> nil
+  def finish: (untyped name, untyped id, untyped payload) -> (untyped | nil)
+  def ignore_payload?: (untyped payload) -> untyped
+  EXPLAINED_SQLS: Regexp
+  IGNORED_PAYLOADS: Array[String]
+end

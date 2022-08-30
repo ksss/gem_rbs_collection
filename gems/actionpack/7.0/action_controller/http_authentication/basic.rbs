@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Basic
+  def authenticate: (untyped request) ?{ () -> untyped } -> (untyped | nil)
+  def has_basic_credentials?: (untyped request) -> untyped
+  def user_name_and_password: (untyped request) -> untyped
+  def decode_credentials: (untyped request) -> untyped
+  def auth_scheme: (untyped request) -> untyped
+  def auth_param: (untyped request) -> untyped
+  def encode_credentials: (untyped user_name, untyped password) -> ::String
+  def authentication_request: (untyped controller, untyped realm, untyped message) -> untyped
+  extend ActionController::HttpAuthentication::Basic
+end

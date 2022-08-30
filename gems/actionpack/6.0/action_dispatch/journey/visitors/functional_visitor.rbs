@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Visitors::FunctionalVisitor
+  def accept: (untyped node, untyped seed) -> untyped
+  def visit: (untyped node, untyped seed) -> untyped
+  def binary: (untyped node, untyped seed) -> untyped
+  def visit_CAT: (untyped n, untyped seed) -> untyped
+  def nary: (untyped node, untyped seed) -> untyped
+  def visit_OR: (untyped n, untyped seed) -> untyped
+  def unary: (untyped node, untyped seed) -> untyped
+  def visit_GROUP: (untyped n, untyped seed) -> untyped
+  def visit_STAR: (untyped n, untyped seed) -> untyped
+  def terminal: (untyped node, untyped seed) -> untyped
+  def visit_LITERAL: (untyped n, untyped seed) -> untyped
+  def visit_SYMBOL: (untyped n, untyped seed) -> untyped
+  def visit_SLASH: (untyped n, untyped seed) -> untyped
+  def visit_DOT: (untyped n, untyped seed) -> untyped
+  DISPATCH_CACHE: Hash[Symbol, Symbol]
+end

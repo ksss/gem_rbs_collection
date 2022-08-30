@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::OrderedHash < ::Hash[untyped, untyped]
+  def to_yaml_type: () -> "!tag:yaml.org,2002:omap"
+  def encode_with: (untyped coder) -> untyped
+  def select: (*untyped args) ?{ () -> untyped } -> untyped
+  def reject: (*untyped args) ?{ () -> untyped } -> untyped
+  def nested_under_indifferent_access: () -> self
+  # Returns true to make sure that this hash is extractable via <tt>Array#extract_options!</tt>
+  def extractable_options?: () -> true
+end

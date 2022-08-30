@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Properties
+  def initialize: (?::Hash[untyped, untyped] initial_properties) -> void
+  # Set a value for a given key
+  #
+  # It will raise an +EncryptedContentIntegrity+ if the value exists
+  def []=: (untyped key, untyped value) -> untyped
+  def validate_value_type: (untyped value) -> (untyped | nil)
+  def add: (untyped other_properties) -> untyped
+  def to_h: () -> untyped
+  attr_reader data: untyped
+  # defined by `delegate` to: untyped#data
+  def ==: (*untyped, **untyped) -> untyped
+  ALLOWED_VALUE_CLASSES: Array[singleton(String) | singleton(ActiveRecord::Encryption::Message) | singleton(Numeric) | singleton(TrueClass) | singleton(FalseClass) | singleton(Symbol) | singleton(NilClass)]
+  DEFAULT_PROPERTIES: Hash[Symbol, String]
+end

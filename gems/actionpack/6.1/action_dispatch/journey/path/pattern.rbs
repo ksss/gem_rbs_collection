@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Path::Pattern
+  def initialize: (untyped ast, untyped requirements, untyped separators, untyped anchored) -> void
+  def build_formatter: () -> untyped
+  def eager_load!: () -> nil
+  def ast: () -> untyped
+  def names: () -> untyped
+  def required_names: () -> untyped
+  def optional_names: () -> untyped
+  def match: (untyped other) -> (nil | untyped)
+  alias =~ match
+  def match?: (untyped other) -> untyped
+  def source: () -> untyped
+  def to_regexp: () -> untyped
+  def requirements_for_missing_keys_check: () -> untyped
+  private def regexp_visitor: () -> untyped
+  private def offsets: () -> untyped
+  attr_reader spec: untyped
+  attr_reader requirements: untyped
+  attr_reader anchored: untyped
+end

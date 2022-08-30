@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::XMLConverter
+  def initialize: (untyped xml, ?untyped? disallowed_types) -> void
+  def to_h: () -> untyped
+  private def normalize_keys: (untyped params) -> untyped
+  private def deep_to_h: (untyped value) -> untyped
+  private def process_hash: (untyped value) -> untyped
+  private def become_content?: (untyped value) -> untyped
+  private def become_array?: (untyped value) -> untyped
+  private def become_empty_string?: (untyped value) -> untyped
+  private def become_hash?: (untyped value) -> untyped
+  private def nothing?: (untyped value) -> untyped
+  private def garbage?: (untyped value) -> untyped
+  private def process_content: (untyped value) -> untyped
+  private def process_array: (untyped value) -> untyped
+  DISALLOWED_TYPES: Array[String]
+end

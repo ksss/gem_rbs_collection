@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::OutputBuffer < ::ActiveSupport::SafeBuffer
+  def initialize: () -> void
+  def <<: (untyped value) -> (self | untyped)
+  alias append= <<
+  def safe_expr_append=: (untyped val) -> (self | untyped)
+  alias safe_append= safe_concat
+end

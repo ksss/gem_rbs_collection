@@ -1,0 +1,910 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::CollectionProxy < ::ActiveRecord::Relation
+  def initialize: (untyped klass, untyped association) -> void
+  def target: () -> untyped
+  def load_target: () -> untyped
+  # Returns +true+ if the association has been loaded, otherwise +false+.
+  #
+  #   person.pets.loaded? # => false
+  #   person.pets.records
+  #   person.pets.loaded? # => true
+  def loaded?: () -> untyped
+  alias loaded loaded?
+  # Finds an object in the collection responding to the +id+. Uses the same
+  # rules as ActiveRecord::Base.find. Returns ActiveRecord::RecordNotFound
+  # error if the object cannot be found.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.find(1) # => #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>
+  #   person.pets.find(4) # => ActiveRecord::RecordNotFound: Couldn't find Pet with 'id'=4
+  #
+  #   person.pets.find(2) { |pet| pet.name.downcase! }
+  #   # => #<Pet id: 2, name: "fancy-fancy", person_id: 1>
+  #
+  #   person.pets.find(2, 3)
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  def find: (*untyped args) -> untyped
+  # Returns the last record, or the last +n+ records, from the collection.
+  # If the collection is empty, the first form returns +nil+, and the second
+  # form returns an empty array.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.last # => #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #
+  #   person.pets.last(2)
+  #   # => [
+  #   #      #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #      #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   another_person_without.pets         # => []
+  #   another_person_without.pets.last    # => nil
+  #   another_person_without.pets.last(3) # => []
+  def last: (?untyped? limit) -> untyped
+  # Gives a record (or N records if a parameter is supplied) from the collection
+  # using the same rules as <tt>ActiveRecord::Base.take</tt>.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.take # => #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>
+  #
+  #   person.pets.take(2)
+  #   # => [
+  #   #      #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #      #<Pet id: 2, name: "Spook", person_id: 1>
+  #   #    ]
+  #
+  #   another_person_without.pets         # => []
+  #   another_person_without.pets.take    # => nil
+  #   another_person_without.pets.take(2) # => []
+  def take: (?untyped? limit) -> untyped
+  # Returns a new object of the collection type that has been instantiated
+  # with +attributes+ and linked to this object, but have not yet been saved.
+  # You can pass an array of attributes hashes, this will return an array
+  # with the new objects.
+  #
+  #   class Person
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.build
+  #   # => #<Pet id: nil, name: nil, person_id: 1>
+  #
+  #   person.pets.build(name: 'Fancy-Fancy')
+  #   # => #<Pet id: nil, name: "Fancy-Fancy", person_id: 1>
+  #
+  #   person.pets.build([{name: 'Spook'}, {name: 'Choo-Choo'}, {name: 'Brain'}])
+  #   # => [
+  #   #      #<Pet id: nil, name: "Spook", person_id: 1>,
+  #   #      #<Pet id: nil, name: "Choo-Choo", person_id: 1>,
+  #   #      #<Pet id: nil, name: "Brain", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size  # => 5 # size of the collection
+  #   person.pets.count # => 0 # count from database
+  def build: (?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+  alias new build
+  # Returns a new object of the collection type that has been instantiated with
+  # attributes, linked to this object and that has already been saved (if it
+  # passes the validations).
+  #
+  #   class Person
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.create(name: 'Fancy-Fancy')
+  #   # => #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>
+  #
+  #   person.pets.create([{name: 'Spook'}, {name: 'Choo-Choo'}])
+  #   # => [
+  #   #      #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #      #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size  # => 3
+  #   person.pets.count # => 3
+  #
+  #   person.pets.find(1, 2, 3)
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  def create: (?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+  # Like #create, except that if the record is invalid, raises an exception.
+  #
+  #   class Person
+  #     has_many :pets
+  #   end
+  #
+  #   class Pet
+  #     validates :name, presence: true
+  #   end
+  #
+  #   person.pets.create!(name: nil)
+  #   # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+  def create!: (?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+  # Replaces this collection with +other_array+. This will perform a diff
+  # and delete/add only records that have changed.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets
+  #   # => [#<Pet id: 1, name: "Gorby", group: "cats", person_id: 1>]
+  #
+  #   other_pets = [Pet.new(name: 'Puff', group: 'celebrities')]
+  #
+  #   person.pets.replace(other_pets)
+  #
+  #   person.pets
+  #   # => [#<Pet id: 2, name: "Puff", group: "celebrities", person_id: 1>]
+  #
+  # If the supplied array has an incorrect association type, it raises
+  # an <tt>ActiveRecord::AssociationTypeMismatch</tt> error:
+  #
+  #   person.pets.replace(["doo", "ggie", "gaga"])
+  #   # => ActiveRecord::AssociationTypeMismatch: Pet expected, got String
+  def replace: (untyped other_array) -> untyped
+  # Deletes all the records from the collection according to the strategy
+  # specified by the +:dependent+ option. If no +:dependent+ option is given,
+  # then it will follow the default strategy.
+  #
+  # For <tt>has_many :through</tt> associations, the default deletion strategy is
+  # +:delete_all+.
+  #
+  # For +has_many+ associations, the default deletion strategy is +:nullify+.
+  # This sets the foreign keys to +NULL+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets # dependent: :nullify option by default
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete_all
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size # => 0
+  #   person.pets      # => []
+  #
+  #   Pet.find(1, 2, 3)
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: nil>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: nil>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: nil>
+  #   #    ]
+  #
+  # Both +has_many+ and <tt>has_many :through</tt> dependencies default to the
+  # +:delete_all+ strategy if the +:dependent+ option is set to +:destroy+.
+  # Records are not instantiated and callbacks will not be fired.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets, dependent: :destroy
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete_all
+  #
+  #   Pet.find(1, 2, 3)
+  #   # => ActiveRecord::RecordNotFound: Couldn't find all Pets with 'id': (1, 2, 3)
+  #
+  # If it is set to <tt>:delete_all</tt>, all the objects are deleted
+  # *without* calling their +destroy+ method.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets, dependent: :delete_all
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete_all
+  #
+  #   Pet.find(1, 2, 3)
+  #   # => ActiveRecord::RecordNotFound: Couldn't find all Pets with 'id': (1, 2, 3)
+  def delete_all: (?untyped? dependent) -> untyped
+  # Deletes the records of the collection directly from the database
+  # ignoring the +:dependent+ option. Records are instantiated and it
+  # invokes +before_remove+, +after_remove+, +before_destroy+, and
+  # +after_destroy+ callbacks.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.destroy_all
+  #
+  #   person.pets.size # => 0
+  #   person.pets      # => []
+  #
+  #   Pet.find(1) # => Couldn't find Pet with id=1
+  def destroy_all: () -> untyped
+  # Deletes the +records+ supplied from the collection according to the strategy
+  # specified by the +:dependent+ option. If no +:dependent+ option is given,
+  # then it will follow the default strategy. Returns an array with the
+  # deleted records.
+  #
+  # For <tt>has_many :through</tt> associations, the default deletion strategy is
+  # +:delete_all+.
+  #
+  # For +has_many+ associations, the default deletion strategy is +:nullify+.
+  # This sets the foreign keys to +NULL+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets # dependent: :nullify option by default
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete(Pet.find(1))
+  #   # => [#<Pet id: 1, name: "Fancy-Fancy", person_id: 1>]
+  #
+  #   person.pets.size # => 2
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   Pet.find(1)
+  #   # => #<Pet id: 1, name: "Fancy-Fancy", person_id: nil>
+  #
+  # If it is set to <tt>:destroy</tt> all the +records+ are removed by calling
+  # their +destroy+ method. See +destroy+ for more information.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets, dependent: :destroy
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete(Pet.find(1), Pet.find(3))
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size # => 1
+  #   person.pets
+  #   # => [#<Pet id: 2, name: "Spook", person_id: 1>]
+  #
+  #   Pet.find(1, 3)
+  #   # => ActiveRecord::RecordNotFound: Couldn't find all Pets with 'id': (1, 3)
+  #
+  # If it is set to <tt>:delete_all</tt>, all the +records+ are deleted
+  # *without* calling their +destroy+ method.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets, dependent: :delete_all
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete(Pet.find(1))
+  #   # => [#<Pet id: 1, name: "Fancy-Fancy", person_id: 1>]
+  #
+  #   person.pets.size # => 2
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   Pet.find(1)
+  #   # => ActiveRecord::RecordNotFound: Couldn't find Pet with 'id'=1
+  #
+  # You can pass +Integer+ or +String+ values, it finds the records
+  # responding to the +id+ and executes delete on them.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.delete("1")
+  #   # => [#<Pet id: 1, name: "Fancy-Fancy", person_id: 1>]
+  #
+  #   person.pets.delete(2, 3)
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  def delete: (*untyped records) -> untyped
+  # Destroys the +records+ supplied and removes them from the collection.
+  # This method will _always_ remove record from the database ignoring
+  # the +:dependent+ option. Returns an array with the removed records.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.destroy(Pet.find(1))
+  #   # => [#<Pet id: 1, name: "Fancy-Fancy", person_id: 1>]
+  #
+  #   person.pets.size # => 2
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.destroy(Pet.find(2), Pet.find(3))
+  #   # => [
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size  # => 0
+  #   person.pets       # => []
+  #
+  #   Pet.find(1, 2, 3) # => ActiveRecord::RecordNotFound: Couldn't find all Pets with 'id': (1, 2, 3)
+  #
+  # You can pass +Integer+ or +String+ values, it finds the records
+  # responding to the +id+ and then deletes them from the database.
+  #
+  #   person.pets.size # => 3
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 4, name: "Benny", person_id: 1>,
+  #   #       #<Pet id: 5, name: "Brain", person_id: 1>,
+  #   #       #<Pet id: 6, name: "Boss",  person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.destroy("4")
+  #   # => #<Pet id: 4, name: "Benny", person_id: 1>
+  #
+  #   person.pets.size # => 2
+  #   person.pets
+  #   # => [
+  #   #       #<Pet id: 5, name: "Brain", person_id: 1>,
+  #   #       #<Pet id: 6, name: "Boss",  person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.destroy(5, 6)
+  #   # => [
+  #   #       #<Pet id: 5, name: "Brain", person_id: 1>,
+  #   #       #<Pet id: 6, name: "Boss",  person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size  # => 0
+  #   person.pets       # => []
+  #
+  #   Pet.find(4, 5, 6) # => ActiveRecord::RecordNotFound: Couldn't find all Pets with 'id': (4, 5, 6)
+  def destroy: (*untyped records) -> untyped
+  # -
+  def calculate: (untyped operation, untyped column_name) -> untyped
+  def pluck: (*untyped column_names) -> untyped
+  # Returns the size of the collection. If the collection hasn't been loaded,
+  # it executes a <tt>SELECT COUNT(*)</tt> query. Else it calls <tt>collection.size</tt>.
+  #
+  # If the collection has been already loaded +size+ and +length+ are
+  # equivalent. If not and you are going to need the records anyway
+  # +length+ will take one less query. Otherwise +size+ is more efficient.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.size # => 3
+  #   # executes something like SELECT COUNT(*) FROM "pets" WHERE "pets"."person_id" = 1
+  #
+  #   person.pets # This will execute a SELECT * FROM query
+  #   # => [
+  #   #       #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #       #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #       #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  #
+  #   person.pets.size # => 3
+  #   # Because the collection is already loaded, this will behave like
+  #   # collection.size and no SQL count query is executed.
+  def size: () -> untyped
+  # Returns +true+ if the collection is empty. If the collection has been
+  # loaded it is equivalent
+  # to <tt>collection.size.zero?</tt>. If the collection has not been loaded,
+  # it is equivalent to <tt>!collection.exists?</tt>. If the collection has
+  # not already been loaded and you are going to fetch the records anyway it
+  # is better to check <tt>collection.load.empty?</tt>.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.count  # => 1
+  #   person.pets.empty? # => false
+  #
+  #   person.pets.delete_all
+  #
+  #   person.pets.count  # => 0
+  #   person.pets.empty? # => true
+  def empty?: () -> untyped
+  # Returns +true+ if the given +record+ is present in the collection.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets # => [#<Pet id: 20, name: "Snoop">]
+  #
+  #   person.pets.include?(Pet.find(20)) # => true
+  #   person.pets.include?(Pet.find(21)) # => false
+  def include?: (untyped record) -> untyped
+  def proxy_association: () -> untyped
+  # Returns a <tt>Relation</tt> object for the records in this association
+  def scope: () -> untyped
+  # Equivalent to <tt>Array#==</tt>. Returns +true+ if the two arrays
+  # contain the same number of elements and if each element is equal
+  # to the corresponding element in the +other+ array, otherwise returns
+  # +false+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets
+  #   # => [
+  #   #      #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #      #<Pet id: 2, name: "Spook", person_id: 1>
+  #   #    ]
+  #
+  #   other = person.pets.to_ary
+  #
+  #   person.pets == other
+  #   # => true
+  #
+  #   other = [Pet.new(id: 1), Pet.new(id: 2)]
+  #
+  #   person.pets == other
+  #   # => false
+  def ==: (untyped other) -> untyped
+  def records: () -> untyped
+  # Adds one or more +records+ to the collection by setting their foreign keys
+  # to the association's primary key. Since <tt><<</tt> flattens its argument list and
+  # inserts each record, +push+ and +concat+ behave identically. Returns +self+
+  # so several appends may be chained together.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets.size # => 0
+  #   person.pets << Pet.new(name: 'Fancy-Fancy')
+  #   person.pets << [Pet.new(name: 'Spook'), Pet.new(name: 'Choo-Choo')]
+  #   person.pets.size # => 3
+  #
+  #   person.id # => 1
+  #   person.pets
+  #   # => [
+  #   #      #<Pet id: 1, name: "Fancy-Fancy", person_id: 1>,
+  #   #      #<Pet id: 2, name: "Spook", person_id: 1>,
+  #   #      #<Pet id: 3, name: "Choo-Choo", person_id: 1>
+  #   #    ]
+  def <<: (*untyped records) -> untyped
+  alias push <<
+  alias append <<
+  alias concat <<
+  def prepend: (*untyped args) -> untyped
+  # Equivalent to +delete_all+. The difference is that returns +self+, instead
+  # of an array with the deleted objects, so methods can be chained. See
+  # +delete_all+ for more information.
+  # Note that because +delete_all+ removes records by directly
+  # running an SQL query into the database, the +updated_at+ column of
+  # the object is not changed.
+  def clear: () -> self
+  # Reloads the collection from the database. Returns +self+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets # fetches pets from the database
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  #
+  #   person.pets # uses the pets cache
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  #
+  #   person.pets.reload # fetches pets from the database
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  def reload: () -> untyped
+  # Unloads the association. Returns +self+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     has_many :pets
+  #   end
+  #
+  #   person.pets # fetches pets from the database
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  #
+  #   person.pets # uses the pets cache
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  #
+  #   person.pets.reset # clears the pets cache
+  #
+  #   person.pets  # fetches pets from the database
+  #   # => [#<Pet id: 1, name: "Snoop", group: "dogs", person_id: 1>]
+  def reset: () -> untyped
+  def reset_scope: () -> self
+  def inspect: () -> untyped
+  private def find_nth_with_limit: (untyped index, untyped limit) -> untyped
+  private def find_nth_from_last: (untyped index) -> untyped
+  private def null_scope?: () -> untyped
+  private def find_from_target?: () -> untyped
+  private def exec_queries: () -> untyped
+  # defined by `delegate` to: untyped#scope
+  def preload!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def includes!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def in_order_of: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reordering_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reorder!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def left_outer_joins!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def create_with_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def from_clause: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def from_clause=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def where!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def where_clause=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def having_clause=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def preload_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def includes_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def joins_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def left_outer_joins_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def lock_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def preload: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def where: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def readonly: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def unscope: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extending_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def limit: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extract_associated: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def from: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def references!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def lock_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reselect!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def group!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reselect: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def left_outer_joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def strict_loading: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def none!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def annotate: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reorder: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reordering_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def unscope!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def unscope_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def left_joins: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reverse_order: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extending: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extensions: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def eager_load!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def invert_where!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def invert_where: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def and!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def structurally_compatible?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def or!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def having!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def limit_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def offset!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def offset_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def select_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def lock!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def readonly_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def strict_loading_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def distinct_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def _select!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def from!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def create_with!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def select_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def distinct_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def optimizer_hints_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def lock: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def optimizer_hints!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def skip_query_cache_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def group: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def skip_query_cache!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def annotate!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def annotate_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def excluding!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def skip_preloading!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def arel: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extending!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def uniq!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def group_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def order: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def order!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def eager_load: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def references: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def where_clause: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def create_with_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def eager_load_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def includes_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def joins_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def eager_load_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def references_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def unscope_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def extending_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def optimizer_hints_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def annotate_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def limit_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def strict_loading_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def preload_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def having_clause: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def offset_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def excluding: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def readonly!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def readonly_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def having: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def strict_loading!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def skip_query_cache_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reverse_order_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reverse_order_value=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def references_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def offset: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def optimizer_hints: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def reverse_order!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def distinct: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def none: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def limit!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def construct_join_dependency: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def joins!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def left_outer_joins_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def includes: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def order_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def distinct!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def order_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def and: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def or: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def group_values=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def rewhere: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def without: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def create_with: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def merge!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def spawn: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def merge: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def only: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def except: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def scoping: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def insert: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def insert_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def insert!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def insert_all!: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def upsert: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def upsert_all: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scope
+  def load_async: (*untyped, **untyped) -> untyped
+end

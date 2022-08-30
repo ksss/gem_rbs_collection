@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::RoundingHelper
+  def initialize: (untyped options) -> void
+  def round: (untyped number) -> untyped
+  def digit_count: (untyped number) -> (1 | untyped)
+  private def round_without_significant: (untyped number) -> untyped
+  private def round_significant: (untyped number) -> (0 | untyped)
+  private def convert_to_decimal: (untyped number) -> untyped
+  private def precision: () -> untyped
+  private def significant: () -> untyped
+  private def absolute_number: (untyped number) -> untyped
+  attr_reader options: untyped
+end

@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Parser < ::Racc::Parser
+  def _reduce_1: (untyped val, untyped _values) -> untyped
+  def _reduce_2: (untyped val, untyped _values) -> untyped
+  def _reduce_7: (untyped val, untyped _values) -> untyped
+  def _reduce_8: (untyped val, untyped _values) -> untyped
+  def _reduce_9: (untyped val, untyped _values) -> untyped
+  def _reduce_10: (untyped val, untyped _values) -> untyped
+  def _reduce_15: (untyped val, untyped _values) -> untyped
+  def _reduce_16: (untyped val, untyped _values) -> untyped
+  def _reduce_17: (untyped val, untyped _values) -> untyped
+  def _reduce_18: (untyped val, untyped _values) -> untyped
+  def _reduce_none: (untyped val, untyped _values) -> untyped
+  def self.parse: (untyped string) -> untyped
+  def initialize: () -> void
+  def parse: (untyped string) -> untyped
+  def next_token: () -> untyped
+  include ActionDispatch::Journey::Nodes
+  Racc_arg: Array[Array[Integer] | Array[Integer | nil] | Array[nil | Integer] | Integer | Array[Integer | Symbol] | Hash[false | Symbol, Integer] | false]
+  Racc_debug_parser: false
+  Racc_token_to_s_table: Array[String]
+end

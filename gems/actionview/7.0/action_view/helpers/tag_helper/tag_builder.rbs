@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Helpers::TagHelper::TagBuilder
+  def initialize: (untyped view_context) -> void
+  # Transforms a Hash into HTML Attributes, ready to be interpolated into
+  # ERB.
+  #
+  #   <input <%= tag.attributes(type: :text, aria: { label: "Search" }) %> >
+  #   # => <input type="text" aria-label="Search">
+  def attributes: (untyped attributes) -> untyped
+  def p: (*untyped arguments, **untyped options) ?{ () -> untyped } -> untyped
+  def tag_string: (untyped name, ?untyped? content, **untyped options) ?{ () -> untyped } -> untyped
+  def content_tag_string: (untyped name, untyped content, untyped options, ?bool escape) -> untyped
+  def tag_options: (untyped options, ?bool escape) -> (nil | untyped)
+  def boolean_tag_option: (untyped key) -> ::String
+  def tag_option: (untyped key, untyped value, untyped escape) -> ::String
+  private def prefix_tag_option: (untyped prefix, untyped key, untyped value, untyped escape) -> untyped
+  private def respond_to_missing?: (*untyped args) -> true
+  private def handle_deprecated_escape_options: (untyped options) -> (true | untyped)
+  private def method_missing: (untyped called, *untyped args, **untyped options) ?{ () -> untyped } -> untyped
+  include ActionView::Helpers::CaptureHelper
+  include ActionView::Helpers::OutputSafetyHelper
+  HTML_VOID_ELEMENTS: Set[Symbol]
+  SVG_SELF_CLOSING_ELEMENTS: Set[Symbol]
+end

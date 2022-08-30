@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Registry
+  def initialize: () -> void
+  def initialize_copy: (untyped other) -> untyped
+  def register: (untyped type_name, ?untyped? klass) ?{ () -> untyped } -> untyped
+  def lookup: (untyped symbol, *untyped args) -> untyped
+  attr_reader registrations: untyped
+end

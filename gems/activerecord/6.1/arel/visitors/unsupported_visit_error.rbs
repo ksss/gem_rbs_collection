@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::UnsupportedVisitError < ::StandardError
+  def initialize: (untyped object) -> void
+end

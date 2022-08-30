@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ToJsonWithActiveSupportEncoder : BasicObject
+  def to_json: (?untyped? options) -> untyped
+end

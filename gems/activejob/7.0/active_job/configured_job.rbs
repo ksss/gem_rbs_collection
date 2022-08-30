@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::ConfiguredJob
+  def initialize: (untyped job_class, ?::Hash[untyped, untyped] options) -> void
+  def perform_now: (*untyped) ?{ () -> untyped } -> untyped
+  def perform_later: (*untyped) ?{ () -> untyped } -> untyped
+end

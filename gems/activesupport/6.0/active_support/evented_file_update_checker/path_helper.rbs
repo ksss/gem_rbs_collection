@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EventedFileUpdateChecker::PathHelper
+  def xpath: (untyped path) -> untyped
+  def normalize_extension: (untyped ext) -> untyped
+  # Given a collection of Pathname objects returns the longest subpath
+  # common to all of them, or +nil+ if there is none.
+  def longest_common_subpath: (untyped paths) -> (nil | untyped)
+  # Returns the deepest existing ascendant, which could be the argument itself.
+  def existing_parent: (untyped dir) -> untyped
+  # Filters out directories which are descendants of others in the collection (stable).
+  def filter_out_descendants: (untyped dirs) -> untyped
+  private def ascendant_of?: (untyped base, untyped other) -> untyped
+end

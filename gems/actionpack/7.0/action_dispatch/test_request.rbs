@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::TestRequest < ::ActionDispatch::Request
+  # Create a new test request with default +env+ values.
+  def self.create: (?::Hash[untyped, untyped] env) -> untyped
+  def self.default_env: () -> untyped
+  def request_method=: (untyped method) -> untyped
+  def host=: (untyped host) -> untyped
+  def port=: (untyped number) -> untyped
+  def request_uri=: (untyped uri) -> untyped
+  def path=: (untyped path) -> untyped
+  def action=: (untyped action_name) -> untyped
+  def if_modified_since=: (untyped last_modified) -> untyped
+  def if_none_match=: (untyped etag) -> untyped
+  def remote_addr=: (untyped addr) -> untyped
+  def user_agent=: (untyped user_agent) -> untyped
+  def accept=: (untyped mime_types) -> untyped
+  DEFAULT_ENV: Hash[String, Array[Integer] | StringIO | true | false | String]
+end

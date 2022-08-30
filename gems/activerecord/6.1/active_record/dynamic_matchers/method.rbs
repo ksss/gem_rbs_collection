@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DynamicMatchers::Method
+  def self.match: (untyped model, untyped name) -> untyped
+  def self.pattern: () -> untyped
+  def self.prefix: () -> untyped
+  def self.suffix: () -> ""
+  def initialize: (untyped model, untyped method_name) -> void
+  def valid?: () -> untyped
+  def define: () -> untyped
+  private def body: () -> ::String
+  # The parameters in the signature may have reserved Ruby words, in order
+  # to prevent errors, we start each param name with `_`.
+  private def signature: () -> untyped
+  # Given that the parameters starts with `_`, the finder needs to use the
+  # same parameter name.
+  private def attributes_hash: () -> untyped
+  private def finder: () -> untyped
+  attr_reader self.matchers: untyped
+  attr_reader model: untyped
+  attr_reader name: untyped
+  attr_reader attribute_names: untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PredicateBuilder::AssociationQueryValue
+  def initialize: (untyped associated_table, untyped value) -> void
+  def queries: () -> ::Array[::Hash[untyped, untyped]]
+  private def ids: () -> untyped
+  private def primary_key: () -> untyped
+  private def convert_to_id: (untyped value) -> untyped
+  attr_reader associated_table: untyped
+  attr_reader value: untyped
+end

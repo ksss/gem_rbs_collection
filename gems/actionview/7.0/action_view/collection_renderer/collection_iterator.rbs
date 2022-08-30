@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::CollectionRenderer::CollectionIterator
+  def initialize: (untyped collection) -> void
+  def each: () ?{ () -> untyped } -> untyped
+  def size: () -> untyped
+  def length: () -> untyped
+end

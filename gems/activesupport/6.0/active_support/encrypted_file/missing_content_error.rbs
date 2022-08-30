@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EncryptedFile::MissingContentError < ::RuntimeError
+  def initialize: (untyped content_path) -> void
+end

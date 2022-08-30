@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::Association
+  def self.build: (untyped model, untyped name, untyped scope, untyped options) ?{ () -> untyped } -> untyped
+  def self.create_reflection: (untyped model, untyped name, untyped scope, untyped options) ?{ () -> untyped } -> untyped
+  def self.build_scope: (untyped scope) -> untyped
+  def self.macro: () -> untyped
+  def self.valid_options: (untyped options) -> untyped
+  def self.validate_options: (untyped options) -> untyped
+  def self.define_extensions: (untyped model, untyped name) -> nil
+  def self.define_callbacks: (untyped model, untyped reflection) -> untyped
+  # Defines the setter and getter methods for the association
+  # class Post < ActiveRecord::Base
+  #   has_many :comments
+  # end
+  #
+  # Post.first.comments and Post.first.comments= methods are defined by this method...
+  def self.define_accessors: (untyped model, untyped reflection) -> untyped
+  def self.define_readers: (untyped mixin, untyped name) -> untyped
+  def self.define_writers: (untyped mixin, untyped name) -> untyped
+  def self.define_validations: (untyped model, untyped reflection) -> nil
+  def self.valid_dependent_options: () -> untyped
+  def self.check_dependent_options: (untyped dependent) -> (untyped | nil)
+  def self.add_destroy_callbacks: (untyped model, untyped reflection) -> untyped
+  attr_accessor self.extensions: untyped
+  VALID_OPTIONS: Array[Symbol]
+end

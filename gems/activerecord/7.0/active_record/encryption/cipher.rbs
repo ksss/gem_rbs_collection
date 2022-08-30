@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Cipher
+  # Encrypts the provided text and return an encrypted +Message+.
+  def encrypt: (untyped clean_text, key: untyped, ?deterministic: bool) -> untyped
+  # Decrypt the provided +Message+.
+  #
+  # When +key+ is an Array, it will try all the keys raising a
+  # +ActiveRecord::Encryption::Errors::Decryption+ if none works.
+  def decrypt: (untyped encrypted_message, key: untyped) -> untyped
+  def key_length: () -> untyped
+  def iv_length: () -> untyped
+  private def try_to_decrypt_with_each: (untyped encrypted_text, keys: untyped) -> untyped
+  private def cipher_for: (untyped secret, ?deterministic: bool) -> untyped
+  extend ActiveSupport::Autoload
+  DEFAULT_ENCODING: Encoding
+end

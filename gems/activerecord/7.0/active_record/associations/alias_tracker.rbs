@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::AliasTracker
+  def self.create: (untyped connection, untyped initial_table, untyped joins, ?untyped? aliases) -> untyped
+  def self.initial_count_for: (untyped connection, untyped name, untyped table_joins) -> untyped
+  # table_joins is an array of arel joins which might conflict with the aliases we assign here
+  def initialize: (untyped connection, untyped aliases) -> void
+  def aliased_table_for: (untyped arel_table, ?untyped? table_name) { () -> untyped } -> untyped
+  private def truncate: (untyped name) -> untyped
+  attr_reader aliases: untyped
+end

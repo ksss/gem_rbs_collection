@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Helpers
+  # Provides a proxy to access helper methods from outside the view.
+  def helpers: () -> untyped
+  include AbstractController::Helpers
+  extend ActiveSupport::Concern
+  attr_accessor self.helpers_path: untyped
+end

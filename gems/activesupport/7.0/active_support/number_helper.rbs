@@ -35,7 +35,6 @@ module ActiveSupport::NumberHelper
   #   number_to_phone(13312345678, pattern: /(\d{3})(\d{4})(\d{4})$/)
   #   # => "133-1234-5678"
   def number_to_phone: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Formats a +number+ into a currency string (e.g., $13.65). You
   # can customize the format in the +options+ hash.
   #
@@ -94,7 +93,6 @@ module ActiveSupport::NumberHelper
   #   number_to_currency(1234567890.50, precision: 0, round_mode: :up)
   #   # => "$1,234,567,891"
   def number_to_currency: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Formats a +number+ as a percentage string (e.g., 65%). You can
   # customize the format in the +options+ hash.
   #
@@ -132,7 +130,6 @@ module ActiveSupport::NumberHelper
   #   number_to_percentage(100, format: '%n  %')                             # => "100.000  %"
   #   number_to_percentage(302.24398923423, precision: 5, round_mode: :down) # => "302.24398%"
   def number_to_percentage: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Formats a +number+ with grouped thousands using +delimiter+
   # (e.g., 12,324). You can customize the format in the +options+
   # hash.
@@ -165,7 +162,6 @@ module ActiveSupport::NumberHelper
   #     delimiter_pattern: /(\d+?)(?=(\d\d)+(\d)(?!\d))/)
   #                                                    # => "1,23,456.78"
   def number_to_delimited: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Formats a +number+ with the specified level of
   # <tt>:precision</tt> (e.g., 112.32 has a precision of 2 if
   # +:significant+ is +false+, and 5 if +:significant+ is +true+).
@@ -210,7 +206,6 @@ module ActiveSupport::NumberHelper
   #   number_to_rounded(1111.2345, precision: 2, separator: ',', delimiter: '.')
   #   # => "1.111,23"
   def number_to_rounded: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Formats the bytes in +number+ into a more understandable
   # representation (e.g., giving it 1500 yields 1.46 KB). This
   # method is useful for reporting file sizes to users. You can
@@ -255,7 +250,6 @@ module ActiveSupport::NumberHelper
   #   number_to_human_size(1234567890123, precision: 5)            # => "1.1228 TB"
   #   number_to_human_size(524288000, precision: 5)                # => "500 MB"
   def number_to_human_size: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   # Pretty prints (formats and approximates) a number in a way it
   # is more readable by humans (e.g.: 1200000000 becomes "1.2
   # Billion"). This is useful for numbers that can get very large
@@ -361,8 +355,6 @@ module ActiveSupport::NumberHelper
   #   number_to_human(1, units: :distance)                 # => "1 meter"
   #   number_to_human(0.34, units: :distance)              # => "34 centimeters"
   def number_to_human: (untyped number, ?::Hash[untyped, untyped] options) -> untyped
-
   extend ActiveSupport::Autoload
-
   extend ActiveSupport::NumberHelper
 end

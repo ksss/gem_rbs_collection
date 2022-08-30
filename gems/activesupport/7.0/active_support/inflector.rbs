@@ -11,7 +11,6 @@ module ActiveSupport::Inflector
   #     inflect.uncountable 'rails'
   #   end
   def inflections: (?::Symbol locale) { (untyped) -> untyped } -> untyped
-
   # Returns the plural form of the word in the string.
   #
   # If passed an optional +locale+ parameter, the word will be
@@ -25,7 +24,6 @@ module ActiveSupport::Inflector
   #   pluralize('CamelOctopus')     # => "CamelOctopi"
   #   pluralize('ley', :es)         # => "leyes"
   def pluralize: (untyped word, ?::Symbol locale) -> untyped
-
   # The reverse of #pluralize, returns the singular form of a word in a
   # string.
   #
@@ -40,7 +38,6 @@ module ActiveSupport::Inflector
   #   singularize('CamelOctopi')      # => "CamelOctopus"
   #   singularize('leyes', :es)       # => "ley"
   def singularize: (untyped word, ?::Symbol locale) -> untyped
-
   # Converts strings to UpperCamelCase.
   # If the +uppercase_first_letter+ parameter is set to false, then produces
   # lowerCamelCase.
@@ -58,7 +55,6 @@ module ActiveSupport::Inflector
   #
   #   camelize(underscore('SSLError'))        # => "SslError"
   def camelize: (untyped term, ?bool uppercase_first_letter) -> untyped
-
   # Makes an underscored, lowercase form from the expression in the string.
   #
   # Changes '::' to '/' to convert namespaces to paths.
@@ -71,7 +67,6 @@ module ActiveSupport::Inflector
   #
   #   camelize(underscore('SSLError'))  # => "SslError"
   def underscore: (untyped camel_cased_word) -> untyped
-
   # Tweaks an attribute name for display to end users.
   #
   # Specifically, performs these transformations:
@@ -99,14 +94,12 @@ module ActiveSupport::Inflector
   #   humanize('ssl_error') # => "SSL error"
   #
   def humanize: (untyped lower_case_and_underscored_word, ?capitalize: bool, ?keep_id_suffix: bool) -> untyped
-
   # Converts just the first character to uppercase.
   #
   #   upcase_first('what a Lovely Day') # => "What a Lovely Day"
   #   upcase_first('w')                 # => "W"
   #   upcase_first('')                  # => ""
   def upcase_first: (untyped string) -> (untyped | "")
-
   # Capitalizes all the words and replaces some characters in the string to
   # create a nicer looking title. +titleize+ is meant for creating pretty
   # output. It is not used in the Rails internals.
@@ -123,7 +116,6 @@ module ActiveSupport::Inflector
   #   titleize('raiders_of_the_lost_ark')                      # => "Raiders Of The Lost Ark"
   #   titleize('string_ending_with_id', keep_id_suffix: true)  # => "String Ending With Id"
   def titleize: (untyped word, ?keep_id_suffix: bool) -> untyped
-
   # Creates the name of a table like Rails does for models to table names.
   # This method uses the #pluralize method on the last word in the string.
   #
@@ -131,7 +123,6 @@ module ActiveSupport::Inflector
   #   tableize('ham_and_egg')     # => "ham_and_eggs"
   #   tableize('fancyCategory')   # => "fancy_categories"
   def tableize: (untyped class_name) -> untyped
-
   # Creates a class name from a plural table name like Rails does for table
   # names to models. Note that this returns a string and not a Class (To
   # convert to an actual class follow +classify+ with #constantize).
@@ -143,12 +134,10 @@ module ActiveSupport::Inflector
   #
   #   classify('calculus')     # => "Calculu"
   def classify: (untyped table_name) -> untyped
-
   # Replaces underscores with dashes in the string.
   #
   #   dasherize('puni_puni') # => "puni-puni"
   def dasherize: (untyped underscored_word) -> untyped
-
   # Removes the module part from the expression in the string.
   #
   #   demodulize('ActiveSupport::Inflector::Inflections') # => "Inflections"
@@ -158,7 +147,6 @@ module ActiveSupport::Inflector
   #
   # See also #deconstantize.
   def demodulize: (untyped path) -> untyped
-
   # Removes the rightmost segment from the constant expression in the string.
   #
   #   deconstantize('Net::HTTP')   # => "Net"
@@ -169,7 +157,6 @@ module ActiveSupport::Inflector
   #
   # See also #demodulize.
   def deconstantize: (untyped path) -> untyped
-
   # Creates a foreign key name from a class name.
   # +separate_class_name_and_id_with_underscore+ sets whether
   # the method should put '_' between the name and 'id'.
@@ -178,7 +165,6 @@ module ActiveSupport::Inflector
   #   foreign_key('Message', false) # => "messageid"
   #   foreign_key('Admin::Post')    # => "post_id"
   def foreign_key: (untyped class_name, ?bool separate_class_name_and_id_with_underscore) -> untyped
-
   # Tries to find a constant with the name specified in the argument string.
   #
   #   constantize('Module')   # => Module
@@ -198,7 +184,6 @@ module ActiveSupport::Inflector
   # NameError is raised when the name is not in CamelCase or the constant is
   # unknown.
   def constantize: (untyped camel_cased_word) -> untyped
-
   # Tries to find a constant with the name specified in the argument string.
   #
   #   safe_constantize('Module')   # => Module
@@ -222,7 +207,6 @@ module ActiveSupport::Inflector
   #   safe_constantize('UnknownModule')            # => nil
   #   safe_constantize('UnknownModule::Foo::Bar')  # => nil
   def safe_constantize: (untyped camel_cased_word) -> untyped
-
   # Returns the suffix that should be added to a number to denote the position
   # in an ordered sequence such as 1st, 2nd, 3rd, 4th.
   #
@@ -233,7 +217,6 @@ module ActiveSupport::Inflector
   #   ordinal(-11)   # => "th"
   #   ordinal(-1021) # => "st"
   def ordinal: (untyped number) -> untyped
-
   # Turns a number into an ordinal string used to denote the position in an
   # ordered sequence such as 1st, 2nd, 3rd, 4th.
   #
@@ -244,14 +227,12 @@ module ActiveSupport::Inflector
   #   ordinalize(-11)   # => "-11th"
   #   ordinalize(-1021) # => "-1021st"
   def ordinalize: (untyped number) -> untyped
-
   # Mounts a regular expression, returned as a string to ease interpolation,
   # that will match part by part the given constant.
   #
   #   const_regexp("Foo::Bar::Baz") # => "Foo(::Bar(::Baz)?)?"
   #   const_regexp("::")            # => "::"
   private def const_regexp: (untyped camel_cased_word) -> untyped
-
   # Applies inflection rules for +singularize+ and +pluralize+.
   #
   # If passed an optional +locale+ parameter, the uncountables will be
@@ -260,7 +241,6 @@ module ActiveSupport::Inflector
   #  apply_inflections('post', inflections.plurals, :en)    # => "posts"
   #  apply_inflections('posts', inflections.singulars, :en) # => "post"
   private def apply_inflections: (untyped word, untyped rules, ?::Symbol locale) -> untyped
-
   # Replaces non-ASCII characters with an ASCII approximation, or if none
   # exists, a replacement character which defaults to "?".
   #
@@ -316,7 +296,6 @@ module ActiveSupport::Inflector
   # Transliteration is restricted to UTF-8, US-ASCII, and GB18030 strings.
   # Other encodings will raise an ArgumentError.
   def transliterate: (untyped string, ?::String replacement, ?locale: untyped?) -> untyped
-
   # Replaces special characters in a string so that it may be used as part of
   # a 'pretty' URL.
   #
@@ -344,8 +323,6 @@ module ActiveSupport::Inflector
   # By default, this parameter is set to <tt>nil</tt> and it will use
   # the configured <tt>I18n.locale</tt>.
   def parameterize: (untyped string, ?separator: ::String, ?preserve_case: bool, ?locale: untyped?) -> untyped
-
   extend ActiveSupport::Inflector
-
   ALLOWED_ENCODINGS_FOR_TRANSLITERATE: Array[Encoding]
 end

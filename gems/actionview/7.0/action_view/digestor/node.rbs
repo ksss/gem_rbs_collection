@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Digestor::Node
+  def self.create: (untyped name, untyped logical_name, untyped template, untyped partial) -> untyped
+  def initialize: (untyped name, untyped logical_name, untyped template, ?untyped children) -> void
+  def digest: (untyped finder, ?untyped stack) -> untyped
+  def dependency_digest: (untyped finder, untyped stack) -> untyped
+  def to_dep_map: () -> (::Hash[untyped, untyped] | untyped)
+  attr_reader name: untyped
+  attr_reader logical_name: untyped
+  attr_reader template: untyped
+  attr_reader children: untyped
+end

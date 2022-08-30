@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::IntegrationTest < ::ActiveSupport::TestCase
+  include ActionDispatch::TestProcess::FixtureFile
+  include ActionDispatch::IntegrationTest::Behavior
+  include ActionDispatch::Routing::UrlFor
+  include ActionDispatch::IntegrationTest::UrlOptions
+  extend ActionDispatch::IntegrationTest::Behavior::ClassMethods
+end

@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::RequestCookieMethods
+  def cookie_jar: () -> untyped
+  def have_cookie_jar?: () -> untyped
+  def cookie_jar=: (untyped jar) -> untyped
+  def key_generator: () -> untyped
+  def signed_cookie_salt: () -> untyped
+  def encrypted_cookie_salt: () -> untyped
+  def encrypted_signed_cookie_salt: () -> untyped
+  def authenticated_encrypted_cookie_salt: () -> untyped
+  def use_authenticated_cookie_encryption: () -> untyped
+  def encrypted_cookie_cipher: () -> untyped
+  def signed_cookie_digest: () -> untyped
+  def secret_key_base: () -> untyped
+  def cookies_serializer: () -> untyped
+  def cookies_same_site_protection: () -> untyped
+  def cookies_digest: () -> untyped
+  def cookies_rotations: () -> untyped
+  def use_cookies_with_metadata: () -> untyped
+end

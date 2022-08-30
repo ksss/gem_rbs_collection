@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Following < ::Arel::Nodes::Unary
+  def initialize: (?untyped? expr) -> void
+end

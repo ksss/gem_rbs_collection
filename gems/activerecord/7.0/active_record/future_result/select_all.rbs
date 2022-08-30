@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FutureResult::SelectAll < ::ActiveRecord::FutureResult
+  private def exec_query: () -> untyped
+end

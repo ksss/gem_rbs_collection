@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Callbacks
+  def self.before: (*untyped args) ?{ () -> untyped } -> untyped
+  def self.after: (*untyped args) ?{ () -> untyped } -> untyped
+  def initialize: (untyped app) -> void
+  def call: (untyped env) -> untyped
+  include ActiveSupport::Callbacks
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+end

@@ -1,0 +1,544 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class String
+  # A string is blank if it's empty or contains whitespaces only:
+  #
+  #   ''.blank?       # => true
+  #   '   '.blank?    # => true
+  #   "\t\n\r".blank? # => true
+  #   ' blah '.blank? # => false
+  #
+  # Unicode whitespace is supported:
+  #
+  #   "\u00a0".blank? # => true
+  #
+  # @return [true, false]
+  def blank?: () -> untyped
+  def as_json: (?untyped? options) -> self
+  # If you pass a single integer, returns a substring of one character at that
+  # position. The first character of the string is at position 0, the next at
+  # position 1, and so on. If a range is supplied, a substring containing
+  # characters at offsets given by the range is returned. In both cases, if an
+  # offset is negative, it is counted from the end of the string. Returns +nil+
+  # if the initial offset falls outside the string. Returns an empty string if
+  # the beginning of the range is greater than the end of the string.
+  #
+  #   str = "hello"
+  #   str.at(0)      # => "h"
+  #   str.at(1..3)   # => "ell"
+  #   str.at(-2)     # => "l"
+  #   str.at(-2..-1) # => "lo"
+  #   str.at(5)      # => nil
+  #   str.at(5..-1)  # => ""
+  #
+  # If a Regexp is given, the matching portion of the string is returned.
+  # If a String is given, that given string is returned if it occurs in
+  # the string. In both cases, +nil+ is returned if there is no match.
+  #
+  #   str = "hello"
+  #   str.at(/lo/) # => "lo"
+  #   str.at(/ol/) # => nil
+  #   str.at("lo") # => "lo"
+  #   str.at("ol") # => nil
+  def at: (untyped position) -> untyped
+  # Returns a substring from the given position to the end of the string.
+  # If the position is negative, it is counted from the end of the string.
+  #
+  #   str = "hello"
+  #   str.from(0)  # => "hello"
+  #   str.from(3)  # => "lo"
+  #   str.from(-2) # => "lo"
+  #
+  # You can mix it with +to+ method and do fun things like:
+  #
+  #   str = "hello"
+  #   str.from(0).to(-1) # => "hello"
+  #   str.from(1).to(-2) # => "ell"
+  def from: (untyped position) -> untyped
+  # Returns a substring from the beginning of the string to the given position.
+  # If the position is negative, it is counted from the end of the string.
+  #
+  #   str = "hello"
+  #   str.to(0)  # => "h"
+  #   str.to(3)  # => "hell"
+  #   str.to(-2) # => "hell"
+  #
+  # You can mix it with +from+ method and do fun things like:
+  #
+  #   str = "hello"
+  #   str.from(0).to(-1) # => "hello"
+  #   str.from(1).to(-2) # => "ell"
+  def to: (untyped position) -> untyped
+  # Returns the first character. If a limit is supplied, returns a substring
+  # from the beginning of the string until it reaches the limit value. If the
+  # given limit is greater than or equal to the string length, returns a copy of self.
+  #
+  #   str = "hello"
+  #   str.first    # => "h"
+  #   str.first(1) # => "h"
+  #   str.first(2) # => "he"
+  #   str.first(0) # => ""
+  #   str.first(6) # => "hello"
+  def first: (?::Integer limit) -> untyped
+  # Returns the last character of the string. If a limit is supplied, returns a substring
+  # from the end of the string until it reaches the limit value (counting backwards). If
+  # the given limit is greater than or equal to the string length, returns a copy of self.
+  #
+  #   str = "hello"
+  #   str.last    # => "o"
+  #   str.last(1) # => "o"
+  #   str.last(2) # => "lo"
+  #   str.last(0) # => ""
+  #   str.last(6) # => "hello"
+  def last: (?::Integer limit) -> untyped
+  # Enables more predictable duck-typing on String-like classes. See <tt>Object#acts_like?</tt>.
+  def acts_like_string?: () -> true
+  # Converts a string to a Time value.
+  # The +form+ can be either :utc or :local (default :local).
+  #
+  # The time is parsed using Time.parse method.
+  # If +form+ is :local, then the time is in the system timezone.
+  # If the date part is missing then the current date is used and if
+  # the time part is missing then it is assumed to be 00:00:00.
+  #
+  #   "13-12-2012".to_time               # => 2012-12-13 00:00:00 +0100
+  #   "06:12".to_time                    # => 2012-12-13 06:12:00 +0100
+  #   "2012-12-13 06:12".to_time         # => 2012-12-13 06:12:00 +0100
+  #   "2012-12-13T06:12".to_time         # => 2012-12-13 06:12:00 +0100
+  #   "2012-12-13T06:12".to_time(:utc)   # => 2012-12-13 06:12:00 UTC
+  #   "12/13/2012".to_time               # => ArgumentError: argument out of range
+  #   "1604326192".to_time               # => ArgumentError: argument out of range
+  def to_time: (?::Symbol form) -> (nil | untyped)
+  # Converts a string to a Date value.
+  #
+  #   "1-1-2012".to_date   # => Sun, 01 Jan 2012
+  #   "01/01/2012".to_date # => Sun, 01 Jan 2012
+  #   "2012-12-13".to_date # => Thu, 13 Dec 2012
+  #   "12/13/2012".to_date # => ArgumentError: invalid date
+  def to_date: () -> (untyped | nil)
+  # Converts a string to a DateTime value.
+  #
+  #   "1-1-2012".to_datetime            # => Sun, 01 Jan 2012 00:00:00 +0000
+  #   "01/01/2012 23:59:59".to_datetime # => Sun, 01 Jan 2012 23:59:59 +0000
+  #   "2012-12-13 12:50".to_datetime    # => Thu, 13 Dec 2012 12:50:00 +0000
+  #   "12/13/2012".to_datetime          # => ArgumentError: invalid date
+  def to_datetime: () -> (untyped | nil)
+  # The inverse of <tt>String#include?</tt>. Returns true if the string
+  # does not include the other string.
+  #
+  #   "hello".exclude? "lo" # => false
+  #   "hello".exclude? "ol" # => true
+  #   "hello".exclude? ?h   # => false
+  def exclude?: (untyped string) -> untyped
+  # Returns the string, first removing all whitespace on both ends of
+  # the string, and then changing remaining consecutive whitespace
+  # groups into one space each.
+  #
+  # Note that it handles both ASCII and Unicode whitespace.
+  #
+  #   %{ Multi-line
+  #      string }.squish                   # => "Multi-line string"
+  #   " foo   bar    \n   \t   boo".squish # => "foo bar boo"
+  def squish: () -> untyped
+  # Performs a destructive squish. See String#squish.
+  #   str = " foo   bar    \n   \t   boo"
+  #   str.squish!                         # => "foo bar boo"
+  #   str                                 # => "foo bar boo"
+  def squish!: () -> self
+  # Returns a new string with all occurrences of the patterns removed.
+  #   str = "foo bar test"
+  #   str.remove(" test")                 # => "foo bar"
+  #   str.remove(" test", /bar/)          # => "foo "
+  #   str                                 # => "foo bar test"
+  def remove: (*untyped patterns) -> untyped
+  # Alters the string by removing all occurrences of the patterns.
+  #   str = "foo bar test"
+  #   str.remove!(" test", /bar/)         # => "foo "
+  #   str                                 # => "foo "
+  def remove!: (*untyped patterns) -> self
+  # Truncates a given +text+ after a given <tt>length</tt> if +text+ is longer than <tt>length</tt>:
+  #
+  #   'Once upon a time in a world far far away'.truncate(27)
+  #   # => "Once upon a time in a wo..."
+  #
+  # Pass a string or regexp <tt>:separator</tt> to truncate +text+ at a natural break:
+  #
+  #   'Once upon a time in a world far far away'.truncate(27, separator: ' ')
+  #   # => "Once upon a time in a..."
+  #
+  #   'Once upon a time in a world far far away'.truncate(27, separator: /\s/)
+  #   # => "Once upon a time in a..."
+  #
+  # The last characters will be replaced with the <tt>:omission</tt> string (defaults to "...")
+  # for a total length not exceeding <tt>length</tt>:
+  #
+  #   'And they found that many people were sleeping better.'.truncate(25, omission: '... (continued)')
+  #   # => "And they f... (continued)"
+  def truncate: (untyped truncate_at, ?::Hash[untyped, untyped] options) -> untyped
+  # Truncates +text+ to at most <tt>bytesize</tt> bytes in length without
+  # breaking string encoding by splitting multibyte characters or breaking
+  # grapheme clusters ("perceptual characters") by truncating at combining
+  # characters.
+  #
+  #   >> "🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪".size
+  #   => 20
+  #   >> "🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪".bytesize
+  #   => 80
+  #   >> "🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪🔪".truncate_bytes(20)
+  #   => "🔪🔪🔪🔪…"
+  #
+  # The truncated text ends with the <tt>:omission</tt> string, defaulting
+  # to "…", for a total length not exceeding <tt>bytesize</tt>.
+  def truncate_bytes: (untyped truncate_at, ?omission: ::String) -> untyped
+  # Truncates a given +text+ after a given number of words (<tt>words_count</tt>):
+  #
+  #   'Once upon a time in a world far far away'.truncate_words(4)
+  #   # => "Once upon a time..."
+  #
+  # Pass a string or regexp <tt>:separator</tt> to specify a different separator of words:
+  #
+  #   'Once<br>upon<br>a<br>time<br>in<br>a<br>world'.truncate_words(5, separator: '<br>')
+  #   # => "Once<br>upon<br>a<br>time<br>in..."
+  #
+  # The last characters will be replaced with the <tt>:omission</tt> string (defaults to "..."):
+  #
+  #   'And they found that many people were sleeping better.'.truncate_words(5, omission: '... (continued)')
+  #   # => "And they found that many... (continued)"
+  def truncate_words: (untyped words_count, ?::Hash[untyped, untyped] options) -> untyped
+  # Same as +indent+, except it indents the receiver in-place.
+  #
+  # Returns the indented string, or +nil+ if there was nothing to indent.
+  def indent!: (untyped amount, ?untyped? indent_string, ?bool indent_empty_lines) -> untyped
+  # Indents the lines in the receiver:
+  #
+  #   <<EOS.indent(2)
+  #   def some_method
+  #     some_code
+  #   end
+  #   EOS
+  #   # =>
+  #     def some_method
+  #       some_code
+  #     end
+  #
+  # The second argument, +indent_string+, specifies which indent string to
+  # use. The default is +nil+, which tells the method to make a guess by
+  # peeking at the first indented line, and fallback to a space if there is
+  # none.
+  #
+  #   "  foo".indent(2)        # => "    foo"
+  #   "foo\n\t\tbar".indent(2) # => "\t\tfoo\n\t\t\t\tbar"
+  #   "foo".indent(2, "\t")    # => "\t\tfoo"
+  #
+  # While +indent_string+ is typically one space or tab, it may be any string.
+  #
+  # The third argument, +indent_empty_lines+, is a flag that says whether
+  # empty lines should be indented. Default is false.
+  #
+  #   "foo\n\nbar".indent(2)            # => "  foo\n\n  bar"
+  #   "foo\n\nbar".indent(2, nil, true) # => "  foo\n  \n  bar"
+  #
+  def indent: (untyped amount, ?untyped? indent_string, ?bool indent_empty_lines) -> untyped
+  # Returns the plural form of the word in the string.
+  #
+  # If the optional parameter +count+ is specified,
+  # the singular form will be returned if <tt>count == 1</tt>.
+  # For any other value of +count+ the plural will be returned.
+  #
+  # If the optional parameter +locale+ is specified,
+  # the word will be pluralized as a word of that language.
+  # By default, this parameter is set to <tt>:en</tt>.
+  # You must define your own inflection rules for languages other than English.
+  #
+  #   'post'.pluralize             # => "posts"
+  #   'octopus'.pluralize          # => "octopi"
+  #   'sheep'.pluralize            # => "sheep"
+  #   'words'.pluralize            # => "words"
+  #   'the blue mailman'.pluralize # => "the blue mailmen"
+  #   'CamelOctopus'.pluralize     # => "CamelOctopi"
+  #   'apple'.pluralize(1)         # => "apple"
+  #   'apple'.pluralize(2)         # => "apples"
+  #   'ley'.pluralize(:es)         # => "leyes"
+  #   'ley'.pluralize(1, :es)      # => "ley"
+  #
+  # See ActiveSupport::Inflector.pluralize.
+  def pluralize: (?untyped? count, ?::Symbol locale) -> untyped
+  # The reverse of +pluralize+, returns the singular form of a word in a string.
+  #
+  # If the optional parameter +locale+ is specified,
+  # the word will be singularized as a word of that language.
+  # By default, this parameter is set to <tt>:en</tt>.
+  # You must define your own inflection rules for languages other than English.
+  #
+  #   'posts'.singularize            # => "post"
+  #   'octopi'.singularize           # => "octopus"
+  #   'sheep'.singularize            # => "sheep"
+  #   'word'.singularize             # => "word"
+  #   'the blue mailmen'.singularize # => "the blue mailman"
+  #   'CamelOctopi'.singularize      # => "CamelOctopus"
+  #   'leyes'.singularize(:es)       # => "ley"
+  #
+  # See ActiveSupport::Inflector.singularize.
+  def singularize: (?::Symbol locale) -> untyped
+  # +constantize+ tries to find a declared constant with the name specified
+  # in the string. It raises a NameError when the name is not in CamelCase
+  # or is not initialized.
+  #
+  #   'Module'.constantize  # => Module
+  #   'Class'.constantize   # => Class
+  #   'blargle'.constantize # => NameError: wrong constant name blargle
+  #
+  # See ActiveSupport::Inflector.constantize.
+  def constantize: () -> untyped
+  # +safe_constantize+ tries to find a declared constant with the name specified
+  # in the string. It returns +nil+ when the name is not in CamelCase
+  # or is not initialized.
+  #
+  #   'Module'.safe_constantize  # => Module
+  #   'Class'.safe_constantize   # => Class
+  #   'blargle'.safe_constantize # => nil
+  #
+  # See ActiveSupport::Inflector.safe_constantize.
+  def safe_constantize: () -> untyped
+  # By default, +camelize+ converts strings to UpperCamelCase. If the argument to camelize
+  # is set to <tt>:lower</tt> then camelize produces lowerCamelCase.
+  #
+  # +camelize+ will also convert '/' to '::' which is useful for converting paths to namespaces.
+  #
+  #   'active_record'.camelize                # => "ActiveRecord"
+  #   'active_record'.camelize(:lower)        # => "activeRecord"
+  #   'active_record/errors'.camelize         # => "ActiveRecord::Errors"
+  #   'active_record/errors'.camelize(:lower) # => "activeRecord::Errors"
+  #
+  # +camelize+ is also aliased as +camelcase+.
+  #
+  # See ActiveSupport::Inflector.camelize.
+  def camelize: (?::Symbol first_letter) -> untyped
+  alias camelcase camelize
+  # Capitalizes all the words and replaces some characters in the string to create
+  # a nicer looking title. +titleize+ is meant for creating pretty output. It is not
+  # used in the Rails internals.
+  #
+  # The trailing '_id','Id'.. can be kept and capitalized by setting the
+  # optional parameter +keep_id_suffix+ to true.
+  # By default, this parameter is false.
+  #
+  #   'man from the boondocks'.titleize                       # => "Man From The Boondocks"
+  #   'x-men: the last stand'.titleize                        # => "X Men: The Last Stand"
+  #   'string_ending_with_id'.titleize(keep_id_suffix: true)  # => "String Ending With Id"
+  #
+  # +titleize+ is also aliased as +titlecase+.
+  #
+  # See ActiveSupport::Inflector.titleize.
+  def titleize: (?keep_id_suffix: bool) -> untyped
+  alias titlecase titleize
+  # The reverse of +camelize+. Makes an underscored, lowercase form from the expression in the string.
+  #
+  # +underscore+ will also change '::' to '/' to convert namespaces to paths.
+  #
+  #   'ActiveModel'.underscore         # => "active_model"
+  #   'ActiveModel::Errors'.underscore # => "active_model/errors"
+  #
+  # See ActiveSupport::Inflector.underscore.
+  def underscore: () -> untyped
+  # Replaces underscores with dashes in the string.
+  #
+  #   'puni_puni'.dasherize # => "puni-puni"
+  #
+  # See ActiveSupport::Inflector.dasherize.
+  def dasherize: () -> untyped
+  # Removes the module part from the constant expression in the string.
+  #
+  #   'ActiveSupport::Inflector::Inflections'.demodulize # => "Inflections"
+  #   'Inflections'.demodulize                           # => "Inflections"
+  #   '::Inflections'.demodulize                         # => "Inflections"
+  #   ''.demodulize                                      # => ''
+  #
+  # See ActiveSupport::Inflector.demodulize.
+  #
+  # See also +deconstantize+.
+  def demodulize: () -> untyped
+  # Removes the rightmost segment from the constant expression in the string.
+  #
+  #   'Net::HTTP'.deconstantize   # => "Net"
+  #   '::Net::HTTP'.deconstantize # => "::Net"
+  #   'String'.deconstantize      # => ""
+  #   '::String'.deconstantize    # => ""
+  #   ''.deconstantize            # => ""
+  #
+  # See ActiveSupport::Inflector.deconstantize.
+  #
+  # See also +demodulize+.
+  def deconstantize: () -> untyped
+  # Replaces special characters in a string so that it may be used as part of a 'pretty' URL.
+  #
+  # If the optional parameter +locale+ is specified,
+  # the word will be parameterized as a word of that language.
+  # By default, this parameter is set to <tt>nil</tt> and it will use
+  # the configured <tt>I18n.locale</tt>.
+  #
+  #   class Person
+  #     def to_param
+  #       "#{id}-#{name.parameterize}"
+  #     end
+  #   end
+  #
+  #   @person = Person.find(1)
+  #   # => #<Person id: 1, name: "Donald E. Knuth">
+  #
+  #   <%= link_to(@person.name, person_path) %>
+  #   # => <a href="/person/1-donald-e-knuth">Donald E. Knuth</a>
+  #
+  # To preserve the case of the characters in a string, use the +preserve_case+ argument.
+  #
+  #   class Person
+  #     def to_param
+  #       "#{id}-#{name.parameterize(preserve_case: true)}"
+  #     end
+  #   end
+  #
+  #   @person = Person.find(1)
+  #   # => #<Person id: 1, name: "Donald E. Knuth">
+  #
+  #   <%= link_to(@person.name, person_path) %>
+  #   # => <a href="/person/1-Donald-E-Knuth">Donald E. Knuth</a>
+  #
+  # See ActiveSupport::Inflector.parameterize.
+  def parameterize: (?separator: ::String, ?preserve_case: bool, ?locale: untyped?) -> untyped
+  # Creates the name of a table like Rails does for models to table names. This method
+  # uses the +pluralize+ method on the last word in the string.
+  #
+  #   'RawScaledScorer'.tableize # => "raw_scaled_scorers"
+  #   'ham_and_egg'.tableize     # => "ham_and_eggs"
+  #   'fancyCategory'.tableize   # => "fancy_categories"
+  #
+  # See ActiveSupport::Inflector.tableize.
+  def tableize: () -> untyped
+  # Creates a class name from a plural table name like Rails does for table names to models.
+  # Note that this returns a string and not a class. (To convert to an actual class
+  # follow +classify+ with +constantize+.)
+  #
+  #   'ham_and_eggs'.classify # => "HamAndEgg"
+  #   'posts'.classify        # => "Post"
+  #
+  # See ActiveSupport::Inflector.classify.
+  def classify: () -> untyped
+  # Capitalizes the first word, turns underscores into spaces, and (by default)strips a
+  # trailing '_id' if present.
+  # Like +titleize+, this is meant for creating pretty output.
+  #
+  # The capitalization of the first word can be turned off by setting the
+  # optional parameter +capitalize+ to false.
+  # By default, this parameter is true.
+  #
+  # The trailing '_id' can be kept and capitalized by setting the
+  # optional parameter +keep_id_suffix+ to true.
+  # By default, this parameter is false.
+  #
+  #   'employee_salary'.humanize                    # => "Employee salary"
+  #   'author_id'.humanize                          # => "Author"
+  #   'author_id'.humanize(capitalize: false)       # => "author"
+  #   '_id'.humanize                                # => "Id"
+  #   'author_id'.humanize(keep_id_suffix: true)    # => "Author Id"
+  #
+  # See ActiveSupport::Inflector.humanize.
+  def humanize: (?capitalize: bool, ?keep_id_suffix: bool) -> untyped
+  # Converts just the first character to uppercase.
+  #
+  #   'what a Lovely Day'.upcase_first # => "What a Lovely Day"
+  #   'w'.upcase_first                 # => "W"
+  #   ''.upcase_first                  # => ""
+  #
+  # See ActiveSupport::Inflector.upcase_first.
+  def upcase_first: () -> untyped
+  # Creates a foreign key name from a class name.
+  # +separate_class_name_and_id_with_underscore+ sets whether
+  # the method should put '_' between the name and 'id'.
+  #
+  #   'Message'.foreign_key        # => "message_id"
+  #   'Message'.foreign_key(false) # => "messageid"
+  #   'Admin::Post'.foreign_key    # => "post_id"
+  #
+  # See ActiveSupport::Inflector.foreign_key.
+  def foreign_key: (?bool separate_class_name_and_id_with_underscore) -> untyped
+  # Wraps the current string in the <tt>ActiveSupport::StringInquirer</tt> class,
+  # which gives you a prettier way to test for equality.
+  #
+  #   env = 'production'.inquiry
+  #   env.production?  # => true
+  #   env.development? # => false
+  def inquiry: () -> untyped
+  # == Multibyte proxy
+  #
+  # +mb_chars+ is a multibyte safe proxy for string methods.
+  #
+  # It creates and returns an instance of the ActiveSupport::Multibyte::Chars class which
+  # encapsulates the original string. A Unicode safe version of all the String methods are defined on this proxy
+  # class. If the proxy class doesn't respond to a certain method, it's forwarded to the encapsulated string.
+  #
+  #   >> "ǉ".mb_chars.upcase.to_s
+  #   => "Ǉ"
+  #
+  # NOTE: Ruby 2.4 and later support native Unicode case mappings:
+  #
+  #   >> "ǉ".upcase
+  #   => "Ǉ"
+  #
+  # == Method chaining
+  #
+  # All the methods on the Chars proxy which normally return a string will return a Chars object. This allows
+  # method chaining on the result of any of these methods.
+  #
+  #   name.mb_chars.reverse.length # => 12
+  #
+  # == Interoperability and configuration
+  #
+  # The Chars object tries to be as interchangeable with String objects as possible: sorting and comparing between
+  # String and Char work like expected. The bang! methods change the internal string representation in the Chars
+  # object. Interoperability problems can be resolved easily with a +to_s+ call.
+  #
+  # For more information about the methods defined on the Chars proxy see ActiveSupport::Multibyte::Chars. For
+  # information about how to change the default Multibyte behavior see ActiveSupport::Multibyte.
+  def mb_chars: () -> untyped
+  # Returns +true+ if string has utf_8 encoding.
+  #
+  #   utf_8_str = "some string".encode "UTF-8"
+  #   iso_str = "some string".encode "ISO-8859-1"
+  #
+  #   utf_8_str.is_utf8? # => true
+  #   iso_str.is_utf8?   # => false
+  def is_utf8?: () -> untyped
+  # Marks a string as trusted safe. It will be inserted into HTML with no
+  # additional escaping performed. It is your responsibility to ensure that the
+  # string contains no malicious content. This method is equivalent to the
+  # +raw+ helper in views. It is recommended that you use +sanitize+ instead of
+  # this method. It should never be called on user input.
+  def html_safe: () -> untyped
+  alias starts_with? start_with?
+  alias ends_with? end_with?
+  # Strips indentation in heredocs.
+  #
+  # For example in
+  #
+  #   if options[:usage]
+  #     puts <<-USAGE.strip_heredoc
+  #       This command does such and such.
+  #
+  #       Supported options are:
+  #         -h         This message
+  #         ...
+  #     USAGE
+  #   end
+  #
+  # the user would see the usage message aligned against the left margin.
+  #
+  # Technically, it looks for the least indented non-empty line
+  # in the whole string, and removes that amount of leading whitespace.
+  def strip_heredoc: () -> untyped
+  def in_time_zone: (?ActiveSupport::TimeZone | String zone) -> ::ActiveSupport::TimeWithZone
+                  | (false? zone) -> ::Time
+  prepend ActiveSupport::ToJsonWithActiveSupportEncoder
+  BLANK_RE: Regexp
+  ENCODED_BLANKS: Concurrent::Map
+end

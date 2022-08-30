@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Railties::ControllerRuntime::ClassMethods
+  def log_process_action: (untyped payload) -> untyped
+end

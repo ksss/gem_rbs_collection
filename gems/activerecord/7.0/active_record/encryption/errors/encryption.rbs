@@ -1,0 +1,5 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Errors::Encryption < ::ActiveRecord::Base
+end

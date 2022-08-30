@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AdvisoryLockBase < ::ActiveRecord::Base
+  def self._internal?: () -> true
+  include ActiveRecord::AdvisoryLockBase::GeneratedAttributeMethods
+  include ActiveRecord::AdvisoryLockBase::GeneratedAssociationMethods
+end

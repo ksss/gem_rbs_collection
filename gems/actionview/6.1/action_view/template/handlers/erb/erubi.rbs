@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Handlers::ERB::Erubi < ::Erubi::Engine
+  # :nodoc: all
+  def initialize: (untyped input, ?::Hash[untyped, untyped] properties) -> void
+  def evaluate: (untyped action_view_erb_handler_context) -> untyped
+  private def add_text: (untyped text) -> (nil | untyped)
+  private def add_expression: (untyped indicator, untyped code) -> untyped
+  private def add_code: (untyped code) -> untyped
+  private def add_postamble: (untyped _) -> untyped
+  private def flush_newline_if_pending: (untyped src) -> (untyped | nil)
+  BLOCK_EXPR: Regexp
+end

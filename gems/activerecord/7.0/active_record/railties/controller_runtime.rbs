@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Railties::ControllerRuntime
+  private def process_action: (untyped action, *untyped args) -> untyped
+  private def cleanup_view_runtime: () -> untyped
+  private def append_info_to_payload: (untyped payload) -> untyped
+  extend ActiveSupport::Concern
+  attr_reader _db_runtime: untyped
+  attr_writer _db_runtime: untyped
+end

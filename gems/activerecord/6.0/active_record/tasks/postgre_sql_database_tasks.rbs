@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Tasks::PostgreSQLDatabaseTasks
+  def initialize: (untyped configuration) -> void
+  def create: (?bool master_established) -> untyped
+  def drop: () -> untyped
+  def charset: () -> untyped
+  def collation: () -> untyped
+  def purge: () -> untyped
+  def structure_dump: (untyped filename, untyped extra_flags) -> untyped
+  def structure_load: (untyped filename, untyped extra_flags) -> untyped
+  private def encoding: () -> untyped
+  private def establish_master_connection: () -> untyped
+  private def set_psql_env: () -> untyped
+  private def run_cmd: (untyped cmd, untyped args, untyped action) -> (untyped | nil)
+  private def run_cmd_error: (untyped cmd, untyped args, untyped action) -> untyped
+  private def remove_sql_header_comments: (untyped filename) -> untyped
+  attr_reader configuration: untyped
+  DEFAULT_ENCODING: String
+  ON_ERROR_STOP_1: String
+  SQL_COMMENT_BEGIN: String
+end

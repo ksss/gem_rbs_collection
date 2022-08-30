@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Node
+  def initialize: (untyped left) -> void
+  def each: () ?{ () -> untyped } -> untyped
+  def to_s: () -> untyped
+  def to_dot: () -> untyped
+  def to_sym: () -> untyped
+  def name: () -> untyped
+  def type: () -> untyped
+  def symbol?: () -> false
+  def literal?: () -> false
+  def terminal?: () -> false
+  def star?: () -> false
+  def cat?: () -> false
+  def group?: () -> false
+  attr_accessor left: untyped
+  attr_accessor memo: untyped
+end

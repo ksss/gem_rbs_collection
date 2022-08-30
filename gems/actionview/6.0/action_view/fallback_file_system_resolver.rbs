@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::FallbackFileSystemResolver < ::ActionView::FileSystemResolver
+  def self.instances: () -> ::Array[untyped]
+  def build_unbound_template: (untyped template, untyped _) -> untyped
+  def reject_files_external_to_app: (untyped files) -> untyped
+end

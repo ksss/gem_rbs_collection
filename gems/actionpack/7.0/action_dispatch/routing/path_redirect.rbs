@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::PathRedirect < ::ActionDispatch::Routing::Redirect
+  def path: (untyped params, untyped request) -> (::String | untyped)
+  def inspect: () -> ::String
+  private def interpolation_required?: (untyped string, untyped params) -> untyped
+  URL_PARTS: Regexp
+end

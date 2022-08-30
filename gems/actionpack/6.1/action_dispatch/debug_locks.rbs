@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::DebugLocks
+  def initialize: (untyped app, ?::String path) -> void
+  def call: (untyped env) -> untyped
+  private def render_details: (untyped req) -> ::Array[200 | ::Hash[::String, "text/plain" | untyped] | ::Array[untyped]]
+  private def blocked_by?: (untyped victim, untyped blocker, untyped all_threads) -> (false | untyped)
+end

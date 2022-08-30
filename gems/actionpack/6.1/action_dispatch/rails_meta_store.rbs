@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RailsMetaStore < Rack::Cache::MetaStore
+  def self.resolve: (untyped uri) -> untyped
+  def initialize: (?untyped store) -> void
+  def read: (untyped key) -> (untyped | ::Array[untyped])
+  def write: (untyped key, untyped value) -> untyped
+end

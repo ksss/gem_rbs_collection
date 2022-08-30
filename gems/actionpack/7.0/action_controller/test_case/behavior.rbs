@@ -1,0 +1,94 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::TestCase::Behavior
+  # Simulate a GET request with the given parameters.
+  #
+  # - +action+: The controller action to call.
+  # - +params+: The hash with HTTP parameters that you want to pass. This may be +nil+.
+  # - +body+: The request body with a string that is appropriately encoded
+  #   (<tt>application/x-www-form-urlencoded</tt> or <tt>multipart/form-data</tt>).
+  # - +session+: A hash of parameters to store in the session. This may be +nil+.
+  # - +flash+: A hash of parameters to store in the flash. This may be +nil+.
+  #
+  # You can also simulate POST, PATCH, PUT, DELETE, and HEAD requests with
+  # +post+, +patch+, +put+, +delete+, and +head+.
+  # Example sending parameters, session, and setting a flash message:
+  #
+  #   get :show,
+  #     params: { id: 7 },
+  #     session: { user_id: 1 },
+  #     flash: { notice: 'This is flash message' }
+  #
+  # Note that the request method is not verified. The different methods are
+  # available to make the tests more expressive.
+  def get: (untyped action, **untyped args) -> untyped
+  # Simulate a POST request with the given parameters and set/volley the response.
+  # See +get+ for more details.
+  def post: (untyped action, **untyped args) -> untyped
+  # Simulate a PATCH request with the given parameters and set/volley the response.
+  # See +get+ for more details.
+  def patch: (untyped action, **untyped args) -> untyped
+  # Simulate a PUT request with the given parameters and set/volley the response.
+  # See +get+ for more details.
+  def put: (untyped action, **untyped args) -> untyped
+  # Simulate a DELETE request with the given parameters and set/volley the response.
+  # See +get+ for more details.
+  def delete: (untyped action, **untyped args) -> untyped
+  # Simulate a HEAD request with the given parameters and set/volley the response.
+  # See +get+ for more details.
+  def head: (untyped action, **untyped args) -> untyped
+  # Simulate an HTTP request to +action+ by specifying request method,
+  # parameters and set/volley the response.
+  #
+  # - +action+: The controller action to call.
+  # - +method+: Request method used to send the HTTP request. Possible values
+  #   are +GET+, +POST+, +PATCH+, +PUT+, +DELETE+, +HEAD+. Defaults to +GET+. Can be a symbol.
+  # - +params+: The hash with HTTP parameters that you want to pass. This may be +nil+.
+  # - +body+: The request body with a string that is appropriately encoded
+  #   (<tt>application/x-www-form-urlencoded</tt> or <tt>multipart/form-data</tt>).
+  # - +session+: A hash of parameters to store in the session. This may be +nil+.
+  # - +flash+: A hash of parameters to store in the flash. This may be +nil+.
+  # - +format+: Request format. Defaults to +nil+. Can be string or symbol.
+  # - +as+: Content type. Defaults to +nil+. Must be a symbol that corresponds
+  #   to a mime type.
+  #
+  # Example calling +create+ action and sending two params:
+  #
+  #   process :create,
+  #     method: 'POST',
+  #     params: {
+  #       user: { name: 'Gaurish Sharma', email: 'user@example.com' }
+  #     },
+  #     session: { user_id: 1 },
+  #     flash: { notice: 'This is flash message' }
+  #
+  # To simulate +GET+, +POST+, +PATCH+, +PUT+, +DELETE+, and +HEAD+ requests
+  # prefer using #get, #post, #patch, #put, #delete and #head methods
+  # respectively which will make tests more expressive.
+  #
+  # It's not recommended to make more than one request in the same test. Instance
+  # variables that are set in one request will not persist to the next request,
+  # but it's not guaranteed that all Rails internal state will be reset. Prefer
+  # ActionDispatch::IntegrationTest for making multiple requests in the same test.
+  #
+  # Note that the request method is not verified.
+  def process: (untyped action, ?method: ::String, ?params: untyped?, ?session: untyped?, ?body: untyped?, ?flash: ::Hash[untyped, untyped], ?format: untyped?, ?xhr: bool, ?as: untyped?) -> untyped
+  def controller_class_name: () -> ("anonymous" | untyped)
+  def generated_path: (untyped generated_extras) -> untyped
+  def query_parameter_names: (untyped generated_extras) -> untyped
+  def setup_controller_request_and_response: () -> untyped
+  def build_response: (untyped klass) -> untyped
+  private def setup_request: (untyped controller_class_name, untyped action, untyped parameters, untyped session, untyped flash, untyped xhr) -> untyped
+  private def wrap_execution: () { () -> untyped } -> untyped
+  private def process_controller_response: (untyped action, untyped cookies, untyped xhr) -> untyped
+  private def scrub_env!: (untyped env) -> untyped
+  private def document_root_element: () -> untyped
+  private def check_required_ivars: () -> untyped
+  include ActionDispatch::TestProcess
+  include ActiveSupport::Testing::ConstantLookup
+  include Rails::Dom::Testing::Assertions
+  extend ActiveSupport::Concern
+  attr_reader response: untyped
+  attr_reader request: untyped
+end

@@ -1,0 +1,52 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Predications
+  def not_eq: (untyped other) -> untyped
+  def not_eq_any: (untyped others) -> untyped
+  def not_eq_all: (untyped others) -> untyped
+  def eq: (untyped other) -> untyped
+  def is_not_distinct_from: (untyped other) -> untyped
+  def is_distinct_from: (untyped other) -> untyped
+  def eq_any: (untyped others) -> untyped
+  def eq_all: (untyped others) -> untyped
+  def between: (untyped other) -> untyped
+  def in: (untyped other) -> untyped
+  def in_any: (untyped others) -> untyped
+  def in_all: (untyped others) -> untyped
+  def not_between: (untyped other) -> untyped
+  def not_in: (untyped other) -> untyped
+  def not_in_any: (untyped others) -> untyped
+  def not_in_all: (untyped others) -> untyped
+  def matches: (untyped other, ?untyped? escape, ?bool case_sensitive) -> untyped
+  def matches_regexp: (untyped other, ?bool case_sensitive) -> untyped
+  def matches_any: (untyped others, ?untyped? escape, ?bool case_sensitive) -> untyped
+  def matches_all: (untyped others, ?untyped? escape, ?bool case_sensitive) -> untyped
+  def does_not_match: (untyped other, ?untyped? escape, ?bool case_sensitive) -> untyped
+  def does_not_match_regexp: (untyped other, ?bool case_sensitive) -> untyped
+  def does_not_match_any: (untyped others, ?untyped? escape) -> untyped
+  def does_not_match_all: (untyped others, ?untyped? escape) -> untyped
+  def gteq: (untyped right) -> untyped
+  def gteq_any: (untyped others) -> untyped
+  def gteq_all: (untyped others) -> untyped
+  def gt: (untyped right) -> untyped
+  def gt_any: (untyped others) -> untyped
+  def gt_all: (untyped others) -> untyped
+  def lt: (untyped right) -> untyped
+  def lt_any: (untyped others) -> untyped
+  def lt_all: (untyped others) -> untyped
+  def lteq: (untyped right) -> untyped
+  def lteq_any: (untyped others) -> untyped
+  def lteq_all: (untyped others) -> untyped
+  def when: (untyped right) -> untyped
+  def concat: (untyped other) -> untyped
+  def contains: (untyped other) -> untyped
+  def overlaps: (untyped other) -> untyped
+  def quoted_array: (untyped others) -> untyped
+  private def grouping_any: (untyped method_id, untyped others, *untyped extras) -> untyped
+  private def grouping_all: (untyped method_id, untyped others, *untyped extras) -> untyped
+  private def quoted_node: (untyped other) -> untyped
+  private def infinity?: (untyped value) -> untyped
+  private def unboundable?: (untyped value) -> untyped
+  private def open_ended?: (untyped value) -> untyped
+end

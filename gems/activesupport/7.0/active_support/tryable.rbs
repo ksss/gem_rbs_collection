@@ -3,6 +3,5 @@
 
 module ActiveSupport::Tryable : BasicObject
   def try: (*untyped args) { (untyped) -> untyped } -> (untyped | untyped | nil)
-
   def try!: (*untyped args) { (untyped) -> untyped } -> untyped
 end

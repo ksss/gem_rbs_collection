@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::NFA::TransitionTable
+  def initialize: () -> void
+  def accepting?: (untyped state) -> untyped
+  def accepting_states: () -> ::Array[untyped]
+  def add_memo: (untyped idx, untyped memo) -> untyped
+  def memo: (untyped idx) -> untyped
+  def []=: (untyped i, untyped f, untyped s) -> untyped
+  def merge: (untyped left, untyped right) -> untyped
+  def states: () -> untyped
+  # Returns set of NFA states to which there is a transition on ast symbol
+  # +a+ from some state +s+ in +t+.
+  def following_states: (untyped t, untyped a) -> untyped
+  # Returns set of NFA states to which there is a transition on ast symbol
+  # +a+ from some state +s+ in +t+.
+  def move: (untyped t, untyped a) -> untyped
+  def alphabet: () -> untyped
+  # Returns a set of NFA states reachable from some NFA state +s+ in set
+  # +t+ on nil-transitions alone.
+  def eclosure: (untyped t) -> untyped
+  def transitions: () -> untyped
+  private def inverted: () -> untyped
+  include ActionDispatch::Journey::NFA::Dot
+  attr_accessor accepting: untyped
+  attr_reader memos: untyped
+end

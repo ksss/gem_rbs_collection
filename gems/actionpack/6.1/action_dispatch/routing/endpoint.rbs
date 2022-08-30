@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Endpoint
+  def dispatcher?: () -> false
+  def redirect?: () -> false
+  def matches?: (untyped req) -> true
+  def app: () -> self
+  def rack_app: () -> untyped
+  def engine?: () -> untyped
+end

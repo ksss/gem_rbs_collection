@@ -14,7 +14,6 @@ module ActiveSupport::CompareWithRange
   #
   # The given range must be fully bounded, with both start and end.
   def ===: (untyped value) -> (false | untyped | untyped)
-
   # Extends the default Range#include? to support range comparisons.
   #  (1..5).include?(1..5)  # => true
   #  (1..5).include?(2..3)  # => true

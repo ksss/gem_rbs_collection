@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Mime::AllType < ::Mime::Type
+  def initialize: () -> void
+  def all?: () -> true
+  def html?: () -> true
+  include Singleton
+  extend Singleton::SingletonClassMethods
+end

@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RoutesProxy
+  alias _routes routes
+  def initialize: (untyped routes, untyped scope, untyped helpers, ?untyped? script_namer) -> void
+  def url_options: () -> untyped
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+  private def method_missing: (untyped method, *untyped args) -> untyped
+  # Keeps the part of the script name provided by the global
+  # context via ENV["SCRIPT_NAME"], which `mount` doesn't know
+  # about since it depends on the specific request, but use our
+  # script name resolver for the mount point dependent part.
+  private def merge_script_names: (untyped previous_script_name, untyped new_script_name) -> untyped
+  include ActionDispatch::Routing::UrlFor
+  attr_accessor scope: untyped
+  attr_accessor routes: untyped
+  def self.default_url_options: () -> untyped
+  def self.default_url_options?: () -> bool
+  def self.default_url_options=: (untyped value) -> untyped
+  def default_url_options: () -> untyped
+  def default_url_options?: () -> bool
+  def default_url_options=: (untyped value) -> untyped
+end

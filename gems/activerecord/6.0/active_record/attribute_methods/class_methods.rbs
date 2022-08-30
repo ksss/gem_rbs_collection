@@ -1,0 +1,76 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::ClassMethods
+  def inherited: (untyped child_class) -> untyped
+  def initialize_generated_modules: () -> untyped
+  # Generates all the attribute related methods for columns in the database
+  # accessors, mutators and query methods.
+  def define_attribute_methods: () -> (false | untyped)
+  def undefine_attribute_methods: () -> untyped
+  # Raises an ActiveRecord::DangerousAttributeError exception when an
+  # \Active \Record method is defined in the model, otherwise +false+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     def save
+  #       'already defined by Active Record'
+  #     end
+  #   end
+  #
+  #   Person.instance_method_already_implemented?(:save)
+  #   # => ActiveRecord::DangerousAttributeError: save is defined by Active Record. Check to make sure that you don't have an attribute or method with the same name.
+  #
+  #   Person.instance_method_already_implemented?(:name)
+  #   # => false
+  def instance_method_already_implemented?: (untyped method_name) -> untyped
+  # A method name is 'dangerous' if it is already (re)defined by Active Record, but
+  # not by any ancestors. (So 'puts' is not dangerous but 'save' is.)
+  def dangerous_attribute_method?: (untyped name) -> untyped
+  def method_defined_within?: (untyped name, untyped klass, ?untyped superklass) -> (untyped | true | false)
+  # A class method is 'dangerous' if it is already (re)defined by Active Record, but
+  # not by any ancestors. (So 'puts' is not dangerous but 'new' is.)
+  def dangerous_class_method?: (untyped method_name) -> untyped
+  def class_method_defined_within?: (untyped name, untyped klass, ?untyped superklass) -> (untyped | true | false)
+  # Returns +true+ if +attribute+ is an attribute method and table exists,
+  # +false+ otherwise.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   Person.attribute_method?('name')   # => true
+  #   Person.attribute_method?(:age=)    # => true
+  #   Person.attribute_method?(:nothing) # => false
+  def attribute_method?: (untyped attribute) -> untyped
+  # Returns an array of column names as strings if it's not an abstract class and
+  # table exists. Otherwise it returns an empty array.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   Person.attribute_names
+  #   # => ["id", "created_at", "updated_at", "name", "age"]
+  def attribute_names: () -> untyped
+  # Returns true if the given attribute exists, otherwise false.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   Person.has_attribute?('name')   # => true
+  #   Person.has_attribute?(:age)     # => true
+  #   Person.has_attribute?(:nothing) # => false
+  def has_attribute?: (untyped attr_name) -> untyped
+  # Returns the column object for the named attribute.
+  # Returns a +ActiveRecord::ConnectionAdapters::NullColumn+ if the
+  # named attribute does not exist.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   person = Person.new
+  #   person.column_for_attribute(:name) # the result depends on the ConnectionAdapter
+  #   # => #<ActiveRecord::ConnectionAdapters::Column:0x007ff4ab083980 @name="name", @sql_type="varchar(255)", @null=true, ...>
+  #
+  #   person.column_for_attribute(:nothing)
+  #   # => #<ActiveRecord::ConnectionAdapters::NullColumn:0xXXX @name=nil, @sql_type=nil, @cast_type=#<Type::Value>, ...>
+  def column_for_attribute: (untyped name) -> untyped
+end

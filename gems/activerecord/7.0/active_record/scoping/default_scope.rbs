@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Scoping::DefaultScope
+  def initialize: (untyped scope, ?untyped? all_queries) -> void
+  attr_reader scope: untyped
+  attr_reader all_queries: untyped
+end

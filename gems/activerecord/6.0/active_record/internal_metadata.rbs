@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InternalMetadata < ::ActiveRecord::Base
+  def self._internal?: () -> true
+  def self.primary_key: () -> "key"
+  def self.table_name: () -> ::String
+  def self.[]=: (untyped key, untyped value) -> untyped
+  def self.[]: (untyped key) -> untyped
+  def self.table_exists?: () -> untyped
+  # Creates an internal metadata table with columns +key+ and +value+
+  def self.create_table: () -> (untyped | nil)
+  def self.drop_table: () -> untyped
+  include ActiveRecord::InternalMetadata::GeneratedAttributeMethods
+  include ActiveRecord::InternalMetadata::GeneratedAssociationMethods
+end

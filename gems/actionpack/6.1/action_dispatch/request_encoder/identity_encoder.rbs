@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::RequestEncoder::IdentityEncoder
+  def content_type: () -> nil
+  def accept_header: () -> nil
+  def encode_params: (untyped params) -> untyped
+  def response_parser: () -> untyped
+end

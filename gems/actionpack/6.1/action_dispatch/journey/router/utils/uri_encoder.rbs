@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Router::Utils::UriEncoder
+  def escape_fragment: (untyped fragment) -> untyped
+  def escape_path: (untyped path) -> untyped
+  def escape_segment: (untyped segment) -> untyped
+  def unescape_uri: (untyped uri) -> untyped
+  private def escape: (untyped component, untyped pattern) -> untyped
+  private def percent_encode: (untyped unsafe) -> untyped
+  ALPHA: String
+  DEC2HEX: Array[String]
+  DIGIT: String
+  EMPTY: String
+  ENCODE: String
+  ESCAPED: Regexp
+  FRAGMENT: Regexp
+  PATH: Regexp
+  SEGMENT: Regexp
+  SUB_DELIMS: String
+  UNRESERVED: String
+  US_ASCII: Encoding
+  UTF_8: Encoding
+end

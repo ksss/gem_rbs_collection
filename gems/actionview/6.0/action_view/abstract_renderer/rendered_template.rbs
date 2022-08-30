@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::AbstractRenderer::RenderedTemplate
+  def initialize: (untyped body, untyped layout, untyped template) -> void
+  def format: () -> untyped
+  attr_reader body: untyped
+  attr_reader layout: untyped
+  attr_reader template: untyped
+  EMPTY_SPACER: untyped
+end

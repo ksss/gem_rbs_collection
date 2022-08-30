@@ -1,0 +1,127 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Core
+  #
+  # Contains the database configuration - as is typically stored in config/database.yml -
+  # as an ActiveRecord::DatabaseConfigurations object.
+  #
+  # For example, the following database.yml...
+  #
+  #   development:
+  #     adapter: sqlite3
+  #     database: db/development.sqlite3
+  #
+  #   production:
+  #     adapter: sqlite3
+  #     database: db/production.sqlite3
+  #
+  # ...would result in ActiveRecord::Base.configurations to look like this:
+  #
+  #   #<ActiveRecord::DatabaseConfigurations:0x00007fd1acbdf800 @configurations=[
+  #     #<ActiveRecord::DatabaseConfigurations::HashConfig:0x00007fd1acbded10 @env_name="development",
+  #       @spec_name="primary", @config={"adapter"=>"sqlite3", "database"=>"db/development.sqlite3"}>,
+  #     #<ActiveRecord::DatabaseConfigurations::HashConfig:0x00007fd1acbdea90 @env_name="production",
+  #       @spec_name="primary", @config={"adapter"=>"mysql2", "database"=>"db/production.sqlite3"}>
+  #   ]>
+  def self.configurations=: (untyped config) -> untyped
+  # Returns fully resolved ActiveRecord::DatabaseConfigurations object
+  def self.configurations: () -> untyped
+  def self.connection_handler: () -> untyped
+  def self.connection_handler=: (untyped handler) -> untyped
+  # New objects can be instantiated as either empty (pass no construction parameter) or pre-set with
+  # attributes but not yet saved (pass a hash with key names matching the associated table column names).
+  # In both instances, valid attribute keys are determined by the column names of the associated table --
+  # hence you can't have attributes that aren't part of the table columns.
+  #
+  # ==== Example:
+  #   # Instantiates a single new object
+  #   User.new(first_name: 'Jamie')
+  def initialize: (?untyped? attributes) { (untyped) -> untyped } -> void
+  # Initialize an empty model object from +coder+. +coder+ should be
+  # the result of previously encoding an Active Record model, using
+  # #encode_with.
+  #
+  #   class Post < ActiveRecord::Base
+  #   end
+  #
+  #   old_post = Post.new(title: "hello world")
+  #   coder = {}
+  #   old_post.encode_with(coder)
+  #
+  #   post = Post.allocate
+  #   post.init_with(coder)
+  #   post.title # => 'hello world'
+  def init_with: (untyped coder) ?{ () -> untyped } -> untyped
+  #
+  # Initialize an empty model object from +attributes+.
+  # +attributes+ should be an attributes object, and unlike the
+  # `initialize` method, no assignment calls are made per attribute.
+  def init_with_attributes: (untyped attributes, ?bool new_record) { (untyped) -> untyped } -> self
+  #
+  def initialize_dup: (untyped other) -> untyped
+  # Populate +coder+ with attributes about this record that should be
+  # serialized. The structure of +coder+ defined in this method is
+  # guaranteed to match the structure of +coder+ passed to the #init_with
+  # method.
+  #
+  # Example:
+  #
+  #   class Post < ActiveRecord::Base
+  #   end
+  #   coder = {}
+  #   Post.new.encode_with(coder)
+  #   coder # => {"attributes" => {"id" => nil, ... }}
+  def encode_with: (untyped coder) -> untyped
+  # Returns true if +comparison_object+ is the same exact object, or +comparison_object+
+  # is of the same type and +self+ has an ID and it is equal to +comparison_object.id+.
+  #
+  # Note that new records are different from any other record by definition, unless the
+  # other record is the receiver itself. Besides, if you fetch existing records with
+  # +select+ and leave the ID out, you're on your own, this predicate will return false.
+  #
+  # Note also that destroying a record preserves its ID in the model instance, so deleted
+  # models are still comparable.
+  def ==: (untyped comparison_object) -> untyped
+  alias eql? ==
+  # Delegates to id in order to allow two records of the same type and id to work with something like:
+  #   [ Person.find(1), Person.find(2), Person.find(3) ] & [ Person.find(1), Person.find(4) ] # => [ Person.find(1) ]
+  def hash: () -> untyped
+  # Clone and freeze the attributes hash such that associations are still
+  # accessible, even on destroyed records, but cloned models will not be
+  # frozen.
+  def freeze: () -> self
+  # Returns +true+ if the attributes hash has been frozen.
+  def frozen?: () -> untyped
+  # Allows sort on objects
+  def <=>: (untyped other_object) -> untyped
+  def present?: () -> true
+  def blank?: () -> false
+  # Returns +true+ if the record is read only. Records loaded through joins with piggy-back
+  # attributes will be marked as read only since they cannot be saved.
+  def readonly?: () -> untyped
+  # Marks this record as read only.
+  def readonly!: () -> untyped
+  def connection_handler: () -> untyped
+  # Returns the contents of the record as a nicely formatted string.
+  def inspect: () -> ::String
+  # Takes a PP and prettily prints this record to it, allowing you to get a nice result from <tt>pp record</tt>
+  # when pp is required.
+  def pretty_print: (untyped pp) -> untyped
+  # Returns a hash of the given methods with their names as keys and returned values as values.
+  def slice: (*untyped methods) -> untyped
+  # +Array#flatten+ will call +#to_ary+ (recursively) on each of the elements of
+  # the array, and then rescues from the possible +NoMethodError+. If those elements are
+  # +ActiveRecord::Base+'s, then this triggers the various +method_missing+'s that we have,
+  # which significantly impacts upon performance.
+  #
+  # So we can avoid the +method_missing+ hit by explicitly defining +#to_ary+ as +nil+ here.
+  #
+  # See also https://tenderlovemaking.com/2011/06/28/til-its-ok-to-return-nil-from-to_ary.html
+  private def to_ary: () -> nil
+  private def init_internals: () -> untyped
+  private def initialize_internals_callback: () -> nil
+  private def custom_inspect_method_defined?: () -> untyped
+  private def inspection_filter: () -> untyped
+  extend ActiveSupport::Concern
+end

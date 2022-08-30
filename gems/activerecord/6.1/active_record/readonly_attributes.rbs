@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::ReadonlyAttributes
+  extend ActiveSupport::Concern
+end

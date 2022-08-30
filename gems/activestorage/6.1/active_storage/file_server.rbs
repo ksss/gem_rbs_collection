@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::FileServer
+  private def serve_file: (untyped path, content_type: untyped, disposition: untyped) -> untyped
+end

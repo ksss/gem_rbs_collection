@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Logging::ClassMethods
+  # Set a different log level per request.
+  #
+  #   # Use the debug log level if a particular cookie is set.
+  #   class ApplicationController < ActionController::Base
+  #     log_at :debug, if: -> { cookies[:debug] }
+  #   end
+  #
+  def log_at: (untyped level, **untyped options) -> untyped
+end

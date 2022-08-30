@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Configurable::Configuration < ::ActiveSupport::InheritableOptions
+  def compile_methods!: () -> untyped
+  # Compiles reader methods so we don't have to go through method_missing.
+  def self.compile_methods!: (untyped keys) -> untyped
+end

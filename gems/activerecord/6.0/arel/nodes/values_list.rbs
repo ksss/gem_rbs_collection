@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::ValuesList < ::Arel::Nodes::Unary
+  alias rows expr
+end

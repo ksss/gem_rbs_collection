@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::MiddlewareStack::Middleware
+  def initialize: (untyped klass, untyped args, untyped block) -> void
+  def name: () -> untyped
+  def ==: (untyped middleware) -> untyped
+  def inspect: () -> untyped
+  def build: (untyped app) -> untyped
+  def build_instrumented: (untyped app) -> untyped
+  attr_reader args: untyped
+  attr_reader block: untyped
+  attr_reader klass: untyped
+end

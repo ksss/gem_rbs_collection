@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::OptionMerger
+  def initialize: (untyped context, untyped options) -> void
+  private def method_missing: (untyped method, *untyped arguments) ?{ () -> untyped } -> untyped
+  private def invoke_method: (untyped method, untyped arguments, untyped options) ?{ () -> untyped } -> untyped
+end

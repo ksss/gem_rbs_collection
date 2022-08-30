@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::LookupContext::DetailsCache
+  # Calculate the details key. Remove the handlers from calculation to improve performance
+  # since the user cannot modify it explicitly.
+  def details_key: () -> (untyped | nil)
+  # Temporary skip passing the details_key forward.
+  def disable_cache: () { () -> untyped } -> untyped
+  private def _set_detail: (untyped key, untyped value) -> untyped
+  attr_accessor cache: untyped
+end

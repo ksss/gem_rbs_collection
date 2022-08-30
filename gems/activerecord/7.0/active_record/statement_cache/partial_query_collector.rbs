@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::StatementCache::PartialQueryCollector
+  def initialize: () -> void
+  def <<: (untyped str) -> self
+  def add_bind: (untyped obj) -> self
+  def add_binds: (untyped binds, ?untyped? proc_for_binds) -> self
+  def value: () -> ::Array[untyped]
+  attr_accessor preparable: untyped
+end

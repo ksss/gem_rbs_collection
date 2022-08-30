@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Scoping::ClassMethods
+  # Collects attributes from scopes that should be applied when creating
+  # an AR instance for the particular class this is called on.
+  def scope_attributes: () -> untyped
+  # Are there attributes associated with this scope?
+  def scope_attributes?: () -> untyped
+  def current_scope: (?bool skip_inherited_scope) -> untyped
+  def current_scope=: (untyped scope) -> untyped
+  def global_current_scope: (?bool skip_inherited_scope) -> untyped
+  def global_current_scope=: (untyped scope) -> untyped
+  def scope_registry: () -> untyped
+end

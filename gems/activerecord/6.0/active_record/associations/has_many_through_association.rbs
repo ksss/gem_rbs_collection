@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::HasManyThroughAssociation < ::ActiveRecord::Associations::HasManyAssociation
+  def initialize: (untyped owner, untyped reflection) -> void
+  def concat: (*untyped records) -> untyped
+  def insert_record: (untyped record, ?bool validate, ?bool raise) -> (nil | untyped)
+  private def concat_records: (untyped records) -> untyped
+  # The through record (built with build_record) is temporarily cached
+  # so that it may be reused if insert_record is subsequently called.
+  #
+  # However, after insert_record has been called, the cache is cleared in
+  # order to allow multiple instances of the same record in an association.
+  private def build_through_record: (untyped record) -> untyped
+  private def through_scope_attributes: () -> untyped
+  private def save_through_record: (untyped record) -> untyped
+  private def build_record: (untyped attributes) -> untyped
+  private def remove_records: (untyped existing_records, untyped records, untyped method) -> untyped
+  private def target_reflection_has_associated_record?: () -> untyped
+  private def update_through_counter?: (untyped method) -> untyped
+  private def delete_or_nullify_all_records: (untyped method) -> untyped
+  private def delete_records: (untyped records, untyped method) -> untyped
+  private def difference: (untyped a, untyped b) -> untyped
+  private def intersection: (untyped a, untyped b) -> untyped
+  private def mark_occurrence: (untyped distribution, untyped record) -> untyped
+  private def distribution: (untyped array) -> untyped
+  private def through_records_for: (untyped record) -> untyped
+  private def delete_through_records: (untyped records) -> untyped
+  private def find_target: () -> (::Array[untyped] | untyped)
+  # NOTE - not sure that we can actually cope with inverses here
+  private def invertible_for?: (untyped record) -> false
+  include ActiveRecord::Associations::ThroughAssociation
+end

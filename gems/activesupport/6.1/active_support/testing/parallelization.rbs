@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::Parallelization
+  def self.after_fork_hook: () ?{ () -> untyped } -> untyped
+  def self.run_cleanup_hook: () ?{ () -> untyped } -> untyped
+  def initialize: (untyped worker_count) -> void
+  def start: () -> untyped
+  def <<: (untyped work) -> untyped
+  def shutdown: () -> untyped
+  def self.after_fork_hooks: () -> untyped
+  def after_fork_hooks: () -> untyped
+  def self.run_cleanup_hooks: () -> untyped
+  def run_cleanup_hooks: () -> untyped
+end

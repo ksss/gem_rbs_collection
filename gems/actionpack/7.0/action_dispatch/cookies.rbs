@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Cookies
+  def initialize: (untyped app) -> void
+  def call: (untyped env) -> ::Array[untyped]
+  AUTHENTICATED_ENCRYPTED_COOKIE_SALT: String
+  COOKIES_DIGEST: String
+  COOKIES_ROTATIONS: String
+  COOKIES_SAME_SITE_PROTECTION: String
+  COOKIES_SERIALIZER: String
+  ENCRYPTED_COOKIE_CIPHER: String
+  ENCRYPTED_COOKIE_SALT: String
+  ENCRYPTED_SIGNED_COOKIE_SALT: String
+  GENERATOR_KEY: String
+  HTTP_HEADER: String
+  MAX_COOKIE_SIZE: Integer
+  SECRET_KEY_BASE: String
+  SIGNED_COOKIE_DIGEST: String
+  SIGNED_COOKIE_SALT: String
+  USE_AUTHENTICATED_COOKIE_ENCRYPTION: String
+  USE_COOKIES_WITH_METADATA: String
+end

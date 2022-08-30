@@ -24,5 +24,6 @@ target :test do
 
   library "activesupport:7.0"
 
+
   configure_code_diagnostics(D::Ruby.all_error)
 end

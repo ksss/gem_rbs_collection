@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::TypeCaster::Map
+  def initialize: (untyped klass) -> void
+  def type_cast_for_database: (untyped attr_name, untyped value) -> untyped
+  def type_for_attribute: (untyped name) -> untyped
+  attr_reader klass: untyped
+end

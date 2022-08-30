@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Binary < ::Arel::Nodes::NodeExpression
+  def initialize: (untyped left, untyped right) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor left: untyped
+  attr_accessor right: untyped
+end

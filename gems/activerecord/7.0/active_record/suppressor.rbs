@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Suppressor
+  def self.registry: () -> untyped
+  def save: () -> (true | untyped)
+  def save!: () -> (true | untyped)
+  extend ActiveSupport::Concern
+end

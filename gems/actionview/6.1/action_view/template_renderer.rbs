@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::TemplateRenderer < ::ActionView::AbstractRenderer
+  def render: (untyped context, untyped options) -> untyped
+  # Determine the template to be rendered using the given options.
+  private def determine_template: (untyped options) -> untyped
+  # Renders the given template. A string representing the layout can be
+  # supplied as well.
+  private def render_template: (untyped view, untyped template, untyped layout_name, untyped locals) -> untyped
+  private def render_with_layout: (untyped view, untyped template, untyped path, untyped locals) { (untyped) -> untyped } -> untyped
+  # This is the method which actually finds the layout using details in the lookup
+  # context object. If no layout is found, it checks if at least a layout with
+  # the given name exists across all details before raising the error.
+  private def find_layout: (untyped layout, untyped keys, untyped formats) -> untyped
+  private def resolve_layout: (untyped layout, untyped keys, untyped formats) -> untyped
+end

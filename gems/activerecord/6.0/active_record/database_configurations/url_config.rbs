@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::UrlConfig < ::ActiveRecord::DatabaseConfigurations::DatabaseConfig
+  def initialize: (untyped env_name, untyped spec_name, untyped url, ?::Hash[untyped, untyped] config) -> void
+  def url_config?: () -> true
+  # Determines whether a database configuration is for a replica / readonly
+  # connection. If the +replica+ key is present in the config, +replica?+ will
+  # return +true+.
+  def replica?: () -> untyped
+  # The migrations paths for a database configuration. If the
+  # +migrations_paths+ key is present in the config, +migrations_paths+
+  # will return its value.
+  def migrations_paths: () -> untyped
+  private def build_url_hash: (untyped url) -> (::Hash[::String, untyped] | untyped)
+  private def build_config: (untyped original_config, untyped url) -> untyped
+  attr_reader url: untyped
+  attr_reader config: untyped
+end

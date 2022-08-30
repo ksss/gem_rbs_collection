@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::TableAlias < ::Arel::Nodes::Binary
+  alias name right
+  alias relation left
+  alias table_alias name
+  def []: (untyped name) -> untyped
+  def table_name: () -> untyped
+  def type_cast_for_database: (*untyped args) -> untyped
+  def able_to_type_cast?: () -> untyped
+end

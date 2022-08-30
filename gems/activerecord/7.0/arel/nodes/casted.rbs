@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Casted < ::Arel::Nodes::NodeExpression
+  alias value_before_type_cast value
+  def initialize: (untyped value, untyped attribute) -> void
+  def nil?: () -> untyped
+  def value_for_database: () -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_reader value: untyped
+  attr_reader attribute: untyped
+end

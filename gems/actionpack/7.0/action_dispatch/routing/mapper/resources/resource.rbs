@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper::Resources::Resource
+  def initialize: (untyped entities, untyped api_only, untyped shallow, ?::Hash[untyped, untyped] options) -> void
+  def default_actions: () -> (::Array[:index | :create | :show | :update | :destroy] | ::Array[:index | :create | :new | :show | :update | :destroy | :edit])
+  def actions: () -> untyped
+  def available_actions: () -> untyped
+  def name: () -> untyped
+  def plural: () -> untyped
+  def singular: () -> untyped
+  alias member_name singular
+  # Checks for uncountable plurals, and appends "_index" if the plural
+  # and singular form are the same.
+  def collection_name: () -> (::String | untyped)
+  def resource_scope: () -> untyped
+  alias collection_scope path
+  def member_scope: () -> ::String
+  alias shallow_scope member_scope
+  def new_scope: (untyped new_path) -> ::String
+  def nested_param: () -> ::Symbol
+  def nested_scope: () -> ::String
+  def shallow?: () -> untyped
+  def singleton?: () -> false
+  attr_reader controller: untyped
+  attr_reader path: untyped
+  attr_reader param: untyped
+end

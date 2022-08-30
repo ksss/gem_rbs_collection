@@ -1,0 +1,77 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Value
+  def initialize: (?precision: untyped?, ?limit: untyped?, ?scale: untyped?) -> void
+  # Returns true if this type can convert +value+ to a type that is usable
+  # by the database.  For example a boolean type can return +true+ if the
+  # value parameter is a Ruby boolean, but may return +false+ if the value
+  # parameter is some other object.
+  def serializable?: (untyped value) -> true
+  def type: () -> nil
+  # Converts a value from database input to the appropriate ruby type. The
+  # return value of this method will be returned from
+  # ActiveRecord::AttributeMethods::Read#read_attribute. The default
+  # implementation just calls Value#cast.
+  #
+  # +value+ The raw input, as provided from the database.
+  def deserialize: (untyped value) -> untyped
+  # Type casts a value from user input (e.g. from a setter). This value may
+  # be a string from the form builder, or a ruby object passed to a setter.
+  # There is currently no way to differentiate between which source it came
+  # from.
+  #
+  # The return value of this method will be returned from
+  # ActiveRecord::AttributeMethods::Read#read_attribute. See also:
+  # Value#cast_value.
+  #
+  # +value+ The raw input, as provided to the attribute setter.
+  def cast: (untyped value) -> (untyped | nil)
+  # Casts a value from the ruby type to a type that the database knows how
+  # to understand. The returned value from this method should be a
+  # +String+, +Numeric+, +Date+, +Time+, +Symbol+, +true+, +false+, or
+  # +nil+.
+  def serialize: (untyped value) -> untyped
+  # Type casts a value for schema dumping. This method is private, as we are
+  # hoping to remove it entirely.
+  def type_cast_for_schema: (untyped value) -> untyped
+  # These predicates are not documented, as I need to look further into
+  # their use, and see if they can be removed entirely.
+  def binary?: () -> false
+  # Determines whether a value has changed for dirty checking. +old_value+
+  # and +new_value+ will always be type-cast. Types should not need to
+  # override this method.
+  def changed?: (untyped old_value, untyped new_value, untyped _new_value_before_type_cast) -> untyped
+  # Determines whether the mutable value has been modified since it was
+  # read. Returns +false+ by default. If your type returns an object
+  # which could be mutated, you should override this method. You will need
+  # to either:
+  #
+  # - pass +new_value+ to Value#serialize and compare it to
+  #   +raw_old_value+
+  #
+  # or
+  #
+  # - pass +raw_old_value+ to Value#deserialize and compare it to
+  #   +new_value+
+  #
+  # +raw_old_value+ The original value, before being passed to
+  # +deserialize+.
+  #
+  # +new_value+ The current value, after type casting.
+  def changed_in_place?: (untyped raw_old_value, untyped new_value) -> false
+  def value_constructed_by_mass_assignment?: (untyped _value) -> false
+  def force_equality?: (untyped _value) -> false
+  def map: (untyped value) { (untyped) -> untyped } -> untyped
+  def ==: (untyped other) -> untyped
+  alias eql? ==
+  def hash: () -> untyped
+  def assert_valid_value: (untyped _) -> nil
+  # Convenience method for types which do not need separate type casting
+  # behavior for user and database inputs. Called by Value#cast for
+  # values except +nil+.
+  private def cast_value: (untyped value) -> untyped
+  attr_reader precision: untyped
+  attr_reader scale: untyped
+  attr_reader limit: untyped
+end

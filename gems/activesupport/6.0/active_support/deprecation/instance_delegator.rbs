@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Deprecation::InstanceDelegator
+  def self.included: (untyped base) -> untyped
+end

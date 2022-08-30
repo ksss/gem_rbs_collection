@@ -3,10 +3,7 @@
 
 module ActiveSupport::ForkTracker
   def self.check!: () -> untyped
-
   def self.hook!: () -> (untyped | untyped | nil)
-
   def self.after_fork: () ?{ () -> untyped } -> untyped
-
   def self.unregister: (untyped callback) -> untyped
 end

@@ -3,6 +3,5 @@
 
 module ActiveSupport::Cache::Coders::Loader
   def load: (untyped payload) -> (nil | untyped)
-
   extend ActiveSupport::Cache::Coders::Loader
 end

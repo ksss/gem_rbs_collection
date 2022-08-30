@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::SubscriberQueueRegistry
+  def initialize: () -> void
+  def get_queue: (untyped queue_key) -> untyped
+  extend ActiveSupport::PerThreadRegistry
+end

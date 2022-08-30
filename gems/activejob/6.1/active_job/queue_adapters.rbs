@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::QueueAdapters
+  # Returns adapter for specified name.
+  #
+  #   ActiveJob::QueueAdapters.lookup(:sidekiq)
+  #   # => ActiveJob::QueueAdapters::SidekiqAdapter
+  def self.lookup: (untyped name) -> untyped
+  extend ActiveSupport::Autoload
+end

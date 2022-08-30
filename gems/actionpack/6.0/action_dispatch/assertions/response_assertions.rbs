@@ -1,0 +1,46 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Assertions::ResponseAssertions
+  # Asserts that the response is one of the following types:
+  #
+  # * <tt>:success</tt>   - Status code was in the 200-299 range
+  # * <tt>:redirect</tt>  - Status code was in the 300-399 range
+  # * <tt>:missing</tt>   - Status code was 404
+  # * <tt>:error</tt>     - Status code was in the 500-599 range
+  #
+  # You can also pass an explicit status number like <tt>assert_response(501)</tt>
+  # or its symbolic equivalent <tt>assert_response(:not_implemented)</tt>.
+  # See Rack::Utils::SYMBOL_TO_STATUS_CODE for a full list.
+  #
+  #   # Asserts that the response was a redirection
+  #   assert_response :redirect
+  #
+  #   # Asserts that the response code was status code 401 (unauthorized)
+  #   assert_response 401
+  def assert_response: (untyped `type`, ?untyped? message) -> untyped
+  # Asserts that the redirection options passed in match those of the redirect called in the latest action.
+  # This match can be partial, such that <tt>assert_redirected_to(controller: "weblog")</tt> will also
+  # match the redirection of <tt>redirect_to(controller: "weblog", action: "show")</tt> and so on.
+  #
+  #   # Asserts that the redirection was to the "index" action on the WeblogController
+  #   assert_redirected_to controller: "weblog", action: "index"
+  #
+  #   # Asserts that the redirection was to the named route login_url
+  #   assert_redirected_to login_url
+  #
+  #   # Asserts that the redirection was to the URL for @customer
+  #   assert_redirected_to @customer
+  #
+  #   # Asserts that the redirection matches the regular expression
+  #   assert_redirected_to %r(\Ahttp://example.org)
+  def assert_redirected_to: (?::Hash[untyped, untyped] options, ?untyped? message) -> (true | untyped)
+  # Proxy to to_param if the object will respond to it.
+  private def parameterize: (untyped value) -> untyped
+  private def normalize_argument_to_redirection: (untyped fragment) -> untyped
+  private def generate_response_message: (untyped expected, ?untyped actual) -> untyped
+  private def response_body_if_short: () -> ("" | ::String)
+  private def location_if_redirected: () -> ("" | ::String)
+  private def code_with_name: (untyped code_or_name) -> untyped
+  RESPONSE_PREDICATES: Hash[Symbol, Symbol]
+end

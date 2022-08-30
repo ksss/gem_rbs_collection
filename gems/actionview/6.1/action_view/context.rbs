@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Context
+  # Prepares the context by setting the appropriate instance variables.
+  def _prepare_context: () -> untyped
+  # Encapsulates the interaction with the view flow so it
+  # returns the correct buffer on +yield+. This is usually
+  # overwritten by helpers to add more behavior.
+  def _layout_for: (?untyped? name) -> untyped
+  attr_accessor output_buffer: untyped
+  attr_accessor view_flow: untyped
+end

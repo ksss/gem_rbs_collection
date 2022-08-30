@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class SendMessageJob < ActiveJob::Base
+  def perform: (*untyped) -> void
+end

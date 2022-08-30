@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Store::ClassMethods
+  def store: (untyped store_attribute, ?::Hash[untyped, untyped] options) -> untyped
+  def store_accessor: (untyped store_attribute, *untyped keys, ?prefix: untyped?, ?suffix: untyped?) -> (false | nil | untyped)
+  def _store_accessors_module: () -> untyped
+  def stored_attributes: () -> untyped
+end

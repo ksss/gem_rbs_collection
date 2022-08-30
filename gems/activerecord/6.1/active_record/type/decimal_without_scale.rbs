@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::DecimalWithoutScale < ::ActiveModel::Type::BigInteger
+  def type: () -> :decimal
+  def type_cast_for_schema: (untyped value) -> untyped
+end

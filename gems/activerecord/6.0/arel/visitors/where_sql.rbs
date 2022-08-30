@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::WhereSql < ::Arel::Visitors::ToSql
+  def initialize: (untyped inner_visitor, *untyped args) ?{ () -> untyped } -> void
+  private def visit_Arel_Nodes_SelectCore: (untyped o, untyped collector) -> untyped
+end

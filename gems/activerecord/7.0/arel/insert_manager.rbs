@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::InsertManager < ::Arel::TreeManager
+  def initialize: (?untyped? table) -> void
+  def into: (untyped table) -> self
+  def columns: () -> untyped
+  def values=: (untyped val) -> untyped
+  def select: (untyped select) -> untyped
+  def insert: (untyped fields) -> (nil | self)
+  def create_values: (untyped values) -> untyped
+  def create_values_list: (untyped rows) -> untyped
+end

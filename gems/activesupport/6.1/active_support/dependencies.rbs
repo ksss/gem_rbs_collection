@@ -1,0 +1,155 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies
+  # Execute the supplied block without interference from any
+  # concurrent loads.
+  def self.run_interlock: () { () -> untyped } -> untyped
+  # Execute the supplied block while holding an exclusive lock,
+  # preventing any other thread from being inside a #run_interlock
+  # block at the same time.
+  def self.load_interlock: () { () -> untyped } -> untyped
+  # Execute the supplied block while holding an exclusive lock,
+  # preventing any other thread from being inside a #run_interlock
+  # block at the same time.
+  def self.unload_interlock: () { () -> untyped } -> untyped
+  def hook!: () -> untyped
+  def unhook!: () -> untyped
+  def load?: () -> untyped
+  def depend_on: (untyped file_name, ?::String message) -> untyped
+  def clear: () -> untyped
+  def require_or_load: (untyped file_name, ?untyped? const_path) -> (nil | untyped)
+  # Is the provided constant path defined?
+  def qualified_const_defined?: (untyped path) -> untyped
+  # Given +path+, a filesystem path to a ruby file, return an array of
+  # constant paths which would cause Dependencies to attempt to load this
+  # file.
+  def loadable_constants_for_path: (untyped path, ?untyped bases) -> untyped
+  # Search for a file in autoload_paths matching the provided suffix.
+  def search_for_file: (untyped path_suffix) -> (untyped | nil)
+  # Does the provided path_suffix correspond to an autoloadable module?
+  # Instead of returning a boolean, the autoload base for this module is
+  # returned.
+  def autoloadable_module?: (untyped path_suffix) -> (untyped | nil)
+  def load_once_path?: (untyped path) -> untyped
+  # Attempt to autoload the provided module name by searching for a directory
+  # matching the expected path suffix. If found, the module is created and
+  # assigned to +into+'s constants with the name +const_name+. Provided that
+  # the directory was loaded from a reloadable base path, it is added to the
+  # set of constants that are to be unloaded.
+  def autoload_module!: (untyped into, untyped const_name, untyped qualified_name, untyped path_suffix) -> (nil | untyped)
+  # Load the file at the provided path. +const_paths+ is a set of qualified
+  # constant names. When loading the file, Dependencies will watch for the
+  # addition of these constants. Each that is defined will be marked as
+  # autoloaded, and will be removed when Dependencies.clear is next called.
+  #
+  # If the second parameter is left off, then Dependencies will construct a
+  # set of names that the file at +path+ may define. See
+  # +loadable_constants_for_path+ for more details.
+  def load_file: (untyped path, ?untyped const_paths) -> untyped
+  # Returns the constant path for the provided parent and constant name.
+  def qualified_name_for: (untyped mod, untyped name) -> untyped
+  # Load the constant named +const_name+ which is missing from +from_mod+. If
+  # it is not possible to load the constant into from_mod, try its parent
+  # module using +const_missing+.
+  def load_missing_constant: (untyped from_mod, untyped const_name) -> untyped
+  # Remove the constants that have been autoloaded, and those that have been
+  # marked for unloading. Before each constant is removed a callback is sent
+  # to its class/module if it implements +before_remove_const+.
+  #
+  # The callback implementation should be restricted to cleaning up caches, etc.
+  # as the environment will be in an inconsistent state, e.g. other constants
+  # may have already been unloaded and not accessible.
+  def remove_unloadable_constants!: () -> untyped
+  # Store a reference to a class +klass+.
+  def reference: (untyped klass) -> untyped
+  # Get the reference for class named +name+.
+  # Raises an exception if referenced class does not exist.
+  def constantize: (untyped name) -> untyped
+  # Get the reference for class named +name+ if one exists.
+  # Otherwise returns +nil+.
+  def safe_constantize: (untyped name) -> untyped
+  # Determine if the given constant has been automatically loaded.
+  def autoloaded?: (untyped desc) -> (false | untyped)
+  # Will the provided constant descriptor be unloaded?
+  def will_unload?: (untyped const_desc) -> untyped
+  # Mark the provided constant name for unloading. This constant will be
+  # unloaded on each request, not just the next one.
+  def mark_for_unload: (untyped const_desc) -> untyped
+  # Run the provided block and detect the new constants that were loaded during
+  # its execution. Constants may only be regarded as 'new' once -- so if the
+  # block calls +new_constants_in+ again, then the constants defined within the
+  # inner call will not be reported in this one.
+  #
+  # If the provided block does not run to completion, and instead raises an
+  # exception, any new constants are regarded as being only partially defined
+  # and will be removed immediately.
+  def new_constants_in: (*untyped descs) { () -> untyped } -> untyped
+  # Convert the provided const desc to a qualified constant name (as a string).
+  # A module, class, symbol, or string may be provided.
+  def to_constant_name: (untyped desc) -> untyped
+  def remove_constant: (untyped const) -> (nil | untyped)
+  def log: (untyped message) -> (untyped | nil)
+  private def uninitialized_constant: (untyped qualified_name, untyped const_name, receiver: untyped) -> untyped
+  # Returns the original name of a class or module even if `name` has been
+  # overridden.
+  private def real_mod_name: (untyped mod) -> untyped
+  extend ActiveSupport::Dependencies
+  def self.interlock: () -> untyped
+  def interlock: () -> untyped
+  def self.warnings_on_first_load: () -> untyped
+  def warnings_on_first_load: () -> untyped
+  def self.history: () -> untyped
+  def history: () -> untyped
+  def self.loaded: () -> untyped
+  def loaded: () -> untyped
+  def self.loading: () -> untyped
+  def loading: () -> untyped
+  def self.mechanism: () -> untyped
+  def mechanism: () -> untyped
+  def self.autoload_paths: () -> untyped
+  def autoload_paths: () -> untyped
+  def self.autoload_once_paths: () -> untyped
+  def autoload_once_paths: () -> untyped
+  def self._eager_load_paths: () -> untyped
+  def _eager_load_paths: () -> untyped
+  def self.autoloaded_constants: () -> untyped
+  def autoloaded_constants: () -> untyped
+  def self.explicitly_unloadable_constants: () -> untyped
+  def explicitly_unloadable_constants: () -> untyped
+  def self.logger: () -> untyped
+  def logger: () -> untyped
+  def self.verbose: () -> untyped
+  def verbose: () -> untyped
+  def self.constant_watch_stack: () -> untyped
+  def constant_watch_stack: () -> untyped
+  def self.interlock=: (untyped val) -> untyped
+  def interlock=: (untyped val) -> untyped
+  def self.warnings_on_first_load=: (untyped val) -> untyped
+  def warnings_on_first_load=: (untyped val) -> untyped
+  def self.history=: (untyped val) -> untyped
+  def history=: (untyped val) -> untyped
+  def self.loaded=: (untyped val) -> untyped
+  def loaded=: (untyped val) -> untyped
+  def self.loading=: (untyped val) -> untyped
+  def loading=: (untyped val) -> untyped
+  def self.mechanism=: (untyped val) -> untyped
+  def mechanism=: (untyped val) -> untyped
+  def self.autoload_paths=: (untyped val) -> untyped
+  def autoload_paths=: (untyped val) -> untyped
+  def self.autoload_once_paths=: (untyped val) -> untyped
+  def autoload_once_paths=: (untyped val) -> untyped
+  def self._eager_load_paths=: (untyped val) -> untyped
+  def _eager_load_paths=: (untyped val) -> untyped
+  def self.autoloaded_constants=: (untyped val) -> untyped
+  def autoloaded_constants=: (untyped val) -> untyped
+  def self.explicitly_unloadable_constants=: (untyped val) -> untyped
+  def explicitly_unloadable_constants=: (untyped val) -> untyped
+  def self.logger=: (untyped val) -> untyped
+  def logger=: (untyped val) -> untyped
+  def self.verbose=: (untyped val) -> untyped
+  def verbose=: (untyped val) -> untyped
+  def self.constant_watch_stack=: (untyped val) -> untyped
+  def constant_watch_stack=: (untyped val) -> untyped
+  Reference: ActiveSupport::Dependencies::ClassCache
+end

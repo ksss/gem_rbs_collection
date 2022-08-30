@@ -1,0 +1,74 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage
+  # Returns the version of the currently loaded Active Storage as a <tt>Gem::Version</tt>.
+  def self.gem_version: () -> untyped
+  # Returns the version of the currently loaded ActiveStorage as a <tt>Gem::Version</tt>
+  def self.version: () -> untyped
+  extend ActiveSupport::Autoload
+  def self.logger: () -> untyped
+  def logger: () -> untyped
+  def self.verifier: () -> untyped
+  def verifier: () -> untyped
+  def self.variant_processor: () -> untyped
+  def variant_processor: () -> untyped
+  def self.queues: () -> untyped
+  def queues: () -> untyped
+  def self.previewers: () -> untyped
+  def previewers: () -> untyped
+  def self.analyzers: () -> untyped
+  def analyzers: () -> untyped
+  def self.paths: () -> untyped
+  def paths: () -> untyped
+  def self.variable_content_types: () -> untyped
+  def variable_content_types: () -> untyped
+  def self.binary_content_type: () -> untyped
+  def binary_content_type: () -> untyped
+  def self.content_types_to_serve_as_binary: () -> untyped
+  def content_types_to_serve_as_binary: () -> untyped
+  def self.content_types_allowed_inline: () -> untyped
+  def content_types_allowed_inline: () -> untyped
+  def self.supported_image_processing_methods: () -> untyped
+  def supported_image_processing_methods: () -> untyped
+  def self.unsupported_image_processing_arguments: () -> untyped
+  def unsupported_image_processing_arguments: () -> untyped
+  def self.service_urls_expire_in: () -> untyped
+  def service_urls_expire_in: () -> untyped
+  def self.routes_prefix: () -> untyped
+  def routes_prefix: () -> untyped
+  def self.replace_on_assign_to_many: () -> untyped
+  def replace_on_assign_to_many: () -> untyped
+  def self.logger=: (untyped val) -> untyped
+  def logger=: (untyped val) -> untyped
+  def self.verifier=: (untyped val) -> untyped
+  def verifier=: (untyped val) -> untyped
+  def self.variant_processor=: (untyped val) -> untyped
+  def variant_processor=: (untyped val) -> untyped
+  def self.queues=: (untyped val) -> untyped
+  def queues=: (untyped val) -> untyped
+  def self.previewers=: (untyped val) -> untyped
+  def previewers=: (untyped val) -> untyped
+  def self.analyzers=: (untyped val) -> untyped
+  def analyzers=: (untyped val) -> untyped
+  def self.paths=: (untyped val) -> untyped
+  def paths=: (untyped val) -> untyped
+  def self.variable_content_types=: (untyped val) -> untyped
+  def variable_content_types=: (untyped val) -> untyped
+  def self.binary_content_type=: (untyped val) -> untyped
+  def binary_content_type=: (untyped val) -> untyped
+  def self.content_types_to_serve_as_binary=: (untyped val) -> untyped
+  def content_types_to_serve_as_binary=: (untyped val) -> untyped
+  def self.content_types_allowed_inline=: (untyped val) -> untyped
+  def content_types_allowed_inline=: (untyped val) -> untyped
+  def self.supported_image_processing_methods=: (untyped val) -> untyped
+  def supported_image_processing_methods=: (untyped val) -> untyped
+  def self.unsupported_image_processing_arguments=: (untyped val) -> untyped
+  def unsupported_image_processing_arguments=: (untyped val) -> untyped
+  def self.service_urls_expire_in=: (untyped val) -> untyped
+  def service_urls_expire_in=: (untyped val) -> untyped
+  def self.routes_prefix=: (untyped val) -> untyped
+  def routes_prefix=: (untyped val) -> untyped
+  def self.replace_on_assign_to_many=: (untyped val) -> untyped
+  def replace_on_assign_to_many=: (untyped val) -> untyped
+end

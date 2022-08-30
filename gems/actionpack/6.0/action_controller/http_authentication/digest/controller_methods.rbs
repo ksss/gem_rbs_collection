@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Digest::ControllerMethods
+  def authenticate_or_request_with_http_digest: (?::String realm, ?untyped? message) ?{ () -> untyped } -> untyped
+  # Authenticate with HTTP Digest, returns true or false
+  def authenticate_with_http_digest: (?::String realm) ?{ () -> untyped } -> untyped
+  # Render output including the HTTP Digest authentication header
+  def request_http_digest_authentication: (?::String realm, ?untyped? message) -> untyped
+end

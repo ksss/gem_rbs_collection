@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::Strategy::LocalCache::LocalStore < ::ActiveSupport::Cache::Store
+  def initialize: () -> void
+  # Don't allow synchronizing since it isn't thread safe.
+  def synchronize: () { () -> untyped } -> untyped
+  def clear: (?untyped? options) -> untyped
+  def read_entry: (untyped key, **untyped options) -> untyped
+  def read_multi_entries: (untyped keys, **untyped options) -> untyped
+  def write_entry: (untyped key, untyped entry, **untyped options) -> true
+  def delete_entry: (untyped key, **untyped options) -> untyped
+  def fetch_entry: (untyped key, ?untyped? options) { () -> untyped } -> untyped
+end

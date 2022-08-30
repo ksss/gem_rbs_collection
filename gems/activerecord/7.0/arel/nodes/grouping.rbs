@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Grouping < ::Arel::Nodes::Unary
+  def fetch_attribute: () ?{ () -> untyped } -> untyped
+end

@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::JoinDependency::JoinPart
+  def initialize: (untyped base_klass, untyped children) -> void
+  def match?: (untyped other) -> untyped
+  def each: () { (untyped) -> untyped } -> untyped
+  def each_children: () { (untyped, untyped) -> untyped } -> untyped
+  # An Arel::Table for the active_record
+  def table: () -> untyped
+  def extract_record: (untyped row, untyped column_names_with_alias) -> untyped
+  def instantiate: (untyped row, untyped aliases, ?::Hash[untyped, untyped] column_types) ?{ () -> untyped } -> untyped
+  attr_reader base_klass: untyped
+  attr_reader children: untyped
+  # defined by `delegate` to: untyped#base_klass
+  def table_name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#base_klass
+  def column_names: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#base_klass
+  def primary_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#base_klass
+  def attribute_types: (*untyped, **untyped) -> untyped
+end

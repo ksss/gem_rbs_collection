@@ -1,0 +1,117 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Callbacks::ClassMethods
+  # Defines a callback that will get called right before the
+  # job's perform method is executed.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     before_perform do |job|
+  #       UserMailer.notify_video_started_processing(job.arguments.first)
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  def before_perform: (*untyped filters) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called right after the
+  # job's perform method has finished.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     after_perform do |job|
+  #       UserMailer.notify_video_processed(job.arguments.first)
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  def after_perform: (*untyped filters) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called around the job's perform method.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     around_perform do |job, block|
+  #       UserMailer.notify_video_started_processing(job.arguments.first)
+  #       block.call
+  #       UserMailer.notify_video_processed(job.arguments.first)
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  # You can access the return value of the job only if the execution wasn't halted.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     around_perform do |job, block|
+  #       value = block.call
+  #       puts value # => "Hello World!"
+  #     end
+  #
+  #     def perform
+  #       "Hello World!"
+  #     end
+  #   end
+  #
+  def around_perform: (*untyped filters) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called right before the
+  # job is enqueued.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     before_enqueue do |job|
+  #       $statsd.increment "enqueue-video-job.try"
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  def before_enqueue: (*untyped filters) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called right after the
+  # job is enqueued.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     after_enqueue do |job|
+  #       $statsd.increment "enqueue-video-job.success"
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  def after_enqueue: (*untyped filters) ?{ () -> untyped } -> untyped
+  # Defines a callback that will get called around the enqueuing
+  # of the job.
+  #
+  #   class VideoProcessJob < ActiveJob::Base
+  #     queue_as :default
+  #
+  #     around_enqueue do |job, block|
+  #       $statsd.time "video-job.process" do
+  #         block.call
+  #       end
+  #     end
+  #
+  #     def perform(video_id)
+  #       Video.find(video_id).process
+  #     end
+  #   end
+  #
+  def around_enqueue: (*untyped filters) ?{ () -> untyped } -> untyped
+end

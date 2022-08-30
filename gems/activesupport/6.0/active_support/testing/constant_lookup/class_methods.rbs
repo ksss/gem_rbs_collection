@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::ConstantLookup::ClassMethods
+  def determine_constant_from_test_name: (untyped test_name) { (untyped) -> untyped } -> untyped
+end

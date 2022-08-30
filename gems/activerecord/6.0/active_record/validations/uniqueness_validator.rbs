@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Validations::UniquenessValidator < ::ActiveModel::EachValidator
+  def initialize: (untyped options) -> void
+  def validate_each: (untyped record, untyped attribute, untyped value) -> untyped
+  # The check for an existing value should be run from a class that
+  # isn't abstract. This means working down from the current class
+  # (self), to the first non-abstract class. Since classes don't know
+  # their subclasses, we have to build the hierarchy between self and
+  # the record's class.
+  private def find_finder_class_for: (untyped record) -> untyped
+  private def build_relation: (untyped klass, untyped attribute, untyped value) -> untyped
+  private def scope_relation: (untyped record, untyped relation) -> untyped
+  private def map_enum_attribute: (untyped klass, untyped attribute, untyped value) -> untyped
+end

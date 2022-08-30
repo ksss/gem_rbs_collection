@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::HasMany < ::ActiveRecord::Associations::Builder::CollectionAssociation
+  def self.macro: () -> :has_many
+  def self.valid_options: (untyped options) -> untyped
+  def self.valid_dependent_options: () -> ::Array[:destroy | :delete_all | :nullify | :restrict_with_error | :restrict_with_exception | :destroy_async]
+end

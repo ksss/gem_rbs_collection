@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Time < ::ActiveModel::Type::Time
+  def serialize: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> untyped
+  include ActiveRecord::Type::Internal::Timezone
+end

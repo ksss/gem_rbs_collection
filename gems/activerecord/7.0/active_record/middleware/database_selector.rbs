@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Middleware::DatabaseSelector
+  def initialize: (untyped app, ?untyped? resolver_klass, ?untyped? context_klass, ?::Hash[untyped, untyped] options) -> void
+  # Middleware that determines which database connection to use in a multiple
+  # database application.
+  def call: (untyped env) -> untyped
+  private def select_database: (untyped request) ?{ () -> untyped } -> untyped
+  private def reading_request?: (untyped request) -> untyped
+  attr_reader resolver_klass: untyped
+  attr_reader context_klass: untyped
+  attr_reader options: untyped
+end

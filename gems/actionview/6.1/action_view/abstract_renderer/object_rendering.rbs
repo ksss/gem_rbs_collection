@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::AbstractRenderer::ObjectRendering
+  def initialize: (untyped lookup_context, untyped options) -> void
+  private def local_variable: (untyped path) -> untyped
+  private def raise_invalid_identifier: (untyped path) -> untyped
+  private def raise_invalid_option_as: (untyped as) -> untyped
+  # Obtains the path to where the object's partial is located. If the object
+  # responds to +to_partial_path+, then +to_partial_path+ will be called and
+  # will provide the path. If the object does not respond to +to_partial_path+,
+  # then an +ArgumentError+ is raised.
+  #
+  # If +prefix_partial_path_with_controller_namespace+ is true, then this
+  # method will prefix the partial paths with a namespace.
+  private def partial_path: (untyped object, untyped view) -> untyped
+  private def merge_prefix_into_object_path: (untyped prefix, untyped object_path) -> untyped
+  IDENTIFIER_ERROR_MESSAGE: String
+  OPTION_AS_ERROR_MESSAGE: String
+  PREFIXED_PARTIAL_NAMES: Concurrent::Map
+end

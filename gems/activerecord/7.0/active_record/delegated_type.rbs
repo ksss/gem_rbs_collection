@@ -1,0 +1,57 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::DelegatedType
+  # Defines this as a class that'll delegate its type for the passed +role+ to the class references in +types+.
+  # That'll create a polymorphic +belongs_to+ relationship to that +role+, and it'll add all the delegated
+  # type convenience methods:
+  #
+  #   class Entry < ApplicationRecord
+  #     delegated_type :entryable, types: %w[ Message Comment ], dependent: :destroy
+  #   end
+  #
+  #   Entry#entryable_class # => +Message+ or +Comment+
+  #   Entry#entryable_name  # => "message" or "comment"
+  #   Entry.messages        # => Entry.where(entryable_type: "Message")
+  #   Entry#message?        # => true when entryable_type == "Message"
+  #   Entry#message         # => returns the message record, when entryable_type == "Message", otherwise nil
+  #   Entry#message_id      # => returns entryable_id, when entryable_type == "Message", otherwise nil
+  #   Entry.comments        # => Entry.where(entryable_type: "Comment")
+  #   Entry#comment?        # => true when entryable_type == "Comment"
+  #   Entry#comment         # => returns the comment record, when entryable_type == "Comment", otherwise nil
+  #   Entry#comment_id      # => returns entryable_id, when entryable_type == "Comment", otherwise nil
+  #
+  # You can also declare namespaced types:
+  #
+  #   class Entry < ApplicationRecord
+  #     delegated_type :entryable, types: %w[ Message Comment Access::NoticeMessage ], dependent: :destroy
+  #   end
+  #
+  #   Entry.access_notice_messages
+  #   entry.access_notice_message
+  #   entry.access_notice_message?
+  #
+  # === Options
+  #
+  # The +options+ are passed directly to the +belongs_to+ call, so this is where you declare +dependent+ etc.
+  # The following options can be included to specialize the behavior of the delegated type convenience methods.
+  #
+  # [:foreign_key]
+  #   Specify the foreign key used for the convenience methods. By default this is guessed to be the passed
+  #   +role+ with an "_id" suffix. So a class that defines a
+  #   <tt>delegated_type :entryable, types: %w[ Message Comment ]</tt> association will use "entryable_id" as
+  #   the default <tt>:foreign_key</tt>.
+  # [:primary_key]
+  #   Specify the method that returns the primary key of associated object used for the convenience methods.
+  #   By default this is +id+.
+  #
+  # Option examples:
+  #   class Entry < ApplicationRecord
+  #     delegated_type :entryable, types: %w[ Message Comment ], primary_key: :uuid, foreign_key: :entryable_uuid
+  #   end
+  #
+  #   Entry#message_uuid      # => returns entryable_uuid, when entryable_type == "Message", otherwise nil
+  #   Entry#comment_uuid      # => returns entryable_uuid, when entryable_type == "Comment", otherwise nil
+  def delegated_type: (untyped role, types: untyped, **untyped options) -> untyped
+  private def define_delegated_type_methods: (untyped role, types: untyped, options: untyped) -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Journey::NFA::Dot
+  def to_dot: () -> ::String
+end

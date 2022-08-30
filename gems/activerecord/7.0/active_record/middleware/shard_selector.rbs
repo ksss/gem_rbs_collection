@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Middleware::ShardSelector
+  def initialize: (untyped app, untyped resolver, ?::Hash[untyped, untyped] options) -> void
+  def call: (untyped env) -> untyped
+  private def selected_shard: (untyped request) -> untyped
+  private def set_shard: (untyped shard) ?{ () -> untyped } -> untyped
+  attr_reader resolver: untyped
+  attr_reader options: untyped
+end

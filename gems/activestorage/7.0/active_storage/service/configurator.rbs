@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Service::Configurator
+  def self.build: (untyped service_name, untyped configurations) -> untyped
+  def initialize: (untyped configurations) -> void
+  def build: (untyped service_name) -> untyped
+  private def config_for: (untyped name) -> untyped
+  private def resolve: (untyped class_name) -> untyped
+  attr_reader configurations: untyped
+end

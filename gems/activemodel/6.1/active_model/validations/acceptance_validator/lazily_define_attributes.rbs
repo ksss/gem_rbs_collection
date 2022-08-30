@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::AcceptanceValidator::LazilyDefineAttributes < ::Module
+  def initialize: (untyped attributes) -> void
+  def included: (untyped klass) -> untyped
+  def matches?: (untyped method_name) -> untyped
+  def define_on: (untyped klass) -> untyped
+  def ==: (untyped other) -> untyped
+  attr_reader attributes: untyped
+end

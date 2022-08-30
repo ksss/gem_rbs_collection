@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder < ::ActionView::Helpers::AtomFeedHelper::AtomBuilder
+  def initialize: (untyped xml, untyped view, ?::Hash[untyped, untyped] feed_options) -> void
+  # Accepts a Date or Time object and inserts it in the proper format. If +nil+ is passed, current time in UTC is used.
+  def updated: (?untyped? date_or_time) -> untyped
+  # Creates an entry tag for a specific record and prefills the id using class and id.
+  #
+  # Options:
+  #
+  # * <tt>:published</tt>: Time first published. Defaults to the created_at attribute on the record if one such exists.
+  # * <tt>:updated</tt>: Time of update. Defaults to the updated_at attribute on the record if one such exists.
+  # * <tt>:url</tt>: The URL for this entry or +false+ or +nil+ for not having a link tag. Defaults to the +polymorphic_url+ for the record.
+  # * <tt>:id</tt>: The ID for this entry. Defaults to "tag:#{@view.request.host},#{@feed_options[:schema_date]}:#{record.class}/#{record.id}"
+  # * <tt>:type</tt>: The TYPE for this entry. Defaults to "text/html".
+  def entry: (untyped record, ?::Hash[untyped, untyped] options) { (untyped) -> untyped } -> untyped
+end

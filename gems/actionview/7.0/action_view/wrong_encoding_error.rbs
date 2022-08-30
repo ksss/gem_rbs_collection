@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::WrongEncodingError < ::ActionView::EncodingError
+  def initialize: (untyped string, untyped encoding) -> void
+  def message: () -> ::String
+end

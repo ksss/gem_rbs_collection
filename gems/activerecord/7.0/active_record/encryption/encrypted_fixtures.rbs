@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::EncryptedFixtures
+  def initialize: (untyped fixture, untyped model_class) -> void
+  private def encrypt_fixture_data: (untyped fixture, untyped model_class) -> untyped
+  private def process_preserved_original_columns: (untyped fixture, untyped model_class) -> untyped
+end

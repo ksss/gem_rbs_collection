@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::And < ::Arel::Nodes::NodeExpression
+  def initialize: (untyped children) -> void
+  def left: () -> untyped
+  def right: () -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_reader children: untyped
+end

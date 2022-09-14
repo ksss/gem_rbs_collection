@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Serialized < ::ActiveModel::Type::Value
+  def initialize: (untyped subtype, untyped coder) -> void
+  def deserialize: (untyped value) -> untyped
+  def serialize: (untyped value) -> (nil | untyped)
+  def inspect: () -> untyped
+  def changed_in_place?: (untyped raw_old_value, untyped value) -> (false | untyped)
+  def accessor: () -> untyped
+  def assert_valid_value: (untyped value) -> (untyped | nil)
+  def force_equality?: (untyped value) -> untyped
+  private def default_value?: (untyped value) -> untyped
+  private def encoded: (untyped value) -> (untyped | nil)
+  include ActiveModel::Type::Helpers::Mutable
+  attr_reader subtype: untyped
+  attr_reader coder: untyped
+end

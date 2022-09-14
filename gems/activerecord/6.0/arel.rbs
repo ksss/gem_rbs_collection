@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel
+  # Wrap a known-safe SQL string for passing to query methods, e.g.
+  #
+  #   Post.order(Arel.sql("length(title)")).last
+  #
+  # Great caution should be taken to avoid SQL injection vulnerabilities.
+  # This method should not be used with unsafe values such as request
+  # parameters or model attributes.
+  def self.sql: (untyped raw_sql) -> untyped
+  def self.star: () -> untyped
+  def self.arel_node?: (untyped value) -> untyped
+  def self.fetch_attribute: (untyped value) { (untyped) -> untyped } -> untyped
+  VERSION: String
+end

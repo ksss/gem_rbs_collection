@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::XmlMini_NokogiriSAX::HashBuilder < ::Nokogiri::XML::SAX::Document
+  def current_hash: () -> untyped
+  def start_document: () -> untyped
+  def end_document: () -> (untyped | nil)
+  def error: (untyped error_message) -> untyped
+  def start_element: (untyped name, ?untyped attrs) -> untyped
+  def end_element: (untyped name) -> untyped
+  def characters: (untyped string) -> untyped
+  alias cdata_block characters
+end

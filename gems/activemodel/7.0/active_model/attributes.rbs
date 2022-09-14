@@ -1,0 +1,39 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Attributes
+  def initialize: () -> void
+  def initialize_dup: (untyped other) -> untyped
+  # Returns a hash of all the attributes with their names as keys and the values of the attributes as values.
+  #
+  #   class Person
+  #     include ActiveModel::Attributes
+  #
+  #     attribute :name, :string
+  #     attribute :age, :integer
+  #   end
+  #
+  #   person = Person.new(name: 'Francesco', age: 22)
+  #   person.attributes
+  #   # => {"name"=>"Francesco", "age"=>22}
+  def attributes: () -> untyped
+  # Returns an array of attribute names as strings
+  #
+  #   class Person
+  #     include ActiveModel::Attributes
+  #
+  #     attribute :name, :string
+  #     attribute :age, :integer
+  #   end
+  #
+  #   person = Person.new
+  #   person.attribute_names
+  #   # => ["name", "age"]
+  def attribute_names: () -> untyped
+  def freeze: () -> untyped
+  private def _write_attribute: (untyped attr_name, untyped value) -> untyped
+  alias attribute= _write_attribute
+  private def attribute: (untyped attr_name) -> untyped
+  include ActiveModel::AttributeMethods
+  extend ActiveSupport::Concern
+end

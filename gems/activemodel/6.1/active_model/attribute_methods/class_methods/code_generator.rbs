@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeMethods::ClassMethods::CodeGenerator
+  def self.batch: (untyped owner, untyped path, untyped line) { (untyped) -> untyped } -> untyped
+  def initialize: (untyped owner, untyped path, untyped line) -> void
+  def <<: (untyped source_line) -> untyped
+  def rename_method: (untyped old_name, untyped new_name) -> untyped
+  def execute: () -> untyped
+end

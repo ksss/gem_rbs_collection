@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::NFA::Visitor < ::ActionDispatch::Journey::Visitors::Visitor
+  def initialize: (untyped tt) -> void
+  def visit_CAT: (untyped node) -> ::Array[untyped]
+  def visit_GROUP: (untyped node) -> ::Array[untyped]
+  def visit_OR: (untyped node) -> ::Array[untyped]
+  def terminal: (untyped node) -> ::Array[untyped]
+end

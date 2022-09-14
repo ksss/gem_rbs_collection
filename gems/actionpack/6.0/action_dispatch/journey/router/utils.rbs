@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Router::Utils
+  # Normalizes URI path.
+  #
+  # Strips off trailing slash and ensures there is a leading slash.
+  # Also converts downcase URL encoded string to uppercase.
+  #
+  #   normalize_path("/foo")  # => "/foo"
+  #   normalize_path("/foo/") # => "/foo"
+  #   normalize_path("foo")   # => "/foo"
+  #   normalize_path("")      # => "/"
+  #   normalize_path("/%ab")  # => "/%AB"
+  def self.normalize_path: (untyped path) -> untyped
+  def self.escape_path: (untyped path) -> untyped
+  def self.escape_segment: (untyped segment) -> untyped
+  def self.escape_fragment: (untyped fragment) -> untyped
+  # Replaces any escaped sequences with their unescaped representations.
+  #
+  #   uri = "/topics?title=Ruby%20on%20Rails"
+  #   unescape_uri(uri)  #=> "/topics?title=Ruby on Rails"
+  def self.unescape_uri: (untyped uri) -> untyped
+  ENCODER: ActionDispatch::Journey::Router::Utils::UriEncoder
+end

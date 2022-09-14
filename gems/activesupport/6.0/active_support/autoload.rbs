@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Autoload
+  def self.extended: (untyped base) -> untyped
+  def autoload: (untyped const_name, ?untyped path) -> untyped
+  def autoload_under: (untyped path) { () -> untyped } -> untyped
+  def autoload_at: (untyped path) { () -> untyped } -> untyped
+  def eager_autoload: () { () -> untyped } -> untyped
+  def eager_load!: () -> untyped
+  def autoloads: () -> untyped
+end

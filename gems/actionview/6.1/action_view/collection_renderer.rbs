@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::CollectionRenderer < ::ActionView::PartialRenderer
+  def render_collection_with_partial: (untyped collection, untyped partial, untyped context, untyped block) -> untyped
+  def render_collection_derive_partial: (untyped collection, untyped context, untyped block) -> untyped
+  private def retrieve_variable: (untyped path) -> ::Array[untyped | ::Symbol]
+  private def render_collection: (untyped collection, untyped view, untyped path, untyped template, untyped layout, untyped block) -> untyped
+  private def collection_with_template: (untyped view, untyped template, untyped layout, untyped collection) -> untyped
+  include ActionView::AbstractRenderer::ObjectRendering
+end

@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder
+  def self.get: (untyped action, untyped `type`) -> untyped
+  def self.url: () -> untyped
+  def self.path: () -> untyped
+  def self.build: (untyped action, untyped `type`) -> untyped
+  def self.singular: (untyped prefix, untyped suffix) -> untyped
+  def self.plural: (untyped prefix, untyped suffix) -> untyped
+  def self.polymorphic_method: (untyped recipient, untyped record_or_hash_or_array, untyped action, untyped `type`, untyped options) -> untyped
+  def initialize: (untyped key_strategy, untyped prefix, untyped suffix) -> void
+  def handle_string: (untyped record) -> ::Array[untyped | ::Array[untyped]]
+  def handle_string_call: (untyped target, untyped str) -> untyped
+  def handle_class: (untyped klass) -> ::Array[untyped | ::Array[untyped]]
+  def handle_class_call: (untyped target, untyped klass) -> untyped
+  def handle_model: (untyped record) -> ::Array[untyped]
+  def handle_model_call: (untyped target, untyped record) -> untyped
+  def handle_list: (untyped list) -> ::Array[untyped]
+  private def polymorphic_mapping: (untyped target, untyped record) -> untyped
+  private def get_method_for_class: (untyped klass) -> untyped
+  private def get_method_for_string: (untyped str) -> ::String
+  attr_reader suffix: untyped
+  attr_reader prefix: untyped
+  CACHE: Hash[String, Hash[nil | String, ActionDispatch::Routing::PolymorphicRoutes::HelperMethodBuilder]]
+end

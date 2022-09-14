@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FutureResult
+  def initialize: (untyped pool, *untyped args, **untyped kwargs) -> void
+  def schedule!: (untyped session) -> untyped
+  def execute!: (untyped connection) -> untyped
+  def cancel: () -> self
+  def execute_or_skip: () -> (nil | untyped)
+  def result: () -> untyped
+  def pending?: () -> untyped
+  private def canceled?: () -> untyped
+  private def execute_or_wait: () -> untyped
+  private def execute_query: (untyped connection, ?async: bool) -> untyped
+  private def exec_query: (untyped connection, *untyped args, **untyped kwargs) -> untyped
+  attr_reader lock_wait: untyped
+  # defined by `delegate` to: untyped#result
+  def empty?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#result
+  def to_a: (*untyped, **untyped) -> untyped
+end

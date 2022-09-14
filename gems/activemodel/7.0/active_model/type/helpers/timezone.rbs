@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Type::Helpers::Timezone
+  def is_utc?: () -> untyped
+  def default_timezone: () -> (:utc | :local)
+end

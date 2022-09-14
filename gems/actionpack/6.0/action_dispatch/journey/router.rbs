@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Router
+  def initialize: (untyped routes) -> void
+  def eager_load!: () -> nil
+  def serve: (untyped req) -> (::Array[untyped] | ::Array[404 | ::Hash[::String, "pass"] | ::Array["Not Found"]])
+  def recognize: (untyped rails_req) { (untyped, untyped) -> untyped } -> untyped
+  def visualizer: () -> untyped
+  private def partitioned_routes: () -> untyped
+  private def ast: () -> untyped
+  private def simulator: () -> untyped
+  private def custom_routes: () -> untyped
+  private def filter_routes: (untyped path) -> (::Array[untyped] | untyped)
+  private def find_routes: (untyped req) -> untyped
+  private def match_head_routes: (untyped routes, untyped req) -> untyped
+  private def match_routes: (untyped routes, untyped req) -> untyped
+  attr_accessor routes: untyped
+end

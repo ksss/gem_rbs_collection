@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper::Constraints < ::ActionDispatch::Routing::Endpoint
+  def initialize: (untyped app, untyped constraints, untyped strategy) -> void
+  def dispatcher?: () -> untyped
+  def matches?: (untyped req) -> untyped
+  def serve: (untyped req) -> (::Array[404 | ::Hash[::String, "pass"] | ::Array[untyped]] | untyped)
+  private def constraint_args: (untyped constraint, untyped request) -> untyped
+  attr_reader app: untyped
+  attr_reader constraints: untyped
+  CALL: Proc
+  SERVE: Proc
+end

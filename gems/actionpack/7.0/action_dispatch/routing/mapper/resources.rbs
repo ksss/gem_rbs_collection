@@ -1,0 +1,261 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Routing::Mapper::Resources
+  def resources_path_names: (untyped options) -> untyped
+  # Sometimes, you have a resource that clients always look up without
+  # referencing an ID. A common example, /profile always shows the
+  # profile of the currently logged in user. In this case, you can use
+  # a singular resource to map /profile (rather than /profile/:id) to
+  # the show action:
+  #
+  #   resource :profile
+  #
+  # This creates six different routes in your application, all mapping to
+  # the +Profiles+ controller (note that the controller is named after
+  # the plural):
+  #
+  #   GET       /profile/new
+  #   GET       /profile
+  #   GET       /profile/edit
+  #   PATCH/PUT /profile
+  #   DELETE    /profile
+  #   POST      /profile
+  #
+  # If you want instances of a model to work with this resource via
+  # record identification (e.g. in +form_with+ or +redirect_to+), you
+  # will need to call resolve[rdoc-ref:CustomUrls#resolve]:
+  #
+  #   resource :profile
+  #   resolve('Profile') { [:profile] }
+  #
+  #   # Enables this to work with singular routes:
+  #   form_with(model: @profile) {}
+  #
+  # === Options
+  # Takes same options as resources[rdoc-ref:#resources]
+  def resource: (*untyped resources) { () -> untyped } -> self
+  # In Rails, a resourceful route provides a mapping between HTTP verbs
+  # and URLs and controller actions. By convention, each action also maps
+  # to particular CRUD operations in a database. A single entry in the
+  # routing file, such as
+  #
+  #   resources :photos
+  #
+  # creates seven different routes in your application, all mapping to
+  # the +Photos+ controller:
+  #
+  #   GET       /photos
+  #   GET       /photos/new
+  #   POST      /photos
+  #   GET       /photos/:id
+  #   GET       /photos/:id/edit
+  #   PATCH/PUT /photos/:id
+  #   DELETE    /photos/:id
+  #
+  # Resources can also be nested infinitely by using this block syntax:
+  #
+  #   resources :photos do
+  #     resources :comments
+  #   end
+  #
+  # This generates the following comments routes:
+  #
+  #   GET       /photos/:photo_id/comments
+  #   GET       /photos/:photo_id/comments/new
+  #   POST      /photos/:photo_id/comments
+  #   GET       /photos/:photo_id/comments/:id
+  #   GET       /photos/:photo_id/comments/:id/edit
+  #   PATCH/PUT /photos/:photo_id/comments/:id
+  #   DELETE    /photos/:photo_id/comments/:id
+  #
+  # === Options
+  # Takes same options as match[rdoc-ref:Base#match] as well as:
+  #
+  # [:path_names]
+  #   Allows you to change the segment component of the +edit+ and +new+ actions.
+  #   Actions not specified are not changed.
+  #
+  #     resources :posts, path_names: { new: "brand_new" }
+  #
+  #   The above example will now change /posts/new to /posts/brand_new.
+  #
+  # [:path]
+  #   Allows you to change the path prefix for the resource.
+  #
+  #     resources :posts, path: 'postings'
+  #
+  #   The resource and all segments will now route to /postings instead of /posts.
+  #
+  # [:only]
+  #   Only generate routes for the given actions.
+  #
+  #     resources :cows, only: :show
+  #     resources :cows, only: [:show, :index]
+  #
+  # [:except]
+  #   Generate all routes except for the given actions.
+  #
+  #     resources :cows, except: :show
+  #     resources :cows, except: [:show, :index]
+  #
+  # [:shallow]
+  #   Generates shallow routes for nested resource(s). When placed on a parent resource,
+  #   generates shallow routes for all nested resources.
+  #
+  #     resources :posts, shallow: true do
+  #       resources :comments
+  #     end
+  #
+  #   Is the same as:
+  #
+  #     resources :posts do
+  #       resources :comments, except: [:show, :edit, :update, :destroy]
+  #     end
+  #     resources :comments, only: [:show, :edit, :update, :destroy]
+  #
+  #   This allows URLs for resources that otherwise would be deeply nested such
+  #   as a comment on a blog post like <tt>/posts/a-long-permalink/comments/1234</tt>
+  #   to be shortened to just <tt>/comments/1234</tt>.
+  #
+  #   Set <tt>shallow: false</tt> on a child resource to ignore a parent's shallow parameter.
+  #
+  # [:shallow_path]
+  #   Prefixes nested shallow routes with the specified path.
+  #
+  #     scope shallow_path: "sekret" do
+  #       resources :posts do
+  #         resources :comments, shallow: true
+  #       end
+  #     end
+  #
+  #   The +comments+ resource here will have the following routes generated for it:
+  #
+  #     post_comments    GET       /posts/:post_id/comments(.:format)
+  #     post_comments    POST      /posts/:post_id/comments(.:format)
+  #     new_post_comment GET       /posts/:post_id/comments/new(.:format)
+  #     edit_comment     GET       /sekret/comments/:id/edit(.:format)
+  #     comment          GET       /sekret/comments/:id(.:format)
+  #     comment          PATCH/PUT /sekret/comments/:id(.:format)
+  #     comment          DELETE    /sekret/comments/:id(.:format)
+  #
+  # [:shallow_prefix]
+  #   Prefixes nested shallow route names with specified prefix.
+  #
+  #     scope shallow_prefix: "sekret" do
+  #       resources :posts do
+  #         resources :comments, shallow: true
+  #       end
+  #     end
+  #
+  #   The +comments+ resource here will have the following routes generated for it:
+  #
+  #     post_comments           GET       /posts/:post_id/comments(.:format)
+  #     post_comments           POST      /posts/:post_id/comments(.:format)
+  #     new_post_comment        GET       /posts/:post_id/comments/new(.:format)
+  #     edit_sekret_comment     GET       /comments/:id/edit(.:format)
+  #     sekret_comment          GET       /comments/:id(.:format)
+  #     sekret_comment          PATCH/PUT /comments/:id(.:format)
+  #     sekret_comment          DELETE    /comments/:id(.:format)
+  #
+  # [:format]
+  #   Allows you to specify the default value for optional +format+
+  #   segment or disable it by supplying +false+.
+  #
+  # [:param]
+  #   Allows you to override the default param name of +:id+ in the URL.
+  #
+  # === Examples
+  #
+  #   # routes call <tt>Admin::PostsController</tt>
+  #   resources :posts, module: "admin"
+  #
+  #   # resource actions are at /admin/posts.
+  #   resources :posts, path: "admin/posts"
+  def resources: (*untyped resources) { () -> untyped } -> self
+  # To add a route to the collection:
+  #
+  #   resources :photos do
+  #     collection do
+  #       get 'search'
+  #     end
+  #   end
+  #
+  # This will enable Rails to recognize paths such as <tt>/photos/search</tt>
+  # with GET, and route to the search action of +PhotosController+. It will also
+  # create the <tt>search_photos_url</tt> and <tt>search_photos_path</tt>
+  # route helpers.
+  def collection: () ?{ () -> untyped } -> untyped
+  # To add a member route, add a member block into the resource block:
+  #
+  #   resources :photos do
+  #     member do
+  #       get 'preview'
+  #     end
+  #   end
+  #
+  # This will recognize <tt>/photos/1/preview</tt> with GET, and route to the
+  # preview action of +PhotosController+. It will also create the
+  # <tt>preview_photo_url</tt> and <tt>preview_photo_path</tt> helpers.
+  def member: () ?{ () -> untyped } -> untyped
+  def new: () ?{ () -> untyped } -> untyped
+  def nested: () ?{ () -> untyped } -> untyped
+  # See ActionDispatch::Routing::Mapper::Scoping#namespace.
+  def namespace: (untyped path, ?::Hash[untyped, untyped] options) -> untyped
+  def shallow: () { () -> untyped } -> untyped
+  def shallow?: () -> untyped
+  def draw: (untyped name) -> untyped
+  # Matches a URL pattern to one or more routes.
+  # For more information, see match[rdoc-ref:Base#match].
+  #
+  #   match 'path' => 'controller#action', via: :patch
+  #   match 'path', to: 'controller#action', via: :post
+  #   match 'path', 'otherpath', on: :member, via: :get
+  def match: (untyped path, *untyped rest) ?{ () -> untyped } -> untyped
+  # You can specify what Rails should route "/" to with the root method:
+  #
+  #   root to: 'pages#main'
+  #
+  # For options, see +match+, as +root+ uses it internally.
+  #
+  # You can also pass a string which will expand
+  #
+  #   root 'pages#main'
+  #
+  # You should put the root route at the top of <tt>config/routes.rb</tt>,
+  # because this means it will be matched first. As this is the most popular route
+  # of most Rails applications, this is beneficial.
+  def root: (untyped path, ?::Hash[untyped, untyped] options) -> untyped
+  private def parent_resource: () -> untyped
+  private def apply_common_behavior_for: (untyped method, untyped resources, untyped options) ?{ () -> untyped } -> (true | false)
+  private def apply_action_options: (untyped options) -> untyped
+  private def action_options?: (untyped options) -> untyped
+  private def scope_action_options: () -> untyped
+  private def resource_scope?: () -> untyped
+  private def resource_method_scope?: () -> untyped
+  private def nested_scope?: () -> untyped
+  private def with_scope_level: (untyped kind) { () -> untyped } -> untyped
+  private def resource_scope: (untyped resource) ?{ () -> untyped } -> untyped
+  private def nested_options: () -> untyped
+  private def shallow_nesting_depth: () -> untyped
+  private def param_constraint?: () -> untyped
+  private def param_constraint: () -> untyped
+  private def canonical_action?: (untyped action) -> untyped
+  private def shallow_scope: () { () -> untyped } -> untyped
+  private def path_for_action: (untyped action, untyped path) -> (::String | untyped)
+  private def action_path: (untyped name) -> untyped
+  private def prefix_name_for_action: (untyped as, untyped action) -> untyped
+  private def name_for_action: (untyped as, untyped action) -> (nil | untyped)
+  private def set_member_mappings_for_resource: () -> untyped
+  private def api_only?: () -> untyped
+  private def path_scope: (untyped path) { () -> untyped } -> untyped
+  private def map_match: (untyped paths, untyped options) -> self
+  private def get_to_from_path: (untyped path, untyped to, untyped action) -> untyped
+  private def using_match_shorthand?: (untyped path) -> untyped
+  private def decomposed_match: (untyped path, untyped controller, untyped options, untyped _path, untyped to, untyped via, untyped formatted, untyped anchor, untyped options_constraints) -> untyped
+  private def add_route: (untyped action, untyped controller, untyped options, untyped _path, untyped to, untyped via, untyped formatted, untyped anchor, untyped options_constraints) -> untyped
+  private def match_root_route: (untyped options) -> untyped
+  CANONICAL_ACTIONS: Array[String]
+  RESOURCE_OPTIONS: Array[Symbol]
+  VALID_ON_OPTIONS: Array[Symbol]
+end

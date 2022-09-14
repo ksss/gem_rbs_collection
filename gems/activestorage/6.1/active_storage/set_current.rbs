@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::SetCurrent
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::JSON::Encoding
+  attr_accessor self.use_standard_json_time_format: untyped
+  attr_accessor self.escape_html_entities_in_json: untyped
+  attr_accessor self.time_precision: untyped
+  attr_accessor self.json_encoder: untyped
+end

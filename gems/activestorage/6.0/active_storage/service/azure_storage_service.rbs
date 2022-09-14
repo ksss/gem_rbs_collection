@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Service::AzureStorageService < ::ActiveStorage::Service
+  def initialize: (storage_account_name: untyped, storage_access_key: untyped, container: untyped, **untyped options) -> void
+  def upload: (untyped key, untyped io, ?checksum: untyped?) -> untyped
+  def download: (untyped key) ?{ () -> untyped } -> untyped
+  def download_chunk: (untyped key, untyped range) -> untyped
+  def delete: (untyped key) -> untyped
+  def delete_prefixed: (untyped prefix) -> untyped
+  def exist?: (untyped key) -> untyped
+  def url: (untyped key, expires_in: untyped, filename: untyped, disposition: untyped, content_type: untyped) -> untyped
+  def url_for_direct_upload: (untyped key, expires_in: untyped, content_type: untyped, content_length: untyped, checksum: untyped) -> untyped
+  def headers_for_direct_upload: (untyped key, content_type: untyped, checksum: untyped) -> ::Hash[::String, untyped | "BlockBlob"]
+  private def uri_for: (untyped key) -> untyped
+  private def blob_for: (untyped key) -> untyped
+  private def format_expiry: (untyped expires_in) -> (untyped | nil)
+  # Reads the object for the given key in chunks, yielding each to the block.
+  private def stream: (untyped key) { (untyped) -> untyped } -> untyped
+  private def handle_errors: () { () -> untyped } -> untyped
+end

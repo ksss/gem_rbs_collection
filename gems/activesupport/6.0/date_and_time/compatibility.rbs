@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module DateAndTime::Compatibility
+  def self.preserve_timezone: () -> untyped
+  def preserve_timezone: () -> untyped
+  def self.preserve_timezone=: (untyped val) -> untyped
+end

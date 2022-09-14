@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::ForceSSL
+  def force_ssl_redirect: (?untyped? host_or_options) -> (untyped | nil)
+  include AbstractController::Callbacks
+  extend ActiveSupport::Concern
+  ACTION_OPTIONS: Array[Symbol]
+  REDIRECT_OPTIONS: Array[Symbol]
+  URL_OPTIONS: Array[Symbol]
+end

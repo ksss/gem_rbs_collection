@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Transformers::ImageProcessingTransformer < ::ActiveStorage::Transformers::Transformer
+  private def process: (untyped file, format: untyped) -> untyped
+  private def processor: () -> untyped
+  private def operations: () -> untyped
+  private def validate_transformation: (untyped name, untyped argument) -> untyped
+  private def validate_arg_string: (untyped argument) -> (untyped | nil)
+  private def validate_arg_array: (untyped argument) -> untyped
+  private def validate_arg_hash: (untyped argument) -> untyped
+end

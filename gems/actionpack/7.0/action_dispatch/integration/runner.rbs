@@ -1,0 +1,38 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Integration::Runner
+  def initialize: (*untyped args) ?{ () -> untyped } -> void
+  def before_setup: () -> untyped
+  def integration_session: () -> untyped
+  # Reset the current session. This is useful for testing multiple sessions
+  # in a single test case.
+  def reset!: () -> untyped
+  def create_session: (untyped app) -> untyped
+  def remove!: () -> untyped
+  # Open a new session instance. If a block is given, the new session is
+  # yielded to the block before being returned.
+  #
+  #   session = open_session do |sess|
+  #     sess.extend(CustomAssertions)
+  #   end
+  #
+  # By default, a single session is automatically created for you, but you
+  # can use this method to open multiple sessions that ought to be tested
+  # simultaneously.
+  def open_session: () { (untyped) -> untyped } -> untyped
+  def assertions: () -> untyped
+  def assertions=: (untyped assertions) -> untyped
+  # Copy the instance variables from the current session instance into the
+  # test instance.
+  def copy_session_variables!: () -> untyped
+  def default_url_options: () -> untyped
+  def default_url_options=: (untyped options) -> untyped
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+  # Delegate unhandled messages to the current session instance.
+  private def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
+  include ActionDispatch::Assertions
+  attr_accessor root_session: untyped
+  attr_reader app: untyped
+  APP_SESSIONS: Hash[untyped, untyped]
+end

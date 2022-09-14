@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::DisableJoinsAssociationScope < ::ActiveRecord::Associations::AssociationScope
+  def scope: (untyped association) -> untyped
+  private def last_scope_chain: (untyped reverse_chain, untyped owner) -> untyped
+  private def add_constraints: (untyped reflection, untyped key, untyped join_ids, untyped owner, untyped ordered) -> untyped
+end

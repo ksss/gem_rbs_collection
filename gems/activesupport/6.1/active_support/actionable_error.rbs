@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ActionableError
+  def self.actions: (untyped error) -> untyped
+  def self.dispatch: (untyped error, untyped name) -> untyped
+  extend ActiveSupport::Concern
+end

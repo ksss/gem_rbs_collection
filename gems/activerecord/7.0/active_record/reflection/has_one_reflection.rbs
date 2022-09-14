@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::HasOneReflection < ::ActiveRecord::Reflection::AssociationReflection
+  def macro: () -> :has_one
+  def has_one?: () -> true
+  def association_class: () -> untyped
+end

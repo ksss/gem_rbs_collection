@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::MethodNotAllowed < ::ActionController::ActionControllerError
+  def initialize: (*untyped allowed_methods) -> void
+end

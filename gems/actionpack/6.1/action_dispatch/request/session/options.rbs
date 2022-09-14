@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Session::Options
+  def self.set: (untyped req, untyped options) -> untyped
+  def self.find: (untyped req) -> untyped
+  def initialize: (untyped by, untyped default_options) -> void
+  def []: (untyped key) -> untyped
+  def id: (untyped req) -> untyped
+  def []=: (untyped k, untyped v) -> untyped
+  def to_hash: () -> untyped
+  def values_at: (*untyped args) -> untyped
+end

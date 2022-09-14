@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::RequestForgeryProtection::ProtectionMethods::Exception
+  def initialize: (untyped controller) -> void
+  def handle_unverified_request: () -> untyped
+  attr_accessor warning_message: untyped
+end

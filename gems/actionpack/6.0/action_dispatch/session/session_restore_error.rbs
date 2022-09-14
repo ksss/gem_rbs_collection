@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::SessionRestoreError < ::StandardError
+  def initialize: () -> void
+end

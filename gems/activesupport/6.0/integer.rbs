@@ -1,0 +1,41 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Integer < ::Numeric
+  # Ordinalize turns a number into an ordinal string used to denote the
+  # position in an ordered sequence such as 1st, 2nd, 3rd, 4th.
+  #
+  #  1.ordinalize     # => "1st"
+  #  2.ordinalize     # => "2nd"
+  #  1002.ordinalize  # => "1002nd"
+  #  1003.ordinalize  # => "1003rd"
+  #  -11.ordinalize   # => "-11th"
+  #  -1001.ordinalize # => "-1001st"
+  def ordinalize: () -> untyped
+  # Ordinal returns the suffix used to denote the position
+  # in an ordered sequence such as 1st, 2nd, 3rd, 4th.
+  #
+  #  1.ordinal     # => "st"
+  #  2.ordinal     # => "nd"
+  #  1002.ordinal  # => "nd"
+  #  1003.ordinal  # => "rd"
+  #  -11.ordinal   # => "th"
+  #  -1001.ordinal # => "st"
+  def ordinal: () -> untyped
+  # Check whether the integer is evenly divisible by the argument.
+  #
+  #   0.multiple_of?(0)  # => true
+  #   6.multiple_of?(5)  # => false
+  #   10.multiple_of?(2) # => true
+  def multiple_of?: (untyped number) -> untyped
+  #   2.months # => 2 months
+  def months: () -> ActiveSupport::Duration
+  alias month months
+  # Returns a Duration instance matching the number of years provided.
+  #
+  #   2.years # => 2 years
+  def years: () -> ActiveSupport::Duration
+  alias year years
+  prepend ActiveSupport::NumericWithFormat
+  prepend ActiveSupport::ToJsonWithActiveSupportEncoder
+end

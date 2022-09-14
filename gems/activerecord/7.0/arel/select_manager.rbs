@@ -1,0 +1,51 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::SelectManager < ::Arel::TreeManager
+  def initialize: (?untyped? table) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def limit: () -> untyped
+  alias taken limit
+  def constraints: () -> untyped
+  def offset: () -> untyped
+  def skip: (untyped amount) -> self
+  alias offset= skip
+  # #
+  # Produces an Arel::Nodes::Exists node
+  def exists: () -> untyped
+  def as: (untyped other) -> untyped
+  def lock: (?untyped locking) -> self
+  def locked: () -> untyped
+  def on: (*untyped exprs) -> self
+  def group: (*untyped columns) -> self
+  def from: (untyped table) -> self
+  def froms: () -> untyped
+  def join: (untyped relation, ?untyped klass) -> self
+  def outer_join: (untyped relation) -> untyped
+  def having: (untyped expr) -> self
+  def window: (untyped name) -> untyped
+  def project: (*untyped projections) -> self
+  def projections: () -> untyped
+  def projections=: (untyped projections) -> untyped
+  def optimizer_hints: (*untyped hints) -> self
+  def distinct: (?bool value) -> self
+  def distinct_on: (untyped value) -> self
+  def order: (*untyped expr) -> self
+  def orders: () -> untyped
+  def where: (untyped expr) -> self
+  def where_sql: (?untyped engine) -> (nil | untyped)
+  def union: (untyped operation, ?untyped? other) -> untyped
+  def intersect: (untyped other) -> untyped
+  def except: (untyped other) -> untyped
+  alias minus except
+  def lateral: (?untyped? table_name) -> untyped
+  def with: (*untyped subqueries) -> self
+  def take: (untyped limit) -> self
+  alias limit= take
+  def join_sources: () -> untyped
+  def source: () -> untyped
+  def comment: (*untyped values) -> self
+  private def collapse: (untyped exprs) -> untyped
+  include Arel::Crud
+  STRING_OR_SYMBOL_CLASS: Array[singleton(Symbol) | singleton(String)]
+end

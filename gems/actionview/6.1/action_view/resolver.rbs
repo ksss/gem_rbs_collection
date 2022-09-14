@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Resolver
+  alias self.caching? self.caching
+  def initialize: () -> void
+  def clear_cache: () -> untyped
+  # Normalizes the arguments and passes it on to find_templates.
+  def find_all: (untyped name, ?untyped? prefix, ?bool partial, ?::Hash[untyped, untyped] details, ?untyped? key, ?untyped locals) -> untyped
+  def find_all_with_query: (untyped query) -> untyped
+  private def _find_all: (untyped name, untyped prefix, untyped partial, untyped details, untyped key, untyped locals) -> untyped
+  # This is what child classes implement. No defaults are needed
+  # because Resolver guarantees that the arguments are present and
+  # normalized.
+  private def find_templates: (untyped name, untyped prefix, untyped partial, untyped details, ?untyped locals) -> untyped
+  # Handles templates caching. If a key is given and caching is on
+  # always check the cache before hitting the resolver. Otherwise,
+  # it always hits the resolver but if the key is present, check if the
+  # resolver is fresher before returning it.
+  private def cached: (untyped key, untyped path_info, untyped details, untyped locals) { () -> untyped } -> untyped
+  def self.caching: () -> untyped
+  def caching: () -> untyped
+  def self.caching=: (untyped val) -> untyped
+  def caching=: (untyped val) -> untyped
+  # defined by `delegate` to: #class
+  def caching?: (*untyped, **untyped) -> untyped
+end

@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validator
+  # Returns the kind of the validator.
+  #
+  #   PresenceValidator.kind   # => :presence
+  #   AcceptanceValidator.kind # => :acceptance
+  def self.kind: () -> (untyped | nil)
+  # Accepts options that will be made available through the +options+ reader.
+  def initialize: (?::Hash[untyped, untyped] options) -> void
+  # Returns the kind for this validator.
+  #
+  #   PresenceValidator.new(attributes: [:username]).kind # => :presence
+  #   AcceptanceValidator.new(attributes: [:terms]).kind  # => :acceptance
+  def kind: () -> untyped
+  # Override this method in subclasses with validation logic, adding errors
+  # to the records +errors+ array where necessary.
+  def validate: (untyped record) -> untyped
+  attr_reader options: untyped
+end

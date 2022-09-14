@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Http::ContentDisposition
+  def self.format: (disposition: untyped, filename: untyped) -> untyped
+  def initialize: (disposition: untyped, filename: untyped) -> void
+  def ascii_filename: () -> untyped
+  def utf8_filename: () -> untyped
+  def to_s: () -> ::String
+  private def percent_escape: (untyped string, untyped pattern) -> untyped
+  attr_reader disposition: untyped
+  attr_reader filename: untyped
+  RFC_5987_ESCAPED_CHAR: Regexp
+  TRADITIONAL_ESCAPED_CHAR: Regexp
+end

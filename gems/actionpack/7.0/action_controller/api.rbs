@@ -1,0 +1,79 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::API < ::ActionController::Metal
+  # Shortcut helper that returns all the ActionController::API modules except
+  # the ones passed as arguments:
+  #
+  #   class MyAPIBaseController < ActionController::Metal
+  #     ActionController::API.without_modules(:UrlFor).each do |left|
+  #       include left
+  #     end
+  #   end
+  #
+  # This gives better control over what you want to exclude and makes it easier
+  # to create an API controller class, instead of listing the modules required
+  # manually.
+  def self.without_modules: (*untyped modules) -> untyped
+  include AbstractController::Rendering
+  include ActionView::ViewPaths
+  include ActionController::UrlFor
+  include AbstractController::UrlFor
+  include ActionController::Redirecting
+  include AbstractController::Logger
+  include ActiveSupport::Benchmarkable
+  include ActionController::ApiRendering
+  include ActionController::Rendering
+  include ActionController::Renderers::All
+  include ActionController::Renderers
+  include ActionController::ConditionalGet
+  include ActionController::BasicImplicitRender
+  include ActionController::StrongParameters
+  include ActionController::DataStreaming
+  include ActionController::DefaultHeaders
+  include ActionController::Logging
+  include AbstractController::Callbacks
+  include ActiveSupport::Callbacks
+  include ActionController::Rescue
+  include ActiveSupport::Rescuable
+  include ActionController::Instrumentation
+  include ActionController::ParamsWrapper
+  extend ActionView::ViewPaths::ClassMethods
+  extend AbstractController::UrlFor::ClassMethods
+  extend ActionController::Rendering::ClassMethods
+  extend ActionController::Renderers::ClassMethods
+  extend ActionController::ConditionalGet::ClassMethods
+  extend ActionController::DefaultHeaders::ClassMethods
+  extend ActionController::Logging::ClassMethods
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+  extend AbstractController::Callbacks::ClassMethods
+  extend ActiveSupport::Rescuable::ClassMethods
+  extend ActionController::Instrumentation::ClassMethods
+  extend ActionController::ParamsWrapper::ClassMethods
+  attr_writer _renderers: untyped
+  attr_writer _wrapper_options: untyped
+  def self.raise_on_open_redirects: () -> untyped
+  def raise_on_open_redirects: () -> untyped
+  def self.raise_on_open_redirects=: (untyped val) -> untyped
+  def raise_on_open_redirects=: (untyped val) -> untyped
+  def self.default_url_options: () -> untyped
+  def self.default_url_options?: () -> bool
+  def self.default_url_options=: (untyped value) -> untyped
+  def default_url_options: () -> untyped
+  def default_url_options?: () -> bool
+  def default_url_options=: (untyped value) -> untyped
+  def self.etaggers: () -> untyped
+  def self.etaggers?: () -> bool
+  def self.etaggers=: (untyped value) -> untyped
+  def etaggers: () -> untyped
+  def etaggers?: () -> bool
+  def etaggers=: (untyped value) -> untyped
+  def self.rescue_handlers: () -> untyped
+  def self.rescue_handlers?: () -> bool
+  def self.rescue_handlers=: (untyped value) -> untyped
+  def rescue_handlers: () -> untyped
+  def rescue_handlers?: () -> bool
+  def rescue_handlers=: (untyped value) -> untyped
+  MODULES: Array[singleton(AbstractController::Rendering) | singleton(ActionController::UrlFor) | singleton(ActionController::Redirecting) | singleton(ActionController::ApiRendering) | singleton(ActionController::Renderers::All) | singleton(ActionController::ConditionalGet) | singleton(ActionController::BasicImplicitRender) | singleton(ActionController::StrongParameters) | singleton(ActionController::DataStreaming) | singleton(ActionController::DefaultHeaders) | singleton(ActionController::Logging) | singleton(AbstractController::Callbacks) | singleton(ActionController::Rescue) | singleton(ActionController::Instrumentation) | singleton(ActionController::ParamsWrapper)]
+end

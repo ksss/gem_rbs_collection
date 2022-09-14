@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeSet::Builder
+  def initialize: (untyped types, ?::Hash[untyped, untyped] default_attributes) -> void
+  def build_from_database: (?::Hash[untyped, untyped] values, ?::Hash[untyped, untyped] additional_types) -> untyped
+  attr_reader types: untyped
+  attr_reader default_attributes: untyped
+end

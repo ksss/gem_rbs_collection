@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Blobs::RedirectController < ::ActiveStorage::BaseController
+  def show: () -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Migration::Compatibility
+  def self.find: (untyped version) -> untyped
+end

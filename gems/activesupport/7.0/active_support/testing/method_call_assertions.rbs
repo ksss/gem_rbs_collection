@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::MethodCallAssertions
+  private def assert_called: (untyped object, untyped method_name, ?untyped? message, ?times: ::Integer, ?returns: untyped?) ?{ () -> untyped } -> untyped
+  private def assert_called_with: (untyped object, untyped method_name, untyped args, ?returns: untyped?) ?{ () -> untyped } -> untyped
+  private def assert_not_called: (untyped object, untyped method_name, ?untyped? message) ?{ () -> untyped } -> untyped
+  private def assert_called_on_instance_of: (untyped klass, untyped method_name, ?untyped? message, ?times: ::Integer, ?returns: untyped?) { () -> untyped } -> untyped
+  private def assert_not_called_on_instance_of: (untyped klass, untyped method_name, ?untyped? message) ?{ () -> untyped } -> untyped
+  private def stub_any_instance: (untyped klass, ?instance: untyped) { (untyped) -> untyped } -> untyped
+end

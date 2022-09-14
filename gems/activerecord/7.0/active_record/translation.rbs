@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Translation
+  # Set the lookup ancestors for ActiveModel.
+  def lookup_ancestors: () -> untyped
+  # Set the i18n scope to override ActiveModel.
+  def i18n_scope: () -> :activerecord
+  include ActiveModel::Translation
+end

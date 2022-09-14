@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::ConsoleFormatter::Expanded < ::ActionDispatch::Routing::ConsoleFormatter::Base
+  def initialize: (?width: untyped) -> void
+  def section_title: (untyped title) -> untyped
+  def section: (untyped routes) -> untyped
+  private def draw_expanded_section: (untyped routes) -> untyped
+  private def route_header: (index: untyped) -> untyped
+end

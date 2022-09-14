@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ActionableError::ClassMethods
+  # Defines an action that can resolve the error.
+  #
+  #   class PendingMigrationError < MigrationError
+  #     include ActiveSupport::ActionableError
+  #
+  #     action "Run pending migrations" do
+  #       ActiveRecord::Tasks::DatabaseTasks.migrate
+  #     end
+  #   end
+  def action: (untyped name) ?{ () -> untyped } -> untyped
+end

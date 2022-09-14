@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::WhereClauseFactory
+  def initialize: (untyped klass, untyped predicate_builder) -> void
+  def build: (untyped opts, untyped other) -> untyped
+  attr_reader klass: untyped
+  attr_reader predicate_builder: untyped
+end

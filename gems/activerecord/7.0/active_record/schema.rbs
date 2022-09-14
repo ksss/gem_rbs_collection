@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Schema < ::ActiveRecord::Migration::Current
+  def self.[]: (untyped version) -> untyped
+  include ActiveRecord::Schema::Definition
+  extend ActiveRecord::Schema::Definition::ClassMethods
+end

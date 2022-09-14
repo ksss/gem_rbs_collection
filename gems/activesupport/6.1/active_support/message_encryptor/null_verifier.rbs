@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::MessageEncryptor::NullVerifier
+  def self.verify: (untyped value) -> untyped
+  def self.generate: (untyped value) -> untyped
+end

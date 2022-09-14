@@ -1,0 +1,214 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Routing::Mapper::Base
+  # Matches a URL pattern to one or more routes.
+  #
+  # You should not use the +match+ method in your router
+  # without specifying an HTTP method.
+  #
+  # If you want to expose your action to both GET and POST, use:
+  #
+  #   # sets :controller, :action and :id in params
+  #   match ':controller/:action/:id', via: [:get, :post]
+  #
+  # Note that +:controller+, +:action+ and +:id+ are interpreted as URL
+  # query parameters and thus available through +params+ in an action.
+  #
+  # If you want to expose your action to GET, use +get+ in the router:
+  #
+  # Instead of:
+  #
+  #   match ":controller/:action/:id"
+  #
+  # Do:
+  #
+  #   get ":controller/:action/:id"
+  #
+  # Two of these symbols are special, +:controller+ maps to the controller
+  # and +:action+ to the controller's action. A pattern can also map
+  # wildcard segments (globs) to params:
+  #
+  #   get 'songs/*category/:title', to: 'songs#show'
+  #
+  #   # 'songs/rock/classic/stairway-to-heaven' sets
+  #   #  params[:category] = 'rock/classic'
+  #   #  params[:title] = 'stairway-to-heaven'
+  #
+  # To match a wildcard parameter, it must have a name assigned to it.
+  # Without a variable name to attach the glob parameter to, the route
+  # can't be parsed.
+  #
+  # When a pattern points to an internal route, the route's +:action+ and
+  # +:controller+ should be set in options or hash shorthand. Examples:
+  #
+  #   match 'photos/:id' => 'photos#show', via: :get
+  #   match 'photos/:id', to: 'photos#show', via: :get
+  #   match 'photos/:id', controller: 'photos', action: 'show', via: :get
+  #
+  # A pattern can also point to a +Rack+ endpoint i.e. anything that
+  # responds to +call+:
+  #
+  #   match 'photos/:id', to: -> (hash) { [200, {}, ["Coming soon"]] }, via: :get
+  #   match 'photos/:id', to: PhotoRackApp, via: :get
+  #   # Yes, controller actions are just rack endpoints
+  #   match 'photos/:id', to: PhotosController.action(:show), via: :get
+  #
+  # Because requesting various HTTP verbs with a single action has security
+  # implications, you must either specify the actions in
+  # the via options or use one of the HttpHelpers[rdoc-ref:HttpHelpers]
+  # instead +match+
+  #
+  # === Options
+  #
+  # Any options not seen here are passed on as params with the URL.
+  #
+  # [:controller]
+  #   The route's controller.
+  #
+  # [:action]
+  #   The route's action.
+  #
+  # [:param]
+  #   Overrides the default resource identifier +:id+ (name of the
+  #   dynamic segment used to generate the routes).
+  #   You can access that segment from your controller using
+  #   <tt>params[<:param>]</tt>.
+  #   In your router:
+  #
+  #      resources :users, param: :name
+  #
+  #   The +users+ resource here will have the following routes generated for it:
+  #
+  #      GET       /users(.:format)
+  #      POST      /users(.:format)
+  #      GET       /users/new(.:format)
+  #      GET       /users/:name/edit(.:format)
+  #      GET       /users/:name(.:format)
+  #      PATCH/PUT /users/:name(.:format)
+  #      DELETE    /users/:name(.:format)
+  #
+  #   You can override <tt>ActiveRecord::Base#to_param</tt> of a related
+  #   model to construct a URL:
+  #
+  #      class User < ActiveRecord::Base
+  #        def to_param
+  #          name
+  #        end
+  #      end
+  #
+  #      user = User.find_by(name: 'Phusion')
+  #      user_path(user)  # => "/users/Phusion"
+  #
+  # [:path]
+  #   The path prefix for the routes.
+  #
+  # [:module]
+  #   The namespace for :controller.
+  #
+  #     match 'path', to: 'c#a', module: 'sekret', controller: 'posts', via: :get
+  #     # => Sekret::PostsController
+  #
+  #   See <tt>Scoping#namespace</tt> for its scope equivalent.
+  #
+  # [:as]
+  #   The name used to generate routing helpers.
+  #
+  # [:via]
+  #   Allowed HTTP verb(s) for route.
+  #
+  #      match 'path', to: 'c#a', via: :get
+  #      match 'path', to: 'c#a', via: [:get, :post]
+  #      match 'path', to: 'c#a', via: :all
+  #
+  # [:to]
+  #   Points to a +Rack+ endpoint. Can be an object that responds to
+  #   +call+ or a string representing a controller's action.
+  #
+  #      match 'path', to: 'controller#action', via: :get
+  #      match 'path', to: -> (env) { [200, {}, ["Success!"]] }, via: :get
+  #      match 'path', to: RackApp, via: :get
+  #
+  # [:on]
+  #   Shorthand for wrapping routes in a specific RESTful context. Valid
+  #   values are +:member+, +:collection+, and +:new+. Only use within
+  #   <tt>resource(s)</tt> block. For example:
+  #
+  #      resource :bar do
+  #        match 'foo', to: 'c#a', on: :member, via: [:get, :post]
+  #      end
+  #
+  #   Is equivalent to:
+  #
+  #      resource :bar do
+  #        member do
+  #          match 'foo', to: 'c#a', via: [:get, :post]
+  #        end
+  #      end
+  #
+  # [:constraints]
+  #   Constrains parameters with a hash of regular expressions
+  #   or an object that responds to <tt>matches?</tt>. In addition, constraints
+  #   other than path can also be specified with any object
+  #   that responds to <tt>===</tt> (e.g. String, Array, Range, etc.).
+  #
+  #     match 'path/:id', constraints: { id: /[A-Z]\d{5}/ }, via: :get
+  #
+  #     match 'json_only', constraints: { format: 'json' }, via: :get
+  #
+  #     class PermitList
+  #       def matches?(request) request.remote_ip == '1.2.3.4' end
+  #     end
+  #     match 'path', to: 'c#a', constraints: PermitList.new, via: :get
+  #
+  #   See <tt>Scoping#constraints</tt> for more examples with its scope
+  #   equivalent.
+  #
+  # [:defaults]
+  #   Sets defaults for parameters
+  #
+  #     # Sets params[:format] to 'jpg' by default
+  #     match 'path', to: 'c#a', defaults: { format: 'jpg' }, via: :get
+  #
+  #   See <tt>Scoping#defaults</tt> for its scope equivalent.
+  #
+  # [:anchor]
+  #   Boolean to anchor a <tt>match</tt> pattern. Default is true. When set to
+  #   false, the pattern matches any request prefixed with the given path.
+  #
+  #     # Matches any request starting with 'path'
+  #     match 'path', to: 'c#a', anchor: false, via: :get
+  #
+  # [:format]
+  #   Allows you to specify the default value for optional +format+
+  #   segment or disable it by supplying +false+.
+  def match: (untyped path, ?untyped? options) -> nil
+  # Mount a Rack-based application to be used within the application.
+  #
+  #   mount SomeRackApp, at: "some_route"
+  #
+  # Alternatively:
+  #
+  #   mount(SomeRackApp => "some_route")
+  #
+  # For options, see +match+, as +mount+ uses it internally.
+  #
+  # All mounted applications come with routing helpers to access them.
+  # These are named after the class specified, so for the above example
+  # the helper is either +some_rack_app_path+ or +some_rack_app_url+.
+  # To customize this helper's name, use the +:as+ option:
+  #
+  #   mount(SomeRackApp => "some_route", as: "exciting")
+  #
+  # This will generate the +exciting_path+ and +exciting_url+ helpers
+  # which can be used to navigate to this mounted app.
+  def mount: (untyped app, ?untyped? options) -> self
+  def default_url_options=: (untyped options) -> untyped
+  alias default_url_options default_url_options=
+  def with_default_scope: (untyped scope) ?{ () -> untyped } -> untyped
+  # Query if the following named route was already defined.
+  def has_named_route?: (untyped name) -> untyped
+  private def rails_app?: (untyped app) -> untyped
+  private def app_name: (untyped app, untyped rails_app) -> (untyped | untyped | nil)
+  private def define_generate_prefix: (untyped app, untyped name) -> untyped
+end

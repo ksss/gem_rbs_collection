@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Routing
+  extend ActiveSupport::Autoload
+  HTTP_METHODS: Array[Symbol]
+  SEPARATORS: Array[String]
+end

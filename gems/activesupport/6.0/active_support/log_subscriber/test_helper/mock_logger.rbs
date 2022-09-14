@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::LogSubscriber::TestHelper::MockLogger
+  def initialize: (?untyped level) -> void
+  def method_missing: (untyped level, ?untyped? message) { () -> untyped } -> untyped
+  def logged: (untyped level) -> untyped
+  def flush: () -> untyped
+end

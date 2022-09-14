@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Type
+  # Add a new type to the registry, allowing it to be referenced as a
+  # symbol by {ActiveRecord::Base.attribute}[rdoc-ref:Attributes::ClassMethods#attribute].
+  # If your type is only meant to be used with a specific database adapter, you can
+  # do so by passing <tt>adapter: :postgresql</tt>. If your type has the same
+  # name as a native type for the current adapter, an exception will be
+  # raised unless you specify an +:override+ option. <tt>override: true</tt> will
+  # cause your type to be used instead of the native type. <tt>override:
+  # false</tt> will cause the native type to be used over yours if one exists.
+  def self.register: (untyped type_name, ?untyped? klass, **untyped options) ?{ () -> untyped } -> untyped
+  def self.lookup: (*untyped args, ?adapter: untyped, **untyped kwargs) -> untyped
+  def self.default_value: () -> untyped
+  private def self.current_adapter_name: () -> untyped
+  attr_accessor self.registry: untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::TouchLater
+  def before_committed!: () -> untyped
+  def touch_later: (*untyped names) -> untyped
+  def touch: (*untyped names, ?time: untyped?) -> untyped
+  private def surreptitiously_touch: (untyped attr_names) -> untyped
+  private def touch_deferred_attributes: () -> untyped
+  private def has_defer_touch_attrs?: () -> untyped
+  private def belongs_to_touch_method: () -> :touch_later
+end

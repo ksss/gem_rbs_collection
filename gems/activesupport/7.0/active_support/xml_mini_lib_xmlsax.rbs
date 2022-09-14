@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini_LibXMLSAX
+  def parse: (untyped data) -> untyped
+end

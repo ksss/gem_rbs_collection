@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Matches < ::Arel::Nodes::Binary
+  def initialize: (untyped left, untyped right, ?untyped? escape, ?bool case_sensitive) -> void
+  attr_accessor case_sensitive: untyped
+  attr_reader escape: untyped
+end

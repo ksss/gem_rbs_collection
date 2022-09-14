@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::RawFile
+  def initialize: (untyped filename) -> void
+  def identifier: () -> untyped
+  def render: (*untyped args) -> untyped
+  def formats: () -> untyped
+  attr_accessor type: untyped
+  attr_accessor format: untyped
+end

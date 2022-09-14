@@ -1,0 +1,75 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Session
+  # Creates a session hash, merging the properties of the previous session if any.
+  def self.create: (untyped store, untyped req, untyped default_options) -> untyped
+  def self.find: (untyped req) -> untyped
+  def self.set: (untyped req, untyped session) -> untyped
+  def initialize: (untyped by, untyped req) -> void
+  def id: () -> untyped
+  def options: () -> untyped
+  def destroy: () -> untyped
+  # Returns value of the key stored in the session or
+  # +nil+ if the given key is not found in the session.
+  def []: (untyped key) -> untyped
+  # Returns the nested value specified by the sequence of keys, returning
+  # +nil+ if any intermediate step is +nil+.
+  def dig: (*untyped keys) -> untyped
+  # Returns true if the session has the given key or false.
+  def has_key?: (untyped key) -> untyped
+  alias key? has_key?
+  alias include? has_key?
+  # Returns keys of the session as Array.
+  def keys: () -> untyped
+  # Returns values of the session as Array.
+  def values: () -> untyped
+  # Writes given value to given key of the session.
+  def []=: (untyped key, untyped value) -> untyped
+  # Clears the session.
+  def clear: () -> untyped
+  # Returns the session as Hash.
+  def to_hash: () -> untyped
+  alias to_h to_hash
+  # Updates the session with given Hash.
+  #
+  #   session.to_hash
+  #   # => {"session_id"=>"e29b9ea315edf98aad94cc78c34cc9b2"}
+  #
+  #   session.update({ "foo" => "bar" })
+  #   # => {"session_id"=>"e29b9ea315edf98aad94cc78c34cc9b2", "foo" => "bar"}
+  #
+  #   session.to_hash
+  #   # => {"session_id"=>"e29b9ea315edf98aad94cc78c34cc9b2", "foo" => "bar"}
+  def update: (untyped hash) -> untyped
+  # Deletes given key from the session.
+  def delete: (untyped key) -> untyped
+  # Returns value of the given key from the session, or raises +KeyError+
+  # if can't find the given key and no default value is set.
+  # Returns default value if specified.
+  #
+  #   session.fetch(:foo)
+  #   # => KeyError: key not found: "foo"
+  #
+  #   session.fetch(:foo, :bar)
+  #   # => :bar
+  #
+  #   session.fetch(:foo) do
+  #     :bar
+  #   end
+  #   # => :bar
+  def fetch: (untyped key, ?untyped default) ?{ () -> untyped } -> untyped
+  def inspect: () -> (untyped | ::String)
+  def exists?: () -> untyped
+  def loaded?: () -> untyped
+  def empty?: () -> untyped
+  def merge!: (untyped other) -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  private def load_for_read!: () -> (untyped | nil)
+  private def load_for_write!: () -> (untyped | nil)
+  private def load!: () -> untyped
+  private def stringify_keys: (untyped other) -> untyped
+  ENV_SESSION_KEY: String
+  ENV_SESSION_OPTIONS_KEY: String
+  Unspecified: Object
+end

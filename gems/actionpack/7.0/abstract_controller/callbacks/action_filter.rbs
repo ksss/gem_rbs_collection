@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class AbstractController::Callbacks::ActionFilter
+  def initialize: (untyped actions) -> void
+  def match?: (untyped controller) -> untyped
+  alias after match?
+  alias before match?
+  alias around match?
+end

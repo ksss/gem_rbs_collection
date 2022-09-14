@@ -1,0 +1,29 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Handlers::ERB
+  def self.call: (untyped template, untyped source) -> untyped
+  def supports_streaming?: () -> true
+  def handles_encoding?: () -> true
+  def call: (untyped template, untyped source) -> untyped
+  private def valid_encoding: (untyped string, untyped encoding) -> untyped
+  def self.erb_trim_mode: () -> untyped
+  def self.erb_trim_mode?: () -> bool
+  def self.erb_trim_mode=: (untyped value) -> untyped
+  def erb_trim_mode: () -> untyped
+  def erb_trim_mode?: () -> bool
+  def erb_trim_mode=: (untyped value) -> untyped
+  def self.erb_implementation: () -> untyped
+  def self.erb_implementation?: () -> bool
+  def self.erb_implementation=: (untyped value) -> untyped
+  def erb_implementation: () -> untyped
+  def erb_implementation?: () -> bool
+  def erb_implementation=: (untyped value) -> untyped
+  def self.escape_ignore_list: () -> untyped
+  def self.escape_ignore_list?: () -> bool
+  def self.escape_ignore_list=: (untyped value) -> untyped
+  def escape_ignore_list: () -> untyped
+  def escape_ignore_list?: () -> bool
+  def escape_ignore_list=: (untyped value) -> untyped
+  ENCODING_TAG: Regexp
+end

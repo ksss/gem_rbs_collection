@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::TypeMap
+  def initialize: () -> void
+  def lookup: (untyped lookup_key, *untyped args) -> untyped
+  def fetch: (untyped lookup_key, *untyped args) ?{ () -> untyped } -> untyped
+  def register_type: (untyped key, ?untyped? value) ?{ () -> untyped } -> untyped
+  def alias_type: (untyped key, untyped target_key) -> untyped
+  def clear: () -> untyped
+  private def perform_fetch: (untyped lookup_key, *untyped args) { (untyped, untyped) -> untyped } -> untyped
+end

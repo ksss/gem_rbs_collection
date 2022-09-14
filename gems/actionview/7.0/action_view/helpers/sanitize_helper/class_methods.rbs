@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::SanitizeHelper::ClassMethods
+  def sanitizer_vendor: () -> untyped
+  def sanitized_allowed_tags: () -> untyped
+  def sanitized_allowed_attributes: () -> untyped
+  # Gets the Rails::Html::FullSanitizer instance used by +strip_tags+. Replace with
+  # any object that responds to +sanitize+.
+  #
+  #   class Application < Rails::Application
+  #     config.action_view.full_sanitizer = MySpecialSanitizer.new
+  #   end
+  def full_sanitizer: () -> untyped
+  # Gets the Rails::Html::LinkSanitizer instance used by +strip_links+.
+  # Replace with any object that responds to +sanitize+.
+  #
+  #   class Application < Rails::Application
+  #     config.action_view.link_sanitizer = MySpecialSanitizer.new
+  #   end
+  def link_sanitizer: () -> untyped
+  # Gets the Rails::Html::SafeListSanitizer instance used by sanitize and +sanitize_css+.
+  # Replace with any object that responds to +sanitize+.
+  #
+  #   class Application < Rails::Application
+  #     config.action_view.safe_list_sanitizer = MySpecialSanitizer.new
+  #   end
+  def safe_list_sanitizer: () -> untyped
+  attr_writer full_sanitizer: untyped
+  attr_writer link_sanitizer: untyped
+  attr_writer safe_list_sanitizer: untyped
+end

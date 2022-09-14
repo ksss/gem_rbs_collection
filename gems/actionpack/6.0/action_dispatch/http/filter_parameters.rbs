@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Http::FilterParameters
+  def initialize: () -> void
+  # Returns a hash of parameters with all sensitive data replaced.
+  def filtered_parameters: () -> untyped
+  # Returns a hash of request.env with all sensitive data replaced.
+  def filtered_env: () -> untyped
+  # Reconstructs a path with all sensitive GET parameters replaced.
+  def filtered_path: () -> untyped
+  private def parameter_filter: () -> untyped
+  private def env_filter: () -> untyped
+  private def parameter_filter_for: (untyped filters) -> untyped
+  private def filtered_query_string: () -> untyped
+  ENV_MATCH: Array[Regexp | String]
+  KV_RE: String
+  NULL_ENV_FILTER: ActiveSupport::ParameterFilter
+  NULL_PARAM_FILTER: ActiveSupport::ParameterFilter
+  PAIR_RE: Regexp
+end

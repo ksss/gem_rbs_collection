@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Integration::RequestHelpers
+  # Performs a GET request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def get: (untyped path, **untyped args) -> untyped
+  # Performs a POST request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def post: (untyped path, **untyped args) -> untyped
+  # Performs a PATCH request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def patch: (untyped path, **untyped args) -> untyped
+  # Performs a PUT request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def put: (untyped path, **untyped args) -> untyped
+  # Performs a DELETE request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def delete: (untyped path, **untyped args) -> untyped
+  # Performs a HEAD request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def head: (untyped path, **untyped args) -> untyped
+  # Performs an OPTIONS request with the given parameters. See ActionDispatch::Integration::Session#process
+  # for more details.
+  def options: (untyped path, **untyped args) -> untyped
+  # Follow a single redirect response. If the last response was not a
+  # redirect, an exception will be raised. Otherwise, the redirect is
+  # performed on the location header. If the redirection is a 307 or 308 redirect,
+  # the same HTTP verb will be used when redirecting, otherwise a GET request
+  # will be performed. Any arguments are passed to the
+  # underlying request.
+  def follow_redirect!: (**untyped args) -> untyped
+end

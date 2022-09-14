@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::BelongsToAssociation < ::ActiveRecord::Associations::SingularAssociation
+  def handle_dependency: () -> (nil | untyped)
+  def inversed_from: (untyped record) -> untyped
+  def default: () ?{ () -> untyped } -> (untyped | nil)
+  def reset: () -> untyped
+  def updated?: () -> untyped
+  def decrement_counters: () -> untyped
+  def increment_counters: () -> untyped
+  def decrement_counters_before_last_save: () -> untyped
+  def target_changed?: () -> untyped
+  def target_previously_changed?: () -> untyped
+  def saved_change_to_target?: () -> untyped
+  private def replace: (untyped record) -> untyped
+  private def update_counters: (untyped by) -> (untyped | nil)
+  private def update_counters_via_scope: (untyped klass, untyped foreign_key, untyped by) -> untyped
+  private def find_target?: () -> untyped
+  private def require_counter_update?: () -> untyped
+  private def replace_keys: (untyped record, ?force: bool) -> untyped
+  private def primary_key: (untyped klass) -> untyped
+  private def foreign_key_present?: () -> untyped
+  private def invertible_for?: (untyped record) -> untyped
+  private def stale_state: () -> untyped
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ConfigurationFile
+  def initialize: (untyped content_path) -> void
+  def self.parse: (untyped content_path, **untyped options) -> untyped
+  def parse: (?context: untyped?, **untyped options) -> untyped
+  private def read: (untyped content_path) -> untyped
+  private def render: (untyped context) -> untyped
+end

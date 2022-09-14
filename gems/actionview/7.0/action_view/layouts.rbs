@@ -1,0 +1,40 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Layouts
+  def _normalize_options: (untyped options) -> untyped
+  def initialize: () -> void
+  # Controls whether an action should be rendered using a layout.
+  # If you want to disable any <tt>layout</tt> settings for the
+  # current action so that it is rendered without a layout then
+  # either override this method in your controller to return false
+  # for that action or set the <tt>action_has_layout</tt> attribute
+  # to false before rendering.
+  def action_has_layout?: () -> untyped
+  private def _conditional_layout?: () -> true
+  # This will be overwritten by _write_layout_method
+  private def _layout: () -> nil
+  # Determine the layout for a given name, taking into account the name type.
+  #
+  # ==== Parameters
+  # * <tt>name</tt> - The name of the template
+  private def _layout_for_option: (untyped name) -> untyped
+  private def _normalize_layout: (untyped value) -> (::String | untyped)
+  # Returns the default layout for this controller.
+  # Optionally raises an exception if the layout could not be found.
+  #
+  # ==== Parameters
+  # * <tt>formats</tt> - The formats accepted to this layout
+  # * <tt>require_layout</tt> - If set to +true+ and layout is not found,
+  #   an +ArgumentError+ exception is raised (defaults to +false+)
+  #
+  # ==== Returns
+  # * <tt>template</tt> - The template object for the default layout (or +nil+)
+  private def _default_layout: (untyped lookup_context, untyped formats, ?bool require_layout) -> untyped
+  private def _include_layout?: (untyped options) -> untyped
+  include ActionView::Rendering
+  extend ActiveSupport::Concern
+  attr_writer _action_has_layout: untyped
+  # defined by `delegate` to: #class
+  def _layout_conditions: (*untyped, **untyped) -> untyped
+end

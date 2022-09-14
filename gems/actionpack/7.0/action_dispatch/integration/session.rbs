@@ -1,0 +1,102 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Integration::Session
+  # The hostname used in the last request.
+  def host: () -> untyped
+  # A map of the cookies returned by the last response, and which will be
+  # sent with the next request.
+  def cookies: () -> untyped
+  # Create and initialize a new Session instance.
+  def initialize: (untyped app) -> void
+  def url_options: () -> untyped
+  # Resets the instance. This can be used to reset the state information
+  # in an existing session instance, so it can be used from a clean-slate
+  # condition.
+  #
+  #   session.reset!
+  def reset!: () -> untyped
+  # Specify whether or not the session should mimic a secure HTTPS request.
+  #
+  #   session.https!
+  #   session.https!(false)
+  def https!: (?bool flag) -> untyped
+  # Returns +true+ if the session is mimicking a secure HTTPS request.
+  #
+  #   if session.https?
+  #     ...
+  #   end
+  def https?: () -> untyped
+  # Performs the actual request.
+  #
+  # - +method+: The HTTP method (GET, POST, PATCH, PUT, DELETE, HEAD, OPTIONS)
+  #   as a symbol.
+  # - +path+: The URI (as a String) on which you want to perform the
+  #   request.
+  # - +params+: The HTTP parameters that you want to pass. This may
+  #   be +nil+,
+  #   a Hash, or a String that is appropriately encoded
+  #   (<tt>application/x-www-form-urlencoded</tt> or
+  #   <tt>multipart/form-data</tt>).
+  # - +headers+: Additional headers to pass, as a Hash. The headers will be
+  #   merged into the Rack env hash.
+  # - +env+: Additional env to pass, as a Hash. The headers will be
+  #   merged into the Rack env hash.
+  # - +xhr+: Set to +true+ if you want to make an Ajax request.
+  #   Adds request headers characteristic of XMLHttpRequest e.g. HTTP_X_REQUESTED_WITH.
+  #   The headers will be merged into the Rack env hash.
+  # - +as+: Used for encoding the request with different content type.
+  #   Supports +:json+ by default and will set the appropriate request headers.
+  #   The headers will be merged into the Rack env hash.
+  #
+  # This method is rarely used directly. Use +#get+, +#post+, or other standard
+  # HTTP methods in integration tests. +#process+ is only required when using a
+  # request method that doesn't have a method defined in the integration tests.
+  #
+  # This method returns the response status, after performing the request.
+  # Furthermore, if this method was called from an ActionDispatch::IntegrationTest object,
+  # then that object's <tt>@response</tt> instance variable will point to a Response object
+  # which one can use to inspect the details of the response.
+  #
+  # Example:
+  #   process :get, '/author', params: { since: 201501011400 }
+  def process: (untyped method, untyped path, ?params: untyped?, ?headers: untyped?, ?env: untyped?, ?xhr: bool, ?as: untyped?) -> untyped
+  # Set the host name to use in the next request.
+  #
+  #   session.host! "www.example.com"
+  alias host! host=
+  private def _mock_session: () -> untyped
+  private def build_full_uri: (untyped path, untyped env) -> ::String
+  private def build_expanded_path: (untyped path) { (untyped) -> untyped } -> untyped
+  include Minitest::Assertions
+  include ActionDispatch::TestProcess
+  include ActionDispatch::Integration::RequestHelpers
+  include ActionDispatch::Assertions
+  include ActionDispatch::Routing::UrlFor
+  attr_accessor remote_addr: untyped
+  attr_accessor accept: untyped
+  attr_accessor request_count: untyped
+  attr_reader controller: untyped
+  attr_reader request: untyped
+  attr_reader response: untyped
+  attr_writer host: untyped
+  # defined by `delegate` to: untyped#response
+  def status: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#response
+  def status_message: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#response
+  def headers: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#response
+  def body: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#response
+  def redirect?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#request
+  def path: (*untyped, **untyped) -> untyped
+  def self.default_url_options: () -> untyped
+  def self.default_url_options?: () -> bool
+  def self.default_url_options=: (untyped value) -> untyped
+  def default_url_options: () -> untyped
+  def default_url_options?: () -> bool
+  def default_url_options=: (untyped value) -> untyped
+  DEFAULT_HOST: String
+end

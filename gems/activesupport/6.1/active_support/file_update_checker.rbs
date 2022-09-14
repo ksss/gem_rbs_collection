@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::FileUpdateChecker
+  # It accepts two parameters on initialization. The first is an array
+  # of files and the second is an optional hash of directories. The hash must
+  # have directories as keys and the value is an array of extensions to be
+  # watched under that directory.
+  #
+  # This method must also receive a block that will be called once a path
+  # changes. The array of files and list of directories cannot be changed
+  # after FileUpdateChecker has been initialized.
+  def initialize: (untyped files, ?::Hash[untyped, untyped] dirs) ?{ () -> untyped } -> void
+  # Check if any of the entries were updated. If so, the watched and/or
+  # updated_at values are cached until the block is executed via +execute+
+  # or +execute_if_updated+.
+  def updated?: () -> untyped
+  # Executes the given block and updates the latest watched files and
+  # timestamp.
+  def execute: () -> untyped
+  # Execute the block given if updated.
+  def execute_if_updated: () { () -> untyped } -> (true | false)
+  private def watched: () -> untyped
+  private def updated_at: (untyped paths) -> untyped
+  # This method returns the maximum mtime of the files in +paths+, or +nil+
+  # if the array is empty.
+  #
+  # Files with a mtime in the future are ignored. Such abnormal situation
+  # can happen for example if the user changes the clock by hand. It is
+  # healthy to consider this edge case because with mtimes in the future
+  # reloading is not triggered.
+  private def max_mtime: (untyped paths) -> untyped
+  private def compile_glob: (untyped hash) -> (nil | ::String)
+  private def escape: (untyped key) -> untyped
+  private def compile_ext: (untyped array) -> (nil | ::String)
+end

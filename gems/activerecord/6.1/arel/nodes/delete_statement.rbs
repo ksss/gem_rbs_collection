@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::DeleteStatement < ::Arel::Nodes::Node
+  alias relation left
+  alias relation= left=
+  alias wheres right
+  alias wheres= right=
+  def initialize: (?untyped? relation, ?untyped wheres) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor left: untyped
+  attr_accessor right: untyped
+  attr_accessor orders: untyped
+  attr_accessor limit: untyped
+  attr_accessor offset: untyped
+  attr_accessor key: untyped
+end

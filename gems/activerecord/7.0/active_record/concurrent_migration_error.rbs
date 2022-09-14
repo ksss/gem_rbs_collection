@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ConcurrentMigrationError < ::ActiveRecord::MigrationError
+  def initialize: (?untyped message) -> void
+  DEFAULT_MESSAGE: String
+  RELEASE_LOCK_FAILED_MESSAGE: String
+end

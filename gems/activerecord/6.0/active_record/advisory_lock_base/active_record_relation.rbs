@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AdvisoryLockBase::ActiveRecord_Relation < ::ActiveRecord::Relation
+  include ActiveRecord::Delegation::ClassSpecificRelation
+  include ActiveRecord::AdvisoryLockBase::GeneratedRelationMethods
+  extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+end

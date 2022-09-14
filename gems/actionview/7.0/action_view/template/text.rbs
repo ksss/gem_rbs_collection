@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Text
+  def initialize: (untyped string) -> void
+  def identifier: () -> "text template"
+  alias inspect identifier
+  def to_str: () -> untyped
+  def render: (*untyped args) -> untyped
+  def format: () -> :text
+  attr_accessor type: untyped
+end

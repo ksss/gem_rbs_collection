@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::SQLite < ::Arel::Visitors::ToSql
+  # Locks are not supported in SQLite
+  private def visit_Arel_Nodes_Lock: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_SelectStatement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_True: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_False: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsNotDistinctFrom: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsDistinctFrom: (untyped o, untyped collector) -> untyped
+end

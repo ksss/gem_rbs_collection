@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Routes
+  def initialize: () -> void
+  def empty?: () -> untyped
+  def length: () -> untyped
+  alias size length
+  def last: () -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  def clear: () -> untyped
+  def partition_route: (untyped route) -> untyped
+  def ast: () -> untyped
+  def simulator: () -> untyped
+  def add_route: (untyped name, untyped mapping) -> untyped
+  private def clear_cache!: () -> untyped
+  attr_reader routes: untyped
+  attr_reader custom_routes: untyped
+  attr_reader anchored_routes: untyped
+end

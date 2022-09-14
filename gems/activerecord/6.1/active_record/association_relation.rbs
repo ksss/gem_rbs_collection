@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AssociationRelation < ::ActiveRecord::Relation
+  def initialize: (untyped klass, untyped association) -> void
+  def proxy_association: () -> untyped
+  def ==: (untyped other) -> untyped
+  def build: (?untyped? attributes) ?{ () -> untyped } -> untyped
+  alias new build
+  private def _new: (untyped attributes) ?{ () -> untyped } -> untyped
+  private def _create: (untyped attributes) ?{ () -> untyped } -> untyped
+  private def _create!: (untyped attributes) ?{ () -> untyped } -> untyped
+  private def exec_queries: () { (untyped) -> untyped } -> untyped
+end

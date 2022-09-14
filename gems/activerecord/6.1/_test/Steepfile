@@ -1,3 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
 D = Steep::Diagnostic
 
 target :test do
@@ -6,15 +9,21 @@ target :test do
 
   repo_path "../../../"
 
-  library "pathname"
-  library "logger"
-  library "mutex_m"
-  library "date"
+  library "time"
   library "monitor"
   library "singleton"
-  library "tsort"
-  library "rack"
-  library "time"
+  library "logger"
+  library "mutex_m"
+  library "json"
+  library "date"
+  library "benchmark"
+  library "digest"
+  library "forwardable"
+  library "did_you_mean"
+  library "openssl"
+  library "socket"
+  library "minitest"
+  library "nokogiri"
 
   library "activerecord:6.1"
   library "activesupport:6.1"

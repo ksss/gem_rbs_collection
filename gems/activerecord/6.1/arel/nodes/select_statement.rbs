@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::SelectStatement < ::Arel::Nodes::NodeExpression
+  def initialize: (?::Array[untyped] cores) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor limit: untyped
+  attr_accessor orders: untyped
+  attr_accessor lock: untyped
+  attr_accessor offset: untyped
+  attr_accessor with: untyped
+  attr_reader cores: untyped
+end

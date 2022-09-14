@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::QueryCache
+  def self.run: () -> untyped
+  def self.complete: (untyped pools) -> untyped
+  def self.install_executor_hooks: (?untyped executor) -> untyped
+end

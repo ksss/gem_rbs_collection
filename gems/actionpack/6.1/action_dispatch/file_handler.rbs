@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::FileHandler
+  def initialize: (untyped root, ?index: ::String, ?headers: ::Hash[untyped, untyped], ?precompressed: ::Array[untyped], ?compressible_content_types: untyped) -> void
+  def call: (untyped env) -> untyped
+  def attempt: (untyped env) -> untyped
+  private def serve: (untyped request, untyped filepath, untyped content_headers) -> untyped
+  # Match a URI path to a static file to be served.
+  #
+  # Used by the +Static+ class to negotiate a servable file in the
+  # +public/+ directory (see Static#call).
+  #
+  # Checks for +path+, +path+.html, and +path+/index.html files,
+  # in that order, including .br and .gzip compressed extensions.
+  #
+  # If a matching file is found, the path and necessary response headers
+  # (Content-Type, Content-Encoding) are returned.
+  private def find_file: (untyped path_info, accept_encoding: untyped) -> untyped
+  private def try_files: (untyped filepath, untyped content_type, accept_encoding: untyped) -> untyped
+  private def try_precompressed_files: (untyped filepath, untyped headers, accept_encoding: untyped) -> untyped
+  private def file_readable?: (untyped path) -> untyped
+  private def compressible?: (untyped content_type) -> untyped
+  private def each_precompressed_filepath: (untyped filepath) { (untyped, untyped) -> untyped } -> nil
+  private def each_candidate_filepath: (untyped path_info) { (untyped, untyped) -> untyped } -> nil
+  private def clean_path: (untyped path_info) -> untyped
+  PRECOMPRESSED: Hash[String, String | nil]
+end

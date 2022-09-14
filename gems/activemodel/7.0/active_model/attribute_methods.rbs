@@ -1,0 +1,36 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::AttributeMethods
+  # Allows access to the object attributes, which are held in the hash
+  # returned by <tt>attributes</tt>, as though they were first-class
+  # methods. So a +Person+ class with a +name+ attribute can for example use
+  # <tt>Person#name</tt> and <tt>Person#name=</tt> and never directly use
+  # the attributes hash -- except for multiple assignments with
+  # <tt>ActiveRecord::Base#attributes=</tt>.
+  #
+  # It's also possible to instantiate related objects, so a <tt>Client</tt>
+  # class belonging to the +clients+ table with a +master_id+ foreign key
+  # can instantiate master through <tt>Client#master</tt>.
+  def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
+  # +attribute_missing+ is like +method_missing+, but for attributes. When
+  # +method_missing+ is called we check to see if there is a matching
+  # attribute method. If so, we tell +attribute_missing+ to dispatch the
+  # attribute. This method can be overloaded to customize the behavior.
+  def attribute_missing: (untyped match, *untyped args) ?{ () -> untyped } -> untyped
+  # A +Person+ instance with a +name+ attribute can ask
+  # <tt>person.respond_to?(:name)</tt>, <tt>person.respond_to?(:name=)</tt>,
+  # and <tt>person.respond_to?(:name?)</tt> which will all return +true+.
+  alias respond_to_without_attributes? respond_to?
+  def respond_to?: (untyped method, ?bool include_private_methods) -> (true | false | untyped)
+  private def attribute_method?: (untyped attr_name) -> untyped
+  # Returns a struct representing the matching attribute method.
+  # The struct's attributes are prefix, base and suffix.
+  private def matched_attribute_method: (untyped method_name) -> untyped
+  private def missing_attribute: (untyped attr_name, untyped stack) -> untyped
+  private def _read_attribute: (untyped attr) -> untyped
+  extend ActiveSupport::Concern
+  CALL_COMPILABLE_REGEXP: Regexp
+  FORWARD_PARAMETERS: String
+  NAME_COMPILABLE_REGEXP: Regexp
+end

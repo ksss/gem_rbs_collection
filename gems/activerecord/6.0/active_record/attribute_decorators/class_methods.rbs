@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeDecorators::ClassMethods
+  # This method is an internal API used to create class macros such as
+  # +serialize+, and features like time zone aware attributes.
+  #
+  # Used to wrap the type of an attribute in a new type.
+  # When the schema for a model is loaded, attributes with the same name as
+  # +column_name+ will have their type yielded to the given block. The
+  # return value of that block will be used instead.
+  #
+  # Subsequent calls where +column_name+ and +decorator_name+ are the same
+  # will override the previous decorator, not decorate twice. This can be
+  # used to create idempotent class macros like +serialize+
+  def decorate_attribute_type: (untyped column_name, untyped decorator_name) ?{ () -> untyped } -> untyped
+  # This method is an internal API used to create higher level features like
+  # time zone aware attributes.
+  #
+  # When the schema for a model is loaded, +matcher+ will be called for each
+  # attribute with its name and type. If the matcher returns a truthy value,
+  # the type will then be yielded to the given block, and the return value
+  # of that block will replace the type.
+  #
+  # Subsequent calls to this method with the same value for +decorator_name+
+  # will replace the previous decorator, not decorate twice. This can be
+  # used to ensure that class macros are idempotent.
+  def decorate_matching_attribute_types: (untyped matcher, untyped decorator_name) ?{ () -> untyped } -> untyped
+  private def load_schema!: () -> untyped
+end

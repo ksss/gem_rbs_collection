@@ -1,0 +1,67 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Token
+  # If token Authorization header is present, call the login
+  # procedure with the present token and options.
+  #
+  # Returns the return value of <tt>login_procedure</tt> if a
+  # token is found. Returns <tt>nil</tt> if no token is found.
+  #
+  # ==== Parameters
+  #
+  # * +controller+ - ActionController::Base instance for the current request.
+  # * +login_procedure+ - Proc to call if a token is present. The Proc
+  #   should take two arguments:
+  #
+  #     authenticate(controller) { |token, options| ... }
+  #
+  def authenticate: (untyped controller) ?{ () -> untyped } -> untyped
+  # Parses the token and options out of the token Authorization header.
+  # The value for the Authorization header is expected to have the prefix
+  # <tt>"Token"</tt> or <tt>"Bearer"</tt>. If the header looks like this:
+  #
+  #   Authorization: Token token="abc", nonce="def"
+  #
+  # Then the returned token is <tt>"abc"</tt>, and the options are
+  # <tt>{nonce: "def"}</tt>.
+  #
+  # Returns an +Array+ of <tt>[String, Hash]</tt> if a token is present.
+  # Returns +nil+ if no token is found.
+  #
+  # ==== Parameters
+  #
+  # * +request+ - ActionDispatch::Request instance with the current headers.
+  def token_and_options: (untyped request) -> untyped
+  def token_params_from: (untyped auth) -> untyped
+  # Takes +raw_params+ and turns it into an array of parameters.
+  def params_array_from: (untyped raw_params) -> untyped
+  # This removes the <tt>"</tt> characters wrapping the value.
+  def rewrite_param_values: (untyped array_params) -> untyped
+  # This method takes an authorization body and splits up the key-value
+  # pairs by the standardized <tt>:</tt>, <tt>;</tt>, or <tt>\t</tt>
+  # delimiters defined in +AUTHN_PAIR_DELIMITERS+.
+  def raw_params: (untyped auth) -> untyped
+  # Encodes the given token and options into an Authorization header value.
+  #
+  # Returns String.
+  #
+  # ==== Parameters
+  #
+  # * +token+ - String token.
+  # * +options+ - Optional Hash of the options.
+  def encode_credentials: (untyped token, ?::Hash[untyped, untyped] options) -> ::String
+  # Sets a WWW-Authenticate header to let the client know a token is desired.
+  #
+  # Returns nothing.
+  #
+  # ==== Parameters
+  #
+  # * +controller+ - ActionController::Base instance for the outgoing response.
+  # * +realm+ - String realm to use in the header.
+  def authentication_request: (untyped controller, untyped realm, ?untyped? message) -> untyped
+  extend ActionController::HttpAuthentication::Token
+  AUTHN_PAIR_DELIMITERS: Regexp
+  TOKEN_KEY: String
+  TOKEN_REGEX: Regexp
+end

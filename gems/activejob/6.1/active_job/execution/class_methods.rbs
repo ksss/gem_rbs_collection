@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Execution::ClassMethods
+  # Performs the job immediately.
+  #
+  #   MyJob.perform_now("mike")
+  #
+  def perform_now: (*untyped args) -> untyped
+  def execute: (untyped job_data) -> untyped
+end

@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Fanout
+  def initialize: () -> void
+  def subscribe: (?untyped? pattern, ?untyped? callable, ?monotonic: bool) ?{ () -> untyped } -> untyped
+  def unsubscribe: (untyped subscriber_or_name) -> untyped
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def finish: (untyped name, untyped id, untyped payload, ?untyped listeners) -> untyped
+  def publish: (untyped name, *untyped args) -> untyped
+  def publish_event: (untyped event) -> untyped
+  def iterate_guarding_exceptions: (untyped listeners) { (untyped) -> untyped } -> untyped
+  def listeners_for: (untyped name) -> untyped
+  def listening?: (untyped name) -> untyped
+  # This is a sync queue, so there is no waiting.
+  def wait: () -> nil
+  include Mutex_m
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::UrlHelper::ClassMethods
+  def _url_for_modules: () -> untyped
+end

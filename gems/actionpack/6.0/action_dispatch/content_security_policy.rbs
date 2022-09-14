@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::ContentSecurityPolicy
+  def initialize: () { (untyped) -> untyped } -> void
+  def initialize_copy: (untyped other) -> untyped
+  def block_all_mixed_content: (?bool enabled) -> untyped
+  def plugin_types: (*untyped types) -> untyped
+  def report_uri: (untyped uri) -> untyped
+  def require_sri_for: (*untyped types) -> untyped
+  def sandbox: (*untyped values) -> untyped
+  def upgrade_insecure_requests: (?bool enabled) -> untyped
+  def build: (?untyped? context, ?untyped? nonce, ?untyped? nonce_directives) -> untyped
+  private def apply_mappings: (untyped sources) -> untyped
+  private def apply_mapping: (untyped source) -> untyped
+  private def build_directives: (untyped context, untyped nonce, untyped nonce_directives) -> untyped
+  private def build_directive: (untyped sources, untyped context) -> untyped
+  private def resolve_source: (untyped source, untyped context) -> untyped
+  private def nonce_directive?: (untyped directive, untyped nonce_directives) -> untyped
+  attr_reader directives: untyped
+end

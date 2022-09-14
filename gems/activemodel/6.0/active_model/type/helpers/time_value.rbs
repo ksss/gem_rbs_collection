@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Type::Helpers::TimeValue
+  def serialize: (untyped value) -> untyped
+  def apply_seconds_precision: (untyped value) -> untyped
+  def type_cast_for_schema: (untyped value) -> untyped
+  def user_input_in_time_zone: (untyped value) -> untyped
+  private def new_time: (untyped year, untyped mon, untyped mday, untyped hour, untyped min, untyped sec, untyped microsec, ?untyped? offset) -> (nil | untyped)
+  # Doesn't handle time zones.
+  private def fast_string_to_time: (untyped string) -> (untyped | nil)
+  ISO_DATETIME: Regexp
+end

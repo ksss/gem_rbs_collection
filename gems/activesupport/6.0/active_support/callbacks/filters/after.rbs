@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::Filters::After
+  def self.build: (untyped callback_sequence, untyped user_callback, untyped user_conditions, untyped chain_config) -> untyped
+  def self.halting_and_conditional: (untyped callback_sequence, untyped user_callback, untyped user_conditions) -> untyped
+  def self.halting: (untyped callback_sequence, untyped user_callback) -> untyped
+  def self.conditional: (untyped callback_sequence, untyped user_callback, untyped user_conditions) -> untyped
+  def self.simple: (untyped callback_sequence, untyped user_callback) -> untyped
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::DatabaseConfig
+  def initialize: (untyped env_name, untyped spec_name) -> void
+  def replica?: () -> untyped
+  def migrations_paths: () -> untyped
+  def url_config?: () -> false
+  def to_legacy_hash: () -> ::Hash[untyped, untyped]
+  def for_current_env?: () -> untyped
+  attr_reader env_name: untyped
+  attr_reader spec_name: untyped
+end

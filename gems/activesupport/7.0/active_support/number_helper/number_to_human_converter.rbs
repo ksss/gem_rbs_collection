@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToHumanConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def format: () -> untyped
+  private def determine_unit: (untyped units, untyped exponent) -> untyped
+  private def calculate_exponent: (untyped units) -> untyped
+  private def unit_exponents: (untyped units) -> untyped
+  DECIMAL_UNITS: Hash[Integer, Symbol]
+  INVERTED_DECIMAL_UNITS: Hash[Symbol, Integer]
+end

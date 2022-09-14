@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Unary < ::ActionDispatch::Journey::Nodes::Node
+  def children: () -> ::Array[untyped]
+end

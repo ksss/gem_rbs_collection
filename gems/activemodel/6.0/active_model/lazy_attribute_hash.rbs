@@ -1,0 +1,32 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::LazyAttributeHash
+  def initialize: (untyped types, untyped values, untyped additional_types, untyped default_attributes, ?::Hash[untyped, untyped] delegate_hash) -> void
+  def key?: (untyped key) -> untyped
+  def []: (untyped key) -> untyped
+  def []=: (untyped key, untyped value) -> untyped
+  def deep_dup: () -> untyped
+  def initialize_dup: (untyped _) -> untyped
+  def select: () { (untyped, untyped) -> untyped } -> untyped
+  def ==: (untyped other) -> untyped
+  def marshal_dump: () -> ::Array[untyped]
+  def marshal_load: (untyped values) -> untyped
+  def materialize: () -> untyped
+  private def assign_default_value: (untyped name) -> untyped
+  attr_reader types: untyped
+  attr_reader values: untyped
+  attr_reader additional_types: untyped
+  attr_reader delegate_hash: untyped
+  attr_reader default_attributes: untyped
+  # defined by `delegate` to: untyped#materialize
+  def transform_values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#materialize
+  def each_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#materialize
+  def each_value: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#materialize
+  def fetch: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#materialize
+  def except: (*untyped, **untyped) -> untyped
+end

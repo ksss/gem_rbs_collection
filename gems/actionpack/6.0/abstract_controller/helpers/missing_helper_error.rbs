@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class AbstractController::Helpers::MissingHelperError < ::LoadError
+  def initialize: (untyped error, untyped path) -> void
+end

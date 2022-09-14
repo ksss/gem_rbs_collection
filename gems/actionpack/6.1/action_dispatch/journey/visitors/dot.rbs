@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Visitors::Dot < ::ActionDispatch::Journey::Visitors::FunctionalVisitor
+  def initialize: () -> void
+  def accept: (untyped node, ?::Array[untyped] seed) -> ::String
+  private def binary: (untyped node, untyped seed) -> untyped
+  private def nary: (untyped node, untyped seed) -> untyped
+  private def unary: (untyped node, untyped seed) -> untyped
+  private def visit_GROUP: (untyped node, untyped seed) -> untyped
+  private def visit_CAT: (untyped node, untyped seed) -> untyped
+  private def visit_STAR: (untyped node, untyped seed) -> untyped
+  private def visit_OR: (untyped node, untyped seed) -> untyped
+  private def terminal: (untyped node, untyped seed) -> untyped
+  INSTANCE: ActionDispatch::Journey::Visitors::Dot
+end

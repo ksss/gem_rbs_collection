@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Registration
+  # Options must be taken because of https://bugs.ruby-lang.org/issues/10856
+  def initialize: (untyped name, untyped block) -> void
+  def call: (untyped _registry, *untyped args) -> untyped
+  def matches?: (untyped type_name, *untyped args, **untyped kwargs) -> untyped
+  attr_reader name: untyped
+  attr_reader block: untyped
+end

@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::TestAdapter
+  # Provides a store of all the enqueued jobs with the TestAdapter so you can check them.
+  def enqueued_jobs: () -> untyped
+  # Provides a store of all the performed jobs with the TestAdapter so you can check them.
+  def performed_jobs: () -> untyped
+  def enqueue: (untyped job) -> untyped
+  def enqueue_at: (untyped job, untyped timestamp) -> untyped
+  private def job_to_hash: (untyped job, ?::Hash[untyped, untyped] extras) -> untyped
+  private def perform_or_enqueue: (untyped perform, untyped job, untyped job_data) -> untyped
+  private def filtered?: (untyped job) -> untyped
+  private def filtered_queue?: (untyped job) -> (untyped | nil)
+  private def filtered_job_class?: (untyped job) -> (untyped | untyped | nil)
+  private def filter_as_proc: (untyped filter) -> untyped
+  attr_accessor perform_enqueued_jobs: untyped
+  attr_accessor perform_enqueued_at_jobs: untyped
+  attr_accessor filter: untyped
+  attr_accessor reject: untyped
+  attr_accessor queue: untyped
+  attr_writer enqueued_jobs: untyped
+  attr_writer performed_jobs: untyped
+end

@@ -1,0 +1,46 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Concurrency::ShareLock
+  def raw_state: () { (untyped) -> untyped } -> untyped
+  def initialize: () -> void
+  # Returns false if +no_wait+ is set and the lock is not
+  # immediately available. Otherwise, returns true after the lock
+  # has been acquired.
+  #
+  # +purpose+ and +compatible+ work together; while this thread is
+  # waiting for the exclusive lock, it will yield its share (if any)
+  # to any other attempt whose +purpose+ appears in this attempt's
+  # +compatible+ list. This allows a "loose" upgrade, which, being
+  # less strict, prevents some classes of deadlocks.
+  #
+  # For many resources, loose upgrades are sufficient: if a thread
+  # is awaiting a lock, it is not running any other code. With
+  # +purpose+ matching, it is possible to yield only to other
+  # threads whose activity will not interfere.
+  def start_exclusive: (?purpose: untyped?, ?compatible: untyped, ?no_wait: bool) -> untyped
+  # Relinquish the exclusive lock. Must only be called by the thread
+  # that called start_exclusive (and currently holds the lock).
+  def stop_exclusive: (?compatible: untyped) -> untyped
+  def start_sharing: () -> untyped
+  def stop_sharing: () -> untyped
+  # Execute the supplied block while holding the Exclusive lock. If
+  # +no_wait+ is set and the lock is not immediately available,
+  # returns +nil+ without yielding. Otherwise, returns the result of
+  # the block.
+  #
+  # See +start_exclusive+ for other options.
+  def exclusive: (?purpose: untyped?, ?compatible: untyped, ?after_compatible: untyped, ?no_wait: bool) { () -> untyped } -> (untyped | nil)
+  # Execute the supplied block while holding the Share lock.
+  def sharing: () { () -> untyped } -> untyped
+  # Temporarily give up all held Share locks while executing the
+  # supplied block, allowing any +compatible+ exclusive lock request
+  # to proceed.
+  def yield_shares: (?purpose: untyped?, ?compatible: untyped, ?block_share: bool) { () -> untyped } -> untyped
+  # Must be called within synchronize
+  private def busy_for_exclusive?: (untyped purpose) -> untyped
+  private def busy_for_sharing?: (untyped purpose) -> untyped
+  private def eligible_waiters?: (untyped compatible) -> untyped
+  private def wait_for: (untyped method) { () -> untyped } -> untyped
+  include MonitorMixin
+end

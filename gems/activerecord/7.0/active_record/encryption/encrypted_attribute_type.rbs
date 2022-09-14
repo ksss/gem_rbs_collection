@@ -1,0 +1,48 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::EncryptedAttributeType < ::ActiveRecord::Type::Text
+  # === Options
+  #
+  # * <tt>:scheme</tt> - A +Scheme+ with the encryption properties for this attribute.
+  # * <tt>:cast_type</tt> - A type that will be used to serialize (before encrypting) and deserialize
+  #   (after decrypting). ActiveModel::Type::String by default.
+  def initialize: (scheme: untyped, ?cast_type: untyped, ?previous_type: bool) -> void
+  def deserialize: (untyped value) -> untyped
+  def serialize: (untyped value) -> untyped
+  def changed_in_place?: (untyped raw_old_value, untyped new_value) -> untyped
+  def previous_types: () -> untyped
+  private def previous_schemes_including_clean_text: () -> untyped
+  private def previous_types_without_clean_text: () -> untyped
+  private def build_previous_types_for: (untyped schemes) -> untyped
+  private def previous_type?: () -> untyped
+  private def decrypt: (untyped value) -> untyped
+  private def try_to_deserialize_with_previous_encrypted_types: (untyped value) -> untyped
+  private def handle_deserialize_error: (untyped error, untyped value) -> untyped
+  private def serialize_with_oldest?: () -> untyped
+  private def serialize_with_oldest: (untyped value) -> untyped
+  private def serialize_with_current: (untyped value) -> untyped
+  private def encrypt: (untyped value) -> untyped
+  private def encryptor: () -> untyped
+  private def support_unencrypted_data?: () -> untyped
+  private def encryption_options: () -> untyped
+  private def decryption_options: () -> untyped
+  private def clean_text_scheme: () -> untyped
+  include ActiveModel::Type::Helpers::Mutable
+  attr_reader scheme: untyped
+  attr_reader cast_type: untyped
+  # defined by `delegate` to: untyped#scheme
+  def key_provider: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scheme
+  def downcase?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scheme
+  def deterministic?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scheme
+  def previous_schemes: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scheme
+  def with_context: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#scheme
+  def fixed?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#cast_type
+  def accessor: (*untyped, **untyped) -> untyped
+end

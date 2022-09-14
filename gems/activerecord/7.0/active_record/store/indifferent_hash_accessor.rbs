@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Store::IndifferentHashAccessor < ::ActiveRecord::Store::HashAccessor
+  def self.prepare: (untyped object, untyped store_attribute) -> untyped
+end

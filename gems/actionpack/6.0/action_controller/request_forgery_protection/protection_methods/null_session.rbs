@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::RequestForgeryProtection::ProtectionMethods::NullSession
+  def initialize: (untyped controller) -> void
+  # This is the method that defines the application behavior when a request is found to be unverified.
+  def handle_unverified_request: () -> untyped
+end

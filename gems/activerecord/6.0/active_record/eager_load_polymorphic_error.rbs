@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::EagerLoadPolymorphicError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? reflection) -> void
+end

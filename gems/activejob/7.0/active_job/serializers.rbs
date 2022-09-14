@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Serializers
+  # Returns serialized representative of the passed object.
+  # Will look up through all known serializers.
+  # Raises <tt>ActiveJob::SerializationError</tt> if it can't find a proper serializer.
+  def self.serialize: (untyped argument) -> untyped
+  # Returns deserialized object.
+  # Will look up through all known serializers.
+  # If no serializer found will raise <tt>ArgumentError</tt>.
+  def self.deserialize: (untyped argument) -> untyped
+  # Returns list of known serializers.
+  def self.serializers: () -> untyped
+  # Adds new serializers to a list of known serializers.
+  def self.add_serializers: (*untyped new_serializers) -> untyped
+  extend ActiveSupport::Autoload
+  def self._additional_serializers: () -> untyped
+  def _additional_serializers: () -> untyped
+  def self._additional_serializers=: (untyped val) -> untyped
+  def _additional_serializers=: (untyped val) -> untyped
+end

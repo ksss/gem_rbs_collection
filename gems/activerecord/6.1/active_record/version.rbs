@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::VERSION
+  MAJOR: Integer
+  MINOR: Integer
+  PRE: String
+  STRING: String
+  TINY: Integer
+end

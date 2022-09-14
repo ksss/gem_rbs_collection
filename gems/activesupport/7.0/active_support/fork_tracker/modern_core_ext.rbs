@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ForkTracker::ModernCoreExt
+  def _fork: () -> untyped
+end

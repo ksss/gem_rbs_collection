@@ -1,0 +1,101 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Dirty
+  # <tt>reload</tt> the record and clears changed attributes.
+  def reload: () -> untyped
+  # Did this attribute change when we last saved?
+  #
+  # This method is useful in after callbacks to determine if an attribute
+  # was changed during the save that triggered the callbacks to run. It can
+  # be invoked as +saved_change_to_name?+ instead of
+  # <tt>saved_change_to_attribute?("name")</tt>.
+  #
+  # ==== Options
+  #
+  # +from+ When passed, this method will return false unless the original
+  # value is equal to the given option
+  #
+  # +to+ When passed, this method will return false unless the value was
+  # changed to the given value
+  def saved_change_to_attribute?: (untyped attr_name, **untyped options) -> untyped
+  # Returns the change to an attribute during the last save. If the
+  # attribute was changed, the result will be an array containing the
+  # original value and the saved value.
+  #
+  # This method is useful in after callbacks, to see the change in an
+  # attribute during the save that triggered the callbacks to run. It can be
+  # invoked as +saved_change_to_name+ instead of
+  # <tt>saved_change_to_attribute("name")</tt>.
+  def saved_change_to_attribute: (untyped attr_name) -> untyped
+  # Returns the original value of an attribute before the last save.
+  #
+  # This method is useful in after callbacks to get the original value of an
+  # attribute before the save that triggered the callbacks to run. It can be
+  # invoked as +name_before_last_save+ instead of
+  # <tt>attribute_before_last_save("name")</tt>.
+  def attribute_before_last_save: (untyped attr_name) -> untyped
+  # Did the last call to +save+ have any changes to change?
+  def saved_changes?: () -> untyped
+  # Returns a hash containing all the changes that were just saved.
+  def saved_changes: () -> untyped
+  # Will this attribute change the next time we save?
+  #
+  # This method is useful in validations and before callbacks to determine
+  # if the next call to +save+ will change a particular attribute. It can be
+  # invoked as +will_save_change_to_name?+ instead of
+  # <tt>will_save_change_to_attribute("name")</tt>.
+  #
+  # ==== Options
+  #
+  # +from+ When passed, this method will return false unless the original
+  # value is equal to the given option
+  #
+  # +to+ When passed, this method will return false unless the value will be
+  # changed to the given value
+  def will_save_change_to_attribute?: (untyped attr_name, **untyped options) -> untyped
+  # Returns the change to an attribute that will be persisted during the
+  # next save.
+  #
+  # This method is useful in validations and before callbacks, to see the
+  # change to an attribute that will occur when the record is saved. It can
+  # be invoked as +name_change_to_be_saved+ instead of
+  # <tt>attribute_change_to_be_saved("name")</tt>.
+  #
+  # If the attribute will change, the result will be an array containing the
+  # original value and the new value about to be saved.
+  def attribute_change_to_be_saved: (untyped attr_name) -> untyped
+  # Returns the value of an attribute in the database, as opposed to the
+  # in-memory value that will be persisted the next time the record is
+  # saved.
+  #
+  # This method is useful in validations and before callbacks, to see the
+  # original value of an attribute prior to any changes about to be
+  # saved. It can be invoked as +name_in_database+ instead of
+  # <tt>attribute_in_database("name")</tt>.
+  def attribute_in_database: (untyped attr_name) -> untyped
+  # Will the next call to +save+ have any changes to persist?
+  def has_changes_to_save?: () -> untyped
+  # Returns a hash containing all the changes that will be persisted during
+  # the next save.
+  def changes_to_save: () -> untyped
+  # Returns an array of the names of any attributes that will change when
+  # the record is next saved.
+  def changed_attribute_names_to_save: () -> untyped
+  # Returns a hash of the attributes that will change when the record is
+  # next saved.
+  #
+  # The hash keys are the attribute names, and the hash values are the
+  # original attribute values in the database (as opposed to the in-memory
+  # values about to be saved).
+  def attributes_in_database: () -> untyped
+  private def mutations_from_database: () -> untyped
+  private def mutations_before_last_save: () -> untyped
+  private def write_attribute_without_type_cast: (untyped attr_name, untyped value) -> untyped
+  private def _touch_row: (untyped attribute_names, untyped time) -> untyped
+  private def _update_record: (?untyped attribute_names) -> untyped
+  private def _create_record: (?untyped attribute_names) -> untyped
+  private def attribute_names_for_partial_writes: () -> untyped
+  include ActiveModel::Dirty
+  extend ActiveSupport::Concern
+end

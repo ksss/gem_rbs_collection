@@ -1,0 +1,55 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Error
+  def self.full_message: (untyped attribute, untyped message, untyped base) -> untyped
+  def self.generate_message: (untyped attribute, untyped `type`, untyped base, untyped options) -> untyped
+  def initialize: (untyped base, untyped attribute, ?::Symbol `type`, **untyped options) -> void
+  def initialize_dup: (untyped other) -> untyped
+  # Returns the error message.
+  #
+  #   error = ActiveModel::Error.new(person, :name, :too_short, count: 5)
+  #   error.message
+  #   # => "is too short (minimum is 5 characters)"
+  def message: () -> untyped
+  # Returns the error details.
+  #
+  #   error = ActiveModel::Error.new(person, :name, :too_short, count: 5)
+  #   error.details
+  #   # => { error: :too_short, count: 5 }
+  def details: () -> untyped
+  alias detail details
+  # Returns the full error message.
+  #
+  #   error = ActiveModel::Error.new(person, :name, :too_short, count: 5)
+  #   error.full_message
+  #   # => "Name is too short (minimum is 5 characters)"
+  def full_message: () -> untyped
+  # See if error matches provided +attribute+, +type+, and +options+.
+  #
+  # Omitted params are not checked for a match.
+  def match?: (untyped attribute, ?untyped? `type`, **untyped options) -> (false | true)
+  # See if error matches provided +attribute+, +type+, and +options+ exactly.
+  #
+  # All params must be equal to Error's own attributes to be considered a
+  # strict match.
+  def strict_match?: (untyped attribute, untyped `type`, **untyped options) -> (false | untyped)
+  def ==: (untyped other) -> untyped
+  alias eql? ==
+  def hash: () -> untyped
+  def inspect: () -> ::String
+  def attributes_for_hash: () -> ::Array[untyped]
+  attr_reader base: untyped
+  attr_reader attribute: untyped
+  attr_reader type: untyped
+  attr_reader raw_type: untyped
+  attr_reader options: untyped
+  def self.i18n_customize_full_message: () -> untyped
+  def self.i18n_customize_full_message?: () -> bool
+  def self.i18n_customize_full_message=: (untyped value) -> untyped
+  def i18n_customize_full_message: () -> untyped
+  def i18n_customize_full_message?: () -> bool
+  def i18n_customize_full_message=: (untyped value) -> untyped
+  CALLBACKS_OPTIONS: Array[Symbol]
+  MESSAGE_OPTIONS: Array[Symbol]
+end

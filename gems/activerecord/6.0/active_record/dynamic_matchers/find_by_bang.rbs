@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DynamicMatchers::FindByBang < ::ActiveRecord::DynamicMatchers::Method
+  def self.prefix: () -> "find_by"
+  def self.suffix: () -> "!"
+  def finder: () -> "find_by!"
+end

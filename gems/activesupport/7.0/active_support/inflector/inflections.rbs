@@ -1,0 +1,109 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Inflector::Inflections
+  def self.instance: (?::Symbol locale) -> untyped
+  def self.instance_or_fallback: (untyped locale) -> untyped
+  def initialize: () -> void
+  # Private, for the test suite.
+  def initialize_dup: (untyped orig) -> untyped
+  # Specifies a new acronym. An acronym must be specified as it will appear
+  # in a camelized string. An underscore string that contains the acronym
+  # will retain the acronym when passed to +camelize+, +humanize+, or
+  # +titleize+. A camelized string that contains the acronym will maintain
+  # the acronym when titleized or humanized, and will convert the acronym
+  # into a non-delimited single lowercase word when passed to +underscore+.
+  #
+  #   acronym 'HTML'
+  #   titleize 'html'     # => 'HTML'
+  #   camelize 'html'     # => 'HTML'
+  #   underscore 'MyHTML' # => 'my_html'
+  #
+  # The acronym, however, must occur as a delimited unit and not be part of
+  # another word for conversions to recognize it:
+  #
+  #   acronym 'HTTP'
+  #   camelize 'my_http_delimited' # => 'MyHTTPDelimited'
+  #   camelize 'https'             # => 'Https', not 'HTTPs'
+  #   underscore 'HTTPS'           # => 'http_s', not 'https'
+  #
+  #   acronym 'HTTPS'
+  #   camelize 'https'   # => 'HTTPS'
+  #   underscore 'HTTPS' # => 'https'
+  #
+  # Note: Acronyms that are passed to +pluralize+ will no longer be
+  # recognized, since the acronym will not occur as a delimited unit in the
+  # pluralized result. To work around this, you must specify the pluralized
+  # form as an acronym as well:
+  #
+  #    acronym 'API'
+  #    camelize(pluralize('api')) # => 'Apis'
+  #
+  #    acronym 'APIs'
+  #    camelize(pluralize('api')) # => 'APIs'
+  #
+  # +acronym+ may be used to specify any word that contains an acronym or
+  # otherwise needs to maintain a non-standard capitalization. The only
+  # restriction is that the word must begin with a capital letter.
+  #
+  #   acronym 'RESTful'
+  #   underscore 'RESTful'           # => 'restful'
+  #   underscore 'RESTfulController' # => 'restful_controller'
+  #   titleize 'RESTfulController'   # => 'RESTful Controller'
+  #   camelize 'restful'             # => 'RESTful'
+  #   camelize 'restful_controller'  # => 'RESTfulController'
+  #
+  #   acronym 'McDonald'
+  #   underscore 'McDonald' # => 'mcdonald'
+  #   camelize 'mcdonald'   # => 'McDonald'
+  def acronym: (untyped word) -> untyped
+  # Specifies a new pluralization rule and its replacement. The rule can
+  # either be a string or a regular expression. The replacement should
+  # always be a string that may include references to the matched data from
+  # the rule.
+  def plural: (untyped rule, untyped replacement) -> untyped
+  # Specifies a new singularization rule and its replacement. The rule can
+  # either be a string or a regular expression. The replacement should
+  # always be a string that may include references to the matched data from
+  # the rule.
+  def singular: (untyped rule, untyped replacement) -> untyped
+  # Specifies a new irregular that applies to both pluralization and
+  # singularization at the same time. This can only be used for strings, not
+  # regular expressions. You simply pass the irregular in singular and
+  # plural form.
+  #
+  #   irregular 'cactus', 'cacti'
+  #   irregular 'person', 'people'
+  def irregular: (untyped singular, untyped plural) -> untyped
+  # Specifies words that are uncountable and should not be inflected.
+  #
+  #   uncountable 'money'
+  #   uncountable 'money', 'information'
+  #   uncountable %w( money information rice )
+  def uncountable: (*untyped words) -> untyped
+  # Specifies a humanized form of a string by a regular expression rule or
+  # by a string mapping. When using a regular expression based replacement,
+  # the normal humanize formatting is called after the replacement. When a
+  # string is used, the human form should be specified as desired (example:
+  # 'The name', not 'the_name').
+  #
+  #   human /_cnt$/i, '\1_count'
+  #   human 'legacy_col_person_name', 'Name'
+  def human: (untyped rule, untyped replacement) -> untyped
+  # Clears the loaded inflections within a given scope (default is
+  # <tt>:all</tt>). Give the scope as a symbol of the inflection type, the
+  # options are: <tt>:plurals</tt>, <tt>:singulars</tt>, <tt>:uncountables</tt>,
+  # <tt>:humans</tt>, <tt>:acronyms</tt>.
+  #
+  #   clear :all
+  #   clear :plurals
+  def clear: (?::Symbol scope) -> untyped
+  private def define_acronym_regex_patterns: () -> untyped
+  attr_reader plurals: untyped
+  attr_reader singulars: untyped
+  attr_reader uncountables: untyped
+  attr_reader humans: untyped
+  attr_reader acronyms: untyped
+  attr_reader acronyms_camelize_regex: untyped
+  attr_reader acronyms_underscore_regex: untyped
+end

@@ -1,0 +1,81 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Multibyte::Chars
+  alias to_s wrapped_string
+  alias to_str wrapped_string
+  # Creates a new Chars instance by wrapping _string_.
+  def initialize: (untyped string) -> void
+  # Forward all undefined methods to the wrapped string.
+  def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
+  # Returns +true+ if _obj_ responds to the given method. Private methods
+  # are included in the search only if the optional second parameter
+  # evaluates to +true+.
+  def respond_to_missing?: (untyped method, untyped include_private) -> untyped
+  # Works just like <tt>String#split</tt>, with the exception that the items
+  # in the resulting list are Chars instances instead of String. This makes
+  # chaining methods easier.
+  #
+  #   'Café périferôl'.mb_chars.split(/é/).map { |part| part.upcase.to_s } # => ["CAF", " P", "RIFERÔL"]
+  def split: (*untyped args) -> untyped
+  # Works like <tt>String#slice!</tt>, but returns an instance of
+  # Chars, or +nil+ if the string was not modified. The string will not be
+  # modified if the range given is out of bounds
+  #
+  #   string = 'Welcome'
+  #   string.mb_chars.slice!(3)    # => #<ActiveSupport::Multibyte::Chars:0x000000038109b8 @wrapped_string="c">
+  #   string # => 'Welome'
+  #   string.mb_chars.slice!(0..3) # => #<ActiveSupport::Multibyte::Chars:0x00000002eb80a0 @wrapped_string="Welo">
+  #   string # => 'me'
+  def slice!: (*untyped args) -> untyped
+  # Reverses all characters in the string.
+  #
+  #   'Café'.mb_chars.reverse.to_s # => 'éfaC'
+  def reverse: () -> untyped
+  # Limits the byte size of the string to a number of bytes without breaking
+  # characters. Usable when the storage for a string is limited for some
+  # reason.
+  #
+  #   'こんにちは'.mb_chars.limit(7).to_s # => "こん"
+  def limit: (untyped limit) -> untyped
+  # Capitalizes the first letter of every word, when possible.
+  #
+  #   "ÉL QUE SE ENTERÓ".mb_chars.titleize.to_s    # => "Él Que Se Enteró"
+  #   "日本語".mb_chars.titleize.to_s               # => "日本語"
+  def titleize: () -> untyped
+  alias titlecase titleize
+  # Performs canonical decomposition on all the characters.
+  #
+  #   'é'.length                         # => 1
+  #   'é'.mb_chars.decompose.to_s.length # => 2
+  def decompose: () -> untyped
+  # Performs composition on all the characters.
+  #
+  #   'é'.length                       # => 1
+  #   'é'.mb_chars.compose.to_s.length # => 1
+  def compose: () -> untyped
+  # Returns the number of grapheme clusters in the string.
+  #
+  #   'क्षि'.mb_chars.length   # => 4
+  #   'क्षि'.mb_chars.grapheme_length # => 2
+  def grapheme_length: () -> untyped
+  # Replaces all ISO-8859-1 or CP1252 characters by their UTF-8 equivalent
+  # resulting in a valid UTF-8 string.
+  #
+  # Passing +true+ will forcibly tidy all bytes, assuming that the string's
+  # encoding is entirely CP1252 or ISO-8859-1.
+  def tidy_bytes: (?bool force) -> untyped
+  def as_json: (?untyped? options) -> untyped
+  private def chars: (untyped string) -> untyped
+  include Comparable
+  attr_reader wrapped_string: ::String
+  # defined by `delegate` to ::String#wrapped_string
+  def <=>: (::string other) -> ::Integer
+         | (untyped other) -> ::Integer?
+  # defined by `delegate` to ::String#wrapped_string
+  def =~: (untyped obj) -> ::Integer?
+  # defined by `delegate` to ::String#wrapped_string
+  def match?: (::Regexp | ::string pattern, ?::int pos) -> bool
+  # defined by `delegate` to ::String#wrapped_string
+  def acts_like_string?: () -> true
+end

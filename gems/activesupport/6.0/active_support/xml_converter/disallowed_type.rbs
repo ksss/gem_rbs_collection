@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::XMLConverter::DisallowedType < ::StandardError
+  def initialize: (untyped `type`) -> void
+end

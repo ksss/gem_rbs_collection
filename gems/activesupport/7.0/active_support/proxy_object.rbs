@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ProxyObject < ::BasicObject
+  # Let ActiveSupport::ProxyObject at least raise exceptions.
+  def raise: (*untyped args) -> untyped
+end

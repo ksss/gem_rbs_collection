@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Enqueuing::ClassMethods
+  # Push a job onto the queue. By default the arguments must be either String,
+  # Integer, Float, NilClass, TrueClass, FalseClass, BigDecimal, Symbol, Date,
+  # Time, DateTime, ActiveSupport::TimeWithZone, ActiveSupport::Duration,
+  # Hash, ActiveSupport::HashWithIndifferentAccess, Array or
+  # GlobalID::Identification instances, although this can be extended by adding
+  # custom serializers.
+  #
+  # Returns an instance of the job class queued with arguments available in
+  # Job#arguments.
+  def perform_later: (*untyped args) -> untyped
+  private def job_or_instantiate: (*untyped args) -> untyped
+end

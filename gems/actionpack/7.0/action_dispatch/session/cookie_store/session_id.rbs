@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::CookieStore::SessionId < ::Rack::Session::SessionId
+  def initialize: (untyped session_id, ?::Hash[untyped, untyped] cookie_value) -> void
+  attr_reader cookie_value: untyped
+end

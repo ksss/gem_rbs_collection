@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Rescue
+  # Override this method if you want to customize when detailed
+  # exceptions must be shown. This method is only called when
+  # +consider_all_requests_local+ is +false+. By default, it returns
+  # +false+, but someone may set it to <tt>request.local?</tt> so local
+  # requests in production still show the detailed exception pages.
+  def show_detailed_exceptions?: () -> false
+  private def process_action: (*untyped args) -> untyped
+  include ActiveSupport::Rescuable
+  extend ActiveSupport::Concern
+end

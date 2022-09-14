@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Response::Buffer
+  def initialize: (untyped response, untyped buf) -> void
+  def body: () -> untyped
+  def write: (untyped string) -> untyped
+  def each: () { (untyped) -> untyped } -> untyped
+  def abort: () -> nil
+  def close: () -> untyped
+  def closed?: () -> untyped
+  private def each_chunk: () ?{ () -> untyped } -> untyped
+end

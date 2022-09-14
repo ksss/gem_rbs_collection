@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::Text < ::ActiveModel::Type::String
+  def type: () -> :text
+end

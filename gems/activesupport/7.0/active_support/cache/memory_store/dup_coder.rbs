@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::MemoryStore::DupCoder
+  def dump: (untyped entry) -> untyped
+  def dump_compressed: (untyped entry, untyped threshold) -> untyped
+  def load: (untyped entry) -> untyped
+  extend ActiveSupport::Cache::MemoryStore::DupCoder
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Record::ActiveRecord_AssociationRelation < ::ActiveRecord::AssociationRelation
+  include ActiveRecord::Delegation::ClassSpecificRelation
+  include ActiveStorage::Record::GeneratedRelationMethods
+  extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Message
+  def initialize: (?payload: untyped?, ?headers: ::Hash[untyped, untyped]) -> void
+  def ==: (untyped other_message) -> untyped
+  private def validate_payload_type: (untyped payload) -> (untyped | nil)
+  attr_accessor payload: untyped
+  attr_accessor headers: untyped
+end

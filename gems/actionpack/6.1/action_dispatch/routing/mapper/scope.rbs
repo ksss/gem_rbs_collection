@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper::Scope
+  def initialize: (untyped hash, ?untyped parent, ?untyped? scope_level) -> void
+  def nested?: () -> untyped
+  def null?: () -> untyped
+  def root?: () -> untyped
+  def resources?: () -> untyped
+  def resource_method_scope?: () -> untyped
+  def action_name: (untyped name_prefix, untyped prefix, untyped collection_name, untyped member_name) -> untyped
+  def resource_scope?: () -> untyped
+  def options: () -> untyped
+  def new: (untyped hash) -> untyped
+  def new_level: (untyped level) -> untyped
+  def []: (untyped key) -> untyped
+  def each: () { (untyped) -> untyped } -> untyped
+  def frame: () -> untyped
+  attr_reader parent: untyped
+  attr_reader scope_level: untyped
+  NULL: ActionDispatch::Routing::Mapper::Scope
+  OPTIONS: Array[Symbol]
+  RESOURCE_METHOD_SCOPES: Array[Symbol]
+  RESOURCE_SCOPES: Array[Symbol]
+end

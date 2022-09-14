@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::PendingMigrationError < ::ActiveRecord::MigrationError
+  def initialize: (?untyped? message) -> void
+  private def detailed_migration_message: () -> untyped
+  include ActiveSupport::ActionableError
+  extend ActiveSupport::ActionableError::ClassMethods
+  attr_writer _actions: untyped
+end

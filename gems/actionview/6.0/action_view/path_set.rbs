@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PathSet
+  def initialize: (?untyped paths) -> void
+  def initialize_copy: (untyped other) -> self
+  def to_ary: () -> untyped
+  def compact: () -> untyped
+  def +: (untyped array) -> untyped
+  def find: (*untyped args) -> untyped
+  alias find_file find
+  def find_all: (untyped path, ?untyped prefixes, *untyped args) -> untyped
+  def exists?: (untyped path, untyped prefixes, *untyped args) -> untyped
+  def find_all_with_query: (untyped query) -> (untyped | ::Array[untyped])
+  private def _find_all: (untyped path, untyped prefixes, untyped args) -> (untyped | ::Array[untyped])
+  private def typecast: (untyped paths) -> untyped
+  attr_reader paths: untyped
+  # defined by `delegate` to: untyped#paths
+  def []: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#paths
+  def include?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#paths
+  def pop: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#paths
+  def size: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#paths
+  def each: (*untyped, **untyped) -> untyped
+end

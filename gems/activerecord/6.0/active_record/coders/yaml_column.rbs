@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Coders::YAMLColumn
+  def initialize: (untyped attr_name, ?untyped object_class) -> void
+  def dump: (untyped obj) -> (nil | untyped)
+  def load: (untyped yaml) -> untyped
+  def assert_valid_value: (untyped obj, action: untyped) -> (untyped | nil)
+  private def check_arity_of_constructor: () -> untyped
+  private def yaml_load: (untyped payload) -> untyped
+  attr_accessor object_class: untyped
+end

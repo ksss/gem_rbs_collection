@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Table
+  # TableAlias and Table both have a #table_name which is the name of the underlying table
+  alias table_name name
+  def initialize: (untyped name, ?as: untyped?, ?klass: untyped?, ?type_caster: untyped) -> void
+  def alias: (?::String name) -> untyped
+  def from: () -> untyped
+  def join: (untyped relation, ?untyped klass) -> untyped
+  def outer_join: (untyped relation) -> untyped
+  def group: (*untyped columns) -> untyped
+  def order: (*untyped expr) -> untyped
+  def where: (untyped condition) -> untyped
+  def project: (*untyped things) -> untyped
+  def take: (untyped amount) -> untyped
+  def skip: (untyped amount) -> untyped
+  def having: (untyped expr) -> untyped
+  def []: (untyped name, ?untyped table) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  def type_cast_for_database: (untyped attr_name, untyped value) -> untyped
+  def type_for_attribute: (untyped name) -> untyped
+  def able_to_type_cast?: () -> untyped
+  include Arel::Crud
+  include Arel::FactoryMethods
+  include Arel::AliasPredication
+  attr_accessor self.engine: untyped
+  attr_accessor name: untyped
+  attr_accessor table_alias: untyped
+  attr_reader type_caster: untyped
+end

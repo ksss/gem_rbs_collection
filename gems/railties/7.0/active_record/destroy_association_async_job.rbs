@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DestroyAssociationAsyncJob < ::ActiveJob::Base
+  def perform: (?owner_model_name: untyped?, ?owner_id: untyped?, ?association_class: untyped?, ?association_ids: untyped?, ?association_primary_key_column: untyped?, ?ensuring_owner_was_method: untyped?) -> untyped
+  private def owner_destroyed?: (untyped owner, untyped ensuring_owner_was_method) -> untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Binary < ::ActionDispatch::Journey::Nodes::Node
+  def initialize: (untyped left, untyped right) -> void
+  def children: () -> ::Array[untyped]
+  attr_accessor right: untyped
+end

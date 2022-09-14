@@ -1,0 +1,56 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Core
+  # Creates a new job instance. Takes the arguments that will be
+  # passed to the perform method.
+  def initialize: (*untyped arguments) -> void
+  # Returns a hash with the job data that can safely be passed to the
+  # queuing adapter.
+  def serialize: () -> ::Hash[::String, untyped]
+  # Attaches the stored job data to the current instance. Receives a hash
+  # returned from +serialize+
+  #
+  # ==== Examples
+  #
+  #    class DeliverWebhookJob < ActiveJob::Base
+  #      attr_writer :attempt_number
+  #
+  #      def attempt_number
+  #        @attempt_number ||= 0
+  #      end
+  #
+  #      def serialize
+  #        super.merge('attempt_number' => attempt_number + 1)
+  #      end
+  #
+  #      def deserialize(job_data)
+  #        super
+  #        self.attempt_number = job_data['attempt_number']
+  #      end
+  #
+  #      rescue_from(Timeout::Error) do |exception|
+  #        raise exception if attempt_number > 5
+  #        retry_job(wait: 10)
+  #      end
+  #    end
+  def deserialize: (untyped job_data) -> untyped
+  private def serialize_arguments_if_needed: (untyped arguments) -> untyped
+  private def deserialize_arguments_if_needed: () -> (untyped | nil)
+  private def serialize_arguments: (untyped arguments) -> untyped
+  private def deserialize_arguments: (untyped serialized_args) -> untyped
+  private def arguments_serialized?: () -> untyped
+  extend ActiveSupport::Concern
+  attr_accessor arguments: untyped
+  attr_accessor scheduled_at: untyped
+  attr_accessor job_id: untyped
+  attr_accessor provider_job_id: untyped
+  attr_accessor executions: untyped
+  attr_accessor exception_executions: untyped
+  attr_accessor locale: untyped
+  attr_accessor timezone: untyped
+  attr_accessor enqueued_at: untyped
+  attr_writer serialized_arguments: untyped
+  attr_writer queue_name: untyped
+  attr_writer priority: untyped
+end

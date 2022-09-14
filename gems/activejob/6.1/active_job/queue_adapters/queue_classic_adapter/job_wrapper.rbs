@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::QueueClassicAdapter::JobWrapper
+  def self.perform: (untyped job_data) -> untyped
+end

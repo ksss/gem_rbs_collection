@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::IncludeTimeWithZone
+  # Extends the default Range#include? to support ActiveSupport::TimeWithZone.
+  #
+  #   (1.hour.ago..1.hour.from_now).include?(Time.current) # => true
+  #
+  def include?: (untyped value) -> untyped
+end

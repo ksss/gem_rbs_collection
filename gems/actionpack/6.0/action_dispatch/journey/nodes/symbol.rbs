@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Symbol < ::ActionDispatch::Journey::Nodes::Terminal
+  alias symbol regexp
+  def initialize: (untyped left) -> void
+  def default_regexp?: () -> untyped
+  def type: () -> :SYMBOL
+  def symbol?: () -> true
+  attr_accessor regexp: untyped
+  attr_reader name: untyped
+  DEFAULT_EXP: Regexp
+end

@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::File
+  #
+  # Open a fixture file named +file+.  When called with a block, the block
+  # is called with the filehandle and the filehandle is automatically closed
+  # when the block finishes.
+  def self.open: (untyped file) { (untyped) -> untyped } -> untyped
+  def initialize: (untyped file) -> void
+  def each: () ?{ () -> untyped } -> untyped
+  def model_class: () -> untyped
+  private def rows: () -> untyped
+  private def config_row: () -> untyped
+  private def raw_rows: () -> untyped
+  private def prepare_erb: (untyped content) -> untyped
+  private def render: (untyped content) -> untyped
+  # Validate our unmarshalled data.
+  private def validate: (untyped data) -> untyped
+end

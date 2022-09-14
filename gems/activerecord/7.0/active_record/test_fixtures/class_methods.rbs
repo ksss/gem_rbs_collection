@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::TestFixtures::ClassMethods
+  # Sets the model class for a fixture when the class name cannot be inferred from the fixture name.
+  #
+  # Examples:
+  #
+  #   set_fixture_class some_fixture:        SomeModel,
+  #                     'namespaced/fixture' => Another::Model
+  #
+  # The keys must be the fixture names, that coincide with the short paths to the fixture files.
+  def set_fixture_class: (?::Hash[untyped, untyped] class_names) -> untyped
+  def fixtures: (*untyped fixture_set_names) -> untyped
+  def setup_fixture_accessors: (?untyped? fixture_set_names) -> untyped
+  # Prevents automatically wrapping each specified test in a transaction,
+  # to allow application logic transactions to be tested in a top-level
+  # (non-nested) context.
+  def uses_transaction: (*untyped methods) -> untyped
+  def uses_transaction?: (untyped method) -> untyped
+end

@@ -1,0 +1,83 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::CommandRecorder
+  def initialize: (?untyped? delegate) -> void
+  # While executing the given block, the recorded will be in reverting mode.
+  # All commands recorded will end up being recorded reverted
+  # and in reverse order.
+  # For example:
+  #
+  #   recorder.revert{ recorder.record(:rename_table, [:old, :new]) }
+  #   # same effect as recorder.record(:rename_table, [:new, :old])
+  def revert: () { () -> untyped } -> untyped
+  # Record +command+. +command+ should be a method name and arguments.
+  # For example:
+  #
+  #   recorder.record(:method_name, [:arg1, :arg2])
+  def record: (*untyped command) ?{ () -> untyped } -> untyped
+  # Returns the inverse of the given command. For example:
+  #
+  #   recorder.inverse_of(:rename_table, [:old, :new])
+  #   # => [:rename_table, [:new, :old]]
+  #
+  # This method will raise an +IrreversibleMigration+ exception if it cannot
+  # invert the +command+.
+  def inverse_of: (untyped command, untyped args) ?{ () -> untyped } -> untyped
+  alias add_belongs_to add_reference
+  alias remove_belongs_to remove_reference
+  def change_table: (untyped table_name, **untyped options) { (untyped) -> untyped } -> untyped
+  def replay: (untyped migration) -> untyped
+  private def invert_transaction: (untyped args) { () -> untyped } -> ::Array[:transaction | untyped]
+  private def invert_drop_table: (untyped args) ?{ () -> untyped } -> untyped
+  private def invert_rename_table: (untyped args) -> ::Array[:rename_table | untyped]
+  private def invert_remove_column: (untyped args) -> untyped
+  private def invert_rename_index: (untyped args) -> ::Array[:rename_index | untyped]
+  private def invert_rename_column: (untyped args) -> ::Array[:rename_column | untyped]
+  private def invert_add_index: (untyped args) -> ::Array[:remove_index | ::Array[untyped]]
+  private def invert_remove_index: (untyped args) -> untyped
+  alias invert_add_belongs_to invert_add_reference
+  alias invert_remove_belongs_to invert_remove_reference
+  private def invert_change_column_default: (untyped args) -> ::Array[:change_column_default | ::Array[untyped | { from: untyped, to: untyped }]]
+  private def invert_change_column_null: (untyped args) -> ::Array[:change_column_null | untyped]
+  private def invert_remove_foreign_key: (untyped args) -> ::Array[:add_foreign_key | untyped]
+  private def invert_change_column_comment: (untyped args) -> ::Array[:change_column_comment | ::Array[untyped | { from: untyped, to: untyped }]]
+  private def invert_change_table_comment: (untyped args) -> ::Array[:change_table_comment | ::Array[untyped | { from: untyped, to: untyped }]]
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+  # Forwards any missing method call to the \target.
+  private def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
+  include ActiveRecord::Migration::JoinTable
+  include ActiveRecord::Migration::CommandRecorder::StraightReversions
+  attr_accessor commands: untyped
+  attr_accessor delegate: untyped
+  attr_accessor reverting: untyped
+  def create_table: (*untyped args) ?{ () -> void } -> untyped
+  def create_join_table: (*untyped args) ?{ () -> void } -> untyped
+  def rename_table: (*untyped args) ?{ () -> void } -> untyped
+  def add_column: (*untyped args) ?{ () -> void } -> untyped
+  def remove_column: (*untyped args) ?{ () -> void } -> untyped
+  def rename_index: (*untyped args) ?{ () -> void } -> untyped
+  def rename_column: (*untyped args) ?{ () -> void } -> untyped
+  def add_index: (*untyped args) ?{ () -> void } -> untyped
+  def remove_index: (*untyped args) ?{ () -> void } -> untyped
+  def add_timestamps: (*untyped args) ?{ () -> void } -> untyped
+  def remove_timestamps: (*untyped args) ?{ () -> void } -> untyped
+  def change_column_default: (*untyped args) ?{ () -> void } -> untyped
+  def add_reference: (*untyped args) ?{ () -> void } -> untyped
+  def remove_reference: (*untyped args) ?{ () -> void } -> untyped
+  def transaction: (*untyped args) ?{ () -> void } -> untyped
+  def drop_join_table: (*untyped args) ?{ () -> void } -> untyped
+  def drop_table: (*untyped args) ?{ () -> void } -> untyped
+  def execute_block: (*untyped args) ?{ () -> void } -> untyped
+  def enable_extension: (*untyped args) ?{ () -> void } -> untyped
+  def disable_extension: (*untyped args) ?{ () -> void } -> untyped
+  def change_column: (*untyped args) ?{ () -> void } -> untyped
+  def execute: (*untyped args) ?{ () -> void } -> untyped
+  def remove_columns: (*untyped args) ?{ () -> void } -> untyped
+  def change_column_null: (*untyped args) ?{ () -> void } -> untyped
+  def add_foreign_key: (*untyped args) ?{ () -> void } -> untyped
+  def remove_foreign_key: (*untyped args) ?{ () -> void } -> untyped
+  def change_column_comment: (*untyped args) ?{ () -> void } -> untyped
+  def change_table_comment: (*untyped args) ?{ () -> void } -> untyped
+  ReversibleAndIrreversibleMethods: Array[Symbol]
+end

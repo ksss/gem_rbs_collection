@@ -1,0 +1,499 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Parameters
+  def self.nested_attribute?: (untyped key, untyped value) -> untyped
+  # Returns a new instance of <tt>ActionController::Parameters</tt>.
+  # Also, sets the +permitted+ attribute to the default value of
+  # <tt>ActionController::Parameters.permit_all_parameters</tt>.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   params = ActionController::Parameters.new(name: "Francesco")
+  #   params.permitted?  # => false
+  #   Person.new(params) # => ActiveModel::ForbiddenAttributesError
+  #
+  #   ActionController::Parameters.permit_all_parameters = true
+  #
+  #   params = ActionController::Parameters.new(name: "Francesco")
+  #   params.permitted?  # => true
+  #   Person.new(params) # => #<Person id: nil, name: "Francesco">
+  def initialize: (?::Hash[untyped, untyped] parameters, ?::Hash[untyped, untyped] logging_context) -> void
+  # Returns true if another +Parameters+ object contains the same content and
+  # permitted flag.
+  def ==: (untyped other) -> untyped
+  alias eql? ==
+  def hash: () -> untyped
+  # Returns a safe <tt>ActiveSupport::HashWithIndifferentAccess</tt>
+  # representation of the parameters with all unpermitted keys removed.
+  #
+  #   params = ActionController::Parameters.new({
+  #     name: "Senjougahara Hitagi",
+  #     oddity: "Heavy stone crab"
+  #   })
+  #   params.to_h
+  #   # => ActionController::UnfilteredParameters: unable to convert unpermitted parameters to hash
+  #
+  #   safe_params = params.permit(:name)
+  #   safe_params.to_h # => {"name"=>"Senjougahara Hitagi"}
+  def to_h: () -> untyped
+  # Returns a safe <tt>Hash</tt> representation of the parameters
+  # with all unpermitted keys removed.
+  #
+  #   params = ActionController::Parameters.new({
+  #     name: "Senjougahara Hitagi",
+  #     oddity: "Heavy stone crab"
+  #   })
+  #   params.to_hash
+  #   # => ActionController::UnfilteredParameters: unable to convert unpermitted parameters to hash
+  #
+  #   safe_params = params.permit(:name)
+  #   safe_params.to_hash # => {"name"=>"Senjougahara Hitagi"}
+  def to_hash: () -> untyped
+  # Returns a string representation of the receiver suitable for use as a URL
+  # query string:
+  #
+  #   params = ActionController::Parameters.new({
+  #     name: "David",
+  #     nationality: "Danish"
+  #   })
+  #   params.to_query
+  #   # => ActionController::UnfilteredParameters: unable to convert unpermitted parameters to hash
+  #
+  #   safe_params = params.permit(:name, :nationality)
+  #   safe_params.to_query
+  #   # => "name=David&nationality=Danish"
+  #
+  # An optional namespace can be passed to enclose key names:
+  #
+  #   params = ActionController::Parameters.new({
+  #     name: "David",
+  #     nationality: "Danish"
+  #   })
+  #   safe_params = params.permit(:name, :nationality)
+  #   safe_params.to_query("user")
+  #   # => "user%5Bname%5D=David&user%5Bnationality%5D=Danish"
+  #
+  # The string pairs "key=value" that conform the query string
+  # are sorted lexicographically in ascending order.
+  #
+  # This method is also aliased as +to_param+.
+  def to_query: (*untyped args) -> untyped
+  alias to_param to_query
+  # Returns an unsafe, unfiltered
+  # <tt>ActiveSupport::HashWithIndifferentAccess</tt> representation of the
+  # parameters.
+  #
+  #   params = ActionController::Parameters.new({
+  #     name: "Senjougahara Hitagi",
+  #     oddity: "Heavy stone crab"
+  #   })
+  #   params.to_unsafe_h
+  #   # => {"name"=>"Senjougahara Hitagi", "oddity" => "Heavy stone crab"}
+  def to_unsafe_h: () -> untyped
+  alias to_unsafe_hash to_unsafe_h
+  # Convert all hashes in values into parameters, then yield each pair in
+  # the same way as <tt>Hash#each_pair</tt>.
+  def each_pair: () { (untyped) -> untyped } -> (untyped | self)
+  alias each each_pair
+  # Convert all hashes in values into parameters, then yield each value in
+  # the same way as <tt>Hash#each_value</tt>.
+  def each_value: () { (untyped) -> untyped } -> (untyped | self)
+  # Attribute that keeps track of converted arrays, if any, to avoid double
+  # looping in the common use case permit + mass-assignment. Defined in a
+  # method to instantiate it only if needed.
+  #
+  # Testing membership still loops, but it's going to be faster than our own
+  # loop that converts values. Also, we are not going to build a new array
+  # object per fetch.
+  def converted_arrays: () -> untyped
+  # Returns +true+ if the parameter is permitted, +false+ otherwise.
+  #
+  #   params = ActionController::Parameters.new
+  #   params.permitted? # => false
+  #   params.permit!
+  #   params.permitted? # => true
+  def permitted?: () -> untyped
+  # Sets the +permitted+ attribute to +true+. This can be used to pass
+  # mass assignment. Returns +self+.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   params = ActionController::Parameters.new(name: "Francesco")
+  #   params.permitted?  # => false
+  #   Person.new(params) # => ActiveModel::ForbiddenAttributesError
+  #   params.permit!
+  #   params.permitted?  # => true
+  #   Person.new(params) # => #<Person id: nil, name: "Francesco">
+  def permit!: () -> self
+  # This method accepts both a single key and an array of keys.
+  #
+  # When passed a single key, if it exists and its associated value is
+  # either present or the singleton +false+, returns said value:
+  #
+  #   ActionController::Parameters.new(person: { name: "Francesco" }).require(:person)
+  #   # => #<ActionController::Parameters {"name"=>"Francesco"} permitted: false>
+  #
+  # Otherwise raises <tt>ActionController::ParameterMissing</tt>:
+  #
+  #   ActionController::Parameters.new.require(:person)
+  #   # ActionController::ParameterMissing: param is missing or the value is empty: person
+  #
+  #   ActionController::Parameters.new(person: nil).require(:person)
+  #   # ActionController::ParameterMissing: param is missing or the value is empty: person
+  #
+  #   ActionController::Parameters.new(person: "\t").require(:person)
+  #   # ActionController::ParameterMissing: param is missing or the value is empty: person
+  #
+  #   ActionController::Parameters.new(person: {}).require(:person)
+  #   # ActionController::ParameterMissing: param is missing or the value is empty: person
+  #
+  # When given an array of keys, the method tries to require each one of them
+  # in order. If it succeeds, an array with the respective return values is
+  # returned:
+  #
+  #   params = ActionController::Parameters.new(user: { ... }, profile: { ... })
+  #   user_params, profile_params = params.require([:user, :profile])
+  #
+  # Otherwise, the method re-raises the first exception found:
+  #
+  #   params = ActionController::Parameters.new(user: {}, profile: {})
+  #   user_params, profile_params = params.require([:user, :profile])
+  #   # ActionController::ParameterMissing: param is missing or the value is empty: user
+  #
+  # Technically this method can be used to fetch terminal values:
+  #
+  #   # CAREFUL
+  #   params = ActionController::Parameters.new(person: { name: "Finn" })
+  #   name = params.require(:person).require(:name) # CAREFUL
+  #
+  # but take into account that at some point those ones have to be permitted:
+  #
+  #   def person_params
+  #     params.require(:person).permit(:name).tap do |person_params|
+  #       person_params.require(:name) # SAFER
+  #     end
+  #   end
+  #
+  # for example.
+  def require: (untyped key) -> untyped
+  # Alias of #require.
+  alias required require
+  # Returns a new <tt>ActionController::Parameters</tt> instance that
+  # includes only the given +filters+ and sets the +permitted+ attribute
+  # for the object to +true+. This is useful for limiting which attributes
+  # should be allowed for mass updating.
+  #
+  #   params = ActionController::Parameters.new(user: { name: "Francesco", age: 22, role: "admin" })
+  #   permitted = params.require(:user).permit(:name, :age)
+  #   permitted.permitted?      # => true
+  #   permitted.has_key?(:name) # => true
+  #   permitted.has_key?(:age)  # => true
+  #   permitted.has_key?(:role) # => false
+  #
+  # Only permitted scalars pass the filter. For example, given
+  #
+  #   params.permit(:name)
+  #
+  # +:name+ passes if it is a key of +params+ whose associated value is of type
+  # +String+, +Symbol+, +NilClass+, +Numeric+, +TrueClass+, +FalseClass+,
+  # +Date+, +Time+, +DateTime+, +StringIO+, +IO+,
+  # +ActionDispatch::Http::UploadedFile+ or +Rack::Test::UploadedFile+.
+  # Otherwise, the key +:name+ is filtered out.
+  #
+  # You may declare that the parameter should be an array of permitted scalars
+  # by mapping it to an empty array:
+  #
+  #   params = ActionController::Parameters.new(tags: ["rails", "parameters"])
+  #   params.permit(tags: [])
+  #
+  # Sometimes it is not possible or convenient to declare the valid keys of
+  # a hash parameter or its internal structure. Just map to an empty hash:
+  #
+  #   params.permit(preferences: {})
+  #
+  # Be careful because this opens the door to arbitrary input. In this
+  # case, +permit+ ensures values in the returned structure are permitted
+  # scalars and filters out anything else.
+  #
+  # You can also use +permit+ on nested parameters, like:
+  #
+  #   params = ActionController::Parameters.new({
+  #     person: {
+  #       name: "Francesco",
+  #       age:  22,
+  #       pets: [{
+  #         name: "Purplish",
+  #         category: "dogs"
+  #       }]
+  #     }
+  #   })
+  #
+  #   permitted = params.permit(person: [ :name, { pets: :name } ])
+  #   permitted.permitted?                    # => true
+  #   permitted[:person][:name]               # => "Francesco"
+  #   permitted[:person][:age]                # => nil
+  #   permitted[:person][:pets][0][:name]     # => "Purplish"
+  #   permitted[:person][:pets][0][:category] # => nil
+  #
+  # Note that if you use +permit+ in a key that points to a hash,
+  # it won't allow all the hash. You also need to specify which
+  # attributes inside the hash should be permitted.
+  #
+  #   params = ActionController::Parameters.new({
+  #     person: {
+  #       contact: {
+  #         email: "none@test.com",
+  #         phone: "555-1234"
+  #       }
+  #     }
+  #   })
+  #
+  #   params.require(:person).permit(:contact)
+  #   # => #<ActionController::Parameters {} permitted: true>
+  #
+  #   params.require(:person).permit(contact: :phone)
+  #   # => #<ActionController::Parameters {"contact"=>#<ActionController::Parameters {"phone"=>"555-1234"} permitted: true>} permitted: true>
+  #
+  #   params.require(:person).permit(contact: [ :email, :phone ])
+  #   # => #<ActionController::Parameters {"contact"=>#<ActionController::Parameters {"email"=>"none@test.com", "phone"=>"555-1234"} permitted: true>} permitted: true>
+  #
+  # If your parameters specify multiple parameters indexed by a number,
+  # you can permit each set of parameters under the numeric key to be the same using the same syntax as permitting a single item.
+  #
+  #   params = ActionController::Parameters.new({
+  #     person: {
+  #       '0': {
+  #         email: "none@test.com",
+  #         phone: "555-1234"
+  #       },
+  #       '1': {
+  #         email: "nothing@test.com",
+  #         phone: "555-6789"
+  #       },
+  #     }
+  #   })
+  #   params.permit(person: [:email]).to_h
+  #   # => {"person"=>{"0"=>{"email"=>"none@test.com"}, "1"=>{"email"=>"nothing@test.com"}}}
+  #
+  # If you want to specify what keys you want from each numeric key, you can instead specify each one individually
+  #
+  #   params = ActionController::Parameters.new({
+  #     person: {
+  #       '0': {
+  #         email: "none@test.com",
+  #         phone: "555-1234"
+  #       },
+  #       '1': {
+  #         email: "nothing@test.com",
+  #         phone: "555-6789"
+  #       },
+  #     }
+  #   })
+  #   params.permit(person: { '0': [:email], '1': [:phone]}).to_h
+  #   # => {"person"=>{"0"=>{"email"=>"none@test.com"}, "1"=>{"phone"=>"555-6789"}}}
+  def permit: (*untyped filters) -> untyped
+  # Returns a parameter for the given +key+. If not found,
+  # returns +nil+.
+  #
+  #   params = ActionController::Parameters.new(person: { name: "Francesco" })
+  #   params[:person] # => #<ActionController::Parameters {"name"=>"Francesco"} permitted: false>
+  #   params[:none]   # => nil
+  def []: (untyped key) -> untyped
+  # Assigns a value to a given +key+. The given key may still get filtered out
+  # when +permit+ is called.
+  def []=: (untyped key, untyped value) -> untyped
+  # Returns a parameter for the given +key+. If the +key+
+  # can't be found, there are several options: With no other arguments,
+  # it will raise an <tt>ActionController::ParameterMissing</tt> error;
+  # if a second argument is given, then that is returned (converted to an
+  # instance of ActionController::Parameters if possible); if a block
+  # is given, then that will be run and its result returned.
+  #
+  #   params = ActionController::Parameters.new(person: { name: "Francesco" })
+  #   params.fetch(:person)               # => #<ActionController::Parameters {"name"=>"Francesco"} permitted: false>
+  #   params.fetch(:none)                 # => ActionController::ParameterMissing: param is missing or the value is empty: none
+  #   params.fetch(:none, {})             # => #<ActionController::Parameters {} permitted: false>
+  #   params.fetch(:none, "Francesco")    # => "Francesco"
+  #   params.fetch(:none) { "Francesco" } # => "Francesco"
+  def fetch: (untyped key, *untyped args) { () -> untyped } -> untyped
+  # Extracts the nested parameter from the given +keys+ by calling +dig+
+  # at each step. Returns +nil+ if any intermediate step is +nil+.
+  #
+  #   params = ActionController::Parameters.new(foo: { bar: { baz: 1 } })
+  #   params.dig(:foo, :bar, :baz) # => 1
+  #   params.dig(:foo, :zot, :xyz) # => nil
+  #
+  #   params2 = ActionController::Parameters.new(foo: [10, 11, 12])
+  #   params2.dig(:foo, 1) # => 11
+  def dig: (*untyped keys) -> untyped
+  # Returns a new <tt>ActionController::Parameters</tt> instance that
+  # includes only the given +keys+. If the given +keys+
+  # don't exist, returns an empty hash.
+  #
+  #   params = ActionController::Parameters.new(a: 1, b: 2, c: 3)
+  #   params.slice(:a, :b) # => #<ActionController::Parameters {"a"=>1, "b"=>2} permitted: false>
+  #   params.slice(:d)     # => #<ActionController::Parameters {} permitted: false>
+  def slice: (*untyped keys) -> untyped
+  # Returns current <tt>ActionController::Parameters</tt> instance which
+  # contains only the given +keys+.
+  def slice!: (*untyped keys) -> self
+  # Returns a new <tt>ActionController::Parameters</tt> instance that
+  # filters out the given +keys+.
+  #
+  #   params = ActionController::Parameters.new(a: 1, b: 2, c: 3)
+  #   params.except(:a, :b) # => #<ActionController::Parameters {"c"=>3} permitted: false>
+  #   params.except(:d)     # => #<ActionController::Parameters {"a"=>1, "b"=>2, "c"=>3} permitted: false>
+  def except: (*untyped keys) -> untyped
+  # Removes and returns the key/value pairs matching the given keys.
+  #
+  #   params = ActionController::Parameters.new(a: 1, b: 2, c: 3)
+  #   params.extract!(:a, :b) # => #<ActionController::Parameters {"a"=>1, "b"=>2} permitted: false>
+  #   params                  # => #<ActionController::Parameters {"c"=>3} permitted: false>
+  def extract!: (*untyped keys) -> untyped
+  # Returns a new <tt>ActionController::Parameters</tt> with the results of
+  # running +block+ once for every value. The keys are unchanged.
+  #
+  #   params = ActionController::Parameters.new(a: 1, b: 2, c: 3)
+  #   params.transform_values { |x| x * 2 }
+  #   # => #<ActionController::Parameters {"a"=>2, "b"=>4, "c"=>6} permitted: false>
+  def transform_values: () { (untyped) -> untyped } -> untyped
+  # Performs values transformation and returns the altered
+  # <tt>ActionController::Parameters</tt> instance.
+  def transform_values!: () { (untyped) -> untyped } -> (untyped | self)
+  # Returns a new <tt>ActionController::Parameters</tt> instance with the
+  # results of running +block+ once for every key. The values are unchanged.
+  def transform_keys: () ?{ () -> untyped } -> untyped
+  # Performs keys transformation and returns the altered
+  # <tt>ActionController::Parameters</tt> instance.
+  def transform_keys!: () ?{ () -> untyped } -> (untyped | self)
+  # Returns a new <tt>ActionController::Parameters</tt> instance with the
+  # results of running +block+ once for every key. This includes the keys
+  # from the root hash and from all nested hashes and arrays. The values are unchanged.
+  def deep_transform_keys: () ?{ () -> untyped } -> untyped
+  # Returns the <tt>ActionController::Parameters</tt> instance changing its keys.
+  # This includes the keys from the root hash and from all nested hashes and arrays.
+  # The values are unchanged.
+  def deep_transform_keys!: () ?{ () -> untyped } -> self
+  # Deletes a key-value pair from +Parameters+ and returns the value. If
+  # +key+ is not found, returns +nil+ (or, with optional code block, yields
+  # +key+ and returns the result). Cf. #extract!, which returns the
+  # corresponding +ActionController::Parameters+ object.
+  def delete: (untyped key) ?{ () -> untyped } -> untyped
+  # Returns a new instance of <tt>ActionController::Parameters</tt> with only
+  # items that the block evaluates to true.
+  def select: () ?{ () -> untyped } -> untyped
+  # Equivalent to Hash#keep_if, but returns +nil+ if no changes were made.
+  def select!: () ?{ () -> untyped } -> self
+  alias keep_if select!
+  # Returns a new instance of <tt>ActionController::Parameters</tt> with items
+  # that the block evaluates to true removed.
+  def reject: () ?{ () -> untyped } -> untyped
+  # Removes items that the block evaluates to true and returns self.
+  def reject!: () ?{ () -> untyped } -> self
+  alias delete_if reject!
+  # Returns a new instance of <tt>ActionController::Parameters</tt> with +nil+ values removed.
+  def compact: () -> untyped
+  # Removes all +nil+ values in place and returns +self+, or +nil+ if no changes were made.
+  def compact!: () -> (self | nil)
+  # Returns a new instance of <tt>ActionController::Parameters</tt> without the blank values.
+  # Uses Object#blank? for determining if a value is blank.
+  def compact_blank: () -> untyped
+  # Removes all blank values in place and returns self.
+  # Uses Object#blank? for determining if a value is blank.
+  def compact_blank!: () -> untyped
+  # Returns values that were assigned to the given +keys+. Note that all the
+  # +Hash+ objects will be converted to <tt>ActionController::Parameters</tt>.
+  def values_at: (*untyped keys) -> untyped
+  # Returns a new <tt>ActionController::Parameters</tt> with all keys from
+  # +other_hash+ merged into current hash.
+  def merge: (untyped other_hash) -> untyped
+  # Returns current <tt>ActionController::Parameters</tt> instance with
+  # +other_hash+ merged into current hash.
+  def merge!: (untyped other_hash) -> self
+  # Returns a new <tt>ActionController::Parameters</tt> with all keys from
+  # current hash merged into +other_hash+.
+  def reverse_merge: (untyped other_hash) -> untyped
+  alias with_defaults reverse_merge
+  # Returns current <tt>ActionController::Parameters</tt> instance with
+  # current hash merged into +other_hash+.
+  def reverse_merge!: (untyped other_hash) -> self
+  alias with_defaults! reverse_merge!
+  # This is required by ActiveModel attribute assignment, so that user can
+  # pass +Parameters+ to a mass assignment methods in a model. It should not
+  # matter as we are using +HashWithIndifferentAccess+ internally.
+  def stringify_keys: () -> untyped
+  def inspect: () -> ::String
+  def self.hook_into_yaml_loading: () -> untyped
+  def init_with: (untyped coder) -> untyped
+  def encode_with: (untyped coder) -> untyped
+  # Returns duplicate of object including all parameters.
+  def deep_dup: () -> untyped
+  def nested_attributes?: () -> untyped
+  def each_nested_attribute: () { (untyped) -> untyped } -> untyped
+  private def new_instance_with_inherited_permitted_status: (untyped hash) -> untyped
+  private def convert_parameters_to_hashes: (untyped value, untyped using) -> untyped
+  private def convert_hashes_to_parameters: (untyped key, untyped value) -> untyped
+  private def convert_value_to_parameters: (untyped value) -> untyped
+  private def specify_numeric_keys?: (untyped filter) -> (untyped | nil)
+  private def each_element: (untyped object, untyped filter) { (untyped) -> untyped } -> untyped
+  private def unpermitted_parameters!: (untyped params) -> untyped
+  private def unpermitted_keys: (untyped params) -> untyped
+  private def permitted_scalar?: (untyped value) -> untyped
+  # Adds existing keys to the params if their values are scalar.
+  #
+  # For example:
+  #
+  #   puts self.keys #=> ["zipcode(90210i)"]
+  #   params = {}
+  #
+  #   permitted_scalar_filter(params, "zipcode")
+  #
+  #   puts params.keys # => ["zipcode"]
+  private def permitted_scalar_filter: (untyped params, untyped permitted_key) -> untyped
+  private def array_of_permitted_scalars?: (untyped value) { (untyped) -> untyped } -> (untyped | nil)
+  private def non_scalar?: (untyped value) -> untyped
+  private def hash_filter: (untyped params, untyped filter) -> untyped
+  private def permit_any_in_parameters: (untyped params) -> untyped
+  private def permit_any_in_array: (untyped array) -> untyped
+  private def initialize_copy: (untyped source) -> untyped
+  attr_reader parameters: untyped
+  attr_writer permitted: untyped
+  def self.permit_all_parameters: () -> untyped
+  def self.action_on_unpermitted_parameters: () -> untyped
+  def self.always_permitted_parameters: () -> untyped
+  def always_permitted_parameters: () -> untyped
+  def self.permit_all_parameters=: (untyped val) -> untyped
+  def self.action_on_unpermitted_parameters=: (untyped val) -> untyped
+  def self.always_permitted_parameters=: (untyped val) -> untyped
+  def always_permitted_parameters=: (untyped val) -> untyped
+  # defined by `delegate` to: #@parameters
+  def keys: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def key?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def has_key?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def member?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def values: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def has_value?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def value?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def empty?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def include?: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def as_json: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def to_s: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@parameters
+  def each_key: (*untyped, **untyped) -> untyped
+  EMPTY_ARRAY: Array[untyped]
+  EMPTY_HASH: Hash[untyped, untyped]
+  PERMITTED_SCALAR_TYPES: Array[singleton(String) | singleton(Symbol) | singleton(NilClass) | singleton(Numeric) | singleton(TrueClass) | singleton(FalseClass) | singleton(Date) | singleton(Time) | singleton(StringIO) | singleton(IO) | singleton(ActionDispatch::Http::UploadedFile) | singleton(Rack::Test::UploadedFile)]
+end

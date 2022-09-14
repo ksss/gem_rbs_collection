@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::UrlFor
+  def url_options: () -> untyped
+  include AbstractController::UrlFor
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Binary < ::ActiveModel::Type::Value
+  def type: () -> :binary
+  def binary?: () -> true
+  def cast: (untyped value) -> untyped
+  def serialize: (untyped value) -> (nil | untyped)
+  def changed_in_place?: (untyped raw_old_value, untyped value) -> untyped
+end

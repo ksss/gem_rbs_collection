@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::JoinDependency
+  def self.make_tree: (untyped associations) -> untyped
+  def self.walk_tree: (untyped associations, untyped hash) -> untyped
+  def initialize: (untyped base, untyped table, untyped associations, untyped join_type) -> void
+  def base_klass: () -> untyped
+  def reflections: () -> untyped
+  def join_constraints: (untyped joins_to_add, untyped alias_tracker, untyped references) -> untyped
+  def instantiate: (untyped result_set, untyped strict_loading_value) ?{ () -> untyped } -> untyped
+  def apply_column_aliases: (untyped relation) -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  private def aliases: () -> untyped
+  private def make_join_constraints: (untyped join_root, untyped join_type) -> untyped
+  private def make_constraints: (untyped parent, untyped child, untyped join_type) -> untyped
+  private def walk: (untyped left, untyped right, untyped join_type) -> untyped
+  private def find_reflection: (untyped klass, untyped name) -> untyped
+  private def build: (untyped associations, untyped base_klass) -> untyped
+  private def construct: (untyped ar_parent, untyped parent, untyped row, untyped seen, untyped model_cache, untyped strict_loading_value) -> (nil | untyped)
+  private def construct_model: (untyped record, untyped node, untyped row, untyped model_cache, untyped id, untyped strict_loading_value) -> untyped
+  attr_reader join_root: untyped
+  attr_reader join_type: untyped
+  attr_reader alias_tracker: untyped
+  attr_reader join_root_alias: untyped
+end

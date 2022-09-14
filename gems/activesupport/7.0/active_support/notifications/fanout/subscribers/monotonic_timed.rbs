@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Fanout::Subscribers::MonotonicTimed < ::ActiveSupport::Notifications::Fanout::Subscribers::Evented
+  def publish: (untyped name, *untyped args) -> untyped
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def finish: (untyped name, untyped id, untyped payload) -> untyped
+end

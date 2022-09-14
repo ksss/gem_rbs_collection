@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::MismatchedForeignKey < ::ActiveRecord::StatementInvalid
+  def initialize: (?message: untyped?, ?sql: untyped?, ?binds: untyped?, ?table: untyped?, ?foreign_key: untyped?, ?target_table: untyped?, ?primary_key: untyped?, ?primary_key_column: untyped?) -> void
+end

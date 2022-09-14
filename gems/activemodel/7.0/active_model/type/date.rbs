@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Date < ::ActiveModel::Type::Value
+  def type: () -> :date
+  def type_cast_for_schema: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> (nil | untyped | untyped)
+  private def fast_string_to_date: (untyped string) -> (untyped | nil)
+  private def fallback_string_to_date: (untyped string) -> untyped
+  private def new_date: (untyped year, untyped mon, untyped mday) -> (untyped | nil)
+  private def value_from_multiparameter_assignment: () -> untyped
+  include ActiveModel::Type::Helpers::Timezone
+  ISO_DATE: Regexp
+end

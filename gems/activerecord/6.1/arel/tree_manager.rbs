@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::TreeManager
+  def initialize: () -> void
+  def to_dot: () -> untyped
+  def to_sql: (?untyped engine) -> untyped
+  def initialize_copy: (untyped other) -> untyped
+  def where: (untyped expr) -> self
+  include Arel::FactoryMethods
+  attr_reader ast: untyped
+end

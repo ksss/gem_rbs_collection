@@ -1,0 +1,42 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Attribute
+  def self.from_database: (untyped name, untyped value_before_type_cast, untyped `type`, ?untyped? value) -> untyped
+  def self.from_user: (untyped name, untyped value_before_type_cast, untyped `type`, ?untyped? original_attribute) -> untyped
+  def self.with_cast_value: (untyped name, untyped value_before_type_cast, untyped `type`) -> untyped
+  def self.null: (untyped name) -> untyped
+  def self.uninitialized: (untyped name, untyped `type`) -> untyped
+  # This method should not be called directly.
+  # Use #from_database or #from_user
+  def initialize: (untyped name, untyped value_before_type_cast, untyped `type`, ?untyped? original_attribute, ?untyped? value) -> void
+  def value: () -> untyped
+  def original_value: () -> untyped
+  def value_for_database: () -> untyped
+  def serializable?: () ?{ () -> untyped } -> untyped
+  def changed?: () -> untyped
+  def changed_in_place?: () -> untyped
+  def forgetting_assignment: () -> untyped
+  def with_value_from_user: (untyped value) -> untyped
+  def with_value_from_database: (untyped value) -> untyped
+  def with_cast_value: (untyped value) -> untyped
+  def with_type: (untyped `type`) -> untyped
+  def type_cast: () -> untyped
+  def initialized?: () -> true
+  def came_from_user?: () -> false
+  def has_been_read?: () -> untyped
+  def ==: (untyped other) -> untyped
+  alias eql? ==
+  def hash: () -> untyped
+  def init_with: (untyped coder) -> untyped
+  def encode_with: (untyped coder) -> untyped
+  def original_value_for_database: () -> untyped
+  alias assigned? original_attribute
+  private def initialize_dup: (untyped other) -> (untyped | nil)
+  private def changed_from_assignment?: () -> untyped
+  private def _original_value_for_database: () -> untyped
+  attr_reader name: untyped
+  attr_reader value_before_type_cast: untyped
+  attr_reader type: untyped
+  attr_reader original_attribute: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::Between < ::Arel::Nodes::Binary
+  include Arel::Nodes::FetchAttribute
+end

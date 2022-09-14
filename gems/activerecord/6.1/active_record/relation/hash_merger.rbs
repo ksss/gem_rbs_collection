@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::HashMerger
+  def initialize: (untyped relation, untyped hash, ?untyped? rewhere) -> void
+  def merge: () -> untyped
+  # Applying values to a relation has some side effects. E.g.
+  # interpolation might take place for where values. So we should
+  # build a relation to merge in rather than directly merging
+  # the values.
+  def other: () -> untyped
+  attr_reader relation: untyped
+  attr_reader hash: untyped
+end

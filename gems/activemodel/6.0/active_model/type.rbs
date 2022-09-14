@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Type
+  # Add a new type to the registry, allowing it to be gotten through ActiveModel::Type#lookup
+  def self.register: (untyped type_name, ?untyped? klass, **untyped options) ?{ () -> untyped } -> untyped
+  def self.lookup: (*untyped args, **untyped kwargs) -> untyped
+  def self.default_value: () -> untyped
+  attr_accessor self.registry: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::SidekiqAdapter::JobWrapper
+  def perform: (untyped job_data) -> untyped
+end

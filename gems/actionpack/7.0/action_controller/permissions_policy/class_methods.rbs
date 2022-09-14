@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::PermissionsPolicy::ClassMethods
+  # Overrides parts of the globally configured Feature-Policy
+  # header:
+  #
+  #   class PagesController < ApplicationController
+  #     permissions_policy do |policy|
+  #       policy.geolocation "https://example.com"
+  #     end
+  #   end
+  #
+  # Options can be passed similar to +before_action+. For example, pass
+  # <tt>only: :index</tt> to override the header on the index action only:
+  #
+  #   class PagesController < ApplicationController
+  #     permissions_policy(only: :index) do |policy|
+  #       policy.camera :self
+  #     end
+  #   end
+  #
+  def permissions_policy: (**untyped options) { (untyped) -> untyped } -> untyped
+end

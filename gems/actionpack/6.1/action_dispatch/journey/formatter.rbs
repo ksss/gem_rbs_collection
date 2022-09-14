@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Formatter
+  def initialize: (untyped routes) -> void
+  def generate: (untyped name, untyped options, untyped path_parameters) -> untyped
+  def clear: () -> untyped
+  private def extract_parameterized_parts: (untyped route, untyped options, untyped recall) -> untyped
+  private def named_routes: () -> untyped
+  private def match_route: (untyped name, untyped options) { (untyped) -> untyped } -> untyped
+  private def non_recursive: (untyped cache, untyped options) -> untyped
+  # Returns an array populated with missing keys if any are present.
+  private def missing_keys: (untyped route, untyped parts) -> untyped
+  private def possibles: (untyped cache, untyped options, ?::Integer depth) -> untyped
+  private def build_cache: () -> untyped
+  private def cache: () -> untyped
+  attr_reader routes: untyped
+end

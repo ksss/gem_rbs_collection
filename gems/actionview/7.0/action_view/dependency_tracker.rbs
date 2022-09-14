@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::DependencyTracker
+  def self.find_dependencies: (untyped name, untyped template, ?untyped? view_paths) -> (::Array[untyped] | untyped)
+  def self.register_tracker: (untyped extension, untyped tracker) -> untyped
+  def self.remove_tracker: (untyped handler) -> untyped
+  extend ActiveSupport::Autoload
+end

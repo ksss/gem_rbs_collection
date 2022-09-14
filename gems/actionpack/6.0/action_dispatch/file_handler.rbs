@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::FileHandler
+  def initialize: (untyped root, ?index: ::String, ?headers: ::Hash[untyped, untyped]) -> void
+  # Takes a path to a file. If the file is found, has valid encoding, and has
+  # correct read permissions, the return value is a URI-escaped string
+  # representing the filename. Otherwise, false is returned.
+  #
+  # Used by the +Static+ class to check the existence of a valid file
+  # in the server's +public/+ directory (see Static#call).
+  def match?: (untyped path) -> (false | untyped)
+  def call: (untyped env) -> untyped
+  def serve: (untyped request) -> untyped
+  private def ext: () -> untyped
+  private def content_type: (untyped path) -> untyped
+  private def gzip_encoding_accepted?: (untyped request) -> untyped
+  private def gzip_file_path: (untyped path) -> untyped
+end

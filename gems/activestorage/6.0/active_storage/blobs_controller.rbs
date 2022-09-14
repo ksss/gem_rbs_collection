@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::BlobsController < ::ActiveStorage::BaseController
+  def show: () -> untyped
+  include ActionDispatch::Routing::UrlFor
+  include ActiveStorage::SetBlob
+end

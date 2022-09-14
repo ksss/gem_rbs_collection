@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Store::IndifferentCoder
+  def initialize: (untyped attr_name, untyped coder_or_class_name) -> void
+  def dump: (untyped obj) -> untyped
+  def load: (untyped yaml) -> untyped
+  def self.as_indifferent_hash: (untyped obj) -> untyped
+  private def as_regular_hash: (untyped obj) -> (untyped | ::Hash[untyped, untyped])
+end

@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Middleware::DatabaseSelector::Resolver
+  def self.call: (untyped context, ?::Hash[untyped, untyped] options) -> untyped
+  def initialize: (untyped context, ?::Hash[untyped, untyped] options) -> void
+  def read: () ?{ () -> untyped } -> untyped
+  def write: () ?{ () -> untyped } -> untyped
+  private def read_from_primary: () { () -> untyped } -> untyped
+  private def read_from_replica: () { () -> untyped } -> untyped
+  private def write_to_primary: () { () -> untyped } -> untyped
+  private def read_from_primary?: () -> untyped
+  private def send_to_replica_delay: () -> untyped
+  private def time_since_last_write_ok?: () -> untyped
+  attr_reader context: untyped
+  attr_reader delay: untyped
+  attr_reader instrumenter: untyped
+  SEND_TO_REPLICA_DELAY: ActiveSupport::Duration
+end

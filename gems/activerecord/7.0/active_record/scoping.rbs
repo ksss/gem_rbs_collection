@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Scoping
+  def populate_with_current_scope_attributes: () -> (nil | untyped)
+  def initialize_internals_callback: () -> untyped
+  extend ActiveSupport::Concern
+  extend ActiveSupport::Autoload
+end

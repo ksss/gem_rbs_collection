@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::QueueAdapter::ClassMethods
+  # Returns the backend queue provider. The default queue adapter
+  # is the +:async+ queue. See QueueAdapters for more information.
+  def queue_adapter: () -> untyped
+  # Returns string denoting the name of the configured queue adapter.
+  # By default returns <tt>"async"</tt>.
+  def queue_adapter_name: () -> untyped
+  # Specify the backend queue provider. The default queue adapter
+  # is the +:async+ queue. See QueueAdapters for more
+  # information.
+  def queue_adapter=: (untyped name_or_adapter) -> untyped
+  private def assign_adapter: (untyped adapter_name, untyped queue_adapter) -> untyped
+  private def queue_adapter?: (untyped object) -> untyped
+  QUEUE_ADAPTER_METHODS: Array[Symbol]
+end

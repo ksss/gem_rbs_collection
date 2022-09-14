@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::Reflection::ActiveRecordExtensions::ClassMethods
+  # Returns an array of reflection objects for all the attachments in the
+  # class.
+  def reflect_on_all_attachments: () -> untyped
+  # Returns the reflection object for the named +attachment+.
+  #
+  #    User.reflect_on_attachment(:avatar)
+  #    # => the avatar reflection
+  #
+  def reflect_on_attachment: (untyped attachment) -> untyped
+end

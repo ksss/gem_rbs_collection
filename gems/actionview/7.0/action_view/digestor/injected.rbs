@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Digestor::Injected < ::ActionView::Digestor::Node
+  def digest: (untyped finder, ?untyped _) -> untyped
+end

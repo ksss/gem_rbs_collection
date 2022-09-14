@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::MySQL < ::Arel::Visitors::ToSql
+  private def visit_Arel_Nodes_Bin: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_UnqualifiedColumn: (untyped o, untyped collector) -> untyped
+  # #
+  # :'(
+  # http://dev.mysql.com/doc/refman/5.0/en/select.html#id3482214
+  private def visit_Arel_Nodes_SelectStatement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_SelectCore: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Concat: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsNotDistinctFrom: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsDistinctFrom: (untyped o, untyped collector) -> untyped
+  # In the simple case, MySQL allows us to place JOINs directly into the UPDATE
+  # query. However, this does not allow for LIMIT, OFFSET and ORDER. To support
+  # these, we must use a subquery.
+  private def prepare_update_statement: (untyped o) -> untyped
+  alias prepare_delete_statement prepare_update_statement
+  # MySQL is too stupid to create a temporary table for use subquery, so we have
+  # to give it some prompting in the form of a subsubquery.
+  private def build_subselect: (untyped key, untyped o) -> untyped
+end

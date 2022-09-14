@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Utils::NoNilParamEncoder < ::ActionDispatch::Request::Utils::ParamEncoder
+  def self.handle_array: (untyped params) -> untyped
+end

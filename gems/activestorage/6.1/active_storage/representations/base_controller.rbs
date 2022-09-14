@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Representations::BaseController < ::ActiveStorage::BaseController
+  private def set_representation: () -> untyped
+end

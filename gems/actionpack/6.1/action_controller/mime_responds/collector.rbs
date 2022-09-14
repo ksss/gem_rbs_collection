@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::MimeResponds::Collector
+  def initialize: (untyped mimes, ?untyped? variant) -> void
+  def any: (*untyped args) ?{ () -> untyped } -> untyped
+  alias all any
+  def custom: (untyped mime_type) ?{ () -> untyped } -> untyped
+  def any_response?: () -> untyped
+  def response: () -> untyped
+  def negotiate_format: (untyped request) -> untyped
+  include AbstractController::Collector
+  attr_accessor format: untyped
+end

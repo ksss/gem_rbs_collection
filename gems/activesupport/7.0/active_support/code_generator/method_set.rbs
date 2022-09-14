@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::CodeGenerator::MethodSet
+  def initialize: (untyped namespace) -> void
+  def define_cached_method: (untyped name, ?as: untyped) { (untyped) -> untyped } -> untyped
+  def apply: (untyped owner, untyped path, untyped line) -> untyped
+  METHOD_CACHES: Hash[Symbol, untyped]
+end

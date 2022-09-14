@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::AssertionResponse
+  # Accepts a specific response status code as an Integer (404) or String
+  # ('404') or a response status range as a Symbol pseudo-code (:success,
+  # indicating any 200-299 status code).
+  def initialize: (untyped code_or_name) -> void
+  def code_and_name: () -> ::String
+  private def code_from_name: (untyped name) -> untyped
+  private def name_from_code: (untyped code) -> untyped
+  attr_reader code: untyped
+  attr_reader name: untyped
+  GENERIC_RESPONSE_CODES: Hash[Symbol, String]
+end

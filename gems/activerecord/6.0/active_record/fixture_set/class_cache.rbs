@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::ClassCache
+  def initialize: (untyped class_names, untyped config) -> void
+  def []: (untyped fs_name) -> untyped
+  private def insert_class: (untyped class_names, untyped name, untyped klass) -> untyped
+  private def default_fixture_model: (untyped fs_name, untyped config) -> untyped
+end

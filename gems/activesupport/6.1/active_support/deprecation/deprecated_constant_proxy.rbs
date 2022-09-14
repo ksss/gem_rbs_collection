@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Deprecation::DeprecatedConstantProxy < ::Module
+  def self.new: (*untyped args, **untyped options) ?{ () -> untyped } -> untyped
+  def initialize: (untyped old_const, untyped new_const, ?untyped deprecator, ?message: ::String) -> void
+  # Don't give a deprecation warning on inspect since test/unit and error
+  # logs rely on it for diagnostics.
+  def inspect: () -> untyped
+  # Returns the class of the new constant.
+  #
+  #   PLANETS_POST_2006 = %w(mercury venus earth mars jupiter saturn uranus neptune)
+  #   PLANETS = ActiveSupport::Deprecation::DeprecatedConstantProxy.new('PLANETS', 'PLANETS_POST_2006')
+  #   PLANETS.class # => Array
+  def class: () -> untyped
+  private def target: () -> untyped
+  private def const_missing: (untyped name) -> untyped
+  private def method_missing: (untyped called, *untyped args) ?{ () -> untyped } -> untyped
+  # defined by `delegate` to: untyped#target
+  def hash: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#target
+  def instance_methods: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#target
+  def name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#target
+  def respond_to?: (*untyped, **untyped) -> untyped
+end

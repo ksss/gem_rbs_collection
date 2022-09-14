@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Validations::Callbacks
+  # Override run_validations! to include callbacks.
+  private def run_validations!: () -> untyped
+  extend ActiveSupport::Concern
+end

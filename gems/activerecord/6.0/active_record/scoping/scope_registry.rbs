@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Scoping::ScopeRegistry
+  def initialize: () -> void
+  # Obtains the value for a given +scope_type+ and +model+.
+  def value_for: (untyped scope_type, untyped model, ?bool skip_inherited_scope) -> untyped
+  # Sets the +value+ for a given +scope_type+ and +model+.
+  def set_value_for: (untyped scope_type, untyped model, untyped value) -> untyped
+  private def raise_invalid_scope_type!: (untyped scope_type) -> (untyped | nil)
+  extend ActiveSupport::PerThreadRegistry
+  VALID_SCOPE_TYPES: Array[Symbol]
+end

@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Tasks::MySQLDatabaseTasks
+  def self.using_database_configurations?: () -> true
+  def initialize: (untyped db_config) -> void
+  def create: () -> untyped
+  def drop: () -> untyped
+  def purge: () -> untyped
+  def charset: () -> untyped
+  def collation: () -> untyped
+  def structure_dump: (untyped filename, untyped extra_flags) -> untyped
+  def structure_load: (untyped filename, untyped extra_flags) -> untyped
+  private def configuration_hash_without_database: () -> untyped
+  private def creation_options: () -> untyped
+  private def prepare_command_options: () -> untyped
+  private def run_cmd: (untyped cmd, untyped args, untyped action) -> (untyped | nil)
+  private def run_cmd_error: (untyped cmd, untyped args, untyped action) -> untyped
+  attr_reader db_config: untyped
+  attr_reader configuration_hash: untyped
+  ER_DB_CREATE_EXISTS: Integer
+end

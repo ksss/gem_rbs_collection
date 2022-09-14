@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::WithValidator < ::ActiveModel::EachValidator
+  def validate_each: (untyped record, untyped attr, untyped val) -> untyped
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Delegation::DelegateCache
+  def relation_delegate_class: (untyped klass) -> untyped
+  def initialize_relation_delegate_cache: () -> untyped
+  def inherited: (untyped child_class) -> untyped
+  def generate_relation_method: (untyped method) -> untyped
+  def include_relation_methods: (untyped delegate) -> untyped
+  private def generated_relation_methods: () -> untyped
+end

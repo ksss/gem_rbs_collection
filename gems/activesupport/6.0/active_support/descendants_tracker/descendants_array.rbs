@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::DescendantsTracker::DescendantsArray
+  def initialize: () -> void
+  def initialize_copy: (untyped orig) -> untyped
+  def <<: (untyped klass) -> untyped
+  def each: () { (untyped) -> untyped } -> untyped
+  def refs_size: () -> untyped
+  def cleanup!: () -> untyped
+  def reject!: () { (untyped) -> untyped } -> untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::SetupAndTeardown
+  def self.prepended: (untyped klass) -> untyped
+  def before_setup: () -> untyped
+  def after_teardown: () -> untyped
+end

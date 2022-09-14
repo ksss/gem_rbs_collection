@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::UnboundTemplate
+  def initialize: (untyped source, untyped identifier, details: untyped, virtual_path: untyped) -> void
+  def bind_locals: (untyped locals) -> untyped
+  private def build_template: (untyped locals) -> untyped
+  private def normalize_locals: (untyped locals) -> untyped
+  attr_reader virtual_path: untyped
+  attr_reader details: untyped
+  # defined by `delegate` to: #@details
+  def locale: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@details
+  def format: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@details
+  def variant: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@details
+  def handler: (*untyped, **untyped) -> untyped
+end

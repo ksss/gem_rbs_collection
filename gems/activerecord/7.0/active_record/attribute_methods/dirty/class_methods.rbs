@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Dirty::ClassMethods
+  def partial_writes: () -> untyped
+  def partial_writes?: () -> untyped
+  def partial_writes=: (untyped value) -> untyped
+end

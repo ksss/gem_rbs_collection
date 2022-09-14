@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::NullStore < ::ActiveSupport::Cache::Store
+  # Advertise cache versioning support.
+  def self.supports_cache_versioning?: () -> true
+  def clear: (?untyped? options) -> nil
+  def cleanup: (?untyped? options) -> nil
+  def increment: (untyped name, ?::Integer amount, ?untyped? options) -> nil
+  def decrement: (untyped name, ?::Integer amount, ?untyped? options) -> nil
+  def delete_matched: (untyped matcher, ?untyped? options) -> nil
+  private def read_entry: (untyped key, **untyped s) -> untyped
+  private def read_serialized_entry: (untyped _key) -> nil
+  private def write_entry: (untyped key, untyped entry) -> untyped
+  private def write_serialized_entry: (untyped _key, untyped _payload) -> true
+  private def delete_entry: (untyped key, **untyped options) -> false
+  prepend ActiveSupport::Cache::Strategy::LocalCache
+end

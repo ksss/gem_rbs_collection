@@ -1,0 +1,39 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::CurrentAttributes
+  # Returns singleton instance for this class in this thread. If none exists, one is created.
+  def self.instance: () -> untyped
+  # Declares one or more attributes that will be given both class and instance accessor methods.
+  def self.attribute: (*untyped names) -> untyped
+  # Calls this block before #reset is called on the instance. Used for resetting external collaborators that depend on current values.
+  def self.before_reset: () ?{ () -> untyped } -> untyped
+  # Calls this block after #reset is called on the instance. Used for resetting external collaborators, like Time.zone.
+  def self.resets: () ?{ () -> untyped } -> untyped
+  alias self.after_reset self.resets
+  def self.reset_all: () -> untyped
+  def self.clear_all: () -> untyped
+  private def self.generated_attribute_methods: () -> untyped
+  private def self.current_instances: () -> untyped
+  private def self.method_missing: (untyped name, *untyped args) ?{ () -> untyped } -> untyped
+  def initialize: () -> void
+  # Expose one or more attributes within a block. Old values are returned after the block concludes.
+  # Example demonstrating the common use of needing to set Current attributes outside the request-cycle:
+  #
+  #   class Chat::PublicationJob < ApplicationJob
+  #     def perform(attributes, room_number, creator)
+  #       Current.set(person: creator) do
+  #         Chat::Publisher.publish(attributes: attributes, room_number: room_number)
+  #       end
+  #     end
+  #   end
+  def set: (untyped set_attributes) { () -> untyped } -> untyped
+  # Reset all attributes. Should be called before and after actions, when used as a per-request singleton.
+  def reset: () -> untyped
+  private def assign_attributes: (untyped new_attributes) -> untyped
+  private def compute_attributes: (untyped keys) -> untyped
+  include ActiveSupport::Callbacks
+  extend ActiveSupport::Callbacks::ClassMethods
+  extend ActiveSupport::DescendantsTracker
+  attr_accessor attributes: untyped
+end

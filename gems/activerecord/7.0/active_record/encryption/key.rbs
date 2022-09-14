@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Key
+  def initialize: (untyped secret) -> void
+  def self.derive_from: (untyped password) -> untyped
+  def id: () -> untyped
+  attr_reader secret: untyped
+  attr_reader public_tags: untyped
+end

@@ -1,0 +1,45 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Cookies::CookieJar
+  def self.build: (untyped req, untyped cookies) -> untyped
+  def initialize: (untyped request) -> void
+  def committed?: () -> untyped
+  def commit!: () -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  # Returns the value of the cookie by +name+, or +nil+ if no such cookie exists.
+  def []: (untyped name) -> untyped
+  def fetch: (untyped name, *untyped args) ?{ () -> untyped } -> untyped
+  def key?: (untyped name) -> untyped
+  alias has_key? key?
+  # Returns the cookies as Hash.
+  alias to_hash to_h
+  def update: (untyped other_hash) -> self
+  def update_cookies_from_jar: () -> untyped
+  def to_header: () -> untyped
+  # Sets the cookie named +name+. The second argument may be the cookie's
+  # value or a hash of options as documented above.
+  def []=: (untyped name, untyped options) -> untyped
+  # Removes the cookie on the client machine by setting the value to an empty string
+  # and the expiration date in the past. Like <tt>[]=</tt>, you can pass in
+  # an options hash to delete cookies with extra data such as a <tt>:path</tt>.
+  def delete: (untyped name, ?::Hash[untyped, untyped] options) -> (nil | untyped)
+  # Whether the given cookie is to be deleted by this CookieJar.
+  # Like <tt>[]=</tt>, you can pass in an options hash to test if a
+  # deletion applies to a specific <tt>:path</tt>, <tt>:domain</tt> etc.
+  def deleted?: (untyped name, ?::Hash[untyped, untyped] options) -> untyped
+  # Removes all cookies on the client machine by calling <tt>delete</tt> for each cookie.
+  def clear: (?::Hash[untyped, untyped] options) -> untyped
+  def write: (untyped headers) -> (untyped | nil)
+  private def escape: (untyped string) -> untyped
+  private def make_set_cookie_header: (untyped header) -> untyped
+  private def write_cookie?: (untyped cookie) -> untyped
+  private def handle_options: (untyped options) -> untyped
+  include ActionDispatch::Cookies::ChainedCookieJars
+  attr_reader request: untyped
+  def self.always_write_cookie: () -> untyped
+  def always_write_cookie: () -> untyped
+  def self.always_write_cookie=: (untyped val) -> untyped
+  def always_write_cookie=: (untyped val) -> untyped
+  DOMAIN_REGEXP: Regexp
+end

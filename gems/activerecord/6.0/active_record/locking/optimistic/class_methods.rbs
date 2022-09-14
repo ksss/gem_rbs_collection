@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Locking::Optimistic::ClassMethods
+  # Returns true if the +lock_optimistically+ flag is set to true
+  # (which it is, by default) and the table includes the
+  # +locking_column+ column (defaults to +lock_version+).
+  def locking_enabled?: () -> untyped
+  # Set the column to use for optimistic locking. Defaults to +lock_version+.
+  def locking_column=: (untyped value) -> untyped
+  # The version column used for optimistic locking. Defaults to +lock_version+.
+  def locking_column: () -> untyped
+  # Reset the column used for optimistic locking back to the +lock_version+ default.
+  def reset_locking_column: () -> untyped
+  # Make sure the lock version column gets updated when counters are
+  # updated.
+  def update_counters: (untyped id, untyped counters) -> untyped
+  # We need to apply this decorator here, rather than on module inclusion. The closure
+  # created by the matcher would otherwise evaluate for `ActiveRecord::Base`, not the
+  # sub class being decorated. As such, changes to `lock_optimistically`, or
+  # `locking_column` would not be picked up.
+  private def inherited: (untyped subclass) -> untyped
+  DEFAULT_LOCKING_COLUMN: String
+end

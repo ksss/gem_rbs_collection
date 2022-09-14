@@ -1,0 +1,55 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader
+  # Eager loads the named associations for the given Active Record record(s).
+  #
+  # In this description, 'association name' shall refer to the name passed
+  # to an association creation method. For example, a model that specifies
+  # <tt>belongs_to :author</tt>, <tt>has_many :buyers</tt> has association
+  # names +:author+ and +:buyers+.
+  #
+  # == Parameters
+  # +records+ is an array of ActiveRecord::Base. This array needs not be flat,
+  # i.e. +records+ itself may also contain arrays of records. In any case,
+  # +preload_associations+ will preload all associations records by
+  # flattening +records+.
+  #
+  # +associations+ specifies one or more associations that you want to
+  # preload. It may be:
+  # - a Symbol or a String which specifies a single association name. For
+  #   example, specifying +:books+ allows this method to preload all books
+  #   for an Author.
+  # - an Array which specifies multiple association names. This array
+  #   is processed recursively. For example, specifying <tt>[:avatar, :books]</tt>
+  #   allows this method to preload an author's avatar as well as all of his
+  #   books.
+  # - a Hash which specifies multiple association names, as well as
+  #   association names for the to-be-preloaded association objects. For
+  #   example, specifying <tt>{ author: :avatar }</tt> will preload a
+  #   book's author, as well as that author's avatar.
+  #
+  # +:associations+ has the same format as the +:include+ method in
+  # <tt>ActiveRecord::QueryMethods</tt>. So +associations+ could look like this:
+  #
+  #   :books
+  #   [ :books, :author ]
+  #   { author: :avatar }
+  #   [ :books, { author: :avatar } ]
+  #
+  # +available_records+ is an array of ActiveRecord::Base. The Preloader
+  # will try to use the objects in this array to preload the requested
+  # associations before querying the database. This can save database
+  # queries by reusing in-memory objects. The optimization is only applied
+  # to single associations (i.e. :belongs_to, :has_one) with no scopes.
+  def initialize: (records: untyped, associations: untyped, ?scope: untyped?, ?available_records: untyped, ?associate_by_default: bool) -> void
+  def empty?: () -> untyped
+  def call: () -> untyped
+  def branches: () -> untyped
+  def loaders: () -> untyped
+  extend ActiveSupport::Autoload
+  attr_reader records: untyped
+  attr_reader associations: untyped
+  attr_reader scope: untyped
+  attr_reader associate_by_default: untyped
+end

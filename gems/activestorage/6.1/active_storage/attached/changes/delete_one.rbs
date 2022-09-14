@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached::Changes::DeleteOne
+  def initialize: (untyped name, untyped record) -> void
+  def attachment: () -> nil
+  def save: () -> untyped
+  attr_reader name: untyped
+  attr_reader record: untyped
+end

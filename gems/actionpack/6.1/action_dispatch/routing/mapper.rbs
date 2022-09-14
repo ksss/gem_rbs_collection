@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper
+  # Invokes Journey::Router::Utils.normalize_path, then ensures that
+  # /(:locale) becomes (/:locale). Except for root cases, where the
+  # former is the correct one.
+  def self.normalize_path: (untyped path) -> untyped
+  def self.normalize_name: (untyped name) -> untyped
+  def initialize: (untyped set) -> void
+  include ActionDispatch::Routing::Mapper::Base
+  include ActionDispatch::Routing::Mapper::HttpHelpers
+  include ActionDispatch::Routing::Redirection
+  include ActionDispatch::Routing::Mapper::Scoping
+  include ActionDispatch::Routing::Mapper::Concerns
+  include ActionDispatch::Routing::Mapper::Resources
+  include ActionDispatch::Routing::Mapper::CustomUrls
+  URL_OPTIONS: Array[Symbol]
+end

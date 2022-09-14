@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Callbacks
+  # Override <tt>AbstractController::Base#process_action</tt> to run the
+  # <tt>process_action</tt> callbacks around the normal behavior.
+  private def process_action: (*untyped) ?{ () -> untyped } -> untyped
+  include ActiveSupport::Callbacks
+  extend ActiveSupport::Concern
+end

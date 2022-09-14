@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::NFA::Simulator
+  def initialize: (untyped transition_table) -> void
+  def simulate: (untyped string) -> (nil | untyped)
+  alias =~ simulate
+  alias match simulate
+  attr_reader tt: untyped
+end

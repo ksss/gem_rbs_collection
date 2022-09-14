@@ -1,0 +1,54 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::AbstractReflection
+  def through_reflection?: () -> false
+  def table_name: () -> untyped
+  # Returns a new, unsaved instance of the associated class. +attributes+ will
+  # be passed to the class's constructor.
+  def build_association: (untyped attributes) ?{ () -> untyped } -> untyped
+  # Returns the class name for the macro.
+  #
+  # <tt>composed_of :balance, class_name: 'Money'</tt> returns <tt>'Money'</tt>
+  # <tt>has_many :clients</tt> returns <tt>'Client'</tt>
+  def class_name: () -> untyped
+  def join_keys: () -> untyped
+  # Returns a list of scopes that should be applied for this Reflection
+  # object when querying the database.
+  def scopes: () -> ::Array[untyped]
+  def join_scope: (untyped table, untyped foreign_table, untyped foreign_klass) -> untyped
+  def join_scopes: (untyped table, untyped predicate_builder, ?untyped klass) -> ::Array[untyped]
+  def klass_join_scope: (untyped table, untyped predicate_builder) -> untyped
+  def constraints: () -> untyped
+  def counter_cache_column: () -> (::String | untyped | nil | untyped | ::String)
+  def inverse_of: () -> (nil | untyped)
+  def check_validity_of_inverse!: () -> (untyped | nil | nil)
+  # This shit is nasty. We need to avoid the following situation:
+  #
+  #   * An associated record is deleted via record.destroy
+  #   * Hence the callbacks run, and they find a belongs_to on the record with a
+  #     :counter_cache options which points back at our owner. So they update the
+  #     counter cache.
+  #   * In which case, we must make sure to *not* update the counter cache, or else
+  #     it will be decremented twice.
+  #
+  # Hence this method.
+  def inverse_which_updates_counter_cache: () -> untyped
+  alias inverse_updates_counter_cache? inverse_which_updates_counter_cache
+  def inverse_updates_counter_in_memory?: () -> untyped
+  # Returns whether a counter cache should be used for this association.
+  #
+  # The counter_cache option must be given on either the owner or inverse
+  # association, and the column must be present on the owner.
+  def has_cached_counter?: () -> untyped
+  def counter_must_be_updated_by_has_many?: () -> untyped
+  def alias_candidate: (untyped name) -> ::String
+  def chain: () -> untyped
+  def get_join_keys: (untyped association_klass) -> untyped
+  def build_scope: (untyped table, ?untyped predicate_builder, ?untyped klass) -> untyped
+  def join_primary_key: () -> untyped
+  def join_foreign_key: () -> untyped
+  def actual_source_reflection: () -> self
+  private def predicate_builder: (untyped table) -> untyped
+  private def primary_key: (untyped klass) -> untyped
+end

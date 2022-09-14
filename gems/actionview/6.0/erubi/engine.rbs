@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Erubi::Engine
+  attr_reader src: untyped
+  attr_reader filename: untyped
+  attr_reader bufvar: untyped
+  DEFAULT_REGEXP: Regexp
+end

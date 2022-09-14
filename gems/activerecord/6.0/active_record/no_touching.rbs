@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::NoTouching
+  def self.apply_to: (untyped klass) { () -> untyped } -> untyped
+  def self.applied_to?: (untyped klass) -> untyped
+  private def self.klasses: () -> untyped
+  # Returns +true+ if the class has +no_touching+ set, +false+ otherwise.
+  #
+  #   Project.no_touching do
+  #     Project.first.no_touching? # true
+  #     Message.first.no_touching? # false
+  #   end
+  #
+  def no_touching?: () -> untyped
+  def touch_later: () -> (untyped | nil)
+  def touch: () -> (untyped | nil)
+  extend ActiveSupport::Concern
+end

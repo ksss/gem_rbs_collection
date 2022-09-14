@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::OptimizedFileSystemResolver < ::ActionView::FileSystemResolver
+  def initialize: (untyped path) -> void
+  private def find_template_paths_from_details: (untyped path, untyped details) -> untyped
+  private def build_regex: (untyped path, untyped details) -> ::Regexp
+end

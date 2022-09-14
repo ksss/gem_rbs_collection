@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::ContentSecurityPolicy::Request
+  def content_security_policy: () -> untyped
+  def content_security_policy=: (untyped policy) -> untyped
+  def content_security_policy_report_only: () -> untyped
+  def content_security_policy_report_only=: (untyped value) -> untyped
+  def content_security_policy_nonce_generator: () -> untyped
+  def content_security_policy_nonce_generator=: (untyped generator) -> untyped
+  def content_security_policy_nonce_directives: () -> untyped
+  def content_security_policy_nonce_directives=: (untyped generator) -> untyped
+  def content_security_policy_nonce: () -> (untyped | nil)
+  private def generate_content_security_policy_nonce: () -> untyped
+  NONCE: String
+  NONCE_DIRECTIVES: String
+  NONCE_GENERATOR: String
+  POLICY: String
+  POLICY_REPORT_ONLY: String
+end

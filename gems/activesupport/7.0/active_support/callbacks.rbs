@@ -1,0 +1,34 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Callbacks
+  # Runs the callbacks for the given event.
+  #
+  # Calls the before and around callbacks in the order they were set, yields
+  # the block (if given one), and then runs the after callbacks in reverse
+  # order.
+  #
+  # If the callback chain was halted, returns +false+. Otherwise returns the
+  # result of the block, +nil+ if no callbacks have been set, or +true+
+  # if callbacks have been set but no block is given.
+  #
+  #   run_callbacks :save do
+  #     save
+  #   end
+  #
+  # -
+  #
+  # As this method is used in many places, and often wraps large portions of
+  # user code, it has an additional design goal of minimizing its impact on
+  # the visible call stack. An exception from inside a :before or :after
+  # callback can be as noisy as it likes -- but when control has passed
+  # smoothly through and into the supplied block, we want as little evidence
+  # as possible that we were here.
+  def run_callbacks: (untyped kind) { () -> untyped } -> untyped
+  # A hook invoked every time a before callback is halted.
+  # This can be overridden in ActiveSupport::Callbacks implementors in order
+  # to provide better debugging/logging.
+  private def halted_callback_hook: (untyped filter, untyped name) -> nil
+  extend ActiveSupport::Concern
+  CALLBACK_FILTER_TYPES: Array[Symbol]
+end

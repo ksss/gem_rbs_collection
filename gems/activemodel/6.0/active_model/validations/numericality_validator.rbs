@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::NumericalityValidator < ::ActiveModel::EachValidator
+  def check_validity!: () -> untyped
+  def validate_each: (untyped record, untyped attr_name, untyped value) -> (nil | untyped)
+  private def is_number?: (untyped raw_value) -> untyped
+  private def parse_as_number: (untyped raw_value) -> (untyped | untyped | untyped | untyped | nil)
+  private def is_integer?: (untyped raw_value) -> untyped
+  private def is_hexadecimal_literal?: (untyped raw_value) -> untyped
+  private def filtered_options: (untyped value) -> untyped
+  private def allow_only_integer?: (untyped record) -> untyped
+  private def record_attribute_changed_in_place?: (untyped record, untyped attr_name) -> untyped
+  CHECKS: Hash[Symbol, Symbol]
+  HEXADECIMAL_REGEX: Regexp
+  INTEGER_REGEX: Regexp
+  RESERVED_OPTIONS: Array[Symbol]
+end

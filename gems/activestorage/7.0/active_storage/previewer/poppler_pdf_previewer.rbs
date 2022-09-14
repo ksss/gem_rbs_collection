@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Previewer::PopplerPDFPreviewer < ::ActiveStorage::Previewer
+  def self.accept?: (untyped blob) -> untyped
+  def self.pdftoppm_path: () -> untyped
+  def self.pdftoppm_exists?: () -> untyped
+  def preview: (**untyped options) { (untyped) -> untyped } -> untyped
+  private def draw_first_page_from: (untyped file) ?{ () -> untyped } -> untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::DeprecatedRangeWithFormat
+  def to_s: (?untyped format) -> untyped
+  alias to_default_s to_s
+  NOT_SET: Object
+end

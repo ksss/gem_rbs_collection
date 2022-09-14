@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Caching::ConfigMethods
+  def cache_store: () -> untyped
+  def cache_store=: (untyped store) -> untyped
+  private def cache_configured?: () -> untyped
+end

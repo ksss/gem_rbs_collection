@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::ConsoleFormatter::Base
+  def initialize: () -> void
+  def result: () -> untyped
+  def section_title: (untyped title) -> nil
+  def section: (untyped routes) -> nil
+  def header: (untyped routes) -> nil
+  def no_routes: (untyped routes, untyped filter) -> untyped
+end

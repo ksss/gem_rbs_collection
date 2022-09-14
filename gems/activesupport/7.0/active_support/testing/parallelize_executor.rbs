@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::ParallelizeExecutor
+  def initialize: (size: untyped, with: untyped, ?threshold: untyped) -> void
+  def start: () -> untyped
+  def <<: (untyped work) -> (untyped | nil)
+  def shutdown: () -> (untyped | nil)
+  private def parallel_executor: () -> untyped
+  private def build_parallel_executor: () -> untyped
+  private def parallelize: () -> untyped
+  private def parallelized?: () -> (untyped | nil)
+  private def should_parallelize?: () -> untyped
+  private def tests_count: () -> untyped
+  private def show_execution_info: () -> untyped
+  private def execution_info: () -> ::String
+  attr_reader size: untyped
+  attr_reader parallelize_with: untyped
+  attr_reader threshold: untyped
+end

@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Service::Registry
+  def initialize: (untyped configurations) -> void
+  def fetch: (untyped name) { (untyped) -> untyped } -> untyped
+  private def configurator: () -> untyped
+  attr_reader configurations: untyped
+  attr_reader services: untyped
+end

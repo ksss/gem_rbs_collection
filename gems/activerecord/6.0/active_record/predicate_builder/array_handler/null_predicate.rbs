@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::PredicateBuilder::ArrayHandler::NullPredicate
+  def self.or: (untyped other) -> untyped
+end

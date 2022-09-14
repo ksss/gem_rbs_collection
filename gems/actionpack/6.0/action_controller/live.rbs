@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Live
+  def process: (untyped name) -> untyped
+  def response_body=: (untyped body) -> untyped
+  def new_controller_thread: () { () -> untyped } -> untyped
+  private def log_error: (untyped exception) -> (nil | untyped)
+  extend ActiveSupport::Concern
+end

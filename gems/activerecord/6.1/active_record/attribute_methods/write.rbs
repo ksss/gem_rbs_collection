@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Write
+  # Updates the attribute identified by <tt>attr_name</tt> with the
+  # specified +value+. Empty strings for Integer and Float columns are
+  # turned into +nil+.
+  def write_attribute: (untyped attr_name, untyped value) -> untyped
+  # This method exists to avoid the expensive primary_key check internally, without
+  # breaking compatibility with the write_attribute API
+  def _write_attribute: (untyped attr_name, untyped value) -> untyped
+  alias attribute= _write_attribute
+  private def write_attribute_without_type_cast: (untyped attr_name, untyped value) -> untyped
+  extend ActiveSupport::Concern
+end

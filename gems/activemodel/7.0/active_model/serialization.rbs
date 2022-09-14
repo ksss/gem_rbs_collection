@@ -1,0 +1,89 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Serialization
+  # Returns a serialized hash of your object.
+  #
+  #   class Person
+  #     include ActiveModel::Serialization
+  #
+  #     attr_accessor :name, :age
+  #
+  #     def attributes
+  #       {'name' => nil, 'age' => nil}
+  #     end
+  #
+  #     def capitalized_name
+  #       name.capitalize
+  #     end
+  #   end
+  #
+  #   person = Person.new
+  #   person.name = 'bob'
+  #   person.age  = 22
+  #   person.serializable_hash                # => {"name"=>"bob", "age"=>22}
+  #   person.serializable_hash(only: :name)   # => {"name"=>"bob"}
+  #   person.serializable_hash(except: :name) # => {"age"=>22}
+  #   person.serializable_hash(methods: :capitalized_name)
+  #   # => {"name"=>"bob", "age"=>22, "capitalized_name"=>"Bob"}
+  #
+  # Example with <tt>:include</tt> option
+  #
+  #   class User
+  #     include ActiveModel::Serializers::JSON
+  #     attr_accessor :name, :notes # Emulate has_many :notes
+  #     def attributes
+  #       {'name' => nil}
+  #     end
+  #   end
+  #
+  #   class Note
+  #     include ActiveModel::Serializers::JSON
+  #     attr_accessor :title, :text
+  #     def attributes
+  #       {'title' => nil, 'text' => nil}
+  #     end
+  #   end
+  #
+  #   note = Note.new
+  #   note.title = 'Battle of Austerlitz'
+  #   note.text = 'Some text here'
+  #
+  #   user = User.new
+  #   user.name = 'Napoleon'
+  #   user.notes = [note]
+  #
+  #   user.serializable_hash
+  #   # => {"name" => "Napoleon"}
+  #   user.serializable_hash(include: { notes: { only: 'title' }})
+  #   # => {"name" => "Napoleon", "notes" => [{"title"=>"Battle of Austerlitz"}]}
+  def serializable_hash: (?untyped? options) -> untyped
+  private def attribute_names_for_serialization: () -> untyped
+  # Hook method defining how an attribute value should be retrieved for
+  # serialization. By default this is assumed to be an instance named after
+  # the attribute. Override this method in subclasses should you need to
+  # retrieve the value for a given attribute differently:
+  #
+  #   class MyClass
+  #     include ActiveModel::Serialization
+  #
+  #     def initialize(data = {})
+  #       @data = data
+  #     end
+  #
+  #     def read_attribute_for_serialization(key)
+  #       @data[key]
+  #     end
+  #   end
+  alias read_attribute_for_serialization send
+  private def serializable_attributes: (untyped attribute_names) -> untyped
+  # Add associations specified via the <tt>:include</tt> option.
+  #
+  # Expects a block that takes as arguments:
+  #   +association+ - name of the association
+  #   +records+     - the association record(s) to be serialized
+  #   +opts+        - options for the association records
+  private def serializable_add_includes: (?::Hash[untyped, untyped] options) { (untyped, untyped, untyped) -> untyped } -> (nil | untyped)
+  # https://github.com/ruby/rbs/issues/1008
+  def send: (Object::name name, *untyped args) ?{ (*untyped) -> untyped } -> untyped
+end

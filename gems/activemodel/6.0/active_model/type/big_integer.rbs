@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::BigInteger < ::ActiveModel::Type::Integer
+  private def max_value: () -> untyped
+end

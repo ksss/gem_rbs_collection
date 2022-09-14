@@ -1,0 +1,92 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Enumerable[unchecked out Elem] : ::_Each[Elem]
+  # We can't use Refinements here because Refinements with Module which will be prepended
+  # doesn't work well https://bugs.ruby-lang.org/issues/13446
+  alias _original_sum_with_required_identity sum
+  # Convert an enumerable to a hash, using the block result as the key and the
+  # element as the value.
+  #
+  #   people.index_by(&:login)
+  #   # => { "nextangle" => <Person ...>, "chade-" => <Person ...>, ...}
+  #
+  #   people.index_by { |person| "#{person.first_name} #{person.last_name}" }
+  #   # => { "Chade- Fowlersburg-e" => <Person ...>, "David Heinemeier Hansson" => <Person ...>, ...}
+  def index_by: () { (untyped) -> untyped } -> untyped
+  # Convert an enumerable to a hash, using the element as the key and the block
+  # result as the value.
+  #
+  #   post = Post.new(title: "hey there", body: "what's up?")
+  #
+  #   %i( title body ).index_with { |attr_name| post.public_send(attr_name) }
+  #   # => { title: "hey there", body: "what's up?" }
+  #
+  # If an argument is passed instead of a block, it will be used as the value
+  # for all elements:
+  #
+  #   %i( created_at updated_at ).index_with(Time.now)
+  #   # => { created_at: 2020-03-09 22:31:47, updated_at: 2020-03-09 22:31:47 }
+  def index_with: (?untyped default) { (untyped) -> untyped } -> untyped
+  # Returns +true+ if the enumerable has more than 1 element. Functionally
+  # equivalent to <tt>enum.to_a.size > 1</tt>. Can be called with a block too,
+  # much like any?, so <tt>people.many? { |p| p.age > 26 }</tt> returns +true+
+  # if more than one person is over 26.
+  def many?: () { (untyped) -> untyped } -> untyped
+  # Returns a new array that includes the passed elements.
+  #
+  #   [ 1, 2, 3 ].including(4, 5)
+  #   # => [ 1, 2, 3, 4, 5 ]
+  #
+  #   ["David", "Rafael"].including %w[ Aaron Todd ]
+  #   # => ["David", "Rafael", "Aaron", "Todd"]
+  def including: (*untyped elements) -> untyped
+  # The negative of the <tt>Enumerable#include?</tt>. Returns +true+ if the
+  # collection does not include the object.
+  def exclude?: (untyped object) -> untyped
+  # Returns a copy of the enumerable excluding the specified elements.
+  #
+  #   ["David", "Rafael", "Aaron", "Todd"].excluding "Aaron", "Todd"
+  #   # => ["David", "Rafael"]
+  #
+  #   ["David", "Rafael", "Aaron", "Todd"].excluding %w[ Aaron Todd ]
+  #   # => ["David", "Rafael"]
+  #
+  #   {foo: 1, bar: 2, baz: 3}.excluding :bar
+  #   # => {foo: 1, baz: 3}
+  def excluding: (*untyped elements) -> untyped
+  # Alias for #excluding.
+  def without: (*untyped elements) -> untyped
+  # Extract the given key from each element in the enumerable.
+  #
+  #   [{ name: "David" }, { name: "Rafael" }, { name: "Aaron" }].pluck(:name)
+  #   # => ["David", "Rafael", "Aaron"]
+  #
+  #   [{ id: 1, name: "David" }, { id: 2, name: "Rafael" }].pluck(:id, :name)
+  #   # => [[1, "David"], [2, "Rafael"]]
+  def pluck: (*untyped keys) -> untyped
+  # Extract the given key from the first element in the enumerable.
+  #
+  #   [{ name: "David" }, { name: "Rafael" }, { name: "Aaron" }].pick(:name)
+  #   # => "David"
+  #
+  #   [{ id: 1, name: "David" }, { id: 2, name: "Rafael" }].pick(:id, :name)
+  #   # => [1, "David"]
+  def pick: (*untyped keys) -> (nil | untyped)
+  # Returns a new +Array+ without the blank items.
+  # Uses Object#blank? for determining if an item is blank.
+  #
+  #    [1, "", nil, 2, " ", [], {}, false, true].compact_blank
+  #    # =>  [1, 2, true]
+  #
+  #    Set.new([nil, "", 1, 2])
+  #    # => [2, 1] (or [1, 2])
+  #
+  # When called on a +Hash+, returns a new +Hash+ without the blank values.
+  #
+  #    { a: "", b: 1, c: nil, d: [], e: false, f: true }.compact_blank
+  #    #=> { b: 1, f: true }
+  def compact_blank: () -> untyped
+  def as_json: (?untyped? options) -> untyped
+  prepend ActiveSupport::ToJsonWithActiveSupportEncoder
+end

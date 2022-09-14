@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::BaseController < ::ActionController::Base
+  private def stream: (untyped blob) -> untyped
+  include ActionDispatch::Routing::UrlFor
+  include ActiveStorage::SetCurrent
+end

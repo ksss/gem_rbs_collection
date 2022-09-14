@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::LazyAttributeSet < ::ActiveModel::AttributeSet
+  def initialize: (untyped values, untyped types, untyped additional_types, untyped default_attributes, ?::Hash[untyped, untyped] attributes) -> void
+  def key?: (untyped name) -> untyped
+  def keys: () -> untyped
+  def fetch_value: (untyped name) ?{ () -> untyped } -> untyped
+  def attributes: () -> untyped
+  private def default_attribute: (untyped name, ?bool value_present, ?untyped value) -> untyped
+  attr_reader values: untyped
+  attr_reader types: untyped
+  attr_reader additional_types: untyped
+  attr_reader default_attributes: untyped
+end

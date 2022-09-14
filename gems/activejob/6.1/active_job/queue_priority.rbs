@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::QueuePriority
+  # Returns the priority that the job will be created with
+  def priority: () -> untyped
+  extend ActiveSupport::Concern
+end

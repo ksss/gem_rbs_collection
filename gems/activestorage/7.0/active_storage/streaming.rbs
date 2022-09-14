@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveStorage::Streaming
+  # Stream the blob in byte ranges specified through the header
+  private def send_blob_byte_range_data: (untyped blob, untyped range_header, ?disposition: untyped?) -> untyped
+  # Stream the blob from storage directly to the response. The disposition can be controlled by setting +disposition+.
+  # The content type and filename is set directly from the +blob+.
+  private def send_blob_stream: (untyped blob, ?disposition: untyped?) -> untyped
+  include ActionController::DataStreaming
+  include ActionController::Rendering
+  include ActionController::Live
+  extend ActionController::Rendering::ClassMethods
+  extend ActionController::Live::ClassMethods
+  DEFAULT_BLOB_STREAMING_DISPOSITION: String
+end

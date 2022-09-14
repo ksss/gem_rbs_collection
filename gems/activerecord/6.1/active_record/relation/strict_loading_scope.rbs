@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::StrictLoadingScope
+  def self.empty_scope?: () -> true
+  def self.strict_loading_value: () -> true
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::NamedWindow < ::Arel::Nodes::Window
+  def initialize: (untyped name) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  attr_accessor name: untyped
+end

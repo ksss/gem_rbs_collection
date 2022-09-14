@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Builder::BelongsTo < ::ActiveRecord::Associations::Builder::SingularAssociation
+  def self.macro: () -> :belongs_to
+  def self.valid_options: (untyped options) -> untyped
+  def self.valid_dependent_options: () -> ::Array[:destroy | :delete]
+  def self.define_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.add_counter_cache_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.touch_record: (untyped o, untyped changes, untyped foreign_key, untyped name, untyped touch, untyped touch_method) -> untyped
+  def self.add_touch_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.add_default_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.add_destroy_callbacks: (untyped model, untyped reflection) -> untyped
+  def self.define_validations: (untyped model, untyped reflection) -> untyped
+end

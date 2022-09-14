@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module DRb
+  module DRbUndumped
+  end
+end
+module Concurrent
+  class Map
+  end
+end

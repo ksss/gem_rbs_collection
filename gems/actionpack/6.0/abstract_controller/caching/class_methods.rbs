@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module AbstractController::Caching::ClassMethods
+  def view_cache_dependency: () ?{ () -> untyped } -> untyped
+end

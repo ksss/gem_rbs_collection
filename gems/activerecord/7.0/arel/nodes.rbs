@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::Nodes
+  def self.build_quoted: (untyped other, ?untyped? attribute) -> untyped
+end

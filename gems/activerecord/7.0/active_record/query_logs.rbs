@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::QueryLogs
+  def self.call: (untyped sql) -> untyped
+  def self.clear_cache: () -> untyped
+  # Returns an SQL comment +String+ containing the query log tags.
+  # Sets and returns a cached comment if <tt>cache_query_log_tags</tt> is +true+.
+  private def self.comment: () -> untyped
+  private def self.uncached_comment: () -> untyped
+  private def self.escape_sql_comment: (untyped content) -> untyped
+  private def self.tag_content: () -> untyped
+  def self.taggings: () -> untyped
+  def self.tags: () -> untyped
+  def self.prepend_comment: () -> untyped
+  def self.cache_query_log_tags: () -> untyped
+  def self.taggings=: (untyped val) -> untyped
+  def self.tags=: (untyped val) -> untyped
+  def self.prepend_comment=: (untyped val) -> untyped
+  def self.cache_query_log_tags=: (untyped val) -> untyped
+end

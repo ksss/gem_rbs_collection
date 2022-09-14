@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def self.runtime=: (untyped value) -> untyped
+  def self.runtime: () -> untyped
+  def self.reset_runtime: () -> untyped
+  def sql: (untyped event) -> (nil | untyped)
+  private def type_casted_binds: (untyped casted_binds) -> untyped
+  private def render_bind: (untyped attr, untyped value) -> ::Array[untyped]
+  private def colorize_payload_name: (untyped name, untyped payload_name) -> untyped
+  private def sql_color: (untyped sql) -> untyped
+  private def logger: () -> untyped
+  private def debug: (?untyped? progname) ?{ () -> untyped } -> (nil | untyped)
+  private def log_query_source: () -> untyped
+  private def extract_query_source_location: (untyped locations) -> untyped
+  def self.backtrace_cleaner: () -> untyped
+  def self.backtrace_cleaner?: () -> bool
+  def self.backtrace_cleaner=: (untyped value) -> untyped
+  def backtrace_cleaner: () -> untyped
+  def backtrace_cleaner?: () -> bool
+  def backtrace_cleaner=: (untyped value) -> untyped
+  IGNORE_PAYLOAD_NAMES: Array[String]
+end

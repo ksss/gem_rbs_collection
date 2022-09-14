@@ -1,0 +1,64 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Digest
+  # Returns false on a valid response, true otherwise
+  def authenticate: (untyped request, untyped realm) ?{ () -> untyped } -> untyped
+  # Returns false unless the request credentials response value matches the expected value.
+  # First try the password as a ha1 digest password. If this fails, then try it as a plain
+  # text password.
+  def validate_digest_response: (untyped request, untyped realm) ?{ () -> untyped } -> (false | untyped)
+  # Returns the expected response for a request of +http_method+ to +uri+ with the decoded +credentials+ and the expected +password+
+  # Optional parameter +password_is_ha1+ is set to +true+ by default, since best practice is to store ha1 digest instead
+  # of a plain-text password.
+  def expected_response: (untyped http_method, untyped uri, untyped credentials, untyped password, ?bool password_is_ha1) -> untyped
+  def ha1: (untyped credentials, untyped password) -> untyped
+  def encode_credentials: (untyped http_method, untyped credentials, untyped password, untyped password_is_ha1) -> untyped
+  def decode_credentials_header: (untyped request) -> untyped
+  def decode_credentials: (untyped header) -> untyped
+  def authentication_header: (untyped controller, untyped realm) -> untyped
+  def authentication_request: (untyped controller, untyped realm, ?untyped? message) -> untyped
+  def secret_token: (untyped request) -> untyped
+  # Uses an MD5 digest based on time to generate a value to be used only once.
+  #
+  # A server-specified data string which should be uniquely generated each time a 401 response is made.
+  # It is recommended that this string be base64 or hexadecimal data.
+  # Specifically, since the string is passed in the header lines as a quoted string, the double-quote character is not allowed.
+  #
+  # The contents of the nonce are implementation dependent.
+  # The quality of the implementation depends on a good choice.
+  # A nonce might, for example, be constructed as the base 64 encoding of
+  #
+  #   time-stamp H(time-stamp ":" ETag ":" private-key)
+  #
+  # where time-stamp is a server-generated time or other non-repeating value,
+  # ETag is the value of the HTTP ETag header associated with the requested entity,
+  # and private-key is data known only to the server.
+  # With a nonce of this form a server would recalculate the hash portion after receiving the client authentication header and
+  # reject the request if it did not match the nonce from that header or
+  # if the time-stamp value is not recent enough. In this way the server can limit the time of the nonce's validity.
+  # The inclusion of the ETag prevents a replay request for an updated version of the resource.
+  # (Note: including the IP address of the client in the nonce would appear to offer the server the ability
+  # to limit the reuse of the nonce to the same client that originally got it.
+  # However, that would break proxy farms, where requests from a single user often go through different proxies in the farm.
+  # Also, IP address spoofing is not that hard.)
+  #
+  # An implementation might choose not to accept a previously used nonce or a previously used digest, in order to
+  # protect against a replay attack. Or, an implementation might choose to use one-time nonces or digests for
+  # POST, PUT, or PATCH requests and a time-stamp for GET requests. For more details on the issues involved see Section 4
+  # of this document.
+  #
+  # The nonce is opaque to the client. Composed of Time, and hash of Time with secret
+  # key from the Rails session secret generated upon creation of project. Ensures
+  # the time cannot be modified by client.
+  def nonce: (untyped secret_key, ?untyped time) -> untyped
+  # Might want a shorter timeout depending on whether the request
+  # is a PATCH, PUT, or POST, and if the client is a browser or web service.
+  # Can be much shorter if the Stale directive is implemented. This would
+  # allow a user to use new nonce without prompting the user again for their
+  # username and password.
+  def validate_nonce: (untyped secret_key, untyped request, untyped value, ?untyped seconds_to_timeout) -> (false | untyped)
+  # Opaque based on digest of secret key
+  def opaque: (untyped secret_key) -> untyped
+  extend ActionController::HttpAuthentication::Digest
+end

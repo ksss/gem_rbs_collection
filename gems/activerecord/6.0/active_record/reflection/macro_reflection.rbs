@@ -1,0 +1,34 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::MacroReflection < ::ActiveRecord::Reflection::AbstractReflection
+  def initialize: (untyped name, untyped scope, untyped options, untyped active_record) -> void
+  def autosave=: (untyped autosave) -> untyped
+  # Returns the class for the macro.
+  #
+  # <tt>composed_of :balance, class_name: 'Money'</tt> returns the Money class
+  # <tt>has_many :clients</tt> returns the Client class
+  #
+  #   class Company < ActiveRecord::Base
+  #     has_many :clients
+  #   end
+  #
+  #   Company.reflect_on_association(:clients).klass
+  #   # => Client
+  #
+  # <b>Note:</b> Do not call +klass.new+ or +klass.create+ to instantiate
+  # a new association object. Use +build_association+ or +create_association+
+  # instead. This allows plugins to hook into association object creation.
+  def klass: () -> untyped
+  def compute_class: (untyped name) -> untyped
+  # Returns +true+ if +self+ and +other_aggregation+ have the same +name+ attribute, +active_record+ attribute,
+  # and +other_aggregation+ has an options hash assigned to it.
+  def ==: (untyped other_aggregation) -> untyped
+  def scope_for: (untyped relation, ?untyped? owner) -> untyped
+  private def derive_class_name: () -> untyped
+  attr_reader name: untyped
+  attr_reader scope: untyped
+  attr_reader options: untyped
+  attr_reader active_record: untyped
+  attr_reader plural_name: untyped
+end

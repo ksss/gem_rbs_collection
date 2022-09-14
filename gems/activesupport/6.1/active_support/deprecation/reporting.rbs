@@ -1,0 +1,69 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Deprecation::Reporting
+  # Outputs a deprecation warning to the output configured by
+  # <tt>ActiveSupport::Deprecation.behavior</tt>.
+  #
+  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   # => "DEPRECATION WARNING: something broke! (called from your_code.rb:1)"
+  def warn: (?untyped? message, ?untyped? callstack) -> (nil | untyped)
+  # Silence deprecation warnings within the block.
+  #
+  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   # => "DEPRECATION WARNING: something broke! (called from your_code.rb:1)"
+  #
+  #   ActiveSupport::Deprecation.silence do
+  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   end
+  #   # => nil
+  def silence: () ?{ () -> untyped } -> untyped
+  # Allow previously disallowed deprecation warnings within the block.
+  # <tt>allowed_warnings</tt> can be an array containing strings, symbols, or regular
+  # expressions. (Symbols are treated as strings). These are compared against
+  # the text of deprecation warning messages generated within the block.
+  # Matching warnings will be exempt from the rules set by
+  # +ActiveSupport::Deprecation.disallowed_warnings+
+  #
+  # The optional <tt>if:</tt> argument accepts a truthy/falsy value or an object that
+  # responds to <tt>.call</tt>. If truthy, then matching warnings will be allowed.
+  # If falsey then the method yields to the block without allowing the warning.
+  #
+  #   ActiveSupport::Deprecation.disallowed_behavior = :raise
+  #   ActiveSupport::Deprecation.disallowed_warnings = [
+  #     "something broke"
+  #   ]
+  #
+  #   ActiveSupport::Deprecation.warn('something broke!')
+  #   # => ActiveSupport::DeprecationException
+  #
+  #   ActiveSupport::Deprecation.allow ['something broke'] do
+  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   end
+  #   # => nil
+  #
+  #   ActiveSupport::Deprecation.allow ['something broke'], if: Rails.env.production? do
+  #     ActiveSupport::Deprecation.warn('something broke!')
+  #   end
+  #   # => ActiveSupport::DeprecationException for dev/test, nil for production
+  def allow: (?::Symbol allowed_warnings, ?if: bool) { () -> untyped } -> untyped
+  def silenced: () -> untyped
+  def deprecation_warning: (untyped deprecated_method_name, ?untyped? message, ?untyped? caller_backtrace) -> untyped
+  # Outputs a deprecation warning message
+  #
+  #   deprecated_method_warning(:method_name)
+  #   # => "method_name is deprecated and will be removed from Rails #{deprecation_horizon}"
+  #   deprecated_method_warning(:method_name, :another_method)
+  #   # => "method_name is deprecated and will be removed from Rails #{deprecation_horizon} (use another_method instead)"
+  #   deprecated_method_warning(:method_name, "Optional message")
+  #   # => "method_name is deprecated and will be removed from Rails #{deprecation_horizon} (Optional message)"
+  private def deprecated_method_warning: (untyped method_name, ?untyped? message) -> untyped
+  private def deprecation_message: (untyped callstack, ?untyped? message) -> ::String
+  private def deprecation_caller_message: (untyped callstack) -> untyped
+  private def extract_callstack: (untyped callstack) -> (untyped | ::Array[untyped])
+  private def _extract_callstack: (untyped callstack) -> untyped
+  private def ignored_callstack: (untyped path) -> untyped
+  attr_accessor gem_name: untyped
+  attr_writer silenced: untyped
+  RAILS_GEM_ROOT: String
+end

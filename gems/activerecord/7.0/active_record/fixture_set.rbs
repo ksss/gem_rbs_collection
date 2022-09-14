@@ -1,0 +1,49 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet
+  def self.default_fixture_model_name: (untyped fixture_set_name, ?untyped config) -> untyped
+  def self.default_fixture_table_name: (untyped fixture_set_name, ?untyped config) -> untyped
+  def self.reset_cache: () -> untyped
+  def self.cache_for_connection: (untyped connection) -> untyped
+  def self.fixture_is_cached?: (untyped connection, untyped table_name) -> untyped
+  def self.cached_fixtures: (untyped connection, ?untyped? keys_to_fetch) -> untyped
+  def self.cache_fixtures: (untyped connection, untyped fixtures_map) -> untyped
+  def self.instantiate_fixtures: (untyped object, untyped fixture_set, ?bool load_instances) -> (nil | untyped)
+  def self.instantiate_all_loaded_fixtures: (untyped object, ?bool load_instances) -> untyped
+  def self.create_fixtures: (untyped fixtures_directory, untyped fixture_set_names, ?::Hash[untyped, untyped] class_names, ?untyped config) ?{ () -> untyped } -> untyped
+  # Returns a consistent, platform-independent identifier for +label+.
+  # Integer identifiers are values less than 2^30. UUIDs are RFC 4122 version 5 SHA-1 hashes.
+  def self.identify: (untyped label, ?::Symbol column_type) -> untyped
+  # Superclass for the evaluation contexts used by ERB fixtures.
+  def self.context_class: () -> untyped
+  private def self.read_and_insert: (untyped fixtures_directory, untyped fixture_files, untyped class_names, untyped connection) -> untyped
+  private def self.insert: (untyped fixture_sets, untyped connection) -> untyped
+  private def self.update_all_loaded_fixtures: (untyped fixtures_map) -> untyped
+  def initialize: (untyped _, untyped name, untyped class_name, untyped path, ?untyped config) -> void
+  def []: (untyped x) -> untyped
+  def []=: (untyped k, untyped v) -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  def size: () -> untyped
+  # Returns a hash of rows to be inserted. The key is the table, the value is
+  # a list of rows to insert to that table.
+  def table_rows: () -> untyped
+  private def model_class=: (untyped class_name) -> (untyped | untyped | nil)
+  private def ignored_fixtures=: (untyped base) -> untyped
+  # Loads the fixtures from the YAML file at +path+.
+  # If the file sets the +model_class+ and current instance value is not set,
+  # it uses the file value.
+  private def read_fixture_files: (untyped path) -> untyped
+  private def yaml_file_path: (untyped path) -> ::String
+  attr_reader table_name: untyped
+  attr_reader name: untyped
+  attr_reader fixtures: untyped
+  attr_reader model_class: untyped
+  attr_reader ignored_fixtures: untyped
+  attr_reader config: untyped
+  def self.all_loaded_fixtures: () -> untyped
+  def all_loaded_fixtures: () -> untyped
+  def self.all_loaded_fixtures=: (untyped val) -> untyped
+  def all_loaded_fixtures=: (untyped val) -> untyped
+  MAX_ID: Integer
+end

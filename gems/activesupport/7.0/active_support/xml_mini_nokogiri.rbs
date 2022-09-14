@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini_Nokogiri
+  # Parse an XML Document string or IO into a simple hash using libxml / nokogiri.
+  # data::
+  #   XML Document string or IO to parse
+  def parse: (untyped data) -> untyped
+end

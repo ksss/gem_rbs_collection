@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::MiddlewareStack < ::ActionDispatch::MiddlewareStack
+  def build: (untyped action, ?untyped? app) ?{ () -> untyped } -> untyped
+  private def build_middleware: (untyped klass, untyped args, untyped block) -> untyped
+  EXCLUDE: Proc
+  INCLUDE: Proc
+  NULL: Proc
+end

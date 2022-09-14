@@ -1,0 +1,125 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::RedisCacheStore < ::ActiveSupport::Cache::Store
+  # Advertise cache versioning support.
+  def self.supports_cache_versioning?: () -> true
+  # Factory method to create a new Redis instance.
+  #
+  # Handles four options: :redis block, :redis instance, single :url
+  # string, and multiple :url strings.
+  #
+  #   Option  Class       Result
+  #   :redis  Proc    ->  options[:redis].call
+  #   :redis  Object  ->  options[:redis]
+  #   :url    String  ->  Redis.new(url: …)
+  #   :url    Array   ->  Redis::Distributed.new([{ url: … }, { url: … }, …])
+  #
+  def self.build_redis: (?redis: untyped?, ?url: untyped?, **untyped redis_options) -> untyped
+  private def self.build_redis_distributed_client: (urls: untyped, **untyped redis_options) -> untyped
+  private def self.build_redis_client: (url: untyped, **untyped redis_options) -> untyped
+  # Creates a new Redis cache store.
+  #
+  # Handles four options: :redis block, :redis instance, single :url
+  # string, and multiple :url strings.
+  #
+  #   Option  Class       Result
+  #   :redis  Proc    ->  options[:redis].call
+  #   :redis  Object  ->  options[:redis]
+  #   :url    String  ->  Redis.new(url: …)
+  #   :url    Array   ->  Redis::Distributed.new([{ url: … }, { url: … }, …])
+  #
+  # No namespace is set by default. Provide one if the Redis cache
+  # server is shared with other apps: <tt>namespace: 'myapp-cache'</tt>.
+  #
+  # Compression is enabled by default with a 1kB threshold, so cached
+  # values larger than 1kB are automatically compressed. Disable by
+  # passing <tt>compress: false</tt> or change the threshold by passing
+  # <tt>compress_threshold: 4.kilobytes</tt>.
+  #
+  # No expiry is set on cache entries by default. Redis is expected to
+  # be configured with an eviction policy that automatically deletes
+  # least-recently or -frequently used keys when it reaches max memory.
+  # See https://redis.io/topics/lru-cache for cache server setup.
+  #
+  # Race condition TTL is not set by default. This can be used to avoid
+  # "thundering herd" cache writes when hot cache entries are expired.
+  # See <tt>ActiveSupport::Cache::Store#fetch</tt> for more.
+  def initialize: (?namespace: untyped?, ?compress: bool, ?compress_threshold: untyped, ?expires_in: untyped?, ?race_condition_ttl: untyped?, ?error_handler: untyped, **untyped redis_options) -> void
+  def redis: () -> untyped
+  def inspect: () -> ::String
+  # Cache Store API implementation.
+  #
+  # Read multiple values at once. Returns a hash of requested keys ->
+  # fetched values.
+  def read_multi: (*untyped names) -> untyped
+  # Cache Store API implementation.
+  #
+  # Supports Redis KEYS glob patterns:
+  #
+  #   h?llo matches hello, hallo and hxllo
+  #   h*llo matches hllo and heeeello
+  #   h[ae]llo matches hello and hallo, but not hillo
+  #   h[^e]llo matches hallo, hbllo, ... but not hello
+  #   h[a-b]llo matches hallo and hbllo
+  #
+  # Use \ to escape special characters if you want to match them verbatim.
+  #
+  # See https://redis.io/commands/KEYS for more.
+  #
+  # Failsafe: Raises errors.
+  def delete_matched: (untyped matcher, ?untyped? options) -> untyped
+  # Cache Store API implementation.
+  #
+  # Increment a cached value. This method uses the Redis incr atomic
+  # operator and can only be used on values written with the :raw option.
+  # Calling it on a value not stored with :raw will initialize that value
+  # to zero.
+  #
+  # Failsafe: Raises errors.
+  def increment: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Cache Store API implementation.
+  #
+  # Decrement a cached value. This method uses the Redis decr atomic
+  # operator and can only be used on values written with the :raw option.
+  # Calling it on a value not stored with :raw will initialize that value
+  # to zero.
+  #
+  # Failsafe: Raises errors.
+  def decrement: (untyped name, ?::Integer amount, ?untyped? options) -> untyped
+  # Cache Store API implementation.
+  #
+  # Removes expired entries. Handled natively by Redis least-recently-/
+  # least-frequently-used expiry, so manual cleanup is not supported.
+  def cleanup: (?untyped? options) -> untyped
+  # Clear the entire cache on all Redis servers. Safe to use on
+  # shared servers if the cache is namespaced.
+  #
+  # Failsafe: Raises errors.
+  def clear: (?untyped? options) -> untyped
+  def mget_capable?: () -> untyped
+  def mset_capable?: () -> untyped
+  private def set_redis_capabilities: () -> untyped
+  # Store provider interface:
+  # Read an entry from the cache.
+  private def read_entry: (untyped key, **untyped options) -> untyped
+  private def read_multi_entries: (untyped names, **untyped options) -> untyped
+  private def read_multi_mget: (*untyped names) -> (::Hash[untyped, untyped] | untyped)
+  # Write an entry to the cache.
+  #
+  # Requires Redis 2.6.12+ for extended SET options.
+  private def write_entry: (untyped key, untyped entry, ?unless_exist: bool, ?raw: bool, ?expires_in: untyped?, ?race_condition_ttl: untyped?, **untyped options) -> untyped
+  private def write_key_expiry: (untyped client, untyped key, untyped options) -> (untyped | nil)
+  # Delete an entry from the cache.
+  private def delete_entry: (untyped key, untyped options) -> untyped
+  # Nonstandard store provider API to write multiple values at once.
+  private def write_multi_entries: (untyped entries, ?expires_in: untyped?, **untyped options) -> (untyped | nil)
+  # Truncate keys that exceed 1kB.
+  private def normalize_key: (untyped key, untyped options) -> untyped
+  private def truncate_key: (untyped key) -> (::String | untyped)
+  private def deserialize_entry: (untyped serialized_entry, raw: untyped) -> (untyped | nil)
+  private def serialize_entry: (untyped entry, ?raw: bool) -> untyped
+  private def serialize_entries: (untyped entries, ?raw: bool) -> untyped
+  private def failsafe: (untyped method, ?returning: untyped?) { () -> untyped } -> untyped
+  private def handle_exception: (exception: untyped, method: untyped, returning: untyped) -> untyped
+end

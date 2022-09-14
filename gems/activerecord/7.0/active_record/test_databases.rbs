@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::TestDatabases
+  def self.create_and_load_schema: (untyped i, env_name: untyped) -> untyped
+end

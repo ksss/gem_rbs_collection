@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::Preloader::Association::LoaderRecords
+  def initialize: (untyped loaders, untyped loader_query) -> void
+  def records: () -> untyped
+  private def populate_keys_to_load_and_already_loaded_records: () -> untyped
+  private def load_records: () -> untyped
+  private def already_loaded_records: () -> untyped
+  attr_reader loader_query: untyped
+  attr_reader loaders: untyped
+  attr_reader keys_to_load: untyped
+  attr_reader already_loaded_records_by_key: untyped
+end

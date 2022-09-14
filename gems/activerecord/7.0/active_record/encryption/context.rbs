@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Context
+  def initialize: () -> void
+  alias frozen_encryption? frozen_encryption
+  private def set_defaults: () -> untyped
+  attr_accessor key_provider: untyped
+  attr_accessor key_generator: untyped
+  attr_accessor cipher: untyped
+  attr_accessor message_serializer: untyped
+  attr_accessor encryptor: untyped
+  attr_accessor frozen_encryption: untyped
+  PROPERTIES: Array[Symbol]
+end

@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Subscriber
+  # Attach the subscriber to a namespace.
+  def self.attach_to: (untyped namespace, ?untyped subscriber, ?untyped notifier) -> untyped
+  # Detach the subscriber from a namespace.
+  def self.detach_from: (untyped namespace, ?untyped notifier) -> (nil | untyped)
+  # Adds event subscribers for all new methods added to the class.
+  def self.method_added: (untyped event) -> (untyped | nil)
+  def self.subscribers: () -> untyped
+  private def self.add_event_subscriber: (untyped event) -> (nil | untyped)
+  private def self.remove_event_subscriber: (untyped event) -> (nil | untyped)
+  private def self.find_attached_subscriber: () -> untyped
+  private def self.invalid_event?: (untyped event) -> untyped
+  private def self.prepare_pattern: (untyped event) -> ::String
+  private def self.pattern_subscribed?: (untyped pattern) -> untyped
+  def initialize: () -> void
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def finish: (untyped name, untyped id, untyped payload) -> untyped
+  private def event_stack: () -> untyped
+  attr_reader self.subscriber: untyped
+  attr_reader self.notifier: untyped
+  attr_reader self.namespace: untyped
+  attr_reader patterns: untyped
+end

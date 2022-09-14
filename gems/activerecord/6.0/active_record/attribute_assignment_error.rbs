@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AttributeAssignmentError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? message, ?untyped? exception, ?untyped? attribute) -> void
+  attr_reader exception: untyped
+  attr_reader attribute: untyped
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Arel::TreeManager::StatementMethods
+  def take: (untyped limit) -> self
+  def offset: (untyped offset) -> self
+  def order: (*untyped expr) -> self
+  def key=: (untyped key) -> untyped
+  def key: () -> untyped
+  def wheres=: (untyped exprs) -> untyped
+  def where: (untyped expr) -> self
+end

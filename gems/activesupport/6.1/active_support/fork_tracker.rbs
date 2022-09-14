@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::ForkTracker
+  def self.check!: () -> (untyped | nil)
+  def self.hook!: () -> (untyped | nil)
+  def self.after_fork: () ?{ () -> untyped } -> untyped
+  def self.unregister: (untyped callback) -> untyped
+end

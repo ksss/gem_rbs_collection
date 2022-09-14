@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::FileSystemResolver < ::ActionView::Resolver
+  def initialize: (untyped path) -> void
+  def clear_cache: () -> untyped
+  def to_s: () -> untyped
+  alias to_path to_s
+  def eql?: (untyped resolver) -> untyped
+  alias == eql?
+  def all_template_paths: () -> untyped
+  private def _find_all: (untyped name, untyped prefix, untyped partial, untyped details, untyped key, untyped locals) -> untyped
+  private def source_for_template: (untyped template) -> untyped
+  private def build_unbound_template: (untyped template) -> untyped
+  private def unbound_templates_from_path: (untyped path) -> (::Array[untyped] | untyped)
+  private def filter_and_sort_by_details: (untyped templates, untyped requested_details) -> untyped
+  # Safe glob within @path
+  private def template_glob: (untyped glob) -> untyped
+  private def escape_entry: (untyped entry) -> untyped
+  attr_reader path: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Railties::Helpers
+  def inherited: (untyped klass) -> (nil | untyped)
+end

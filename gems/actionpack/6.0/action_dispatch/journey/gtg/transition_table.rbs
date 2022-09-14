@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::GTG::TransitionTable
+  def initialize: () -> void
+  def add_accepting: (untyped state) -> untyped
+  def accepting_states: () -> untyped
+  def accepting?: (untyped state) -> untyped
+  def add_memo: (untyped idx, untyped memo) -> untyped
+  def memo: (untyped idx) -> untyped
+  def eclosure: (untyped t) -> untyped
+  def move: (untyped t, untyped a) -> (::Array[untyped] | untyped)
+  def as_json: (?untyped? options) -> { regexp_states: untyped, string_states: untyped, accepting: untyped }
+  def to_svg: () -> untyped
+  def visualizer: (untyped paths, ?::String title) -> untyped
+  def []=: (untyped from, untyped to, untyped sym) -> untyped
+  def states: () -> untyped
+  def transitions: () -> untyped
+  private def states_hash_for: (untyped sym) -> untyped
+  include ActionDispatch::Journey::NFA::Dot
+  attr_reader memos: untyped
+end

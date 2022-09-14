@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Flash::RequestMethods
+  # Access the contents of the flash. Returns a ActionDispatch::Flash::FlashHash.
+  #
+  # See ActionDispatch::Flash for example usage.
+  def flash: () -> untyped
+  def flash=: (untyped flash) -> untyped
+  def flash_hash: () -> untyped
+  def commit_flash: () -> (nil | untyped)
+  def reset_session: () -> untyped
+end

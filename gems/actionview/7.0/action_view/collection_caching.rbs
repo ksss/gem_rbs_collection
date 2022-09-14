@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::CollectionCaching
+  private def will_cache?: (untyped options, untyped view) -> untyped
+  private def cache_collection_render: (untyped instrumentation_payload, untyped view, untyped template, untyped collection) { (untyped) -> untyped } -> untyped
+  private def callable_cache_key?: () -> untyped
+  private def collection_by_cache_keys: (untyped view, untyped template, untyped collection) -> untyped
+  private def expanded_cache_key: (untyped key, untyped view, untyped template, untyped digest_path) -> untyped
+  # `order_by` is an enumerable object containing keys of the cache,
+  # all keys are  passed in whether found already or not.
+  #
+  # `cached_partials` is a hash. If the value exists
+  # it represents the rendered partial from the cache
+  # otherwise `Hash#fetch` will take the value of its block.
+  #
+  # This method expects a block that will return the rendered
+  # partial. An example is to render all results
+  # for each element that was not found in the cache and store it as an array.
+  # Order it so that the first empty cache element in `cached_partials`
+  # corresponds to the first element in `rendered_partials`.
+  #
+  # If the partial is not already cached it will also be
+  # written back to the underlying cache store.
+  private def fetch_or_cache_partial: (untyped cached_partials, untyped template, order_by: untyped) { () -> untyped } -> untyped
+  extend ActiveSupport::Concern
+end

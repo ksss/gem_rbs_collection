@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::Serializers::DateSerializer < ::ActiveJob::Serializers::ObjectSerializer
+  def serialize: (untyped date) -> untyped
+  def deserialize: (untyped hash) -> untyped
+  private def klass: () -> untyped
+end

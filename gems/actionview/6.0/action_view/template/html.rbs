@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::HTML
+  def initialize: (untyped string, ?untyped? `type`) -> void
+  def identifier: () -> "html template"
+  alias inspect identifier
+  def to_str: () -> untyped
+  def render: (*untyped args) -> untyped
+  def format: () -> untyped
+  def formats: () -> untyped
+  attr_reader type: untyped
+end

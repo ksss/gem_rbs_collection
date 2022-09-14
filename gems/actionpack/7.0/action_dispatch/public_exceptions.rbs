@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::PublicExceptions
+  def initialize: (untyped public_path) -> void
+  def call: (untyped env) -> untyped
+  private def render: (untyped status, untyped content_type, untyped body) -> untyped
+  private def render_format: (untyped status, untyped content_type, untyped body) -> ::Array[untyped | ::Hash[::String, ::String | untyped] | ::Array[untyped]]
+  private def render_html: (untyped status) -> untyped
+  attr_accessor public_path: untyped
+end

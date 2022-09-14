@@ -1,0 +1,147 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::Assertions
+  # Asserts that an expression is not truthy. Passes if <tt>object</tt> is
+  # +nil+ or +false+. "Truthy" means "considered true in a conditional"
+  # like <tt>if foo</tt>.
+  #
+  #   assert_not nil    # => true
+  #   assert_not false  # => true
+  #   assert_not 'foo'  # => Expected "foo" to be nil or false
+  #
+  # An error message can be specified.
+  #
+  #   assert_not foo, 'foo should be false'
+  def assert_not: (untyped object, ?untyped? message) -> untyped
+  # Assertion that the block should not raise an exception.
+  #
+  # Passes if evaluated code in the yielded block raises no exception.
+  #
+  #   assert_nothing_raised do
+  #     perform_service(param: 'no_exception')
+  #   end
+  def assert_nothing_raised: () { () -> untyped } -> untyped
+  # Test numeric difference between the return value of an expression as a
+  # result of what is evaluated in the yielded block.
+  #
+  #   assert_difference 'Article.count' do
+  #     post :create, params: { article: {...} }
+  #   end
+  #
+  # An arbitrary expression is passed in and evaluated.
+  #
+  #   assert_difference 'Article.last.comments(:reload).size' do
+  #     post :create, params: { comment: {...} }
+  #   end
+  #
+  # An arbitrary positive or negative difference can be specified.
+  # The default is <tt>1</tt>.
+  #
+  #   assert_difference 'Article.count', -1 do
+  #     post :delete, params: { id: ... }
+  #   end
+  #
+  # An array of expressions can also be passed in and evaluated.
+  #
+  #   assert_difference [ 'Article.count', 'Post.count' ], 2 do
+  #     post :create, params: { article: {...} }
+  #   end
+  #
+  # A hash of expressions/numeric differences can also be passed in and evaluated.
+  #
+  #   assert_difference ->{ Article.count } => 1, ->{ Notification.count } => 2 do
+  #     post :create, params: { article: {...} }
+  #   end
+  #
+  # A lambda or a list of lambdas can be passed in and evaluated:
+  #
+  #   assert_difference ->{ Article.count }, 2 do
+  #     post :create, params: { article: {...} }
+  #   end
+  #
+  #   assert_difference [->{ Article.count }, ->{ Post.count }], 2 do
+  #     post :create, params: { article: {...} }
+  #   end
+  #
+  # An error message can be specified.
+  #
+  #   assert_difference 'Article.count', -1, 'An Article should be destroyed' do
+  #     post :delete, params: { id: ... }
+  #   end
+  def assert_difference: (untyped expression, *untyped args) ?{ () -> untyped } -> untyped
+  # Assertion that the numeric result of evaluating an expression is not
+  # changed before and after invoking the passed in block.
+  #
+  #   assert_no_difference 'Article.count' do
+  #     post :create, params: { article: invalid_attributes }
+  #   end
+  #
+  # A lambda can be passed in and evaluated.
+  #
+  #   assert_no_difference -> { Article.count } do
+  #     post :create, params: { article: invalid_attributes }
+  #   end
+  #
+  # An error message can be specified.
+  #
+  #   assert_no_difference 'Article.count', 'An Article should not be created' do
+  #     post :create, params: { article: invalid_attributes }
+  #   end
+  #
+  # An array of expressions can also be passed in and evaluated.
+  #
+  #   assert_no_difference [ 'Article.count', -> { Post.count } ] do
+  #     post :create, params: { article: invalid_attributes }
+  #   end
+  def assert_no_difference: (untyped expression, ?untyped? message) ?{ () -> untyped } -> untyped
+  # Assertion that the result of evaluating an expression is changed before
+  # and after invoking the passed in block.
+  #
+  #   assert_changes 'Status.all_good?' do
+  #     post :create, params: { status: { ok: false } }
+  #   end
+  #
+  # You can pass the block as a string to be evaluated in the context of
+  # the block. A lambda can be passed for the block as well.
+  #
+  #   assert_changes -> { Status.all_good? } do
+  #     post :create, params: { status: { ok: false } }
+  #   end
+  #
+  # The assertion is useful to test side effects. The passed block can be
+  # anything that can be converted to string with #to_s.
+  #
+  #   assert_changes :@object do
+  #     @object = 42
+  #   end
+  #
+  # The keyword arguments :from and :to can be given to specify the
+  # expected initial value and the expected value after the block was
+  # executed.
+  #
+  #   assert_changes :@object, from: nil, to: :foo do
+  #     @object = :foo
+  #   end
+  #
+  # An error message can be specified.
+  #
+  #   assert_changes -> { Status.all_good? }, 'Expected the status to be bad' do
+  #     post :create, params: { status: { incident: true } }
+  #   end
+  def assert_changes: (untyped expression, ?untyped? message, ?from: untyped, ?to: untyped) ?{ () -> untyped } -> untyped
+  # Assertion that the result of evaluating an expression is not changed before
+  # and after invoking the passed in block.
+  #
+  #   assert_no_changes 'Status.all_good?' do
+  #     post :create, params: { status: { ok: true } }
+  #   end
+  #
+  # An error message can be specified.
+  #
+  #   assert_no_changes -> { Status.all_good? }, 'Expected the status to be good' do
+  #     post :create, params: { status: { ok: false } }
+  #   end
+  def assert_no_changes: (untyped expression, ?untyped? message) ?{ () -> untyped } -> untyped
+  UNTRACKED: Object
+end

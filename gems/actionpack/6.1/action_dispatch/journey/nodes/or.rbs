@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Or < ::ActionDispatch::Journey::Nodes::Node
+  def initialize: (untyped children) -> void
+  def type: () -> :OR
+  attr_reader children: untyped
+end

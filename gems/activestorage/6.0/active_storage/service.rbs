@@ -1,0 +1,49 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Service
+  # Configure an Active Storage service by name from a set of configurations,
+  # typically loaded from a YAML file. The Active Storage engine uses this
+  # to set the global Active Storage service when the app boots.
+  def self.configure: (untyped service_name, untyped configurations) -> untyped
+  # Override in subclasses that stitch together multiple services and hence
+  # need to build additional services using the configurator.
+  #
+  # Passes the configurator and all of the service's config as keyword args.
+  #
+  # See MirrorService for an example.
+  def self.build: (configurator: untyped, ?service: untyped?, **untyped service_config) -> untyped
+  # Upload the +io+ to the +key+ specified. If a +checksum+ is provided, the service will
+  # ensure a match when the upload has completed or raise an ActiveStorage::IntegrityError.
+  def upload: (untyped key, untyped io, ?checksum: untyped?, **untyped options) -> untyped
+  # Update metadata for the file identified by +key+ in the service.
+  # Override in subclasses only if the service needs to store specific
+  # metadata that has to be updated upon identification.
+  def update_metadata: (untyped key, **untyped metadata) -> nil
+  # Return the content of the file at the +key+.
+  def download: (untyped key) -> untyped
+  # Return the partial content in the byte +range+ of the file at the +key+.
+  def download_chunk: (untyped key, untyped range) -> untyped
+  def open: (*untyped args, **untyped options) ?{ () -> untyped } -> untyped
+  # Delete the file at the +key+.
+  def delete: (untyped key) -> untyped
+  # Delete files at keys starting with the +prefix+.
+  def delete_prefixed: (untyped prefix) -> untyped
+  # Return +true+ if a file exists at the +key+.
+  def exist?: (untyped key) -> untyped
+  # Returns a signed, temporary URL for the file at the +key+. The URL will be valid for the amount
+  # of seconds specified in +expires_in+. You must also provide the +disposition+ (+:inline+ or +:attachment+),
+  # +filename+, and +content_type+ that you wish the file to be served with on request.
+  def url: (untyped key, expires_in: untyped, disposition: untyped, filename: untyped, content_type: untyped) -> untyped
+  # Returns a signed, temporary URL that a direct upload file can be PUT to on the +key+.
+  # The URL will be valid for the amount of seconds specified in +expires_in+.
+  # You must also provide the +content_type+, +content_length+, and +checksum+ of the file
+  # that will be uploaded. All these attributes will be validated by the service upon upload.
+  def url_for_direct_upload: (untyped key, expires_in: untyped, content_type: untyped, content_length: untyped, checksum: untyped) -> untyped
+  # Returns a Hash of headers for +url_for_direct_upload+ requests.
+  def headers_for_direct_upload: (untyped key, filename: untyped, content_type: untyped, content_length: untyped, checksum: untyped) -> ::Hash[untyped, untyped]
+  private def instrument: (untyped operation, ?::Hash[untyped, untyped] payload) ?{ () -> untyped } -> untyped
+  private def service_name: () -> untyped
+  private def content_disposition_with: (filename: untyped, ?type: ::String) -> untyped
+  extend ActiveSupport::Autoload
+end

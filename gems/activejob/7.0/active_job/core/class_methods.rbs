@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveJob::Core::ClassMethods
+  # Creates a new job instance from a hash created with +serialize+
+  def deserialize: (untyped job_data) -> untyped
+  # Creates a job preconfigured with the given options. You can call
+  # perform_later with the job arguments to enqueue the job with the
+  # preconfigured options
+  #
+  # ==== Options
+  # * <tt>:wait</tt> - Enqueues the job with the specified delay
+  # * <tt>:wait_until</tt> - Enqueues the job at the time specified
+  # * <tt>:queue</tt> - Enqueues the job on the specified queue
+  # * <tt>:priority</tt> - Enqueues the job with the specified priority
+  #
+  # ==== Examples
+  #
+  #    VideoJob.set(queue: :some_queue).perform_later(Video.last)
+  #    VideoJob.set(wait: 5.minutes).perform_later(Video.last)
+  #    VideoJob.set(wait_until: Time.now.tomorrow).perform_later(Video.last)
+  #    VideoJob.set(queue: :some_queue, wait: 5.minutes).perform_later(Video.last)
+  #    VideoJob.set(queue: :some_queue, wait_until: Time.now.tomorrow).perform_later(Video.last)
+  #    VideoJob.set(queue: :some_queue, wait: 5.minutes, priority: 10).perform_later(Video.last)
+  def set: (?::Hash[untyped, untyped] options) -> untyped
+end

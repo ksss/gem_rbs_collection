@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Callbacks::CallTemplate
+  # Filters support:
+  #
+  #   Symbols:: A method to call.
+  #   Procs::   A proc to call with the object.
+  #   Objects:: An object with a <tt>before_foo</tt> method on it to call.
+  #
+  # All of these objects are converted into a CallTemplate and handled
+  # the same after this point.
+  def self.build: (untyped filter, untyped callback) -> untyped
+end

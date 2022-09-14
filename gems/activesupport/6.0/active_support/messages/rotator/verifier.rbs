@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Messages::Rotator::Verifier
+  def verified: (*untyped args, ?on_rotation: untyped?, **untyped options) -> untyped
+  private def build_rotation: (?untyped secret, untyped options) -> untyped
+  include ActiveSupport::Messages::Rotator
+end

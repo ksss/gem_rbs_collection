@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Informix < ::Arel::Visitors::ToSql
+  private def visit_Arel_Nodes_SelectStatement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_SelectCore: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_OptimizerHints: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Offset: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Limit: (untyped o, untyped collector) -> untyped
+end

@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Reflection::HasAttachedReflection < ::ActiveRecord::Reflection::MacroReflection
+  def variant: (untyped name, untyped transformations) -> untyped
+  def variants: () -> untyped
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached
+  def initialize: (untyped name, untyped record) -> void
+  private def change: () -> untyped
+  attr_reader name: untyped
+  attr_reader record: untyped
+end

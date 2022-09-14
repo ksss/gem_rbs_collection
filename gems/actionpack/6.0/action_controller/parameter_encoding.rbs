@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::ParameterEncoding
+  extend ActiveSupport::Concern
+end

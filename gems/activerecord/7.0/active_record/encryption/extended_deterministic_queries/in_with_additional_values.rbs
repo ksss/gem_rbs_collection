@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::ExtendedDeterministicQueries::InWithAdditionalValues
+  def proc_for_binds: () -> untyped
+  def encryption_aware_type_caster: () -> untyped
+end

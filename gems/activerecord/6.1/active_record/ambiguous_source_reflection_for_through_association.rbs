@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AmbiguousSourceReflectionForThroughAssociation < ::ActiveRecord::ActiveRecordError
+  def initialize: (untyped klass, untyped macro, untyped association_name, untyped options, untyped possible_sources) -> void
+end

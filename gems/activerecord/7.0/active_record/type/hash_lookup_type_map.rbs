@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Type::HashLookupTypeMap
+  def initialize: (?untyped? parent) -> void
+  def lookup: (untyped lookup_key, *untyped args) -> untyped
+  def fetch: (untyped lookup_key, *untyped args) ?{ () -> untyped } -> untyped
+  def register_type: (untyped key, ?untyped? value) ?{ () -> untyped } -> untyped
+  def clear: () -> untyped
+  def alias_type: (untyped `type`, untyped alias_type) -> untyped
+  def key?: (untyped key) -> untyped
+  def keys: () -> untyped
+  private def perform_fetch: (untyped `type`, *untyped args) ?{ () -> untyped } -> untyped
+end

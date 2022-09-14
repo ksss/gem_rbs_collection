@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Cookies::AbstractCookieJar
+  def initialize: (untyped parent_jar) -> void
+  def []: (untyped name) -> (untyped | nil)
+  def []=: (untyped name, untyped options) -> untyped
+  def request: () -> untyped
+  private def expiry_options: (untyped options) -> ({ expires_in: untyped } | { expires_at: untyped })
+  private def cookie_metadata: (untyped name, untyped options) -> untyped
+  private def parse: (untyped name, untyped data, ?purpose: untyped?) -> untyped
+  private def commit: (untyped name, untyped options) -> nil
+  include ActionDispatch::Cookies::ChainedCookieJars
+end

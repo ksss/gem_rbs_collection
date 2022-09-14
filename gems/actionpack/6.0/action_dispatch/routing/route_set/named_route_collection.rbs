@@ -1,0 +1,38 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::NamedRouteCollection
+  def initialize: () -> void
+  def route_defined?: (untyped name) -> untyped
+  def helper_names: () -> untyped
+  def clear!: () -> untyped
+  def add: (untyped name, untyped route) -> untyped
+  def get: (untyped name) -> untyped
+  def key?: (untyped name) -> (nil | untyped)
+  alias []= add
+  alias [] get
+  alias clear clear!
+  def each: () { (untyped, untyped) -> untyped } -> self
+  def names: () -> untyped
+  def length: () -> untyped
+  # Given a +name+, defines name_path and name_url helpers.
+  # Used by 'direct', 'resolve', and 'polymorphic' route helpers.
+  def add_url_helper: (untyped name, untyped defaults) ?{ () -> untyped } -> self
+  # Create a URL helper allowing ordered parameters to be associated
+  # with corresponding dynamic segments, so you can do:
+  #
+  #   foo_url(bar, baz, bang)
+  #
+  # Instead of:
+  #
+  #   foo_url(bar: bar, baz: baz, bang: bang)
+  #
+  # Also allow options hash, so you can do:
+  #
+  #   foo_url(bar, baz, bang, sort_by: 'baz')
+  #
+  private def define_url_helper: (untyped mod, untyped route, untyped name, untyped opts, untyped route_key, untyped url_strategy) -> untyped
+  attr_reader routes: untyped
+  attr_reader url_helpers_module: untyped
+  attr_reader path_helpers_module: untyped
+end

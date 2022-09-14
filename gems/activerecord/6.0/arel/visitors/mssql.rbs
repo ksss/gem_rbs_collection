@@ -1,0 +1,21 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::MSSQL < ::Arel::Visitors::ToSql
+  def initialize: () -> void
+  private def visit_Arel_Nodes_IsNotDistinctFrom: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsDistinctFrom: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Visitors_MSSQL_RowNumber: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_SelectStatement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_SelectCore: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_OptimizerHints: (untyped o, untyped collector) -> untyped
+  private def get_offset_limit_clause: (untyped o) -> untyped
+  private def visit_Arel_Nodes_DeleteStatement: (untyped o, untyped collector) -> untyped
+  private def collect_optimizer_hints: (untyped o, untyped collector) -> untyped
+  private def determine_order_by: (untyped orders, untyped x) -> untyped
+  private def row_num_literal: (untyped order_by) -> untyped
+  private def select_count?: (untyped x) -> untyped
+  # FIXME raise exception of there is no pk?
+  private def find_left_table_pk: (untyped o) -> (untyped | untyped | nil)
+  private def find_primary_key: (untyped o) -> untyped
+end

@@ -1,0 +1,44 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::Loadable : BasicObject
+  def self.exclude_from: (untyped base) -> untyped
+  def self.include_into: (untyped base) -> untyped
+  def require_or_load: (untyped file_name) -> untyped
+  # <b>Warning:</b> This method is obsolete in +:zeitwerk+ mode. In
+  # +:zeitwerk+ mode semantics match Ruby's and you do not need to be
+  # defensive with load order. Just refer to classes and modules normally.
+  # If the constant name is dynamic, camelize if needed, and constantize.
+  #
+  # In +:classic+ mode, interprets a file using +mechanism+ and marks its
+  # defined constants as autoloaded. +file_name+ can be either a string or
+  # respond to <tt>to_path</tt>.
+  #
+  # In +:classic+ mode, use this method in code that absolutely needs a
+  # certain constant to be defined at that point. A typical use case is to
+  # make constant name resolution deterministic for constants with the same
+  # relative name in different namespaces whose evaluation would depend on
+  # load order otherwise.
+  #
+  # Engines that do not control the mode in which their parent application
+  # runs should call +require_dependency+ where needed in case the runtime
+  # mode is +:classic+.
+  def require_dependency: (untyped file_name, ?::String message) -> untyped
+  def load_dependency: (untyped file) { () -> untyped } -> untyped
+  # Mark the given constant as unloadable. Unloadable constants are removed
+  # each time dependencies are cleared.
+  #
+  # Note that marking a constant for unloading need only be done once. Setup
+  # or init scripts may list each unloadable constant that may need unloading;
+  # each constant will be removed for every subsequent clear, as opposed to
+  # for the first clear.
+  #
+  # The provided constant descriptor may be a (non-anonymous) module or class,
+  # or a qualified constant name as a string or symbol.
+  #
+  # Returns +true+ if the constant was not previously marked for unloading,
+  # +false+ otherwise.
+  def unloadable: (untyped const_desc) -> untyped
+  private def load: (untyped file, ?bool wrap) -> untyped
+  private def require: (untyped file) -> untyped
+end

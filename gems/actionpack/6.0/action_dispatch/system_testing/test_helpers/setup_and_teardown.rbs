@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::SystemTesting::TestHelpers::SetupAndTeardown
+  def host!: (untyped host) -> untyped
+  def before_setup: () -> untyped
+  def before_teardown: () -> untyped
+  def after_teardown: () -> untyped
+end

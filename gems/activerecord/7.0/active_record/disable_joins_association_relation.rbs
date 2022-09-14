@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DisableJoinsAssociationRelation < ::ActiveRecord::Relation
+  def initialize: (untyped klass, untyped key, untyped ids) -> void
+  def limit: (untyped value) -> untyped
+  def first: (?untyped? limit) -> untyped
+  def load: () -> untyped
+  attr_reader ids: untyped
+  attr_reader key: untyped
+end

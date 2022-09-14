@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::DefaultHeaders::ClassMethods
+  def make_response!: (untyped request) -> untyped
+end

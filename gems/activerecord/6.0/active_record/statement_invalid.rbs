@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::StatementInvalid < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? message, ?sql: untyped?, ?binds: untyped?) -> void
+  attr_reader sql: untyped
+  attr_reader binds: untyped
+end

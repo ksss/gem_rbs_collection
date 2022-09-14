@@ -1,0 +1,26 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Instrumentation
+  def process_action: (*untyped args) -> untyped
+  def render: (*untyped args) -> untyped
+  def send_file: (untyped path, ?::Hash[untyped, untyped] options) -> untyped
+  def send_data: (untyped data, ?::Hash[untyped, untyped] options) -> untyped
+  def redirect_to: (*untyped args) -> untyped
+  # A hook invoked every time a before callback is halted.
+  private def halted_callback_hook: (untyped filter) -> untyped
+  # A hook which allows you to clean up any time, wrongly taken into account in
+  # views, like database querying time.
+  #
+  #   def cleanup_view_runtime
+  #     super - time_taken_in_something_expensive
+  #   end
+  private def cleanup_view_runtime: () { () -> untyped } -> untyped
+  # Every time after an action is processed, this method is invoked
+  # with the payload, so you can add more information.
+  private def append_info_to_payload: (untyped payload) -> untyped
+  include AbstractController::Logger
+  extend ActiveSupport::Concern
+  attr_reader _view_runtime: untyped
+  attr_writer _view_runtime: untyped
+end

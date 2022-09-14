@@ -1,0 +1,194 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Object < ::BasicObject
+  # A duck-type assistant method. For example, Active Support extends Date
+  # to define an <tt>acts_like_date?</tt> method, and extends Time to define
+  # <tt>acts_like_time?</tt>. As a result, we can do <tt>x.acts_like?(:time)</tt> and
+  # <tt>x.acts_like?(:date)</tt> to do duck-type-safe comparisons, since classes that
+  # we want to act like Time simply need to define an <tt>acts_like_time?</tt> method.
+  def acts_like?: (untyped duck) -> untyped
+  # An object is blank if it's false, empty, or a whitespace string.
+  # For example, +nil+, '', '   ', [], {}, and +false+ are all blank.
+  #
+  # This simplifies
+  #
+  #   !address || address.empty?
+  #
+  # to
+  #
+  #   address.blank?
+  #
+  # @return [true, false]
+  def blank?: () -> untyped
+  # An object is present if it's not blank.
+  #
+  # @return [true, false]
+  def present?: () -> untyped
+  # Returns the receiver if it's present otherwise returns +nil+.
+  # <tt>object.presence</tt> is equivalent to
+  #
+  #    object.present? ? object : nil
+  #
+  # For example, something like
+  #
+  #   state   = params[:state]   if params[:state].present?
+  #   country = params[:country] if params[:country].present?
+  #   region  = state || country || 'US'
+  #
+  # becomes
+  #
+  #   region = params[:state].presence || params[:country].presence || 'US'
+  #
+  # @return [Object]
+  def presence: () -> (self | nil)
+  # Returns a deep copy of object if it's duplicable. If it's
+  # not duplicable, returns +self+.
+  #
+  #   object = Object.new
+  #   dup    = object.deep_dup
+  #   dup.instance_variable_set(:@a, 1)
+  #
+  #   object.instance_variable_defined?(:@a) # => false
+  #   dup.instance_variable_defined?(:@a)    # => true
+  def deep_dup: () -> (untyped | self)
+  # Can you safely dup this object?
+  #
+  # False for method objects;
+  # true otherwise.
+  def duplicable?: () -> true
+  # Returns true if this object is included in the argument. Argument must be
+  # any object which responds to +#include?+. Usage:
+  #
+  #   characters = ["Konata", "Kagami", "Tsukasa"]
+  #   "Konata".in?(characters) # => true
+  #
+  # This will throw an +ArgumentError+ if the argument doesn't respond
+  # to +#include?+.
+  def in?: (untyped another_object) -> untyped
+  # Returns the receiver if it's included in the argument otherwise returns +nil+.
+  # Argument must be any object which responds to +#include?+. Usage:
+  #
+  #   params[:bucket_type].presence_in %w( project calendar )
+  #
+  # This will throw an +ArgumentError+ if the argument doesn't respond to +#include?+.
+  #
+  # @return [Object]
+  def presence_in: (untyped another_object) -> (self | nil)
+  # Returns a hash with string keys that maps instance variable names without "@" to their
+  # corresponding values.
+  #
+  #   class C
+  #     def initialize(x, y)
+  #       @x, @y = x, y
+  #     end
+  #   end
+  #
+  #   C.new(0, 1).instance_values # => {"x" => 0, "y" => 1}
+  def instance_values: () -> untyped
+  # Returns an array of instance variable names as strings including "@".
+  #
+  #   class C
+  #     def initialize(x, y)
+  #       @x, @y = x, y
+  #     end
+  #   end
+  #
+  #   C.new(0, 1).instance_variable_names # => ["@y", "@x"]
+  def instance_variable_names: () -> untyped
+  def as_json: (?untyped? options) -> untyped
+  # Alias of <tt>to_s</tt>.
+  def to_param: () -> untyped
+  # Converts an object into a string suitable for use as a URL query string,
+  # using the given <tt>key</tt> as the param name.
+  def to_query: (untyped key) -> ::String
+  # An elegant way to factor duplication out of options passed to a series of
+  # method calls. Each method called in the block, with the block variable as
+  # the receiver, will have its options merged with the default +options+ hash
+  # provided. Each method called on the block variable must take an options
+  # hash as its final argument.
+  #
+  # Without <tt>with_options</tt>, this code contains duplication:
+  #
+  #   class Account < ActiveRecord::Base
+  #     has_many :customers, dependent: :destroy
+  #     has_many :products,  dependent: :destroy
+  #     has_many :invoices,  dependent: :destroy
+  #     has_many :expenses,  dependent: :destroy
+  #   end
+  #
+  # Using <tt>with_options</tt>, we can remove the duplication:
+  #
+  #   class Account < ActiveRecord::Base
+  #     with_options dependent: :destroy do |assoc|
+  #       assoc.has_many :customers
+  #       assoc.has_many :products
+  #       assoc.has_many :invoices
+  #       assoc.has_many :expenses
+  #     end
+  #   end
+  #
+  # It can also be used with an explicit receiver:
+  #
+  #   I18n.with_options locale: user.locale, scope: 'newsletter' do |i18n|
+  #     subject i18n.t :subject
+  #     body    i18n.t :body, user_name: user.name
+  #   end
+  #
+  # When you don't pass an explicit receiver, it executes the whole block
+  # in merging options context:
+  #
+  #   class Account < ActiveRecord::Base
+  #     with_options dependent: :destroy do
+  #       has_many :customers
+  #       has_many :products
+  #       has_many :invoices
+  #       has_many :expenses
+  #     end
+  #   end
+  #
+  # <tt>with_options</tt> can also be nested since the call is forwarded to its receiver.
+  #
+  # NOTE: Each nesting level will merge inherited defaults in addition to their own.
+  #
+  #   class Post < ActiveRecord::Base
+  #     with_options if: :persisted?, length: { minimum: 50 } do
+  #       validates :content, if: -> { content.present? }
+  #     end
+  #   end
+  #
+  # The code is equivalent to:
+  #
+  #   validates :content, length: { minimum: 50 }, if: -> { content.present? }
+  #
+  # Hence the inherited default for +if+ key is ignored.
+  #
+  # NOTE: You cannot call class methods implicitly inside of with_options.
+  # You can access these methods using the class name instead:
+  #
+  #   class Phone < ActiveRecord::Base
+  #     enum phone_number_type: { home: 0, office: 1, mobile: 2 }
+  #
+  #     with_options presence: true do
+  #       validates :phone_number_type, inclusion: { in: Phone.phone_number_types.keys }
+  #     end
+  #   end
+  #
+  def with_options: (untyped options) ?{ () -> untyped } -> untyped
+  def html_safe?: () -> false
+  def before_setup: () -> untyped
+  # Benchmark realtime in milliseconds.
+  #
+  #   Benchmark.realtime { User.all }
+  #   # => 8.0e-05
+  #
+  #   Benchmark.ms { User.all }
+  #   # => 0.074
+  def self.ms: () ?{ () -> untyped } -> untyped
+  def unescape: (untyped str, ?untyped escaped) -> untyped
+  include ActiveSupport::Tryable
+  include ActiveSupport::Dependencies::Loadable
+  prepend ActiveSupport::ToJsonWithActiveSupportEncoder
+  prepend ActiveSupport::ForkTracker::CoreExtPrivate
+  prepend ActiveSupport::Dependencies::ZeitwerkIntegration::RequireDependency
+end

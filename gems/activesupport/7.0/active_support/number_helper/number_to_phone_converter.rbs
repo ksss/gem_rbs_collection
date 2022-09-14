@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToPhoneConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def convert_to_phone_number: (untyped number) -> untyped
+  private def convert_with_area_code: (untyped number) -> untyped
+  private def convert_without_area_code: (untyped number) -> untyped
+  private def start_with_delimiter?: (untyped number) -> untyped
+  private def delimiter: () -> untyped
+  private def country_code: (untyped code) -> ("" | ::String)
+  private def phone_ext: (untyped ext) -> ("" | ::String)
+  private def regexp_pattern: (untyped default_pattern) -> untyped
+end

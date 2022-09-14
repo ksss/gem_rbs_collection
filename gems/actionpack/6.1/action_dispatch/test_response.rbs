@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::TestResponse < ::ActionDispatch::Response
+  def self.from_response: (untyped response) -> untyped
+  def parsed_body: () -> untyped
+  def response_parser: () -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PartialRenderer < ::ActionView::AbstractRenderer
+  prepend ActiveRecord::Railties::CollectionCacheAssociationLoading
+end

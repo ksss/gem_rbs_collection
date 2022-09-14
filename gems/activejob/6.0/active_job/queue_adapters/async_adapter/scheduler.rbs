@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::AsyncAdapter::Scheduler
+  def initialize: (**untyped options) -> void
+  def enqueue: (untyped job, queue_name: untyped) -> untyped
+  def enqueue_at: (untyped job, untyped timestamp, queue_name: untyped) -> untyped
+  def shutdown: (?wait: bool) -> untyped
+  def executor: () -> untyped
+  attr_accessor immediate: untyped
+  DEFAULT_EXECUTOR_OPTIONS: Hash[Symbol, Integer | true | Symbol]
+end

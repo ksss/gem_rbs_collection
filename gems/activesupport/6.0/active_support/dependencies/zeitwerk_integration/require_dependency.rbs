@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::ZeitwerkIntegration::RequireDependency : BasicObject
+  def require_dependency: (untyped filename) -> untyped
+end

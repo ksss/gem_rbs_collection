@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::MissingRenderer < ::LoadError
+  def initialize: (untyped format) -> void
+end

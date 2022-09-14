@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Dependencies::ZeitwerkIntegration
+  def self.take_over: (enable_reloading: untyped) -> untyped
+  private def self.setup_autoloaders: (untyped enable_reloading) -> untyped
+  private def self.autoload_once?: (untyped autoload_path) -> untyped
+  private def self.eager_load?: (untyped autoload_path) -> untyped
+  private def self.freeze_paths: () -> untyped
+  private def self.decorate_dependencies: () -> untyped
+end

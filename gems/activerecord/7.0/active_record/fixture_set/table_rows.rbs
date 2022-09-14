@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::TableRows
+  def initialize: (untyped table_name, model_class: untyped, fixtures: untyped) -> void
+  def to_hash: () -> untyped
+  def model_metadata: () -> untyped
+  private def build_table_rows_from: (untyped table_name, untyped fixtures) -> untyped
+  attr_reader tables: untyped
+  attr_reader model_class: untyped
+end

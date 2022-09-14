@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Notifications::Fanout::Subscribers
+  def self.new: (untyped pattern, untyped listener) -> untyped
+  def self.event_object_subscriber: (untyped pattern, untyped block) -> untyped
+  def self.wrap_all: (untyped pattern, untyped subscriber) -> untyped
+end

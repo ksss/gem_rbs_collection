@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Core::InspectionMask < ::String
+  def pretty_print: (untyped pp) -> untyped
+end

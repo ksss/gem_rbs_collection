@@ -1,0 +1,41 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+D = Steep::Diagnostic
+
+target :test do
+  signature "."
+  check "."
+
+  repo_path "../../../"
+
+  library "time"
+  library "monitor"
+  library "singleton"
+  library "logger"
+  library "mutex_m"
+  library "json"
+  library "date"
+  library "benchmark"
+  library "digest"
+  library "forwardable"
+  library "did_you_mean"
+  library "openssl"
+  library "socket"
+  library "minitest"
+  library "securerandom"
+  library "ipaddr"
+  library "nokogiri"
+  library "i18n"
+  library "rack"
+
+  library "activestorage:7.0"
+  library "activesupport:7.0"
+  library "activemodel:7.0"
+  library "activejob:7.0"
+  library "activerecord:7.0"
+  library "actionview:7.0"
+  library "actionpack:7.0"
+
+  configure_code_diagnostics(D::Ruby.all_error)
+end

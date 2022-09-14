@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Cache::Strategy::LocalCache::Middleware
+  def initialize: (untyped name, untyped local_cache_key) -> void
+  def new: (untyped app) -> self
+  def call: (untyped env) -> untyped
+  attr_reader name: untyped
+  attr_reader local_cache_key: untyped
+end

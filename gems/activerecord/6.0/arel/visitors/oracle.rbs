@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Oracle < ::Arel::Visitors::ToSql
+  private def visit_Arel_Nodes_SelectStatement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Limit: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Offset: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Except: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_UpdateStatement: (untyped o, untyped collector) -> untyped
+  # #
+  # Hacks for the order clauses specific to Oracle
+  private def order_hacks: (untyped o) -> untyped
+  # Split string by commas but count opening and closing brackets
+  # and ignore commas inside brackets.
+  private def split_order_string: (untyped string) -> untyped
+  private def visit_Arel_Nodes_BindParam: (untyped o, untyped collector) -> untyped
+  private def is_distinct_from: (untyped o, untyped collector) -> untyped
+end

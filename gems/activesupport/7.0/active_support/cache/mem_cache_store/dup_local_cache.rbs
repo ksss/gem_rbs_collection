@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::MemCacheStore::DupLocalCache
+  private def local_cache: () -> (untyped | nil | untyped)
+end

@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::DependencyTracker::ERBTracker
+  def self.supports_view_paths?: () -> true
+  def self.call: (untyped name, untyped template, ?untyped? view_paths) -> untyped
+  def initialize: (untyped name, untyped template, ?untyped? view_paths) -> void
+  def dependencies: () -> untyped
+  private def source: () -> untyped
+  private def directory: () -> untyped
+  private def render_dependencies: () -> untyped
+  private def add_dependencies: (untyped render_dependencies, untyped arguments, untyped pattern) -> untyped
+  private def add_dynamic_dependency: (untyped dependencies, untyped dependency) -> (untyped | nil)
+  private def add_static_dependency: (untyped dependencies, untyped dependency) -> (untyped | nil)
+  private def resolve_directories: (untyped wildcard_dependencies) -> (::Array[untyped] | untyped)
+  private def explicit_dependencies: () -> untyped
+  attr_reader name: untyped
+  attr_reader template: untyped
+  EXPLICIT_DEPENDENCY: Regexp
+  IDENTIFIER: Regexp
+  LAYOUT_DEPENDENCY: Regexp
+  LAYOUT_HASH_KEY: Regexp
+  PARTIAL_HASH_KEY: Regexp
+  RENDER_ARGUMENTS: Regexp
+  STRING: Regexp
+  VARIABLE_OR_METHOD_CHAIN: Regexp
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Railties::CollectionCacheAssociationLoading
+  def setup: (untyped context, untyped options, untyped as, untyped block) -> untyped
+  def relation_from_options: (?cached: untyped?, ?partial: untyped?, ?collection: untyped?, **untyped _) -> (nil | untyped)
+  def collection_without_template: () -> untyped
+  def collection_with_template: () -> untyped
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Flash::FlashNow
+  def initialize: (untyped flash) -> void
+  def []=: (untyped k, untyped v) -> untyped
+  def []: (untyped k) -> untyped
+  # Convenience accessor for <tt>flash.now[:alert]=</tt>.
+  def alert=: (untyped message) -> untyped
+  # Convenience accessor for <tt>flash.now[:notice]=</tt>.
+  def notice=: (untyped message) -> untyped
+  attr_accessor flash: untyped
+end

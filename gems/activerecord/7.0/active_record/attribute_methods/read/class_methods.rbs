@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods::Read::ClassMethods
+  private def define_method_attribute: (untyped name, owner: untyped) -> untyped
+end

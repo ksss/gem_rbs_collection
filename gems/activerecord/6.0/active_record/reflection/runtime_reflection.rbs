@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::RuntimeReflection < ::ActiveRecord::Reflection::AbstractReflection
+  def initialize: (untyped reflection, untyped association) -> void
+  def klass: () -> untyped
+  def aliased_table: () -> untyped
+  def all_includes: () { () -> untyped } -> untyped
+  # defined by `delegate` to: #@reflection
+  def scope: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def constraints: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #@reflection
+  def get_join_keys: (*untyped, **untyped) -> untyped
+end

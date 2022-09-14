@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::TableRow
+  def initialize: (untyped fixture, table_rows: untyped, label: untyped, now: untyped) -> void
+  def to_hash: () -> untyped
+  private def model_metadata: () -> untyped
+  private def model_class: () -> untyped
+  private def fill_row_model_attributes: () -> (nil | untyped)
+  private def reflection_class: () -> untyped
+  private def fill_timestamps: () -> (untyped | nil)
+  private def interpolate_label: () -> untyped
+  private def generate_primary_key: () -> (untyped | nil)
+  private def resolve_enums: () -> untyped
+  private def resolve_sti_reflections: () -> untyped
+  private def add_join_records: (untyped association) -> (untyped | nil)
+end

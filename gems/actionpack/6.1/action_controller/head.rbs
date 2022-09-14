@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Head
+  # Returns a response that has no content (merely headers). The options
+  # argument is interpreted to be a hash of header names and values.
+  # This allows you to easily return a response that consists only of
+  # significant headers:
+  #
+  #   head :created, location: person_path(@person)
+  #
+  #   head :created, location: @person
+  #
+  # It can also be used to return exceptional conditions:
+  #
+  #   return head(:method_not_allowed) unless request.post?
+  #   return head(:bad_request) unless valid_request?
+  #   render
+  #
+  # See Rack::Utils::SYMBOL_TO_STATUS_CODE for a full list of valid +status+ symbols.
+  def head: (untyped status, ?::Hash[untyped, untyped] options) -> true
+  private def include_content?: (untyped status) -> untyped
+end

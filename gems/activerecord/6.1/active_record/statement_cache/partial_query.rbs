@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::StatementCache::PartialQuery < ::ActiveRecord::StatementCache::Query
+  def initialize: (untyped values) -> void
+  def sql_for: (untyped binds, untyped connection) -> untyped
+end

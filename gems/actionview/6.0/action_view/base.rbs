@@ -1,0 +1,89 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Base
+  def self.cache_template_loading: () -> untyped
+  def self.cache_template_loading=: (untyped value) -> untyped
+  def self.xss_safe?: () -> true
+  def self.with_empty_template_cache: () -> untyped
+  def self.changed?: (untyped other) -> untyped
+  def assign: (untyped new_assigns) -> untyped
+  def self.build_lookup_context: (untyped context) -> untyped
+  def self.empty: () -> untyped
+  def self.with_view_paths: (untyped view_paths, ?::Hash[untyped, untyped] assigns, ?untyped? controller) -> untyped
+  def self.with_context: (untyped context, ?::Hash[untyped, untyped] assigns, ?untyped? controller) -> untyped
+  def initialize: (?untyped? lookup_context, ?::Hash[untyped, untyped] assigns, ?untyped? controller, ?untyped formats) -> void
+  def _run: (untyped method, untyped template, untyped locals, untyped buffer) ?{ () -> untyped } -> untyped
+  def compiled_method_container: () -> untyped
+  def in_rendering_context: (untyped options) { (untyped) -> untyped } -> untyped
+  include ActionView::Helpers
+  include ERB::Util
+  include ActionView::Context
+  include ActionView::Helpers::AssetTagHelper
+  include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::FormHelper
+  include ActionView::Helpers::FormTagHelper
+  include ActionView::Helpers::UrlHelper
+  include ActionView::Helpers::TextHelper
+  include ActionView::Helpers::SanitizeHelper
+  include ActionView::Helpers::TranslationHelper
+  extend ActionView::Helpers::UrlHelper::ClassMethods
+  extend ActionView::Helpers::SanitizeHelper::ClassMethods
+  attr_reader view_renderer: untyped
+  attr_reader lookup_context: untyped
+  attr_reader _config: untyped
+  attr_reader _assigns: untyped
+  attr_writer _config: untyped
+  attr_writer _assigns: untyped
+  def self.debug_missing_translation: () -> untyped
+  def debug_missing_translation: () -> untyped
+  def self.field_error_proc: () -> untyped
+  def field_error_proc: () -> untyped
+  def self.streaming_completion_on_exception: () -> untyped
+  def streaming_completion_on_exception: () -> untyped
+  def self.default_formats: () -> untyped
+  def default_formats: () -> untyped
+  def self.raise_on_missing_translations: () -> untyped
+  def raise_on_missing_translations: () -> untyped
+  def self.automatically_disable_submit_tag: () -> untyped
+  def automatically_disable_submit_tag: () -> untyped
+  def self.default_form_builder: () -> untyped
+  def self.debug_missing_translation=: (untyped val) -> untyped
+  def debug_missing_translation=: (untyped val) -> untyped
+  def self.field_error_proc=: (untyped val) -> untyped
+  def field_error_proc=: (untyped val) -> untyped
+  def self.streaming_completion_on_exception=: (untyped val) -> untyped
+  def streaming_completion_on_exception=: (untyped val) -> untyped
+  def self.default_formats=: (untyped val) -> untyped
+  def default_formats=: (untyped val) -> untyped
+  def self.raise_on_missing_translations=: (untyped val) -> untyped
+  def raise_on_missing_translations=: (untyped val) -> untyped
+  def self.automatically_disable_submit_tag=: (untyped val) -> untyped
+  def automatically_disable_submit_tag=: (untyped val) -> untyped
+  def self.default_form_builder=: (untyped val) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def formats: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def formats=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def locale: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def locale=: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def view_paths: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#lookup_context
+  def view_paths=: (*untyped, **untyped) -> untyped
+  def self.prefix_partial_path_with_controller_namespace: () -> untyped
+  def self.prefix_partial_path_with_controller_namespace?: () -> bool
+  def self.prefix_partial_path_with_controller_namespace=: (untyped value) -> untyped
+  def prefix_partial_path_with_controller_namespace: () -> untyped
+  def prefix_partial_path_with_controller_namespace?: () -> bool
+  def prefix_partial_path_with_controller_namespace=: (untyped value) -> untyped
+  def self.logger: () -> untyped
+  def self.logger?: () -> bool
+  def self.logger=: (untyped value) -> untyped
+  def logger: () -> untyped
+  def logger?: () -> bool
+  def logger=: (untyped value) -> untyped
+  NULL: Object
+end

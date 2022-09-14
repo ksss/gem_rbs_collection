@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::EnvelopeEncryptionKeyProvider
+  def encryption_key: () -> untyped
+  def decryption_keys: (untyped encrypted_message) -> untyped
+  def active_primary_key: () -> untyped
+  private def encrypt_data_key: (untyped random_secret) -> untyped
+  private def decrypt_data_key: (untyped encrypted_message) -> untyped
+  private def primary_key_provider: () -> untyped
+  private def generate_random_secret: () -> untyped
+end

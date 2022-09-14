@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::MissingTemplate < ::ActionView::ActionViewError
+  def initialize: (untyped paths, untyped path, untyped prefixes, untyped partial, untyped details) -> void
+  # Apps may have thousands of candidate templates so we attempt to
+  # generate the suggestions as efficiently as possible.
+  # First we split templates into prefixes and basenames, so that those can
+  # be matched separately.
+  def corrections: () -> (::Array[untyped] | untyped)
+  include DidYouMean::Correctable
+  attr_reader path: untyped
+  attr_reader paths: untyped
+  attr_reader prefixes: untyped
+  attr_reader partial: untyped
+end

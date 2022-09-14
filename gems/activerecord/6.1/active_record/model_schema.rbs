@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::ModelSchema
+  # Derives the join table name for +first_table+ and +second_table+. The
+  # table names appear in alphabetical order. A common prefix is removed
+  # (useful for namespaced models like Music::Artist and Music::Record):
+  #
+  #   artists, records => artists_records
+  #   records, artists => artists_records
+  #   music_artists, music_records => music_artists_records
+  def self.derive_join_table_name: (untyped first_table, untyped second_table) -> untyped
+  extend ActiveSupport::Concern
+end

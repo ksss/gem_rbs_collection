@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::PostgreSQL < ::Arel::Visitors::ToSql
+  private def visit_Arel_Nodes_Matches: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_DoesNotMatch: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Regexp: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_NotRegexp: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_DistinctOn: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_BindParam: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_GroupingElement: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Cube: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_RollUp: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_GroupingSet: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Lateral: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsNotDistinctFrom: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_IsDistinctFrom: (untyped o, untyped collector) -> untyped
+  # Used by Lateral visitor to enclose select queries in parentheses
+  private def grouping_parentheses: (untyped o, untyped collector) -> untyped
+  # Utilized by GroupingSet, Cube & RollUp visitors to
+  # handle grouping aggregation semantics
+  private def grouping_array_or_grouping_element: (untyped o, untyped collector) -> untyped
+end

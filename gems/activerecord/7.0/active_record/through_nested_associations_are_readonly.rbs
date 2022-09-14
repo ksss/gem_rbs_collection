@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ThroughNestedAssociationsAreReadonly < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? owner, ?untyped? reflection) -> void
+end

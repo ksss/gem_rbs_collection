@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module Erubi
+  MATCH_METHOD: Symbol
+  RANGE_FIRST: Integer
+  RANGE_LAST: Integer
+  SKIP_DEFINED_FOR_INSTANCE_VARIABLE: true
+  VERSION: String
+end

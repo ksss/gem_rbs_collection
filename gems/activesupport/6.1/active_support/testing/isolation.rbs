@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::Isolation
+  def self.included: (untyped klass) -> untyped
+  def self.forking_env?: () -> untyped
+  def run: () -> untyped
+  include ActiveSupport::Testing::Isolation::Forking
+end

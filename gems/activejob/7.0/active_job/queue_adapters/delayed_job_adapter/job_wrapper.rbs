@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::DelayedJobAdapter::JobWrapper
+  def initialize: (untyped job_data) -> void
+  def display_name: () -> (untyped | ::String)
+  def perform: () -> untyped
+  private def log_arguments?: () -> untyped
+end

@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::RenderParser::RipperASTParser::Node < ::Array[untyped]
+  def initialize: (untyped `type`, untyped arr, ?::Hash[untyped, untyped] opts) -> void
+  def children: () -> untyped
+  def inspect: () -> untyped
+  def fcall?: () -> untyped
+  def fcall_named?: (untyped name) -> untyped
+  def argument_nodes: () -> (::Array[untyped] | untyped)
+  def string?: () -> untyped
+  def variable_reference?: () -> untyped
+  def vcall?: () -> untyped
+  def call?: () -> untyped
+  def variable_name: () -> untyped
+  def call_method_name: () -> untyped
+  def to_string: () -> untyped
+  def hash?: () -> untyped
+  def to_hash: () -> (untyped | ::Hash[untyped, untyped] | untyped | nil)
+  def hash_from_body: (untyped body) -> untyped
+  def symbol?: () -> untyped
+  def to_symbol: () -> untyped
+  attr_reader type: untyped
+end

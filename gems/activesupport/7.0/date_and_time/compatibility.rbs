@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module DateAndTime::Compatibility
+  def self.preserve_timezone: () -> untyped
+  def preserve_timezone: () -> untyped
+  def self.utc_to_local_returns_utc_offset_times: () -> untyped
+  def utc_to_local_returns_utc_offset_times: () -> untyped
+  def self.preserve_timezone=: (untyped val) -> untyped
+  def self.utc_to_local_returns_utc_offset_times=: (untyped val) -> untyped
+end

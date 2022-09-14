@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::ParameterFilter
+  # Create instance with given filters. Supported type of filters are +String+, +Regexp+, and +Proc+.
+  # Other types of filters are treated as +String+ using +to_s+.
+  # For +Proc+ filters, key, value, and optional original hash is passed to block arguments.
+  #
+  # ==== Options
+  #
+  # * <tt>:mask</tt> - A replaced object when filtered. Defaults to <tt>"[FILTERED]"</tt>.
+  def initialize: (?untyped filters, ?mask: untyped) -> void
+  # Mask value of +params+ if key matches one of filters.
+  def filter: (untyped params) -> untyped
+  # Returns filtered value for given key. For +Proc+ filters, third block argument is not populated.
+  def filter_param: (untyped key, untyped value) -> untyped
+  private def compiled_filter: () -> untyped
+  FILTERED: String
+end

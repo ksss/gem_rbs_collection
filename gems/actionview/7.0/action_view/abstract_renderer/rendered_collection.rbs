@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::AbstractRenderer::RenderedCollection
+  def self.empty: (untyped format) -> untyped
+  def initialize: (untyped rendered_templates, untyped spacer) -> void
+  def body: () -> untyped
+  def format: () -> untyped
+  attr_reader rendered_templates: untyped
+end

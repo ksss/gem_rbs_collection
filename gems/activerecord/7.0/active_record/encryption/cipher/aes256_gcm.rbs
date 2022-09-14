@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Cipher::Aes256Gcm
+  def self.key_length: () -> untyped
+  def self.iv_length: () -> untyped
+  # When iv not provided, it will generate a random iv on each encryption operation (default and
+  # recommended operation)
+  def initialize: (untyped secret, ?deterministic: bool) -> void
+  def encrypt: (untyped clear_text) -> untyped
+  def decrypt: (untyped encrypted_message) -> untyped
+  private def generate_iv: (untyped cipher, untyped clear_text) -> untyped
+  private def generate_deterministic_iv: (untyped clear_text) -> untyped
+  CIPHER_TYPE: String
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Fanout::Subscribers::EventObject < ::ActiveSupport::Notifications::Fanout::Subscribers::Evented
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def finish: (untyped name, untyped id, untyped payload) -> untyped
+  private def build_event: (untyped name, untyped id, untyped payload) -> untyped
+end

@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::Mapper::Resources::SingletonResource < ::ActionDispatch::Routing::Mapper::Resources::Resource
+  def initialize: (untyped entities, untyped api_only, untyped shallow, untyped options) -> void
+  def default_actions: () -> (::Array[:show | :create | :update | :destroy] | ::Array[:show | :create | :update | :destroy | :new | :edit])
+  def plural: () -> untyped
+  def singular: () -> untyped
+  alias member_name singular
+  alias collection_name singular
+  alias member_scope path
+  alias nested_scope path
+  def singleton?: () -> true
+end

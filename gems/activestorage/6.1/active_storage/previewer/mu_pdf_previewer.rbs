@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Previewer::MuPDFPreviewer < ::ActiveStorage::Previewer
+  def self.accept?: (untyped blob) -> untyped
+  def self.mutool_path: () -> untyped
+  def self.mutool_exists?: () -> untyped
+  def preview: (**untyped options) { (untyped) -> untyped } -> untyped
+  private def draw_first_page_from: (untyped file) ?{ () -> untyped } -> untyped
+end

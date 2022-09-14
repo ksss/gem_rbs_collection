@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::VariantWithRecord
+  def initialize: (untyped blob, untyped variation) -> void
+  def processed: () -> self
+  def process: () -> (untyped | nil)
+  def processed?: () -> untyped
+  def image: () -> untyped
+  private def transform_blob: () { (io: untyped, filename: untyped, content_type: untyped, service_name: untyped) -> untyped } -> untyped
+  private def create_or_find_record: (image: untyped) -> untyped
+  private def record: () -> untyped
+  attr_reader blob: untyped
+  attr_reader variation: untyped
+  # defined by `delegate` to: untyped#blob
+  def service: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#image
+  def key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#image
+  def url: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#image
+  def download: (*untyped, **untyped) -> untyped
+end

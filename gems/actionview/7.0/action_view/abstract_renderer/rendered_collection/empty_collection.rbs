@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::AbstractRenderer::RenderedCollection::EmptyCollection
+  def initialize: (untyped format) -> void
+  def body: () -> nil
+  attr_reader format: untyped
+end

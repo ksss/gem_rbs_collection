@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::HashConfig < ::ActiveRecord::DatabaseConfigurations::DatabaseConfig
+  def initialize: (untyped env_name, untyped spec_name, untyped config) -> void
+  # Determines whether a database configuration is for a replica / readonly
+  # connection. If the +replica+ key is present in the config, +replica?+ will
+  # return +true+.
+  def replica?: () -> untyped
+  # The migrations paths for a database configuration. If the
+  # +migrations_paths+ key is present in the config, +migrations_paths+
+  # will return its value.
+  def migrations_paths: () -> untyped
+  attr_reader config: untyped
+end

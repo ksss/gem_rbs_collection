@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Path::Pattern::AnchoredRegexp < ::ActionDispatch::Journey::Visitors::Visitor
+  def initialize: (untyped separator, untyped matchers) -> void
+  def accept: (untyped node) -> ::Regexp
+  def visit_CAT: (untyped node) -> untyped
+  def visit_SYMBOL: (untyped node) -> (untyped | ::String)
+  def visit_GROUP: (untyped node) -> ::String
+  def visit_LITERAL: (untyped node) -> untyped
+  alias visit_DOT visit_LITERAL
+  def visit_SLASH: (untyped node) -> untyped
+  def visit_STAR: (untyped node) -> ::String
+  def visit_OR: (untyped node) -> ::String
+end

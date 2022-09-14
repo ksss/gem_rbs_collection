@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::AssociationScope
+  def self.scope: (untyped association) -> untyped
+  def self.create: () ?{ () -> untyped } -> untyped
+  def initialize: (untyped value_transformation) -> void
+  def scope: (untyped association) -> untyped
+  def self.get_bind_values: (untyped owner, untyped chain) -> untyped
+  private def join: (untyped table, untyped constraint) -> untyped
+  private def last_chain_scope: (untyped scope, untyped reflection, untyped owner) -> untyped
+  private def transform_value: (untyped value) -> untyped
+  private def next_chain_scope: (untyped scope, untyped reflection, untyped next_reflection) -> untyped
+  private def get_chain: (untyped reflection, untyped association, untyped tracker) -> untyped
+  private def add_constraints: (untyped scope, untyped owner, untyped chain) -> untyped
+  private def apply_scope: (untyped scope, untyped table, untyped key, untyped value) -> untyped
+  private def eval_scope: (untyped reflection, untyped scope, untyped owner) -> untyped
+  attr_reader value_transformation: untyped
+  INSTANCE: ActiveRecord::Associations::AssociationScope
+end

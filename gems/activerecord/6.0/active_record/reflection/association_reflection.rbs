@@ -1,0 +1,89 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::AssociationReflection < ::ActiveRecord::Reflection::MacroReflection
+  def compute_class: (untyped name) -> untyped
+  def initialize: (untyped name, untyped scope, untyped options, untyped active_record) -> void
+  def association_scope_cache: (untyped klass, untyped owner) ?{ () -> untyped } -> untyped
+  def constructable?: () -> untyped
+  def join_table: () -> untyped
+  def foreign_key: () -> untyped
+  def association_foreign_key: () -> untyped
+  # klass option is necessary to support loading polymorphic associations
+  def association_primary_key: (?untyped? klass) -> untyped
+  def active_record_primary_key: () -> untyped
+  def check_validity!: () -> untyped
+  def check_preloadable!: () -> (nil | untyped)
+  alias check_eager_loadable! check_preloadable!
+  def join_id_for: (untyped owner) -> untyped
+  def through_reflection: () -> nil
+  def source_reflection: () -> self
+  # A chain of reflections from this one back to the owner. For more see the explanation in
+  # ThroughReflection.
+  def collect_join_chain: () -> ::Array[self]
+  # This is for clearing cache on the reflection. Useful for tests that need to compare
+  # SQL queries on associations.
+  def clear_association_scope_cache: () -> untyped
+  def nested?: () -> false
+  def has_scope?: () -> untyped
+  def has_inverse?: () -> untyped
+  def polymorphic_inverse_of: (untyped associated_class) -> (untyped | nil)
+  # Returns the macro type.
+  #
+  # <tt>has_many :clients</tt> returns <tt>:has_many</tt>
+  def macro: () -> untyped
+  # Returns whether or not this association reflection is for a collection
+  # association. Returns +true+ if the +macro+ is either +has_many+ or
+  # +has_and_belongs_to_many+, +false+ otherwise.
+  def collection?: () -> false
+  # Returns whether or not the association should be validated as part of
+  # the parent's validation.
+  #
+  # Unless you explicitly disable validation with
+  # <tt>validate: false</tt>, validation will take place when:
+  #
+  # * you explicitly enable validation; <tt>validate: true</tt>
+  # * you use autosave; <tt>autosave: true</tt>
+  # * the association is a +has_many+ association
+  def validate?: () -> untyped
+  # Returns +true+ if +self+ is a +belongs_to+ reflection.
+  def belongs_to?: () -> false
+  # Returns +true+ if +self+ is a +has_one+ reflection.
+  def has_one?: () -> false
+  def association_class: () -> untyped
+  def polymorphic?: () -> untyped
+  def add_as_source: (untyped seed) -> untyped
+  def add_as_polymorphic_through: (untyped reflection, untyped seed) -> untyped
+  def add_as_through: (untyped seed) -> untyped
+  def extensions: () -> untyped
+  private def calculate_constructable: (untyped macro, untyped options) -> true
+  # Attempts to find the inverse association name automatically.
+  # If it cannot find a suitable inverse association name, it returns
+  # +nil+.
+  private def inverse_name: () -> untyped
+  # returns either +nil+ or the inverse association name that it finds.
+  private def automatic_inverse_of: () -> (untyped | nil)
+  # Checks if the inverse reflection that is returned from the
+  # +automatic_inverse_of+ method is a valid reflection. We must
+  # make sure that the reflection's active_record name matches up
+  # with the current reflection's klass name.
+  private def valid_inverse_reflection?: (untyped reflection) -> untyped
+  # Checks to see if the reflection doesn't have any options that prevent
+  # us from being able to guess the inverse automatically. First, the
+  # <tt>inverse_of</tt> option cannot be set to false. Second, we must
+  # have <tt>has_many</tt>, <tt>has_one</tt>, <tt>belongs_to</tt> associations.
+  # Third, we must not have options such as <tt>:foreign_key</tt>
+  # which prevent us from correctly guessing the inverse association.
+  #
+  # Anything with a scope can additionally ruin our attempt at finding an
+  # inverse, so we exclude reflections with scopes.
+  private def can_find_inverse_of_automatically?: (untyped reflection) -> untyped
+  private def derive_class_name: () -> untyped
+  private def derive_foreign_key: () -> (::String | ::String | untyped)
+  private def derive_join_table: () -> untyped
+  attr_accessor parent_reflection: untyped
+  attr_reader type: untyped
+  attr_reader foreign_type: untyped
+  INVALID_AUTOMATIC_INVERSE_OPTIONS: Array[Symbol]
+  VALID_AUTOMATIC_INVERSE_MACROS: Array[Symbol]
+end

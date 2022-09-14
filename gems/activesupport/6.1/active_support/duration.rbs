@@ -1,0 +1,135 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Duration
+  # Creates a new Duration from string formatted according to ISO 8601 Duration.
+  #
+  # See {ISO 8601}[https://en.wikipedia.org/wiki/ISO_8601#Durations] for more information.
+  # This method allows negative parts to be present in pattern.
+  # If invalid string is provided, it will raise +ActiveSupport::Duration::ISO8601Parser::ParsingError+.
+  def self.parse: (untyped iso8601duration) -> untyped
+  def self.===: (untyped other) -> untyped
+  def self.seconds: (untyped value) -> untyped
+  def self.minutes: (untyped value) -> untyped
+  def self.hours: (untyped value) -> untyped
+  def self.days: (untyped value) -> untyped
+  def self.weeks: (untyped value) -> untyped
+  def self.months: (untyped value) -> untyped
+  def self.years: (untyped value) -> untyped
+  # Creates a new Duration from a seconds value that is converted
+  # to the individual parts:
+  #
+  #   ActiveSupport::Duration.build(31556952).parts # => {:years=>1}
+  #   ActiveSupport::Duration.build(2716146).parts  # => {:months=>1, :days=>1}
+  #
+  def self.build: (untyped value) -> untyped
+  private def self.calculate_total_seconds: (untyped parts) -> untyped
+  def initialize: (untyped value, untyped parts) -> void
+  def coerce: (untyped other) -> untyped
+  # Compares one Duration with another or a Numeric to this Duration.
+  # Numeric values are treated as seconds.
+  def <=>: (untyped other) -> (untyped | untyped | nil)
+  # Adds another Duration or a Numeric to this Duration. Numeric values
+  # are treated as seconds.
+  def +: (untyped other) -> untyped
+  # Subtracts another Duration or a Numeric from this Duration. Numeric
+  # values are treated as seconds.
+  def -: (untyped other) -> untyped
+  # Multiplies this Duration by a Numeric and returns a new Duration.
+  def *: (untyped other) -> untyped
+  # Divides this Duration by a Numeric and returns a new Duration.
+  def /: (untyped other) -> untyped
+  # Returns the modulo of this Duration by another Duration or Numeric.
+  # Numeric values are treated as seconds.
+  def %: (untyped other) -> untyped
+  def -@: () -> untyped
+  def +@: () -> self
+  def is_a?: (untyped klass) -> untyped
+  alias kind_of? is_a?
+  def instance_of?: (untyped klass) -> untyped
+  # Returns +true+ if +other+ is also a Duration instance with the
+  # same +value+, or if <tt>other == value</tt>.
+  def ==: (untyped other) -> untyped
+  # Returns the amount of seconds a duration covers as a string.
+  # For more information check to_i method.
+  #
+  #   1.day.to_s # => "86400"
+  def to_s: () -> untyped
+  # Returns the number of seconds that this Duration represents.
+  #
+  #   1.minute.to_i   # => 60
+  #   1.hour.to_i     # => 3600
+  #   1.day.to_i      # => 86400
+  #
+  # Note that this conversion makes some assumptions about the
+  # duration of some periods, e.g. months are always 1/12 of year
+  # and years are 365.2425 days:
+  #
+  #   # equivalent to (1.year / 12).to_i
+  #   1.month.to_i    # => 2629746
+  #
+  #   # equivalent to 365.2425.days.to_i
+  #   1.year.to_i     # => 31556952
+  #
+  # In such cases, Ruby's core
+  # Date[https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html] and
+  # Time[https://ruby-doc.org/stdlib/libdoc/time/rdoc/Time.html] should be used for precision
+  # date and time arithmetic.
+  def to_i: () -> untyped
+  alias in_seconds to_i
+  # Returns the amount of minutes a duration covers as a float
+  #
+  #   1.day.in_minutes # => 1440.0
+  def in_minutes: () -> untyped
+  # Returns the amount of hours a duration covers as a float
+  #
+  #   1.day.in_hours # => 24.0
+  def in_hours: () -> untyped
+  # Returns the amount of days a duration covers as a float
+  #
+  #   12.hours.in_days # => 0.5
+  def in_days: () -> untyped
+  # Returns the amount of weeks a duration covers as a float
+  #
+  #   2.months.in_weeks # => 8.696
+  def in_weeks: () -> untyped
+  # Returns the amount of months a duration covers as a float
+  #
+  #   9.weeks.in_months # => 2.07
+  def in_months: () -> untyped
+  # Returns the amount of years a duration covers as a float
+  #
+  #   30.days.in_years # => 0.082
+  def in_years: () -> untyped
+  # Returns +true+ if +other+ is also a Duration instance, which has the
+  # same parts as this one.
+  def eql?: (untyped other) -> untyped
+  def hash: () -> untyped
+  def since: (?untyped time) -> ::ActiveSupport::TimeWithZone
+  alias from_now since
+  alias after since
+  def ago: (?untyped time) -> ::ActiveSupport::TimeWithZone
+  alias until ago
+  alias before ago
+  def inspect: () -> (::String | untyped)
+  def as_json: (?untyped? options) -> untyped
+  def init_with: (untyped coder) -> untyped
+  def encode_with: (untyped coder) -> untyped
+  # Build ISO 8601 Duration string for this duration.
+  # The +precision+ parameter can be used to limit seconds' precision of duration.
+  def iso8601: (?precision: untyped?) -> untyped
+  private def sum: (untyped sign, ?untyped time) -> untyped
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+  private def method_missing: (untyped method, *untyped args) ?{ () -> untyped } -> untyped
+  private def raise_type_error: (untyped other) -> untyped
+  attr_accessor value: untyped
+  attr_accessor parts: untyped
+  PARTS: Array[Symbol]
+  PARTS_IN_SECONDS: Hash[Symbol, Integer]
+  SECONDS_PER_DAY: Integer
+  SECONDS_PER_HOUR: Integer
+  SECONDS_PER_MINUTE: Integer
+  SECONDS_PER_MONTH: Integer
+  SECONDS_PER_WEEK: Integer
+  SECONDS_PER_YEAR: Integer
+end

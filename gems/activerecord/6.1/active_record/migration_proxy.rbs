@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::MigrationProxy < ::Struct[untyped]
+  # defined by `delegate` to: #migration
+  def migrate: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #migration
+  def announce: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #migration
+  def write: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #migration
+  def disable_ddl_transaction: (*untyped, **untyped) -> untyped
+end

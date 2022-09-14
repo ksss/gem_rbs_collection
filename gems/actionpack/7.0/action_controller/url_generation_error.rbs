@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::UrlGenerationError < ::ActionController::ActionControllerError
+  def initialize: (untyped message, ?untyped? routes, ?untyped? route_name, ?untyped? method_name) -> void
+  def corrections: () -> untyped
+  include DidYouMean::Correctable
+  attr_reader routes: untyped
+  attr_reader route_name: untyped
+  attr_reader method_name: untyped
+end

@@ -1,0 +1,19 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Integer < ::ActiveModel::Type::Value
+  def initialize: () -> void
+  def type: () -> :integer
+  def deserialize: (untyped value) -> (nil | untyped)
+  def serialize: (untyped value) -> (nil | untyped)
+  def serializable?: (untyped value) { (untyped) -> untyped } -> untyped
+  private def in_range?: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> untyped
+  private def ensure_in_range: (untyped value) -> untyped
+  private def max_value: () -> untyped
+  private def min_value: () -> untyped
+  private def _limit: () -> untyped
+  include ActiveModel::Type::Helpers::Numeric
+  attr_reader range: untyped
+  DEFAULT_LIMIT: Integer
+end

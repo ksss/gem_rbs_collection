@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::XmlMini
+  def backend: () -> untyped
+  def backend=: (untyped name) -> untyped
+  def with_backend: (untyped name) { () -> untyped } -> untyped
+  def to_tag: (untyped key, untyped value, untyped options) -> untyped
+  def rename_key: (untyped key, ?::Hash[untyped, untyped] options) -> untyped
+  private def _dasherize: (untyped key) -> ::String
+  # TODO: Add support for other encodings
+  private def _parse_binary: (untyped bin, untyped entity) -> untyped
+  private def _parse_file: (untyped file, untyped entity) -> untyped
+  private def current_thread_backend: () -> untyped
+  private def current_thread_backend=: (untyped name) -> untyped
+  private def cast_backend_name_to_module: (untyped name) -> untyped
+  extend ActiveSupport::XmlMini
+  attr_accessor depth: untyped
+  # defined by `delegate` to: untyped#backend
+  def parse: (*untyped, **untyped) -> untyped
+  DEFAULT_ENCODINGS: Hash[String, String]
+  FORMATTING: Hash[String, Proc]
+  PARSING: Hash[String, Proc]
+  TYPE_NAMES: Hash[String, String]
+end

@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::AttributeMethods::ClassMethods::AttributeMethodMatcher
+  def initialize: (?::Hash[untyped, untyped] options) -> void
+  def match: (untyped method_name) -> (untyped | nil)
+  def method_name: (untyped attr_name) -> untyped
+  def plain?: () -> untyped
+  attr_reader prefix: untyped
+  attr_reader suffix: untyped
+  attr_reader target: untyped
+end

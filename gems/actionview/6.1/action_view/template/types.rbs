@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Types
+  def self.delegate_to: (untyped klass) -> untyped
+  def self.[]: (untyped `type`) -> untyped
+  def self.symbols: () -> untyped
+  def self.type_klass: () -> untyped
+  def type_klass: () -> untyped
+  def self.type_klass=: (untyped val) -> untyped
+  def type_klass=: (untyped val) -> untyped
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Request::Utils
+  def self.each_param_value: (untyped params) ?{ () -> untyped } -> untyped
+  def self.normalize_encode_params: (untyped params) -> untyped
+  def self.check_param_encoding: (untyped params) -> untyped
+  def self.set_binary_encoding: (untyped request, untyped params, untyped controller, untyped action) -> untyped
+  def self.perform_deep_munge: () -> untyped
+  def perform_deep_munge: () -> untyped
+  def self.perform_deep_munge=: (untyped val) -> untyped
+  def perform_deep_munge=: (untyped val) -> untyped
+end

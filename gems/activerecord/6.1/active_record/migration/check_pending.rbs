@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Migration::CheckPending
+  def initialize: (untyped app, ?file_watcher: untyped) -> void
+  def call: (untyped env) -> untyped
+  private def build_watcher: () ?{ () -> untyped } -> untyped
+  private def connection: () -> untyped
+end

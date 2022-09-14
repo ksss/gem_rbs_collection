@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::NumberHelper::NumberToHumanSizeConverter < ::ActiveSupport::NumberHelper::NumberConverter
+  def convert: () -> untyped
+  private def conversion_format: () -> untyped
+  private def unit: () -> untyped
+  private def storage_unit_key: () -> ::String
+  private def exponent: () -> untyped
+  private def smaller_than_base?: () -> untyped
+  private def base: () -> 1024
+  STORAGE_UNITS: Array[Symbol]
+end

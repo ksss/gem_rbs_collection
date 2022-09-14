@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport
+  # Returns the currently loaded version of Active Support as a <tt>Gem::Version</tt>.
+  def self.gem_version: () -> untyped
+  # Returns the currently loaded version of Active Support as a <tt>Gem::Version</tt>.
+  def self.version: () -> untyped
+  def self.eager_load!: () -> untyped
+  def self.cache_format_version: () -> untyped
+  def self.cache_format_version=: (untyped value) -> untyped
+  def self.to_time_preserves_timezone: () -> untyped
+  def self.to_time_preserves_timezone=: (untyped value) -> untyped
+  def self.utc_to_local_returns_utc_offset_times: () -> untyped
+  def self.utc_to_local_returns_utc_offset_times=: (untyped value) -> untyped
+  extend ActiveSupport::LazyLoadHooks
+  extend ActiveSupport::Autoload
+  attr_accessor self.error_reporter: untyped
+  def self.test_order: () -> untyped
+  def test_order: () -> untyped
+  def self.test_parallelization_threshold: () -> untyped
+  def test_parallelization_threshold: () -> untyped
+  def self.parse_json_times: () -> untyped
+  def parse_json_times: () -> untyped
+  def self.test_order=: (untyped val) -> untyped
+  def test_order=: (untyped val) -> untyped
+  def self.test_parallelization_threshold=: (untyped val) -> untyped
+  def test_parallelization_threshold=: (untyped val) -> untyped
+  def self.parse_json_times=: (untyped val) -> untyped
+  def parse_json_times=: (untyped val) -> untyped
+end

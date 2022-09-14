@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::PermissionsPolicy::Request
+  def permissions_policy: () -> untyped
+  def permissions_policy=: (untyped policy) -> untyped
+  POLICY: String
+end

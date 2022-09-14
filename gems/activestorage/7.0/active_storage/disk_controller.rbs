@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::DiskController < ::ActiveStorage::BaseController
+  def show: () -> untyped
+  def update: () -> untyped
+  private def named_disk_service: (untyped name) -> untyped
+  private def decode_verified_key: () -> untyped
+  private def decode_verified_token: () -> untyped
+  private def acceptable_content?: (untyped token) -> untyped
+  include ActiveStorage::FileServer
+end

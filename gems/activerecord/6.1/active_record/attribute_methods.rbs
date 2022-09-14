@@ -1,0 +1,159 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::AttributeMethods
+  def self.dangerous_attribute_methods: () -> untyped
+  # A Person object with a name attribute can ask <tt>person.respond_to?(:name)</tt>,
+  # <tt>person.respond_to?(:name=)</tt>, and <tt>person.respond_to?(:name?)</tt>
+  # which will all return +true+. It also defines the attribute methods if they have
+  # not been generated.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   person = Person.new
+  #   person.respond_to?(:name)    # => true
+  #   person.respond_to?(:name=)   # => true
+  #   person.respond_to?(:name?)   # => true
+  #   person.respond_to?('age')    # => true
+  #   person.respond_to?('age=')   # => true
+  #   person.respond_to?('age?')   # => true
+  #   person.respond_to?(:nothing) # => false
+  def respond_to?: (untyped name, ?bool include_private) -> (false | untyped | true)
+  # Returns +true+ if the given attribute is in the attributes hash, otherwise +false+.
+  #
+  #   class Person < ActiveRecord::Base
+  #     alias_attribute :new_name, :name
+  #   end
+  #
+  #   person = Person.new
+  #   person.has_attribute?(:name)     # => true
+  #   person.has_attribute?(:new_name) # => true
+  #   person.has_attribute?('age')     # => true
+  #   person.has_attribute?(:nothing)  # => false
+  def has_attribute?: (untyped attr_name) -> untyped
+  def _has_attribute?: (untyped attr_name) -> untyped
+  # Returns an array of names for the attributes available on this object.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   person = Person.new
+  #   person.attribute_names
+  #   # => ["id", "created_at", "updated_at", "name", "age"]
+  def attribute_names: () -> untyped
+  # Returns a hash of all the attributes with their names as keys and the values of the attributes as values.
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   person = Person.create(name: 'Francesco', age: 22)
+  #   person.attributes
+  #   # => {"id"=>3, "created_at"=>Sun, 21 Oct 2012 04:53:04, "updated_at"=>Sun, 21 Oct 2012 04:53:04, "name"=>"Francesco", "age"=>22}
+  def attributes: () -> untyped
+  # Returns an <tt>#inspect</tt>-like string for the value of the
+  # attribute +attr_name+. String attributes are truncated up to 50
+  # characters, Date and Time attributes are returned in the
+  # <tt>:db</tt> format. Other attributes return the value of
+  # <tt>#inspect</tt> without modification.
+  #
+  #   person = Person.create!(name: 'David Heinemeier Hansson ' * 3)
+  #
+  #   person.attribute_for_inspect(:name)
+  #   # => "\"David Heinemeier Hansson David Heinemeier Hansson ...\""
+  #
+  #   person.attribute_for_inspect(:created_at)
+  #   # => "\"2012-10-22 00:15:07\""
+  #
+  #   person.attribute_for_inspect(:tag_ids)
+  #   # => "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+  def attribute_for_inspect: (untyped attr_name) -> untyped
+  # Returns +true+ if the specified +attribute+ has been set by the user or by a
+  # database load and is neither +nil+ nor <tt>empty?</tt> (the latter only applies
+  # to objects that respond to <tt>empty?</tt>, most notably Strings). Otherwise, +false+.
+  # Note that it always returns +true+ with boolean attributes.
+  #
+  #   class Task < ActiveRecord::Base
+  #   end
+  #
+  #   task = Task.new(title: '', is_done: false)
+  #   task.attribute_present?(:title)   # => false
+  #   task.attribute_present?(:is_done) # => true
+  #   task.title = 'Buy milk'
+  #   task.is_done = true
+  #   task.attribute_present?(:title)   # => true
+  #   task.attribute_present?(:is_done) # => true
+  def attribute_present?: (untyped attr_name) -> untyped
+  # Returns the value of the attribute identified by <tt>attr_name</tt> after it has been typecast (for example,
+  # "2004-12-12" in a date column is cast to a date object, like Date.new(2004, 12, 12)). It raises
+  # <tt>ActiveModel::MissingAttributeError</tt> if the identified attribute is missing.
+  #
+  # Note: +:id+ is always present.
+  #
+  #   class Person < ActiveRecord::Base
+  #     belongs_to :organization
+  #   end
+  #
+  #   person = Person.new(name: 'Francesco', age: '22')
+  #   person[:name] # => "Francesco"
+  #   person[:age]  # => 22
+  #
+  #   person = Person.select('id').first
+  #   person[:name]            # => ActiveModel::MissingAttributeError: missing attribute: name
+  #   person[:organization_id] # => ActiveModel::MissingAttributeError: missing attribute: organization_id
+  def []: (untyped attr_name) -> untyped
+  # Updates the attribute identified by <tt>attr_name</tt> with the specified +value+.
+  # (Alias for the protected #write_attribute method).
+  #
+  #   class Person < ActiveRecord::Base
+  #   end
+  #
+  #   person = Person.new
+  #   person[:age] = '22'
+  #   person[:age] # => 22
+  #   person[:age].class # => Integer
+  def []=: (untyped attr_name, untyped value) -> untyped
+  # Returns the name of all database fields which have been read from this
+  # model. This can be useful in development mode to determine which fields
+  # need to be selected. For performance critical pages, selecting only the
+  # required fields can be an easy performance win (assuming you aren't using
+  # all of the fields on the model).
+  #
+  # For example:
+  #
+  #   class PostsController < ActionController::Base
+  #     after_action :print_accessed_fields, only: :index
+  #
+  #     def index
+  #       @posts = Post.all
+  #     end
+  #
+  #     private
+  #
+  #     def print_accessed_fields
+  #       p @posts.first.accessed_fields
+  #     end
+  #   end
+  #
+  # Which allows you to quickly change your code to:
+  #
+  #   class PostsController < ActionController::Base
+  #     def index
+  #       @posts = Post.select(:id, :title, :author_id, :updated_at)
+  #     end
+  #   end
+  def accessed_fields: () -> untyped
+  private def attribute_method?: (untyped attr_name) -> untyped
+  private def attributes_with_values: (untyped attribute_names) -> untyped
+  # Filters the primary keys and readonly attributes from the attribute names.
+  private def attributes_for_update: (untyped attribute_names) -> untyped
+  # Filters out the primary keys, from the attribute names, when the primary
+  # key is to be generated (e.g. the id attribute has no value).
+  private def attributes_for_create: (untyped attribute_names) -> untyped
+  private def format_for_inspect: (untyped name, untyped value) -> untyped
+  private def pk_attribute?: (untyped name) -> untyped
+  include ActiveModel::AttributeMethods
+  extend ActiveSupport::Concern
+  extend ActiveSupport::Autoload
+  RESTRICTED_CLASS_METHODS: Array[String]
+end

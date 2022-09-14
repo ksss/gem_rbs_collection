@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Helpers::AtomFeedHelper::AtomBuilder
+  def initialize: (untyped xml) -> void
+  # Delegate to xml builder, first wrapping the element in an xhtml
+  # namespaced div element if the method and arguments indicate
+  # that an xhtml_block? is desired.
+  private def method_missing: (untyped method, *untyped arguments) ?{ () -> untyped } -> untyped
+  # True if the method name matches one of the five elements defined
+  # in the Atom spec as potentially containing XHTML content and
+  # if type: 'xhtml' is, in fact, specified.
+  private def xhtml_block?: (untyped method, untyped arguments) -> (untyped | nil)
+  XHTML_TAG_NAMES: Set[String]
+end

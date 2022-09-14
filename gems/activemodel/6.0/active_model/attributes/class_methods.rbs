@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Attributes::ClassMethods
+  def attribute: (untyped name, ?untyped `type`, **untyped options) -> untyped
+  # Returns an array of attribute names as strings
+  #
+  #   class Person
+  #     include ActiveModel::Attributes
+  #
+  #     attribute :name, :string
+  #     attribute :age, :integer
+  #   end
+  #
+  #   Person.attribute_names
+  #   # => ["name", "age"]
+  def attribute_names: () -> untyped
+  private def define_method_attribute=: (untyped name) -> untyped
+  private def define_default_attribute: (untyped name, untyped value, untyped `type`) -> untyped
+end

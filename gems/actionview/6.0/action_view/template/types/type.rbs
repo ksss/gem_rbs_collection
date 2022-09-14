@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Types::Type
+  def self.[]: (untyped `type`) -> untyped
+  def initialize: (untyped symbol) -> void
+  def to_s: () -> untyped
+  alias to_str to_s
+  def ref: () -> untyped
+  alias to_sym ref
+  def ==: (untyped `type`) -> (untyped | nil)
+  attr_reader symbol: untyped
+  SET: untyped
+end

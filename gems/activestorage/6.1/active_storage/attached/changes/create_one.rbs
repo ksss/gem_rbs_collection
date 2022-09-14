@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Attached::Changes::CreateOne
+  def initialize: (untyped name, untyped record, untyped attachable) -> void
+  def attachment: () -> untyped
+  def blob: () -> untyped
+  def upload: () -> untyped
+  def save: () -> untyped
+  private def find_or_build_attachment: () -> untyped
+  private def find_attachment: () -> (untyped | nil)
+  private def build_attachment: () -> untyped
+  private def find_or_build_blob: () -> untyped
+  private def attachment_service_name: () -> untyped
+  attr_reader name: untyped
+  attr_reader record: untyped
+  attr_reader attachable: untyped
+end

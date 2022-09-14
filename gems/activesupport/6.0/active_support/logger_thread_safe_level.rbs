@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::LoggerThreadSafeLevel
+  def after_initialize: () -> untyped
+  def local_log_id: () -> untyped
+  def local_level: () -> untyped
+  def local_level=: (untyped level) -> untyped
+  def level: () -> untyped
+  def add: (untyped severity, ?untyped? message, ?untyped? progname) ?{ () -> untyped } -> (true | untyped)
+  extend ActiveSupport::Concern
+end

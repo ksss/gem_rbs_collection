@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EncryptedFile::MissingKeyError < ::RuntimeError
+  def initialize: (key_path: untyped, env_key: untyped) -> void
+end

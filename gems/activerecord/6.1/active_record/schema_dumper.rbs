@@ -1,0 +1,42 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::SchemaDumper
+  def self.dump: (?untyped connection, ?untyped stream, ?untyped config) -> untyped
+  private def self.generate_options: (untyped config) -> { table_name_prefix: untyped, table_name_suffix: untyped }
+  def dump: (untyped stream) -> untyped
+  private def initialize: (untyped connection, ?::Hash[untyped, untyped] options) -> void
+  # turns 20170404131909 into "2017_04_04_131909"
+  private def formatted_version: () -> untyped
+  private def define_params: () -> (::String | "")
+  private def header: (untyped stream) -> untyped
+  private def trailer: (untyped stream) -> untyped
+  # extensions are only supported by PostgreSQL
+  private def extensions: (untyped stream) -> nil
+  private def tables: (untyped stream) -> untyped
+  private def table: (untyped table, untyped stream) -> untyped
+  # Keep it for indexing materialized views
+  private def indexes: (untyped table, untyped stream) -> (untyped | nil)
+  private def indexes_in_create: (untyped table, untyped stream) -> (untyped | nil)
+  private def index_parts: (untyped index) -> untyped
+  private def check_constraints_in_create: (untyped table, untyped stream) -> (untyped | nil)
+  private def foreign_keys: (untyped table, untyped stream) -> (untyped | nil)
+  private def format_colspec: (untyped colspec) -> untyped
+  private def format_options: (untyped options) -> untyped
+  private def format_index_parts: (untyped options) -> (::String | untyped)
+  private def remove_prefix_and_suffix: (untyped table) -> untyped
+  private def ignored?: (untyped table_name) -> untyped
+  attr_accessor table_name: untyped
+  def self.ignore_tables: () -> untyped
+  def ignore_tables: () -> untyped
+  def self.fk_ignore_pattern: () -> untyped
+  def fk_ignore_pattern: () -> untyped
+  def self.chk_ignore_pattern: () -> untyped
+  def chk_ignore_pattern: () -> untyped
+  def self.ignore_tables=: (untyped val) -> untyped
+  def ignore_tables=: (untyped val) -> untyped
+  def self.fk_ignore_pattern=: (untyped val) -> untyped
+  def fk_ignore_pattern=: (untyped val) -> untyped
+  def self.chk_ignore_pattern=: (untyped val) -> untyped
+  def chk_ignore_pattern=: (untyped val) -> untyped
+end

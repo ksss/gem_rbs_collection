@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::CollectionRenderer::MixedCollectionIterator < ::ActionView::CollectionRenderer::CollectionIterator
+  def initialize: (untyped collection, untyped paths) -> void
+  def each_with_info: () { (untyped, untyped) -> untyped } -> untyped
+end

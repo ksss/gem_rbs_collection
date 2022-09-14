@@ -1,0 +1,25 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::LookupContext
+  def self.register_detail: (untyped name) ?{ () -> untyped } -> untyped
+  def initialize: (untyped view_paths, ?::Hash[untyped, untyped] details, ?untyped prefixes) -> void
+  def digest_cache: () -> untyped
+  def with_prepended_formats: (untyped formats) -> untyped
+  private def initialize_details: (untyped target, untyped details) -> untyped
+  # Override formats= to expand ["*/*"] values and automatically
+  # add :html as fallback to :js.
+  def formats=: (untyped values) -> untyped
+  # Override locale to return a symbol instead of array.
+  def locale: () -> untyped
+  # Overload locale= to also set the I18n.locale. If the current I18n.config object responds
+  # to original_config, it means that it has a copy of the original I18n configuration and it's
+  # acting as proxy, which we need to skip.
+  def locale=: (untyped value) -> untyped
+  include ActionView::LookupContext::Accessors
+  include ActionView::LookupContext::DetailsCache
+  include ActionView::LookupContext::ViewPaths
+  attr_accessor prefixes: untyped
+  attr_accessor rendered_format: untyped
+  attr_accessor self.registered_details: untyped
+end

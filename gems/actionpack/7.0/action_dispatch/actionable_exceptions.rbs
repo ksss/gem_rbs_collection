@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::ActionableExceptions
+  def initialize: (untyped app) -> void
+  def call: (untyped env) -> untyped
+  private def actionable_request?: (untyped request) -> untyped
+  private def redirect_to: (untyped location) -> (::Array[400 | ::Hash[::String, "text/plain"] | ::Array["Invalid redirection URI"]] | ::Array[302 | ::Hash[::String, ::String | untyped] | ::Array[untyped]])
+  def self.endpoint: () -> untyped
+  def endpoint: () -> untyped
+  def self.endpoint=: (untyped val) -> untyped
+  def endpoint=: (untyped val) -> untyped
+end

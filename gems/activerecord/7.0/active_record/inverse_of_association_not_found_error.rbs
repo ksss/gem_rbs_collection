@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InverseOfAssociationNotFoundError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? reflection, ?untyped? associated_class) -> void
+  def corrections: () -> (untyped | ::Array[untyped])
+  include DidYouMean::Correctable
+  attr_reader reflection: untyped
+  attr_reader associated_class: untyped
+end

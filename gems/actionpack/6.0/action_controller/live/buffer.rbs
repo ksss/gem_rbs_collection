@@ -1,0 +1,28 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Live::Buffer < ::ActionDispatch::Response::Buffer
+  def initialize: (untyped response) -> void
+  def write: (untyped string) -> untyped
+  # Write a 'close' event to the buffer; the producer/writing thread
+  # uses this to notify us that it's finished supplying content.
+  #
+  # See also #abort.
+  def close: () -> untyped
+  # Inform the producer/writing thread that the client has
+  # disconnected; the reading thread is no longer interested in
+  # anything that's being written.
+  #
+  # See also #close.
+  def abort: () -> untyped
+  # Is the client still connected and waiting for content?
+  #
+  # The result of calling `write` when this is `false` is determined
+  # by `ignore_disconnect`.
+  def connected?: () -> untyped
+  def on_error: () ?{ () -> untyped } -> untyped
+  def call_on_error: () -> untyped
+  private def each_chunk: () { (untyped) -> untyped } -> untyped
+  include MonitorMixin
+  attr_accessor ignore_disconnect: untyped
+end

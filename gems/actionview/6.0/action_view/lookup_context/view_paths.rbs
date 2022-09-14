@@ -1,0 +1,30 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::LookupContext::ViewPaths
+  def find: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, ?::Hash[untyped, untyped] options) -> untyped
+  alias find_template find
+  alias find_file find
+  def find_all: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, ?::Hash[untyped, untyped] options) -> untyped
+  def exists?: (untyped name, ?untyped prefixes, ?bool partial, ?untyped keys, **untyped options) -> untyped
+  alias template_exists? exists?
+  def any?: (untyped name, ?untyped prefixes, ?bool partial) -> untyped
+  alias any_templates? any?
+  # Adds fallbacks to the view paths. Useful in cases when you are rendering
+  # a :file.
+  def with_fallbacks: () { () -> untyped } -> untyped
+  # Whenever setting view paths, makes a copy so that we can manipulate them in
+  # instance objects as we wish.
+  private def build_view_paths: (untyped paths) -> untyped
+  private def args_for_lookup: (untyped name, untyped prefixes, untyped partial, untyped keys, untyped details_options) -> ::Array[untyped]
+  # Compute details hash and key according to user options (e.g. passed from #render).
+  private def detail_args_for: (untyped options) -> (untyped | ::Array[untyped])
+  private def args_for_any: (untyped name, untyped prefixes, untyped partial) -> ::Array[untyped]
+  private def detail_args_for_any: () -> untyped
+  # Support legacy foo.erb names even though we now ignore .erb
+  # as well as incorrectly putting part of the path in the template
+  # name instead of the prefix.
+  private def normalize_name: (untyped name, untyped prefixes) -> untyped
+  attr_reader view_paths: untyped
+  attr_reader html_fallback_for_js: untyped
+end

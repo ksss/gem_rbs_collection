@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Instrumentation::ClassMethods
+  # A hook which allows other frameworks to log what happened during
+  # controller process action. This method should return an array
+  # with the messages to be added.
+  def log_process_action: (untyped payload) -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::SecurePassword::InstanceMethodsOnActivation < ::Module
+  def initialize: (untyped attribute) -> void
+end

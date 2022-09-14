@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Decimal < ::ActiveModel::Type::Value
+  def type: () -> :decimal
+  def type_cast_for_schema: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> untyped
+  private def convert_float_to_big_decimal: (untyped value) -> untyped
+  private def float_precision: () -> untyped
+  private def apply_scale: (untyped value) -> untyped
+  include ActiveModel::Type::Helpers::Numeric
+  BIGDECIMAL_PRECISION: Integer
+end

@@ -1,0 +1,38 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Http::Headers
+  def self.from_hash: (untyped hash) -> untyped
+  def initialize: (untyped request) -> void
+  # Returns the value for the given key mapped to @env.
+  def []: (untyped key) -> untyped
+  # Sets the given value for the key mapped to @env.
+  def []=: (untyped key, untyped value) -> untyped
+  # Add a value to a multivalued header like Vary or Accept-Encoding.
+  def add: (untyped key, untyped value) -> untyped
+  def key?: (untyped key) -> untyped
+  alias include? key?
+  # Returns the value for the given key mapped to @env.
+  #
+  # If the key is not found and an optional code block is not provided,
+  # raises a <tt>KeyError</tt> exception.
+  #
+  # If the code block is provided, then it will be run and
+  # its result returned.
+  def fetch: (untyped key, ?untyped default) { () -> untyped } -> untyped
+  def each: () ?{ () -> untyped } -> untyped
+  # Returns a new Http::Headers instance containing the contents of
+  # <tt>headers_or_env</tt> and the original instance.
+  def merge: (untyped headers_or_env) -> untyped
+  # Adds the contents of <tt>headers_or_env</tt> to original instance
+  # entries; duplicate keys are overwritten with the values from
+  # <tt>headers_or_env</tt>.
+  def merge!: (untyped headers_or_env) -> untyped
+  def env: () -> untyped
+  # Converts an HTTP header name to an environment variable name if it is
+  # not contained within the headers hash.
+  private def env_name: (untyped key) -> untyped
+  CGI_VARIABLES: Set[String]
+  DEFAULT: Object
+  HTTP_HEADER: Regexp
+end

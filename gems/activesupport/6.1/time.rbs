@@ -1,0 +1,193 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Time
+  # No Time is blank:
+  #
+  #   Time.now.blank? # => false
+  #
+  # @return [false]
+  def blank?: () -> false
+  # Duck-types as a Time-like class. See Object#acts_like?.
+  def acts_like_time?: () -> true
+  # Overriding case equality method so that it returns true for ActiveSupport::TimeWithZone instances
+  def self.===: (untyped other) -> untyped
+  # Returns the number of days in the given month.
+  # If no year is specified, it will use the current year.
+  def self.days_in_month: (untyped month, ?untyped year) -> (29 | untyped)
+  # Returns the number of days in the given year.
+  # If no year is specified, it will use the current year.
+  def self.days_in_year: (?untyped year) -> untyped
+  # Returns <tt>Time.zone.now</tt> when <tt>Time.zone</tt> or <tt>config.time_zone</tt> are set, otherwise just returns <tt>Time.now</tt>.
+  def self.current: () -> ActiveSupport::TimeWithZone
+  # Layers additional behavior on Time.at so that ActiveSupport::TimeWithZone and DateTime
+  # instances can be used when called with a single argument
+  def self.at_with_coercion: (*untyped args) -> untyped
+  alias self.at_without_coercion self.at
+  # Creates a +Time+ instance from an RFC 3339 string.
+  #
+  #   Time.rfc3339('1999-12-31T14:00:00-10:00') # => 2000-01-01 00:00:00 -1000
+  #
+  # If the time or offset components are missing then an +ArgumentError+ will be raised.
+  #
+  #   Time.rfc3339('1999-12-31') # => ArgumentError: invalid date
+  def self.rfc3339: (untyped str) -> untyped
+  def seconds_since_midnight: () -> Float
+  def seconds_until_end_of_day: () -> Integer
+  def sec_fraction: () -> (Integer | Rational)
+  def change: (untyped options) -> self
+  def advance: (untyped options) -> self
+  def ago: (untyped other) -> self
+  # Returns a new Time representing the time a number of seconds since the instance time
+  def since: (untyped seconds) -> untyped
+  alias in since
+  def beginning_of_day: () -> self
+  alias midnight beginning_of_day
+  alias at_midnight beginning_of_day
+  alias at_beginning_of_day beginning_of_day
+  def middle_of_day: () -> self
+  alias midday middle_of_day
+  alias noon middle_of_day
+  alias at_midday middle_of_day
+  alias at_noon middle_of_day
+  alias at_middle_of_day middle_of_day
+  def end_of_day: () -> self
+  alias at_end_of_day end_of_day
+  def beginning_of_hour: () -> self
+  alias at_beginning_of_hour beginning_of_hour
+  def end_of_hour: () -> self
+  alias at_end_of_hour end_of_hour
+  def beginning_of_minute: () -> self
+  alias at_beginning_of_minute beginning_of_minute
+  def end_of_minute: () -> self
+  alias at_end_of_minute end_of_minute
+  def plus_with_duration: (untyped other) -> untyped
+  def plus_without_duration: (Time | self arg0) -> Float
+                           | (Numeric arg0) -> self
+  def minus_with_duration: (Time | self arg0) -> Float
+                         | (Numeric arg0) -> self
+  def minus_without_duration: (Time | self arg0) -> Float
+                            | (Numeric arg0) -> self
+  def minus_with_coercion: (Time | self arg0) -> Float
+                         | (Numeric arg0) -> self
+  def minus_without_coercion: (Time | self arg0) -> Float
+                            | (Numeric arg0) -> self
+  def compare_with_coercion: (untyped other) -> (-1 | 0 | 1 | nil)
+  def compare_without_coercion: (untyped other) -> (-1 | 0 | 1 | nil)
+  def eql_with_coercion: (untyped other) -> bool
+  def eql_without_coercion: (untyped other) -> bool
+  def prev_day: () -> self
+  def next_day: () -> self
+  def prev_month: () -> self
+  def next_month: () -> self
+  def prev_year: () -> self
+  def next_year: () -> self
+  # Converts to a formatted string. See DATE_FORMATS for built-in formats.
+  #
+  # This method is aliased to <tt>to_s</tt>.
+  #
+  #   time = Time.now                    # => 2007-01-18 06:10:17 -06:00
+  #
+  #   time.to_formatted_s(:time)         # => "06:10"
+  #   time.to_s(:time)                   # => "06:10"
+  #
+  #   time.to_formatted_s(:db)           # => "2007-01-18 06:10:17"
+  #   time.to_formatted_s(:number)       # => "20070118061017"
+  #   time.to_formatted_s(:short)        # => "18 Jan 06:10"
+  #   time.to_formatted_s(:long)         # => "January 18, 2007 06:10"
+  #   time.to_formatted_s(:long_ordinal) # => "January 18th, 2007 06:10"
+  #   time.to_formatted_s(:rfc822)       # => "Thu, 18 Jan 2007 06:10:17 -0600"
+  #   time.to_formatted_s(:iso8601)      # => "2007-01-18T06:10:17-06:00"
+  #
+  # == Adding your own time formats to +to_formatted_s+
+  # You can add your own formats to the Time::DATE_FORMATS hash.
+  # Use the format name as the hash key and either a strftime string
+  # or Proc instance that takes a time argument as the value.
+  #
+  #   # config/initializers/time_formats.rb
+  #   Time::DATE_FORMATS[:month_and_year] = '%B %Y'
+  #   Time::DATE_FORMATS[:short_ordinal]  = ->(time) { time.strftime("%B #{time.day.ordinalize}") }
+  def to_formatted_s: (?::Symbol format) -> untyped
+  alias to_default_s to_s
+  # Returns a formatted string of the offset from UTC, or an alternative
+  # string if the time zone is already UTC.
+  #
+  #   Time.local(2000).formatted_offset        # => "-06:00"
+  #   Time.local(2000).formatted_offset(false) # => "-0600"
+  def formatted_offset: (?bool colon, ?untyped? alternate_utc_string) -> untyped
+  # Aliased to +xmlschema+ for compatibility with +DateTime+
+  alias rfc3339 xmlschema
+  def self.zone: () -> ActiveSupport::TimeZone
+  # Sets <tt>Time.zone</tt> to a TimeZone object for the current request/thread.
+  #
+  # This method accepts any of the following:
+  #
+  # * A Rails TimeZone object.
+  # * An identifier for a Rails TimeZone object (e.g., "Eastern Time (US & Canada)", <tt>-5.hours</tt>).
+  # * A TZInfo::Timezone object.
+  # * An identifier for a TZInfo::Timezone object (e.g., "America/New_York").
+  #
+  # Here's an example of how you might set <tt>Time.zone</tt> on a per request basis and reset it when the request is done.
+  # <tt>current_user.time_zone</tt> just needs to return a string identifying the user's preferred time zone:
+  #
+  #   class ApplicationController < ActionController::Base
+  #     around_action :set_time_zone
+  #
+  #     def set_time_zone
+  #       if logged_in?
+  #         Time.use_zone(current_user.time_zone) { yield }
+  #       else
+  #         yield
+  #       end
+  #     end
+  #   end
+  def self.zone=: (untyped time_zone) -> untyped
+  # Allows override of <tt>Time.zone</tt> locally inside supplied block;
+  # resets <tt>Time.zone</tt> to existing value when done.
+  #
+  #   class ApplicationController < ActionController::Base
+  #     around_action :set_time_zone
+  #
+  #     private
+  #
+  #     def set_time_zone
+  #       Time.use_zone(current_user.timezone) { yield }
+  #     end
+  #   end
+  #
+  # NOTE: This won't affect any <tt>ActiveSupport::TimeWithZone</tt>
+  # objects that have already been created, e.g. any model timestamp
+  # attributes that have been read before the block will remain in
+  # the application's default timezone.
+  def self.use_zone: (untyped time_zone) { () -> untyped } -> untyped
+  # Returns a TimeZone instance matching the time zone provided.
+  # Accepts the time zone in any format supported by <tt>Time.zone=</tt>.
+  # Raises an +ArgumentError+ for invalid time zones.
+  #
+  #   Time.find_zone! "America/New_York" # => #<ActiveSupport::TimeZone @name="America/New_York" ...>
+  #   Time.find_zone! "EST"              # => #<ActiveSupport::TimeZone @name="EST" ...>
+  #   Time.find_zone! -5.hours           # => #<ActiveSupport::TimeZone @name="Bogota" ...>
+  #   Time.find_zone! nil                # => nil
+  #   Time.find_zone! false              # => false
+  #   Time.find_zone! "NOT-A-TIMEZONE"   # => ArgumentError: Invalid Timezone: NOT-A-TIMEZONE
+  def self.find_zone!: (untyped time_zone) -> untyped
+  # Returns a TimeZone instance matching the time zone provided.
+  # Accepts the time zone in any format supported by <tt>Time.zone=</tt>.
+  # Returns +nil+ for invalid time zones.
+  #
+  #   Time.find_zone "America/New_York" # => #<ActiveSupport::TimeZone @name="America/New_York" ...>
+  #   Time.find_zone "NOT-A-TIMEZONE"   # => nil
+  def self.find_zone: (untyped time_zone) -> untyped
+  include DateAndTime::Zones
+  include DateAndTime::Calculations
+  include DateAndTime::Compatibility
+  attr_accessor self.zone_default: untyped
+  def in_time_zone: (?ActiveSupport::TimeZone | String new_zone) -> ::ActiveSupport::TimeWithZone
+                  | (false? zone) -> ::Time
+  def +: (ActiveSupport::Duration other) -> self
+       | ...
+  def -: (ActiveSupport::Duration other) -> self
+       | ...
+  COMMON_YEAR_DAYS_IN_MONTH: Array[nil | Integer]
+  DATE_FORMATS: Hash[Symbol, String | Proc]
+end

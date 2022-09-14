@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::VariantRecord::ActiveRecord_DisableJoinsAssociationRelation < ::ActiveRecord::DisableJoinsAssociationRelation
+  include ActiveRecord::Delegation::ClassSpecificRelation
+  include ActiveStorage::VariantRecord::GeneratedRelationMethods
+  extend ActiveRecord::Delegation::ClassSpecificRelation::ClassMethods
+end

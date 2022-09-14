@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods
+  # Enables HTTP \Basic authentication.
+  #
+  # See ActionController::HttpAuthentication::Basic for example usage.
+  def http_basic_authenticate_with: (name: untyped, password: untyped, ?realm: untyped?, **untyped options) -> untyped
+end

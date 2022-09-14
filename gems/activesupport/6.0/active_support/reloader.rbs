@@ -1,0 +1,40 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Reloader < ::ActiveSupport::ExecutionWrapper
+  # Registers a callback that will run once at application startup and every time the code is reloaded.
+  def self.to_prepare: (*untyped args) ?{ () -> untyped } -> untyped
+  # Registers a callback that will run immediately before the classes are unloaded.
+  def self.before_class_unload: (*untyped args) ?{ () -> untyped } -> untyped
+  # Registers a callback that will run immediately after the classes are unloaded.
+  def self.after_class_unload: (*untyped args) ?{ () -> untyped } -> untyped
+  # Initiate a manual reload
+  def self.reload!: () -> untyped
+  def self.run!: (?reset: bool) -> untyped
+  # Run the supplied block as a work unit, reloading code as needed
+  def self.wrap: () -> untyped
+  def self.check!: () -> untyped
+  def self.reloaded!: () -> untyped
+  def self.prepare!: () -> untyped
+  def initialize: () -> void
+  # Acquire the ActiveSupport::Dependencies::Interlock unload lock,
+  # ensuring it will be released automatically
+  def require_unload_lock!: () -> (untyped | nil)
+  # Release the unload lock if it has been previously obtained
+  def release_unload_lock!: () -> (untyped | nil)
+  def run!: () -> untyped
+  def class_unload!: () ?{ () -> untyped } -> untyped
+  def complete!: () -> untyped
+  def self.executor: () -> untyped
+  def self.executor?: () -> bool
+  def self.executor=: (untyped value) -> untyped
+  def executor: () -> untyped
+  def executor?: () -> bool
+  def executor=: (untyped value) -> untyped
+  def self.check: () -> untyped
+  def self.check?: () -> bool
+  def self.check=: (untyped value) -> untyped
+  def check: () -> untyped
+  def check?: () -> bool
+  def check=: (untyped value) -> untyped
+end

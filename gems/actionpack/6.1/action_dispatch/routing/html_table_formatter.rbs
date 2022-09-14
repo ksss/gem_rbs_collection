@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::HtmlTableFormatter
+  def initialize: (untyped view) -> void
+  def section_title: (untyped title) -> untyped
+  def section: (untyped routes) -> untyped
+  # The header is part of the HTML page, so we don't construct it here.
+  def header: (untyped routes) -> nil
+  def no_routes: () -> untyped
+  def result: () -> untyped
+end

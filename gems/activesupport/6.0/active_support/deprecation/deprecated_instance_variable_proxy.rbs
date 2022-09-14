@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Deprecation::DeprecatedInstanceVariableProxy < ::ActiveSupport::Deprecation::DeprecationProxy
+  def initialize: (untyped `instance`, untyped method, ?::String var, ?untyped deprecator) -> void
+  private def target: () -> untyped
+  private def warn: (untyped callstack, untyped called, untyped args) -> untyped
+end

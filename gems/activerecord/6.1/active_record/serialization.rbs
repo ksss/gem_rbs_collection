@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Serialization
+  def serializable_hash: (?untyped? options) -> untyped
+  include ActiveModel::Serializers::JSON
+  extend ActiveSupport::Concern
+end

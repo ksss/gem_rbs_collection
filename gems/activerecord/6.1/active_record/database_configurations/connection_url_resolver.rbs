@@ -1,0 +1,37 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::DatabaseConfigurations::ConnectionUrlResolver
+  # == Example
+  #
+  #   url = "postgresql://foo:bar@localhost:9000/foo_test?pool=5&timeout=3000"
+  #   ConnectionUrlResolver.new(url).to_hash
+  #   # => {
+  #     adapter:  "postgresql",
+  #     host:     "localhost",
+  #     port:     9000,
+  #     database: "foo_test",
+  #     username: "foo",
+  #     password: "bar",
+  #     pool:     "5",
+  #     timeout:  "3000"
+  #   }
+  def initialize: (untyped url) -> void
+  # Converts the given URL to a full connection hash.
+  def to_hash: () -> untyped
+  private def uri_parser: () -> untyped
+  # Converts the query parameters of the URI into a hash.
+  #
+  #   "localhost?pool=5&reaping_frequency=2"
+  #   # => { pool: "5", reaping_frequency: "2" }
+  #
+  # returns empty hash if no query present.
+  #
+  #   "localhost"
+  #   # => {}
+  private def query_hash: () -> untyped
+  private def raw_config: () -> untyped
+  # Returns name of the database.
+  private def database_from_path: () -> untyped
+  attr_reader uri: untyped
+end

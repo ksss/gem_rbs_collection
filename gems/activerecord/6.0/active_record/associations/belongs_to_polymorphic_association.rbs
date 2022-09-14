@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::BelongsToPolymorphicAssociation < ::ActiveRecord::Associations::BelongsToAssociation
+  def klass: () -> untyped
+  def target_changed?: () -> untyped
+  private def replace_keys: (untyped record) -> untyped
+  private def inverse_reflection_for: (untyped record) -> untyped
+  private def raise_on_type_mismatch!: (untyped record) -> nil
+  private def stale_state: () -> untyped
+end

@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::CallbackSequence
+  def initialize: (?untyped? nested, ?untyped? call_template, ?untyped? user_conditions) -> void
+  def before: () ?{ () -> untyped } -> self
+  def after: () ?{ () -> untyped } -> self
+  def around: (untyped call_template, untyped user_conditions) -> untyped
+  def skip?: (untyped arg) -> untyped
+  def final?: () -> untyped
+  def expand_call_template: (untyped arg, untyped block) -> untyped
+  def invoke_before: (untyped arg) -> untyped
+  def invoke_after: (untyped arg) -> untyped
+  attr_reader nested: untyped
+end

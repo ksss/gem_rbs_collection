@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::NullResolver < ::ActionView::PathResolver
+  def query: (untyped path, untyped exts, untyped _, untyped locals, cache: untyped) -> ::Array[untyped]
+end

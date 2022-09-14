@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::LogSubscriber < ::ActiveSupport::LogSubscriber
+  def start_processing: (untyped event) -> (nil | untyped)
+  def process_action: (untyped event) -> untyped
+  def halted_callback: (untyped event) -> untyped
+  def send_file: (untyped event) -> untyped
+  def redirect_to: (untyped event) -> untyped
+  def send_data: (untyped event) -> untyped
+  def unpermitted_parameters: (untyped event) -> untyped
+  def logger: () -> untyped
+  INTERNAL_PARAMS: Array[String]
+end

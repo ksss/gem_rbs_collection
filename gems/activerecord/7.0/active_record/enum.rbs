@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Enum
+  def self.extended: (untyped base) -> untyped
+  def inherited: (untyped base) -> untyped
+  def enum: (?untyped? name, ?untyped? values, **untyped options) -> untyped
+  private def _enum: (untyped name, untyped values, ?prefix: untyped?, ?suffix: untyped?, ?scopes: bool, **untyped options) -> untyped
+  private def _enum_methods_module: () -> untyped
+  private def assert_valid_enum_definition_values: (untyped values) -> untyped
+  private def detect_enum_conflict!: (untyped enum_name, untyped method_name, ?bool klass_method) -> (untyped | untyped | untyped | untyped | nil)
+  private def raise_conflict_error: (untyped enum_name, untyped method_name, ?type: ::String, ?source: ::String) -> untyped
+  private def detect_negative_enum_conditions!: (untyped method_names) -> (nil | untyped)
+end

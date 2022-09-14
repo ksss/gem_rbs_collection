@@ -1,0 +1,46 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PartialRenderer < ::ActionView::AbstractRenderer
+  def initialize: () -> void
+  def render: (untyped context, untyped options, untyped block) -> untyped
+  private def render_collection: (untyped view, untyped template) -> untyped
+  private def render_partial: (untyped view, untyped template) -> untyped
+  # Sets up instance variables needed for rendering a partial. This method
+  # finds the options and details and extracts them. The method also contains
+  # logic that handles the type of object passed in as the partial.
+  #
+  # If +options[:partial]+ is a string, then the <tt>@path</tt> instance variable is
+  # set to that string. Otherwise, the +options[:partial]+ object must
+  # respond to +to_partial_path+ in order to setup the path.
+  private def setup: (untyped context, untyped options, untyped as, untyped block) -> self
+  private def as_variable: (untyped options) -> (untyped | nil)
+  private def collection_from_options: () -> (untyped | nil)
+  private def collection_from_object: () -> (untyped | nil)
+  private def find_partial: (untyped path, untyped template_keys) -> untyped
+  private def find_template: (untyped path, untyped locals) -> untyped
+  private def collection_with_template: (untyped view, untyped template) -> untyped
+  private def collection_without_template: (untyped view) -> untyped
+  # Obtains the path to where the object's partial is located. If the object
+  # responds to +to_partial_path+, then +to_partial_path+ will be called and
+  # will provide the path. If the object does not respond to +to_partial_path+,
+  # then an +ArgumentError+ is raised.
+  #
+  # If +prefix_partial_path_with_controller_namespace+ is true, then this
+  # method will prefix the partial paths with a namespace.
+  private def partial_path: (untyped object, untyped view) -> untyped
+  private def prefixed_partial_names: () -> untyped
+  private def merge_prefix_into_object_path: (untyped prefix, untyped object_path) -> untyped
+  private def retrieve_template_keys: (untyped variable) -> untyped
+  private def retrieve_variable: (untyped path, untyped as) -> ::Array[untyped]
+  private def raise_invalid_identifier: (untyped path) -> untyped
+  private def raise_invalid_option_as: (untyped as) -> untyped
+  include ActionView::CollectionCaching
+  def self.collection_cache: () -> untyped
+  def collection_cache: () -> untyped
+  def self.collection_cache=: (untyped val) -> untyped
+  def collection_cache=: (untyped val) -> untyped
+  IDENTIFIER_ERROR_MESSAGE: String
+  OPTION_AS_ERROR_MESSAGE: String
+  PREFIXED_PARTIAL_NAMES: Concurrent::Map
+end

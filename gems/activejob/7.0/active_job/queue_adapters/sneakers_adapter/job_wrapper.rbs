@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveJob::QueueAdapters::SneakersAdapter::JobWrapper
+  def work: (untyped msg) -> untyped
+end

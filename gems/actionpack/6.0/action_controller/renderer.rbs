@@ -1,0 +1,42 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::Renderer
+  # Create a new renderer instance for a specific controller class.
+  def self.for: (untyped controller, ?::Hash[untyped, untyped] env, ?untyped defaults) -> untyped
+  # Create a new renderer for the same controller but with a new env.
+  def new: (?::Hash[untyped, untyped] env) -> untyped
+  # Create a new renderer for the same controller but with new defaults.
+  def with_defaults: (untyped defaults) -> untyped
+  # Accepts a custom Rack environment to render templates in.
+  # It will be merged with the default Rack environment defined by
+  # +ActionController::Renderer::DEFAULTS+.
+  def initialize: (untyped controller, untyped env, untyped defaults) -> void
+  # Render templates with any options from ActionController::Base#render_to_string.
+  #
+  # The primary options are:
+  # * <tt>:partial</tt> - See <tt>ActionView::PartialRenderer</tt> for details.
+  # * <tt>:file</tt> - Renders an explicit template file. Add <tt>:locals</tt> to pass in, if so desired.
+  #   It shouldn’t be used directly with unsanitized user input due to lack of validation.
+  # * <tt>:inline</tt> - Renders an ERB template string.
+  # * <tt>:plain</tt> - Renders provided text and sets the content type as <tt>text/plain</tt>.
+  # * <tt>:html</tt> - Renders the provided HTML safe string, otherwise
+  #   performs HTML escape on the string first. Sets the content type as <tt>text/html</tt>.
+  # * <tt>:json</tt> - Renders the provided hash or object in JSON. You don't
+  #   need to call <tt>.to_json</tt> on the object you want to render.
+  # * <tt>:body</tt> - Renders provided text and sets content type of <tt>text/plain</tt>.
+  #
+  # If no <tt>options</tt> hash is passed or if <tt>:update</tt> is specified, the default is
+  # to render a partial and use the second parameter as the locals hash.
+  def render: (*untyped args) -> untyped
+  alias render_to_string render
+  private def normalize_keys: (untyped env) -> untyped
+  private def rack_key_for: (untyped key) -> untyped
+  private def rack_value_for: (untyped key, untyped value) -> untyped
+  attr_reader defaults: untyped
+  attr_reader controller: untyped
+  DEFAULTS: Hash[Symbol, String | false]
+  IDENTITY: Proc
+  RACK_KEY_TRANSLATION: Hash[Symbol, String]
+  RACK_VALUE_TRANSLATION: Hash[Symbol, Proc]
+end

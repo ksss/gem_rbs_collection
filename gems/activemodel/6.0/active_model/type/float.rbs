@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Float < ::ActiveModel::Type::Value
+  def type: () -> :float
+  def type_cast_for_schema: (untyped value) -> ("::Float::NAN" | untyped)
+  private def cast_value: (untyped value) -> untyped
+  include ActiveModel::Type::Helpers::Numeric
+end

@@ -1,0 +1,29 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::SafeBuffer < ::String
+  alias original_concat concat
+  def []: (*untyped args) -> (nil | untyped | untyped)
+  def safe_concat: (untyped value) -> untyped
+  def initialize: (?::String str) -> void
+  def initialize_copy: (untyped other) -> untyped
+  def clone_empty: () -> untyped
+  def concat: (untyped value) -> self
+  alias << concat
+  def insert: (untyped index, untyped value) -> untyped
+  def prepend: (untyped value) -> untyped
+  def replace: (untyped value) -> untyped
+  def []=: (*untyped args) -> untyped
+  def +: (untyped other) -> untyped
+  def *: () -> untyped
+  def %: (untyped args) -> untyped
+  def html_safe?: () -> untyped
+  def to_s: () -> self
+  def to_param: () -> untyped
+  def encode_with: (untyped coder) -> untyped
+  private def explicit_html_escape_interpolated_argument: (untyped arg) -> untyped
+  private def implicit_html_escape_interpolated_argument: (untyped arg) -> untyped
+  private def set_block_back_references: (untyped block, untyped match_data) -> untyped
+  UNSAFE_STRING_METHODS: Array[String]
+  UNSAFE_STRING_METHODS_WITH_BACKREF: Array[String]
+end

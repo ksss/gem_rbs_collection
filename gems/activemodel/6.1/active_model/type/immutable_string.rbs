@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::ImmutableString < ::ActiveModel::Type::Value
+  def initialize: (**untyped args) -> void
+  def type: () -> :string
+  def serialize: (untyped value) -> untyped
+  private def cast_value: (untyped value) -> untyped
+end

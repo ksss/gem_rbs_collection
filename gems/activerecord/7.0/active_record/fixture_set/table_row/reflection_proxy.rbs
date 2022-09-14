@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::FixtureSet::TableRow::ReflectionProxy
+  def initialize: (untyped association) -> void
+  def join_table: () -> untyped
+  def name: () -> untyped
+  def primary_key_type: () -> untyped
+end

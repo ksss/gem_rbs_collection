@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module PG
+  class SimpleDecoder
+  end
+end
+module GlobalID
+  module Identification
+  end
+  module FixtureSet
+  end
+end

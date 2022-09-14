@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::NullResolver < ::ActionView::Resolver
+  def find_templates: (untyped name, untyped prefix, untyped partial, untyped details, ?untyped locals) -> ::Array[untyped]
+end

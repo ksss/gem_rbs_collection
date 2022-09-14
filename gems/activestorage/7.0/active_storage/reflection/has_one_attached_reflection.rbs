@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Reflection::HasOneAttachedReflection < ::ActiveStorage::Reflection::HasAttachedReflection
+  def macro: () -> :has_one_attached
+end

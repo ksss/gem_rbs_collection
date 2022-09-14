@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::Config
+  def initialize: () -> void
+  # Configure previous encryption schemes.
+  #
+  #   config.active_record.encryption.previous = [ { key_provider: MyOldKeyProvider.new } ]
+  def previous=: (untyped previous_schemes_properties) -> untyped
+  private def set_defaults: () -> untyped
+  private def add_previous_scheme: (**untyped properties) -> untyped
+  attr_accessor primary_key: untyped
+  attr_accessor deterministic_key: untyped
+  attr_accessor store_key_references: untyped
+  attr_accessor key_derivation_salt: untyped
+  attr_accessor support_unencrypted_data: untyped
+  attr_accessor encrypt_fixtures: untyped
+  attr_accessor validate_column_size: untyped
+  attr_accessor add_to_filter_parameters: untyped
+  attr_accessor excluded_from_filter_parameters: untyped
+  attr_accessor extend_queries: untyped
+  attr_accessor previous_schemes: untyped
+  attr_accessor forced_encoding_for_deterministic_encryption: untyped
+end

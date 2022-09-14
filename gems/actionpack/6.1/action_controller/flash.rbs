@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Flash
+  private def redirect_to: (?::Hash[untyped, untyped] options, ?::Hash[untyped, untyped] response_options_and_flash) -> untyped
+  extend ActiveSupport::Concern
+end

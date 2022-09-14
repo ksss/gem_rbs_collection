@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::SingularAssociation < ::ActiveRecord::Associations::Association
+  # Implements the reader method, e.g. foo.bar for Foo.has_one :bar
+  def reader: () -> untyped
+  # Implements the writer method, e.g. foo.bar= for Foo.belongs_to :bar
+  def writer: (untyped record) -> untyped
+  def build: (?::Hash[untyped, untyped] attributes) ?{ () -> untyped } -> untyped
+  # Implements the reload reader method, e.g. foo.reload_bar for
+  # Foo.has_one :bar
+  def force_reload_reader: () -> untyped
+  private def scope_for_create: () -> untyped
+  private def find_target: () -> untyped
+  private def replace: (untyped record) -> untyped
+  private def set_new_record: (untyped record) -> untyped
+  private def _create_record: (untyped attributes, ?bool raise_error) ?{ () -> untyped } -> untyped
+end

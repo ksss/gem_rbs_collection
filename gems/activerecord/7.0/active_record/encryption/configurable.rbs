@@ -1,0 +1,18 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::Configurable
+  def configure: (primary_key: untyped, deterministic_key: untyped, key_derivation_salt: untyped, **untyped properties) -> untyped
+  # Register callback to be invoked when an encrypted attribute is declared.
+  #
+  # === Example:
+  #
+  #   ActiveRecord::Encryption.on_encrypted_attribute_declared do |klass, attribute_name|
+  #     ...
+  #   end
+  def on_encrypted_attribute_declared: () ?{ () -> untyped } -> untyped
+  def encrypted_attribute_was_declared: (untyped klass, untyped name) -> untyped
+  def install_auto_filtered_parameters_hook: (untyped application) -> untyped
+  private def excluded_from_filter_parameters?: (untyped filter_parameter) -> untyped
+  extend ActiveSupport::Concern
+end

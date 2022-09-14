@@ -1,0 +1,64 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::Dot < ::Arel::Visitors::Visitor
+  def initialize: () -> void
+  def accept: (untyped object, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Function: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Unary: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Binary: (untyped o) -> untyped
+  private def visit_Arel_Nodes_UnaryOperation: (untyped o) -> untyped
+  private def visit_Arel_Nodes_InfixOperation: (untyped o) -> untyped
+  private def visit__regexp: (untyped o) -> untyped
+  alias visit_Arel_Nodes_Regexp visit__regexp
+  alias visit_Arel_Nodes_NotRegexp visit__regexp
+  private def visit_Arel_Nodes_Ordering: (untyped o) -> untyped
+  private def visit_Arel_Nodes_TableAlias: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Count: (untyped o) -> untyped
+  private def visit_Arel_Nodes_ValuesList: (untyped o) -> untyped
+  private def visit_Arel_Nodes_StringJoin: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Window: (untyped o) -> untyped
+  private def visit_Arel_Nodes_NamedWindow: (untyped o) -> untyped
+  private def visit__no_edges: (untyped o) -> nil
+  alias visit_Arel_Nodes_CurrentRow visit__no_edges
+  alias visit_Arel_Nodes_Distinct visit__no_edges
+  private def visit_Arel_Nodes_Extract: (untyped o) -> untyped
+  private def visit_Arel_Nodes_NamedFunction: (untyped o) -> untyped
+  private def visit_Arel_Nodes_InsertStatement: (untyped o) -> untyped
+  private def visit_Arel_Nodes_SelectCore: (untyped o) -> untyped
+  private def visit_Arel_Nodes_SelectStatement: (untyped o) -> untyped
+  private def visit_Arel_Nodes_UpdateStatement: (untyped o) -> untyped
+  private def visit_Arel_Nodes_DeleteStatement: (untyped o) -> untyped
+  private def visit_Arel_Table: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Casted: (untyped o) -> untyped
+  private def visit_Arel_Nodes_HomogeneousIn: (untyped o) -> untyped
+  private def visit_Arel_Attributes_Attribute: (untyped o) -> untyped
+  private def visit__children: (untyped o) -> untyped
+  alias visit_Arel_Nodes_And visit__children
+  alias visit_Arel_Nodes_With visit__children
+  private def visit_String: (untyped o) -> untyped
+  alias visit_Time visit_String
+  alias visit_Date visit_String
+  alias visit_DateTime visit_String
+  alias visit_NilClass visit_String
+  alias visit_TrueClass visit_String
+  alias visit_FalseClass visit_String
+  alias visit_Integer visit_String
+  alias visit_BigDecimal visit_String
+  alias visit_Float visit_String
+  alias visit_Symbol visit_String
+  alias visit_Arel_Nodes_SqlLiteral visit_String
+  private def visit_Arel_Nodes_BindParam: (untyped o) -> untyped
+  private def visit_ActiveModel_Attribute: (untyped o) -> untyped
+  private def visit_Hash: (untyped o) -> untyped
+  private def visit_Array: (untyped o) -> untyped
+  alias visit_Set visit_Array
+  private def visit_Arel_Nodes_Comment: (untyped o) -> untyped
+  private def visit_Arel_Nodes_Case: (untyped o) -> untyped
+  private def visit_edge: (untyped o, untyped method) -> untyped
+  private def visit: (untyped o) -> (nil | untyped)
+  private def edge: (untyped name) { () -> untyped } -> untyped
+  private def with_node: (untyped node) { () -> untyped } -> untyped
+  private def quote: (untyped string) -> untyped
+  private def to_dot: () -> untyped
+end

@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::LookupContext::DetailsKey
+  alias eql? equal?
+  def self.digest_cache: (untyped details) -> untyped
+  def self.details_cache_key: (untyped details) -> untyped
+  def self.clear: () -> untyped
+  def self.digest_caches: () -> untyped
+  def self.view_context_class: (untyped klass) -> untyped
+end

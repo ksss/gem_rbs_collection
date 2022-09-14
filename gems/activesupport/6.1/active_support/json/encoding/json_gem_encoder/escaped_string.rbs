@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString < ::String
+  def to_json: () -> untyped
+  def to_s: () -> self
+end

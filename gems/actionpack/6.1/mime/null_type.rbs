@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Mime::NullType
+  def nil?: () -> true
+  def to_s: () -> ""
+  def ref: () -> nil
+  private def respond_to_missing?: (untyped method, untyped _) -> untyped
+  private def method_missing: (untyped method, *untyped args) -> (false | nil)
+  include Singleton
+  extend Singleton::SingletonClassMethods
+end

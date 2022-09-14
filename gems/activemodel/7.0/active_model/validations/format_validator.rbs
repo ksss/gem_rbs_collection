@@ -1,0 +1,11 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Validations::FormatValidator < ::ActiveModel::EachValidator
+  def validate_each: (untyped record, untyped attribute, untyped value) -> (untyped | untyped | nil)
+  def check_validity!: () -> untyped
+  private def option_call: (untyped record, untyped name) -> untyped
+  private def record_error: (untyped record, untyped attribute, untyped name, untyped value) -> untyped
+  private def check_options_validity: (untyped name) -> (untyped | nil | nil)
+  private def regexp_using_multiline_anchors?: (untyped regexp) -> untyped
+end

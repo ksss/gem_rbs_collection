@@ -1,0 +1,54 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::SignedId::ClassMethods
+  # Lets you find a record based on a signed id that's safe to put into the world without risk of tampering.
+  # This is particularly useful for things like password reset or email verification, where you want
+  # the bearer of the signed id to be able to interact with the underlying record, but usually only within
+  # a certain time period.
+  #
+  # You set the time period that the signed id is valid for during generation, using the instance method
+  # <tt>signed_id(expires_in: 15.minutes)</tt>. If the time has elapsed before a signed find is attempted,
+  # the signed id will no longer be valid, and nil is returned.
+  #
+  # It's possible to further restrict the use of a signed id with a purpose. This helps when you have a
+  # general base model, like a User, which might have signed ids for several things, like password reset
+  # or email verification. The purpose that was set during generation must match the purpose set when
+  # finding. If there's a mismatch, nil is again returned.
+  #
+  # ==== Examples
+  #
+  #   signed_id = User.first.signed_id expires_in: 15.minutes, purpose: :password_reset
+  #
+  #   User.find_signed signed_id # => nil, since the purpose does not match
+  #
+  #   travel 16.minutes
+  #   User.find_signed signed_id, purpose: :password_reset # => nil, since the signed id has expired
+  #
+  #   travel_back
+  #   User.find_signed signed_id, purpose: :password_reset # => User.first
+  def find_signed: (untyped signed_id, ?purpose: untyped?) -> untyped
+  # Works like find_signed, but will raise an +ActiveSupport::MessageVerifier::InvalidSignature+
+  # exception if the +signed_id+ has either expired, has a purpose mismatch, is for another record,
+  # or has been tampered with. It will also raise an +ActiveRecord::RecordNotFound+ exception if
+  # the valid signed id can't find a record.
+  #
+  # === Examples
+  #
+  #   User.find_signed! "bad data" # => ActiveSupport::MessageVerifier::InvalidSignature
+  #
+  #   signed_id = User.first.signed_id
+  #   User.first.destroy
+  #   User.find_signed! signed_id # => ActiveRecord::RecordNotFound
+  def find_signed!: (untyped signed_id, ?purpose: untyped?) -> (untyped | nil)
+  # The verifier instance that all signed ids are generated and verified from. By default, it'll be initialized
+  # with the class-level +signed_id_verifier_secret+, which within Rails comes from the
+  # Rails.application.key_generator. By default, it's SHA256 for the digest and JSON for the serialization.
+  def signed_id_verifier: () -> untyped
+  # Allows you to pass in a custom verifier used for the signed ids. This also allows you to use different
+  # verifiers for different classes. This is also helpful if you need to rotate keys, as you can prepare
+  # your custom verifier for that in advance. See +ActiveSupport::MessageVerifier+ for details.
+  def signed_id_verifier=: (untyped verifier) -> untyped
+  # :nodoc:
+  def combine_signed_id_purposes: (untyped purpose) -> untyped
+end

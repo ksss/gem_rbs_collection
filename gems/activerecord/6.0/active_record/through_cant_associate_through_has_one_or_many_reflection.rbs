@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::ThroughCantAssociateThroughHasOneOrManyReflection < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? owner, ?untyped? reflection) -> void
+end

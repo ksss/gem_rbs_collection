@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::SetupAndTeardown::ClassMethods
+  # Add a callback, which runs before <tt>TestCase#setup</tt>.
+  def setup: (*untyped args) ?{ () -> untyped } -> untyped
+  # Add a callback, which runs after <tt>TestCase#teardown</tt>.
+  def teardown: (*untyped args) ?{ () -> untyped } -> untyped
+end

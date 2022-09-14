@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::Configurable::ClassMethods
+  # defined by `delegate` to: #context
+  def key_provider: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #context
+  def key_generator: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #context
+  def cipher: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #context
+  def message_serializer: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #context
+  def encryptor: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #context
+  def frozen_encryption: (*untyped, **untyped) -> untyped
+end

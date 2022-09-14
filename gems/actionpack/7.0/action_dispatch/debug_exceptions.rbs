@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::DebugExceptions
+  def self.register_interceptor: (?untyped? object) ?{ () -> untyped } -> untyped
+  def initialize: (untyped app, ?untyped? routes_app, ?::Symbol response_format, ?untyped interceptors) -> void
+  def call: (untyped env) -> untyped
+  private def invoke_interceptors: (untyped request, untyped exception) -> untyped
+  private def render_exception: (untyped request, untyped exception) -> untyped
+  private def render_for_browser_request: (untyped request, untyped wrapper) -> untyped
+  private def render_for_api_request: (untyped content_type, untyped wrapper) -> untyped
+  private def create_template: (untyped request, untyped wrapper) -> untyped
+  private def render: (untyped status, untyped body, untyped format) -> ::Array[untyped | ::Hash[::String, ::String | untyped] | ::Array[untyped]]
+  private def log_error: (untyped request, untyped wrapper) -> (nil | untyped)
+  private def log_array: (untyped logger, untyped lines) -> (nil | untyped)
+  private def logger: (untyped request) -> untyped
+  private def stderr_logger: () -> untyped
+  private def routes_inspector: (untyped exception) -> (untyped | nil)
+  private def api_request?: (untyped content_type) -> untyped
+  private def log_rescued_responses?: (untyped request) -> untyped
+  def self.interceptors: () -> untyped
+end

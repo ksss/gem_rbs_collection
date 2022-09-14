@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AssociationNotFoundError < ::ActiveRecord::ConfigurationError
+  def initialize: (?untyped? record, ?untyped? association_name) -> void
+  prepend DidYouMean::Correctable
+  attr_reader record: untyped
+  attr_reader association_name: untyped
+end

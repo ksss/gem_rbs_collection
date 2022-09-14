@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::PartialIteration
+  def initialize: (untyped size) -> void
+  # Check if this is the first iteration of the partial.
+  def first?: () -> untyped
+  # Check if this is the last iteration of the partial.
+  def last?: () -> untyped
+  def iterate!: () -> untyped
+  attr_reader size: untyped
+  attr_reader index: untyped
+end

@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Callbacks
+  def destroy: () -> untyped
+  def touch: () -> untyped
+  def increment!: (untyped attribute, ?::Integer by, ?touch: untyped?) -> untyped
+  private def create_or_update: () -> untyped
+  private def _create_record: () -> untyped
+  private def _update_record: () -> untyped
+  extend ActiveSupport::Concern
+  CALLBACKS: Array[Symbol]
+end

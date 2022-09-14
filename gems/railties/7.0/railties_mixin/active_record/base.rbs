@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Base
+  include GlobalID::Identification
+  include ActiveStorage::Attached::Model
+  include ActiveStorage::Reflection::ActiveRecordExtensions
+  extend ActiveStorage::Attached::Model::ClassMethods
+  extend ActiveStorage::Reflection::ActiveRecordExtensions::ClassMethods
+end

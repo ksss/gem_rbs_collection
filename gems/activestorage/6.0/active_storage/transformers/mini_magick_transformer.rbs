@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Transformers::MiniMagickTransformer < ::ActiveStorage::Transformers::Transformer
+  private def process: (untyped file, format: untyped) -> untyped
+  private def pass_transform_argument: (untyped command, untyped method, untyped argument) -> (untyped | untyped | nil)
+end

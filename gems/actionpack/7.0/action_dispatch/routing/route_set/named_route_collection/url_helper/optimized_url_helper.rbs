@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::NamedRouteCollection::UrlHelper::OptimizedUrlHelper < ::ActionDispatch::Routing::RouteSet::NamedRouteCollection::UrlHelper
+  def initialize: (untyped route, untyped options, untyped route_name) -> void
+  def call: (untyped t, untyped method_name, untyped args, untyped inner_options, untyped url_strategy) -> untyped
+  private def optimized_helper: (untyped args) -> untyped
+  private def optimize_routes_generation?: (untyped t) -> untyped
+  private def parameterize_args: (untyped args) { (untyped) -> untyped } -> untyped
+  private def raise_generation_error: (untyped args) -> untyped
+  attr_reader arg_size: untyped
+end

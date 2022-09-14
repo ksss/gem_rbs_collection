@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EncryptedFile::InvalidKeyLengthError < ::RuntimeError
+  def initialize: () -> void
+end

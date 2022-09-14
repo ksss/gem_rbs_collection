@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::Parallelization::Server
+  def initialize: () -> void
+  def record: (untyped reporter, untyped result) -> untyped
+  def <<: (untyped o) -> untyped
+  def pop: () -> (untyped | nil)
+  def start_worker: (untyped worker_id) -> untyped
+  def stop_worker: (untyped worker_id) -> untyped
+  def active_workers?: () -> untyped
+  def shutdown: () -> untyped
+  include DRb::DRbUndumped
+end

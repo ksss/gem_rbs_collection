@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Nodes::Star < ::ActionDispatch::Journey::Nodes::Unary
+  def star?: () -> true
+  def type: () -> :STAR
+  def name: () -> untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Encryption::EncryptingOnlyEncryptor < ::ActiveRecord::Encryption::Encryptor
+  def decrypt: (untyped encrypted_text, ?key_provider: untyped?, ?cipher_options: ::Hash[untyped, untyped]) -> untyped
+end

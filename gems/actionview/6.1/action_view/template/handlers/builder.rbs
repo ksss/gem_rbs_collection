@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::Template::Handlers::Builder
+  def call: (untyped template, untyped source) -> untyped
+  private def require_engine: () -> untyped
+  def self.default_format: () -> untyped
+  def self.default_format?: () -> bool
+  def self.default_format=: (untyped value) -> untyped
+  def default_format: () -> untyped
+  def default_format?: () -> bool
+  def default_format=: (untyped value) -> untyped
+end

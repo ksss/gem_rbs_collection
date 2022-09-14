@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Nodes::HomogeneousIn < ::Arel::Nodes::Node
+  def initialize: (untyped values, untyped attribute, untyped `type`) -> void
+  def hash: () -> untyped
+  def eql?: (untyped other) -> untyped
+  alias == eql?
+  def equality?: () -> untyped
+  def invert: () -> untyped
+  def left: () -> untyped
+  def right: () -> untyped
+  def table_name: () -> untyped
+  def column_name: () -> untyped
+  def casted_values: () -> untyped
+  def proc_for_binds: () -> untyped
+  def fetch_attribute: () { (untyped) -> untyped } -> untyped
+  def ivars: () -> ::Array[untyped]
+  attr_reader attribute: untyped
+  attr_reader values: untyped
+  attr_reader type: untyped
+end

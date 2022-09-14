@@ -1,0 +1,40 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::MigrationContext
+  def initialize: (untyped migrations_paths, ?untyped schema_migration) -> void
+  # Runs the migrations in the +migrations_path+.
+  #
+  # If +target_version+ is +nil+, +migrate+ will run +up+.
+  #
+  # If the +current_version+ and +target_version+ are both
+  # 0 then an empty array will be returned and no migrations
+  # will be run.
+  #
+  # If the +current_version+ in the schema is greater than
+  # the +target_version+, then +down+ will be run.
+  #
+  # If none of the conditions are met, +up+ will be run with
+  # the +target_version+.
+  def migrate: (?untyped? target_version) ?{ () -> untyped } -> untyped
+  def rollback: (?::Integer steps) -> untyped
+  def forward: (?::Integer steps) -> untyped
+  def up: (?untyped? target_version) ?{ () -> untyped } -> untyped
+  def down: (?untyped? target_version) ?{ () -> untyped } -> untyped
+  def run: (untyped direction, untyped target_version) -> untyped
+  def open: () -> untyped
+  def get_all_versions: () -> (untyped | ::Array[untyped])
+  def current_version: () -> untyped
+  def needs_migration?: () -> untyped
+  def pending_migration_versions: () -> untyped
+  def migrations: () -> untyped
+  def migrations_status: () -> untyped
+  def current_environment: () -> untyped
+  def protected_environment?: () -> (untyped | nil)
+  def last_stored_environment: () -> (nil | untyped)
+  private def migration_files: () -> untyped
+  private def parse_migration_filename: (untyped filename) -> untyped
+  private def move: (untyped direction, untyped steps) -> untyped
+  attr_reader migrations_paths: untyped
+  attr_reader schema_migration: untyped
+end

@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::RuntimeRegistry
+  def sql_runtime: () -> untyped
+  def sql_runtime=: (untyped runtime) -> untyped
+  extend ActiveRecord::RuntimeRegistry
+end

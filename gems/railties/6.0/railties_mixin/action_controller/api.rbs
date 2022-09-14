@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::API < ::ActionController::Metal
+  include ActionDispatch::Routing::RouteSet::MountedHelpers
+  include ActionDispatch::Routing::UrlFor
+  include ActiveRecord::Railties::ControllerRuntime
+  extend ActionController::Railties::Helpers
+  extend ActiveRecord::Railties::ControllerRuntime::ClassMethods
+end

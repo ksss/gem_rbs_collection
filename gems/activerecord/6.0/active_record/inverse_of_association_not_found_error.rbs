@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::InverseOfAssociationNotFoundError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? reflection, ?untyped? associated_class) -> void
+end

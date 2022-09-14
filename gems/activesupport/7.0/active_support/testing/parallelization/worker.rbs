@@ -1,0 +1,14 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Testing::Parallelization::Worker
+  def initialize: (untyped number, untyped url) -> void
+  def start: () -> untyped
+  def work_from_queue: () -> untyped
+  def perform_job: (untyped job) -> untyped
+  def safe_record: (untyped reporter, untyped result) -> untyped
+  def after_fork: () -> untyped
+  def run_cleanup: () -> untyped
+  private def add_setup_exception: (untyped result) -> untyped
+  private def set_process_title: (untyped status) -> untyped
+end

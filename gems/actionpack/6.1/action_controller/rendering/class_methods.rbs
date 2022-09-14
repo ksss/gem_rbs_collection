@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::Rendering::ClassMethods
+  def setup_renderer!: () -> untyped
+  def inherited: (untyped klass) -> untyped
+  attr_reader renderer: untyped
+  # defined by `delegate` to: untyped#renderer
+  def render: (*untyped, **untyped) -> untyped
+end

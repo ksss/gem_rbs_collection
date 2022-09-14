@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Session::CookieStore < ::ActionDispatch::Session::AbstractSecureStore
+  def initialize: (untyped app, ?::Hash[untyped, untyped] options) -> void
+  def delete_session: (untyped req, untyped session_id, untyped options) -> untyped
+  def load_session: (untyped req) -> untyped
+  private def extract_session_id: (untyped req) -> untyped
+  private def unpacked_cookie_data: (untyped req) -> untyped
+  private def persistent_session_id!: (untyped data, ?untyped? sid) -> untyped
+  private def write_session: (untyped req, untyped sid, untyped session_data, untyped options) -> untyped
+  private def set_cookie: (untyped request, untyped session_id, untyped cookie) -> untyped
+  private def get_cookie: (untyped req) -> untyped
+  private def cookie_jar: (untyped request) -> untyped
+end

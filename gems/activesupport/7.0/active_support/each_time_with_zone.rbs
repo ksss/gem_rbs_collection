@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::EachTimeWithZone
+  def each: () ?{ () -> untyped } -> untyped
+  def step: (?::Integer n) ?{ () -> untyped } -> untyped
+  private def ensure_iteration_allowed: () -> (untyped | nil)
+end

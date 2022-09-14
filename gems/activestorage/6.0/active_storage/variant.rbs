@@ -1,0 +1,37 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Variant
+  def initialize: (untyped blob, untyped variation_or_variation_key) -> void
+  # Returns the variant instance itself after it's been processed or an existing processing has been found on the service.
+  def processed: () -> self
+  # Returns a combination key of the blob and the variation that together identifies a specific variant.
+  def key: () -> ::String
+  # Returns the URL of the variant on the service. This URL is intended to be short-lived for security and not used directly
+  # with users. Instead, the +service_url+ should only be exposed as a redirect from a stable, possibly authenticated URL.
+  # Hiding the +service_url+ behind a redirect also gives you the power to change services without updating all URLs. And
+  # it allows permanent URLs that redirect to the +service_url+ to be cached in the view.
+  #
+  # Use <tt>url_for(variant)</tt> (or the implied form, like +link_to variant+ or +redirect_to variant+) to get the stable URL
+  # for a variant that points to the ActiveStorage::RepresentationsController, which in turn will use this +service_call+ method
+  # for its redirection.
+  def service_url: (?expires_in: untyped, ?disposition: ::Symbol) -> untyped
+  # Returns the receiving variant. Allows ActiveStorage::Variant and ActiveStorage::Preview instances to be used interchangeably.
+  def image: () -> self
+  private def processed?: () -> untyped
+  private def process: () -> untyped
+  private def transform: (untyped image) ?{ () -> untyped } -> untyped
+  private def upload: (untyped file) -> untyped
+  private def specification: () -> untyped
+  attr_reader blob: untyped
+  attr_reader variation: untyped
+  # defined by `delegate` to: untyped#blob
+  def service: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#specification
+  def filename: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#specification
+  def content_type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#specification
+  def format: (*untyped, **untyped) -> untyped
+  WEB_IMAGE_CONTENT_TYPES: Array[String]
+end

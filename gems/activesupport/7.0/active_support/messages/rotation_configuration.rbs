@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Messages::RotationConfiguration
+  def initialize: () -> void
+  def rotate: (untyped kind, *untyped args, **untyped options) -> untyped
+  attr_reader signed: untyped
+  attr_reader encrypted: untyped
+end

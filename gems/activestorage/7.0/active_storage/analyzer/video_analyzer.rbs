@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer::VideoAnalyzer < ::ActiveStorage::Analyzer
+  def self.accept?: (untyped blob) -> untyped
+  def metadata: () -> untyped
+  private def width: () -> untyped
+  private def height: () -> untyped
+  private def duration: () -> untyped
+  private def angle: () -> (untyped | nil)
+  private def display_aspect_ratio: () -> (untyped | nil | nil)
+  private def rotated?: () -> untyped
+  private def audio?: () -> untyped
+  private def video?: () -> untyped
+  private def computed_height: () -> (untyped | nil)
+  private def encoded_width: () -> (untyped | nil)
+  private def encoded_height: () -> (untyped | nil)
+  private def display_height_scale: () -> (untyped | nil)
+  private def tags: () -> untyped
+  private def video_stream: () -> untyped
+  private def audio_stream: () -> untyped
+  private def streams: () -> untyped
+  private def container: () -> untyped
+  private def probe: () -> untyped
+  private def probe_from: (untyped file) -> untyped
+  private def ffprobe_path: () -> untyped
+end

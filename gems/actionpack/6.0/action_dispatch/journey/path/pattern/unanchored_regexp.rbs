@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Journey::Path::Pattern::UnanchoredRegexp < ::ActionDispatch::Journey::Path::Pattern::AnchoredRegexp
+  def accept: (untyped node) -> untyped
+end

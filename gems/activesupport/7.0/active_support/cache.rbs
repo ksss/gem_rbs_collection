@@ -1,0 +1,52 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache
+  # Creates a new Store object according to the given options.
+  #
+  # If no arguments are passed to this method, then a new
+  # ActiveSupport::Cache::MemoryStore object will be returned.
+  #
+  # If you pass a Symbol as the first argument, then a corresponding cache
+  # store class under the ActiveSupport::Cache namespace will be created.
+  # For example:
+  #
+  #   ActiveSupport::Cache.lookup_store(:memory_store)
+  #   # => returns a new ActiveSupport::Cache::MemoryStore object
+  #
+  #   ActiveSupport::Cache.lookup_store(:mem_cache_store)
+  #   # => returns a new ActiveSupport::Cache::MemCacheStore object
+  #
+  # Any additional arguments will be passed to the corresponding cache store
+  # class's constructor:
+  #
+  #   ActiveSupport::Cache.lookup_store(:file_store, '/tmp/cache')
+  #   # => same as: ActiveSupport::Cache::FileStore.new('/tmp/cache')
+  #
+  # If the first argument is not a Symbol, then it will simply be returned:
+  #
+  #   ActiveSupport::Cache.lookup_store(MyOwnCacheStore.new)
+  #   # => returns MyOwnCacheStore.new
+  def self.lookup_store: (?untyped? store, *untyped parameters) -> untyped
+  # Expands out the +key+ argument into a key that can be used for the
+  # cache store. Optionally accepts a namespace, and all keys will be
+  # scoped within that namespace.
+  #
+  # If the +key+ argument provided is an array, or responds to +to_a+, then
+  # each of elements in the array will be turned into parameters/keys and
+  # concatenated into a single key. For example:
+  #
+  #   ActiveSupport::Cache.expand_cache_key([:foo, :bar])               # => "foo/bar"
+  #   ActiveSupport::Cache.expand_cache_key([:foo, :bar], "namespace")  # => "namespace/foo/bar"
+  #
+  # The +key+ argument can also respond to +cache_key+ or +to_param+.
+  def self.expand_cache_key: (untyped key, ?untyped? namespace) -> untyped
+  private def self.retrieve_cache_key: (untyped key) -> untyped
+  # Obtains the specified cache store class, given the name of the +store+.
+  # Raises an error when the store class cannot be found.
+  private def self.retrieve_store_class: (untyped store) -> untyped
+  attr_accessor self.format_version: untyped
+  DEFAULT_COMPRESS_LIMIT: Integer
+  OPTION_ALIASES: Hash[Symbol, Array[Symbol]]
+  UNIVERSAL_OPTIONS: Array[Symbol]
+end

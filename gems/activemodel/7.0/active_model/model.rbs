@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Model
+  include ActiveModel::API
+  extend ActiveSupport::Concern
+end

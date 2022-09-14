@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Collectors::PlainString
+  def initialize: () -> void
+  def value: () -> untyped
+  def <<: (untyped str) -> self
+end

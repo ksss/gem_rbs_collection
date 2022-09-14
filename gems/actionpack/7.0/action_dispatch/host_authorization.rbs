@@ -1,0 +1,16 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::HostAuthorization
+  def initialize: (untyped app, untyped hosts, ?exclude: untyped?, ?response_app: untyped?) -> void
+  def call: (untyped env) -> untyped
+  private def authorized?: (untyped request) -> untyped
+  private def excluded?: (untyped request) -> untyped
+  private def mark_as_authorized: (untyped request) -> untyped
+  ALLOWED_HOSTS_IN_DEVELOPMENT: Array[String | IPAddr]
+  IPV4_HOSTNAME: Regexp
+  IPV6_HOSTNAME: Regexp
+  IPV6_HOSTNAME_WITH_PORT: Regexp
+  PORT_REGEX: Regexp
+  VALID_IP_HOSTNAME: Regexp
+end

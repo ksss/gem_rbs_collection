@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::NoDatabaseError < ::ActiveRecord::StatementInvalid
+  def initialize: (?untyped? message) -> void
+  def self.db_error: (untyped db_name) -> untyped
+  include ActiveSupport::ActionableError
+  extend ActiveSupport::ActionableError::ClassMethods
+  attr_writer _actions: untyped
+end

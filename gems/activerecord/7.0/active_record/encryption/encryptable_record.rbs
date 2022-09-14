@@ -1,0 +1,63 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::EncryptableRecord
+  # Encrypts the +name+ attribute.
+  #
+  # === Options
+  #
+  # * <tt>:key_provider</tt> - A key provider to provide encryption and decryption keys. Defaults to
+  #   +ActiveRecord::Encryption.key_provider+.
+  # * <tt>:key</tt> - A password to derive the key from. It's a shorthand for a +:key_provider+ that
+  #   serves derivated keys. Both options can't be used at the same time.
+  # * <tt>:deterministic</tt> - By default, encryption is not deterministic. It will use a random
+  #   initialization vector for each encryption operation. This means that encrypting the same content
+  #   with the same key twice will generate different ciphertexts. When set to +true+, it will generate the
+  #   initialization vector based on the encrypted content. This means that the same content will generate
+  #   the same ciphertexts. This enables querying encrypted text with Active Record. Deterministic encryption
+  #   will use the oldest encryption scheme to encrypt new data by default. You can change this by setting
+  #   +deterministic: { fixed: false }+. That will make it use the newest encryption scheme for encrypting new
+  #   data.
+  # * <tt>:downcase</tt> - When true, it converts the encrypted content to downcase automatically. This allows to
+  #   effectively ignore case when querying data. Notice that the case is lost. Use +:ignore_case+ if you are interested
+  #   in preserving it.
+  # * <tt>:ignore_case</tt> - When true, it behaves like +:downcase+ but, it also preserves the original case in a specially
+  #   designated column +original_<name>+. When reading the encrypted content, the version with the original case is
+  #   served. But you can still execute queries that will ignore the case. This option can only be used when +:deterministic+
+  #   is true.
+  # * <tt>:context_properties</tt> - Additional properties that will override +Context+ settings when this attribute is
+  #   encrypted and decrypted. E.g: +encryptor:+, +cipher:+, +message_serializer:+, etc.
+  # * <tt>:previous</tt> - List of previous encryption schemes. When provided, they will be used in order when trying to read
+  #   the attribute. Each entry of the list can contain the properties supported by #encrypts. Also, when deterministic
+  #   encryption is used, they will be used to generate additional ciphertexts to check in the queries.
+  def encrypts: (*untyped names, ?key_provider: untyped?, ?key: untyped?, ?deterministic: bool, ?downcase: bool, ?ignore_case: bool, ?previous: untyped, **untyped context_properties) -> untyped
+  # Returns the list of deterministic encryptable attributes in the model class.
+  def deterministic_encrypted_attributes: () -> untyped
+  # Given a attribute name, it returns the name of the source attribute when it's a preserved one.
+  def source_attribute_from_preserved_attribute: (untyped attribute_name) -> (untyped | nil)
+  private def scheme_for: (?key_provider: untyped?, ?key: untyped?, ?deterministic: bool, ?downcase: bool, ?ignore_case: bool, ?previous: untyped, **untyped context_properties) -> untyped
+  private def global_previous_schemes_for: (untyped scheme) -> untyped
+  private def encrypt_attribute: (untyped name, untyped attribute_scheme) -> untyped
+  private def preserve_original_encrypted: (untyped name) -> untyped
+  private def override_accessors_to_preserve_original: (untyped name, untyped original_attribute_name) -> untyped
+  private def load_schema!: () -> untyped
+  private def add_length_validation_for_encrypted_columns: () -> untyped
+  private def validate_column_size: (untyped attribute_name) -> (untyped | nil)
+  # Returns whether a given attribute is encrypted or not.
+  private def encrypted_attribute?: (untyped attribute_name) -> untyped
+  # Returns the ciphertext for +attribute_name+.
+  private def ciphertext_for: (untyped attribute_name) -> untyped
+  # Encrypts all the encryptable attributes and saves the changes.
+  private def encrypt: () -> (untyped | nil)
+  # Decrypts all the encryptable attributes and saves the changes.
+  private def decrypt: () -> (untyped | nil)
+  private def encrypt_attributes: () -> untyped
+  private def decrypt_attributes: () -> untyped
+  private def validate_encryption_allowed: () -> (untyped | nil)
+  private def has_encrypted_attributes?: () -> untyped
+  private def build_encrypt_attribute_assignments: () -> untyped
+  private def build_decrypt_attribute_assignments: () -> untyped
+  private def cant_modify_encrypted_attributes_when_frozen: () -> untyped
+  extend ActiveSupport::Concern
+  ORIGINAL_ATTRIBUTE_PREFIX: String
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Encryption::ExtendedDeterministicQueries::EncryptedQueryArgumentProcessor
+  private def process_encrypted_query_arguments: (untyped args, untyped check_for_additional_values) -> (untyped | nil)
+  private def process_encrypted_query_argument: (untyped value, untyped check_for_additional_values, untyped `type`) -> untyped
+  private def additional_values_for: (untyped value, untyped `type`) -> untyped
+  extend ActiveSupport::Concern
+end

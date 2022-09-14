@@ -1,0 +1,24 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Cache::Strategy::LocalCache
+  # Use a local cache for the duration of block.
+  def with_local_cache: () ?{ () -> untyped } -> untyped
+  # Middleware class can be inserted as a Rack handler to be local cache for the
+  # duration of request.
+  def middleware: () -> untyped
+  def clear: (**untyped options) -> untyped
+  def cleanup: (**untyped options) -> untyped
+  def delete_matched: (untyped matcher, ?untyped? options) -> untyped
+  def increment: (untyped name, ?::Integer amount, **untyped options) -> untyped
+  def decrement: (untyped name, ?::Integer amount, **untyped options) -> untyped
+  private def read_serialized_entry: (untyped key, ?raw: bool, **untyped options) -> untyped
+  private def read_multi_entries: (untyped keys, **untyped options) -> untyped
+  private def write_serialized_entry: (untyped key, untyped payload) -> untyped
+  private def delete_entry: (untyped key) -> untyped
+  private def write_cache_value: (untyped name, untyped value, **untyped options) -> untyped
+  private def local_cache_key: () -> untyped
+  private def local_cache: () -> untyped
+  private def bypass_local_cache: () ?{ () -> untyped } -> untyped
+  private def use_temporary_local_cache: (untyped temporary_cache) { () -> untyped } -> untyped
+end

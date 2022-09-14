@@ -1,0 +1,22 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Callbacks::CallTemplate::MethodCall
+  def initialize: (untyped method) -> void
+  # Return the parts needed to make this call, with the given
+  # input values.
+  #
+  # Returns an array of the form:
+  #
+  #   [target, block, method, *arguments]
+  #
+  # This array can be used as such:
+  #
+  #   target.send(method, *arguments, &block)
+  #
+  # The actual invocation is left up to the caller to minimize
+  # call stack pollution.
+  def expand: (untyped target, untyped value, untyped block) -> ::Array[untyped]
+  def make_lambda: () -> untyped
+  def inverted_lambda: () -> untyped
+end

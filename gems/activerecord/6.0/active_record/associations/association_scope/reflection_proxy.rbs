@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::AssociationScope::ReflectionProxy < SimpleDelegator
+  def initialize: (untyped reflection, untyped aliased_table) -> void
+  def all_includes: () -> nil
+  attr_reader aliased_table: untyped
+end

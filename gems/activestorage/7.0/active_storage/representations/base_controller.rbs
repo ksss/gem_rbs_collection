@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Representations::BaseController < ::ActiveStorage::BaseController
+  private def blob_scope: () -> untyped
+  private def set_representation: () -> untyped
+end

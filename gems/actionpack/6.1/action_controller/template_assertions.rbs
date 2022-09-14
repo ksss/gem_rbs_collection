@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionController::TemplateAssertions
+  def assert_template: (?::Hash[untyped, untyped] options, ?untyped? message) -> untyped
+end

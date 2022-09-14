@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::BlockValidator < ::ActiveModel::EachValidator
+  def initialize: (untyped options) ?{ () -> untyped } -> void
+  private def validate_each: (untyped record, untyped attribute, untyped value) -> untyped
+end

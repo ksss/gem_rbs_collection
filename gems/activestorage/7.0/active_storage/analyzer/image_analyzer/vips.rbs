@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::Analyzer::ImageAnalyzer::Vips < ::ActiveStorage::Analyzer::ImageAnalyzer
+  def self.accept?: (untyped blob) -> untyped
+  private def read_image: () { (untyped) -> untyped } -> (::Hash[untyped, untyped] | untyped)
+  private def rotated_image?: (untyped image) -> untyped
+  private def valid_image?: (untyped image) -> untyped
+  ROTATIONS: Regexp
+end

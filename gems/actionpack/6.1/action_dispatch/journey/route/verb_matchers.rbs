@@ -1,0 +1,7 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::Journey::Route::VerbMatchers
+  VERBS: Array[String]
+  VERB_TO_CLASS: Hash[Symbol | String, singleton(ActionDispatch::Journey::Route::VerbMatchers::All) | singleton(ActionDispatch::Journey::Route::VerbMatchers::DELETE) | singleton(ActionDispatch::Journey::Route::VerbMatchers::GET) | singleton(ActionDispatch::Journey::Route::VerbMatchers::HEAD) | singleton(ActionDispatch::Journey::Route::VerbMatchers::OPTIONS) | singleton(ActionDispatch::Journey::Route::VerbMatchers::LINK) | singleton(ActionDispatch::Journey::Route::VerbMatchers::PATCH) | singleton(ActionDispatch::Journey::Route::VerbMatchers::POST) | singleton(ActionDispatch::Journey::Route::VerbMatchers::PUT) | singleton(ActionDispatch::Journey::Route::VerbMatchers::TRACE) | singleton(ActionDispatch::Journey::Route::VerbMatchers::UNLINK)]
+end

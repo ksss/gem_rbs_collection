@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Associations::HasManyAssociation < ::ActiveRecord::Associations::CollectionAssociation
+  def handle_dependency: () -> untyped
+  def insert_record: (untyped record, ?bool validate, ?bool raise) -> untyped
+  # Returns the number of records in this collection.
+  #
+  # If the association has a counter cache it gets that value. Otherwise
+  # it will attempt to do a count via SQL, bounded to <tt>:limit</tt> if
+  # there's one. Some configuration options like :group make it impossible
+  # to do an SQL count, in those cases the array count will be used.
+  #
+  # That does not depend on whether the collection has already been loaded
+  # or not. The +size+ method is the one that takes the loaded flag into
+  # account and delegates to +count_records+ if needed.
+  #
+  # If the collection is empty the target is set to an empty array and
+  # the loaded flag is set to true as well.
+  private def count_records: () -> untyped
+  private def update_counter: (untyped difference, ?untyped reflection) -> (untyped | nil)
+  private def update_counter_in_memory: (untyped difference, ?untyped reflection) -> (untyped | nil)
+  private def delete_count: (untyped method, untyped scope) -> untyped
+  private def delete_or_nullify_all_records: (untyped method) -> untyped
+  # Deletes the records according to the <tt>:dependent</tt> option.
+  private def delete_records: (untyped records, untyped method) -> untyped
+  private def concat_records: (untyped records) -> untyped
+  private def _create_record: (untyped attributes) -> untyped
+  private def update_counter_if_success: (untyped saved_successfully, untyped difference) -> untyped
+  private def difference: (untyped a, untyped b) -> untyped
+  private def intersection: (untyped a, untyped b) -> untyped
+  include ActiveRecord::Associations::ForeignAssociation
+end

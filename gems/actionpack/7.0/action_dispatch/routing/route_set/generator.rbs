@@ -1,0 +1,31 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::Generator
+  def initialize: (untyped named_route, untyped options, untyped recall, untyped set) -> void
+  def controller: () -> untyped
+  def current_controller: () -> untyped
+  def use_recall_for: (untyped key) -> (untyped | nil | nil)
+  def normalize_options!: () -> untyped
+  # This pulls :controller, :action, and :id out of the recall.
+  # The recall key is only used if there is no key in the options
+  # or if the key in the options is identical. If any of
+  # :controller, :action or :id is not found, don't pull any
+  # more keys from the recall.
+  def normalize_controller_action_id!: () -> (nil | untyped)
+  # if the current controller is "foo/bar/baz" and controller: "baz/bat"
+  # is specified, the controller becomes "foo/baz/bat"
+  def use_relative_controller!: () -> (untyped | nil)
+  # Remove leading slashes from controllers
+  def normalize_controller!: () -> (untyped | nil)
+  # Generates a path from routes, returns a RouteWithParams or MissingRoute.
+  # MissingRoute will raise ActionController::UrlGenerationError.
+  def generate: () -> untyped
+  def different_controller?: () -> (false | untyped)
+  private def named_route_exists?: () -> untyped
+  private def segment_keys: () -> untyped
+  attr_reader options: untyped
+  attr_reader recall: untyped
+  attr_reader set: untyped
+  attr_reader named_route: untyped
+end

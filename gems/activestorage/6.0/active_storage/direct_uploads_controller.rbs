@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveStorage::DirectUploadsController < ::ActiveStorage::BaseController
+  def create: () -> untyped
+  private def blob_args: () -> untyped
+  private def direct_upload_json: (untyped blob) -> untyped
+  include ActionDispatch::Routing::UrlFor
+end

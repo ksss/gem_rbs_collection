@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class Arel::Visitors::IBM_DB < ::Arel::Visitors::ToSql
+  private def visit_Arel_Nodes_SelectCore: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_OptimizerHints: (untyped o, untyped collector) -> untyped
+  private def visit_Arel_Nodes_Limit: (untyped o, untyped collector) -> untyped
+  private def is_distinct_from: (untyped o, untyped collector) -> untyped
+  private def collect_optimizer_hints: (untyped o, untyped collector) -> untyped
+end

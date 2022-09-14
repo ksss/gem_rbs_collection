@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::Helpers::ControllerHelper
+  def assign_controller: (untyped controller) -> (untyped | nil)
+  def logger: () -> (untyped | nil)
+  def respond_to?: (untyped method_name, ?bool include_private) -> untyped
+  attr_reader _controller: untyped
+  attr_reader _request: untyped
+  attr_writer _controller: untyped
+  attr_writer _request: untyped
+  # defined by `delegate` to: #controller
+  def request_forgery_protection_token: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def params: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def session: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def cookies: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def response: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def headers: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def flash: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def action_name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def controller_name: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: #controller
+  def controller_path: (*untyped, **untyped) -> untyped
+  CONTROLLER_DELEGATES: Array[Symbol]
+end

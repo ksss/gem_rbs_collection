@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Duration::Scalar < ::Numeric
+  def initialize: (untyped value) -> void
+  def coerce: (untyped other) -> ::Array[untyped | self]
+  def -@: () -> untyped
+  def <=>: (untyped other) -> (untyped | untyped | nil)
+  def +: (untyped other) -> untyped
+  def -: (untyped other) -> untyped
+  def *: (untyped other) -> untyped
+  def /: (untyped other) -> untyped
+  def %: (untyped other) -> untyped
+  private def calculate: (untyped op, untyped other) -> untyped
+  private def raise_type_error: (untyped other) -> untyped
+  attr_reader value: untyped
+  # defined by `delegate` to: untyped#value
+  def to_i: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#value
+  def to_f: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#value
+  def to_s: (*untyped, **untyped) -> untyped
+end

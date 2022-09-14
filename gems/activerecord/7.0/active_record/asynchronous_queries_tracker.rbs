@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::AsynchronousQueriesTracker
+  def self.install_executor_hooks: (?untyped executor) -> untyped
+  def self.run: () -> untyped
+  def self.complete: (untyped asynchronous_queries_tracker) -> untyped
+  def initialize: () -> void
+  def start_session: () -> self
+  def finalize_session: () -> untyped
+  attr_reader current_session: untyped
+end

@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::DeprecationHandlingMessageHash < SimpleDelegator
+  def initialize: (untyped errors) -> void
+  def []=: (untyped attribute, untyped value) -> untyped
+  def delete: (untyped attribute) -> untyped
+  private def prepare_content: () -> untyped
+end

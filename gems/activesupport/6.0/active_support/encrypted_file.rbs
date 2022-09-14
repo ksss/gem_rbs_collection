@@ -1,0 +1,23 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EncryptedFile
+  def self.generate_key: () -> untyped
+  def initialize: (content_path: untyped, key_path: untyped, env_key: untyped, raise_if_missing_key: untyped) -> void
+  def key: () -> untyped
+  def read: () -> untyped
+  def write: (untyped contents) -> untyped
+  def change: () ?{ () -> untyped } -> untyped
+  private def writing: (untyped contents) { (untyped) -> untyped } -> untyped
+  private def encrypt: (untyped contents) -> untyped
+  private def decrypt: (untyped contents) -> untyped
+  private def encryptor: () -> untyped
+  private def read_env_key: () -> untyped
+  private def read_key_file: () -> (untyped | nil)
+  private def handle_missing_key: () -> (untyped | nil)
+  attr_reader content_path: untyped
+  attr_reader key_path: untyped
+  attr_reader env_key: untyped
+  attr_reader raise_if_missing_key: untyped
+  CIPHER: String
+end

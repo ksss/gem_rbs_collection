@@ -1,0 +1,33 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionView::ViewPaths::ClassMethods
+  def _view_paths: () -> untyped
+  def _view_paths=: (untyped paths) -> untyped
+  def _prefixes: () -> untyped
+  # Append a path to the list of view paths for this controller.
+  #
+  # ==== Parameters
+  # * <tt>path</tt> - If a String is provided, it gets converted into
+  #   the default view path. You may also provide a custom view path
+  #   (see ActionView::PathSet for more information)
+  def append_view_path: (untyped path) -> untyped
+  # Prepend a path to the list of view paths for this controller.
+  #
+  # ==== Parameters
+  # * <tt>path</tt> - If a String is provided, it gets converted into
+  #   the default view path. You may also provide a custom view path
+  #   (see ActionView::PathSet for more information)
+  def prepend_view_path: (untyped path) -> untyped
+  # A list of all of the default view paths for this controller.
+  def view_paths: () -> untyped
+  # Set the view paths.
+  #
+  # ==== Parameters
+  # * <tt>paths</tt> - If a PathSet is provided, use that;
+  #   otherwise, process the parameter into a PathSet.
+  def view_paths=: (untyped paths) -> untyped
+  # Override this method in your controller if you want to change paths prefixes for finding views.
+  # Prefixes defined here will still be added to parents' <tt>._prefixes</tt>.
+  private def local_prefixes: () -> ::Array[untyped]
+end

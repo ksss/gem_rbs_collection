@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActionDispatch::IntegrationTest::Behavior::ClassMethods
+  def app: () -> untyped
+  def app=: (untyped app) -> untyped
+  def register_encoder: (*untyped args, **untyped options) -> untyped
+end

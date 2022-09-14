@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveRecord::Reflection
+  def self.create: (untyped macro, untyped name, untyped scope, untyped options, untyped ar) -> untyped
+  def self.add_reflection: (untyped ar, untyped name, untyped reflection) -> untyped
+  def self.add_aggregate_reflection: (untyped ar, untyped name, untyped reflection) -> untyped
+  private def self.reflection_class_for: (untyped macro) -> untyped
+  extend ActiveSupport::Concern
+end

@@ -1,0 +1,17 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionController::TestRequest < ::ActionDispatch::TestRequest
+  def self.new_session: () -> untyped
+  # Create a new test request with default `env` values.
+  def self.create: (untyped controller_class) -> untyped
+  def self.default_env: () -> untyped
+  def initialize: (untyped env, untyped session, untyped controller_class) -> void
+  def query_string=: (untyped string) -> untyped
+  def content_type=: (untyped `type`) -> untyped
+  def assign_parameters: (untyped routes, untyped controller_path, untyped action, untyped parameters, untyped generated_path, untyped query_string_keys) -> untyped
+  private def params_parsers: () -> untyped
+  attr_reader controller_class: untyped
+  DEFAULT_ENV: Hash[String, Array[Integer] | StringIO | true | false | String]
+  ENCODER: untyped
+end

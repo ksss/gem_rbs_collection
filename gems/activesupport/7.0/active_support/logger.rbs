@@ -1,0 +1,20 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Logger < ::Logger
+  # Returns true if the logger destination matches one of the sources
+  #
+  #   logger = Logger.new(STDOUT)
+  #   ActiveSupport::Logger.logger_outputs_to?(logger, STDOUT)
+  #   # => true
+  def self.logger_outputs_to?: (untyped logger, *untyped sources) -> untyped
+  # Broadcasts logs to multiple loggers.
+  def self.broadcast: (untyped logger) -> untyped
+  def initialize: (*untyped args, **untyped kwargs) -> void
+  include ActiveSupport::LoggerSilence
+  include ActiveSupport::LoggerThreadSafeLevel
+  def self.silencer: () -> untyped
+  def silencer: () -> untyped
+  def self.silencer=: (untyped val) -> untyped
+  def silencer=: (untyped val) -> untyped
+end

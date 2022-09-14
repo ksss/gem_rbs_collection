@@ -1,0 +1,10 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Routing::RouteSet::Dispatcher < ::ActionDispatch::Routing::Endpoint
+  def initialize: (untyped raise_on_name_error) -> void
+  def dispatcher?: () -> true
+  def serve: (untyped req) -> untyped
+  private def controller: (untyped req) -> untyped
+  private def dispatch: (untyped controller, untyped action, untyped req, untyped res) -> untyped
+end

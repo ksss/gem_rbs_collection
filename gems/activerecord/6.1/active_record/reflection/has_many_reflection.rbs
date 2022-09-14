@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Reflection::HasManyReflection < ::ActiveRecord::Reflection::AssociationReflection
+  def macro: () -> :has_many
+  def collection?: () -> true
+  def association_class: () -> untyped
+end

@@ -1,0 +1,27 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionDispatch::Http::UploadedFile
+  def initialize: (untyped hash) -> void
+  # Shortcut for +tempfile.read+.
+  def read: (?untyped? length, ?untyped? buffer) -> untyped
+  # Shortcut for +tempfile.open+.
+  def open: () -> untyped
+  # Shortcut for +tempfile.close+.
+  def close: (?bool unlink_now) -> untyped
+  # Shortcut for +tempfile.path+.
+  def path: () -> untyped
+  # Shortcut for +tempfile.to_path+.
+  def to_path: () -> untyped
+  # Shortcut for +tempfile.rewind+.
+  def rewind: () -> untyped
+  # Shortcut for +tempfile.size+.
+  def size: () -> untyped
+  # Shortcut for +tempfile.eof?+.
+  def eof?: () -> untyped
+  def to_io: () -> untyped
+  attr_accessor original_filename: untyped
+  attr_accessor content_type: untyped
+  attr_accessor tempfile: untyped
+  attr_accessor headers: untyped
+end

@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::EnvironmentMismatchError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?current: untyped?, ?stored: untyped?) -> void
+end

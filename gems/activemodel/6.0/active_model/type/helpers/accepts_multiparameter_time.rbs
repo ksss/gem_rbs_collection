@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveModel::Type::Helpers::AcceptsMultiparameterTime < ::Module
+  def initialize: (?defaults: ::Hash[untyped, untyped]) -> void
+end

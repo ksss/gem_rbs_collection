@@ -1,0 +1,15 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::EventedFileUpdateChecker
+  def initialize: (untyped files, ?::Hash[untyped, untyped] dirs) ?{ () -> untyped } -> void
+  def updated?: () -> untyped
+  def execute: () -> untyped
+  def execute_if_updated: () { () -> untyped } -> (true | nil)
+  private def boot!: () -> untyped
+  private def shutdown!: () -> untyped
+  private def normalize_dirs!: () -> untyped
+  private def changed: (untyped modified, untyped added, untyped removed) -> (untyped | nil | nil)
+  private def watching?: (untyped file) -> untyped
+  private def directories_to_watch: () -> untyped
+end

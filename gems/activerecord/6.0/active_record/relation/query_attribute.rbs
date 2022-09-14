@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Relation::QueryAttribute < ::ActiveModel::Attribute
+  def type_cast: (untyped value) -> untyped
+  def value_for_database: () -> untyped
+  def with_cast_value: (untyped value) -> untyped
+  def nil?: () -> untyped
+  def infinite?: () -> untyped
+  def unboundable?: () -> untyped
+  private def infinity?: (untyped value) -> untyped
+end

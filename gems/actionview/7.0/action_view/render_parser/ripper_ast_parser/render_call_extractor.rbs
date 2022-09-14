@@ -1,0 +1,13 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActionView::RenderParser::RipperASTParser::RenderCallExtractor < ::ActionView::RenderParser::RipperASTParser::NodeParser
+  def initialize: (*untyped args) -> void
+  private def on_fcall: (untyped name, *untyped args) -> untyped
+  private def on_command: (untyped name, *untyped args) -> untyped
+  private def on_render_call: (untyped node) -> untyped
+  private def on_arg_paren: (untyped content) -> untyped
+  private def on_paren: (untyped content) -> untyped
+  attr_reader render_calls: untyped
+  METHODS_TO_PARSE: Array[String]
+end

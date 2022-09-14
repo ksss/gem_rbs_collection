@@ -1,0 +1,9 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::Locking::LockingType < ::ActiveModel::Type::Value
+  def deserialize: (untyped value) -> untyped
+  def serialize: (untyped value) -> untyped
+  def init_with: (untyped coder) -> untyped
+  def encode_with: (untyped coder) -> untyped
+end

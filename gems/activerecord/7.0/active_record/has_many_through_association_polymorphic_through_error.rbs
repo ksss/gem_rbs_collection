@@ -1,0 +1,6 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::HasManyThroughAssociationPolymorphicThroughError < ::ActiveRecord::ActiveRecordError
+  def initialize: (?untyped? owner_class_name, ?untyped? reflection) -> void
+end

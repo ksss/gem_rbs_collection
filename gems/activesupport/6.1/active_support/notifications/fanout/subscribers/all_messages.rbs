@@ -1,0 +1,12 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveSupport::Notifications::Fanout::Subscribers::AllMessages
+  def initialize: (untyped delegate) -> void
+  def start: (untyped name, untyped id, untyped payload) -> untyped
+  def finish: (untyped name, untyped id, untyped payload) -> untyped
+  def publish: (untyped name, *untyped args) -> untyped
+  def subscribed_to?: (untyped name) -> true
+  def unsubscribe!: () -> false
+  alias matches? ===
+end

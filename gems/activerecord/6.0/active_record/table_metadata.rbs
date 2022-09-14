@@ -1,0 +1,29 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+class ActiveRecord::TableMetadata
+  def initialize: (untyped klass, untyped arel_table, ?untyped? association, ?untyped types) -> void
+  def resolve_column_aliases: (untyped hash) -> untyped
+  def arel_attribute: (untyped column_name) -> untyped
+  def type: (untyped column_name) -> untyped
+  def has_column?: (untyped column_name) -> untyped
+  def associated_with?: (untyped association_name) -> untyped
+  def associated_table: (untyped table_name) -> untyped
+  def associated_predicate_builder: (untyped table_name) -> untyped
+  def polymorphic_association?: () -> untyped
+  def aggregated_with?: (untyped aggregation_name) -> untyped
+  def reflect_on_aggregation: (untyped aggregation_name) -> untyped
+  def predicate_builder: () -> untyped
+  attr_reader klass: untyped
+  attr_reader types: untyped
+  attr_reader arel_table: untyped
+  attr_reader association: untyped
+  # defined by `delegate` to: untyped#association
+  def foreign_type: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#association
+  def foreign_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#association
+  def join_primary_key: (*untyped, **untyped) -> untyped
+  # defined by `delegate` to: untyped#association
+  def join_foreign_key: (*untyped, **untyped) -> untyped
+end

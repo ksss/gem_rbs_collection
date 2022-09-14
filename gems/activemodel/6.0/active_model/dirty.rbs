@@ -1,0 +1,68 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveModel::Dirty
+  def initialize_dup: (untyped other) -> untyped
+  # Clears dirty data and moves +changes+ to +previously_changed+ and
+  # +mutations_from_database+ to +mutations_before_last_save+ respectively.
+  def changes_applied: () -> untyped
+  # Returns +true+ if any of the attributes has unsaved changes, +false+ otherwise.
+  #
+  #   person.changed? # => false
+  #   person.name = 'bob'
+  #   person.changed? # => true
+  def changed?: () -> untyped
+  # Returns an array with the name of the attributes with unsaved changes.
+  #
+  #   person.changed # => []
+  #   person.name = 'bob'
+  #   person.changed # => ["name"]
+  def changed: () -> untyped
+  # Dispatch target for <tt>*_changed?</tt> attribute methods.
+  def attribute_changed?: (untyped attr_name, **untyped options) -> untyped
+  # Dispatch target for <tt>*_was</tt> attribute methods.
+  def attribute_was: (untyped attr_name) -> untyped
+  # Dispatch target for <tt>*_previously_changed?</tt> attribute methods.
+  def attribute_previously_changed?: (untyped attr_name) -> untyped
+  # Restore all previous data of the provided attributes.
+  def restore_attributes: (?untyped attr_names) -> untyped
+  # Clears all dirty data: current changes and previous changes.
+  def clear_changes_information: () -> untyped
+  def clear_attribute_changes: (untyped attr_names) -> untyped
+  # Returns a hash of the attributes with unsaved changes indicating their original
+  # values like <tt>attr => original value</tt>.
+  #
+  #   person.name # => "bob"
+  #   person.name = 'robert'
+  #   person.changed_attributes # => {"name" => "bob"}
+  def changed_attributes: () -> untyped
+  # Returns a hash of changed attributes indicating their original
+  # and new values like <tt>attr => [original value, new value]</tt>.
+  #
+  #   person.changes # => {}
+  #   person.name = 'bob'
+  #   person.changes # => { "name" => ["bill", "bob"] }
+  def changes: () -> untyped
+  # Returns a hash of attributes that were changed before the model was saved.
+  #
+  #   person.name # => "bob"
+  #   person.name = 'robert'
+  #   person.save
+  #   person.previous_changes # => {"name" => ["bob", "robert"]}
+  def previous_changes: () -> untyped
+  def attribute_changed_in_place?: (untyped attr_name) -> untyped
+  private def clear_attribute_change: (untyped attr_name) -> untyped
+  private def mutations_from_database: () -> untyped
+  private def forget_attribute_assignments: () -> (untyped | nil)
+  private def mutations_before_last_save: () -> untyped
+  # Dispatch target for <tt>*_change</tt> attribute methods.
+  private def attribute_change: (untyped attr_name) -> untyped
+  # Dispatch target for <tt>*_previous_change</tt> attribute methods.
+  private def attribute_previous_change: (untyped attr_name) -> untyped
+  # Dispatch target for <tt>*_will_change!</tt> attribute methods.
+  private def attribute_will_change!: (untyped attr_name) -> untyped
+  # Dispatch target for <tt>restore_*!</tt> attribute methods.
+  private def restore_attribute!: (untyped attr_name) -> untyped
+  include ActiveModel::AttributeMethods
+  extend ActiveSupport::Concern
+end

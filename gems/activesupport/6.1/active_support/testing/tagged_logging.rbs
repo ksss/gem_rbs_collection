@@ -1,0 +1,8 @@
+# !!! GENERATED CODE !!!
+# Please see generators/rails-generator
+
+module ActiveSupport::Testing::TaggedLogging
+  def before_setup: () -> untyped
+  private def tagged_logger: () -> untyped
+  attr_writer tagged_logger: untyped
+end

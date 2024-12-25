@@ -19,6 +19,8 @@ AllCops:
     - "**/Steepfile"
     - "**/*.rb"
     - "**/vendor/**/*"
+    - "**/*-generated.rbs"
+    - "**/_test/*.rbs"
 
 RBS:
   Enabled: true
